@@ -1,0 +1,4 @@
+#!/bin/bash
+
+xsltproc /home/mdoob/math1220-16w/mathbook-local-pdf.xsl math1220.xml
+

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+XMLFILE=math1220.xml
+
+xsltproc mathbook-local.xsl $XMLFILE
+/home/mdoob/mathbook/script/mbx -c asy -f pdf -d ./images $XMLFILE
+cd ./images
+./p2s
+
+

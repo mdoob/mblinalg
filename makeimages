@@ -1,0 +1,13 @@
+#!/bin/bash
+
+IMAGEDIR="/home/mdoob/mblinalg/images"
+XMLFILE="/home/mdoob/mblinalg/linalg.xml"
+
+echo "IMAGEDIR is " $IMAGEDIR
+echo "XMLFILE is " $XMLFILE
+
+# -vv option gives more details
+/home/mdoob/mathbook/script/mbx -c asy -f pdf -d $IMAGEDIR $XMLFILE
+
+
+

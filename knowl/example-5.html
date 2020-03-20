@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-03-20T12:16:17-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example example-like"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.3</span><span class="period">.</span><span class="space"> </span><span class="title">Putting a matrix in reduced row echelon form.</span>
+</h6>
+<p>\(\begin{align}
+\amp \begin{bmatrix}
+1 \amp  2 \amp  3 \\
+4 \amp  5 \amp  6 \\
+7 \amp  8 \amp  9 \\
+10 \amp  12 \amp  15 
+\end{bmatrix} \amp \amp 
+\begin{array}{l}
+R_2\gets R_2-4R_1\\
+R_3\gets R_3-7R_1\\
+R_4\gets R_4-10R_1
+\end{array}\\[6pt]
+\amp \begin{bmatrix}
+1 \amp  2 \amp  3 \\
+0 \amp  -3 \amp  -6 \\
+0 \amp  -6 \amp  -12 \\
+0 \amp  -8 \amp  -15
+\end{bmatrix} \amp \amp 
+\begin{array}{l}
+R_2\gets -\tfrac13 R_2
+\end{array}\\[6pt]
+\amp \begin{bmatrix}
+1 \amp  2 \amp  3 \\
+0 \amp  1 \amp  2 \\
+0 \amp  -6 \amp  -12 \\
+0 \amp  -8 \amp  -15
+\end{bmatrix} \amp \amp 
+\begin{array}{l}
+R_1\gets R_1-2R_2\\
+R_3\gets R_3+6R_2\\
+R_4\gets R_4+8R_2
+\end{array}\\[6pt]
+\amp \begin{bmatrix}
+1 \amp  0 \amp  -1 \\
+0 \amp  1 \amp  2 \\
+0 \amp  0 \amp  0 \\
+0 \amp  0 \amp  1
+\end{bmatrix} \amp \amp 
+\begin{array}{l}
+R_3\leftrightarrow R_4 \\
+\end{array}\\[6pt]
+\amp \begin{bmatrix}
+1 \amp  0 \amp  -1 \\
+0 \amp  1 \amp  2 \\
+0 \amp  0 \amp  1 \\
+0 \amp  0 \amp  0
+\end{bmatrix} \amp \amp 
+\begin{array}{l}
+R_1 \gets R_1+R_3 \\
+R_2\gets R_2-2R_3
+\end{array}\\[6pt]
+\amp \begin{bmatrix}
+1 \amp  0 \amp  0 \\
+0 \amp  1 \amp  0 \\
+0 \amp  0 \amp  1 \\
+0 \amp  0 \amp  0
+\end{bmatrix}
+\end{align} \)</p></article><span class="incontext"><a href="section-6.html#example-5">in-context</a></span>
+</body>
+</html>

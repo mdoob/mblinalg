@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-03-20T12:16:18-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>We put the augemented matrix into reduced row echelon form: \(\begin{bmatrix}
+1 \amp 2 \amp -1 \amp 2\\
+1 \amp 1 \amp -1 \amp 0\\
+2 \amp -1 \amp 1 \amp 3\\
+\end{bmatrix}
+\\
+\begin{array}{l}
+R_2\gets R_2 - R_1\\
+R_3\gets R_3-2R_1
+\end{array}
+\\
+\begin{bmatrix}
+1 \amp 2 \amp -1 \amp 2\\
+0 \amp -1 \amp 0 \amp -2\\
+0 \amp -5 \amp 3 \amp -1\\
+\end{bmatrix}
+\\
+\begin{array}{l}
+R_2\gets -R_2\\
+\end{array}
+\\
+\begin{bmatrix}
+1 \amp 2 \amp -1 \amp 2\\
+0 \amp 1 \amp 0 \amp 2\\
+0 \amp -5 \amp 3 \amp -1\\
+\end{bmatrix}
+\\
+R_3\gets R_3-5R_2
+\\
+\begin{bmatrix}
+1 \amp 2 \amp -1 \amp 2\\
+0 \amp 1 \amp 0 \amp 2\\
+0 \amp 0 \amp 3 \amp 9\\
+\end{bmatrix}
+\\
+R_3\gets \frac13 R_3
+\\
+\begin{bmatrix}
+1 \amp 2 \amp -1 \amp 2\\
+0 \amp 1 \amp 0 \amp 2\\
+0 \amp 0 \amp 1 \amp 3\\
+\end{bmatrix} \\
+R_1 \gets R_1-2R_2
+\\
+\begin{bmatrix}
+1 \amp 0 \amp -1 \amp-2\\
+0 \amp 1 \amp 0 \amp 2\\
+0 \amp 0 \amp 1 \amp 3\\
+\end{bmatrix} \\
+R_1 \gets R_1+R_3
+\\
+\begin{bmatrix}
+1 \amp 0 \amp 0 \amp1\\
+0 \amp 1 \amp 0 \amp 2\\
+0 \amp 0 \amp 1 \amp 3\\
+\end{bmatrix} \\\) The first, second and third rows give us, respectively,</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{matrix}
+x=1\\y=2\\z=3
+\end{matrix}
+\end{equation*}
+</div>
+</div></body>
+</html>
