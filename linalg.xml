@@ -2943,6 +2943,7 @@
       The middle row indicates that there is no solution.
       </p>
       <!-- png image inserted until 3d problem resolved
+      -->
       <image width="100%" xml:id="ThreeParallelPlanes">
       <asymptote>
         import graph3;
@@ -2968,9 +2969,8 @@
         axes3("\(x\)","\(y\)","\(z\)",(-1.5,-2,-2),(3,3.2,3.5));
       </asymptote>
       </image>
-      -->
      <sidebyside>
-     <image width="80%" source="images/ThreeParallelPlanes.png" />
+     <image width="80%" source="images/ThreeParallelPlanes.svg" />
      </sidebyside>
       </example>
 

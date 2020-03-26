@@ -7,7 +7,7 @@ echo "IMAGEDIR is " $IMAGEDIR
 echo "XMLFILE is " $XMLFILE
 
 # -vv option gives more details
-/home/mdoob/mathbook/script/mbx -c asy -f pdf -d $IMAGEDIR $XMLFILE
+/home/mdoob/mathbook/script/mbx -vv -c asy -f svg -d $IMAGEDIR $XMLFILE
 
 
 
