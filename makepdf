@@ -1,0 +1,4 @@
+#!/bin/bash
+
+xsltproc /home/mdoob/mathbook/xsl/mathbook-latex.xsl linalg.xml
+

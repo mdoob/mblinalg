@@ -1,0 +1,13 @@
+#!/bin/bash 
+
+IMAGE_DIRECTORY=./images
+
+cd $IMAGE_DIRECTORY
+for pdffile in *.pdf
+do
+   froot=`basename $pdffile '.pdf'`
+   svgfile="$froot.svg"
+   echo Converting $file to $svgfile
+   pdf2svg $pdffile $svgfile
+done
+

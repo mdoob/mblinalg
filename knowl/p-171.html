@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-04T19:24:29-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Consider the system of linear equations:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rcl}
+x+y+z\amp =\amp  1\\
+2x+y+z \amp =\amp  2\\
+3x+ay+bz\amp =\amp c
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">We wish to know the values of \(a,\) \(b\) and \(c\) for which there are there no solutions, one solution or more than one solution. To solve this problem, we apply Gaussian elimination to the augmented matrix:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix} 1\amp 1\amp 1\amp 1\\2\amp 1\amp 1\amp 2\\3\amp a\amp b\amp c \end{bmatrix}
+\begin{matrix}R_2\gets R_2-2R_1\\ R_3\gets R_3-3 R_1\end{matrix}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix} 1\amp 1\amp 1\amp 1\\0\amp -1\amp -1\amp 0\\0\amp a-3\amp b-3\amp c-3 \end{bmatrix}
+\begin{matrix}R_2\gets -R_2\\R_3\gets R_3-(a-3)R_2\end{matrix}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix} 1\amp 1\amp 1\amp 1\\0\amp 1\amp 1\amp 0\\0\amp 0\amp b-a\amp c-3 \end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">An analysis of the last row tells us everything: If \(b-a\not=0,\) then there is exactly one solution. If \(b-a=0,\) and \(c-3\not=0,\) then there are no solutions. Otherwise (when \(b=a\) and \(c=3\)) there are an infinite number of solutions.</p>
+<span class="incontext"><a href="section-5.html#p-171">in-context</a></span>
+</body>
+</html>

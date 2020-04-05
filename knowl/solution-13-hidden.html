@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-04T19:24:29-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>We put the augemented matrix into row echelon form:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1 \amp 2 \amp -1 \amp 2\\
+1 \amp 1 \amp -1 \amp 0\\
+2 \amp -1 \amp 1 \amp 3\\
+\end{bmatrix}
+\\
+\begin{array}{l}
+R_2\gets R_2 - R_1\\
+R_3\gets R_3-2R_1
+\end{array}
+\\
+\begin{bmatrix}
+1 \amp 2 \amp -1 \amp 2\\
+0 \amp -1 \amp 0 \amp -2\\
+0 \amp -5 \amp 3 \amp -1\\
+\end{bmatrix}
+\\
+\begin{array}{l}
+R_2\gets -R_2\\
+\end{array}
+\\
+\begin{bmatrix}
+1 \amp 2 \amp -1 \amp 2\\
+0 \amp 1 \amp 0 \amp 2\\
+0 \amp -5 \amp 3 \amp -1\\
+\end{bmatrix}
+\\
+R_3\gets R_3+5R_2
+\\
+\begin{bmatrix}
+1 \amp 2 \amp -1 \amp 2\\
+0 \amp 1 \amp 0 \amp 2\\
+0 \amp 0 \amp 3 \amp 9\\
+\end{bmatrix}
+\\
+R_3\gets \frac13 R_3
+\\
+\begin{bmatrix}
+1 \amp 2 \amp -1 \amp 2\\
+0 \amp 1 \amp 0 \amp 2\\
+0 \amp 0 \amp 1 \amp 3\\
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">The last row gives \(z=3\text{.}\) The second row gives \(y=2\text{.}\) The first row gives \(x=2-2y+z=2-4+3=1\text{,}\) and so there is a unique solution \((x,y,z)=(1,2,3)\text{.}\)</p>
+</div></body>
+</html>

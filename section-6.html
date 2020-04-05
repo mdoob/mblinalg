@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-04T19:24:28-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Gauss-Jordan reduction</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_brown_gold.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
+\def\C{{\mathbb C}}
+\def\Q{{\mathbb Q}}
+\def\Z{{\mathbb Z}}
+\def\N{{\mathbb N}}
+\def\vec#1{\mathbf #1}
+\newcommand{\adj}{\mathop{\textrm{adj}}}
+\newcommand{\proj}{\mathop{\textrm{proj}}}
+\newcommand{\Span}{\mathop{\textrm{span}}} 
+\newcommand{\rowint}[2]{R_{#1} \leftrightarrow R_{#2}}
+\newcommand{\rowmul}[2]{R_{#1}\gets {#2}R_{#1}}
+\newcommand{\rowadd}[3]{R_{#1}\gets R_{#1}+#2R_{#3}}
+\newcommand{\rowsub}[3]{R_{#1}\gets R_{#1}-#2R_{#3}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.umanitoba.ca" target="_blank"><img src="images/umlogo.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="linalg.html"><span class="title">Manitoba linear algebra</span></a></h1>
+<p class="byline">Michael Doob (editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-5.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-1.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-7.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-5.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-1.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-7.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link"><a href="chapter-1.html" data-scroll="chapter-1"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="section-6"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.6</span> <span class="title">Gauss-Jordan reduction</span>
+</h2>
+<section class="introduction" id="introduction-2"><p id="p-174">Gauss-Jordan reduction is an extension of the Gaussian elimination algorithm. It produces a matrix, called <em class="emphasis">the reduced row echelon form</em> in the following way: after carrying out Gaussian elimination, continue by changing all nonzero entries <em class="emphasis">above</em> the leading ones to a zero. The resulting matrix looks something like:</p>
+<figure class="figure figure-like" id="figure-4"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/rref.png" style="width: 100%; height: auto;" alt="A matrix in row echelon form"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.1<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-175">The matrix above gives an idea of what we want. Notice the staircase line drawn through the matrix has all entries below it equal to zero. The entries marked with a \(*\) can take on any value.</p>
+<article class="definition definition-like" id="definition-2"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.6.2</span><span class="period">.</span><span class="space"> </span><span class="title">Reduced row echelon form.</span>
+</h6>
+<p id="p-176">A matrix is in <dfn class="terminology">reduced row echelon form</dfn>  if</p>
+<ul class="disc">
+<li id="li-92"><p id="p-177">Every leading entry is a leading one.</p></li>
+<li id="li-93"><p id="p-178">Every entry below <em class="emphasis">and above</em> a leading one is \(0\text{.}\)</p></li>
+<li id="li-94"><p id="p-179">As you go down the matrix, the leading ones move to the right.</p></li>
+<li id="li-95"><p id="p-180">Any all zero rows are at the bottom.</p></li>
+</ul></article><p id="p-181">For completeness, we'll describe Gauss-Jordan reduction algorithm in detail. As with Gaussian elimination, the columns of the matrix are processed from left to right.</p>
+<ol class="decimal">
+<li id="li-96"><p id="p-182">Start with the first column. If it has all entries equal to zero, move on to the next column to the right.</p></li>
+<li id="li-97"><p id="p-183">If, to the contrary, the column has nonzero entries, interchange rows, if necessary, to get a nonzero entry on top.</p></li>
+<li id="li-98"><p id="p-184">Multiply the top row by a constant to change the nonzero entry to a (leading) one.</p></li>
+<li id="li-99"><p id="p-185">If there are nonzero entries above or below this (leading) one, use an elementary row operation on each one to change it to a zero.</p></li>
+<li id="li-100"><p id="p-186">Now consider the part of the matrix below the top row and to the right of the column under consideration: if there are no such rows or columns, stop and the algorithm is finished. Otherwise, carry out the same procedure on the new matrix.</p></li>
+</ol>
+<article class="example example-like" id="example-5"><a data-knowl="" class="id-ref original" data-refid="hk-example-5"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.3</span><span class="period">.</span><span class="space"> </span><span class="title">Putting a matrix in reduced row echelon form.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-5"><article class="example example-like"><p id="p-187">\(\begin{align}
+\amp \begin{bmatrix}
+1 \amp  2 \amp  3 \\
+4 \amp  5 \amp  6 \\
+7 \amp  8 \amp  9 \\
+10 \amp  12 \amp  15 
+\end{bmatrix} \amp \amp 
+\begin{array}{l}
+R_2\gets R_2-4R_1\\
+R_3\gets R_3-7R_1\\
+R_4\gets R_4-10R_1
+\end{array}\\[6pt]
+\amp \begin{bmatrix}
+1 \amp  2 \amp  3 \\
+0 \amp  -3 \amp  -6 \\
+0 \amp  -6 \amp  -12 \\
+0 \amp  -8 \amp  -15
+\end{bmatrix} \amp \amp 
+\begin{array}{l}
+R_2\gets -\tfrac13 R_2
+\end{array}\\[6pt]
+\amp \begin{bmatrix}
+1 \amp  2 \amp  3 \\
+0 \amp  1 \amp  2 \\
+0 \amp  -6 \amp  -12 \\
+0 \amp  -8 \amp  -15
+\end{bmatrix} \amp \amp 
+\begin{array}{l}
+R_1\gets R_1-2R_2\\
+R_3\gets R_3+6R_2\\
+R_4\gets R_4+8R_2
+\end{array}\\[6pt]
+\amp \begin{bmatrix}
+1 \amp  0 \amp  -1 \\
+0 \amp  1 \amp  2 \\
+0 \amp  0 \amp  0 \\
+0 \amp  0 \amp  1
+\end{bmatrix} \amp \amp 
+\begin{array}{l}
+R_3\leftrightarrow R_4 \\
+\end{array}\\[6pt]
+\amp \begin{bmatrix}
+1 \amp  0 \amp  -1 \\
+0 \amp  1 \amp  2 \\
+0 \amp  0 \amp  1 \\
+0 \amp  0 \amp  0
+\end{bmatrix} \amp \amp 
+\begin{array}{l}
+R_1 \gets R_1+R_3 \\
+R_2\gets R_2-2R_3
+\end{array}\\[6pt]
+\amp \begin{bmatrix}
+1 \amp  0 \amp  0 \\
+0 \amp  1 \amp  0 \\
+0 \amp  0 \amp  1 \\
+0 \amp  0 \amp  0
+\end{bmatrix}
+\end{align} \)</p></article></div>
+<article class="example example-like" id="example-6"><a data-knowl="" class="id-ref original" data-refid="hk-example-6"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.4</span><span class="period">.</span><span class="space"> </span><span class="title">Putting another matrix in reduced row echelon form.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-6"><article class="example example-like"><p id="p-188">\(\begin{align}
+\amp \begin{bmatrix}
+1 \amp  2 \amp  6 \amp  1 \amp  4 \amp  6 \\
+2 \amp  4 \amp  9 \amp  2 \amp  8 \amp  9 \\
+1 \amp  2 \amp  9 \amp  2 \amp  10 \amp  9
+\end{bmatrix}\amp \amp 
+\begin{array}{c}
+R_2 \gets R_2-2R_1 \\
+R_3 \gets R_3-R_1
+\end{array}\\[6pt]
+\amp \begin{bmatrix}
+1 \amp  2 \amp  6 \amp  1 \amp  4 \amp  6 \\
+0 \amp  0 \amp  -3 \amp  0 \amp  0 \amp  -3 \\
+0 \amp  0 \amp  3 \amp  1 \amp  6 \amp  3
+\end{bmatrix}\amp \amp 
+\begin{array}{c}
+R_2 \gets -\tfrac13R_2
+\end{array}\\[6pt]
+\amp \begin{bmatrix}
+1 \amp  2 \amp  6 \amp  1 \amp  4 \amp  6 \\
+0 \amp  0 \amp  1 \amp  0 \amp  0 \amp  1 \\
+0 \amp  0 \amp  3 \amp  1 \amp  6 \amp  3
+\end{bmatrix}\amp \amp 
+\begin{array}{c}
+R_1 \gets R_1 -6R_2\\
+R_3 \gets R_3 -3R_2
+\end{array}\\[6pt]
+\amp \begin{bmatrix}
+1 \amp  2 \amp  0 \amp  1 \amp  4 \amp  0 \\
+0 \amp  0 \amp  1 \amp  0 \amp  0 \amp  1 \\
+0 \amp  0 \amp  0 \amp  1 \amp  6 \amp  0
+\end{bmatrix}\amp \amp 
+\begin{array}{c}
+R_1 \gets R_1 - R_3
+\end{array}\\[6pt]
+\amp \begin{bmatrix}
+1 \amp  2 \amp  0 \amp  0 \amp  -2 \amp  0 \\
+0 \amp  0 \amp  1 \amp  0 \amp  0 \amp  1 \\
+0 \amp  0 \amp  0 \amp  1 \amp  6 \amp  0
+\end{bmatrix}
+\end{align}\)</p></article></div>
+<p id="p-189">Notice the pattern of zero, 1 and nonzero entries after Gauss-Jordan reduction (with the leading ones in red):</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{ccccccc}
+{{\color{red}1}} \amp  0 \amp  0 \amp  * \amp  0 \amp  \cdots \amp  *\\
+0 \amp  {\color{red}1} \amp  0 \amp  * \amp  0 \amp  \cdots \amp  *\\
+0 \amp  0 \amp  {\color{red}1}\amp  * \amp  0 \amp  \cdots \amp  *\\
+0 \amp  0 \amp  0 \amp  0 \amp  {\color{red}1} \amp  \cdots \amp  *\\
+\end{array}\right]
+\end{equation*}
+</div>
+<p data-braille="continuation">Now that we can put a matrix in reduced row echelon form, let's see what this implies for finding all solutions to the associated system of linear equations. Remember that the first \(n\) columns correspond to coefficients of variables \(x_1,x_2,\dots,x_n\text{,}\) and the last column corresponds to the constants on the right side of the equations. Each column either contains a leading one or it does not. If it does, the corresponding variable is called <dfn class="terminology">constrained</dfn> or <dfn class="terminology">basic</dfn>. If not the variable is called <dfn class="terminology">free.</dfn> Each free variable is assigned a parameter which may take on any number when finding solutions. The values of the constrained variables are then determined by the reduced row echelon form.</p>
+<p id="p-190">As an example, suppose we have a system of linear equations whose augmented matrix has the following reduced row echelon form:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+{\color{red}1} \amp  2 \amp  0 \amp  1 \amp  0 \amp  1\\
+0 \amp  0 \amp   {\color{red}1}\amp  2 \amp  0 \amp  2\\
+0 \amp  0 \amp  0 \amp  0 \amp  {\color{red}1} \amp  3
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">Notice that this means that our system has three equations and five unknowns. The leading ones are in columns one, three and five, so \(x_1\text{,}\) \(x_3\) and \(x_5\) are constrained variables. This leaves \(x_2\) and \(x_4\) as free variables. We assign parameters to the free variables: \(x_2=s\) and \(x_4=t\text{.}\) The rows of the matrix then determine the constrained variables:</p>
+<ul class="disc">
+<li id="li-101"><p id="p-191">\(x_5=3\) from the bottom row</p></li>
+<li id="li-102"><p id="p-192">\(x_3 = 2-2t\) from the middle row</p></li>
+<li id="li-103"><p id="p-193">\(x_1=1-2s-t\) from the top row</p></li>
+</ul>
+<p id="p-194">The compact way of writing this is \((x_1,x_2,x_3,x_4,x_5) = (1-2s-t,s,2-2t,t,3).\)</p>
+<p id="p-195">Notice the role of the zeros above and below each leading one: the evaluation of a constrained variable involves only free variables.</p>
+<p id="p-196">In summary, we can say the following:</p>
+<ol class="decimal">
+<li id="li-104"><p id="p-197">If the reduced row echelon form has a row of the form \([0,0,\dots,0,1]\text{,}\) then the system of linear equations has no solution.</p></li>
+<li id="li-105">
+<p id="p-198">If the reduced row echelon form has no free variables, then it looks like:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1 \amp  0 \amp  0 \amp \cdots \amp 0 \amp 0 \amp c_1\\
+0 \amp  1 \amp  0 \amp \cdots \amp 0 \amp 0 \amp c_2\\
+0 \amp  0 \amp  1 \amp \cdots \amp 0 \amp 0 \amp c_3\\
+\amp    \amp    \amp \vdots \\
+0 \amp  0 \amp  0 \amp \cdots \amp 1 \amp 0 \amp c_{n-1}\\
+0 \amp  0 \amp  0 \amp \cdots \amp 0 \amp 1 \amp c_n
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">and there is a unique solution, namely, \(x_1=c_1, x_2=c_2,\dots x_n=c_n\text{.}\)</p>
+</li>
+<li id="li-106"><p id="p-199">If the reduced row echelon form has free variables, then there are an infinite number of solutions. Indeed, the parameter assigned to any one free variable can take on an infinite number of values.</p></li>
+</ol>
+<p data-braille="continuation">Consider the following system of linear equations:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+x_1-x_2+2x_3-x_4 \amp =  -1 \\
+2x_1+x_2-2x_3-2x_4 \amp =  -2 \\
+-x_1+2x_2-4x_3+x_4 \amp =  1 \\
+3x_1-3x_4 \amp =  -3
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">The augmented matrix is then put into reduced row echelon form:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1 \amp  -1 \amp  2 \amp  -1 \amp  -1\\
+2 \amp  1 \amp -2 \amp  -2 \amp  -2\\
+-1 \amp  2 \amp  -4 \amp  1 \amp  1\\
+3 \amp  0 \amp  0 \amp  -3 \amp  -3
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+R_2 \amp \gets R_2-2R_1\\
+R_3 \amp \gets R_3+R_1\\
+R_4 \amp \gets R_4-3R_1
+\end{array}
+\end{equation*}
+</div>
+<div class="displaymath" id="p-200">
+\begin{equation*}
+\begin{bmatrix}
+1 \amp  -1 \amp  2 \amp  -1 \amp  -1\\
+0 \amp  3 \amp  -6 \amp  0 \amp  0\\
+0 \amp  1 \amp  -2 \amp  0 \amp  0\\
+0 \amp  3 \amp  -6 \amp  0 \amp  0
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+R_2 \amp \gets \tfrac13 R_2\\
+\end{array}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1 \amp  -1 \amp  2 \amp  -1 \amp  -1\\
+0 \amp  1 \amp  -2 \amp  0 \amp  0\\
+0 \amp  1 \amp  -2 \amp  0 \amp  0\\
+0 \amp  3 \amp  -6 \amp  0 \amp  0
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+R_1 \amp \gets R_1 + R_2\\
+R_3 \amp \gets R_3- R_2\\
+R_4 \amp \gets R_4- 3R_2
+\end{array}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+{\color{red} 1} \amp  0 \amp  0 \amp  -1 \amp  -1\\
+0 \amp  {\color{red} 1} \amp  -2 \amp  0 \amp  0\\
+0 \amp  0 \amp  0 \amp  0 \amp  0\\
+0 \amp  0 \amp  0 \amp  0 \amp  0
+\end{bmatrix}
+\end{equation*}
+</div>
+<p id="p-201">Since  \(x_3\) and \(x_4\) are free variables, we assign them parameters: \(x_3=s\) and \(x_4=t\text{.}\)  We can now evaluate the constrained variables: \(x_1=-1+t\) (from the first row) and \(x_2=2s\) (from the second row). In short, \((x_1,x_2,x_3,x_4)=(-1+t,2s,s,t)\) for any choice of \(s\) or \(t\text{.}\)</p>
+<p id="p-202">Now, as a check, let's put these solutions back into the original equations. \(\begin{array}{rlll}
+x_1-x_2+2x_3-x_4 \amp =\amp  (-1+t) - (2s) + 2(s) - (t) \amp= -1\\
+2x_1+x_2-2x_3-2x_4 \amp =\amp  2(-1+t) + 2s -2s-2t \amp= -2\\
+-x_1+2x_2-4x_3+x_4 \amp =\amp  -(-1+t) +2(2s) -4s+t \amp= 1 \\
+3x_1-3x_4 \amp =\amp  3(-1+t) -3t \amp= -3
+\end{array}\)</p>
+<article class="example example-like" id="example-7"><a data-knowl="" class="id-ref original" data-refid="hk-example-7"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.5</span><span class="period">.</span><span class="space"> </span><span class="title">A matrix row-reducing itself.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-7"><article class="example example-like"><p id="p-203">The following example is a matrix row reducing itself. Notice how it proceeds left to right in columns, and each column with a leading one has zeros above and below when the algorithm completes.</p></article></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/rref.gif" style="width: 100%; height: auto;" alt=""></div></div></div></section><section class="subsection" id="subsection-18"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.6.1</span> <span class="title">The rank of a matrix</span>
+</h3>
+<article class="definition definition-like" id="definition-3"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.6.6</span><span class="period">.</span>
+</h6>
+<p id="p-204">The <dfn class="terminology">rank</dfn> of a matrix is the number of leading ones in the reduced row echelon form.</p></article><p id="p-205">Since the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+A=
+\begin{bmatrix}
+1\amp 2\amp 3\amp 4\amp 5 \\
+6\amp 7\amp 8\amp 9\amp 10 \\
+11\amp 12\amp 13\amp 14\amp 15 \\
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">has a reduced row echelon form of</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1\amp 0\amp -1\amp -2\amp -3 \\
+0\amp 1\amp 2\amp 3\amp 4 \\
+0\amp 0\amp 0\amp 0\amp 0 \\
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">the rank of \(A\) is \(2\text{.}\)</p></section><section class="exercises" id="exercises-1"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">1.6.2</span> <span class="title">Exercises</span>
+</h3>
+<div class="exercisegroup" id="exercisegroup-1">
+<div class="introduction" id="introduction-3"><p id="p-206">Put the following matrices into reduced row echelon form.</p></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-14"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<div class="displaymath" id="p-207">
+\begin{equation*}
+\begin{bmatrix}
+2\amp4\amp6\amp8\\
+3\amp6\amp9\amp10
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-14" id="solution-14"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-14"><div class="solution solution-like"><div class="displaymath" id="p-208">
+\begin{equation*}
+\begin{bmatrix}
+2\amp4\amp6\amp8\\
+3\amp6\amp9\amp10
+\end{bmatrix}\\
+\rowmul1{\frac12}\\
+\begin{bmatrix}
+1\amp2\amp3\amp4\\
+3\amp6\amp9\amp10
+\end{bmatrix}\\
+\rowsub231\\
+\begin{bmatrix}
+1\amp2\amp3\amp4\\
+0\amp0\amp0\amp-2
+\end{bmatrix}\\
+\rowmul 2{-\frac12}\\
+\begin{bmatrix}
+1\amp2\amp3\amp4\\
+0\amp0\amp0\amp1
+\end{bmatrix}\\
+\rowsub142\\
+\begin{bmatrix}
+1\amp2\amp3\amp0\\
+0\amp0\amp0\amp1
+\end{bmatrix}
+\end{equation*}
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-15"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<div class="displaymath" id="p-209">
+\begin{equation*}
+\begin{bmatrix}
+0 \amp  1 \amp -1\\
+1 \amp  0 \amp -1\\
+1 \amp -1 \amp  0
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-15" id="solution-15"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-15"><div class="solution solution-like"><div class="displaymath" id="p-210">
+\begin{equation*}
+\begin{bmatrix}
+0 \amp  1 \amp -1\\
+1 \amp  0 \amp -1\\
+1 \amp -1 \amp  0
+\end{bmatrix}\\
+\rowint 12\\
+\begin{bmatrix}
+1 \amp  0 \amp -1\\
+0 \amp  1 \amp -1\\
+1 \amp -1 \amp  0
+\end{bmatrix}\\
+\rowsub 3{}1\\
+\begin{bmatrix}
+1 \amp  0 \amp -1\\
+0 \amp  1 \amp -1\\
+0 \amp -1 \amp  1
+\end{bmatrix}\\
+\rowadd3{}2\\
+\begin{bmatrix}
+1 \amp  0 \amp -1\\
+0 \amp  1 \amp -1\\
+0 \amp  0 \amp  0
+\end{bmatrix}\\
+\end{equation*}
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-16"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<div class="displaymath" id="p-211">
+\begin{equation*}
+\begin{bmatrix}
+1\amp 2\amp3\\
+4\amp5\amp6\\
+7\amp8\amp9
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-16" id="solution-16"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-16"><div class="solution solution-like"><div class="displaymath" id="p-212">
+\begin{equation*}
+\begin{bmatrix}
+1\amp 2\amp3\\
+4\amp5\amp6\\
+7\amp8\amp9
+\end{bmatrix}\\
+\rowsub241\\
+\rowsub371\\
+\begin{bmatrix}
+1\amp 2\amp3\\
+0\amp-3\amp-6\\
+0\amp-6\amp-12
+\end{bmatrix}\\
+\rowmul2{-\frac13}\\
+\begin{bmatrix}
+1\amp 2\amp3\\
+0\amp1\amp2\\
+0\amp-6\amp-12
+\end{bmatrix}\\
+\rowsub 122\\
+\begin{bmatrix}
+1\amp 0\amp-1\\
+0\amp1\amp2\\
+0\amp-6\amp-12
+\end{bmatrix}\\
+\rowadd 362\\
+\begin{bmatrix}
+1\amp 0\amp-1\\
+0\amp1\amp2\\
+0\amp0\amp0
+\end{bmatrix}
+\end{equation*}
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-17"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<div class="displaymath" id="p-213">
+\begin{equation*}
+\begin{bmatrix}
+1\amp2\\ 1\amp3 \\1\amp4
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-17" id="solution-17"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-17"><div class="solution solution-like"><div class="displaymath" id="p-214">
+\begin{equation*}
+\begin{bmatrix}
+1\amp2\\ 1\amp3 \\1\amp4
+\end{bmatrix}\\
+\rowsub 2 {} 1\\
+\rowsub 3 {} 1\\
+\begin{bmatrix}
+1\amp2\\ 0\amp1 \\0\amp2
+\end{bmatrix}\\
+\rowsub 1 2 2\\
+\rowsub 3 2 2\\
+\begin{bmatrix}
+1\amp0\\ 0\amp1 \\0\amp0
+\end{bmatrix}\\
+\end{equation*}
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-18"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<div class="displaymath" id="p-215">
+\begin{equation*}
+\begin{bmatrix}
+0\amp 1\amp 2\amp 3\amp 4 \\
+4\amp 3\amp 2\amp 1\amp 0 
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-18" id="solution-18"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-18"><div class="solution solution-like"><div class="displaymath" id="p-216">
+\begin{equation*}
+\begin{bmatrix}
+0\amp 1\amp 2\amp 3\amp 4 \\
+4\amp 3\amp 2\amp 1\amp 0 
+\end{bmatrix}\\
+\rowint12\\
+\begin{bmatrix}
+4\amp 3\amp 2\amp 1\amp 0 \\
+0\amp 1\amp 2\amp 3\amp 4 
+\end{bmatrix}\\
+\rowmul1{\frac14}\\
+\begin{bmatrix}
+1\amp \frac34\amp \frac12\amp \frac14\amp 0 \\
+0\amp 1\amp 2\amp 3\amp 4 
+\end{bmatrix}\\
+\rowsub 1{\frac34}2\\
+\begin{bmatrix}
+1\amp 0\amp -1\amp -2\amp -3 \\
+0\amp 1\amp 2\amp 3\amp 4 
+\end{bmatrix}
+\end{equation*}
+</div></div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-2">
+<div class="introduction" id="introduction-4">
+<p id="p-217">Consider the system of four linear equations in four unknowns:</p>
+<div class="displaymath">
+\begin{gather*}
+a_{1,1}x_1+a_{1,2}x_2+a_{1,3}x_3+a_{1,4}x_4=b_1\\
+a_{2,1}x_1+a_{2,2}x_2+a_{2,3}x_3+a_{2,4}x_4=b_2\\
+a_{3,1}x_1+a_{2,2}x_2+a_{3,3}x_3+a_{3,4}x_4=b_3\\
+a_{4,1}x_1+a_{4,2}x_2+a_{4,3}x_3+a_{4,4}x_4=b_4
+\end{gather*}
+</div>
+<p data-braille="continuation">In each case, suppose that the given matrix is the reduced row echelon form of the augmented matrix. Find all of the solutions. to the original system of linear equations.</p>
+</div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-19"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-218">\(\begin{bmatrix}
+1\amp 0 \amp 0 \amp 0 \amp 1 \\
+0\amp 1 \amp 0 \amp 0 \amp -1 \\
+0\amp 0 \amp 1 \amp 0 \amp 2 \\
+0\amp 0 \amp 0 \amp 1 \amp 3 \\
+\end{bmatrix}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-19" id="solution-19"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-19"><div class="solution solution-like"><p id="p-219">\(x_1=1\text{,}\) \(x_2=-1\text{,}\) \(x_3=2\) and \(x_4=3\) is the unique solution.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-20"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-220">\(\begin{bmatrix}
+1\amp 0 \amp 0 \amp 0 \amp 1 \\
+0\amp 1 \amp 0 \amp 0 \amp -1 \\
+0\amp 0 \amp 1 \amp 3 \amp 2 \\
+0\amp 0 \amp 0 \amp 0 \amp 1 \\
+\end{bmatrix}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-20" id="solution-20"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-20"><div class="solution solution-like"><p id="p-221">The last line satisfies the condition for there to be no solution.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-21"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-222">\(\begin{bmatrix}
+1\amp 0 \amp 0 \amp 1 \amp 1 \\
+0\amp 1 \amp 0 \amp -1 \amp -1 \\
+0\amp 0 \amp 1 \amp 3 \amp 2 \\
+0\amp 0 \amp 0 \amp 0 \amp 0 \\
+\end{bmatrix}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-21" id="solution-21"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-21"><div class="solution solution-like">
+<p id="p-223">\(x_4=t\) since it is a free variable.</p>
+<p id="p-224">From row 1, we have \(x_1=1-t\)</p>
+<p id="p-225">From row 2, we have \(x_2=-1+t\)</p>
+<p id="p-226">From row 3, we have \(x_3=2-3t\)</p>
+<p id="p-227">In other words, \((x_1,x_2,x_3,x_4)=(1-t,-1+t,2-3t,t)\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-22"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-228">\(\begin{bmatrix}
+1\amp -2 \amp 0 \amp 3 \amp -1 \\
+0\amp 0 \amp 1 \amp 1 \amp 2 \\
+0\amp 0 \amp 0 \amp 0 \amp 0 \\
+0\amp 0 \amp 0 \amp 0 \amp 0 \\
+\end{bmatrix}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-22" id="solution-22"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-22"><div class="solution solution-like">
+<p id="p-229">\(x_2=t\) and \(x_4=u\) since they are free variables.</p>
+<p id="p-230">From row 1, we have \(x_1=-1+2t-3u\)</p>
+<p id="p-231">From row 2, we have \(x_3=2-u\)</p>
+<p id="p-232">In other words, \((x_1,x_2,x_3,x_4)=(-1+2t-3u,t,2-u,u)\text{.}\)</p>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-3">
+<div class="introduction" id="introduction-5"><p id="p-233">Find <em class="emphasis">all</em> solutions to the following systems of linear equations</p></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-23"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-234">\(\begin{align}
+x+2y-z \amp=2\\
+x+y-z\amp=0\\
+2x-y+z\amp=3
+\end{align}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-23" id="solution-23"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-23"><div class="solution solution-like">
+<p id="p-235">We put the augemented matrix into reduced row echelon form: \(\begin{bmatrix}
+1 \amp 2 \amp -1 \amp 2\\
+1 \amp 1 \amp -1 \amp 0\\
+2 \amp -1 \amp 1 \amp 3\\
+\end{bmatrix}
+\\
+\begin{array}{l}
+R_2\gets R_2 - R_1\\
+R_3\gets R_3-2R_1
+\end{array}
+\\
+\begin{bmatrix}
+1 \amp 2 \amp -1 \amp 2\\
+0 \amp -1 \amp 0 \amp -2\\
+0 \amp -5 \amp 3 \amp -1\\
+\end{bmatrix}
+\\
+\begin{array}{l}
+R_2\gets -R_2\\
+\end{array}
+\\
+\begin{bmatrix}
+1 \amp 2 \amp -1 \amp 2\\
+0 \amp 1 \amp 0 \amp 2\\
+0 \amp -5 \amp 3 \amp -1\\
+\end{bmatrix}
+\\
+R_3\gets R_3-5R_2
+\\
+\begin{bmatrix}
+1 \amp 2 \amp -1 \amp 2\\
+0 \amp 1 \amp 0 \amp 2\\
+0 \amp 0 \amp 3 \amp 9\\
+\end{bmatrix}
+\\
+R_3\gets \frac13 R_3
+\\
+\begin{bmatrix}
+1 \amp 2 \amp -1 \amp 2\\
+0 \amp 1 \amp 0 \amp 2\\
+0 \amp 0 \amp 1 \amp 3\\
+\end{bmatrix} \\
+R_1 \gets R_1-2R_2
+\\
+\begin{bmatrix}
+1 \amp 0 \amp -1 \amp-2\\
+0 \amp 1 \amp 0 \amp 2\\
+0 \amp 0 \amp 1 \amp 3\\
+\end{bmatrix} \\
+R_1 \gets R_1+R_3
+\\
+\begin{bmatrix}
+1 \amp 0 \amp 0 \amp1\\
+0 \amp 1 \amp 0 \amp 2\\
+0 \amp 0 \amp 1 \amp 3\\
+\end{bmatrix} \\\) The first, second and third rows give us, respectively,</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{matrix}
+x=1\\y=2\\z=3
+\end{matrix}
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-24"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<p id="p-236">\(\begin{align*}
+x+2y+z=0\\
+x+y+2z=5\\
+-x+y+z=0
+\end{align*}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-24" id="solution-24"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-24"><div class="solution solution-like"><p id="p-237">\(\begin{bmatrix}
+1 \amp 2 \amp 1 \amp 0\\
+1 \amp 1 \amp 2 \amp 5\\
+-1 \amp 1 \amp 1 \amp 0
+\end{bmatrix}\\
+\rowsub 211\\
+\rowadd 3{}1\\
+\begin{bmatrix}
+1 \amp 2 \amp 1 \amp 0\\
+0 \amp -1 \amp 1 \amp 5\\
+0 \amp 3 \amp 2 \amp 0
+\end{bmatrix}\\
+\rowmul 2{-}\\
+\begin{bmatrix}
+1 \amp 2 \amp 1 \amp 0\\
+0 \amp 1 \amp -1 \amp -5\\
+0 \amp 3 \amp 2 \amp 0
+\end{bmatrix}\\
+\rowsub122\\
+\rowsub332\\
+\begin{bmatrix}
+1 \amp 0 \amp 3 \amp 10\\
+0 \amp 1 \amp -1 \amp -5\\
+0 \amp 0 \amp 5 \amp 15
+\end{bmatrix}\\
+\rowmul3{\frac15}\\
+\begin{bmatrix}
+1 \amp 0 \amp 3 \amp 10\\
+0 \amp 1 \amp -1 \amp -5\\
+0 \amp 0 \amp 1 \amp 3
+\end{bmatrix}\\
+\rowsub 133\\
+\rowadd 3{}2\\
+\begin{bmatrix}
+1 \amp 0 \amp 0 \amp 1\\
+0 \amp 1 \amp 0 \amp -2\\
+0 \amp 0 \amp 1 \amp 3
+\end{bmatrix}\\\) and so the unique solution is \((x,y,z)=(1,-2,3)\text{.}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-25"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<p id="p-238">\(\begin{align}
+x+y-z-w=2\\
+x-y-z+w=4\\
+2x+y-z+w=1
+\end{align}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-25" id="solution-25"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-25"><div class="solution solution-like"><p id="p-239">\(\begin{bmatrix} 
+1 \amp 1 \amp -1 \amp -1 \amp 2\\
+1 \amp -1 \amp -1 \amp 1 \amp 4\\
+2 \amp 1 \amp -1 \amp 1 \amp 1
+\end{bmatrix} \\
+\rowsub 2{}1\\
+\rowsub 321\\
+\begin{bmatrix} 
+1 \amp 1 \amp -1 \amp -1 \amp 2\\
+0 \amp -2 \amp 0 \amp 2 \amp 2\\
+0 \amp -1 \amp 1 \amp 3 \amp -3
+\end{bmatrix} \\
+\rowmul2{-\frac12}\\
+\begin{bmatrix} 
+1 \amp 1 \amp -1 \amp -1 \amp 2\\
+0 \amp 1 \amp 0 \amp -1 \amp -1\\
+0 \amp -1 \amp 1 \amp 3 \amp -3
+\end{bmatrix} \\
+\rowsub1{}2\\
+\rowadd3{}2\\
+\begin{bmatrix} 
+1 \amp 0 \amp -1 \amp 0 \amp 3\\
+0 \amp 1 \amp 0 \amp -1 \amp -1\\
+0 \amp 0 \amp 1 \amp 2 \amp -4
+\end{bmatrix} \\
+\rowadd1{}3\\
+\begin{bmatrix} 
+1 \amp 0 \amp 0 \amp 2 \amp -1\\
+0 \amp 1 \amp 0 \amp -1 \amp -1\\
+0 \amp 0 \amp 1 \amp 2 \amp -4
+\end{bmatrix} \) and so \(w\) is a free variable that can be set equal to \(t\text{.}\) This gives \((x,y,z,w)=(-1-2t, -1+t, -4-2t,t)\text{.}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-26"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<p id="p-240">\(\begin{align*}
+x-y=0\\
+y-z=0\\
+x-z=0\\
+\end{align*}\) Clearly, if \(x=y\) and \(y=z\text{,}\) then we have a solution to this system. Show that every solution is of this form.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-26" id="solution-26"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-26"><div class="solution solution-like"><p id="p-241">We put the augmented matrix in reduced row echelon form: \(\begin{bmatrix}
+1 \amp -1 \amp 0 \amp 0\\
+0 \amp  1 \amp -1 \amp 0\\
+1 \amp  0 \amp -1 \amp 0\\
+\end{bmatrix}\\
+\rowsub3{}1\\
+\begin{bmatrix}
+1 \amp -1 \amp 0 \amp 0\\
+0 \amp  1 \amp -1 \amp 0\\
+0 \amp  1\amp -1 \amp 0\\
+\end{bmatrix}\\
+\rowadd1{}2\\
+\begin{bmatrix}
+1 \amp 0\amp -1 \amp 0\\
+0 \amp  1 \amp -1 \amp 0\\
+0 \amp  1\amp -1 \amp 0\\
+\end{bmatrix}\\
+\rowsub3{}2\\
+\begin{bmatrix}
+1 \amp  0 \amp -1 \amp 0\\
+0 \amp  1 \amp -1 \amp 0\\
+0 \amp  0\amp 0 \amp 0\\
+\end{bmatrix}\) We then have that \(z\) is a free variable that may be set to \(t\text{.}\) All solutions are then of the form \((x,y,z)=(t,t,t)\text{,}\) which implies that \(x=y\) and \(y=z\text{.}\)</p></div></div>
+</div></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="exercise-27"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<p id="p-242">Consider the two sets of linear equations:</p>
+<p id="p-243">\(\begin{array}{rl}
+3x+y-2z=2\\
+-x+3y-z=1
+\end{array}\) and \(\begin{array}{rl}
+x+y-z=1\\
+-3x+y+z=-1
+\end{array}\)</p>
+<p id="p-244">Show that every solution of the first set is a solution of the second set, and vice-versa.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-1" id="hint-1"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1"><div class="hint solution-like"><p id="p-245">Compare the RREF of the corresponding augmented matrices.</p></div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-27" id="solution-27"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-27"><div class="solution solution-like"><p id="p-246">Each system has a RREF of \​begin{bmatrix} 1 \amp 0 \amp -\frac12 \amp \frac12\\ 0 \amp 1 \amp -\frac12 \amp \frac12\\ \end{bmatrix} and so all the solutions for either system consist of \((x,y,z)=(\frac12+\frac12t,\frac12+\frac12t,t)\) where \(t\) is any real number.</p></div></div>
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>
