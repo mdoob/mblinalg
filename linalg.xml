@@ -2755,7 +2755,7 @@
      <sidebyside>
      <image width="90%" source="images/ThreePlanesPoint.png" />
      </sidebyside>
-      <!--
+      
       <image width="100%" xml:id="ThreePlanesPoint">
       <asymptote>
       import graph3;
@@ -2782,7 +2782,6 @@
       axes3("\(x\)","\(y\)","\(z\)",(-2,-2,-2),(3,3,3));
       </asymptote>
       </image>
-      -->
       </example>
       
       <example><title>Three planes intersecting in a single line</title>
@@ -2816,17 +2815,13 @@
       so that <m>(x,y,z)=(2-t,t,-1)</m> is a solution
       for any real number <m>t</m>.
       </p>
-      <!-- 
+
       <image width="70%" xml:id="ThreePlanesLine">
       <asymptote>
       import graph3;
-      
       size(400);
-      
       currentprojection=orthographic(-3,6,1);
       currentlight=White;
-      
-      
       real A=1, B=1, C=-1, D=3;
       real f(pair z) { return (D-A*z.x-B*z.y)/C;} // equation of plane
       draw(surface(f,(-5,-5),(5,5)),lightblue,nolight);
@@ -2838,19 +2833,15 @@
       label("\(x+y+z=1\)",(-2,0,11),grey);
       
       real A=2, B=2, C=0, D=4;
-      path3 g=((-3,5,-6)-/-(3,-1,-6)-/-(3,-1,4)-/-(-3,5,4)-/-cycle);
+      path3 g=((-3,5,-6)--(3,-1,-6)--(3,-1,4)--(-3,5,4)--cycle);
       draw(surface(g),lightgreen,nolight);
       label("\(2x+2y=4\)",(-3,7,-7),green);
       
       
-      draw((-6,8,-1)-/-(8,-6,-1),red+linewidth(1));
+      draw((-6,8,-1)--(8,-6,-1),red+linewidth(1));
       axes3("\(x\)","\(y\)","\(z\)",(-2,-2,-2),(8,8,8));
       </asymptote>
       </image>
-     -->
-     <sidebyside>
-     <image width="70%" source="images/ThreePlanesLine.png" />
-     </sidebyside>
       </example>
       
       <example><title>Three intersecting planes with no solutions</title>
@@ -2881,7 +2872,7 @@
       </me>
       The last row indicates that there is no solution.
       </p>
-      <!-- png image inserted until 3d problem resolved
+
       <image width="100%" xml:id="ThreePlanesNoSolution">
       <asymptote>
       import graph3;
@@ -2907,10 +2898,6 @@
       axes3("\(x\)","\(y\)","\(z\)",(-2,-2,-2),(3,3,3));
       </asymptote>
       </image>
-      -->
-     <sidebyside>
-     <image width="90%" source="images/ThreePlanesNoSolution.png" />
-     </sidebyside>
       </example>
       
       <example><title>Three nonintersecting planes with no solutions</title>
@@ -2942,8 +2929,7 @@
       </me>
       The middle row indicates that there is no solution.
       </p>
-      <!-- png image inserted until 3d problem resolved
-      -->
+
       <image width="100%" xml:id="ThreeParallelPlanes">
       <asymptote>
         import graph3;
@@ -2969,9 +2955,6 @@
         axes3("\(x\)","\(y\)","\(z\)",(-1.5,-2,-2),(3,3.2,3.5));
       </asymptote>
       </image>
-     <sidebyside>
-     <image width="80%" source="images/ThreeParallelPlanes.html" />
-     </sidebyside>
       </example>
 
       </section>

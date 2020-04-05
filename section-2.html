@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-04T19:24:27-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Equations with multiple solutions or no solutions</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_brown_gold.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
+\def\C{{\mathbb C}}
+\def\Q{{\mathbb Q}}
+\def\Z{{\mathbb Z}}
+\def\N{{\mathbb N}}
+\def\vec#1{\mathbf #1}
+\newcommand{\adj}{\mathop{\textrm{adj}}}
+\newcommand{\proj}{\mathop{\textrm{proj}}}
+\newcommand{\Span}{\mathop{\textrm{span}}} 
+\newcommand{\rowint}[2]{R_{#1} \leftrightarrow R_{#2}}
+\newcommand{\rowmul}[2]{R_{#1}\gets {#2}R_{#1}}
+\newcommand{\rowadd}[3]{R_{#1}\gets R_{#1}+#2R_{#3}}
+\newcommand{\rowsub}[3]{R_{#1}\gets R_{#1}-#2R_{#3}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.umanitoba.ca" target="_blank"><img src="images/umlogo.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="linalg.html"><span class="title">Manitoba linear algebra</span></a></h1>
+<p class="byline">Michael Doob (editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-1.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-1.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-3.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-1.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-1.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-3.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link"><a href="chapter-1.html" data-scroll="chapter-1"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="section-2"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.2</span> <span class="title">Equations with multiple solutions or no solutions</span>
+</h2>
+<section class="subsection" id="subsection-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.2.1</span> <span class="title">Equations with no solutions</span>
+</h3>
+<p id="p-9">Suppose we want to find all solutions to the equations</p>
+<div class="displaymath">
+\begin{align*}
+2x+4y \amp = 5\\
+-x-2y \amp = 1
+\end{align*}
+</div>
+<p data-braille="continuation">Using the <em class="emphasis">standard</em> approach we multiply the second equation by \(2\) and add it to the first one to eliminate the variable \(x\text{.}\)  This leaves us with the equation 0=7 This is certainly an equality that is not valid. What happened? We can see by multiplying the second equation by \(-2\text{.}\) We then have</p>
+<div class="displaymath">
+\begin{align*}
+2x+4y \amp = 5\\
+2x+4y \amp = -2
+\end{align*}
+</div>
+<p id="p-10">Whatever \(x\) and \(y\) are, the value of \(2x+4y\) can't be \(5\) and \(-2\) at the same time. So there are no solutions. What happens if we try to graph these two equations? Here is what we get:</p>
+<figure class="figure figure-like" id="figure-2"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><object data="images/ParallelLinesInPlane.html" id="ParallelLinesInPlane" width="420" height="420"><img src="images/ParallelLinesInPlane.svg" style="width: 100%; height: auto;" alt=""></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.2.1<span class="period">.</span></span><span class="space"> </span>Two Parallel lines in the Plane</figcaption></figure><p id="p-11">The geometry of the situation is now clear: the two lines are parallel and so there is no point on both lines (indeed, both lines have slope \(-\tfrac12\)). When we have equations with no common solution, they are called <em class="emphasis">inconsistent</em>.</p></section><section class="subsection" id="subsection-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.2.2</span> <span class="title">Equations with more than one solution</span>
+</h3>
+<p id="p-12">Now let's alter the situation of the previous section slightly. We consider the pair of equations</p>
+<div class="displaymath">
+\begin{align*}
+2x+4y \amp = -2\\
+-x-2y \amp = 1
+\end{align*}
+</div>
+<p data-braille="continuation">We apply the <em class="emphasis">standard</em> method again: multiply the second equation by \(2\) and add it to the first. The result is</p>
+<div class="displaymath">
+\begin{equation*}
+0=0
+\end{equation*}
+</div>
+<p data-braille="continuation">This is certainly a valid, although not very interesting, equation. In fact, if we multiply both sides of the second equation by \(-2\) the system becomes</p>
+<div class="displaymath">
+\begin{align*}
+2x+4y \amp = -2\\
+2x+4y \amp = -2
+\end{align*}
+</div>
+<p data-braille="continuation">This means that any solution of the first equation is also a solution of the second one. Geometrically, if we plot the graph of the two equations, the same line results for each one. How do we find all solutions in this case? Let us assign a value to \(y\text{.}\) Let's call it \(t\) so \(y=t\text{.}\) Then, using either equation, we have \(x=-2t-1\text{.}\) This means that for <em class="emphasis">any</em> value of \(t\) we know that \((x,y)=(-2t-1,t)\) is a solution to both equations. So, in fact we have an infinite number of solutions.</p>
+<article class="theorem theorem-like" id="TwoEquationaTwoUnknowns"><a data-knowl="" class="id-ref original" data-refid="hk-TwoEquationaTwoUnknowns"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Two equations in two unknowns.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-TwoEquationaTwoUnknowns">
+<article class="theorem theorem-like"><p id="p-13">Two equations in two unknowns may have:</p>
+<ul class="disc">
+<li id="li-1"><p id="p-14">No solutions</p></li>
+<li id="li-2"><p id="p-15">A single (unique)  solutions</p></li>
+<li id="li-3"><p id="p-16">An infinite number of solutions</p></li>
+</ul></article><article class="hiddenproof" id="proof-1"><a data-knowl="" class="id-ref original" data-refid="hk-proof-1"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><p id="p-17">The corresponding lines in the plane are parallel, intersect at a single point, or are identical.</p></article></div>
+</div></section></section></div></main>
+</div>
+</body>
+</html>
