@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-04T19:24:27-05:00    *-->
+<!--*    on 2020-04-18T16:41:33-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -59,10 +59,13 @@ MathJax.Hub.Config({
 \def\Q{{\mathbb Q}}
 \def\Z{{\mathbb Z}}
 \def\N{{\mathbb N}}
+
 \def\vec#1{\mathbf #1}
+
 \newcommand{\adj}{\mathop{\textrm{adj}}}
 \newcommand{\proj}{\mathop{\textrm{proj}}}
 \newcommand{\Span}{\mathop{\textrm{span}}} 
+
 \newcommand{\rowint}[2]{R_{#1} \leftrightarrow R_{#2}}
 \newcommand{\rowmul}[2]{R_{#1}\gets {#2}R_{#1}}
 \newcommand{\rowadd}[3]{R_{#1}\gets R_{#1}+#2R_{#3}}
@@ -97,28 +100,28 @@ MathJax.Hub.Config({
 <section class="subsection" id="subsection-5"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.3.1</span> <span class="title">The Definition of a Linear Equation</span>
 </h3>
-<p id="p-18">The equations given above are linear equations in two variables. A <em class="emphasis">linear equation in \(n\) variables</em> \(x_1, x_2, \dots, x_n\) is an equation of the form \</p>
+<p id="p-20">The equations given in the in  <a href="section-1.html#TwoEquationsTwoUnknownsSample" class="internal" title="Subsection 1.1.1: The standard method for finding the solution">Subsection 1.1.1</a> are examples of <em class="emphasis">linear equations</em>  in two variables. A <em class="emphasis">linear equation in \(n\) variables</em> \(x_1, x_2, \dots, x_n\) is an equation of the form</p>
 <div class="displaymath">
 \begin{equation*}
 a_1x_1+ a_2x_2+ \cdots +a_n x_n= b
 \end{equation*}
 </div>
 <p data-braille="continuation">where \(a_1,\dots,a_n\) and \(b\) are constants. The numbers \(a_1,a_2,\dots,a_n\) are called the <em class="emphasis">coefficients</em> of the equation, that is, \(a_1\) is the coefficient of \(x_1\text{,}\) \(a_2\) is the coefficient of \(x_2\text{,}\) etc. This is also called a <em class="emphasis">linear equation in \(n\) unknowns</em>.</p>
-<p id="p-19">The following are examples of linear equations:</p>
+<p id="p-21">The following are examples of linear equations:</p>
 <ul class="disc">
-<li id="li-4"><p id="p-20">\(2x=4\)   (one variable)</p></li>
-<li id="li-5"><p id="p-21">\(4x-2y=7\)   (two variables)</p></li>
-<li id="li-6"><p id="p-22">\(\tfrac12 x -\tfrac35 y +\pi z=0\)   (three variables)</p></li>
-<li id="li-7"><p id="p-23">\(x_1-3x_2+4x_3-7x_4=100\)   (four variables)</p></li>
-<li id="li-8"><p id="p-24">\(3x_1+15x_5=-10\) (five variables: the ones with a coefficient of zero are not written)</p></li>
+<li id="li-4"><p id="p-22">\(2x=4\)   (one variable)</p></li>
+<li id="li-5"><p id="p-23">\(4x-2y=7\)   (two variables)</p></li>
+<li id="li-6"><p id="p-24">\(\tfrac12 x -\tfrac35 y +\pi z=0\)   (three variables)</p></li>
+<li id="li-7"><p id="p-25">\(x_1-3x_2+4x_3-7x_4=100\)   (four variables: a coefficient of \(1\) is usually omitted)</p></li>
+<li id="li-8"><p id="p-26">\(3x_1+15x_5=-10\) (five variables: the ones with a coefficient of zero are not written)</p></li>
 </ul></section><section class="subsection" id="subsection-6"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.3.2</span> <span class="title">The Definition of a System of Linear Equations</span>
 </h3>
-<p id="p-25">A <em class="emphasis">system of \(m\) linear equations in \(n\) unknowns</em> is a list of \(m\) linear equations, each of which has the same set of \(n\) unknowns. They are usually presented with the purpose of finding all of their simultaneous solutions.</p>
-<p id="p-26">The original example given above is a system of 2 equations in 2 unknowns. Here are some more examples:</p>
+<p id="p-27">A <em class="emphasis">system of \(m\) linear equations in \(n\) unknowns</em> is a list of \(m\) linear equations, each of which has the same set of \(n\) unknowns. They are usually presented with the purpose of finding all of their simultaneous solutions.</p>
+<p id="p-28">The original example given in <a href="section-1.html#TwoEquationsTwoUnknownsSample" class="internal" title="Subsection 1.1.1: The standard method for finding the solution">Subsection 1.1.1</a> is a system of 2 equations in 2 unknowns. Here are some more examples:</p>
 <ul class="disc">
 <li id="li-9">
-<p id="p-27">A system of 2 equations in 3 unknowns:</p>
+<p id="p-29">A system of 2 equations in 3 unknowns:</p>
 <div class="displaymath">
 \begin{align*}
 x-y+z \amp = 1\\
@@ -127,7 +130,7 @@ x-y+z \amp = 1\\
 </div>
 </li>
 <li id="li-10">
-<p id="p-28">A system of 3 equations in 2 unknowns:</p>
+<p id="p-30">A system of 3 equations in 2 unknowns:</p>
 <div class="displaymath">
 \begin{align*}
 u+v \amp = 1\\
@@ -137,31 +140,31 @@ u+2v \amp =3
 </div>
 </li>
 <li id="li-11">
-<p id="p-29">A system of 4 equations in 5 unknowns:</p>
+<p id="p-31">A system of 4 equations in 5 unknowns:</p>
 <div class="displaymath">
 \begin{alignat*}{5}
-x_1 \amp + \amp x_2 \amp \amp \amp \amp \amp \amp \amp =1\\
-\amp \amp x_2 \amp +\amp x_3 \amp \amp \amp \amp \amp =2\\
-\amp \amp \amp \amp x_3 \amp +\amp x_4 \amp \amp \amp = 3\\
-\amp \amp \amp \amp \amp \amp x_4 \amp +\amp x_5 \amp =4
+x_1 \amp \ +\  \amp x_2 \amp \amp \amp \amp \amp \amp \amp \ =\ 1\\
+\amp \amp x_2 \amp \ +\ \amp x_3 \amp \amp \amp \amp \amp  \ =\ 2\\
+\amp \amp \amp \amp x_3 \amp \ +\ \amp x_4 \amp \amp \amp  \ =\ 3\\
+\amp \amp \amp \amp \amp \amp x_4 \amp \ +\ \amp x_5 \amp  \ =\ 4
 \end{alignat*}
 </div>
 </li>
 <li id="li-12">
-<p id="p-30">A system of \(m\) equations in \(n\) unknowns \(x_1, x_2, x_3\dots,x_n\text{:}\)</p>
+<p id="p-32">A system of \(m\) equations in \(n\) unknowns \(x_1, x_2, x_3\dots,x_n\text{:}\)</p>
 <div class="displaymath">
-\begin{align*}
-a_{1,1}x_1 + a_{1,2}x_2 + \cdots + a_{1,n}x_n  \amp = b_1\\
-a_{2,1}x_1 + a_{2,2}x_2 + \cdots + a_{2,n}x_n  \amp = b_2\\
-\amp \vdots\\
-a_{m,1}x_1 + a_{m,2}x_2 + \cdots + a_{m,n}x_n  \amp = b_m
-\end{align*}
+\begin{gather*}
+a_{1,1}x_1 + a_{1,2}x_2 + \cdots + a_{1,n}x_n  = b_1\\
+a_{2,1}x_1 + a_{2,2}x_2 + \cdots + a_{2,n}x_n  = b_2\\
+\vdots\\
+a_{m,1}x_1 + a_{m,2}x_2 + \cdots + a_{m,n}x_n  = b_m
+\end{gather*}
 </div>
 </li>
 </ul></section><section class="subsection" id="subsection-7"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.3.3</span> <span class="title">The Coefficient and Augmented Matrix of a System of Linear Equations</span>
 </h3>
-<p id="p-31">A <em class="emphasis">matrix</em> is a rectangular array of numbers (the plural is <em class="emphasis">matrices</em>). Here is a matrix:</p>
+<p id="p-33">A <em class="emphasis">matrix</em> is a rectangular array of numbers (the plural is <em class="emphasis">matrices</em>). Here is a matrix:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -173,33 +176,33 @@ a_{m,1}x_1 + a_{m,2}x_2 + \cdots + a_{m,n}x_n  \amp = b_m
 </div>
 <p data-braille="continuation">This matrix has 3 rows:</p>
 <ul class="disc">
-<li id="li-13"><p id="p-32">\(\begin{bmatrix}
+<li id="li-13">\(\begin{bmatrix}
 1 \amp  2 \amp  3 \amp  4
-\end{bmatrix}\) is row 1,</p></li>
-<li id="li-14"><p id="p-33">\(\begin{bmatrix}
+\end{bmatrix}\) is row 1,</li>
+<li id="li-14">\(\begin{bmatrix}
 5 \amp  6 \amp  7 \amp  8
-\end{bmatrix}\) is row 2 and</p></li>
-<li id="li-15"><p id="p-34">\(\begin{bmatrix}
+\end{bmatrix}\) is row 2 and</li>
+<li id="li-15">\(\begin{bmatrix}
 9 \amp  10\amp 11\amp 12
-\end{bmatrix}\) is row 3.</p></li>
+\end{bmatrix}\) is row 3.</li>
 </ul>
-<p id="p-35">Similarly, the matrix has 4 columns:</p>
+<p id="p-34">Similarly, the matrix has 4 columns:</p>
 <ul class="disc">
-<li id="li-16"><p id="p-36">\(\begin{bmatrix}
+<li id="li-16">\(\begin{bmatrix}
 1\\ 5\\ 9 
-\end{bmatrix}\) is  column \(1\)</p></li>
-<li id="li-17"><p id="p-37">\(\begin{bmatrix}
+\end{bmatrix}\) is  column \(1\)</li>
+<li id="li-17">\(\begin{bmatrix}
 2\\ 6\\ 10
-\end{bmatrix}\) is  column \(2\)</p></li>
-<li id="li-18"><p id="p-38">\(\begin{bmatrix}
+\end{bmatrix}\) is  column \(2\)</li>
+<li id="li-18">\(\begin{bmatrix}
 3 \\ 7\\ 11
-\end{bmatrix}\) is  column \(3\text{,}\) and</p></li>
-<li id="li-19"><p id="p-39">\(\begin{bmatrix}
+\end{bmatrix}\) is  column \(3\text{,}\) and</li>
+<li id="li-19">\(\begin{bmatrix}
 4\\ 8\\ 12
-\end{bmatrix}\) is  column \(4\)</p></li>
+\end{bmatrix}\) is  column \(4\)</li>
 </ul>
-<p id="p-40">We call a matrix with 3 rows and 4 columns a \(3\times4\) matrix.</p>
-<p id="p-41">More generally, a matrix with \(m\) rows and \(n\) columns is called an \(m\times n\) <em class="emphasis">matrix</em>. An \(m\times n\) matrix \(A\) has the form</p>
+<p id="p-35">We call a matrix with 3 rows and 4 columns a \(3\times4\) matrix.</p>
+<p id="p-36">More generally, a matrix with \(m\) rows and \(n\) columns is called an \(m\times n\) <em class="emphasis">matrix</em>. An \(m\times n\) matrix \(A\) has the form</p>
 <div class="displaymath">
 \begin{equation*}
 A=\begin{bmatrix}
@@ -213,7 +216,8 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}
 <p data-braille="continuation">This notation means that \(a_{i,j}\) is the number in both row \(i\) and column \(j\text{.}\) We will call the rows \(R_1, R_2,\ldots,R_m\) and the columns \(C_1, C_2, \ldots,C_n\text{.}\) In other words,</p>
 <div class="displaymath">
 \begin{equation*}
-R_i =\begin{bmatrix} a_{i,1} \amp  a_{i,2} \amp  a_{i,3}, \amp \cdots \amp  a_{i,n}\end{bmatrix},
+R_i =\begin{bmatrix} a_{i,1} \amp  a_{i,2} \amp  a_{i,3}, 
+\amp \cdots \amp  a_{i,n}\end{bmatrix},
 \end{equation*}
 </div>
 <p data-braille="continuation">and</p>
@@ -268,10 +272,10 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_m
 \end{array}\right]
 \end{equation*}
 </div>
-<p id="p-42">Here are some examples of coefficient matrices and augmented matrices:</p>
+<p id="p-37">Here are some examples of coefficient matrices and augmented matrices:</p>
 <ul class="disc">
 <li id="li-20">
-<p id="p-43">A system of 2 equations in 3 unknowns:</p>
+<p id="p-38">A system of 2 equations in 3 unknowns:</p>
 <div class="displaymath">
 \begin{align*}
 x-y+z \amp = 1\\
@@ -298,7 +302,7 @@ x-y+z \amp = 1\\
 </div>
 </li>
 <li id="li-21">
-<p id="p-44">A system of 3 equations in 2 unknowns:</p>
+<p id="p-39">A system of 3 equations in 2 unknowns:</p>
 <div class="displaymath">
 \begin{align*}
 u+v  \amp = 1\\
@@ -306,28 +310,28 @@ u+v  \amp = 1\\
 u+2v \amp =3
 \end{align*}
 </div>
-<p id="p-45">Coefficient matrix: \(\begin{bmatrix}
+<p id="p-40">Coefficient matrix: \(\begin{bmatrix}
 1\amp 1\\
 2\amp 1\\
 1\amp 2
 \end{bmatrix}\)</p>
-<p id="p-46">Augmented matrix: \(\left[\begin{array}{cc|c}
+<p id="p-41">Augmented matrix: \(\left[\begin{array}{cc|c}
 1\amp 1\amp 1\\
 2\amp 1\amp 3\\
 1\amp 2\amp 3
 \end{array}\right]\)</p>
 </li>
 <li id="li-22">
-<p id="p-47">A system of 4 equations in 5 unknowns</p>
-<div class="displaymath" id="p-48">
-\begin{align*}
-x_1\amp + \amp x_2 \amp \amp \amp \amp \amp \amp \amp =1\\
-\amp \amp x_2 \amp +\amp x_3 \amp \amp \amp \amp \amp =2\\
-\amp \amp \amp \amp x_3 \amp +\amp x_4 \amp \amp \amp = 3\\
-\amp \amp \amp \amp \amp \amp x_4 \amp +\amp x_5 \amp =4
-\end{align*}
+<p id="p-42">A system of 4 equations in 5 unknowns</p>
+<div class="displaymath">
+\begin{alignat*}{5}
+x_1 \amp \ +\  \amp x_2 \amp \amp \amp \amp \amp \amp \amp \ =\ 1\\
+\amp \amp x_2 \amp \ +\ \amp x_3 \amp \amp \amp \amp \amp  \ =\ 2\\
+\amp \amp \amp \amp x_3 \amp \ +\ \amp x_4 \amp \amp \amp  \ =\ 3\\
+\amp \amp \amp \amp \amp \amp x_4 \amp \ +\ \amp x_5 \amp  \ =\ 4
+\end{alignat*}
 </div>
-<p id="p-49">Coefficient matrix: \(\begin{bmatrix}
+<p id="p-43">Coefficient matrix: \(\begin{bmatrix}
 \begin{array}{rrrrr}
 1\amp 1\amp 0\amp 0\amp 0\\
 0\amp 1\amp 1\amp 0\amp 0\\
@@ -335,40 +339,38 @@ x_1\amp + \amp x_2 \amp \amp \amp \amp \amp \amp \amp =1\\
 0\amp 0\amp 0\amp 1\amp 1
 \end{array}
 \end{bmatrix}\)</p>
-<p id="p-50">Augmented matrix: \(\left[\begin{array}{ccccc|c}
+<p id="p-44">Augmented matrix: \(\left[\begin{array}{ccccc|c}
 1\amp 1\amp 0\amp 0\amp 0\amp 1\\
 0\amp 1\amp 1\amp 0\amp 0\amp 2\\
 0\amp 0\amp 1\amp 1\amp 0\amp 3\\
 0\amp 0\amp 0\amp 1\amp 1\amp 4
 \end{array}\right]\)</p>
 </li>
-</ul></section><section class="subsection" id="subsection-8"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.3.4</span> <span class="title">Exercises</span>
-</h3>
-<article class="exercise exercise-like" id="exercise-1"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-1"><h6 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-1"><article class="exercise exercise-like"><p id="p-51">Which of the following equations are linear?</p>
-<ol class="decimal">
-<li id="li-23"><p id="p-52">\(x+y-z^2=0\)</p></li>
-<li id="li-24"><p id="p-53">\(2x+yz=1\)</p></li>
-<li id="li-25"><p id="p-54">\(z=3\)</p></li>
-<li id="li-26"><p id="p-55">\(\pi^2 x-\sqrt[3]{3}y=8\sqrt{5}\)</p></li>
-<li id="li-27"><p id="p-56">\(3x-4y=\frac73 z-5+t\)</p></li>
-<li id="li-28"><p id="p-57">\(\cos{x}=3y+2z\)</p></li>
+</ul>
+<section class="exercises" id="exercises-1"><h4 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">1.3.3.1</span> <span class="title">Exercises</span>
+</h4>
+<article class="exercise exercise-like" id="exercise-2"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-45">Which of the following equations are linear?</p>
+<ol class="lower-alpha">
+<li id="li-23"><p id="p-46">\(x+y-z^2=0\)</p></li>
+<li id="li-24"><p id="p-47">\(2x+yz=1\)</p></li>
+<li id="li-25"><p id="p-48">\(z=3\)</p></li>
+<li id="li-26"><p id="p-49">\(\pi^2 x-\sqrt[3]{3}y=8\sqrt{5}\)</p></li>
+<li id="li-27"><p id="p-50">\(3x-4y=\frac73 z-5+t\)</p></li>
+<li id="li-28"><p id="p-51">\(\cos{x}=3y+2z\)</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref original" data-refid="hk-solution-1" id="solution-1"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like"><ol id="p-58" class="decimal">
-<li id="li-29"><p id="p-59">Not linear because of \(z^2\)</p></li>
-<li id="li-30"><p id="p-60">Not linear because of \(yz\)</p></li>
-<li id="li-31"><p id="p-61">Linear</p></li>
-<li id="li-32"><p id="p-62">Linear (the exponents involve the constants, but not the variables)</p></li>
-<li id="li-33"><p id="p-63">Linear (Tricky because variables are on both sides of the equal sign. It is the same as \(3x-4y-\frac73 z-t =-5 \text{.}\))</p></li>
-<li id="li-34"><p id="p-64">Not linear because of the \(\cos\) function</p></li>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like"><ol id="p-52" class="lower-alpha">
+<li id="li-29"><p id="p-53">Not linear because of \(z^2\)</p></li>
+<li id="li-30"><p id="p-54">Not linear because of \(yz\)</p></li>
+<li id="li-31"><p id="p-55">Linear</p></li>
+<li id="li-32"><p id="p-56">Linear (the exponents involve the constants, but not the variables)</p></li>
+<li id="li-33"><p id="p-57">Linear (Tricky because variables are on both sides of the equal sign. It is the same as \(3x-4y-\frac73 z-t =-5 \text{.}\))</p></li>
+<li id="li-34"><p id="p-58">Not linear because of the \(\cos\) function</p></li>
 </ol></div></div>
-</div></article></div>
-<article class="exercise exercise-like" id="exercise-2"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-2"><h6 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-2"><article class="exercise exercise-like"><p id="p-65">Consider the following system of linear equations:</p>
+</div></article><article class="exercise exercise-like" id="exercise-3"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-59">Consider the following system of linear equations:</p>
 <div class="displaymath">
 \begin{equation*}
 2x-4y+z=-1\\
@@ -377,14 +379,14 @@ x_1\amp + \amp x_2 \amp \amp \amp \amp \amp \amp \amp =1\\
 </div>
 <p data-braille="continuation">Which of the following are solutions to this system</p>
 <ul class="disc">
-<li id="li-35"><p id="p-66">\((x,y,z)=(2,1,-1) \)</p></li>
-<li id="li-36"><p id="p-67">\((x,y,z)=(1,1,1) \)</p></li>
-<li id="li-37"><p id="p-68">\((x,y,z)=(0,0,1) \)</p></li>
+<li id="li-35"><p id="p-60">\((x,y,z)=(2,1,-1) \)</p></li>
+<li id="li-36"><p id="p-61">\((x,y,z)=(1,1,1) \)</p></li>
+<li id="li-37"><p id="p-62">\((x,y,z)=(0,0,1) \)</p></li>
 </ul>
 <div class="solutions">
-<a data-knowl="" class="id-ref original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like"><ul id="p-69" class="disc">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-3" id="solution-3"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-3"><div class="solution solution-like"><ul id="p-63" class="disc">
 <li id="li-38">
-<p id="p-70">Substitute \((x,y,z)=(2,1,-1) \) into the equations:</p>
+<p id="p-64">Substitute \((x,y,z)=(2,1,-1) \) into the equations:</p>
 <div class="displaymath">
 \begin{equation*}
 2x-4y+z=4-4-1=-1\\
@@ -394,7 +396,7 @@ x_1\amp + \amp x_2 \amp \amp \amp \amp \amp \amp \amp =1\\
 <p data-braille="continuation">and so \((2,1,-1)\) is <em class="emphasis">not</em> a solution.</p>
 </li>
 <li id="li-39">
-<p id="p-71">Substitute \((x,y,z)=(1,1,1) \) into the equations:</p>
+<p id="p-65">Substitute \((x,y,z)=(1,1,1) \) into the equations:</p>
 <div class="displaymath">
 \begin{equation*}
 2x-4y+z=2-4+1=-1\\
@@ -404,7 +406,7 @@ x_1\amp + \amp x_2 \amp \amp \amp \amp \amp \amp \amp =1\\
 <p data-braille="continuation">and so \((1,1,1)\) <em class="emphasis">is</em> a solution.</p>
 </li>
 <li id="li-40">
-<p id="p-72">Substitute \((x,y,z)=(0,0,1) \) into the equations:</p>
+<p id="p-66">Substitute \((x,y,z)=(0,0,1) \) into the equations:</p>
 <div class="displaymath">
 \begin{equation*}
 2x-4y+z=0+0+1\not=-1\\
@@ -414,13 +416,11 @@ x_1\amp + \amp x_2 \amp \amp \amp \amp \amp \amp \amp =1\\
 <p data-braille="continuation">and so \((0,0,1)\) is <em class="emphasis">not</em> a solution.</p>
 </li>
 </ul></div></div>
-</div></article></div>
-<article class="exercise exercise-like" id="exercise-3"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-3"><h6 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-3"><article class="exercise exercise-like"><p id="p-73">Give a system of two equations in two unknowns that has \((1,2)\) as its unique solution.</p>
+</div></article><article class="exercise exercise-like" id="exercise-4"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-67">Give a system of two equations in two unknowns that has \((1,2)\) as its unique solution.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref original" data-refid="hk-solution-3" id="solution-3"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-3"><div class="solution solution-like">
-<p id="p-74">There are many solutions corresponding to two lines intersecting at \((1,2)\text{.}\) Surely the easiest is</p>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-4" id="solution-4"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like">
+<p id="p-68">There are many solutions corresponding to two lines intersecting at \((1,2)\text{.}\) Surely the easiest is</p>
 <div class="displaymath">
 \begin{align*}
 x\amp=1\\
@@ -428,10 +428,8 @@ y\amp=2
 \end{align*}
 </div>
 </div></div>
-</div></article></div>
-<article class="exercise exercise-like" id="exercise-4"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-4"><h6 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.3.4</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-4"><article class="exercise exercise-like"><p id="p-75">Give the coefficient matrix and the augmented matrix this system of linear equations:</p>
+</div></article><article class="exercise exercise-like" id="exercise-5"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-69">Give the coefficient matrix and the augmented matrix this system of linear equations:</p>
 <div class="displaymath">
 \begin{align*}
 x+y \amp= 2 \\
@@ -439,15 +437,13 @@ x-y \amp= 0
 \end{align*}
 </div>
 <div class="solutions">
-<a data-knowl="" class="id-ref original" data-refid="hk-solution-4" id="solution-4"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like"><p id="p-76">\(\begin{bmatrix}
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-5" id="solution-5"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like"><p id="p-70">\(\begin{bmatrix}
 1\amp1\\1\amp-1
 \end{bmatrix}\) and \(\left[\begin{array}{cc|c}
 1 \amp 1 \amp 2 \\  1 \amp -1 \amp 0
 \end{array}\right]\)</p></div></div>
-</div></article></div>
-<article class="exercise exercise-like" id="exercise-5"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-5"><h6 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.3.5</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-5"><article class="exercise exercise-like"><p id="p-77">Give the coefficient matrix and the augmented matrix this system of linear equations:</p>
+</div></article><article class="exercise exercise-like" id="exercise-6"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-71">Give the coefficient matrix and the augmented matrix this system of linear equations:</p>
 <div class="displaymath">
 \begin{align*}
 x_1+x_2-x_3+x_5\amp= 4 \\
@@ -455,17 +451,15 @@ x_1+x_2-x_3+x_5\amp= 4 \\
 \end{align*}
 </div>
 <div class="solutions">
-<a data-knowl="" class="id-ref original" data-refid="hk-solution-5" id="solution-5"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like"><p id="p-78">\(\begin{bmatrix}
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like"><p id="p-72">\(\begin{bmatrix}
 1 \amp 1 \amp -1 \amp 0 \amp 1 \\
 2\amp-3 \amp 0 \amp 1 \amp 0 
 \end{bmatrix}\) and \(\left[\begin{array}{ccccc|c}
 1 \amp 1 \amp -1 \amp 0 \amp 1 \amp 4\\
 2\amp-3 \amp 0 \amp 1 \amp 0 \amp7
 \end{array}\right]\)</p></div></div>
-</div></article></div>
-<article class="exercise exercise-like" id="exercise-6"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-6"><h6 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.3.6</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-6"><article class="exercise exercise-like"><p id="p-79">Give the coefficient matrix and the augmented matrix this system of linear equations:</p>
+</div></article><article class="exercise exercise-like" id="exercise-7"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-73">Give the coefficient matrix and the augmented matrix this system of linear equations:</p>
 <div class="displaymath">
 \begin{align*}
 x+y-z \amp=1\\
@@ -476,7 +470,7 @@ x+y+z\amp=5
 \end{align*}
 </div>
 <div class="solutions">
-<a data-knowl="" class="id-ref original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like"><p id="p-80">\(\begin{bmatrix}
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-7" id="solution-7"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-7"><div class="solution solution-like"><p id="p-74">\(\begin{bmatrix}
 1 \amp 1 \amp -1 \\
 3 \amp 1\amp 0 \\
 0 \amp 1 \amp 1\\
@@ -489,10 +483,8 @@ x+y+z\amp=5
 1 \amp 0 \amp 1 \amp 4\\
 1 \amp 1 \amp 1\amp 5
 \end{array}\right]\)</p></div></div>
-</div></article></div>
-<article class="exercise exercise-like" id="exercise-7"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-7"><h6 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.3.7</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-7"><article class="exercise exercise-like"><p id="p-81">Give the system of equations whose augmented matrix is</p>
+</div></article><article class="exercise exercise-like" id="exercise-8"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-75">Give the system of equations whose augmented matrix is</p>
 <div class="displaymath">
 \begin{equation*}
 \left[\begin{array}{cc|c}
@@ -504,7 +496,7 @@ x+y+z\amp=5
 \end{equation*}
 </div>
 <div class="solutions">
-<a data-knowl="" class="id-ref original" data-refid="hk-solution-7" id="solution-7"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-7"><div class="solution solution-like"><div class="displaymath" id="p-82">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-8" id="solution-8"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-8"><div class="solution solution-like"><div class="displaymath" id="p-76">
 \begin{align*}
 x+4y\amp= 1\\
 3x-2y\amp=0\\
@@ -512,10 +504,8 @@ y\amp=1\\
 -x+y\amp=3
 \end{align*}
 </div></div></div>
-</div></article></div>
-<article class="exercise exercise-like" id="exercise-8"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-8"><h6 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.3.8</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-8"><article class="exercise exercise-like"><p id="p-83">There is a special matrix \(I_n\) called the identity matrix. It has \(n\) rows and \(n\) columns. The entries \(a_{i,j}\) of the matrix satisfy</p>
+</div></article><article class="exercise exercise-like" id="exercise-9"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-77">There is a special matrix \(I_n\) called the identity matrix. It has \(n\) rows and \(n\) columns. The entries \(a_{i,j}\) of the matrix satisfy</p>
 <div class="displaymath">
 \begin{equation*}
 a_{i,j}=
@@ -525,10 +515,10 @@ a_{i,j}=
 \end{cases}
 \end{equation*}
 </div>
-<ol class="decimal">
-<li id="li-41"><p id="p-84">Show the the matrix \(I_n\) has the value \(1\) along the (main) diagonal going from the upper left corner to the lower right corner of the matrix, and has the value \(0\) elsewhere.</p></li>
+<ol class="lower-alpha">
+<li id="li-41"><p id="p-78">Show the the matrix \(I_n\) has the value \(1\) along the (main) diagonal going from the upper left corner to the lower right corner of the matrix, and has the value \(0\) elsewhere.</p></li>
 <li id="li-42">
-<p id="p-85">Suppose that a system of linear equations has an augmented matrix of the form</p>
+<p id="p-79">Suppose that a system of linear equations has an augmented matrix of the form</p>
 <div class="displaymath">
 \begin{equation*}
 \left[ I_n \mid B \right]
@@ -546,9 +536,9 @@ b_1\\b_2\\ \vdots\\b_n
 </li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref original" data-refid="hk-solution-8" id="solution-8"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-8"><div class="solution solution-like"><ol id="p-86" class="decimal">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-9" id="solution-9"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-9"><div class="solution solution-like"><ol id="p-80" class="lower-alpha">
 <li id="li-43">
-<p id="p-87">When \(i=j\text{,}\) the row number and column number are identical, and so the entry \(a_{i.j}\) is on the diagonal. This implies that</p>
+<p id="p-81">When \(i=j\text{,}\) the row number and column number are identical, and so the entry \(a_{i.j}\) is on the diagonal. This implies that</p>
 <div class="displaymath">
 \begin{equation*}
 a_{i,j}=
@@ -560,7 +550,7 @@ a_{i,j}=
 </div>
 </li>
 <li id="li-44">
-<p id="p-88">The number of unknowns is \(n\text{,}\) the number of columns in the matrix. We may call them \(x_1, x_2,\dots,x_n\text{.}\) The augmented matrix now says that</p>
+<p id="p-82">The number of unknowns is \(n\text{,}\) the number of columns in the matrix. We may call them \(x_1, x_2,\dots,x_n\text{.}\) The augmented matrix now says that</p>
 <div class="displaymath">
 \begin{align*}
 x_1\amp =b_1\\
@@ -571,7 +561,7 @@ x_n\amp =b_n
 </div>
 </li>
 </ol></div></div>
-</div></article></div></section></section></div></main>
+</div></article></section></section></section></div></main>
 </div>
 </body>
 </html>

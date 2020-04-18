@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-04T19:24:28-05:00    *-->
+<!--*    on 2020-04-18T16:41:33-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -59,10 +59,13 @@ MathJax.Hub.Config({
 \def\Q{{\mathbb Q}}
 \def\Z{{\mathbb Z}}
 \def\N{{\mathbb N}}
+
 \def\vec#1{\mathbf #1}
+
 \newcommand{\adj}{\mathop{\textrm{adj}}}
 \newcommand{\proj}{\mathop{\textrm{proj}}}
 \newcommand{\Span}{\mathop{\textrm{span}}} 
+
 \newcommand{\rowint}[2]{R_{#1} \leftrightarrow R_{#2}}
 \newcommand{\rowmul}[2]{R_{#1}\gets {#2}R_{#1}}
 \newcommand{\rowadd}[3]{R_{#1}\gets R_{#1}+#2R_{#3}}
@@ -94,13 +97,13 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-4"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.4</span> <span class="title">Elementary row operations</span>
 </h2>
-<section class="introduction" id="introduction-1"><p id="p-89">Gaussian elimination, which we shall describe in detail presently, is an algorithm (a well-defined procedure for computation that eventually completes) that finds all solutions to any \(m\times n\) system of linear equations. It is defined via certain operations carried out on the augmented matrix. These operations change the matrix (and hence the system of linear equations associated with it), <em class="emphasis">but they leave the set of solutions unchanged</em>. There are three of them, which we now describe.</p></section><section class="subsection" id="subsection-9"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.4.1</span> <span class="title">Interchanging two rows</span>
+<section class="introduction" id="introduction-1"><p id="p-83">Gaussian elimination, which we shall describe in detail presently, is an algorithm (a well-defined procedure for computation that eventually completes) that finds all solutions to any \(m\times n\) system of linear equations. It is defined via certain operations carried out on the augmented matrix. These operations change the matrix (and hence the system of linear equations associated with it), <em class="emphasis">but they leave the set of solutions unchanged</em>. There are three of them, which we now describe.</p></section><section class="subsection" id="subsection-8"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.4.1</span> <span class="title">First operation: interchanging two rows</span>
 </h3>
-<p id="p-90">Exchanging two rows in the augmented matrix is the same as writing the the equations in a different order. The equations themselves are unchanged, as is the set of all solutions. When we interchange row \(i\) and row \(j\text{,}\) we denote it by \(R_i\leftrightarrow R_j\text{.}\)</p>
+<p id="p-84">Exchanging two rows in the augmented matrix is the same as writing the the equations in a different order. The equations themselves are unchanged, as is the set of all solutions. When we interchange row \(i\) and row \(j\text{,}\) we denote it by \(R_i\leftrightarrow R_j\text{.}\)</p>
 <article class="example example-like" id="example-1"><a data-knowl="" class="id-ref original" data-refid="hk-example-1"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Augmented matrix change (interchange rows).</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-1"><article class="example example-like"><p id="p-91">The system of equations</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-1"><article class="example example-like"><p id="p-85">The system of equations</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
@@ -139,10 +142,10 @@ MathJax.Hub.Config({
 2x+3y-z \amp = 2
 \end{array}
 \end{equation*}
-</div></article></div></section><section class="subsection" id="subsection-10"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.4.2</span> <span class="title">Multiplying a row by a nonzero constant</span>
+</div></article></div></section><section class="subsection" id="subsection-9"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.4.2</span> <span class="title">Second operation: multiplying a row by a nonzero constant</span>
 </h3>
-<p id="p-92">If we have a linear equation and multiply both sides of the equation by a nonzero constant \(\lambda\) (the Greek letter lambda (\(\lambda\)) is the traditional name for the constant) then the linear equation</p>
+<p id="p-86">If we have a linear equation and multiply both sides of the equation by a nonzero constant \(\lambda\text{,}\) (The symbol \(\lambda\) is the Greek letter lambda; it is the traditional name for this constant.) then the linear equation</p>
 <div class="displaymath">
 \begin{equation*}
 a_1x_1 + a_2x_2 +a_3x_3 + \cdots + a_nx_n =b
@@ -163,7 +166,7 @@ a_1x_1 + a_2x_2 +a_3x_3 + \cdots + a_nx_n =b
 <p data-braille="continuation">This would apply to any equation in a system, of course, and so when we apply this operation to row \(i\) we denote it by \(R_i \gets \lambda R_i\) (The symbol \(\gets\) means <em class="emphasis">is replaced by</em>). <em class="emphasis">As long as \(\lambda\) is nonzero</em>, this operation leaves the set of solutions unchanged.</p>
 <article class="example example-like" id="example-2"><a data-knowl="" class="id-ref original" data-refid="hk-example-2"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">Augmented matrix change (multiply row by \(\lambda\)).</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-2"><article class="example example-like"><p id="p-93">The system of equations</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-2"><article class="example example-like"><p id="p-87">The system of equations</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
@@ -202,13 +205,13 @@ a_1x_1 + a_2x_2 +a_3x_3 + \cdots + a_nx_n =b
 3x-y-z \amp = 3
 \end{array}
 \end{equation*}
-</div></article></div></section><section class="subsection" id="subsection-11"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.4.3</span> <span class="title">Adding a multiple of one row to another</span>
+</div></article></div></section><section class="subsection" id="subsection-10"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.4.3</span> <span class="title">Third operation: adding a multiple of one row to another</span>
 </h3>
-<p id="p-94">Recall that one of our basic techniques for solving a system of equations is to pick a variable, make the coefficients of that variable equal in two equations and then take the difference of the equations to create a new one with the variable eliminated. In terms of the associated augmented matrix, this means we get a new row formed by subtracting the corresponding entries in the rows of the two equations.  In other words, we replace one row by the difference of two rows. We use the notation \(R_i\gets R_i-R_j\) to indicate that row \(i\) is replaced by the difference of row \(i\) and row \(j\text{.}\)  The set of solutions is unchanged. We have already seen that multiplying a row by a nonzero constants leaves the set of solutions unchanged; it is often convenient to combine these two steps as one: \(R_i\gets R_i+\lambda R_j.\) Note that \(\lambda=-1\) is the case of subtracting one row from another.</p>
+<p id="p-88">Recall that one of our basic techniques for solving a system of equations is to pick a variable, make the coefficients of that variable equal in two equations and then take the difference of the equations to create a new one with that variable eliminated. In terms of the associated augmented matrix, this means we get a new row formed by subtracting the corresponding entries in the rows of the two equations.  In other words, we replace one row by the difference of two rows. We use the notation \(R_i\gets R_i-R_j\) to indicate that row \(i\) is replaced by the difference of row \(i\) and row \(j\text{.}\)  The set of solutions is unchanged. We have already seen that multiplying a row by a nonzero constants leaves the set of solutions unchanged; it is often convenient to combine these two steps as one: \(R_i\gets R_i+\lambda R_j.\) Note that \(\lambda=-1\) is the case of subtracting one row from another.</p>
 <article class="example example-like" id="example-3"><a data-knowl="" class="id-ref original" data-refid="hk-example-3"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Augmented matrix change (add multiple of one row to another).</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-3"><article class="example example-like"><p id="p-95">Eliminating \(x\) from the second equation:</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-3"><article class="example example-like"><p id="p-89">Eliminating \(x\) from the second equation:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
@@ -248,10 +251,10 @@ x+y+z
 3x-y-z \amp = 3 
 \end{array} 
 \end{equation*}
-</div></article></div></section><section class="subsection" id="subsection-12"><h3 class="heading hide-type">
+</div></article></div></section><section class="subsection" id="subsection-11"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.4.4</span> <span class="title">Summary of the three elementary row operations</span>
 </h3>
-<p id="p-96">In summary, here is a table of the three elementary row operations:</p>
+<p id="p-90">In summary, here is a table of the three elementary row operations:</p>
 <figure class="table figure-like" id="TableOfElemantaryRowOperations"><table>
 <tr>
 <td class="c m b1 r1 l1 t1 lines"><em class="emphasis">Elementary Operation</em></td>
@@ -262,7 +265,7 @@ x+y+z
 <td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(R_i\leftrightarrow R_j\)</td>
 </tr>
 <tr>
-<td class="c m b1 r1 l1 t0 lines">Multiply row by constant</td>
+<td class="c m b1 r1 l1 t0 lines">Multiply row by a nonzero constant</td>
 <td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(R_i\gets\lambda R_i\text{,}\) \(\lambda\not=0\)</td>
 </tr>
 <tr>
@@ -270,86 +273,94 @@ x+y+z
 <td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(R_i\gets R_i+\lambda R_j\)</td>
 </tr>
 </table>
-<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.4.4<span class="period">.</span></span><span class="space"> </span>Elementary Row Operations</figcaption></figure><p id="p-97">Each operation changes the matrix and the associated system of linear equations, but it leaves the set of solutions unchanged.</p></section><section class="subsection" id="subsection-13"><h3 class="heading hide-type">
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.4.4<span class="period">.</span></span><span class="space"> </span>Elementary Row Operations</figcaption></figure><p id="p-91">Each operation changes the matrix and the associated system of linear equations, but it leaves the set of solutions unchanged.</p></section><section class="subsection" id="subsection-12"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.4.5</span> <span class="title">Changing a specific entry of a matrix using elementary row operations</span>
 </h3>
-<p id="p-98">We want to show that it is possible to change specific entries in a matrix in an advantageous way using elementary row operations. Specifically, we will show two things:</p>
+<p id="p-92">We want to show that it is possible to change specific entries in a matrix in an advantageous way using elementary row operations. Specifically, we will show two things:</p>
 <ul class="disc">
-<li id="li-45"><p id="p-99">Any \(a_{i,k}\not=0\) may be changed to \(1\) with one elementary row operation.</p></li>
-<li id="li-46"><p id="p-100">If \(a_{i,k}\not=0\text{,}\) then any other entry in the same column may be changed to \(0\) with one elementary row operation.</p></li>
+<li id="li-45"><p id="p-93">Any \(a_{i,k}\not=0\) may be changed to \(1\) with one elementary row operation.</p></li>
+<li id="li-46"><p id="p-94">If \(a_{i,k}\not=0\text{,}\) then any other entry in the same column may be changed to \(0\) with one elementary row operation.</p></li>
 </ul>
 <article class="theorem theorem-like" id="ChangeTo01"><a data-knowl="" class="id-ref original" data-refid="hk-ChangeTo01"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.4.5</span><span class="period">.</span><span class="space"> </span><span class="title">Change a matrix entry to \(0\) or \(1\) with elementary row operations.</span>
 </h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ChangeTo01">
-<article class="theorem theorem-like"><ol id="p-101" class="decimal">
-<li id="li-47"><p id="p-102">If a matrix has an entry \(a_{i,k}\not=0\text{,}\) then, with one elementary row operation, it may be changed to \(1\text{.}\)</p></li>
-<li id="li-48"><p id="p-103">If some column \(k\) of a matrix has two non-zero entries \(a_{i,k}\) and \(a_{j,k}\) then, with one elementary row operation, (either) one of them may be changed to \(0\text{.}\)</p></li>
-</ol></article><article class="hiddenproof" id="proof-2"><a data-knowl="" class="id-ref original" data-refid="hk-proof-2"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof"><ol id="p-104" class="decimal">
-<li id="li-49"><p id="p-105">If a matrix has an entry \(a_{i,k}\not=0\text{,}\) then multiply the row \(R_i\) by \(\frac 1{a_{i,k}}\text{,}\) that is, carry out the elementary row operation \(R_i\gets \frac 1{a_{i,k}}R_i\text{.}\) In the resulting matrix, the \(i\)-\(k\) entry is \(\frac {a_{i,k}}{a_{i,k}}=1\text{.}\)</p></li>
-<li id="li-50"><p id="p-106">Suppose a matrix has two non-zero entries \(a_{i,k}\) and \(a_{j,k}\text{.}\) First, do the elementary row operation \(R_i\gets \frac 1{a_{i,k}}R_i\) to change \(a_{i,k}\) to \(1\text{.}\) Then, do the elementary row operation \(R_j\gets R_j-a_{j,k}R_i\text{.}\) The matrix  now has a new value in the \(j\)-\(k\) position which is \(a_{j,k}-a_{j,k}=0\text{,}\) and we have accomplished our goal using two elementary operations. Now we note that these two operations can be carried out with the single operation \(R_j\gets R_j-\frac {a_{j,k}}{a_{i,k}}R_i
+<article class="theorem theorem-like"><ol id="p-95" class="decimal">
+<li id="li-47"><p id="p-96">If a matrix has an entry \(a_{i,k}\not=0\text{,}\) then, with one elementary row operation, it may be changed to \(1\text{.}\)</p></li>
+<li id="li-48"><p id="p-97">If some column \(k\) of a matrix has two non-zero entries \(a_{i,k}\) and \(a_{j,k}\) then, with one elementary row operation, (either) one of them may be changed to \(0\text{.}\)</p></li>
+</ol></article><article class="hiddenproof" id="proof-2"><a data-knowl="" class="id-ref original" data-refid="hk-proof-2"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof"><ol id="p-98" class="decimal">
+<li id="li-49"><p id="p-99">If a matrix has an entry \(a_{i,k}\not=0\text{,}\) then multiply the row \(R_i\) by \(\frac 1{a_{i,k}}\text{,}\) that is, carry out the elementary row operation \(R_i\gets \frac 1{a_{i,k}}R_i\text{.}\) In the resulting matrix, the \(i\)-\(k\) entry is \(\frac {a_{i,k}}{a_{i,k}}=1\text{.}\)</p></li>
+<li id="li-50"><p id="p-100">Suppose a matrix has two non-zero entries \(a_{i,k}\) and \(a_{j,k}\text{.}\) First, do the elementary row operation \(R_i\gets \frac 1{a_{i,k}}R_i\) to change \(a_{i,k}\) to \(1\text{.}\) Then, do the elementary row operation \(R_j\gets R_j-a_{j,k}R_i\text{.}\) The matrix  now has a new value in the \(j\)-\(k\) position which is \(a_{j,k}-a_{j,k}=0\text{,}\) and we have accomplished our goal using two elementary operations. Now we note that these two operations can be carried out with the single operation \(R_j\gets R_j-\frac {a_{j,k}}{a_{i,k}}R_i
 \text{.}\)</p></li>
 </ol></article></div>
-</div></section><section class="subsection" id="subsection-14"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.4.6</span> <span class="title">Exercises</span>
-</h3>
-<p id="p-107">For these exercises, let \(A=
+</div>
+<section class="exercises" id="exercises-2"><h4 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">1.4.5.1</span> <span class="title">Exercises</span>
+</h4>
+<div class="exercisegroup" id="exercisegroup-1">
+<div class="introduction" id="introduction-2"><p id="p-101">For these exercises, let \(A=
 \begin{bmatrix}
 1\amp2\amp3\amp4\\  5\amp6\amp7\amp-6\\ -5\amp-4\amp-3\amp-2
-\end{bmatrix}\)</p>
-<article class="exercise exercise-like" id="exercise-9"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-9"><h6 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.4.6</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-9"><article class="exercise exercise-like"><p id="p-108">Find the elementary row operation that</p>
+\end{bmatrix}
+\text{.}\)</p></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-10"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-102">Find the elementary row operation that</p>
 <ul class="disc">
-<li id="li-51"><p id="p-109">changes the \(2\) to a \(1\)</p></li>
-<li id="li-52"><p id="p-110">changes the \(7\) to a \(1\)</p></li>
-<li id="li-53"><p id="p-111">changes the \(-4\) to a \(1\)</p></li>
+<li id="li-51"><p id="p-103">changes the \(2\) in the first row to a \(1\)</p></li>
+<li id="li-52"><p id="p-104">changes the \(7\) in the second row to a \(1\)</p></li>
+<li id="li-53"><p id="p-105">changes the \(-4\) in the third row to a \(1\)</p></li>
 </ul>
 <p data-braille="continuation">In each case give the matrix that results from the application of your elementary row operation.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref original" data-refid="hk-solution-9" id="solution-9"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-9"><div class="solution solution-like"><ul id="p-112" class="disc">
-<li id="li-54"><p id="p-113">\(R_1\gets \frac12 R_1\) \(\begin{bmatrix}
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-10" id="solution-10"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-10"><div class="solution solution-like"><ul id="p-106" class="disc">
+<li id="li-54">\(\displaystyle R_1\gets \frac12 R_1\colon
+\begin{bmatrix}
 \frac12\amp1\amp\frac32\amp\frac12\\  5\amp6\amp7\amp-6\\ -5\amp-4\amp-3\amp-2
-\end{bmatrix}\)</p></li>
-<li id="li-55"><p id="p-114">\(R_2\gets \frac17 R_2\) \(\begin{bmatrix}
+\end{bmatrix}\)</li>
+<li id="li-55">\(\displaystyle R_2\gets \frac17 R_2\colon
+\begin{bmatrix}
 1\amp2\amp3\amp4\\  \frac57\amp\frac67\amp1\amp-\frac67\\ -5\amp-4\amp-3\amp-2
-\end{bmatrix}\)</p></li>
-<li id="li-56"><p id="p-115">\(R_3\gets -\frac14 R_3\) \(\begin{bmatrix}
+\end{bmatrix}\)</li>
+<li id="li-56">\(\displaystyle R_3\gets -\frac14 R_3\colon
+\begin{bmatrix}
 1\amp2\amp3\amp4\\  5\amp6\amp7\amp-6\\ \frac54\amp1\amp\frac34\amp\frac12
-\end{bmatrix}\)</p></li>
+\end{bmatrix}\)</li>
 </ul></div></div>
-</div></article></div>
-<article class="exercise exercise-like" id="exercise-10"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-10"><h6 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.4.7</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-10"><article class="exercise exercise-like"><p id="p-116">Find an elementary row operation that</p>
+</div></article><article class="exercise exercise-like" id="exercise-11"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-107">Find an elementary row operation that</p>
 <ul class="disc">
-<li id="li-57"><p id="p-117">changes the \(5\) to a \(0\)</p></li>
-<li id="li-58"><p id="p-118">changes the \(6\) to a \(0\)</p></li>
-<li id="li-59"><p id="p-119">changes the \(-4\) to a \(0\)</p></li>
-<li id="li-60"><p id="p-120">changes the \(7\) to a \(0\)</p></li>
+<li id="li-57">changes the \(5\) in the second row to a \(0\)</li>
+<li id="li-58">changes the \(6\) in the second row to a \(0\)</li>
+<li id="li-59">changes the \(-4\) in the third row to a \(0\)</li>
+<li id="li-60">changes the \(7\) in the second row to a \(0\)</li>
 </ul>
 <p data-braille="continuation">In each case give the matrix that results from the application of your elementary row operation.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref original" data-refid="hk-solution-10" id="solution-10"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-10"><div class="solution solution-like"><ul id="p-121" class="disc">
-<li id="li-61"><p id="p-122">\(R_2\gets R_2+R_3\) \(\begin{bmatrix}
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like"><ul id="p-108" class="disc">
+<li id="li-61">\(\displaystyle R_2\gets R_2+R_3\colon
+\begin{bmatrix}
 1\amp2\amp3\amp4\\  0\amp2\amp4\amp-8\\ -5\amp-4\amp-3\amp-2
-\end{bmatrix}\)</p></li>
-<li id="li-62"><p id="p-123">\(R_2\gets R_2-3R_1\) \​begin{bmatrix} 1\amp2\amp3\amp4\\  2\amp0\amp-2\amp-18\\ -5\amp-4\amp-3\amp-2 \end{bmatrix}</p></li>
-<li id="li-63"><p id="p-124">\(R_3\gets R_3+2R_1\) \(\begin{bmatrix}
+\end{bmatrix}\)</li>
+<li id="li-62">\(\displaystyle R_2\gets R_2-3R_1\colon
+\begin{bmatrix}
+1\amp2\amp3\amp4\\  2\amp0\amp-2\amp-18\\ -5\amp-4\amp-3\amp-2
+\end{bmatrix}\)</li>
+<li id="li-63">\(\displaystyle R_3\gets R_3+2R_1\colon
+\begin{bmatrix}
 1\amp2\amp3\amp4\\  5\amp6\amp7\amp-6\\ -3\amp0\amp3\amp6
-\end{bmatrix}\)</p></li>
-<li id="li-64"><p id="p-125">\(R_2\gets R_2-\frac73 R_1\) \(\begin{bmatrix}
+\end{bmatrix}\)</li>
+<li id="li-64">\(\displaystyle R_2\gets R_2-\frac73 R_1\colon
+\begin{bmatrix}
 1\amp2\amp3\amp4\\  \frac83\amp\frac43\amp0\amp-\frac{46}3\\ -5\amp-4\amp-3\amp-2
-\end{bmatrix}\)</p></li>
+\end{bmatrix}\)</li>
 </ul></div></div>
-</div></article></div>
-<article class="exercise exercise-like" id="exercise-11"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-11"><h6 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.4.8</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-11"><article class="exercise exercise-like"><p id="p-126">Use two elementary rwo operations to make the first column of the resulting matrix \(\begin{bmatrix}
+</div></article><article class="exercise exercise-like" id="exercise-12"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-109">Use two elementary rwo operations to make the first column of the resulting matrix \(\begin{bmatrix}
 1\\0\\0
 \end{bmatrix}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like">
-<p id="p-127">\(R_2\gets R_2-5R_1\) and  \(R_3\gets R_3+5R_1\) give</p>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-12" id="solution-12"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-12"><div class="solution solution-like">
+<p id="p-110">\(R_2\gets R_2-5R_1\) and  \(R_3\gets R_3+5R_1\) give</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -360,7 +371,9 @@ x+y+z
 \end{equation*}
 </div>
 </div></div>
-</div></article></div></section></section></div></main>
+</div></article>
+</div>
+</div></section></section></section></div></main>
 </div>
 </body>
 </html>

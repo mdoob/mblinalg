@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-04T19:24:28-05:00    *-->
+<!--*    on 2020-04-18T16:41:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,9 +13,81 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>\(\begin{bmatrix}
-2\\ 6\\ 10
-\end{bmatrix}\) is  column \(2\)</p>
+<p>Here are some examples of coefficient matrices and augmented matrices:</p>
+<ul class="disc">
+<li>
+<p>A system of 2 equations in 3 unknowns:</p>
+<div class="displaymath">
+\begin{align*}
+x-y+z \amp = 1\\
+2x+3y-z \amp = 2
+\end{align*}
+</div>
+<p data-braille="continuation">Coefficient matrix:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1\amp -1\amp 1\\
+2\amp 3\amp -1
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">Augmented matrix:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1\amp -1\amp 1\amp 1\\
+2\amp 3\amp -1\amp 2
+\end{bmatrix}
+\end{equation*}
+</div>
+</li>
+<li>
+<p>A system of 3 equations in 2 unknowns:</p>
+<div class="displaymath">
+\begin{align*}
+u+v  \amp = 1\\
+2u+v \amp = 3\\
+u+2v \amp =3
+\end{align*}
+</div>
+<p>Coefficient matrix: \(\begin{bmatrix}
+1\amp 1\\
+2\amp 1\\
+1\amp 2
+\end{bmatrix}\)</p>
+<p>Augmented matrix: \(\left[\begin{array}{cc|c}
+1\amp 1\amp 1\\
+2\amp 1\amp 3\\
+1\amp 2\amp 3
+\end{array}\right]\)</p>
+</li>
+<li>
+<p>A system of 4 equations in 5 unknowns</p>
+<div class="displaymath">
+\begin{alignat*}{5}
+x_1 \amp \ +\  \amp x_2 \amp \amp \amp \amp \amp \amp \amp \ =\ 1\\
+\amp \amp x_2 \amp \ +\ \amp x_3 \amp \amp \amp \amp \amp  \ =\ 2\\
+\amp \amp \amp \amp x_3 \amp \ +\ \amp x_4 \amp \amp \amp  \ =\ 3\\
+\amp \amp \amp \amp \amp \amp x_4 \amp \ +\ \amp x_5 \amp  \ =\ 4
+\end{alignat*}
+</div>
+<p>Coefficient matrix: \(\begin{bmatrix}
+\begin{array}{rrrrr}
+1\amp 1\amp 0\amp 0\amp 0\\
+0\amp 1\amp 1\amp 0\amp 0\\
+0\amp 0\amp 1\amp 1\amp 0\\
+0\amp 0\amp 0\amp 1\amp 1
+\end{array}
+\end{bmatrix}\)</p>
+<p>Augmented matrix: \(\left[\begin{array}{ccccc|c}
+1\amp 1\amp 0\amp 0\amp 0\amp 1\\
+0\amp 1\amp 1\amp 0\amp 0\amp 2\\
+0\amp 0\amp 1\amp 1\amp 0\amp 3\\
+0\amp 0\amp 0\amp 1\amp 1\amp 4
+\end{array}\right]\)</p>
+</li>
+</ul>
 <span class="incontext"><a href="section-3.html#p-37">in-context</a></span>
 </body>
 </html>

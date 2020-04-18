@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-04T19:24:28-05:00    *-->
+<!--*    on 2020-04-18T16:41:33-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -59,10 +59,13 @@ MathJax.Hub.Config({
 \def\Q{{\mathbb Q}}
 \def\Z{{\mathbb Z}}
 \def\N{{\mathbb N}}
+
 \def\vec#1{\mathbf #1}
+
 \newcommand{\adj}{\mathop{\textrm{adj}}}
 \newcommand{\proj}{\mathop{\textrm{proj}}}
 \newcommand{\Span}{\mathop{\textrm{span}}} 
+
 \newcommand{\rowint}[2]{R_{#1} \leftrightarrow R_{#2}}
 \newcommand{\rowmul}[2]{R_{#1}\gets {#2}R_{#1}}
 \newcommand{\rowadd}[3]{R_{#1}\gets R_{#1}+#2R_{#3}}
@@ -94,13 +97,13 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-5"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.5</span> <span class="title">The Gaussian elimination algorithm</span>
 </h2>
-<section class="subsection" id="subsection-15"><h3 class="heading hide-type">
+<section class="subsection" id="subsection-13"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.5.1</span> <span class="title">Some matrices whose associated system of equations are easy to solve</span>
 </h3>
-<p id="p-128">The elementary row operations allow us to change matrices and their associated system of linear equations without changing the solutions of those equations. The goal is to end up with matrices which make these common solutions obvious.  Here are some examples.</p>
+<p id="p-111">The elementary row operations allow us to change matrices and their associated system of linear equations without changing the solutions of those equations. The goal is to end up with matrices which make these common solutions obvious.  Here are some examples.</p>
 <ul class="disc">
 <li id="li-65">
-<p id="p-129">The augmented matrix</p>
+<p id="p-112">The augmented matrix</p>
 <div class="displaymath">
 \begin{equation*}
 \left[\begin{array}{cccc|c} 
@@ -126,7 +129,7 @@ x_1\amp
 <p data-braille="continuation">The equations themselves actually describe the unique solution! Notice the structure of the coefficient matrix that makes this possible. There is only one nonzero entry in each row, its value is 1, and as you proceed down through from one row to the next, the nonzero entry moves one column to the right.</p>
 </li>
 <li id="li-66">
-<p id="p-130">The augmented matrix</p>
+<p id="p-113">The augmented matrix</p>
 <div class="displaymath">
 \begin{equation*}
 \left[\begin{array}{cc|c}
@@ -146,7 +149,7 @@ x_1+x_2\amp =\amp 4\\
 <p data-braille="continuation">The last row is easy to solve: we get \(x_2=3\text{.}\) Using this value, it is also easy to solve \(x_1+x_2=x_1+3=4\text{,}\) or \(x_1=1\text{.}\)</p>
 </li>
 <li id="li-67">
-<p id="p-131">The augmented matrix</p>
+<p id="p-114">The augmented matrix</p>
 <div class="displaymath">
 \begin{equation*}
 \left[\begin{array}{ccc|c} 1\amp
@@ -163,56 +166,56 @@ x_1+x_2\amp =\amp 4\\
 <p data-braille="continuation">As before, we get \(x_3=3\text{.}\) We still have two variables undefined: we assign a parameter to the second one: \(x_2=t\text{.}\) Using this value, we have \(x_1+x_2+x_3=x_1+t+3=4\text{,}\) or \(x_1=1-t\text{.}\) We now know the solutions: \(x_1=1-t\text{,}\) \(x_2=t\text{,}\) \(x_3=3\) where \(t\) can be any real number. In fact we can check this result with the first equation: \(x_1+x_2+x_3=(1-t) + t + 3=4\text{.}\) The compact way of writing this solution is \((x_1,x_2,x_3)=(1-t,t,3)\text{.}\)</p>
 </li>
 </ul>
-<p data-braille="continuation">It's clear from the examples given that having lots of zeros in the coefficient matrix is helpful for computing the solutions. It's also clear that leading ones can also make the computation easier. Our plan is to use elementary row operations to change a given coefficient matrix into one with these properties, and then to describe all the solutions. Here are some observations that will help us:</p>
+<p data-braille="continuation">It's clear from the examples given that having lots of zeros in the coefficient matrix is helpful for computing the solutions. It's also clear that if the first nonzero entry in a row is one, then the computation easier. Our plan is to use elementary row operations to change a given coefficient matrix into one with these properties, and then to describe all the solutions. Here are some observations that will help us:</p>
 <ol class="decimal">
-<li id="li-68"><p id="p-132">If a column has some nonzero entry, we can always make the top entry nonzero by interchanging rows, if necessary using \(R_1\leftrightarrow R_i\) for some \(i&gt;1\text{.}\)</p></li>
-<li id="li-69"><p id="p-133">If the first nonzero entry of a row \(R_i\) is \(\lambda\text{,}\) we can turn it into a 1 by using \(R_i\leftarrow \tfrac 1\lambda R_i\text{.}\)</p></li>
-<li id="li-70"><p id="p-134">If two rows \(R_i\) and \(R_j\) have nonzero entries in some column \(k\text{,}\) we can turn the \(j,k\) entry into a zero using \(R_j \leftarrow R_j - \frac{a_{j,k}}{a_{i,k}} R_i\text{.}\)</p></li>
-</ol></section><section class="subsection" id="subsection-16"><h3 class="heading hide-type">
+<li id="li-68"><p id="p-115">If a column has some nonzero entry, we can always make the top entry nonzero by interchanging rows, if necessary using \(R_1\leftrightarrow R_i\) for some \(i&gt;1\text{.}\)</p></li>
+<li id="li-69"><p id="p-116">If the first nonzero entry of a row \(R_i\) is \(\lambda\text{,}\) we can turn it into a 1 by using \(R_i\leftarrow \tfrac 1\lambda R_i\text{.}\)</p></li>
+<li id="li-70"><p id="p-117">If two rows \(R_i\) and \(R_j\) have nonzero entries in some column \(k\text{,}\) we can turn the \(j,k\) entry into a zero using \(R_j \leftarrow R_j - \frac{a_{j,k}}{a_{i,k}} R_i\text{.}\)</p></li>
+</ol></section><section class="subsection" id="subsection-14"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.5.2</span> <span class="title">Row echelon form</span>
 </h3>
-<p id="p-135">We now want to define a general class of matrices whose corresponding system of linear equations have solutions that are easy to find. These matrices have a special pattern of zeros and ones, and are said to be in <em class="emphasis">row echelon form.</em></p>
-<figure class="figure figure-like" id="figure-3"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/gausselim.png" style="width: 100%; height: auto;" alt="A matrix in row echelon form"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.5.1<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-136">The matrix above gives an idea of what we want. Notice the staircase line drawn through the matrix has all entries below it equal to zero. The entries marked with a \(*\) can take on any value.</p>
-<p id="p-137">The first nonzero entry in a row (if there is one) is called the <em class="emphasis">leading entry.</em> If it equals \(1\text{,}\) then it is called a <em class="emphasis">leading one.</em></p>
+<p id="p-118">We now want to define a general class of matrices whose corresponding system of linear equations have solutions that are easy to find. These matrices have a special pattern of zeros and ones, and are said to be in <em class="emphasis">row echelon form.</em></p>
+<figure class="figure figure-like" id="figure-3"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/gausselim.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.5.1<span class="period">.</span></span><span class="space"> </span>A matrix in row echelon form</figcaption></figure><p id="p-119">The matrix above gives an idea of what we want. Notice the staircase line drawn through the matrix has all entries below it equal to zero. The entries marked with a \(*\) can take on any value.</p>
+<p id="p-120">The first nonzero entry in a row (if there is one) is called the <em class="emphasis">leading entry.</em> If it equals \(1\text{,}\) then it is called a <em class="emphasis">leading one.</em></p>
 <article class="definition definition-like" id="definition-1"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Row echelon form.</span>
 </h6>
-<p id="p-138">A matrix is in  <dfn class="terminology">row echelon form</dfn> if</p>
+<p id="p-121">A matrix is in <dfn class="terminology">row echelon form</dfn> if</p>
 <ul class="disc">
-<li id="li-71"><p id="p-139">Every leading entry is a leading one.</p></li>
-<li id="li-72"><p id="p-140">Every entry below a leading one is \(0\text{.}\)</p></li>
-<li id="li-73"><p id="p-141">As you go down the matrix, the leading ones move to the right.</p></li>
-<li id="li-74"><p id="p-142">Any all zero rows are at the bottom.</p></li>
-</ul></article><article class="exercise exercise-like" id="exercise-12"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-12"><h6 class="heading">
+<li id="li-71"><p id="p-122">Every leading entry is a leading one.</p></li>
+<li id="li-72"><p id="p-123">Every entry below a leading one is \(0\text{.}\)</p></li>
+<li id="li-73"><p id="p-124">As you go down the matrix, the leading ones move to the right.</p></li>
+<li id="li-74"><p id="p-125">Any all zero rows are at the bottom.</p></li>
+</ul></article><article class="exercise exercise-like" id="exercise-13"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-13"><h6 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.5.3</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-12"><article class="exercise exercise-like"><p id="p-143">Which of the following matrices are in row echelon form?</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-13"><article class="exercise exercise-like"><p id="p-126">Which of the following matrices are in row echelon form?</p>
 <ul class="disc">
-<li id="li-75"><p id="p-144">\(\begin{bmatrix}
+<li id="li-75"><p id="p-127">\(\begin{bmatrix}
 1\amp2\amp3\amp4\\
 0\amp5\amp6\amp7\\
 0\amp0\amp8\amp9\\
 0\amp0\amp0\amp10
 \end{bmatrix}\)</p></li>
-<li id="li-76"><p id="p-145">\(\begin{bmatrix}
+<li id="li-76"><p id="p-128">\(\begin{bmatrix}
 1\amp2\amp3\amp4\\
 0\amp1\amp2\amp3\\
 0\amp0\amp0\amp0\\
 0\amp0\amp0\amp1
 \end{bmatrix}\)</p></li>
-<li id="li-77"><p id="p-146">\(\begin{bmatrix}
+<li id="li-77"><p id="p-129">\(\begin{bmatrix}
 1\amp2\amp3\amp4\\
 0\amp1\amp2\amp3\\
 0\amp0\amp0\amp1\\
 0\amp0\amp0\amp0
 \end{bmatrix}\)</p></li>
-<li id="li-78"><p id="p-147">\(\begin{bmatrix}
+<li id="li-78"><p id="p-130">\(\begin{bmatrix}
 1\amp2\amp3\amp4\\
 0\amp1\amp6\amp7\\
 0\amp0\amp1\amp1\\
 0\amp0\amp1\amp1
 \end{bmatrix}\)</p></li>
-<li id="li-79"><p id="p-148">\(\begin{bmatrix}
+<li id="li-79"><p id="p-131">\(\begin{bmatrix}
 1\amp0\amp0\amp0\\
 0\amp0\amp0\amp0\\
 0\amp0\amp0\amp0\\
@@ -220,26 +223,26 @@ x_1+x_2\amp =\amp 4\\
 \end{bmatrix}\)</p></li>
 </ul>
 <div class="solutions">
-<a data-knowl="" class="id-ref original" data-refid="hk-solution-12" id="solution-12"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-12"><div class="solution solution-like"><ul id="p-149" class="disc">
-<li id="li-80"><p id="p-150">Not in row echelon form because not every leading entry is a \(1\text{.}\)</p></li>
-<li id="li-81"><p id="p-151">Not in row echelon form because the zero row is not at the bottom.</p></li>
-<li id="li-82"><p id="p-152">It is row echelon form.</p></li>
-<li id="li-83"><p id="p-153">Not row echelon form because a leading entry has a nonzero entry below it.</p></li>
-<li id="li-84"><p id="p-154">It is row echelon form.</p></li>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like"><ul id="p-132" class="disc">
+<li id="li-80"><p id="p-133">Not in row echelon form because not every leading entry is a \(1\text{.}\)</p></li>
+<li id="li-81"><p id="p-134">Not in row echelon form because the zero row is not at the bottom.</p></li>
+<li id="li-82"><p id="p-135">It is row echelon form.</p></li>
+<li id="li-83"><p id="p-136">Not row echelon form because a leading entry has a nonzero entry below it.</p></li>
+<li id="li-84"><p id="p-137">It is row echelon form.</p></li>
 </ul></div></div>
-</div></article></div></section><section class="subsection" id="subsection-17"><h3 class="heading hide-type">
+</div></article></div></section><section class="subsection" id="subsection-15"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.5.3</span> <span class="title">The Gaussian elimination algorithm</span>
 </h3>
-<p id="p-155">The plan is now start with the augmented matrix and, by using a sequence of elementary row operations, change it to a new matrix where it is easy to identify the solutions of the associated system of linear equations. Since any elementary row operation leaves the solutions unchanged, the solutions to the final system of linear equations will be identical to the solutions of the original one.</p>
-<p id="p-156">We work on the columns of the matrix from left to right and change the matrix in the following way:</p>
+<p id="p-138">The plan is now start with the augmented matrix and, by using a sequence of elementary row operations, change it to a new matrix where it is easy to identify the solutions of the associated system of linear equations. Since any elementary row operation leaves the solutions unchanged, the solutions to the final system of linear equations will be identical to the solutions of the original one.</p>
+<p id="p-139">We work on the columns of the matrix from left to right and change the matrix in the following way:</p>
 <ol class="decimal">
-<li id="li-85"><p id="p-157">Start with the first column. If it has all entries equal to zero, move on to the next column to the right.</p></li>
-<li id="li-86"><p id="p-158">If the column has nonzero entries, interchange rows, if necessary, to get a nonzero entry on top.</p></li>
-<li id="li-87"><p id="p-159">Change the top entry, if necessary, to make it a \(1\text{.}\)</p></li>
-<li id="li-88"><p id="p-160">For any nonzero entry below the top one, use an elementary row operation to change it to zero.</p></li>
-<li id="li-89"><p id="p-161">Now consider the part of the matrix below the top row and to the right of the column under consideration: if there are no such rows or columns, stop since the procedure is finished.Otherwise, carry out the same procedure on the new matrix.</p></li>
+<li id="li-85"><p id="p-140">Start with the first column. If it has all entries equal to zero, move on to the next column to the right.</p></li>
+<li id="li-86"><p id="p-141">If the column has nonzero entries, interchange rows, if necessary, to get a nonzero entry on top.</p></li>
+<li id="li-87"><p id="p-142">Change the top entry, if necessary, to make it a \(1\text{.}\)</p></li>
+<li id="li-88"><p id="p-143">For any nonzero entry below the top one, use an elementary row operation to change it to zero.</p></li>
+<li id="li-89"><p id="p-144">Now consider the part of the matrix below the top row and to the right of the column under consideration: if there are no such rows or columns, stop since the procedure is finished.Otherwise, carry out the same procedure on the new matrix.</p></li>
 </ol>
-<p id="p-162">Here is a first example:</p>
+<p id="p-145">Here is a first example:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{r}
@@ -300,7 +303,7 @@ x_1+x_2\amp =\amp 4\\
 \end{bmatrix}
 \end{equation*}
 </div>
-<p id="p-163">The matrix is in row echelon form. Now we can determine all of the solutions to the original system of linear equations. The first nonzero entry in the first row is in the first column, the column associated with \(x_1\text{.}\) The first nonzero entry in the second row, similarly, is associated with \(x_2\text{.}\) We assign parameters to the other variables: \(x_3=s\) and \(x_4=t\text{.}\) The second row then tells us that \(x_2-\frac34s =-\frac12 \text{,}\) or \(x_2=\frac34s-\frac12\text{.}\) Now that we know \(x_2\text{,}\) we can use the first row to find \(x_1\text{:}\) we get \(x_1-\frac23x_2-\frac13s+\frac13t=\frac13\text{.}\) We substitute in our known value for \(x_2\) into this equation, and after some simplification, we get \(x_1=\tfrac56s-\tfrac13t\text{.}\)  In summary, we have: All solutions to</p>
+<p id="p-146">The matrix is in row echelon form. Now we can determine all of the solutions to the original system of linear equations. The first nonzero entry in the first row is in the first column, the column associated with \(x_1\text{.}\) The first nonzero entry in the second row, similarly, is associated with \(x_2\text{.}\) We assign parameters to the other variables: \(x_3=s\) and \(x_4=t\text{.}\) The second row then tells us that \(x_2-\frac34s =-\frac12 \text{,}\) or \(x_2=\frac34s-\frac12\text{.}\) Now that we know \(x_2\text{,}\) we can use the first row to find \(x_1\text{:}\) we get \(x_1-\frac23x_2-\frac13s+\frac13t=\frac13\text{.}\) We substitute in our known value for \(x_2\) into this equation, and after some simplification, we get \(x_1=\tfrac56s-\tfrac13t\text{.}\)  In summary, we have: All solutions to</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{r}
@@ -321,17 +324,15 @@ x_4\amp =\amp t
 \end{equation*}
 </div>
 <p data-braille="continuation">where \(s\) and \(t\) are any real numbers. More compactly, we write this as \((x_1,x_2,x_3,x_4)= \tfrac56s-\tfrac13t,-\tfrac12 +\tfrac34 s,s,t)\text{.}\) In other words, for any assignment of real numbers to \(s\) and \(t\text{,}\) we get a solution to the system of linear equations.</p>
-<p id="p-164">It is easy (and worthwhile) to check that substituting the values of \(x_1,\dots,x_4\) into the two equations does indeed give a solution.</p>
-<p id="p-165">Now consider another example with the equations</p>
+<p id="p-147">It is easy (and worthwhile) to check that substituting \(x_1,\dots,x_4\) into the two equations does indeed give a solution.</p>
+<p id="p-148">Now consider another example with the equations</p>
 <div class="displaymath">
-\begin{equation*}
-\begin{array}{lrcc}
-x_1  + 2x_2 \amp -2x_3  \amp =\amp  -1\\
-3x_1 -2x_2  \amp -4x_3 \amp =\amp  3\\
-4x_1        \amp -2x_3 \amp =\amp  -2\\
--x_1 -x_2   \amp +2x_3 \amp =\amp 0
-\end{array}
-\end{equation*}
+\begin{alignat*}{3}
+x_1  \amp {}+2x_2   \amp{}-2x_3  \amp{}= \amp{}-1\\
+3x_1 \amp {}-  2x_2 \amp{}-4x_3  \amp{}= \amp{}3\\
+4x_1 \amp           \amp{}-2x_3 \amp{}= \amp{}-2\\
+-x_1 \amp {}-x_2    \amp{}+2x_3  \amp{}= \amp{}0
+\end{alignat*}
 </div>
 <p data-braille="continuation">and its corresponding augmented matrix as it is changed by Gaussian elimination:</p>
 <div class="displaymath">
@@ -384,16 +385,14 @@ R_3 \gets \frac14 R_3\\R_4\gets R_4-\frac14 R_3
 \end{equation*}
 </div>
 <p data-braille="continuation">The last row, for any choice of \(x_1, x_2, x_3\text{,}\) reduces to \(0=0,\) so any solution of the associated first three equations will also be a solution to the last one. In other words, the last row of the matrix has no effect on the solution set and may be dropped from the matrix. The third row gives \(x_3=-1.\) The second row gives \(x_2=-1\) and the first row gives \(x_1=-1.\) Hence there is one solution: \((x_1,x_2,x_3)=(-1,-1,-1).\)</p>
-<p id="p-166">Now change the equations from the last example very slightly (the right-hand side of the last equation is changed from \(0\) to \(1\)):</p>
+<p id="p-149">Now change the equations from the last example very slightly (the right-hand side of the last equation is changed from \(0\) to \(1\)):</p>
 <div class="displaymath">
-\begin{equation*}
-\begin{array}{rcc}
-x_1 + 2x_2 -2x_3  \amp =\amp  -1\\
-3x_1-2x_2-4x_3 \amp =\amp  3\\
-4x_1 -2x_3 \amp =\amp  -2\\
--x_1-x_2+2x_3 \amp =\amp  1
-\end{array}
-\end{equation*}
+\begin{alignat*}{3}
+x_1  \amp {}+2x_2   \amp{}-2x_3  \amp{}= \amp{}-1\\
+3x_1 \amp {}-  2x_2 \amp{}-4x_3  \amp{}= \amp{}3\\
+4x_1 \amp           \amp{}-2x_3 \amp{}= \amp{}-2\\
+-x_1 \amp {}-x_2    \amp{}+2x_3  \amp{}= \amp{}1
+\end{alignat*}
 </div>
 <p data-braille="continuation">The Gaussian elimination is almost identical as</p>
 <div class="displaymath">
@@ -417,8 +416,8 @@ x_1 + 2x_2 -2x_3  \amp =\amp  -1\\
 \end{bmatrix}
 \end{equation*}
 </div>
-<p id="p-167">Now the last row says \(0x_1+0x_2+0x_3=1\text{,}\) which, for any choice of \(x_1\text{,}\) \(x_2\) and \(x_3\text{,}\) reduces to \(0=1\) which is never true. This means the original system of equations have no solutions, that is, the system is inconsistent.</p>
-<p id="p-168">We can make a useful observation here: If a row of the augmented matrix is of the form</p>
+<p id="p-150">Now the last row says \(0x_1+0x_2+0x_3=1\text{,}\) which, for any choice of \(x_1\text{,}\) \(x_2\) and \(x_3\text{,}\) reduces to \(0=1\) and is never true. This means the original system of equations have no solutions, that is, the system is inconsistent.</p>
+<p id="p-151">We can make a useful observation here: If a row of the augmented matrix is of the form</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -428,12 +427,12 @@ x_1 + 2x_2 -2x_3  \amp =\amp  -1\\
 </div>
 <p data-braille="continuation">where \(*\) is either zero or nonzero, then one of two things happens:</p>
 <ol class="decimal">
-<li id="li-90"><p id="p-169">\(*=0\) in which case the row may be dropped from the matrix</p></li>
-<li id="li-91"><p id="p-170">\(*\not=0\) in which case there is no solution.</p></li>
+<li id="li-90"><p id="p-152">\(*=0\) in which case the row may be dropped from the matrix</p></li>
+<li id="li-91"><p id="p-153">\(*\not=0\) in which case there is no solution.</p></li>
 </ol>
 <article class="example example-like" id="example-4"><a data-knowl="" class="id-ref original" data-refid="hk-example-4"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.4</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-4"><article class="example example-like"><p id="p-171">Consider the system of linear equations:</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-4"><article class="example example-like"><p id="p-154">Consider the system of linear equations:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rcl}
@@ -446,7 +445,11 @@ x+y+z\amp =\amp  1\\
 <p data-braille="continuation">We wish to know the values of \(a,\) \(b\) and \(c\) for which there are there no solutions, one solution or more than one solution. To solve this problem, we apply Gaussian elimination to the augmented matrix:</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{bmatrix} 1\amp 1\amp 1\amp 1\\2\amp 1\amp 1\amp 2\\3\amp a\amp b\amp c \end{bmatrix}
+\begin{bmatrix} 
+1\amp 1\amp 1\amp 1\\
+2\amp 1\amp 1\amp 2\\
+3\amp a\amp b\amp c 
+\end{bmatrix}
 \begin{matrix}R_2\gets R_2-2R_1\\ R_3\gets R_3-3 R_1\end{matrix}
 \end{equation*}
 </div>
@@ -462,9 +465,11 @@ x+y+z\amp =\amp  1\\
 \end{equation*}
 </div>
 <p data-braille="continuation">An analysis of the last row tells us everything: If \(b-a\not=0,\) then there is exactly one solution. If \(b-a=0,\) and \(c-3\not=0,\) then there are no solutions. Otherwise (when \(b=a\) and \(c=3\)) there are an infinite number of solutions.</p></article></div>
-<article class="exercise exercise-like" id="exercise-13"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-13"><h6 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.5.5</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-13"><article class="exercise exercise-like"><p id="p-172">Find all solutions to the system of equations</p>
+<section class="exercises" id="exercises-3"><h4 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">1.5.3.1</span> <span class="title">Exercises</span>
+</h4>
+<article class="exercise exercise-like" id="exercise-14"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-155">Find all solutions to the system of equations</p>
 <div class="displaymath">
 \begin{align*}
 x+2y-z \amp=2\\
@@ -473,8 +478,8 @@ x+y-z\amp=0\\
 \end{align*}
 </div>
 <div class="solutions">
-<a data-knowl="" class="id-ref original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like">
-<p id="p-173">We put the augemented matrix into row echelon form:</p>
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-14" id="solution-14"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-14"><div class="solution solution-like">
+<p id="p-156">We put the augemented matrix into row echelon form:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -523,7 +528,7 @@ R_3\gets \frac13 R_3
 </div>
 <p data-braille="continuation">The last row gives \(z=3\text{.}\) The second row gives \(y=2\text{.}\) The first row gives \(x=2-2y+z=2-4+3=1\text{,}\) and so there is a unique solution \((x,y,z)=(1,2,3)\text{.}\)</p>
 </div></div>
-</div></article></div></section></section></div></main>
+</div></article></section></section></section></div></main>
 </div>
 </body>
 </html>

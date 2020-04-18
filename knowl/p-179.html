@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-04T19:24:29-05:00    *-->
+<!--*    on 2020-04-18T16:41:35-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,58 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>As you go down the matrix, the leading ones move to the right.</p>
+<p>In summary, we can say the following:</p>
+<ol class="decimal">
+<li><p>If the reduced row echelon form has a row of the form \([0,0,\dots,0,1]\text{,}\) then the system of linear equations has no solution.</p></li>
+<li>
+<p>If the reduced row echelon form has no free variables, then it looks like:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1 \amp  0 \amp  0 \amp \cdots \amp 0 \amp 0 \amp c_1\\
+0 \amp  1 \amp  0 \amp \cdots \amp 0 \amp 0 \amp c_2\\
+0 \amp  0 \amp  1 \amp \cdots \amp 0 \amp 0 \amp c_3\\
+\amp    \amp    \amp \vdots \\
+0 \amp  0 \amp  0 \amp \cdots \amp 1 \amp 0 \amp c_{n-1}\\
+0 \amp  0 \amp  0 \amp \cdots \amp 0 \amp 1 \amp c_n
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">and there is a unique solution, namely, \(x_1=c_1, x_2=c_2,\dots x_n=c_n\text{.}\)</p>
+</li>
+<li><p>If the reduced row echelon form has free variables, then there are an infinite number of solutions. Indeed, the parameter assigned to any one free variable can take on an infinite number of values.</p></li>
+</ol>
+<p data-braille="continuation">Consider the following system of linear equations:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+x_1-x_2+2x_3-x_4 \amp =  -1 \\
+2x_1+x_2-2x_3-2x_4 \amp =  -2 \\
+-x_1+2x_2-4x_3+x_4 \amp =  1 \\
+3x_1-3x_4 \amp =  -3
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">The augmented matrix is then put into reduced row echelon form:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1 \amp  -1 \amp  2 \amp  -1 \amp  -1\\
+2 \amp  1 \amp -2 \amp  -2 \amp  -2\\
+-1 \amp  2 \amp  -4 \amp  1 \amp  1\\
+3 \amp  0 \amp  0 \amp  -3 \amp  -3
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+R_2 \amp \gets R_2-2R_1\\
+R_3 \amp \gets R_3+R_1\\
+R_4 \amp \gets R_4-3R_1
+\end{array}
+\end{equation*}
+</div>
 <span class="incontext"><a href="section-6.html#p-179">in-context</a></span>
 </body>
 </html>
