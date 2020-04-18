@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-04T19:24:29-05:00    *-->
+<!--*    on 2020-04-18T16:41:35-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,27 +11,35 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like"><p>We put the augmented matrix in reduced row echelon form: \(\begin{bmatrix}
-1 \amp -1 \amp 0 \amp 0\\
-0 \amp  1 \amp -1 \amp 0\\
-1 \amp  0 \amp -1 \amp 0\\
-\end{bmatrix}\\
-\rowsub3{}1\\
-\begin{bmatrix}
-1 \amp -1 \amp 0 \amp 0\\
-0 \amp  1 \amp -1 \amp 0\\
-0 \amp  1\amp -1 \amp 0\\
-\end{bmatrix}\\
-\rowadd1{}2\\
-\begin{bmatrix}
-1 \amp 0\amp -1 \amp 0\\
-0 \amp  1 \amp -1 \amp 0\\
-0 \amp  1\amp -1 \amp 0\\
-\end{bmatrix}\\
-\rowsub3{}2\\
-\begin{bmatrix}
-1 \amp  0 \amp -1 \amp 0\\
-0 \amp  1 \amp -1 \amp 0\\
-0 \amp  0\amp 0 \amp 0\\
-\end{bmatrix}\) We then have that \(z\) is a free variable that may be set to \(t\text{.}\) All solutions are then of the form \((x,y,z)=(t,t,t)\text{,}\) which implies that \(x=y\) and \(y=z\text{.}\)</p></div></body>
+<body><div class="solution solution-like"><p>\(\begin{bmatrix} 
+1 \amp 1 \amp -1 \amp -1 \amp 2\\
+1 \amp -1 \amp -1 \amp 1 \amp 4\\
+2 \amp 1 \amp -1 \amp 1 \amp 1
+\end{bmatrix} \\
+\rowsub 2{}1\\
+\rowsub 321\\
+\begin{bmatrix} 
+1 \amp 1 \amp -1 \amp -1 \amp 2\\
+0 \amp -2 \amp 0 \amp 2 \amp 2\\
+0 \amp -1 \amp 1 \amp 3 \amp -3
+\end{bmatrix} \\
+\rowmul2{-\frac12}\\
+\begin{bmatrix} 
+1 \amp 1 \amp -1 \amp -1 \amp 2\\
+0 \amp 1 \amp 0 \amp -1 \amp -1\\
+0 \amp -1 \amp 1 \amp 3 \amp -3
+\end{bmatrix} \\
+\rowsub1{}2\\
+\rowadd3{}2\\
+\begin{bmatrix} 
+1 \amp 0 \amp -1 \amp 0 \amp 3\\
+0 \amp 1 \amp 0 \amp -1 \amp -1\\
+0 \amp 0 \amp 1 \amp 2 \amp -4
+\end{bmatrix} \\
+\rowadd1{}3\\
+\begin{bmatrix} 
+1 \amp 0 \amp 0 \amp 2 \amp -1\\
+0 \amp 1 \amp 0 \amp -1 \amp -1\\
+0 \amp 0 \amp 1 \amp 2 \amp -4
+\end{bmatrix} \) and so \(w\) is a free variable that can be set equal to \(t\text{.}\) This gives \((x,y,z,w)=(-1-2t, -1+t, -4-2t,t)\text{.}\)</p></div></body>
 </html>

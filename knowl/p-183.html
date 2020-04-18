@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-04T19:24:29-05:00    *-->
+<!--*    on 2020-04-18T16:41:35-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,52 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>If, to the contrary, the column has nonzero entries, interchange rows, if necessary, to get a nonzero entry on top.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1 \amp  -1 \amp  2 \amp  -1 \amp  -1\\
+0 \amp  3 \amp  -6 \amp  0 \amp  0\\
+0 \amp  1 \amp  -2 \amp  0 \amp  0\\
+0 \amp  3 \amp  -6 \amp  0 \amp  0
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+R_2 \amp \gets \tfrac13 R_2\\
+\end{array}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1 \amp  -1 \amp  2 \amp  -1 \amp  -1\\
+0 \amp  1 \amp  -2 \amp  0 \amp  0\\
+0 \amp  1 \amp  -2 \amp  0 \amp  0\\
+0 \amp  3 \amp  -6 \amp  0 \amp  0
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+R_1 \amp \gets R_1 + R_2\\
+R_3 \amp \gets R_3- R_2\\
+R_4 \amp \gets R_4- 3R_2
+\end{array}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+{\color{red} 1} \amp  0 \amp  0 \amp  -1 \amp  -1\\
+0 \amp  {\color{red} 1} \amp  -2 \amp  0 \amp  0\\
+0 \amp  0 \amp  0 \amp  0 \amp  0\\
+0 \amp  0 \amp  0 \amp  0 \amp  0
+\end{bmatrix}
+\end{equation*}
+</div>
 <span class="incontext"><a href="section-6.html#p-183">in-context</a></span>
 </body>
 </html>

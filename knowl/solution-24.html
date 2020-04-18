@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-04T19:24:29-05:00    *-->
+<!--*    on 2020-04-18T16:41:35-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,46 +14,71 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.6.2.11.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.6.2.10.1</span><span class="period">.</span>
 </h6>
-<p>\(\begin{bmatrix}
-1 \amp 2 \amp 1 \amp 0\\
-1 \amp 1 \amp 2 \amp 5\\
--1 \amp 1 \amp 1 \amp 0
-\end{bmatrix}\\
-\rowsub 211\\
-\rowadd 3{}1\\
+<p>We put the augemented matrix into reduced row echelon form: \(\begin{bmatrix}
+1 \amp 2 \amp -1 \amp 2\\
+1 \amp 1 \amp -1 \amp 0\\
+2 \amp -1 \amp 1 \amp 3\\
+\end{bmatrix}
+\\
+\begin{array}{l}
+R_2\gets R_2 - R_1\\
+R_3\gets R_3-2R_1
+\end{array}
+\\
 \begin{bmatrix}
-1 \amp 2 \amp 1 \amp 0\\
-0 \amp -1 \amp 1 \amp 5\\
-0 \amp 3 \amp 2 \amp 0
-\end{bmatrix}\\
-\rowmul 2{-}\\
+1 \amp 2 \amp -1 \amp 2\\
+0 \amp -1 \amp 0 \amp -2\\
+0 \amp -5 \amp 3 \amp -1\\
+\end{bmatrix}
+\\
+\begin{array}{l}
+R_2\gets -R_2\\
+\end{array}
+\\
 \begin{bmatrix}
-1 \amp 2 \amp 1 \amp 0\\
-0 \amp 1 \amp -1 \amp -5\\
-0 \amp 3 \amp 2 \amp 0
-\end{bmatrix}\\
-\rowsub122\\
-\rowsub332\\
+1 \amp 2 \amp -1 \amp 2\\
+0 \amp 1 \amp 0 \amp 2\\
+0 \amp -5 \amp 3 \amp -1\\
+\end{bmatrix}
+\\
+R_3\gets R_3-5R_2
+\\
 \begin{bmatrix}
-1 \amp 0 \amp 3 \amp 10\\
-0 \amp 1 \amp -1 \amp -5\\
-0 \amp 0 \amp 5 \amp 15
-\end{bmatrix}\\
-\rowmul3{\frac15}\\
+1 \amp 2 \amp -1 \amp 2\\
+0 \amp 1 \amp 0 \amp 2\\
+0 \amp 0 \amp 3 \amp 9\\
+\end{bmatrix}
+\\
+R_3\gets \frac13 R_3
+\\
 \begin{bmatrix}
-1 \amp 0 \amp 3 \amp 10\\
-0 \amp 1 \amp -1 \amp -5\\
-0 \amp 0 \amp 1 \amp 3
-\end{bmatrix}\\
-\rowsub 133\\
-\rowadd 3{}2\\
+1 \amp 2 \amp -1 \amp 2\\
+0 \amp 1 \amp 0 \amp 2\\
+0 \amp 0 \amp 1 \amp 3\\
+\end{bmatrix} \\
+R_1 \gets R_1-2R_2
+\\
 \begin{bmatrix}
-1 \amp 0 \amp 0 \amp 1\\
-0 \amp 1 \amp 0 \amp -2\\
-0 \amp 0 \amp 1 \amp 3
-\end{bmatrix}\\\) and so the unique solution is \((x,y,z)=(1,-2,3)\text{.}\)</p>
+1 \amp 0 \amp -1 \amp-2\\
+0 \amp 1 \amp 0 \amp 2\\
+0 \amp 0 \amp 1 \amp 3\\
+\end{bmatrix} \\
+R_1 \gets R_1+R_3
+\\
+\begin{bmatrix}
+1 \amp 0 \amp 0 \amp1\\
+0 \amp 1 \amp 0 \amp 2\\
+0 \amp 0 \amp 1 \amp 3\\
+\end{bmatrix} \\\) The first, second and third rows give us, respectively,</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{matrix}
+x=1\\y=2\\z=3
+\end{matrix}
+\end{equation*}
+</div>
 </div>
 <span class="incontext"><a href="section-6.html#solution-24">in-context</a></span>
 </body>

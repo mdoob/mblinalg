@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-04T19:24:29-05:00    *-->
+<!--*    on 2020-04-18T16:41:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,54 +13,22 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We put the augemented matrix into row echelon form:</p>
+<p>As an example, suppose we have a system of linear equations whose augmented matrix has the following reduced row echelon form:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
-1 \amp 2 \amp -1 \amp 2\\
-1 \amp 1 \amp -1 \amp 0\\
-2 \amp -1 \amp 1 \amp 3\\
-\end{bmatrix}
-\\
-\begin{array}{l}
-R_2\gets R_2 - R_1\\
-R_3\gets R_3-2R_1
-\end{array}
-\\
-\begin{bmatrix}
-1 \amp 2 \amp -1 \amp 2\\
-0 \amp -1 \amp 0 \amp -2\\
-0 \amp -5 \amp 3 \amp -1\\
-\end{bmatrix}
-\\
-\begin{array}{l}
-R_2\gets -R_2\\
-\end{array}
-\\
-\begin{bmatrix}
-1 \amp 2 \amp -1 \amp 2\\
-0 \amp 1 \amp 0 \amp 2\\
-0 \amp -5 \amp 3 \amp -1\\
-\end{bmatrix}
-\\
-R_3\gets R_3+5R_2
-\\
-\begin{bmatrix}
-1 \amp 2 \amp -1 \amp 2\\
-0 \amp 1 \amp 0 \amp 2\\
-0 \amp 0 \amp 3 \amp 9\\
-\end{bmatrix}
-\\
-R_3\gets \frac13 R_3
-\\
-\begin{bmatrix}
-1 \amp 2 \amp -1 \amp 2\\
-0 \amp 1 \amp 0 \amp 2\\
-0 \amp 0 \amp 1 \amp 3\\
+{\color{red}1} \amp  2 \amp  0 \amp  1 \amp  0 \amp  1\\
+0 \amp  0 \amp   {\color{red}1}\amp  2 \amp  0 \amp  2\\
+0 \amp  0 \amp  0 \amp  0 \amp  {\color{red}1} \amp  3
 \end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">The last row gives \(z=3\text{.}\) The second row gives \(y=2\text{.}\) The first row gives \(x=2-2y+z=2-4+3=1\text{,}\) and so there is a unique solution \((x,y,z)=(1,2,3)\text{.}\)</p>
-<span class="incontext"><a href="section-5.html#p-173">in-context</a></span>
+<p data-braille="continuation">Notice that this means that our system has three equations and five unknowns. The leading ones are in columns one, three and five, so \(x_1\text{,}\) \(x_3\) and \(x_5\) are constrained variables. This leaves \(x_2\) and \(x_4\) as free variables. We assign parameters to the free variables: \(x_2=s\) and \(x_4=t\text{.}\) The rows of the matrix then determine the constrained variables:</p>
+<ul class="disc">
+<li><p>\(x_5=3\) from the bottom row</p></li>
+<li><p>\(x_3 = 2-2t\) from the middle row</p></li>
+<li><p>\(x_1=1-2s-t\) from the top row</p></li>
+</ul>
+<span class="incontext"><a href="section-6.html#p-173">in-context</a></span>
 </body>
 </html>
