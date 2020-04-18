@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-04T19:24:29-05:00    *-->
+<!--*    on 2020-04-18T16:41:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -14,37 +14,57 @@
 <body>
 <div class="solution solution-like">
 <h6 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.6.2.1.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.5.3.1.1.1</span><span class="period">.</span>
 </h6>
+<p>We put the augemented matrix into row echelon form:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
-2\amp4\amp6\amp8\\
-3\amp6\amp9\amp10
-\end{bmatrix}\\
-\rowmul1{\frac12}\\
+1 \amp 2 \amp -1 \amp 2\\
+1 \amp 1 \amp -1 \amp 0\\
+2 \amp -1 \amp 1 \amp 3\\
+\end{bmatrix}
+\\
+\begin{array}{l}
+R_2\gets R_2 - R_1\\
+R_3\gets R_3-2R_1
+\end{array}
+\\
 \begin{bmatrix}
-1\amp2\amp3\amp4\\
-3\amp6\amp9\amp10
-\end{bmatrix}\\
-\rowsub231\\
+1 \amp 2 \amp -1 \amp 2\\
+0 \amp -1 \amp 0 \amp -2\\
+0 \amp -5 \amp 3 \amp -1\\
+\end{bmatrix}
+\\
+\begin{array}{l}
+R_2\gets -R_2\\
+\end{array}
+\\
 \begin{bmatrix}
-1\amp2\amp3\amp4\\
-0\amp0\amp0\amp-2
-\end{bmatrix}\\
-\rowmul 2{-\frac12}\\
+1 \amp 2 \amp -1 \amp 2\\
+0 \amp 1 \amp 0 \amp 2\\
+0 \amp -5 \amp 3 \amp -1\\
+\end{bmatrix}
+\\
+R_3\gets R_3+5R_2
+\\
 \begin{bmatrix}
-1\amp2\amp3\amp4\\
-0\amp0\amp0\amp1
-\end{bmatrix}\\
-\rowsub142\\
+1 \amp 2 \amp -1 \amp 2\\
+0 \amp 1 \amp 0 \amp 2\\
+0 \amp 0 \amp 3 \amp 9\\
+\end{bmatrix}
+\\
+R_3\gets \frac13 R_3
+\\
 \begin{bmatrix}
-1\amp2\amp3\amp0\\
-0\amp0\amp0\amp1
+1 \amp 2 \amp -1 \amp 2\\
+0 \amp 1 \amp 0 \amp 2\\
+0 \amp 0 \amp 1 \amp 3\\
 \end{bmatrix}
 \end{equation*}
 </div>
+<p data-braille="continuation">The last row gives \(z=3\text{.}\) The second row gives \(y=2\text{.}\) The first row gives \(x=2-2y+z=2-4+3=1\text{,}\) and so there is a unique solution \((x,y,z)=(1,2,3)\text{.}\)</p>
 </div>
-<span class="incontext"><a href="section-6.html#solution-14">in-context</a></span>
+<span class="incontext"><a href="section-5.html#solution-14">in-context</a></span>
 </body>
 </html>

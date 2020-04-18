@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-04T19:24:29-05:00    *-->
+<!--*    on 2020-04-18T16:41:35-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,5 +11,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like"><p>Each system has a RREF of \​begin{bmatrix} 1 \amp 0 \amp -\frac12 \amp \frac12\\ 0 \amp 1 \amp -\frac12 \amp \frac12\\ \end{bmatrix} and so all the solutions for either system consist of \((x,y,z)=(\frac12+\frac12t,\frac12+\frac12t,t)\) where \(t\) is any real number.</p></div></body>
+<body><div class="solution solution-like"><p>We put the augmented matrix in reduced row echelon form: \(\begin{bmatrix}
+1 \amp -1 \amp 0 \amp 0\\
+0 \amp  1 \amp -1 \amp 0\\
+1 \amp  0 \amp -1 \amp 0\\
+\end{bmatrix}\\
+\rowsub3{}1\\
+\begin{bmatrix}
+1 \amp -1 \amp 0 \amp 0\\
+0 \amp  1 \amp -1 \amp 0\\
+0 \amp  1\amp -1 \amp 0\\
+\end{bmatrix}\\
+\rowadd1{}2\\
+\begin{bmatrix}
+1 \amp 0\amp -1 \amp 0\\
+0 \amp  1 \amp -1 \amp 0\\
+0 \amp  1\amp -1 \amp 0\\
+\end{bmatrix}\\
+\rowsub3{}2\\
+\begin{bmatrix}
+1 \amp  0 \amp -1 \amp 0\\
+0 \amp  1 \amp -1 \amp 0\\
+0 \amp  0\amp 0 \amp 0\\
+\end{bmatrix}\) We then have that \(z\) is a free variable that may be set to \(t\text{.}\) All solutions are then of the form \((x,y,z)=(t,t,t)\text{,}\) which implies that \(x=y\) and \(y=z\text{.}\)</p></div></body>
 </html>
