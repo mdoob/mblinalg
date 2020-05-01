@@ -2925,89 +2925,60 @@
       <figure>
       <caption>Three pairwise intersecting planes with no common point</caption>
       <caption />
-      <image width="100%" xml:id="ThreePlanesNoSolution">
+      <image width="90%" xml:id="ThreePlanesNoSolution">
       <asymptote>
       import graph3;
-      size(500);
-      currentprojection=orthographic(-2,-0.8,3.0);
-      currentprojection=orthographic(-5.5,-1.75,8);
-      currentprojection=orthographic(-5,-3.5,8.5);
-      currentprojection=orthographic(-5.2,-3.8,8.4);
+      unitsize(120);
+      currentprojection=orthographic(7.25,3.36,-9.7);
       currentlight=White;
+      defaultpen(1); // Change default pen width to 1bp  
       
-      real A,B,C=1,D;
-      real f(real x, real y) { return (D-A*x-B*y)/C;} // equation of plane
-      triple F(real x, real y) {return (x,y,f(x,y));} // point above (x,y)
-
-      A=2; B=-1; C=1; D=1;
-      path3 g1=plane(F(1,1)-F(-2,-2),F(-1,1)-F(-2,-2),F(-2,-2));
-      draw(surface(g1),lightblue,nolight);
-      draw(g1);
-      label("\(x-y+z=1\)",F(-2,-2),S,blue);
-
-      A=1; B=1; C=1; D=2;
-      path3 g2=plane(F(1,1)-F(-2,-2),F(-1,1)-F(-2,-2),F(-2,-2));
-      draw(g2);
-      draw(surface(g2),grey,nolight);
-      label("\(x+y+z=2\)",F(-2,-2),N,grey);
+      triple P1=(6/7,3/7,-2/7), P2=(1,1,0), P3=(3/7,12/7,-1/7);
+      triple dirvec=(2,1,-3);
+      real t=1.25;
+      triple Q1=P1+t*dirvec, Q2=P2+t*dirvec, Q3=P3+t*dirvec;
       
-      A=4; B=1; C=3; D=3;
-      path3 g3=plane(F(1,1)-F(-2,-2),F(-1,1)-F(-2,-2),F(-2,-2));
-      draw(g3);
-      draw(surface(g3),green,nolight);
-      label("\(4x+y+3z=3\)",F(-2,-2),E,green);
+      real eps=0.15, p=1+eps, q=-eps;
+      path3 q4=(p*P1+q*P2)--(p*P2+q*P1)--(p*Q2+q*Q1)--(p*Q1+q*Q2)--cycle;
+      draw(q4);
+      draw(surface(q4),heavygrey,nolight);
+      path3 q5=(p*P1+q*P3)--(p*P3+q*P1)--(p*Q3+q*Q1)--(p*Q1+q*Q3)--cycle;
+      draw(surface(q5),green,nolight);
+      draw(q5);
+      path3 q6=(p*P2+q*P3)--(p*P3+q*P2)--(p*Q3+q*Q2)--(p*Q2+q*Q3)--cycle;
+      draw(surface(q6),lightblue,nolight);
+      draw(q6);
       
-      triple [] s1,s2,s3;
+      draw(P1--Q1);
+      draw(P2--Q2);
+      draw(P3--Q3);
       
-      s1=intersectionpoints(g1,g2);
-      draw(s1[0]--s1[1],linewidth(1));
-      s2=intersectionpoints(g1,g3);
-      draw(s2[0]--s2[1],linewidth(1));
-      s3=intersectionpoints(g2,g3);
-      draw(s3[0]--s3[1],linewidth(1));
-      
-      axes3("\(x\)","\(y\)","\(z\)",(-1,-1,-1),(1,1,3));
+      label("\(2x-y+z=1\)",P2--P3,NE,blue);
+      label("\(x+y+z=2\)",P1--P2,NW,heavygrey);
+      label("\(4x+y+3z=3\)",Q1--Q3,2SE,deepgreen);
+      //axes3("\(x\)","\(y\)","\(z\)",(0,0,0),(1,1,1.1));
       </asymptote>
-      </image>
-      </figure>
+      </image> 
+      </figure> 
       </example>
-      
-      <example><title>Three nonintersecting planes with no solutions</title>
-      <p>
-      Consider the system of linear equations
-      <me>
-      \begin{array}{rl}
-      2x-y+z \amp= 1\\
-      2x-y+z \amp= 2\\
-      2x-y+z \amp=3
-      \end{array}
-      </me>
-      The augmented matrix is
-      
-      <me>
-      \begin{bmatrix}
-      2\amp-1\amp1\amp1\\
-      2\amp-1\amp1\amp2\\
-      2\amp-1\amp1\amp3
-      \end{bmatrix}
-      </me>
-      whose reduced row echelon form is
-      <me>
-      \begin{bmatrix}
-      1\amp -\frac12\amp\frac12\amp0\\
-      0\amp0\amp0\amp1\\
-      0\amp0\amp0\amp0\\
-      \end{bmatrix}
-      </me>
-      The middle row indicates that there is no solution.
-      </p>
+
+      <example><title>Three nonintersecting planes with no
+      solutions</title> <p> Consider the system of linear equations <me>
+      \begin{array}{rl} 2x-y+z \amp= 1\\ 2x-y+z \amp= 2\\ 2x-y+z \amp=3
+      \end{array} </me> The augmented matrix is
+
+      <me> \begin{bmatrix} 2\amp-1\amp1\amp1\\ 2\amp-1\amp1\amp2\\
+      2\amp-1\amp1\amp3 \end{bmatrix} </me> whose reduced row echelon
+      form is <me> \begin{bmatrix} 1\amp -\frac12\amp\frac12\amp0\\
+      0\amp0\amp0\amp1\\ 0\amp0\amp0\amp0\\ \end{bmatrix} </me> The
+      middle row indicates that there is no solution.  </p>
 
       <figure>
       <caption>Three parallel planes</caption>
       <image width="100%" xml:id="ThreeParallelPlanes">
       <asymptote>
       import graph3;
-      size(500);
+      size(300);
       currentprojection=orthographic(-6.2,-4.3,9.7);
       currentlight=White;
       
@@ -3019,19 +2990,19 @@
       path3 g1=plane(F(1,0)-F(-2,-2),F(-1,0)-F(-2,-2),F(-2,-2));
       draw(surface(g1),lightblue,nolight);
       draw(g1);
-      label("\(2x-y+z=1\)",F(-2,-2),E,blue);
+      label("\(2x-y+z=1\)",F(-2,-2),E,deepblue);
 
       A=2; B=-1; C=1; D=2;
       path3 g2=plane(F(1,0)-F(-2,-2),F(-1,0)-F(-2,-2),F(-2,-2));
       draw(g2);
       draw(surface(g2),grey,nolight);
-      label("\(2x-y+z=2\)",F(-2,-2),E,grey);
+      label("\(2x-y+z=2\)",F(-2,-2),E,deepgrey);
       
       A=2; B=-1; C=1; D=3;
       path3 g3=plane(F(1,0)-F(-2,-2),F(-1,0)-F(-2,-2),F(-2,-2));
       draw(g3);
       draw(surface(g3),green,nolight);
-      label("\(2x-y+z=3\)",F(-2,-2),E,green);
+      label("\(2x-y+z=3\)",F(-2,-2),E,deepgreen);
       
       axes3("\(x\)","\(y\)","\(z\)",(-1,-1,-1),(1.5,1,4));
       </asymptote>
