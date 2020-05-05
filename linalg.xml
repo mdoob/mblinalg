@@ -2773,33 +2773,37 @@
       <caption> Three planes intersecting at a single point</caption>
       <image width="100%" xml:id="ThreePlanesPoint">
       <asymptote>
-      import three;
-      import bsp;
-      size(400);
+            import graph3;
+      unitsize(4cm);
       
       currentprojection=perspective(11,2,-9);
+      currentprojection=perspective(14.5,3.2,1.1);
+      //currentprojection=oblique;
       
       real A,B,C,D;
       real f(real x, real y) { return (D-A*x-B*y)/C;} // equation of plane
       triple F(real x, real y) {return (x,y,f(x,y));} // point above (x,y)
       
       A=1; B=1; C=1; D=2;
-      path3 g1=plane(F(2,0)-F(0.5,0.5),F(0,2)-F(0.5,0.5),F(0.5,0.5));
-      draw(surface(g1),lightblue,nolight);
-      draw(g1,linewidth(0.75));
-      label("\(x+y+z=2\)",F(0,2.0),E);
+      triple u=F(2,0), v=F(0,2), w=F(0.5,0.5);
+      path3 g1=plane(u-w,v-w,w);
+      draw(surface(g1),paleblue,nolight);
+      draw(g1,linewidth(0.85));
+      label("\(x+y+z=2\)",F(0,2.0),NE,blue);
       
       A=1; B=2; C=1; D=3;
-      path3 g2=plane(F(2,0)-F(0.5,0.5),F(0,2)-F(0.5,0.5),F(0.5,0.5));
-      draw(surface(g2),grey,nolight);
+      triple u=F(2,0), v=F(0,2), w=F(0.5,0.5);
+      path3 g2=plane(u-w,v-w,w);
+      draw(surface(g2),lightyellow,nolight);
       draw(g2,linewidth(0.75));
-      label("\(x+2y+z=3\)",F(0,2),E);
+      label("\(x+2y+z=3\)",F(0,2),E,olive);
       
       A=1; B=2; C=-3; D=3;
-      path3 g3=plane(F(2,0)-F(0.5,0.5),F(0,2)-F(0.5,0.5),F(0.5,0.5));
+      triple u=F(2,0), v=F(0,2), w=F(0.5,0.5);
+      path3 g3=plane(u-w,v-w,w);
       draw(surface(g3),lightgreen,nolight);
       draw(g3,linewidth(0.75));
-      label("\(x+2y-3z=3\)",F(0,2),E);
+      label("\(x+2y-3z=3\)",F(0,2),NE,heavygreen);
       
       triple [] s1,s2,s3;
       
@@ -2812,8 +2816,12 @@
       
       triple t;
       t=intersectionpoint(s1[0]--s1[1],s2[0]--s2[1]);
-      dot(t,red+linewidth(4.75));
-      axes3("\(x\)","\(y\)","\(z\)",(0,0,0),(3,3,3));
+      dot(t,red+linewidth(5.75));
+
+      triple u=(3,2.5,-0.2);
+      draw(u--t, Arrow3,Margin3(1,2));
+      label("$(x,y,z)=(\frac34,1,\frac14)$",u,E);
+      axes3("\(x\)","\(y\)","\(z\)",(0,0,0),(4,3,2));
       </asymptote>
       </image>
       </figure>
@@ -2857,7 +2865,7 @@
       <asymptote>
       import graph3;
       size(400);
-      currentprojection=orthographic(-3,6,1);
+      currentprojection=orthographic(84,7,2);
       currentlight=White;
 
       real A,B,C,D;
@@ -2866,28 +2874,29 @@
       triple F(real x, real y) {return (x,y,f(x,y));} // point above (x,y)
       
       real A=1, B=1, C=-1, D=3;
-      path3 g1=plane(F(3,3)-F(-3,-3),F(-3,3)-F(-3,-3),F(-3,-3));
-      draw(g1);
-      draw(surface(g1),lightblue,nolight);
-      label("\(x+y-z=3\)",F(-3,-3),S,blue);
+      triple u=F(3,3), v=F(-3,3), w=F(-2,-2);
+      path3 g1=plane(u-w,v-w,w);
+      draw(surface(g1),paleblue,nolight);
+      draw(g1,linewidth(0.85));
+      label("\(x+y-z=3\)",w,S,blue);
       
       real A=1, B=1, C=1, D=1;
       triple G(real x, real y) {return (x,y,1-x-y);} // point above (x,y)
-      path3 g2=plane(G(3,3)-G(-3,-3),G(-3,3)-G(-3,-3),G(-3,-3));
+      triple u=G(3,3), v=G(-3,3), w=G(-2,-2);
+      path3 g2=plane(u-w,v-w,w);
       draw(surface(g2),grey,nolight);
       draw(g2);
-      label("\(x+y+z=1\)",G(-3,3),E,grey);
-      
+      label("\(x+y+z=1\)",w,N,grey);
+
       real A=2, B=2, C=0, D=4;
-      path3 g3=((-3,5,-6)--(3,-1,-6)--(3,-1,4)--(-3,5,4)--cycle);
+      path3 g3=((-2,4,-8)--(1,1,-8)--(1,1,6)--(-2,4,6)--cycle);
       draw(surface(g3),lightgreen,nolight);
       draw(g3);
-      label("\(x+y=2\)",(3,-1,4),N,green);
+      label("\(x+y=2\)",(-1,3,-8),S,deepgreen);
 
       draw((-5,7,-1)--(5,-3,-1),red+linewidth(1));
 
-      axes3("\(x\)","\(y\)","\(z\)",(-2,-2,-2),(6,8,6));
-
+      axes3("\(x\)","\(y\)","\(z\)",(-3,-2,-2),(50,5,6));
       </asymptote>
       </image>
       </figure>
