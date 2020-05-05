@@ -2924,7 +2924,6 @@
 
       <figure>
       <caption>Three pairwise intersecting planes with no common point</caption>
-      <caption />
       <image width="90%" xml:id="ThreePlanesNoSolution">
       <asymptote>
       import graph3;
