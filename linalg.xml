@@ -2865,38 +2865,36 @@
       <asymptote>
       import graph3;
       size(400);
-      currentprojection=orthographic(84,7,2);
+      currentprojection=orthographic(99,25,20);
       currentlight=White;
-
-      real A,B,C,D;
-      real A=1, B=1, C=-1, D=3;
-      real f(real x, real y) { return (D-A*x-B*y)/C;} // equation of plane
-      triple F(real x, real y) {return (x,y,f(x,y));} // point above (x,y)
+      defaultpen(1); // Change default pen width to 1bp 
       
-      real A=1, B=1, C=-1, D=3;
-      triple u=F(3,3), v=F(-3,3), w=F(-2,-2);
-      path3 g1=plane(u-w,v-w,w);
-      draw(surface(g1),paleblue,nolight);
-      draw(g1,linewidth(0.85));
-      label("\(x+y-z=3\)",w,S,blue);
+      triple dirvec=1.5(-1,1,0);
+      path3 Plane(triple a, triple b) {
+         return a--b--b+dirvec--a+dirvec--cycle;
+         }
       
-      real A=1, B=1, C=1, D=1;
-      triple G(real x, real y) {return (x,y,1-x-y);} // point above (x,y)
-      triple u=G(3,3), v=G(-3,3), w=G(-2,-2);
-      path3 g2=plane(u-w,v-w,w);
-      draw(surface(g2),grey,nolight);
-      draw(g2);
-      label("\(x+y+z=1\)",w,N,grey);
-
-      real A=2, B=2, C=0, D=4;
-      path3 g3=((-2,4,-8)--(1,1,-8)--(1,1,6)--(-2,4,6)--cycle);
-      draw(surface(g3),lightgreen,nolight);
-      draw(g3);
-      label("\(x+y=2\)",(-1,3,-8),S,deepgreen);
-
-      draw((-5,7,-1)--(5,-3,-1),red+linewidth(1));
-
-      axes3("\(x\)","\(y\)","\(z\)",(-3,-2,-2),(50,5,6));
+      triple a=(1,-1,1), b=(3,1,-3);
+      path3 g=Plane(a,b);
+      draw(surface(g),grey,nolight);
+      draw(g);
+      label("\(x+y+z=1\)",b,S,deepgrey);
+      
+      triple a=(3,1,1), b=(1,-1,-3);
+      path3 g=Plane(a,b);
+      draw(surface(g),paleblue,nolight);
+      draw(g);
+      label("\(x+y-z=3\)",b,S,deepblue);
+      
+      triple a=(2,0,1), b=(2,0,-3);
+      path3 g=Plane(a,b);
+      draw(surface(g),lightgreen,nolight);
+      draw(g);
+      label("\(x+y=2\)",b,S,deepgreen);
+      
+      draw((2,0,-1)-0.5*dirvec--(2,0,-1)+1.5*dirvec,red+linewidth(1));
+      
+      axes3("\(x\)","\(y\)","\(z\)",(-3,-2,-2),(5,2,2));
       </asymptote>
       </image>
       </figure>
