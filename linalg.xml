@@ -122,7 +122,7 @@
       
       <figure>
       <caption>Intersection of two lines in the plane</caption>
-      <image xml:id="TwoLinesInPlane" width="40%">
+      <image xml:id="TwoLinesInPlane" width="40%" archive="pdf svg">
       <asymptote>
       import graph;
       unitsize(30);
