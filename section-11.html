@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-19T11:40:37-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Matrix multiplication</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_brown_gold.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
+\def\C{{\mathbb C}}
+\def\Q{{\mathbb Q}}
+\def\Z{{\mathbb Z}}
+\def\N{{\mathbb N}}
+
+\def\vec#1{\mathbf #1}
+
+\newcommand{\adj}{\mathop{\textrm{adj}}}
+\newcommand{\proj}{\mathop{\textrm{proj}}}
+\newcommand{\Span}{\mathop{\textrm{span}}} 
+
+\newcommand{\rowint}[2]{R_{#1} \leftrightarrow R_{#2}}
+\newcommand{\rowmul}[2]{R_{#1}\gets {#2}R_{#1}}
+\newcommand{\rowadd}[3]{R_{#1}\gets R_{#1}+#2R_{#3}}
+\newcommand{\rowsub}[3]{R_{#1}\gets R_{#1}-#2R_{#3}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.umanitoba.ca" target="_blank"><img src="images/umlogo.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="linalg.html"><span class="title">Manitoba linear algebra</span></a></h1>
+<p class="byline">Michael Doob (editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-10.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-2.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-12.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-10.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-2.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-12.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link"><a href="chapter-1.html" data-scroll="chapter-1"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations</span></a></li>
+<li class="link"><a href="chapter-2.html" data-scroll="chapter-2"><span class="codenumber">2</span> <span class="title">Matrix theory</span></a></li>
+<li class="link"><a href="chapter-3.html" data-scroll="chapter-3"><span class="codenumber">3</span> <span class="title">Additional Topics</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="section-11"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.4</span> <span class="title">Matrix multiplication</span>
+</h2>
+<section class="subsection" id="subsection-19"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.1</span> <span class="title">First concepts</span>
+</h3>
+<article class="paragraphs" id="paragraphs-2"><h5 class="heading"><span class="title">Definition of matrix multiplication.</span></h5>
+<p id="p-301">The definition of matrix multiplication is very different from that of addition and subtraction.  Suppose we have two matrices \(A\) and \(B\) with respective sizes \(m\times n\) and \(r\times s.\) <em class="emphasis">The product of A and B is defined if and only if \(n=r\)</em>, that is, the number of columns of \(A\) is equal to the number of rows of \(B.\) When this is the case, the matrices are said to be <em class="emphasis">conformable for multiplication</em>, and it is possible to evaluate the product \(AB\text{.}\)</p></article><article class="definition definition-like" id="definition-14"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix multiplication.</span>
+</h6>
+<p id="p-302">Consider the entries in row \(R_i\) of the matrix \(A\text{:}\) \(a_{i,1}, a_{i,2},\dots, a_{i,n}\) and also the entries in column \(C_j\) of the matrix \(B:\) \(b_{1,j}, b_{2,j},\dots, b_{r,j}.\)</p>
+<div class="displaymath">
+\begin{equation*}
+A=\begin{bmatrix} \amp\amp\vdots \\
+\color{red}{a_{i,1}} \amp \color{red}{a_{i,2}}\amp\cdots\amp \color{red}{a_{i,n}}
+\rlap{\quad R_i}\\ \amp\amp\vdots\\ 
+\end{bmatrix}
+\qquad\quad
+\begin{matrix}
+B=\begin{bmatrix}
+\cdots\amp \color{green}{b_{1,j}}\amp\cdots\\
+\cdots\amp \color{green}{b_{2,j}}\amp\cdots\\
+\amp\vdots\\ 
+\cdots\amp \color{green}{b_{r,j}}\amp\cdots
+\end{bmatrix} \\
+\qquad C_j
+\end{matrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">Then for \(C=AB\text{,}\) each \(c_{i,j}\) is computed in the following way:</p>
+<div class="displaymath">
+\begin{equation*}
+c_{i,j}=
+\color{red}{a_{i,1}}\color{green}{b_{1,j}}+ 
+\color{red}{a_{i,2}}\color{green}{b_{2,j}}+\cdots +
+\color{red}{a_{i,n}}\color{green}{b_{r,j}}
+\end{equation*}
+</div></article><p id="p-303">Notice that the assumption \(n=r\) implies that there is just the right number of entries in the rows of \(A\) and columns of \(B\) to allow \(c_{i,j}\) to be defined.  The number \(c_{i,j}\) is also called the <em class="emphasis">inner product of row \(R_i\) of \(A\) and column \(C_j\) of \(B.\)</em> This product is written as</p>
+<div class="displaymath">
+\begin{equation*}
+c_{i,j}=R_i\cdot C_j
+\end{equation*}
+</div>
+<p data-braille="continuation">Notice that this definition implies that the size of the product is \(m\times s.\)</p>
+<article class="example example-like" id="example-16"><a data-knowl="" class="id-ref original" data-refid="hk-example-16"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">Examples of matrix multiplication.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-16"><article class="example example-like"><ul id="p-304" class="disc">
+<li id="li-135">
+<p id="p-305">Suppose \(A=\begin{bmatrix} 
+1 \amp 2 \amp 3 \\ 
+4 \amp 5 \amp 6\end{bmatrix}_{2\times 3}\) and \(B=\begin{bmatrix} 
+3 \amp 1\\ 
+4 \amp 1 \\
+5 \amp 9
+\end{bmatrix}_{3\times 2}\text{.}\) Then \(C=AB\) is defined and has size \(2\times2\text{.}\) Here are the entries in \(C\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rclcl}
+c_{11}\amp=\amp1\cdot3 + 2\cdot4 + 3\cdot5 \amp=\amp 3+8+15=26\\
+c_{12}\amp=\amp1\cdot1 + 2\cdot1 + 3\cdot9 \amp=\amp 1+2+27=30\\
+c_{21}\amp=\amp4\cdot3 + 5\cdot4 + 6\cdot5 \amp=\amp 12+20+30=62\\
+c_{22}\amp=\amp4\cdot1 + 5\cdot1 + 6\cdot9 \amp=\amp 4+5+54=63
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">In other words \(C=\begin{bmatrix}26\amp30\\62\amp63\end{bmatrix}\)</p>
+</li>
+<li id="li-136">
+<p id="p-306">Using \(A\) and \(B\) from the previous example, the matrix \(D=BA\) is also defined. In this case the product is of size \(3\times3.\) In this case we have</p>
+<div class="displaymath">
+\begin{align*}
+D\amp =\begin{bmatrix}
+3\cdot1 + 1\cdot4 \amp 3\cdot2 + 1\cdot5 \amp 3\cdot3 + 1\cdot6\\
+4\cdot1 + 1\cdot4 \amp 4\cdot2 + 1\cdot5 \amp 4\cdot3 + 1\cdot6\\
+5\cdot1 + 9\cdot4 \amp 5\cdot2 + 9\cdot5 \amp 5\cdot3 + 9\cdot6
+\end{bmatrix}\\
+\amp =\begin{bmatrix}
+7\amp11\amp15\\8\amp13\amp18\\41\amp55\amp69
+\end{bmatrix}
+\end{align*}
+</div>
+<p data-braille="continuation">Note that \(AB\not=BA\) since the two matrices have different size.</p>
+</li>
+<li id="li-137">
+<p id="p-307">Let \(I_2=\begin{bmatrix}1\amp0\\0\amp1\end{bmatrix}\) and \(A\) as in the previous examples. Then</p>
+<div class="displaymath">
+\begin{align*}
+I_2A
+\amp =
+\begin{bmatrix}
+1\cdot1+0\cdot4 \amp 1\cdot2+0\cdot5 \amp 1\cdot3 + 0\cdot6\\
+0\cdot1+1\cdot4 \amp 0\cdot2+1\cdot5 \amp 0\cdot3 + 1\cdot6
+\end{bmatrix}\\
+\amp =\begin{bmatrix} 1 \amp 2 \amp 3 \\ 4 \amp 5 \amp 6\end{bmatrix}\\
+\amp =A
+\end{align*}
+</div>
+</li>
+<li id="li-138"><p id="p-308">Let \(I_3=\begin{bmatrix}1\amp0\amp0\\0\amp1\amp0\\0\amp0\amp1\end{bmatrix}.\) Computing as in the last example, we have \(AI_3=A.\)</p></li>
+</ul></article></div>
+<article class="paragraphs" id="paragraphs-3"><h5 class="heading"><span class="title">Systems of linear equations and matrix multiplication.</span></h5>
+<p id="p-309">We may use matrix multiplication to write systems of linear equations compactly. Suppose we have a system of linear equations written as</p>
+<div class="displaymath">
+\begin{gather*}
+a_{1,1}x_1+a_{1,2}x_2+\cdots+ a_{1,n}x_n=b_1 \\
+a_{2,1}x_1+a_{2,2}x_2+\cdots+ a_{2,n}x_n=b_2 \\
+\vdots \\
+a_{m,1}x_1+a_{m,2}x_2+\cdots+ a_{m,n}x_n=b_m 
+\end{gather*}
+</div>
+<p data-braille="continuation">We then have \(A=[a_{i,j}]\) as the coefficient matrix. We also define</p>
+<div class="displaymath">
+\begin{equation*}
+\vec{b} = \begin{bmatrix} b_1\\b_2\\ \vdots \\b_m \end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+\vec{x} = \begin{bmatrix} x_1\\x_2\\ \vdots \\x_n \end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">Matrix multiplication is defined so that the system of linear equations is exactly the same as the matrix equation</p>
+<div class="displaymath">
+\begin{equation*}
+A\vec x=\vec b
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-32"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-32"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-32"><article class="exercise exercise-like"><p id="p-310">Let \(A=\left[\begin{smallmatrix}2\amp1\\ -1\amp0\end{smallmatrix}\right]\) and \(B=\left[\begin{smallmatrix}1\amp2\\ -1\amp2\end{smallmatrix}\right]\text{.}\) Evaluate</p>
+<ul class="disc">
+<li id="li-139"><p id="p-311">\(AB\)</p></li>
+<li id="li-140"><p id="p-312">\(BA\)</p></li>
+<li id="li-141"><p id="p-313">\(A^2=AA\)</p></li>
+<li id="li-142"><p id="p-314">\(B^2=BB\)</p></li>
+<li id="li-143"><p id="p-315">\(ABA\)</p></li>
+<li id="li-144"><p id="p-316">\(BAB\)</p></li>
+</ul>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-32" id="solution-32"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-32"><div class="solution solution-like"><ul id="p-317" class="disc">
+<li id="li-145"><p id="p-318">\(AB=\left[
+\begin{smallmatrix}1\amp 6\\-1\amp -2\end{smallmatrix}\right]\)</p></li>
+<li id="li-146"><p id="p-319">\(BA=\left[
+\begin{smallmatrix}0\amp 1\\-4\amp -1\end{smallmatrix}\right]\)</p></li>
+<li id="li-147"><p id="p-320">\(A^2=AA=\left[
+\begin{smallmatrix}3\amp 2\\-2\amp -1\end{smallmatrix}\right]\)</p></li>
+<li id="li-148"><p id="p-321">\(B^2=BB=\left[
+\begin{smallmatrix}-1\amp 6\\-3\amp 2\end{smallmatrix}\right]\)</p></li>
+<li id="li-149"><p id="p-322">\(ABA=\left[
+\begin{smallmatrix}-4\amp 1\\0\amp -1\end{smallmatrix}\right]\)</p></li>
+<li id="li-150"><p id="p-323">\(BAB=\left[
+\begin{smallmatrix}-1\amp 2\\-3\amp -10\end{smallmatrix}\right]\)</p></li>
+</ul></div></div>
+</div></article></div>
+<article class="paragraphs" id="paragraphs-4"><h5 class="heading"><span class="title">Linear combinations and matrix multiplication.</span></h5>
+<p id="p-324">Suppose we start with an \(m\times n\) matrix \(A\) whose columns are \(C_1,C_2,\ldots,C_n\text{.}\) Recall from <a class="xref" data-knowl="./knowl/LinearCombinationDefinition.html" title="Definition 2.3.7: Linear combination of matrices">Definition 2.3.7</a> that a linear combination of these columns has the form \[r_1C_1+r_2C_2+\cdots+r_nC_n.\] Consider the equation</p>
+<div class="displaymath">
+\begin{gather}
+B=r_1C_1+r_2C_2+\cdots+r_nC_n.\label{LinearCombinationEquation}\tag{2.4.1}
+\end{gather}
+</div>
+<p data-braille="continuation">Since \(B\) is conformable for addition, it must have \(m\) rows, and so we have</p>
+<div class="displaymath">
+\begin{equation*}
+B=
+\begin{bmatrix}
+b_1 \\b_2 \\ \vdots\\ b_m
+\end{bmatrix}
+\textrm{ and }
+R=
+\begin{bmatrix}
+r_1 \\r_2 \\ \vdots\\ r_n
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">Then then <a class="xref" data-knowl="./knowl/LinearCombinationEquation.html" title="Equation 2.4.1">(2.4.1)</a> is identical to the equation \[ AR=B. \]</p></article></section><section class="subsection" id="subsection-20"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.2</span> <span class="title">Properties of Matrix Multiplication</span>
+</h3>
+<article class="paragraphs" id="paragraphs-5"><h5 class="heading"><span class="title">Matrix multiplication is <em class="emphasis">not</em> commutative.</span></h5>
+<p id="p-325">The most important difference between the multiplication of matrices and the multiplication of real numbers is that real numbers \(x\) and \(y\) always commute (that is \(xy=yx\)), but the same in not true for matrices. For matrices</p>
+<div class="displaymath">
+\begin{equation*}
+X=
+\begin{bmatrix}
+1\amp2\\3\amp4
+\end{bmatrix}
+\textrm{ and }
+Y=
+\begin{bmatrix}
+2\amp1\\0\amp-1
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">we have</p>
+<div class="displaymath">
+\begin{equation*}
+XY=
+\begin{bmatrix}
+2\amp-1\\6\amp-1
+\end{bmatrix}
+\textrm{ and }
+YX=
+\begin{bmatrix}
+5\amp8\\-3\amp-4
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">On the other hand, if</p>
+<div class="displaymath">
+\begin{equation*}
+Z=
+\begin{bmatrix}
+-2\amp 2\\3\amp 1
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">then</p>
+<div class="displaymath">
+\begin{equation*}
+XZ=
+\begin{bmatrix}
+4\amp 4\\6\amp 10
+\end{bmatrix}
+=ZX\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">When \(ZX=XZ\text{,}\) we say that \(X\) and \(Z\) are <dfn class="terminology">commuting matrices</dfn>.</p></article><article class="exercise exercise-like" id="exercise-33"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-33"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.4.4</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-33"><article class="exercise exercise-like"><p id="p-326">Suppose two matrices \(X\) and \(Z\) commute, that is, satisfy the equation</p>
+<div class="displaymath">
+\begin{equation*}
+XZ=ZX.
+\end{equation*}
+</div>
+<p data-braille="continuation">Show that \(X\) and \(Z\) are square matrices of the same size.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-33" id="solution-33"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-33"><div class="solution solution-like"><p id="p-327">Suppose that \(X\) is of size \(m\times n\) and \(Z\) is of size \(r\times s\text{.}\) Since the matrix \(XZ\) exists, the comformability condition says \(n=r\text{.}\) Similarly since \(ZX\) exists we have \(s=m\text{.}\) Since \(XZ\) is of size \(m\times s\) and \(ZX\) is of size \(n\times r\text{,}\) the equation \(XZ=ZX\) implies that \(m=n\) and \(s=r\text{.}\) Putting the equalities together, we have \(m=n=r=s\text{.}\)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-34"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-34"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.4.5</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-34"><article class="exercise exercise-like"><p id="p-328">Let \(X=
+\left[\begin{smallmatrix}
+1\amp2\\3\amp4
+\end{smallmatrix}\right]\text{.}\) Find all matrices \(Z\) so that \(XZ=ZX\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-2" id="hint-2"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-2"><div class="hint solution-like"><p id="p-329">Let \(Z=
+\begin{bmatrix}
+x\amp y\\ z\amp w
+\end{bmatrix}\) and evaluate \(XZ\) and \(ZX\)</p></div></div>
+</div></article></div>
+<article class="theorem theorem-like" id="theorem-5"><a data-knowl="" class="id-ref original" data-refid="hk-theorem-5"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.6</span><span class="period">.</span><span class="space"> </span><span class="title">Left distributive law.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-theorem-5">
+<article class="theorem theorem-like"><p id="p-330">Let \(A\text{,}\) \(B\) and \(C\) be matrices of the right size for matrix multiplication. Then \(A(B+C)=AB+AC\)</p></article><article class="hiddenproof" id="proof-5"><a data-knowl="" class="id-ref original" data-refid="hk-proof-5"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-5"><article class="hiddenproof"><p id="p-331">We compute the \(i\)-\(j\) entry on both sides of the equation:</p>
+<ul class="disc">
+<li id="li-151">
+<p id="p-332">Left hand side: The \(k\)-\(j\) entry of \(B+C\) is \(b_{k,j}+c_{k,j}\text{,}\) and so the \(i\)-\(j\) entry of \(A(B+C)\) is</p>
+<div class="displaymath">
+\begin{align*}
+\amp a_{i,1}(b_{1,j}+c_{1,j})+
+a_{i,2}(b_{2,j}+c_{2,j})+
+\cdots+ a_{i,n}(b_{n,j}+c_{n,j})\\
+\amp = a_{i,1}b_{1,j}+a_{i,1}c_{1,j} \\
+\amp +a_{i,2}b_{2,j}+a_{i,2}c_{2,j} \\
+\amp \ \vdots \\
+\amp +a_{i,n}b_{n,j}+a_{i,n}c_{n,j} 
+\end{align*}
+</div>
+</li>
+<li id="li-152">
+<p id="p-333">Right hand side: The the \(i\)-\(j\) entry of \(AB\) is \(a_{i,1}b_{1,j}+a_{i,2}b_{2,j}+\cdots+a_{i,n}b_{n,j}\) and the \(i\)-\(j\) entry of \(AC\) is \(a_{i,1}c_{1,j}+a_{i,2}c_{2,j}+\cdots+a_{i,n}c_{n,j}\) Hence the \(i\)-\(j\) entry of \(AB+AC\) is</p>
+<div class="displaymath">
+\begin{align*}
+\amp a_{i,1}b_{1,j}+a_{i,2}b_{2,j}+\cdots+a_{i,n}b_{n,j} \\
++\amp a_{i,1}c_{1,j}+a_{i,2}c_{2,j}+\cdots+a_{i,n}c_{n,j}.
+\end{align*}
+</div>
+</li>
+</ul>
+<p data-braille="continuation">Notice that the first column of sums for the left-hand side is the same as the first row of sums for the right-hand side, and similarly for the second column and second row. Hence the entries on the left-hand side and the right-hand side are equal.</p></article></div>
+<article class="hiddenproof" id="proof-6"><a data-knowl="" class="id-ref original" data-refid="hk-proof-6"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-6"><article class="hiddenproof"><p id="p-334">Using summation notation:</p>
+<div class="displaymath">
+\begin{align*}
+\bigl(A(B+C)\bigr)_{i,j} \amp = \sum_{k=1}^n A_{i,k}(B+C)_{k,j} \\
+\amp = \sum_{k=1}^n a_{i,k}(b_{k,j}+c_{k,j}) \\
+\amp = \sum_{k=1}^n (a_{i,k} b_{k,j}+a_{i,k} c_{k,j}) \\
+\amp = \sum_{k=1}^n a_{i,k} b_{k,j}+\sum_{k=1}^na_{i,k} c_{k,j} \\
+\amp = (AB)_{i,j} + (AC)_{i,j}
+\end{align*}
+</div></article></div>
+</div>
+<article class="theorem theorem-like" id="theorem-6"><a data-knowl="" class="id-ref original" data-refid="hk-theorem-6"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">Right distributive law.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-theorem-6">
+<article class="theorem theorem-like"><p id="p-335">Let \(A\text{,}\) \(B\) and \(C\) be matrices of the right size for matrix multiplication. Then \((B+C)A = BA+CA\text{.}\)</p></article><article class="hiddenproof" id="proof-7"><a data-knowl="" class="id-ref original" data-refid="hk-proof-7"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-7"><article class="hiddenproof"><p id="p-336">Let \(B\)  and \(C\) be of size \(m\times n\text{,}\) and \(A\) be of size \(n\times r\text{.}\) We use \(A=[a_{i,j}],\)  \(B=[b_{i,j}]\) and  \(C=[c_{i,j}]\text{,}\) and we compute the \(i\)-\(j\) entry on both sides of the equation.</p>
+<ul class="disc">
+<li id="li-153">
+<p id="p-337">Left hand side: The \(i\)-\(k\) entry of \(B+C\) is \(b_{i,k}+c_{i,k}\text{,}\) and so the  \(i\)-\(j\) entry of \((B+C)A\) is</p>
+<div class="displaymath">
+\begin{gather*}
+(b_{i,1}+c_{i,1})a_{1,j} +
+(b_{i,2}+c_{i,2})a_{2,j}+
+\cdots+ (b_{i,n}+c_{i,n})a_{n,j}\\
+= b_{i,1}a_{1,j}+c_{i,1}a_{1,j} +\cdots
++ b_{i,n}a_{1,n}+c_{i,n}a_{n,j} \text{.}
+\end{gather*}
+</div>
+</li>
+<li id="li-154">
+<p id="p-338">Right hand side: The \(i\)-\(j\) entry of \(BA\) is \(b_{i,1}a_{1,j}+b_{i,2}a_{2,j}+\cdots+b_{i,n}a_{n,j}\) and the \(i\)-\(j\) entry of \(CA\) is \(c_{i,1}a_{1,j}+c_{i,2}a_{2,j}+\cdots+c_{i,n}a_{n,j}\) Hence the \(i\)-\(j\) entry of \(BA+CA\) is</p>
+<div class="displaymath">
+\begin{gather*}
+b_{i,1}a_{1,j}+b_{i,2}a_{2,j}+\cdots+b_{i,n}a_{n,j}\\
++  c_{i,1}a_{1,j}+c_{i,2}a_{2,j}+\cdots+c_{i,n}a_{n,j}
+\end{gather*}
+</div>
+<p data-braille="continuation">Reordering the summands, we get the \(i\)-\(j\) entry of \(BA+CA\) to be \(b_{i,1}a_{1,j}+ c_{i,1}a_{1,j}
++\cdots+b_{i,n}a_{n,j}+c_{i,n}a_{n,j}\)</p>
+</li>
+</ul>
+<p data-braille="continuation">The left-hand side and the right-side agree, and so  \((B+C)A=BA+CA\text{.}\)</p></article></div>
+<article class="hiddenproof" id="proof-8"><a data-knowl="" class="id-ref original" data-refid="hk-proof-8"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-8"><article class="hiddenproof"><p id="p-339">Using summation notation:</p>
+<div class="displaymath">
+\begin{align*}
+\bigl((B+C)A\bigr)_{i,j} \amp = \sum_{k=1}^n (B+C)_{i,k}A_{k,j} \\
+\amp = \sum_{k=1}^n  (b_{i,k}+c_{i,k}) a_{k,j}\\
+\amp = \sum_{k=1}^n (b_{i,k}a_{k,j} + c_{i,k} a_{k,j}) \\
+\amp = \sum_{k=1}^n b_{i,k}a_{k,j} + \sum_{k=1}^n c_{i,k} a_{k,j} \\
+\amp = (BA)_{i,j} + (CA)_{i,j}
+\end{align*}
+</div></article></div>
+</div>
+<article class="theorem theorem-like" id="theorem-7"><a data-knowl="" class="id-ref original" data-refid="hk-theorem-7"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.8</span><span class="period">.</span><span class="space"> </span><span class="title">Associativity of matrix multiplication.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-theorem-7">
+<article class="theorem theorem-like"><p id="p-340">Let \(A\text{,}\) \(B\) and \(C\) be matrices of the right size for matrix multiplication. Then \(A(BC)=(AB)C\text{.}\)</p></article><article class="hiddenproof" id="proof-9"><a data-knowl="" class="id-ref original" data-refid="hk-proof-9"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-9"><article class="hiddenproof"><p id="p-341">Let \(A\) be of size \(m\times n\text{,}\) and \(B\)  of size \(n\times r\) and \(C\) of size \(r\times s\text{.}\) We use \(A=[a_{i,j}],\) \(B=[b_{i,j}]\) and \(C=[c_{i,j}]\text{,}\) and we compute the \(i\)-\(j\) entry on both sides of the equation.</p>
+<ul class="disc">
+<li id="li-155">
+<p id="p-342">Left hand side: The \(i\)-\(j\) entry of \(A(BC)\) is \(a_{i,1}(BC)_{1,j} +
+a_{i,2}(BC)_{2,j} + \cdots +
+a_{i,n}(BC)_{n,j}.\) In addition, for any \(t, 1\leq t\leq n,\) we have \((BC)_{t,j}=b_{t,1}c_{1,j} + b_{t,2}c_{2,j} + \cdots + b_{t,r}c_{r,j}\) This means that the left-hand side is</p>
+<div class="displaymath">
+\begin{gather*}
+a_{i,1}(b_{1,1}c_{1,j} + b_{1,2}c_{2,j} + \cdots + b_{1,r}c_{r,j})\\
++ a_{i,2}(b_{2,1}c_{1,j} + b_{2,2}c_{2,j} + \cdots + b_{2,r}c_{r,j})\\
++ a_{i,3}(b_{3,1}c_{1,j} + b_{3,2}c_{2,j} + \cdots + b_{3,r}c_{r,j})\\
+\vdots\\
++ a_{i,n}(b_{n,1}c_{1,j} + b_{n,2}c_{2,j} + \cdots + b_{n,r}c_{r,j})
+\end{gather*}
+</div>
+<p data-braille="continuation">which is</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{matrix}
+a_{i,1}b_{1,1}c_{1,j} + a_{i,1}b_{1,2}c_{2,j} + \cdots + a_{i,1}b_{1,r}c_{r,j}\\
++ a_{i,2}b_{2,1}c_{1,j} + a_{i,2}b_{2,2}c_{2,j} + \cdots + a_{i,2}b_{2,r}c_{r,j}\\
++ a_{i,3}b_{3,1}c_{1,j} + a_{i,3}b_{3,2}c_{2,j} + \cdots + a_{i,3}b_{3,r}c_{r,j}\\
+\vdots\\
++ a_{i,n}b_{n,1}c_{1,j} + a_{i,n}b_{n,2}c_{2,j} + \cdots + a_{i,n}b_{n,r}c_{r,j}
+\end{matrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">Notice what this result is actually stating. Each summand is of the form \(a_{i,t}b_{t,u}c_{u,j}\) where \(1\leq t\leq n\) and \(1\leq u\leq r.\) Since there are \(nr\) summands, all different, each possible \(a_{i,t}b_{t,u}c_{u,j}\) appears exactly once within the sum.</p>
+</li>
+<li id="li-156">
+<p id="p-343">Right hand side: The argument is almost identical with the one used on the left-hand side. The \(i\)-\(j\) entry of \((AB)C\) is \((AB)_{i,1}c_{1,j} +
+(AB)_{i,2}c_{2,j} + \cdots +
+(AB)_{i,r}c_{r,j}.\) In addition, for any \(t, 1\leq t\leq r,\) we have \((AB)_{i,t}=a_{i,1}b_{1,t} + a_{i,2}b_{2,t} + \cdots + a_{i,n}b_{n,t}\) This means that the right-hand side is</p>
+<div class="displaymath">
+\begin{gather*}
+(a_{i,1}b_{1,1} + a_{i,2}b_{2,1} + \cdots + a_{i,n}b_{n,1})c_{1,j}\\
+(a_{i,1}b_{1,2} + a_{i,2}b_{2,2} + \cdots + a_{i,n}b_{n,2})c_{2,j}\\
+(a_{i,1}b_{1,3} + a_{i,2}b_{2,3} + \cdots + a_{i,n}b_{n,3})c_{3,j}\\
+\vdots\\
+(a_{i,1}b_{1,r} + a_{i,2}b_{2,r} + \cdots + a_{i,n}b_{n,r})c_{r,j}
+\end{gather*}
+</div>
+<p data-braille="continuation">which is</p>
+<div class="displaymath">
+\begin{gather*}
+a_{i,1}b_{1,1}c_{1,j} + a_{i,2}b_{2,1}c_{1,j} + \cdots + a_{i,n}b_{n,1}c_{1,j}\\
+a_{i,1}b_{1,2}c_{2,j} + a_{i,2}b_{2,2}c_{2,j} + \cdots + a_{i,n}b_{n,2}c_{2,j}\\
+\vdots\\
+a_{i,1}b_{1,r}c_{r,j} + a_{i,2}b_{2,r}c_{r,j} + \cdots + a_{i,n}b_{n,r}c_{r,j}
+\end{gather*}
+</div>
+<p data-braille="continuation">Once again, each summand is of the form \(a_{i,t}b_{t,u}c_{u,j}\) where \(1\leq t\leq n\) and \(1\leq u\leq r.\) Since there are \(nr\) summands, all different, each possible \(a_{i,t}b_{t,u}c_{u,j}\) appears exactly once within the sum. Hence the left-hand side and right-hand side are equal.</p>
+</li>
+</ul></article></div>
+<article class="hiddenproof" id="proof-10"><a data-knowl="" class="id-ref original" data-refid="hk-proof-10"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-10"><article class="hiddenproof"><p id="p-344">Let \(A\) be of size \(m\times n\text{,}\) and \(B\)  of size \(n\times r\) and \(C\) of size \(r\times s\text{.}\) Using summation notation:</p>
+<div class="displaymath">
+\begin{equation*}
+\bigl((AB)C\bigr)_{i,j} = \sum_{k=1}^r (AB)_{i,k}c_{k,j} 
+\end{equation*}
+</div>
+<p data-braille="continuation">while</p>
+<div class="displaymath">
+\begin{equation*}
+(AB)_{i,k}=\sum_{\ell=1}^n a_{i,\ell}b_{\ell,k} 
+\end{equation*}
+</div>
+<p data-braille="continuation">Now we have</p>
+<div class="displaymath">
+\begin{align*}
+\bigl((AB)C\bigr)_{i,j} \amp = 
+\sum_{k=1}^r \bigl(\sum_{\ell=1}^n a_{i,\ell}b_{\ell,k}\bigr) c_{k,j} \\
+\amp = \sum_{k=1}^r \bigl(\sum_{\ell=1}^n a_{i,\ell}b_{\ell,k}c_{k,j}\bigr) \\
+\amp = \sum_{k=1}^r \sum_{\ell=1}^n a_{i,\ell}b_{\ell,k}c_{k,j} 
+\end{align*}
+</div>
+<p data-braille="continuation">On ther other hand</p>
+<div class="displaymath">
+\begin{equation*}
+\bigl(A(BC)\bigr)_{i,j} = \sum_{\ell=1}^n a_{i,\ell} (BC)_{\ell,j}
+\end{equation*}
+</div>
+<p data-braille="continuation">while</p>
+<div class="displaymath">
+\begin{equation*}
+(BC)_{\ell,j}=\sum_{k=1}^r b_{\ell,k}c_{k,j} 
+\end{equation*}
+</div>
+<p data-braille="continuation">and so</p>
+<div class="displaymath">
+\begin{align*}
+\bigl(A(BC)\bigr)_{i,j} 
+\amp =  \sum_{\ell=1}^n a_{i,\ell}\bigl(\sum_{k=1}^r b_{\ell,k}c_{k,j} \bigr) \\
+\amp =  \sum_{\ell=1}^n \sum_{k=1}^r a_{i,\ell} b_{\ell,k}c_{k,j} 
+\end{align*}
+</div>
+<p data-braille="continuation">and so</p>
+<div class="displaymath">
+\begin{equation*}
+(AB)C=A(BC)
+\end{equation*}
+</div></article></div>
+</div></section><section class="subsection" id="subsection-21"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.3</span> <span class="title">Solving a matrix equation \(AX=B\)</span>
+</h3>
+<p id="p-345">Suppose that \(A\) is an \(m\times n\) matrix and \(B\) is an \(m\times r\) matrix. We want find a matrix \(X\) so that \(AX=B.\) To be conformable for multiplication, \(X\) must be of size \(n\times r.\) Specifically, if \(A=[a_{i,j}]\text{,}\) \(X=[x_{i,j}]\)  and \(B=[b_{i,j}]\text{,}\) then we have</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+a_{1,1} \amp a_{1,2} \amp \cdots \amp a_{1,n}\\
+a_{2,1} \amp a_{2,2} \amp \cdots \amp a_{2,n}\\
+\amp       \amp \vdots \amp\\
+a_{m,1} \amp a_{m,2} \amp \cdots \amp a_{m,n}
+\end{bmatrix}
+\begin{bmatrix}
+x_{1,1} \amp x_{1,2} \amp \cdots \amp x_{1,r}\\
+x_{2,1} \amp x_{2,2} \amp \cdots \amp x_{2,r}\\
+\amp       \amp \vdots \amp\\
+x_{n,1} \amp x_{n,2} \amp \cdots \amp x_{n,r}
+\end{bmatrix}
+=
+\begin{bmatrix}
+b_{1,1} \amp b_{1,2} \amp \cdots \amp b_{1,r}\\ 
+b_{2,1} \amp b_{2,2} \amp \cdots \amp b_{2,r}\\
+\amp       \amp \vdots \amp\\
+b_{m,1} \amp b_{m,2} \amp \cdots \amp b_{m,r}
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">If we look at the \(i\)-\(j\) entry on both sides of this equation, we get</p>
+<div class="displaymath">
+\begin{equation*}
+a_{i,1}x_{1,j} +a_{i,2}x_{2,j}+\cdots +a_{i,n}x_{n,j} = b_{i,j}.
+\end{equation*}
+</div>
+<p data-braille="continuation">If we keep the column number \(j\) of \(X\) fixed for the moment and let \(i\) range from \(1\) to \(m\text{,}\) we get a system of linear equations:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+a_{1,1} \amp a_{1,2} \amp \cdots \amp a_{1,n}\\
+a_{2,1} \amp a_{2,2} \amp \cdots \amp a_{2,n}\\
+\amp       \amp \vdots \amp\\
+a_{m,1} \amp a_{m,2} \amp \cdots \amp a_{m,n}
+\end{bmatrix}
+\begin{bmatrix}
+x_{1,j}\\
+x_{2,j}\\ 
+\vdots \\
+x_{n,j}
+\end{bmatrix}
+=
+\begin{bmatrix}
+b_{1,j} \\
+b_{2,j}\\
+\vdots\\
+b_{m,j}
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">We can solve this system by finding the reduced row echelon form of the augmented matrix. Here's the beautiful part: there are \(n\) different systems of linear equations that arise as \(j\) takes on the values from \(1\) to \(n\text{,}\) and they all have the identical coefficient matrix. This means that the same sequence of elementary row operations may be used on each of the equations to find the solutions.</p>
+<article class="example example-like" id="example-17"><a data-knowl="" class="id-ref original" data-refid="hk-example-17"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.9</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-17"><article class="example example-like"><ul id="p-346" class="disc">
+<li id="li-157">
+<p id="p-347">Let</p>
+<div class="displaymath">
+\begin{equation*}
+A=\begin{bmatrix} 1\amp2\amp3\\4\amp5\amp6\end{bmatrix}
+\textrm{ and }  
+B=\begin{bmatrix} 3\amp1\\4\amp1\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Then \(X\) must be a \(3\times2\) matrix so that</p>
+<div class="displaymath">
+\begin{equation*}
+X=\begin{bmatrix} x_{1,1}\amp x_{1,2}\\
+x_{2,1}\amp x_{2,2}\\
+x_{3,1}\amp x_{3,2}\end{bmatrix}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Solving for the first column means finding the reduced row echelon form of \(\left[\begin{smallmatrix} 1\amp2\amp3\amp3 \\4\amp5\amp6\amp4\end{smallmatrix}\right].\) It is \(\left[\begin{smallmatrix} 1\amp0\amp-1\amp-\tfrac73
+\\0\amp1\amp2\amp\tfrac83\end{smallmatrix}\right]\) and so \(x_{1,1}=-\tfrac73+s \text{,}\) \(x_{2,1}=\tfrac83-2s\text{,}\) and \(x_{3,1}=s.\) Solving for the second column means finding the reduced row echelon form of \(\left[\begin{smallmatrix} 1\amp2\amp3\amp1 \\4\amp5\amp6\amp1\end{smallmatrix}\right]\) which is \(\left[\begin{smallmatrix} 1\amp0\amp-1\amp-1 \\0\amp1\amp2\amp1\end{smallmatrix}\right]\) and so \(x_{1,2}=-1+t \text{,}\) \(x_{2,2}=1-2t\text{,}\) and \(x_{3,2}=t.\) Hence we conclude that</p>
+<div class="displaymath">
+\begin{equation*}
+X=\begin{bmatrix}
+-\tfrac73+s \amp-1+t\\
+\tfrac83-2s \amp 1-2t\\
+s\amp t
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">is a solution of the matrix equation \(AX=B\) for any choice of \(s\) and \(t\text{.}\) Notice the similarty of the two matrices to be put into reduced row echelon form. They differ, of course, only in the last column. In fact, this means that exactly the same elementary row operations were used to put both matrices into reduced row echelon form. Since both computations used the same  coefficient matrix, we could have carried out both computations at once by starting with the matrix \(\left[\begin{smallmatrix}
+1\amp2\amp3\amp3\amp1\\ 4\amp5\amp6\amp4\amp1
+\end{smallmatrix}\right]\) and obtaining \(\left[\begin{smallmatrix}
+1\amp0\amp-1\amp-\tfrac73 \amp-1\\0\amp1\amp2\amp\tfrac83\amp1
+\end{smallmatrix}\right]\) for the reduced row echelon form.</p>
+</li>
+<li id="li-158">
+<p id="p-348">An even more striking example can be obtained when there are no free variables. Let \(A=\left[\begin{smallmatrix} 1\amp1\amp3\\3\amp2\amp5\\1\amp1\amp1\end{smallmatrix}\right]\) and \(B=\left[\begin{smallmatrix} 1\amp1\amp2\\ 2\amp2\amp3\\ 3\amp3\amp4\end{smallmatrix}\right]\) so that \(X\) is a \(3\times3\) matrix. Then the augmented matrix</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{ccc|rrr}
+1\amp1\amp3\amp1\amp1\amp2\\3\amp2\amp5\amp2\amp2\amp3\\1\amp1\amp1\amp3\amp3\amp4
+\end{array}\right]
+\end{equation*}
+</div>
+<p data-braille="continuation">has reduced row echelon form</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{ccc|rrr}
+1\amp0\amp0\amp-1\amp-1\amp-2\\0\amp1\amp0\amp5\amp5\amp7\\0\amp0\amp1\amp-1\amp-1\amp-1
+\end{array}\right]
+\end{equation*}
+</div>
+<p data-braille="continuation">From the first column of \(B\) we get \(x_{1,1}=-1\text{,}\) \(x_{2,1}=5\) and \(x_{3,1}=-1.\) From the second column of\(B\) we get \(x_{1,2}=-1\text{,}\) \(x_{2,2}=5\) and \(x_{3,2}=-1.\) From the third column of \(B\) we get \(x_{1,3}=-2\text{,}\) \(x_{2,3}=7\) and \(x_{3,3}=1.\) So</p>
+<div class="displaymath">
+\begin{equation*}
+X= \begin{bmatrix}
+-1\amp-1\amp-2 \\5\amp5\amp7\\-1\amp-1\amp-1
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Notice that \(X\) is the right half of the reduced row echelon form, and note that it follows directly from the identity matrix in the left half of the same matrix.</p>
+</li>
+<li id="li-159">
+<p id="p-349">If \(A\) and \(B\) are both square \(n\times n\) matrices, and the reduced row echelon form of \(A\) is \(I_n\text{,}\) then the reduced row echelon form of \([A| B]\) is \([I_n|X]\) where \(X\) satisfies \(AX=B.\) As an example, let us solve the matrix equation</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1\amp2\amp-1\\3\amp1\amp0\\2\amp1\amp1
+\end{bmatrix}
+X=\begin{bmatrix}
+-2\amp3\amp3\\2\amp2\amp1\\4\amp2\amp2
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">Then \(X\) is a \(3\times 3\) matrix, and the reduced row echelon form of</p>
+<div class="displaymath">
+\begin{equation*}
+[A| B]=
+\left[\begin{array}{ccr|rrr}
+1\amp2\amp-1\amp-2\amp3\amp3\\ 3\amp1\amp0\amp2\amp2\amp1\\2\amp1\amp1\amp4\amp2\amp2
+\end{array}\right]
+\end{equation*}
+</div>
+<p data-braille="continuation">is</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{ccc|rrr}
+1\amp0\amp0\amp-2\amp1\amp3\\ 0\amp1\amp0\amp2\amp2\amp1\\0\amp0\amp1\amp4\amp2\amp2
+\end{array}\right]
+\end{equation*}
+</div>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+X=
+\begin{bmatrix}
+-2\amp1\amp3\\ 2\amp2\amp1 \\4\amp2\amp2
+\end{bmatrix}.
+\end{equation*}
+</div>
+</li>
+</ul></article></div>
+<article class="paragraphs" id="paragraphs-6"><h5 class="heading"><span class="title">The reduced row echelon form of a square matrix.</span></h5>
+<p id="p-350">When a square matrix \(A_n\) is in reduced row echelon form, one of two things happens:</p>
+<ul class="disc">
+<li id="li-160"><p id="p-351">The bottom row is an all-zero row.</p></li>
+<li id="li-161"><p id="p-352">The bottom row is <em class="emphasis">not</em> an all-zero row.</p></li>
+</ul>
+<p data-braille="continuation">In the second case, this means that every row has a leading one, and, since the matrix is square, every column also has a leading one. This means that there are no free variables, and so the leading ones are all on the diagonal, that is, the reduced row echelon form is \(I_n\text{.}\)</p></article><article class="theorem theorem-like" id="theorem-8"><a data-knowl="" class="id-ref original" data-refid="hk-theorem-8"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.10</span><span class="period">.</span><span class="space"> </span><span class="title">Reduced row echelon form of a square matrix.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-theorem-8"><article class="theorem theorem-like"><p id="p-353">The reduced row echelon form of a square matrix \(A_n\)</p>
+<ul class="disc">
+<li id="li-162"><p id="p-354">is \(I_n\text{,}\) and so the rank is \(n\text{,}\) or</p></li>
+<li id="li-163"><p id="p-355">has a bottom row that is an all-zero row, and so the rank is less than \(n\text{.}\)</p></li>
+</ul></article></div></section></section></div></main>
+</div>
+</body>
+</html>

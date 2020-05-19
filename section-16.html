@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-19T11:40:38-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Powers of a matrix (negative exponents)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_brown_gold.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
+\def\C{{\mathbb C}}
+\def\Q{{\mathbb Q}}
+\def\Z{{\mathbb Z}}
+\def\N{{\mathbb N}}
+
+\def\vec#1{\mathbf #1}
+
+\newcommand{\adj}{\mathop{\textrm{adj}}}
+\newcommand{\proj}{\mathop{\textrm{proj}}}
+\newcommand{\Span}{\mathop{\textrm{span}}} 
+
+\newcommand{\rowint}[2]{R_{#1} \leftrightarrow R_{#2}}
+\newcommand{\rowmul}[2]{R_{#1}\gets {#2}R_{#1}}
+\newcommand{\rowadd}[3]{R_{#1}\gets R_{#1}+#2R_{#3}}
+\newcommand{\rowsub}[3]{R_{#1}\gets R_{#1}-#2R_{#3}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.umanitoba.ca" target="_blank"><img src="images/umlogo.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="linalg.html"><span class="title">Manitoba linear algebra</span></a></h1>
+<p class="byline">Michael Doob (editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-15.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-2.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-17.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-15.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-2.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-17.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link"><a href="chapter-1.html" data-scroll="chapter-1"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations</span></a></li>
+<li class="link"><a href="chapter-2.html" data-scroll="chapter-2"><span class="codenumber">2</span> <span class="title">Matrix theory</span></a></li>
+<li class="link"><a href="chapter-3.html" data-scroll="chapter-3"><span class="codenumber">3</span> <span class="title">Additional Topics</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="section-16"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.9</span> <span class="title">Powers of a matrix (negative exponents)</span>
+</h2>
+<p id="p-459">Suppose we have a square matrix \(A\text{.}\)  For positive \(m\) and \(n\) we have proven the law of exponents: in <a href="section-13.html#LawOfExponents" class="internal" title="Subsection 2.6.2: The law of exponents">Subsection 2.6.2</a>.</p>
+<ul class="disc">
+<li id="li-183">\(A^n=\underbrace{A\cdots A}_{n \text{ factors}},\) (Note that \(A^1=A\))</li>
+<li id="li-184">\(\displaystyle A^m A^n=\underbrace{A\cdots A}_{m \text{ factors}}
+\underbrace{A\cdots A}_{n \text{ factors}}
+=\underbrace{A\cdots A}_{m+n \text{ factors}}=A^{m+n},\)</li>
+<li id="li-185">\(\displaystyle (A^m)^n =\underbrace{(\underbrace{A\cdots A}_{m
+\text{ factors}})
+(\underbrace{A\cdots A}_{m \text{ factors}})\cdots
+(\underbrace{A\cdots A}_{m \text{ factors}})}_{n \text{
+times}}=A^{mn}\)</li>
+</ul>
+<p data-braille="continuation">Our goal is to extend this law for invertible matrices so that it is valid for any integer exponents.  It turns out that there is only one way to do so, and we will see this in successive steps.</p>
+<ul id="p-460" class="disc">
+<li id="li-186">\(n=0\text{:}\) For any matrix \(A\text{,}\)<div class="displaymath">
+\begin{equation*}
+A^mA^0=A^{m+0}=A^m\\A^0A^m=A^{0+m}=A^m,
+\end{equation*}
+</div>and so it must be that \(A^0=I\text{.}\)</li>
+<li id="li-187">\(m=1, n=-1\text{:}\)<div class="displaymath">
+\begin{equation*}
+A^1
+A^{-1}=A^{1+(-1)}=A^0=I\\A^{-1} A^1=A^{-1+1}=A^0=I 
+\end{equation*}
+</div>so \(A^{-1}\) is the inverse of \(A\) (and hence the notation).</li>
+<li id="li-188">\(n=-m\text{:}\)<div class="displaymath">
+\begin{equation*}
+A^m A^{-m}=A^{m+(-m)}=A^0=I\\A^{-m}
+A^m=A^{-m+m}=A^0=I
+\end{equation*}
+</div>so \(A^{-m}\) is the inverse of \(A^m.\) Notationally this says \(A^{-m}=(A^m)^{-1}\text{.}\)</li>
+</ul>
+<article class="theorem theorem-like" id="theorem-19"><a data-knowl="" class="id-ref original" data-refid="hk-theorem-19"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.9.1</span><span class="period">.</span><span class="space"> </span><span class="title">Laws of Exponents.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-theorem-19">
+<article class="theorem theorem-like"><p id="p-461">For any invertible square matrix \(A\) and integers \(m\) and \(n\text{,}\)</p>
+<ul class="disc">
+<li id="li-189"><p id="p-462">\(A^mA^n=A^{m+n}\)</p></li>
+<li id="li-190"><p id="p-463">\((A^m)^n=A^{mn}\)</p></li>
+<li id="li-191"><p id="p-464">\((A^{-1})^{-1}=A\)</p></li>
+<li id="li-192"><p id="p-465">(\(A^n)^{-1}=(A^{-1})^n\)</p></li>
+<li id="li-193"><p id="p-466">\((rA)^{-1}=\tfrac 1r A^{-1}\)</p></li>
+</ul></article><article class="hiddenproof" id="proof-28"><a data-knowl="" class="id-ref original" data-refid="hk-proof-28"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-28"><article class="hiddenproof"><p id="p-467">The first two results have already been verified. The method for the last three is similar:</p>
+<ul class="disc">
+<li id="li-194"><p id="p-468">\((A^{-1})A=I\) implies that  \(A\) is the inverse of \(A^{-1}\text{,}\) that is, \(A=(A^{-1})^{-1}.\)</p></li>
+<li id="li-195">
+<p id="p-469">Evaluate so the the middle factors "disappear":</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+A^n(A^{-1})^n 
+\amp= \underbrace{A\cdots A}_{n\text{ factors}}\ 
+\underbrace{A^{-1}\cdots A^{-1}}_{n\text{ factors}} \\ 
+\amp= \underbrace{A\cdots A}_{n-1\text{ factors}}(AA^{-1})
+\underbrace{A^{-1}\cdots A^{-1}}_{n-1\text{ factors}} \\ 
+\amp= \underbrace{A\cdots A}_{n-1\text{ factors}}(I)
+\underbrace{A^{-1}\cdots A^{-1}}_{n-1\text{ factors}}\\ 
+\amp= \underbrace{A\cdots A}_{n-1\text{ factors}}
+\underbrace{A^{-1}\cdots A^{-1}}_{n-1\text{ factors}}\\ 
+\amp=\underbrace{A\cdots A}_{n-2\text{ factors}}(AA^{-1}) 
+\underbrace{A^{-1}\cdots A^{-1}}_{n-2\text{ factors}} \\ 
+\amp\vdots\\ 
+\amp= AA^{-1}\\ 
+\amp= I 
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">and so \((A^{-1})^n\) is the inverse of \(A^n\text{.}\)</p>
+</li>
+<li id="li-196"><p id="p-470">\((rA)(\tfrac 1r A^{-1}) = r\tfrac 1r A A^{-1}=1I=I\) andso \(\tfrac 1r A^{-1}\) is the inverse of \(rA\text{.}\)</p></li>
+</ul></article></div>
+</div></section></div></main>
+</div>
+</body>
+</html>

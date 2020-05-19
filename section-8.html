@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-19T11:40:37-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>First definitions</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_brown_gold.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
+\def\C{{\mathbb C}}
+\def\Q{{\mathbb Q}}
+\def\Z{{\mathbb Z}}
+\def\N{{\mathbb N}}
+
+\def\vec#1{\mathbf #1}
+
+\newcommand{\adj}{\mathop{\textrm{adj}}}
+\newcommand{\proj}{\mathop{\textrm{proj}}}
+\newcommand{\Span}{\mathop{\textrm{span}}} 
+
+\newcommand{\rowint}[2]{R_{#1} \leftrightarrow R_{#2}}
+\newcommand{\rowmul}[2]{R_{#1}\gets {#2}R_{#1}}
+\newcommand{\rowadd}[3]{R_{#1}\gets R_{#1}+#2R_{#3}}
+\newcommand{\rowsub}[3]{R_{#1}\gets R_{#1}-#2R_{#3}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.umanitoba.ca" target="_blank"><img src="images/umlogo.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="linalg.html"><span class="title">Manitoba linear algebra</span></a></h1>
+<p class="byline">Michael Doob (editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chapter-2.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-2.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-9.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chapter-2.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-2.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-9.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link"><a href="chapter-1.html" data-scroll="chapter-1"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations</span></a></li>
+<li class="link"><a href="chapter-2.html" data-scroll="chapter-2"><span class="codenumber">2</span> <span class="title">Matrix theory</span></a></li>
+<li class="link"><a href="chapter-3.html" data-scroll="chapter-3"><span class="codenumber">3</span> <span class="title">Additional Topics</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="section-8"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.1</span> <span class="title">First definitions</span>
+</h2>
+<p id="p-233">We start our study of matrix theory with some important definitions:</p>
+<article class="definition definition-like" id="definition-4"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix.</span>
+</h6>
+<p id="p-234">A <dfn class="terminology">matrix</dfn> (the plural is <dfn class="terminology">matrices</dfn>) is a rectangular array of numbers.</p></article><p id="p-235">Here is a matrix:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1\amp2\amp-1\amp4\\
+2\amp1\amp3\amp0\\
+4\amp4\amp3\amp1
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">The <dfn class="terminology">rows</dfn> are horizontal parts of the array and the <dfn class="terminology">columns</dfn> are the vertical ones. We often denote the rows by \(R_1, R_2,\dots\) and the columns by \(C_1, C_2,\dots\text{.}\)</p>
+<p id="p-236">In the previous example we have three rows and four columns:</p>
+<p id="p-237">Rows: \(R_1=\begin{bmatrix}1\amp2\amp-1\amp4\end{bmatrix}\text{,}\) \(R_2=\begin{bmatrix}2\amp1\amp3\amp0\end{bmatrix}\) and \(R_3=\begin{bmatrix}4\amp4\amp3\amp1\end{bmatrix}\)</p>
+<p id="p-238">Columns: \(C_1=\begin{bmatrix}1\amp2\amp4\end{bmatrix}\text{,}\) \(C_2=\begin{bmatrix}2\amp1\amp4\end{bmatrix}\text{,}\) \(C_3=\begin{bmatrix}-1\amp3\amp3\end{bmatrix}\) and \(C_4=\begin{bmatrix}4\amp0\amp1\end{bmatrix}\text{.}\)</p>
+<p id="p-239">Sometimes the columns are written vertically:</p>
+<div class="displaymath">
+\begin{equation*}
+C_1=\begin{bmatrix}1\\2\\4\end{bmatrix}, 
+C_2=\begin{bmatrix}2\\1\\4\end{bmatrix}, 
+C_3=\begin{bmatrix}-1\\3\\3\end{bmatrix} \textrm{and } 
+C_4=\begin{bmatrix}4\\0\\1\end{bmatrix}.
+\end{equation*}
+</div>
+<article class="definition definition-like" id="definition-5"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Size of a matrix.</span>
+</h6>
+<p id="p-240">If a matrix had \(m\) rows and \(n\) columns, then we say that the matrix has <dfn class="terminology">size</dfn> \(m\times n\text{.}\) We call this an \(m\) by \(n\) matrix. When it is desirable to emphasize the size of a matrix \(A\text{,}\) the following notation is used:</p>
+<div class="displaymath">
+\begin{equation*}
+A=
+\begin{bmatrix}
+a_{1,1} \amp \cdots \amp a_{1,n}\\
+\amp\vdots\amp\\
+a_{m,1} \amp \cdots \amp a_{m,n}
+\end{bmatrix}_{m,n}
+\end{equation*}
+</div>
+<p data-braille="continuation">Notice the special notation used: \(a_{i,j}\) is the one and only entry in the matrix that is both in the \(i\)-th row and in the \(j\)-th column.</p>
+<p id="p-241">Sometimes \(m\times n\) is called the <dfn class="terminology">shape</dfn> of the matrix.</p></article><article class="definition definition-like" id="Square_matrix_definition"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Square matrix.</span>
+</h6>
+<p id="p-242">An \(m\times n\) matrix is called <dfn class="terminology">square</dfn> if \(m=n.\) To emphasize the size of a square matrix, a single subscript is may be used:</p>
+<div class="displaymath">
+\begin{equation*}
+A=
+\begin{bmatrix}
+a_{1,1} \amp \cdots \amp a_{1,n}\\
+\amp\vdots\amp\\
+a_{n,1} \amp \cdots \amp a_{n,n}
+\end{bmatrix}_n
+\end{equation*}
+</div></article><article class="definition definition-like" id="definition-7"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Equality of matrices.</span>
+</h6>
+<p id="p-243">Two matrices \(A=[a_{i,j}]\) and \(B = [b_{i,j}]\) are <dfn class="terminology">equal</dfn> if they are the same size, say \(m\) by \(n,\) and</p>
+<div class="displaymath">
+\begin{equation*}
+a_{i,j}=b_{i,j}, \text{ for } i=1,2,\dots,m \text{ and } j=1,2,\dots,n.
+\end{equation*}
+</div>
+<p data-braille="continuation">In other words, they matrices are equal entry-wise.</p></article><article class="example example-like" id="example-12"><a data-knowl="" class="id-ref original" data-refid="hk-example-12"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Equal matrices.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-12"><article class="example example-like"><ol id="p-244" class="decimal">
+<li id="li-107">
+<p id="p-245">As a first example, consider</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1 \amp 2 \amp 1\\
+1 \amp -1 \amp 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+5-4 \amp 12/6 \amp \cos(0)\\
+10^0 \amp (-1)^5 \amp \sin(4\pi)
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">There are six entries in these matrices. We need to check all six to establish equality; they are</p>
+<div class="displaymath">
+\begin{align*}
+1\amp=5-4\\
+2\amp=\frac{12}6\\
+1\amp=\cos(0)\\
+1\amp=10^0\\
+-1\amp=(-1)^5\\
+0\amp=\sin(4\pi)
+\end{align*}
+</div>
+<p data-braille="continuation">Since all of the individual equations are valid, the two matrices are equal.</p>
+</li>
+<li id="li-108">
+<p id="p-246">Matrix equality can encode interesting information.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+x+y \amp x+2y\\
+2x+y \amp 2x+2y
+\end{bmatrix}
+=
+\begin{bmatrix}
+2 \amp 3 \\
+3 \amp 4
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">(note that this is the same as four equations in two unknowns; they imply \(x=y=1\))</p>
+</li>
+</ol></article></div>
+<p id="p-247">On the face of it, in order to show that two \(m\times n\) matrices are equal, we must check the equaltiy of all \(mn\) entries. One reason we study mathematics is to make calculations easier. Our mathematical development will, in fact, do just that.</p>
+<p id="p-248">There are two matrices that appear so often that they have special names:</p>
+<article class="definition definition-like" id="definition-8"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">The zero matrix.</span>
+</h6>
+<p id="p-249">The <dfn class="terminology">zero matrix</dfn>, written as \(\vec0\text{,}\) has every entry equal to \(0\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\vec0=
+\begin{bmatrix}
+0 \amp 0\amp \cdots \amp 0\\
+0 \amp 0\amp \cdots \amp 0\\
+\amp \amp \vdots \amp \\
+0 \amp 0\amp \cdots \amp 0
+\end{bmatrix}
+\end{equation*}
+</div></article><article class="definition definition-like" id="definition-9"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">The identity matrix.</span>
+</h6>
+<p id="p-250">The <dfn class="terminology">identity matrix</dfn>, written as \(I\text{,}\) is a square matrix in which every entry equal to \(0\) or \(1\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+I=
+\begin{bmatrix}
+1 \amp 0\amp \cdots \amp 0 \amp 0\\
+0 \amp 1\amp \cdots \amp 0 \amp 0\\
+\amp \amp \vdots \amp \\
+0 \amp 0\amp \cdots \amp 1 \amp 0\\
+0 \amp 0\amp \cdots \amp 0 \amp 1
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">When we want to emphasize the size of the matrix is \(n\times n\text{,}\) we write it as \(I_n\text{.}\) Hence, if \(I_n=[a_{i,j}]\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+a_{i,j}=
+\begin{cases}
+1 \amp \textrm{if } i=j\\
+0 \amp \textrm{if } i\not=j
+\end{cases}
+\end{equation*}
+</div></article></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-19T11:40:42-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><p>Let \(A\) be of size \(m\times n\text{,}\) and \(B\)  of size \(n\times r\) and \(C\) of size \(r\times s\text{.}\) Using summation notation:</p>
+<div class="displaymath">
+\begin{equation*}
+\bigl((AB)C\bigr)_{i,j} = \sum_{k=1}^r (AB)_{i,k}c_{k,j} 
+\end{equation*}
+</div>
+<p data-braille="continuation">while</p>
+<div class="displaymath">
+\begin{equation*}
+(AB)_{i,k}=\sum_{\ell=1}^n a_{i,\ell}b_{\ell,k} 
+\end{equation*}
+</div>
+<p data-braille="continuation">Now we have</p>
+<div class="displaymath">
+\begin{align*}
+\bigl((AB)C\bigr)_{i,j} \amp = 
+\sum_{k=1}^r \bigl(\sum_{\ell=1}^n a_{i,\ell}b_{\ell,k}\bigr) c_{k,j} \\
+\amp = \sum_{k=1}^r \bigl(\sum_{\ell=1}^n a_{i,\ell}b_{\ell,k}c_{k,j}\bigr) \\
+\amp = \sum_{k=1}^r \sum_{\ell=1}^n a_{i,\ell}b_{\ell,k}c_{k,j} 
+\end{align*}
+</div>
+<p data-braille="continuation">On ther other hand</p>
+<div class="displaymath">
+\begin{equation*}
+\bigl(A(BC)\bigr)_{i,j} = \sum_{\ell=1}^n a_{i,\ell} (BC)_{\ell,j}
+\end{equation*}
+</div>
+<p data-braille="continuation">while</p>
+<div class="displaymath">
+\begin{equation*}
+(BC)_{\ell,j}=\sum_{k=1}^r b_{\ell,k}c_{k,j} 
+\end{equation*}
+</div>
+<p data-braille="continuation">and so</p>
+<div class="displaymath">
+\begin{align*}
+\bigl(A(BC)\bigr)_{i,j} 
+\amp =  \sum_{\ell=1}^n a_{i,\ell}\bigl(\sum_{k=1}^r b_{\ell,k}c_{k,j} \bigr) \\
+\amp =  \sum_{\ell=1}^n \sum_{k=1}^r a_{i,\ell} b_{\ell,k}c_{k,j} 
+\end{align*}
+</div>
+<p data-braille="continuation">and so</p>
+<div class="displaymath">
+\begin{equation*}
+(AB)C=A(BC)
+\end{equation*}
+</div></article></body>
+</html>

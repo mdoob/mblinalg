@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-19T11:40:38-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The transpose and trace of a matrix</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_brown_gold.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
+\def\C{{\mathbb C}}
+\def\Q{{\mathbb Q}}
+\def\Z{{\mathbb Z}}
+\def\N{{\mathbb N}}
+
+\def\vec#1{\mathbf #1}
+
+\newcommand{\adj}{\mathop{\textrm{adj}}}
+\newcommand{\proj}{\mathop{\textrm{proj}}}
+\newcommand{\Span}{\mathop{\textrm{span}}} 
+
+\newcommand{\rowint}[2]{R_{#1} \leftrightarrow R_{#2}}
+\newcommand{\rowmul}[2]{R_{#1}\gets {#2}R_{#1}}
+\newcommand{\rowadd}[3]{R_{#1}\gets R_{#1}+#2R_{#3}}
+\newcommand{\rowsub}[3]{R_{#1}\gets R_{#1}-#2R_{#3}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.umanitoba.ca" target="_blank"><img src="images/umlogo.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="linalg.html"><span class="title">Manitoba linear algebra</span></a></h1>
+<p class="byline">Michael Doob (editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-11.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-2.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-13.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-11.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-2.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-13.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link"><a href="chapter-1.html" data-scroll="chapter-1"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations</span></a></li>
+<li class="link"><a href="chapter-2.html" data-scroll="chapter-2"><span class="codenumber">2</span> <span class="title">Matrix theory</span></a></li>
+<li class="link"><a href="chapter-3.html" data-scroll="chapter-3"><span class="codenumber">3</span> <span class="title">Additional Topics</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="section-12"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.5</span> <span class="title">The transpose and trace of a matrix</span>
+</h2>
+<article class="definition definition-like" id="definition-15"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">The transpose of a matrix.</span>
+</h6>
+<p id="p-356">The <dfn class="terminology">transpose</dfn> of \(A\) is the matrix \(A^T\) derived by making the first row of \(A\) the first column of \(A^T\text{,}\) the second row of \(A\) the second column of \(A^T\text{,}\) etc. In other words, when taking a transpose, the rows and columns are interchanged. Another way of saying this is that the subscripts have been interchanged, that is, if \(A^T=B=[b_{i,j}].\) then \(b_{i,j}=a_{j,i}\)</p></article><article class="example example-like" id="example-18"><a data-knowl="" class="id-ref original" data-refid="hk-example-18"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix transposes.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-18"><article class="example example-like"><ul id="p-357" class="disc">
+<li id="li-164"><p id="p-358">Let \(A=\begin{bmatrix}
+1\amp2\amp3\\4\amp5\amp6\\7\amp8\amp9
+\end{bmatrix}.\) Then \(A^T=\begin{bmatrix}
+1\amp4\amp7\\2\amp5\amp8\\3\amp6\amp9
+\end{bmatrix}\)</p></li>
+<li id="li-165">The <em class="emphasis">identity matrix</em> \(I_n\) of order n has all diagonal entries equal to one and all other entries equal to zero. \(I_n=\begin{bmatrix}
+1 \amp 0 \amp 0 \amp \cdots \amp 0\\
+0 \amp 1 \amp 0 \amp \cdots \amp 0\\
+0 \amp 0 \amp 1 \amp \cdots \amp 0\\
+\amp   \amp   \amp \ddots \amp  \\ 
+0 \amp 0 \amp 0 \amp \cdots \amp 1
+\end{bmatrix}_n\) Clearly \(I_n^T=I_n.\)</li>
+<li id="li-166"><p id="p-359">The transpose is defined for nonsquare matrices, too. Let \(A=\begin{bmatrix}
+1 \amp 2 \amp 3 \amp 4 \\
+5 \amp 6 \amp 7 \amp 8 \\
+9 \amp10\amp11\amp12
+\end{bmatrix}.\) Then \(A^T=\begin{bmatrix}
+1 \amp 5 \amp9\\
+2 \amp 6 \amp 10\\
+3 \amp 7 \amp 11\\
+4 \amp 8 \amp 12
+\end{bmatrix}.\)</p></li>
+</ul></article></div>
+<p id="p-360">Here is an animation that illustrates that \(A^T\) may be derived from \(A\) by reflection on the main diagonal.</p>
+<figure class="figure figure-like" id="figure-10"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/300px-Matrix-transpose.gif" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.5.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure><article class="theorem theorem-like" id="theorem-9"><a data-knowl="" class="id-ref original" data-refid="hk-theorem-9"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of the transpose of a matrix.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-theorem-9">
+<article class="theorem theorem-like"><ul id="p-361" class="disc">
+<li id="li-167"><p id="p-362">\((A^T)^T=A\)</p></li>
+<li id="li-168"><p id="p-363">\((A+B)^T=A^T+B^T\)</p></li>
+<li id="li-169"><p id="p-364">\((rA)^T=rA^T\)</p></li>
+<li id="li-170"><p id="p-365">\((AB)^T=B^TA^T\)</p></li>
+</ul></article><article class="hiddenproof" id="proof-11"><a data-knowl="" class="id-ref original" data-refid="hk-proof-11"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-11"><article class="hiddenproof"><ul id="p-366" class="disc">
+<li id="li-171"><p id="p-367">The \(i\)-\(j\) entry of \(A^T\) is \(a_{j,i}\text{,}\) obtained by interchanging the subscripts of \(A\text{.}\) Taking the transpose again interchanges the subscripts again, and so the \(i\)-\(j\) entry of \((A^T)^T\) is \(a_{i,j}\text{,}\) the same as for \(A\text{.}\) Hence \((A^T)^T=A\text{.}\)</p></li>
+<li id="li-172"><p id="p-368">The \(i\)-\(j\) entry on both sides of the equation is \(a_{j,i}+b_{j,i}\text{.}\)</p></li>
+<li id="li-173"><p id="p-369">The \(i\)-\(j\) entry on both sides of the equation is \(ra_{j,i}`\text{.}\)</p></li>
+<li id="li-174">
+<p id="p-370">The \(i\)-\(j\) entry of \((AB)^T\) is the \(j\)-\(i\) entry of \(AB,\) which in turn is</p>
+<div class="displaymath">
+\begin{equation*}
+a_{j,1}b_{1,i} +a_{j,2}b_{2,i}+\cdots +a_{j,n}b_{n,i}.
+\end{equation*}
+</div>
+<p data-braille="continuation">The \(i\)-\(j\) entry of \(B^TA^T\) is \((B^T)_{i,1}(A^T)_{1,j} + (B^T)_{i,2}(A^T)_{2,j}
++\cdots + (B^T)_{i,n}(A^T)_{n,j}
+=\\
+b_{1,i}a_{j,1} + b_{2,i}a_{j,2}
++\cdots + b_{n,i}a_{j,n}.\) Hence both sides of the equation have the same \(i\)-\(j\) entry, and so the matrices are equal.</p>
+</li>
+</ul></article></div>
+<article class="hiddenproof" id="proof-12"><a data-knowl="" class="id-ref original" data-refid="hk-proof-12"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-12"><article class="hiddenproof"><div class="displaymath" id="p-371">
+\begin{align*}
+(AB)^T_{i,j} \amp = (AB)_{j,i}\\
+\amp = \sum_{k=1}^n a_{j,k}b_{k,i}\\
+\amp = \sum_{k=1}^n b_{k,i}a_{j,k}\\
+\amp = \sum_{k=1}^n B^T_{i,k}A^T_{k,j}\\
+\amp = (B^T A^T)_{i,j}
+\end{align*}
+</div></article></div>
+</div>
+<article class="definition definition-like" id="definition-16"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Trace of a square matrix.</span>
+</h6>
+<p id="p-372">The <dfn class="terminology">trace</dfn>  of a square matrix \(A\) of size \(n\) is the sum of the diagonal elements, that is,</p>
+<div class="displaymath">
+\begin{equation*}
+\mathrm{tr}A=a_{1,1}+a_{2,2}+\cdots + a_{n,n}=\sum_{i=1}^n a_{i,i}
+\end{equation*}
+</div></article><article class="theorem theorem-like" id="theorem-10"><a data-knowl="" class="id-ref original" data-refid="hk-theorem-10"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Traces of \(AB\) and \(BA\) are equal.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-theorem-10">
+<article class="theorem theorem-like"><p id="p-373">If \(AB\) and \(BA\) are each square, then \(\mathrm{tr}(AB)=\mathrm{tr}(BA)\)</p></article><article class="hiddenproof" id="proof-13"><a data-knowl="" class="id-ref original" data-refid="hk-proof-13"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-13"><article class="hiddenproof"><p id="p-374">Suppose that \(A\) is \(m\times n\) and \(B\) is \(n\times
+m\) (remember that \(AB\) is then defined and square). To evalute both \(\mathrm{tr}(AB)\) and \(\mathrm{tr}(BA)\text{,}\) we consider the following rectangular array of numbers:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{matrix}
+\amp\amp\amp\amp\amp\text{Row sums}\\
+a_{1,1}b_{1,1}\amp a_{1,2}b_{2,1}\amp a_{1,3}b_{3,1}\amp\cdots\amp
+a_{1,n}b_{n,1} \amp\gets (AB)_{1,1}\\
+a_{2,1}b_{1,2}\amp a_{2,2}b_{2,2}\amp a_{2,3}b_{3,2}\amp\cdots\amp
+a_{2,n}b_{n,2} \amp\gets(AB)_{2,2}\\
+\vdots\amp\vdots\amp\vdots\amp\amp\vdots\amp\vdots\\
+a_{m,1}b_{1,m}\amp a_{m,2}b_{2,m}\amp a_{m,3}b_{3,m}\amp\cdots\amp
+a_{m,n}b_{n,m} \amp\gets (AB)_{m,m}\\
+\\
+\uparrow\amp\uparrow\amp\uparrow\amp\amp\uparrow\\
+\llap{\text{Column sums:}\quad}
+(BA)_{1,1}\amp(BA)_{2,2}\amp(BA)_{3,3}\amp\amp(BA)_{n,n}
+\end{matrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">We are going to compute the sum of all the elements of this array in two ways. Having done this, the two answers will be equal.</p>
+<p id="p-375">First we find the sum of all the entries of the array by adding row-wise. Observe that the sum of the elements in the first row is \((AB)_{1,1}\text{,}\) the sum of those in the second row is \((AB)_{2,2}\text{,}\) and so on until the sum of the elements in the last row is \((AB)_{m,m}\text{.}\) Hence the sum of all of the elements in the array is \((AB)_{1,1}+(AB)_{2,2}+\cdots+(AB)_{m,m}=\mathrm{tr}(AB)\text{.}\)</p>
+<p id="p-376">Now we add columnwise. Notice that the first column sums to</p>
+<div class="displaymath">
+\begin{align*}
+a_{1,1}b_{1,1}\amp +a_{2,1}b_{1,2}+\cdots+a_{m,1}b_{1,m}\\
+\amp = b_{1,1}a_{1,1}+b_{2,1}a_{1,2}+\cdots+b_{m,1}a_{1,m}\\
+\amp =(BA)_{1,1},
+\end{align*}
+</div>
+<p data-braille="continuation">the second column sums to \((BA)_{2,2}\) and so on until the last column sums to \((BA)_{n,n}\text{.}\)Hence the sum of all of the elements in the array is \((BA)_{1,1}+(BA)_{2,2}+\cdots+(BA)_{n,n}=\mathrm{tr}(BA)\text{.}\) Equating the two evaluations gives \(\mathrm{tr}(AB)=\mathrm{tr}(BA)\text{.}\)</p></article></div>
+<article class="hiddenproof" id="proof-14"><a data-knowl="" class="id-ref original" data-refid="hk-proof-14"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-14"><article class="hiddenproof"><p id="p-377">Suppose that \(A\) is \(m\times n\text{.}\) Then, since \(AB\) and \(BA\) are defined, the conformability ensures that \(B\) is \(n\times m\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\mathrm{tr}(AB) \amp = \sum_{i=1}^m(AB)_{i,i} \\
+\amp =  \sum_{i=1}^m  \sum_{j=1}^n a_{i,j}b_{j,i}\\
+\amp =  \sum_{i=1}^m  \sum_{j=1}^n b_{j,i}a_{i,j}\\
+\amp =   \sum_{j=1}^n\sum_{i=1}^m  b_{j,i}a_{i,j}\\
+\amp =   \sum_{j=1}^n (BA)_{j,j}\\
+\amp =   \mathrm{tr}(BA)
+\end{align*}
+</div></article></div>
+</div></section></div></main>
+</div>
+</body>
+</html>

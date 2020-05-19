@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-19T11:40:38-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Powers of a matrix (nonnegative exponents)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_brown_gold.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
+\def\C{{\mathbb C}}
+\def\Q{{\mathbb Q}}
+\def\Z{{\mathbb Z}}
+\def\N{{\mathbb N}}
+
+\def\vec#1{\mathbf #1}
+
+\newcommand{\adj}{\mathop{\textrm{adj}}}
+\newcommand{\proj}{\mathop{\textrm{proj}}}
+\newcommand{\Span}{\mathop{\textrm{span}}} 
+
+\newcommand{\rowint}[2]{R_{#1} \leftrightarrow R_{#2}}
+\newcommand{\rowmul}[2]{R_{#1}\gets {#2}R_{#1}}
+\newcommand{\rowadd}[3]{R_{#1}\gets R_{#1}+#2R_{#3}}
+\newcommand{\rowsub}[3]{R_{#1}\gets R_{#1}-#2R_{#3}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.umanitoba.ca" target="_blank"><img src="images/umlogo.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="linalg.html"><span class="title">Manitoba linear algebra</span></a></h1>
+<p class="byline">Michael Doob (editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-12.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-2.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-14.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-12.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-2.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-14.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link"><a href="chapter-1.html" data-scroll="chapter-1"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations</span></a></li>
+<li class="link"><a href="chapter-2.html" data-scroll="chapter-2"><span class="codenumber">2</span> <span class="title">Matrix theory</span></a></li>
+<li class="link"><a href="chapter-3.html" data-scroll="chapter-3"><span class="codenumber">3</span> <span class="title">Additional Topics</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="section-13"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.6</span> <span class="title">Powers of a matrix (nonnegative exponents)</span>
+</h2>
+<section class="subsection" id="subsection-22"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.6.1</span> <span class="title">Computing the powers of a square matrix \(A\)</span>
+</h3>
+<p id="p-378">If \(A\) and \(B\) are both square matrices of order \(n\text{,}\) then \(AB\) is also a square matrix of order \(n\text{.}\) In particular, if \(A=B\text{,}\) then \(AA\) is defined. We call this matrix \(A^2\text{.}\) We also let \(A^3=AAA\text{.}\) Similarly we have higher powers of \(A\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+A^n=\underbrace{A A A \cdots A A}_{n \text{ factors}}\quad
+\text{ for } n=1,2,\ldots\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">In addition, we define \(A^1=A\text{.}\) For example, if \(A=\begin{bmatrix}1\amp2\\2\amp1\end{bmatrix}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+A^1=\begin{bmatrix}1\amp2\\2\amp1\end{bmatrix}\\
+A^2=\begin{bmatrix}5\amp4\\4\amp5\end{bmatrix}\\
+A^3=\begin{bmatrix}13\amp14\\14\amp13\end{bmatrix}\\
+A^4=\begin{bmatrix}40\amp41\\41\amp40\end{bmatrix}\\
+A^5=\begin{bmatrix}121\amp122\\122\amp121\end{bmatrix}\\
+\end{equation*}
+</div></section><section class="subsection" id="LawOfExponents"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.6.2</span> <span class="title">The law of exponents</span>
+</h3>
+<p id="p-379">If \(m\) and \(n\) are positive integers, then by simply counting the factors we get the following two equations:</p>
+<ul class="disc">
+<li id="li-175"><p id="p-380">\(A^m A^n=\underbrace{A\cdots A}_{m \text{ factors}}\ 
+\underbrace{A\cdots A}_{n \text{ factors}}=
+\underbrace{A\cdots A}_{m+n\text{ factors}}=A^{m+n},\)</p></li>
+<li id="li-176"><p id="p-381">\((A^m)^n 
+=\underbrace{(\underbrace{A\cdots A}_{m \text{ factors}})
+(\underbrace{A\cdots A}_{m \text{ factors}})\cdots
+(\underbrace{A\cdots A}_{m \text{ factors}})}_{n \text{ times}}=A^{mn}\)</p></li>
+</ul>
+<p data-braille="continuation">These two equations together are called <dfn class="terminology">the law of exponents</dfn>.</p></section><section class="subsection" id="subsection-24"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.6.3</span> <span class="title">What is \(A^0\text{?}\)</span>
+</h3>
+<p id="p-382">We want to define \(A^0\) so the the law of exponents remains valid. This says</p>
+<div class="displaymath">
+\begin{equation*}
+A^n A^0= A^{n+0}=A^n
+\end{equation*}
+</div>
+<p data-braille="continuation">We observe that if \(A^0=I\text{,}\) the identity matrix, then this equation is valid. With this in mind we \(\textbf{define}\) \(A^0=I\text{.}\)</p></section><section class="subsection" id="subsection-25"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.6.4</span> <span class="title">Polynomials and powers of a matrix</span>
+</h3>
+<p id="p-383">Recall that polynomials are functions of the form \(p(x)=a_nx^n + a_{n-1}x^{n-1}+\cdots+a_1x+a_0\text{.}\) If we have a square matrix, we may refer to \(p(A)\text{.}\) By this we mean we substitute the matrix \(A\) for each \(x\) appearing in the polynomial. Whenever \(x^k\) appears, we substitute \(A^k\) for it and do the computations. For example, using the same \(A\) as before, if \(p(x)=x^2-2x+1\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+p(A)=A^2-2A+I=
+\begin{bmatrix}5\amp4\\4\amp5\end{bmatrix} 
+-2\begin{bmatrix}1\amp2\\2\amp1\end{bmatrix}
++\begin{bmatrix}1\amp0\\0\amp1\end{bmatrix}
+=
+\begin{bmatrix}4\amp0\\0\amp4\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">Now consider the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+B=\begin{bmatrix}2\amp-1\\1\amp0\end{bmatrix} 
+\end{equation*}
+</div>
+<p data-braille="continuation">and the same polynomial \((x)=x^2-2x+1\text{.}\) In this case</p>
+<div class="displaymath">
+\begin{equation*}
+p(B)=B^2-2B+I=
+\begin{bmatrix}3\amp-2\\2\amp-1\end{bmatrix} 
+-2\begin{bmatrix}2\amp-1\\1\amp0\end{bmatrix}
++\begin{bmatrix}1\amp0\\0\amp1\end{bmatrix}
+=
+\begin{bmatrix}0\amp0\\0\amp0\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">and so we get the (matrix) equation \(P(B)=0\text{.}\) When a matrix \(B\) satisfies the equation \(P(B)=0\text{,}\) we call \(B\) a <em class="emphasis">root</em> of \(p(x)\text{.}\)</p></section></section></div></main>
+</div>
+</body>
+</html>

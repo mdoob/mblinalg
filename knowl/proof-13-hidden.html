@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-05-19T11:40:42-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><p>Suppose that \(A\) is \(m\times n\) and \(B\) is \(n\times
+m\) (remember that \(AB\) is then defined and square). To evalute both \(\mathrm{tr}(AB)\) and \(\mathrm{tr}(BA)\text{,}\) we consider the following rectangular array of numbers:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{matrix}
+\amp\amp\amp\amp\amp\text{Row sums}\\
+a_{1,1}b_{1,1}\amp a_{1,2}b_{2,1}\amp a_{1,3}b_{3,1}\amp\cdots\amp
+a_{1,n}b_{n,1} \amp\gets (AB)_{1,1}\\
+a_{2,1}b_{1,2}\amp a_{2,2}b_{2,2}\amp a_{2,3}b_{3,2}\amp\cdots\amp
+a_{2,n}b_{n,2} \amp\gets(AB)_{2,2}\\
+\vdots\amp\vdots\amp\vdots\amp\amp\vdots\amp\vdots\\
+a_{m,1}b_{1,m}\amp a_{m,2}b_{2,m}\amp a_{m,3}b_{3,m}\amp\cdots\amp
+a_{m,n}b_{n,m} \amp\gets (AB)_{m,m}\\
+\\
+\uparrow\amp\uparrow\amp\uparrow\amp\amp\uparrow\\
+\llap{\text{Column sums:}\quad}
+(BA)_{1,1}\amp(BA)_{2,2}\amp(BA)_{3,3}\amp\amp(BA)_{n,n}
+\end{matrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">We are going to compute the sum of all the elements of this array in two ways. Having done this, the two answers will be equal.</p>
+<p>First we find the sum of all the entries of the array by adding row-wise. Observe that the sum of the elements in the first row is \((AB)_{1,1}\text{,}\) the sum of those in the second row is \((AB)_{2,2}\text{,}\) and so on until the sum of the elements in the last row is \((AB)_{m,m}\text{.}\) Hence the sum of all of the elements in the array is \((AB)_{1,1}+(AB)_{2,2}+\cdots+(AB)_{m,m}=\mathrm{tr}(AB)\text{.}\)</p>
+<p>Now we add columnwise. Notice that the first column sums to</p>
+<div class="displaymath">
+\begin{align*}
+a_{1,1}b_{1,1}\amp +a_{2,1}b_{1,2}+\cdots+a_{m,1}b_{1,m}\\
+\amp = b_{1,1}a_{1,1}+b_{2,1}a_{1,2}+\cdots+b_{m,1}a_{1,m}\\
+\amp =(BA)_{1,1},
+\end{align*}
+</div>
+<p data-braille="continuation">the second column sums to \((BA)_{2,2}\) and so on until the last column sums to \((BA)_{n,n}\text{.}\)Hence the sum of all of the elements in the array is \((BA)_{1,1}+(BA)_{2,2}+\cdots+(BA)_{n,n}=\mathrm{tr}(BA)\text{.}\) Equating the two evaluations gives \(\mathrm{tr}(AB)=\mathrm{tr}(BA)\text{.}\)</p></article></body>
+</html>
