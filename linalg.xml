@@ -7924,6 +7924,58 @@
         </subsection>
     </section>
     
+    <section xml:id="RREF_calculator">
+    <title>RREF and determinant calculator</title>
+    <introduction>
+        <p>
+        This is a calculator for computing the reduced row echelon form
+        of a matrix. In the box below
+        <ul>
+        <li> Set the value of <c>rows</c> to the number of rows.</li>
+        <li> Set the value of <c>cols</c> to the number of columns.</li>
+        <li> Enter the matrix entries as a comma-separated list.
+            The placement on lines is not important as long as there
+            are <c>rows*cols</c> entries.</li>
+        </ul>
+        </p>
+        </introduction>
+    
+            <subsection><title>RREF</title>
+            <sage>
+            <input>
+            rows=3 
+            cols=4
+            M=Matrix(rows,cols,[
+            1,2,3,4,
+            5,6,7,8,
+            9,10,11,12
+            ])
+            print ("The reduced row echelon form of ")
+            print (M)
+            print ("is")
+            M.rref()
+            </input>
+            </sage>
+            </subsection>
+    
+            <subsection><title>Determinant</title>
+            <sage>
+            <input>
+            rows=cols=3 
+            M=Matrix(rows,cols,[
+            1,2,3,
+            1,2,1,
+            3,-1,2
+            ])
+            print ("The determinant of ")
+            print (M)
+            print ("is")
+            M.determinant()
+            </input>
+            </sage>
+        </subsection>
+    </section>
+
 
 </chapter>
 
