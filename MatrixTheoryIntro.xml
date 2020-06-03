@@ -586,7 +586,7 @@
         that is, the number of
         columns of <m>A</m> is equal to the number of rows of <m>B.</m> When this
         is the case, the matrices are said to be 
-        <em>conformable for multiplication</em>, and it is possible to evaluate
+        <term>conformable for multiplication</term>, and it is possible to evaluate
         the product <m>AB</m>.
         </p>
         </paragraphs>
@@ -630,8 +630,8 @@
         Notice that the assumption <m>n=r</m> implies that there is just the
         right number of entries in the rows of <m>A</m> and columns of <m>B</m>
         to allow <m>c_{i,j}</m> to be defined.  The number <m>c_{i,j}</m> is
-        also called the <em>inner product of row <m>R_i</m> of <m>A</m> and column
-        <m>C_j</m> of <m>B.</m></em> 
+        also called the <term>inner product</term>  of row <m>R_i</m> of <m>A</m> 
+        and column <m>C_j</m> of <m>B.</m>
         This product is written as
         <me>c_{i,j}=R_i\cdot C_j</me>
         Notice that this definition implies that the
@@ -1461,7 +1461,7 @@
     </p></li>
     
     <li>
-        The <em>identity matrix</em> <m>I_n</m> of order n has all
+        The <term>identity matrix</term> <m>I_n</m> of order n has all
         diagonal entries equal to one and all other entries equal to zero.
         <m>I_n=\begin{bmatrix}
             1 \amp 0 \amp 0 \amp \cdots \amp 0\\
@@ -1770,7 +1770,7 @@
             
             and so we get the (matrix) equation <m>P(B)=0</m>.
             When a matrix <m>B</m> satisfies the equation <m>P(B)=0</m>, we call 
-            <m>B</m> a <em>root</em> of <m>p(x)</m>.
+            <m>B</m> a <term>root</term> of <m>p(x)</m>.
             </p>
         </subsection>
     
@@ -1824,8 +1824,8 @@
         <p>
         Finally, we want to find (if possible) a matrix <m>A^{-1}</m>
         so that <m>A^{-1}A=AA^{-1}=I.</m> When such a matrix exists,
-        it is called the <em>inverse</em> of <m>A</m>, and the matrix
-        <m>A</m> itself is called <em>invertible.</em>
+        it is called the <term>inverse</term> of <m>A</m>, and the matrix
+        <m>A</m> itself is called <term>invertible.</term>
         </p>
 
         <definition xml:id="InverseMatrixDefinition"> <title>The inverse of a matrix</title> 
@@ -3475,11 +3475,13 @@
     	want to give several other conditions that are equivalent to being
     	invertible. By this we mean that if any one of the conditions
     	are true for a matrix <m>A</m>, then all them are true for that
-    	matrix <m>A</m>, and we then call <m>A</m> <em>nonsingular</em> or
-    	<em>invertible</em>.  Equivalently, if any one of the conditions
+    	matrix <m>A</m>, and we then call <m>A</m> <term>nonsingular</term> or
+    	<term>invertible</term>.  Equivalently, if any one of the conditions
     	are false for a matrix <m>A</m>, then all of them are false
     	for that matrix <m>A</m>. In this case the matrix <m>A</m>
-    	is called <em>singular</em>.  </p> <p> The method for showing
+    	is called <term>singular</term>.  
+        </p> 
+        <p> The method for showing
     	statements to be equivalent is a little different.  Suppose we
     	have (as will be our case) six statements numbered 
         <m>(1), (2), \ldots,(6)</m> that we wish to show equivalent.  

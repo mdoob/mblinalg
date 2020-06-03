@@ -156,7 +156,8 @@
       The geometry of the situation is now clear: 
       the two lines are parallel and so there is no 
       point on both lines (indeed, both lines have slope <m>-\tfrac12</m>).
-      When we have equations with no common solution, they are called <em>inconsistent</em>.
+      When we have equations with no common solution, they are called
+      <term>inconsistent</term>.
       </p>
     </subsection>
     
@@ -223,10 +224,10 @@
       </me>
 
       where <m>a_1,\dots,a_n</m> and <m>b</m> are constants.
-      The numbers <m>a_1,a_2,\dots,a_n</m> are called the <em>coefficients</em>
+      The numbers <m>a_1,a_2,\dots,a_n</m> are called the <term>coefficients</term>
       of the equation, that is, <m>a_1</m> is the coefficient of <m>x_1</m>, 
       <m>a_2</m> is the coefficient of <m>x_2</m>, <etc />
-      This is also called a <em>linear equation in <m>n</m> unknowns</em>.</p>
+      This is also called a <term>linear equation in <m>n</m> unknowns</term>.</p>
       
       <p>The following are examples of linear equations:
       <ul>
@@ -244,8 +245,8 @@
  
    <subsection><title>The Definition of a System of Linear Equations</title>
       
-      <p>A <em>system of <m>m</m> linear equations in <m>n</m>
-      unknowns</em> is a list of <m>m</m> linear equations, each of which
+      <p>A <term>system of <m>m</m> linear equations in <m>n</m>
+      unknowns</term> is a list of <m>m</m> linear equations, each of which
       has the same set of <m>n</m> unknowns. They are usually presented
       with the purpose of finding all of their simultaneous solutions.</p>
       
@@ -294,7 +295,8 @@
  
    <subsection><title>The Coefficient and Augmented Matrix of a System of Linear Equations </title>
       
-      <p>A <em>matrix</em> is a rectangular array of numbers (the plural is <em>matrices</em>). Here is a matrix:
+      <p>A <term>matrix</term> is a rectangular array of numbers (the plural is
+      <term>matrices</term>). Here is a matrix:
       <me>
       \begin{bmatrix}
       1 \amp  2 \amp  3 \amp  4\\
@@ -371,7 +373,7 @@
       matrix.</p>
       
       <p>More generally, a matrix with <m>m</m> rows and <m>n</m> columns is called an
-      <m>m\times n</m> <em>matrix</em>. An <m>m\times n</m> matrix <m>A</m> has the form
+      <m>m\times n</m> <term>matrix</term>. An <m>m\times n</m> matrix <m>A</m> has the form
       <me>
       A=\begin{bmatrix}
       a_{1,1} \amp  a_{1,2} \amp  \cdots \amp  a_{1,n}\\
@@ -405,7 +407,7 @@
       a_{m,1}x_1 + a_{m,2}x_2 +{} \amp \cdots \amp {}+ a_{m,n}x_n  = b_m
       \end{array}
       </me>
-      The <em>coefficient matrix</em> <m>A</m> is then the <m>m\times n</m> matrix
+      The <term>coefficient matrix</term> <m>A</m> is then the <m>m\times n</m> matrix
       <me>
       A=\begin{bmatrix}
       a_{1,1} \amp  a_{1,2} \amp  \cdots \amp  a_{1,n}\\
@@ -414,7 +416,7 @@
       a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}
       \end{bmatrix}
       </me>
-      and the <em>augmented matrix</em> of the system is the <m>m\times( n+1)</m> matrix
+      and the <term>augmented matrix</term> of the system is the <m>m\times( n+1)</m> matrix
       <me>
       A=\begin{bmatrix}
       a_{1,1} \amp  a_{1,2} \amp  \cdots \amp  a_{1,n}\amp b_1\\
@@ -1301,7 +1303,7 @@
         corresponding system of linear equations have solutions
         that are easy to find. These matrices have a special pattern
         of zeros and ones, and are said to be in
-        <em>row echelon form.</em>
+        <term>row echelon form.</term>
         </p>
 
         
@@ -1319,8 +1321,8 @@
         </p>
         <p>
         The first nonzero entry in a row (if there is one)
-        is called the <em>leading entry.</em>
-        If it equals <m>1</m>, then it is called a <em>leading one.</em>
+        is called the <term>leading entry.</term>
+        If it equals <m>1</m>, then it is called a <term>leading one.</term>
         </p>
         
         <definition><title>Row echelon form</title>
@@ -1755,7 +1757,7 @@
     <section><title>Gauss-Jordan reduction</title>
     <introduction>
      <p>Gauss-Jordan reduction is an extension of the Gaussian elimination algorithm.
-      It produces a matrix, called <em>the reduced row echelon form</em> in the following
+      It produces a matrix, called <term>the reduced row echelon form</term> in the following
       way: after carrying out Gaussian elimination, continue by changing
       all nonzero entries <em>above</em> the leading ones to a zero. The resulting
       matrix looks something like:

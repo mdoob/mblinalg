@@ -16,11 +16,11 @@
         <p>
         We have some special notation that is used with the real numbers:
             <ul>
-            <li><p><m>\N</m>, the <em>natural numbers</em>, is the set of all 
+            <li><p><m>\N</m>, the <term>natural numbers</term>, is the set of all 
                 nonnegative integers: <m>\{0, 1, 2, 3,\ldots\}</m>.</p></li>
-            <li><p><m>\Z</m>, the <em>integers</em>, consists of 
+            <li><p><m>\Z</m>, the <term>integers</term>, consists of 
                 <m>\{0, \pm1, \pm2, \pm3, \ldots\}</m>.</p></li>
-            <li><p><m>\Q</m>, the <em>rationals</em>, is the set of all fractions: 
+            <li><p><m>\Q</m>, the <term>rationals</term>, is the set of all fractions: 
                 <m>\frac mn</m> where <m>m</m> and <m>n</m> are integers with <m>n\not=0</m>.</p></li>
             <li><p><m>\R</m> is the set of <em>all</em> real numbers, that is, ordinary decimals.</p></li>
             </ul>
@@ -99,8 +99,8 @@
             <me> 2+4+6+8+10=30 </me>
             and so we write
             <me> \sum_{k=1}^5 2k=30</me>.
-            The variable <m>k</m> is called <em>the index of summation</em>. The number above
-            the sigma is called <em>the limit of summation</em>.
+            The variable <m>k</m> is called <term>the index of summation</term>. The number above
+            the sigma is called <term>the limit of summation</term>.
             The example shows us how to write a sum of even numbers. We can write the
             sum of odd numbers, too.
             <me> \sum_{k=1}^8 (2k-1)=1+3+5+7+9+11+13+15=64 </me>.
@@ -159,7 +159,7 @@
         
         <subsection> <title>Alternating sums</title>
         <p>
-            A sum is <em>alternating</em> if the signs of consecutive
+            A sum is <term>alternating</term> if the signs of consecutive
             terms are alternate between positive and negative.
             
             An example: <m>1-2+3-4+5</m>. 
