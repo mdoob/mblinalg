@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-05-29T12:08:33-05:00    *-->
+<!--*    on 2020-06-03T14:27:45-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -76,24 +76,24 @@ MathJax.Hub.Config({
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href="http://www.umanitoba.ca" target="_blank"><img src="images/umlogo.png" alt="Logo image"></a><div class="title-container">
-<h1 class="heading"><a href="linalg.html"><span class="title">Manitoba linear algebra</span></a></h1>
+<h1 class="heading"><a href="mblinalg.html"><span class="title">Manitoba linear algebra</span></a></h1>
 <p class="byline">Michael Doob (editor)</p>
 </div>
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-17.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-2.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chapter-3.html" title="Next">Next</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-17.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="MatrixTheoryIntro.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="ExtraTopics.html" title="Next">Next</a></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-17.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-2.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chapter-3.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-17.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="MatrixTheoryIntro.html" title="Up">Up</a><a class="next-button button toolbar-item" href="ExtraTopics.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
-<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
-<li class="link"><a href="chapter-1.html" data-scroll="chapter-1"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations</span></a></li>
-<li class="link"><a href="chapter-2.html" data-scroll="chapter-2"><span class="codenumber">2</span> <span class="title">Matrix theory</span></a></li>
-<li class="link"><a href="chapter-3.html" data-scroll="chapter-3"><span class="codenumber">3</span> <span class="title">Additional Topics</span></a></li>
+<li class="link frontmatter"><a href="Frontmatter.html" data-scroll="Frontmatter"><span class="title">Title Page</span></a></li>
+<li class="link"><a href="SysLinEq.html" data-scroll="SysLinEq"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations</span></a></li>
+<li class="link"><a href="MatrixTheoryIntro.html" data-scroll="MatrixTheoryIntro"><span class="codenumber">2</span> <span class="title">Matrix Theory</span></a></li>
+<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">3</span> <span class="title">Additional Topics</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-18"><h2 class="heading hide-type">
@@ -102,7 +102,7 @@ MathJax.Hub.Config({
 <p id="p-506">We have already defined  singular and nonsingular matrices in <a class="xref" data-knowl="./knowl/SingularMatrixDefinition.html" title="Definition 2.7.5: Matrix singularity">Definition 2.7.5</a> and the inverse of a matrix in <a class="xref" data-knowl="./knowl/InverseMatrixDefinition.html" title="Definition 2.7.1: The inverse of a matrix">Definition 2.7.1</a>. We now have a new goal: to show that a square matrix is invertible if and only if it is nonsingular. In fact we want to give several other conditions that are equivalent to being invertible. By this we mean that if any one of the conditions are true for a matrix \(A\text{,}\) then all them are true for that matrix \(A\text{,}\) and we then call \(A\) <em class="emphasis">nonsingular</em> or <em class="emphasis">invertible</em>.  Equivalently, if any one of the conditions are false for a matrix \(A\text{,}\) then all of them are false for that matrix \(A\text{.}\) In this case the matrix \(A\) is called <em class="emphasis">singular</em>.</p>
 <p id="p-507">The method for showing statements to be equivalent is a little different.  Suppose we have (as will be our case) six statements numbered \((1), (2), \ldots,(6)\) that we wish to show equivalent. We start by showing that if \((1)\) is true, then it follows that \((2)\) is true. We denote this by \((1)\Rightarrow(2) \text{.}\)  We continue with \((2)\Rightarrow(3), (3)\Rightarrow(4), (4)\Rightarrow(5),
 (5)\Rightarrow(6), (6)\Rightarrow(1)\text{.}\)  Once this has been done, we may visualize our result:</p>
-<figure class="figure figure-like" id="figure-11"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><object data="images/image-11.html" id="image-11" width="180" height="180"><img src="images/image-11.svg" style="width: 100%; height: auto;" alt=""></object></div>
+<figure class="figure figure-like" id="figure-11"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><object data="images/image-11.html" id="image-11" width="180" height="180"><embed src="images/image-11.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.11.1<span class="period">.</span></span><span class="space"> </span>A cycle of implications</figcaption></figure><p id="p-508">and so once one statement becomes true, all of them are true.	This also means that once one statement is false then all of them are false (think about the logic!).</p>
 <article class="theorem theorem-like" id="InvertibilityEquivalence"><a data-knowl="" class="id-ref original" data-refid="hk-InvertibilityEquivalence"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.11.2</span><span class="period">.</span><span class="space"> </span><span class="title">Equivalent Forms of Invertibility.</span>

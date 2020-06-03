@@ -1,0 +1,1285 @@
+
+<chapter xml:id="ExtraTopics" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Additional Topics</title>
+    
+    <section> <title>Named properties and special subsets of real numbers</title>
+        <subsection> <title>Special subsets of the real numbers</title>
+        <p>
+        For our purposes, the 
+        <term>real  numbers</term> consists of all possible decimals. These
+        include whole numbers, both positive and negative, fractions,
+        simple decimals like <m>1.25</m>, repeating decimals like 
+        <m>1.333\ldots=\frac43</m> and irrational numbers like <m>\sqrt2</m>
+        and <m>\pi</m>.
+        </p>
+        
+        <p>
+        We have some special notation that is used with the real numbers:
+            <ul>
+            <li><p><m>\N</m>, the <em>natural numbers</em>, is the set of all 
+                nonnegative integers: <m>\{0, 1, 2, 3,\ldots\}</m>.</p></li>
+            <li><p><m>\Z</m>, the <em>integers</em>, consists of 
+                <m>\{0, \pm1, \pm2, \pm3, \ldots\}</m>.</p></li>
+            <li><p><m>\Q</m>, the <em>rationals</em>, is the set of all fractions: 
+                <m>\frac mn</m> where <m>m</m> and <m>n</m> are integers with <m>n\not=0</m>.</p></li>
+            <li><p><m>\R</m> is the set of <em>all</em> real numbers, that is, ordinary decimals.</p></li>
+            </ul>
+        </p>
+        </subsection>
+        
+        <subsection xml:id="RealNumberProperties"> <title>Named properties of real numbers</title>
+        
+        <table>
+        <title> Properties of real numbers </title>
+        <tabular>
+        <row> 
+           <cell></cell>
+           <cell> <em>Additive properties</em>
+           </cell> <cell> <em>Multiplicative properties</em>  </cell> 
+        </row>
+        <row> 
+           <cell>Closure:</cell>
+           <cell> If <m>x</m> and <m>y</m> are real then so is <m>x+y</m> </cell> 
+           <cell> If <m>x</m> and <m>y</m> are real then so is <m>xy</m>  </cell> 
+        </row>
+        <row> 
+           <cell>Associativity:</cell>
+           <cell> <m>x+(y+z)=(x+y)+z</m></cell>   
+           <cell> <m>(xy)z=x(yz)</m>  </cell> 
+        </row>
+        <row> 
+           <cell>Identity:</cell>
+           <cell> <m>x+0=x</m> </cell>            
+           <cell> <m>1x=x</m>  </cell> 
+        </row>
+        <row> 
+           <cell>Inverse:</cell>
+           <cell> For any <m>x</m> there is a <m>-x</m> so that <m>x+(-x)=0</m> </cell>           
+           <cell> For any <m>x\not=0</m> there is a number <m>x^{-1}</m> so that <m>xx^{-1}=1</m></cell> 
+        </row>
+        <row> 
+           <cell>Commutativity:</cell>
+           <cell> <m>x+y=y+x</m> </cell>          
+           <cell> <m>xy=yx</m>  </cell> 
+        </row>
+        <row> <cell><m>\strut</m></cell> <cell></cell> <cell></cell> </row>
+        <row> 
+           <cell>Distributive:</cell>
+           <cell colspan="2" halign="center"> <m>x(y+z)=xy+xz</m> and <m>(x+y)z=xz+yz</m> </cell>          
+        </row>
+        </tabular>
+        </table>
+        
+        </subsection>
+        
+    </section>
+    
+    <section> <title>Summation notation</title>
+        <subsection> <title>Basic definitions</title>
+        <p>
+            Summation notation is a compact form for writing sums. It is written with
+            three pieces.
+            \[
+            \sum_{\fbox{<m>k=1</m>}}^\fbox{<m>5</m>} \fbox{<m>2k</m>}
+            \]
+            The part below the greek letter sigma (<m>\Sigma</m>) tells us to start with <m>k=1</m>.
+            We increment <m>k</m> by <m>1</m> until we get to the value above the sigma. In this
+            case we let <m>k</m> take on the values <m>1, 2, 3, 4, 5</m>. We next substitute those
+            values of <m>k</m> into the expression to the right of the sigma successively and 
+            take the sum all of the resulting terms. Here is a table of the resulting values:
+            <md>
+            <mrow>k \amp\amp 2k</mrow>
+            <mrow>1 \amp\amp 2</mrow>
+            <mrow>2 \amp\amp 4</mrow>
+            <mrow>3 \amp\amp 6</mrow>
+            <mrow>4 \amp\amp 8</mrow>
+            <mrow>5 \amp\amp 10</mrow>
+            </md>
+            which evaluates to
+            <me> 2+4+6+8+10=30 </me>
+            and so we write
+            <me> \sum_{k=1}^5 2k=30</me>.
+            The variable <m>k</m> is called <em>the index of summation</em>. The number above
+            the sigma is called <em>the limit of summation</em>.
+            The example shows us how to write a sum of even numbers. We can write the
+            sum of odd numbers, too.
+            <me> \sum_{k=1}^8 (2k-1)=1+3+5+7+9+11+13+15=64 </me>.
+            It is not necessary to use <m>k</m> as a variable or to start the summation
+            at <m>k=1</m>. It is easy to verify that
+            <me> \sum_{k=1}^8(2k-1)=\sum_{l=0}^7(2l+1)=64 </me>.
+            
+            The number above the sigma can also be written as a variable:
+            <md>
+            <mrow>\sum_{k=1}^n a_k=a_1+a_2+\cdots+a_{n-1}+a_n</mrow>
+            <mrow>\sum_{k=0}^n a_kb_k=a_0b_0+a_1b_1+a_2b_2+\cdots+a_{n-1}b_{n-1}+a_nb_n</mrow>
+            <mrow>\sum_{k=1}^n (2k-1) = 1+3+5+7+\cdots+(2n-1)</mrow>
+            </md>
+            
+            Next we take the last expression and vary <m>n</m>,
+            the limit of summation. Here is a table that includes
+            some small vaules of <m>n</m>:
+        </p>
+        <!-- Perhaps better as a side-by-side or aligned eqaution-->
+        <table>
+        <title/>
+           <tabular>
+           <row>
+              <cell><m>\sum_{k=1}^1(2k-1)=1</m></cell> <cell><m>n=1</m></cell>
+           </row>
+           <row>
+              <cell><m>\sum_{k=1}^2(2k-1)=4</m></cell> <cell><m>n=2</m></cell>
+           </row>
+           <row>
+              <cell><m>\sum_{k=1}^3(2k-1)=9</m></cell> <cell><m>n=3</m></cell>
+           </row>
+           <row>
+              <cell><m>\sum_{k=1}^4(2k-1)=16</m></cell> <cell><m>n=4</m></cell>
+           </row>
+           <row>
+              <cell><m>\vdots</m></cell>
+           </row>
+           <row>
+              <cell><m>\sum_{k=1}^n(2k-1)=1+3+5+\cdots+2n-1=?</m></cell>
+           </row>
+           </tabular>
+        </table>
+        <exercise>
+            <p>
+            What simple expression involving <m>n</m> can replace the question mark?
+            </p>
+        </exercise>
+        <p>
+            The summands can be symbolic, too. If <m>f(x)</m> is any function,
+            we may write
+            <md>
+            <mrow>\sum_{i=1}^r f(i)=f(1)+f(2)+\cdots+f(r-1)+f(r)</mrow>
+            </md>
+        </p>
+        </subsection>
+        
+        <subsection> <title>Alternating sums</title>
+        <p>
+            A sum is <em>alternating</em> if the signs of consecutive
+            terms are alternate between positive and negative.
+            
+            An example: <m>1-2+3-4+5</m>. 
+            These sums appear frequently enough to have this special name.
+            They are easy to write using summation notation because of
+            a simple fact:
+            <me>
+            (-1)^k=
+            \begin{cases}
+            1 \amp  \text{if \(k\) is even}\\
+            -1 \amp  \text{if \(k\) is odd}
+            \end{cases}
+            </me>
+            We can then write
+            <me>\sum_{k=1}^6 (-1)^k k^2=-1+4-9+16-25+36=21 </me>.
+            We can interchange the order of the signs by adding
+            (or subtracting) one to the exponent of <m>-1</m>:
+            <me>\sum_{k=1}^6 (-1)^{k+1} k^2=1-4+9-16+25-36=-21</me>.
+        </p>
+        </subsection>
+        
+        <subsection> <title>Manipulation with summation notation identities</title>
+        <p>
+            Summation notation is more that mere shorthand. There are rules
+            of manipulation that are quite useful.
+        </p>
+        
+        <p>
+            For any constant <m>c</m>,
+            <me> 
+                \sum_{k=1}^n c=\underbrace{c+c+\cdots+c+c}_{n \textrm{ summands}}=nc 
+            </me>
+            and
+            <me> 
+                \sum_{k=1}^n ca_k
+                =ca_1+\cdots+ca_n
+                =c(a_1+\cdots+a_n)
+                =c\sum_{k=1}^n a_k
+            </me>
+            The process of the last equation is sometimes referred to 
+            as <em>pulling a constant across the summation sign</em>.
+        </p>
+        
+        <p>
+            In addition, 
+            <me>
+                \sum_{k=1}^n(a_k+b_k)= \sum_{k=1}^na_k+\sum_{k=1}^nb_k,\\
+                \sum_{k=1}^n(a_k-b_k)= \sum_{k=1}^na_k-\sum_{k=1}^nb_k
+            </me>
+            and
+            <me>
+                \sum_{k=0}^na_k= \sum_{k=t}^{n+t}a_{k-t}
+            </me>
+            The last identity is sometimes called 
+            <em>shifting the index of summation.</em>
+        </p>
+        <example>
+            <p>
+            Suppose we want to evaluate the sum of the
+            first <m>n</m> positive integers. In other words, we want to find
+            <me>
+                s_n=1+2+\cdots+n=\sum_{k=1}^nk.
+            </me>
+            If we are convinced that 
+            <m>\sum_{k=1}^n(2k-1)=1+3+5+\cdots+2n-1=n^2</m>,
+            then
+            <md>
+            <mrow>n^2\amp =\sum_{k=1}^n(2k-1)</mrow>
+            <mrow>\amp =\sum_{k=1}^n(2k)-\sum_{k=1}^n1</mrow>
+            <mrow>\amp =2\sum_{k=1}^nk-n</mrow>
+            <mrow>\amp =2s_n-n</mrow>
+            </md>
+            which yields
+            <me>
+                s_n=\frac12n(n+1).
+            </me>
+            </p>
+        </example>
+        
+        <exercise>
+            <statement>
+            <p>
+            Evaluate the following sums
+        
+            <ul>
+                <li><p><m>\sum_{j=1}^5 2j</m></p></li>
+                <li><p><m>\sum_{k=1}^5 k(k-1)</m></p></li>
+                <li><p><m>\sum_{i=0}^4 2^i</m></p></li>
+                <li><p><m>\sum_{\ell=1}^3\ell^2+\frac1\ell</m></p></li>
+                <li><p><m>\sum_{j=1}^5 ij</m></p></li>
+            </ul>
+        
+            </p>
+            </statement>
+        
+            <solution>
+            <p>
+            <ul>
+                <li><p><m>2+4+6+8+10=30</m></p></li>
+                <li><p><m>2+6+12+20+30=70</m></p></li>
+                <li><p><m>1+2+4+8+16=31</m></p></li>
+                <li><p><m>1+1+4+\frac12+9+\frac13=15\frac56</m></p></li>
+                <li><p><m>i+2i+3i+4i+5i=15i</m></p></li>
+            </ul>
+            </p>
+            </solution>
+        
+        </exercise>
+        
+        <exercise>
+            <statement>
+            <p>Evaluate <m>\sum_{k=0}^n 2^k</m> for <m>n=1,2,3,4</m>.
+            Find a simple expression that works for any <m>n</m>.
+            Justify your answer.</p>
+            </statement>
+            <solution>
+            <p>
+            <me>
+            \begin{array}{cc}
+            n \amp \sum_{k=0}^n 2^k\\
+            \hline
+            1 \amp 3\\
+            2 \amp 7\\
+            3\amp 15\\
+            4\amp 31
+            \end{array}
+            </me>
+            We note that each answer is one less than a power of <m>2</m>. This leads to
+            the equation
+            \[
+            \sum_{k=0}^n 2^k=2^{n+1}-1.
+            \]
+            To justify the equation we note that
+            \[
+            2(\sum_{k=0}^n 2^k)=\sum_{k=0}^n 2^{k+1}=\sum_{k=1}^{n+1} 2^k
+            =\bigl(\sum_{k=0}^{n+1} 2^k\bigr) -1
+            \]
+            so we get the sum for a given value on <m>n</m> by doubling the value for <m>n-1</m>
+            and adding <m>1</m>.
+            </p>
+            </solution>
+        </exercise>
+        </subsection>
+        
+        <subsection> <title>Double summations</title>
+        <p>
+            Sometimes it is useful to have a formula with two summations, each with
+            its own index of summation. It is interpreted in the following way:
+            \[
+            \sum_{i=1}^m \sum_{j=1}^n f(i,j)=
+            \sum_{i=1}^m \bigl(\sum_{j=1}^n f(i,j)\bigr)
+            \]
+            and so, for example,
+            \[
+            \sum_{i=1}^3 \sum_{j=1}^2 i^j=\sum_{i=1}^3 (i^1+i^2)=(1+1)+(2+4)+(3+9)=20
+            \]
+        </p>
+        
+        <p>
+            Double summations are often used with matrices. Suppose we have
+            a matrix
+            <me>
+            A=
+            \begin{bmatrix}
+            a_{1,1}\amp a_{1,2}\amp \cdots \amp a_{1,n}\\
+            a_{2,1}\amp a_{2,2}\amp \cdots \amp a_{2,n}\\
+            \vdots\amp \vdots\amp \vdots\amp \vdots\\
+            a_{m,1}\amp a_{m,2}\amp \cdots \amp a_{m,n}
+            \end{bmatrix}
+            </me>
+            
+            Then
+            \[
+            \sum_{j=1}^n a_{i,j} = a_{i,1}+a_{i,2}+\cdots+a_{i,n}
+            \]
+            which is the sum of the entries in the <m>i</m>-th row of the matrix.
+            
+            Similarly 
+            \[
+            \sum_{i=1}^m a_{i,j} = a_{1,j}+a_{2,j}+\cdots+a_{m,j}
+            \]
+            which is the sum of the entries in the <m>j</m>-th column of the matrix.
+            We can now see that
+            <me>
+                \sum_{i=1}^m\sum_{j=1}^n a_{i,j}
+                =\sum_{j=1}^n\sum_{i=1}^m a_{i,j}
+            </me>
+            since each sides of the equation is equal to
+            the sum of all of the entries in the matrix.
+            This is called 
+            <em>interchanging the order of summation.</em>
+        </p>
+            
+        <p>
+            Another way of looking at these double summations 
+            <m>\sum_{i=1}^m \sum_{j=1}^n f(i,j)</m> is that it is
+            the sum
+            of <m>f(i,j)</m> as <m>i</m> takes on values from <m>1</m> to <m>m</m>
+            and <m>j</m> takes on values from <m>1</m> to <m>n</m>. Clearly
+            there are <m>mn</m> summands altogether.
+        </p>
+        
+        </subsection>
+    </section>
+    
+    <section> <title>Trigonometry review</title>
+    <introduction>
+    <p>
+        There are certain trigonometric facts that should be in
+        your mathematical toolkit. We review several here.
+        <ul>
+        <li><p>The law of cosines (<xref ref="LawOfCosines" />)</p></li>
+        <li><p>The graphs of <xref ref="GraphSin"><m>\sin(x)</m></xref>
+            and 
+            <xref ref="GraphCos"><m>\cos(x)</m></xref>
+            </p></li>
+        <li><p>The parallelogram law (<xref ref="ParallelogramLaw" />)
+        </p></li>
+        <li><p>The addition laws for <m>\sin(x)</m> and <m>\cos(x)</m>
+            (<xref ref="SinCosSums" />)</p></li>
+        <li><p>The law of sines (<xref ref="LawOfSines" />)</p></li>
+        </ul>
+    </p>
+    </introduction>
+    
+        <subsection> <title>Basic Definitions</title>
+        <p>
+        Trigonometry was originally used for measuring triangles. Given a right
+        triangle with hypoteneuse <m>c</m>, legs <m>a</m> and <m>b</m> 
+        and angle <m>\theta</m> (as in the left illustration in <xref ref="TrigFunctions"/>), 
+        the six trigonometric functions are defined by
+        <me>
+        \begin{array}{lll}
+        \sin(\theta)=\frac bc \amp
+        \cos(\theta)=\frac ac \amp
+        \tan(\theta)=\frac {\sin(\theta)}{\cos(\theta)}=\frac ba \\
+        \cot(\theta)=\frac {\cos(\theta)}{\sin(\theta)}=\frac ab \amp
+        \csc(\theta)=\frac 1{\sin(\theta)}=\frac cb \amp
+        \sec(\theta)=\frac 1{\cos(\theta)}=\frac ca
+        \end{array}
+        </me>
+        
+        The first three, the sine, the cosine and the tangent are by far the
+        most important, even though the cotangent, cosecant and secant appear
+        in many applications.
+        </p>
+        
+        <figure xml:id="TrigFunctions">
+        <caption>Triginometric functions of angles</caption>
+        <image width="90%"> 
+        <asymptote>
+            unitsize(30);
+            pair C=(4,0), B=(0,0), A=(4,4), D=(9,2);
+            
+            dot(A); dot(B); dot(C);
+            
+            draw(A-- B--C--cycle);
+            
+            label("\(a\)", (B+C)/2,S);
+            label("\(b\)", (A+C)/2,W);
+            label("\(c\)", (A+B)/2,NW);
+            label("\(\theta\)",B,4*ENE);
+            
+            pair t=(10,2);
+            draw(t+(-2.5,0)--t+(2.5,0)); label("\(x\)",t+(2.5,0),E);
+            draw(t+(0,-2.5)--t+(0,2.5)); label("\(y\)",t+(0,2.5),N);
+            
+            real theta=2;
+            pair z=t+2*(cos(theta),sin(theta));
+            draw(circle(t+(0,0),2));
+            draw(t+(0,0)--z, linewidth(1pt)); dot(z); 
+            label("\((\cos(\theta),\sin(\theta))\)",z,NW);
+            
+            draw(t+(1/sqrt(2),0){up}..{WSW}(z+t)/2, Arrow); 
+            label("\(\theta\)", t+(.6,.8));
+            
+            label("Trigonometric functions with a right triangle",((C.x/2,-1)));
+            label("Trigonometric functions with any angle",((10,-1)));
+        </asymptote> 
+        </image>
+        </figure>
+        <p>
+        In any such right triangle, the angle <m>\theta</m> is necessarily acute. We extend
+        the definition of the trigonometric functions to other angles by using the unit circle
+        (centre at <m>\vec 0=(0,0)</m> and radius <m>r=1</m>). For any angle <m>\theta</m>,
+        draw the radius of the unit circle that makes an angle <m>\theta</m> with the
+        positive <m>x</m>-axis. The coordinates of the point where this radius meets the
+        circle are <m>(\cos(\theta),\sin(\theta))</m>. Note that when <m>\theta</m> is acute,
+        the two definitions coincide.
+        </p>
+        
+        <p>
+        Since the point <m>(\cos(\theta),\sin(\theta))</m> is on the unit circle,
+        its distance to the origin <m>(0,0)</m> is <m>1</m>. This means
+        \[
+        \cos^2(\theta) + \sin^2(\theta) =1
+        \textrm{ for any angle }
+        \theta
+        \]
+        </p>
+        </subsection>
+        
+        <subsection> <title>The law of cosines</title>
+        <p>
+        In the right triangle above, the angle opposite the side labeled <m>c</m> is an
+        right angle, and the Pythagorean theorem says <m>c^2=a^2+b^2</m>. The law of 
+        cosines extends this theorem to triangles with any angle opposite the
+        side labeled <m>c</m>. 
+        </p>
+        
+        <theorem xml:id="LawOfCosines"> <title>The law of cosines</title>
+        <statement>
+        <p>
+            If a triangle (as in the figure below) has sides of lengths <m>a</m>, <m>b</m> and <m>c</m>, 
+            and the angle at the vertex opposite <m>c</m> is <m>\theta</m>, then
+            \[
+            c^2=a^2+b^2-2ab\,\cos\theta
+            \]
+        </p>
+        
+        <figure>
+        <caption />
+        <image width="50%"> <asymptote>
+        unitsize(48);
+        pair C=(1,1), B=(2,3), A=(5,2);
+        dot(A); dot(B); dot(C);
+        draw(A--B--C--cycle);
+        label("\(a\)", (B+C)/2,W);
+        label("\(b\)", (A+C)/2,S);
+        label("\(c\)", (A+B)/2,N);
+        draw(arc(C,.4*length(C),degrees(A-C),degrees(B-C))); label("\(\theta\)", C+(A+B)/10.0);
+        </asymptote>
+        </image>
+        </figure>
+        </statement>
+        
+        <proof>
+           <p> 
+           Note that since <m>a</m> and <m>b</m> are interchangable in the picture,
+           there is no loss of generality to assume <m>a \le b</m>.
+           We prove the law of cosines by dropping a perpendicular to the side <m>b</m>: 
+           </p>
+           
+           <figure>
+           <caption> <m>\theta</m> acute </caption>
+           <image width="50%"> <asymptote>
+           unitsize(48);
+           pair C=(0,0), B=(1,2), A=(4,1);
+           
+           dot(A); dot(B); dot(C);
+           draw(A--B--C--cycle);
+           
+           label("\(a\)", (B+C)/2,W);
+           label("\(b\)", (A+C)/2,S);
+           label("\(c\)", (A+B)/2,N);
+           
+           draw(arc(C,length(A+B)/15,degrees(A),degrees(B))); 
+           label("\(\theta\)",(A+B)/11.0);
+           
+           
+           pair P=(A.x*B.x+A.y*B.y)/(A.x*A.x+A.y*A.y)*A;
+           dot(P,red); draw(B--P, red); 
+           label("\(h\)",(B+P)/2,E,red);
+           label("\(b_1\)",P/2,S,red);
+           label("\(b_2\)",(A+P)/2,S,red);
+           </asymptote>
+           </image>
+           </figure>
+           
+           <p>
+           The perpendicular has length <m>h</m> and splits side <m>b</m> into two pieces of
+           lengths <m>b_1</m> and <m>b_2</m>.
+           </p>
+           
+           <p> 
+           Now we have the following identities:
+                <ul>
+                <li><p><m>b=b_1+b_2</m></p></li>
+                <li><p><m>a^2=b_1^2 + h^2</m></p></li>
+                <li><p><m>c^2 = b_2^2 + h^2</m></p></li>
+                <li><p><m>b_1=a\cos(\theta)</m></p></li>
+                </ul>
+           which gives the equations
+           <me>
+           \begin{array}{rl}
+           c^2
+           \amp=b_2^2+h^2\\
+           \amp=(b-b_1)^2+(a^2-b_1^2)\\
+           \amp=b^2 -2bb_1 + b_1^2 +a^2-b_1^2\\
+           \amp=a^2+b^2-2bb_1\\
+           \amp=a^2+b^2-2ab\cos(\theta)
+           \end{array}
+           </me>
+           We have cheated a little by assuming that the perpendicular divides <m>b</m> into two
+           pieces. In fact if <m>\theta\gt\frac\pi2</m> then the picture looks like
+          </p>
+        
+           <figure>
+           <caption> <m>\theta</m> obtuse </caption>
+           <image width="80%"> <asymptote>
+           unitsize(48);
+           pair C=(0,0), B=(-2,2), A=(4,1);
+           
+           dot(A); dot(B); dot(C);
+           draw(A--B--C--cycle);
+           
+           label("\(a\)", (B+C)/2,W);
+           label("\(b\)", (A+C)/2,S);
+           label("\(c\)", (A+B)/2,N);
+           
+           draw(arc(C,length(A+B)/15,degrees(A),degrees(B))); 
+           label("\(\theta\)",(A+B)/11.0);
+           
+           pair P=(A.x*B.x+A.y*B.y)/(A.x*A.x+A.y*A.y)*A;
+           dot(P,red); draw(B--P, red); draw(P--C,red);
+           label("\(h\)",(B+P)/2,E,red);
+           label("\(b_1\)",P/2,S,red);
+           dot(A); dot(B); dot(C);
+           </asymptote>
+           </image>
+           </figure>
+           
+           <p>
+           Now we have
+           <ul>
+           <li><p> <m>a^2=b_1^2+h^2</m></p></li>
+           <li><p> <m>c^2=(b+b_1)^2+h^2</m></p></li>
+           <li><p> <m>b_1=-a\cos(\theta)</m>
+               (remember that <m>\cos(\theta)\lt0</m> 
+               when <m>\frac\pi 2\lt\theta\lt\pi</m>)</p></li>
+           </ul>
+           which gives
+           <me>
+           \begin{array}{rl}
+           c^2
+           \amp= (b+b_1)^2+h^2\\
+           \amp= (b+b_1)^2+(a^2-b_1^2)\\
+           \amp= b^2+2bb_1+a^2\\
+           \amp= a^2+b^2-2ab\cos(\theta)
+           \end{array}
+           </me>
+        
+           In principle there is another possibility:
+            </p>
+        
+           <figure>
+           <caption />
+           <image width="50%"> <asymptote>
+           unitsize(48);
+           pair C=(0,0), B=(2,3), A=(2,1);
+           
+           dot(A); dot(B); dot(C);
+           draw(A--B--C--cycle);
+           
+           label("\(a\)", (B+C)/2,W);
+           label("\(b\)", (A+C)/2,S);
+           label("\(c\)", (A+B)/2,E);
+           
+           draw(arc(C,length(A+B)/15,degrees(A),degrees(B))); 
+           label("\(\theta\)",(A+B)/11.0);
+           
+           pair P=(A.x*B.x+A.y*B.y)/(A.x*A.x+A.y*A.y)*A;
+           dot(P,red); draw(A--P, red); draw(P--B,red);
+           label("\(h\)",(B+P)/2,E,red);
+           label("\(b_1\)",(A+P)/2,S,red);
+           dot(A); dot(B); dot(C);
+           </asymptote></image>
+           </figure>
+           
+           <p>
+           In this case we <m>a \gt b</m>, contrary to our assumption that <m>a\leq b</m>. Nonetheless
+           we could use the argument:
+           <ul>
+           <li> <m>a^2=(b+b_1)^2 + h^2</m></li>
+           <li> <m>c^2 = b_1^2 + h^2</m></li>
+           <li> <m>b+b_1=a\cos(\theta)</m></li>
+           </ul>
+           and can deduce <m>c^2=a^2+b^2-2ab\cos(\theta)</m> in a manner similar that used in
+           the previous cases.
+           </p>
+        </proof>
+        </theorem>
+        </subsection>
+        
+        <subsection> <title>The graphs of <m>\sin(x)</m> and <m>\cos(x)</m></title>
+        <p>
+        The graphs of the trigonometric functions are revealing.
+        First, here is the graph of the function <m>\sin(x)</m>:
+        </p>
+        
+        
+        <figure xml:id="GraphSin">
+        <caption />
+        <image width="75%">
+        <asymptote>
+        import graph;
+        size (0 ,1.4 inch );
+        real pi=2*acos(0);
+        real xmin =0, xmax =2*pi;
+        real ymax =1, ymin = -1;
+        draw(graph(sin,0,2*pi));
+        xaxis(xmin,xmax,Ticks);
+        yaxis(ymin,ymax,LeftTicks);
+        label("\(x\)",(xmax,0),E);
+        label("\(y\)",(0,ymax),N);
+        dot((2*pi,0)); label("\(2\pi\)",(2*pi,0),N);
+        dot((pi,0)); label("\(\pi\)",(pi,0),N);
+        dot((pi/2,0)); label("\(\frac\pi2\)",(pi/2,0),N);
+        dot((3*pi/2,0)); label("\(\frac32 \pi\)",(3*pi/2,0),N);
+        label("\(y=\sin(x)\)",(2.6,1),E);
+        </asymptote>
+        </image>
+        </figure>
+        <p>
+        Notice that <m>\sin(x)</m> is positive in this range precisely when <m>0\lt x\lt\pi</m>.
+        </p>
+        
+        <p>
+        Here is the graph of <m>\cos(x)</m>:
+        </p>
+        
+        <figure xml:id="GraphCos">
+        <caption />
+        <image width="75%">
+        <asymptote>
+        import graph;
+        size (0 ,1.4 inch );
+        real pi=2*acos(0);
+        real xmin =0, xmax =2*pi;
+        real ymax =1, ymin = -1;
+        draw(graph(cos,0,2*pi));
+        xaxis(xmin,xmax,Ticks);
+        yaxis(ymin,ymax,LeftTicks);
+        label("\(x\)",(xmax,0),E);
+        label("\(y\)",(0,ymax),N);
+        dot((2*pi,0)); label("\(2\pi\)",(2*pi,0),N);
+        dot((pi,0)); label("\(\pi\)",(pi,0),N);
+        dot((pi/2,0)); label("\(\frac\pi2\)",(pi/2,0),N);
+        dot((3*pi/2,0)); label("\(\frac32 \pi\)",(3*pi/2,0),N);
+        label("\(y=\cos(x)\)",(0.6,1),E);
+        </asymptote>
+        </image>
+        </figure>
+        <p>
+        Notice that the function <m>\cos(x)</m> is decreasing for <m>0\le x\le\pi</m>.
+        By decreasing we mean that if <m>x_1 \lt x_2</m>, then <m>\cos(x_1) \gt \cos(x_2)</m>
+        (or, more intuitively, the function goes downhill as we go from left to right). 
+        There is an important implication from this: if <m>y=\cos(x)</m> for some
+        <m>x</m> with <m>0\le x\le\pi</m>, then for any for any other <m>x'</m> in the same range,
+        we have 
+        <m>\cos(x') \gt y</m> (when <m>x'\lt x</m>) or
+        <m>\cos(x') \lt y</m> (when <m>x'\gt x</m>). In particular this means that for any
+        given <m>y_0</m>, there is at most one <m>x_0</m> with <m>0\le x_0\le\pi</m> so that <m>y_0=\cos(x_0)</m>. 
+        In fact, the intermediate value theorem from the Calculus implies that
+        for any <m>y_0</m> satisfying <m>-1\leq y_0 \leq 1</m> there is some <m>x_0</m> satisfying
+        <m>0\le x_0\le\pi</m> so that <m>y_0=\cos(x_0)</m>.
+        </p>
+        
+        <p>
+        This may be visualized as follows: pick any <m>y_0</m> between <m>-1</m> and <m>1</m>.
+        From that value on the <m>y</m>-axis, go horizontally until you hit the graph of the
+        function <m>y=\cos(x)</m> and then drop down to the <m>x</m>-axis at the point <m>x_0</m>.
+        This value <m>x_0</m> is the unique one for which <m>\cos(x_0)=y_0</m>.
+        </p>
+        
+        <figure>
+        <caption />
+        <image width="75%">
+        <asymptote>
+        import graph;
+        size (0 ,2.5 inch );
+        real pi=2*acos(0);
+        real xmin =0, xmax =pi;
+        real ymax =1, ymin = -1;
+        real yvalue=.35, xvalue=acos(yvalue);
+        draw(graph(cos,0,pi));
+        xaxis(xmin,xmax,Ticks);
+        yaxis(ymin,ymax,LeftTicks);
+        label("\(x\)",(xmax,0),E);
+        label("\(y\)",(0,ymax),N);
+        dot((pi,0)); label("\(\pi\)",(pi,0),N);
+        dot((pi/2,0)); label("\(\frac\pi2\)",(pi/2,0),N);
+        label("\(y=\cos(x)\)",(0.6,1),E);
+        label("\(y_0\)", (0,yvalue),W,red);
+        label("\(x_0\)", (xvalue,0), S,red);
+        label("\((x_0,y_0)\)", (xvalue,yvalue), NE, red);
+        path p=(0,yvalue)--(xvalue,yvalue)--(xvalue,0);
+        draw(p,red);
+        </asymptote>
+        </image>
+        </figure>
+        </subsection>
+        
+        <subsection> <title>Parallelograms</title>
+        <p>
+        A parallelogram is a quadrilateral with opposite sides parallel.
+        Here is an example of one filled in yellow:
+        </p>
+        
+        <figure>
+        <caption />
+        <image width="50%">
+        <asymptote>
+        unitsize(1cm);
+        pair a=(6,2), b=(2,4), Z=(0,0);
+        path p=Z--a--a+b--b--cycle;
+        filldraw(p,yellow);
+        </asymptote>
+        </image>
+        </figure>
+        
+        <p>
+        Here are some important properties of parallelograms:
+            <ol>
+            <li>The angles on consecutive vertices are supplementary (sum to <m>\pi</m>).</li>
+            <li>Opposite angles are equal.</li>
+            <li>Opposite sides have the same length.</li>
+            </ol>
+        Here is why these properties hold:
+            <ol>
+            <li>
+                <p>
+                 Let one vertex have an angle of <m>\theta</m>. Extend one of the sides as in the figure. 
+                 The lines being parallel implies that the angle outside the parallelogram is 
+                 also <m>\theta</m>, which in turn makes the next angle within the parallelogram 
+                 equal to <m>\pi-\theta</m>.
+                </p>
+            <!-- image within a list does not satisfy the dtd -->
+                <figure>
+                <caption/>
+                <image width="90%">
+                <asymptote>
+                 unitsize(1cm);
+                 pair a=(6,2), b=(2,4), Z=(0,0);
+                 draw(b/2--Z--a--a+b/2);
+                 draw(Z--1.6a);
+                 fill(b/2--Z--a--a+b/2--cycle,yellow);
+                 label("\(\theta\)",Z,4NE);
+                 label("\(\theta\)",a,4NE);
+                 label("\(\pi-\theta\)",b,N);
+                 draw(b{S}..{SE}a+0.3*NW,Arrow);
+                </asymptote>
+                </image>
+                </figure>
+            </li>
+            <li>
+                <p>
+                 If one vertex has an angle <m>\theta</m>, then next has angle
+                 <m>\pi-\theta</m>. The next vertex after that has angle <m>\pi-(\pi-\theta)=\theta</m>,
+                 and the final vertex has angle <m>\pi-\theta</m>. Hence two opposite vertices
+                 have an angle <m>\theta</m> while the other two opposite vertices have angle
+                 <m>\pi-\theta</m>.  
+               </p> 
+            </li>
+            <li>
+                <p>
+                 Let <m>b</m> and <m>b'</m> be opposite sides of the parallelogram.  Drop perpendiculars from two vertices to
+                 the opposite line as shown in the following figure. Then the length of both of the new lines is the
+                 distance, <m>d</m>, between the parallel lines, and so <m>d=b\sin(\theta)=b'\sin(\theta)</m> from which
+                 follows <m>b=b'</m>.
+                </p>
+            </li>
+            </ol>
+        </p>
+        
+        <figure>
+        <caption />
+        <image width="75%">
+        <asymptote>
+        unitsize(1cm);
+        pair a=(6,2), b=(2,4), Z=(0,0);
+        pair p1=dot(a,b)/dot(a,a)*a, p2=dot(a+b,a)/dot(a,a)*a;
+        draw(b/2--Z--a--a+b/2);
+        draw(Z--1.6a);
+        path p=Z--a--a+b--b--cycle;
+        filldraw(p,yellow);
+        label("\(b\)",b/2,NW);
+        label("\(b'\)",a+b/2,SE);
+        label("\(\theta\)",Z,4NE);
+        label("\(\theta\)",a,4NE);
+        dot(p1); dot(p2);
+        draw(b--p1); draw(a+b--p2);
+        label("\(d\)",(b+p1)/2,NE);
+        label("\(d\)",(a+b+p2)/2,NE);
+        </asymptote>
+        </image>
+        </figure>
+        
+        <p>
+        The parallelogram law relates the lengths of sides of a
+        parallelogram to the lengths of the diagonals.
+        </p>
+        <theorem xml:id="ParallelogramLaw"> <title>The parallelogram law</title>
+        
+        <statement>
+        <p>
+        If a parallelogram has sides of length <m>a</m> and <m>b</m>, and <m>c</m> and
+        <m>d</m> are the lengths of the two diagonals, then
+        \[
+        c^2+d^2=2a^2+2b^2
+        \]
+        In other words, the sum of the squares of the sides is the sum of the squares 
+        of the diagonals.
+        </p>
+        
+        <figure>
+        <caption />
+        <image width="70%">
+        <asymptote>
+        unitsize(1cm);
+        pair a=(6,2), b=(2,4), Z=(0,0);
+        pair p1=dot(a,b)/dot(a,a)*a, p2=dot(a+b,a)/dot(a,a)*a;
+        path p=Z--a--a+b--b--cycle;
+        filldraw(p,yellow);
+        draw(a--b);
+        draw(Z--a+b);
+        label("\(a\)",a/2,SE);
+        label("\(a\)",a/2+b,NW);
+        label("\(b\)",b/2,NW);
+        label("\(b\)",a+b/2,SE);
+        label("\(c\)",.6*(a+b),N);
+        label("\(d\)",.3*a+.7*b,N);
+        label("\(\theta\)",Z,4*NE);
+        </asymptote>
+        </image>
+        </figure>
+        </statement>
+        
+        <proof>
+        <p>
+        The proof can be seen from the following two figures. Applying the law of
+        cosines to the first figure gives 
+        \[
+        c^2=a^2+b^2-2ab\cos(\theta)\tag1
+        \]
+        while applying it to the second figure gives
+        \[
+        d^2=a^2+b^2-2ab\cos(\pi-\theta)= a^2+b^2+2ab\cos(\theta)\tag2
+        \]
+        </p>
+        
+        
+        <figure>
+        <caption />
+        <image width="70%">
+        <asymptote>
+        unitsize(1cm);
+        pair a=(6,2), b=(2,4), Z=(0,0);
+        pair p1=dot(a,b)/dot(a,a)*a, p2=dot(a+b,a)/dot(a,a)*a;
+        path p=Z--a--a+b--b--cycle;
+        filldraw(p,yellow);
+        draw(a--b);
+        label("\(a\)",a/2,SE);
+        label("\(a\)",a/2+b,NW);
+        label("\(b\)",b/2,NW);
+        label("\(b\)",a+b/2,SE);
+        label("\(c\)",1/2*(a+b),N);
+        label("\(\theta\)",Z,4*NE);
+        </asymptote>
+        </image>
+        </figure>
+
+        <p>
+        and
+        </p>
+        
+        <figure>
+        <caption />
+        <image width="70%">
+        <asymptote>
+        unitsize(1cm);
+        pair a=(6,2), b=(2,4), Z=(0,0);
+        pair p1=dot(a,b)/dot(a,a)*a, p2=dot(a+b,a)/dot(a,a)*a;
+        path p=Z--a--a+b--b--cycle;
+        filldraw(p,yellow);
+        draw(Z--a+b);
+        label("\(a\)",a/2,SE);
+        label("\(a\)",a/2+b,NW);
+        label("\(b\)",b/2,NW);
+        label("\(b\)",a+b/2,SE);
+        label("\(d\)",1/2*(a+b),S);
+        label("\(\pi-\theta\)",b,SE);
+        </asymptote>
+        </image>
+        </figure>
+
+        <p>
+        Adding (1) and (2) gives
+        \[
+        c^2+d^2=2a^2+2b^2
+        \]
+        </p>
+        </proof>
+        </theorem>
+        </subsection>
+         
+        <subsection> <title>The addition formulas for <m>\sin(x)</m> and <m>\cos(x)</m></title>
+        <p>
+        Suppose we know <m>\sin(\alpha)</m>, <m>\cos(\alpha)</m>, <m>\sin(\beta)</m>, and
+        <m>\cos(\beta)</m>. We wish to find formulas to compute <m>\sin(\alpha+\beta)</m>,
+        and <m>\cos(\alpha+\beta)</m>. The following figure 
+        shows us how to do the computation.
+        </p>
+        
+        <p>
+        The points <m>A=(\cos(\alpha),\sin(\alpha))</m>,
+        <m>B=\cos(\alpha+\beta),\sin(\alpha+\beta))</m> and <m>(0,1)</m> all lie on a circle
+        with centre at the origin and radius <m>1</m>. These three points are joined
+        by a line to the origin <m>\vec 0</m>.  Drop perpediculars from B to the
+        line joining <m>\vec0</m> and <m>(1,0)</m> and also to the line joining  and
+        <m>\vec0</m> and <m>A</m>. The points <m>F</m> and <m>E</m> are where the perpendiculars
+        meet the respective lines.  The line joining <m>B</m> and <m>E</m> is extended
+        until it meets the line joining <m>\vec 0</m> and <m>(1,0)</m> at <m>D=(d,0)</m>.
+        </p>
+        
+        <figure>
+        <caption />
+        <image>
+        <asymptote>
+        unitsize(300);
+        real alpha=25, beta=45;
+        pair A=(Cos(alpha),Sin(alpha)), B=(Cos(alpha+beta),Sin(alpha+beta));
+        pair Z=(0,0);
+        pair D=(B.x+A.y*B.y/A.x,0);
+        filldraw(Z--B--D--cycle,lightyellow);
+        
+        dot(A); dot(B); dot(D); dot(Z);
+        draw(arc(Z,1,0,alpha+beta));
+        draw(A--Z--(1,0)..(arc(Z,1,0,alpha+beta)));
+        
+        draw(B--(B.x,0));
+        dot((B.x,0));
+        label("\(F\)",(B.x,0),S);
+        
+        real DP(pair A, pair B) {
+           return A.x*B.x+A.y*B.y;
+           }
+        
+        pair T(pair X, pair Y, pair Z) {
+           real t= DP((X-Y),(Z-Y))/DP(X-Y,X-Y);
+           pair U= t*X+(1-t)*Y;
+           dot(U);
+           return U;
+           }
+        
+        label("\(E\)",T(Z,A,B),2*ESE);;
+        label("\(A=(\cos(\alpha),\sin(\alpha))\)",A,E);
+        label("\(B=(\cos(\alpha+\beta),\sin(\alpha+\beta))\)",B,NE);
+        label("\((1,0)\)",(1,0),E);
+        label("\(D=(d,0)\)",D,S);
+        label("\(\mathbf 0\)",(0,0),S);
+        label("\(\alpha\)",Z,9(1,Tan(alpha/2)));
+        label("\(\beta\)",Z,7(1,Tan(alpha+beta/2)));
+        label("\(\frac\pi2-\alpha\ \)",D,3*NW);
+        label("\(\quad \alpha\)",B,7*S);
+        </asymptote>
+        </image>
+        </figure>
+        
+        <p>
+        Now we compute the area of the yellow triangle in two different ways
+        and equate the results.
+        </p>
+        
+        <p>
+        Consider the lengths of these lines:
+            <ul>
+            <li><p><m>\|BF\|=\sin(\alpha+\beta)</m> (from triangle <m>\vec0 B F</m>)</p></li>
+            <li><p><m>\|\vec 0 D\|=d</m></p></li>
+            <li><p><m>\|\vec 0 E\|=d\cos(\alpha)=\cos(\beta)</m> (from triangles
+            <m>\vec0DE</m> and <m>\vec0BE</m>,
+            which implies that <m>d=\frac{\cos(\beta)}{\cos(\alpha)}</m>)</p></li>
+            <li><p><m>\|BD\|=\|BE\|+\|ED\|=\sin(\beta)+d\sin(\alpha)</m> (from
+            triangles <m>\vec0BE</m> and
+            <m>\vec0DE</m>)</p></li>
+            </ul>
+        </p>
+        
+        <p>
+        On the one hand, twice the area of the yellow triangle is
+        \[
+        \|BF\|\,\|\vec0 D\| = d\sin(\alpha+\beta)
+        \]
+        
+        On the other hand, twice the triangle area is also
+        \[
+        \|\vec0 E\|\, \|BD\|=d\cos(\alpha)\left(\sin(\beta)+d\sin(\alpha)\right)
+        \]
+        
+        Equating the two values we get
+        \[
+        \sin(\alpha+\beta)=\cos(\alpha)\sin(\beta)+d\cos(\alpha)\sin(\alpha)
+        =\cos(\alpha)\sin(\beta)+\cos(\beta)\sin(\alpha)
+        \]
+        </p>
+        
+        <p>
+        Note that, from the right
+        triangle <m>\vec0 E D</m>, the angle at <m>D</m> is <m>\frac\pi2-\alpha</m>, and
+        then from the right triangle <m>B F D</m> the angle at <m>B</m> is <m>\alpha</m>. We use this
+        to compute some more lengths:
+            <ul>
+            <li><p> <m>\|DF\| = \|BD\|\sin(\alpha)=(\sin(\beta)+d\sin(\alpha))\sin(\alpha)</m></p></li>
+            <li><p> <m>\|\vec0 F\|=\cos(\alpha+\beta)</m></p></li>
+            </ul>
+        Now we have
+        <me>
+        \begin{array}{rl}
+        \|\vec0 F\|
+        \amp= \|\vec0 D\|- \|DF\|\\
+        \cos(\alpha+\beta)
+        \amp=d-(\sin(\beta)+d\sin(\alpha))\sin(\alpha)\\
+        \amp=d-\sin(\beta)\sin(\alpha)-d\, \sin^2(\alpha)\\
+        \amp= d(1-\sin^2(\alpha))-\sin(\beta)\sin(\alpha)\\
+        \amp=d\,\cos^2(\alpha)-\sin(\beta)\sin(\alpha)\\
+        \amp= \cos(\beta)\cos(\alpha)-\sin(\beta)\sin(\alpha)
+        \end{array}
+        </me>
+        </p>
+        
+        
+        <p>
+        and so we have
+        \[
+        \sin(\alpha+\beta)=\sin(\alpha)\cos(\beta)+\cos(\alpha)\sin(\beta)\\
+        \cos(\alpha+\beta)=\cos(\alpha)\cos(\beta)-\sin(\alpha)\sin(\beta)
+        \]
+        </p>
+
+        <theorem xml:id="SinCosSums">
+        <title>Addition formulas for <m>\sin(x)</m> and <m>\cos(x)</m></title>
+        <statement>
+        <p>
+            <me>
+            \sin(\alpha+\beta)=\sin(\alpha)\cos(\beta)+\cos(\alpha)\sin(\beta)\\
+            \cos(\alpha+\beta)=\cos(\alpha)\cos(\beta)-\sin(\alpha)\sin(\beta)
+            </me>
+        </p>
+        </statement>
+        </theorem>
+        </subsection>
+        
+        <subsection> <title>The law of sines</title>
+        <p>
+        Suppose a triangle has sides of lengths <m>a</m>, <m>b</m> and <m>c</m>. Let
+        <m>\alpha</m>, <m>\beta</m>, and <m>\gamma</m> be the angles opposite
+        <m>a</m>, <m>b</m> and <m>c</m> respectively. In addition, let the vertices
+        of the triangle be labeled <m>A</m>, <m>B</m> and <m>C</m> at the angles
+        <m>\alpha</m>, <m>\beta</m>, and <m>\gamma</m> respectively. Our picture
+        looks like this:
+        </p>
+        
+        <figure>
+        <caption />
+        <image width="80%">
+        <asymptote>
+        unitsize(48);
+        pair A=(4,2), C=(6,0), B=(0,0), D=(A.x,0);
+        
+        draw(A--B--C--cycle);
+        label("\(A\)",A,N);
+        label("\(B\)",B,W);
+        label("\(C\)",C,E);
+        label("\(a\)",1/2*B+1/2*C,S);
+        label("\(b\)",1/2*A+1/2*C,NE);
+        label("\(c\)",1/2*A+1/2*B,NW);
+        
+        real t=.9;
+        label("\(\beta\)", t*B+(1-t)/2*(A+C));
+        label("\(\gamma\)", t*C+(1-t)/2*(A+B));
+        label("\(\alpha\)", t*A+(1-t)/2*(B+C));
+        t=.8;
+        </asymptote>
+        </image>
+        </figure>
+        
+        
+        <p>
+        It is pretty obvious that
+        the sides with longer length will have larger angles
+        opposite. The law of sines makes this realtionship
+        precise.
+        </p>
+        
+        <theorem xml:id="LawOfSines"> <title>The law of sines</title>
+        <statement>
+        <p>
+            Suppose a triangle has sides of lengths <m>a</m>, <m>b</m> and <m>c</m>, and
+            <m>\alpha</m>, <m>\beta</m>, and <m>\gamma</m> are the angles opposite
+            <m>a</m>, <m>b</m> and <m>c</m> respectively. Then
+            \[
+            \frac{\sin(\alpha)}{a}
+            =\frac{\sin(\beta)}{b}
+            =\frac{\sin(\gamma)}{c}
+            \]
+        </p>
+        </statement>
+        <proof>
+        <p>
+            With no loss of generality, we may assume that <m>\alpha</m> is
+            the largest angle. It may be acute or obtuse, but <m>\beta</m> and
+            <m>\gamma</m> are definitely acute. That implies that we may drop
+            a perpendicular from <m>A</m> that will divide the angle <m>\alpha</m> into
+            <m>\alpha_1</m> and  <m>\alpha_2</m> the side opposite into segements with
+            lengths <m>a_1</m> and <m>a_2</m>.
+        </p>
+
+        <figure>
+        <caption />
+        <image width="100%">
+        <asymptote>
+        unitsize(48);
+        pair A=(4,2), C=(6,0), B=(0,0), D=(A.x,0);
+        
+        draw(A--B--C--cycle);
+        draw(A--D);
+        label("\(A\)",A,N);
+        label("\(B\)",B,W);
+        label("\(C\)",C,E);
+        label("\(a\)",1/2*B+1/2*C,S);
+        label("\(b\)",1/2*A+1/2*C,NE);
+        label("\(c\)",1/2*A+1/2*B,NW);
+        label("\(a_1\)",2/3*B+1/3*C,N);
+        label("\(a_2\)",1/5*B+4/5*C,N);
+        
+        real t=.9;
+        label("\(\beta\)", t*B+(1-t)/2*(A+C));
+        label("\(\gamma\)", t*C+(1-t)/2*(A+B));
+        label("\(\alpha\)", t*A+(1-t)/2*(B+C));
+        t=.8;
+        label("\(\alpha_1\)", t*A+(1-t)/2*(B+D));
+        label("\(\alpha_2\)", t*A+(1-t)/2*(C+D));
+        label("\(h\)", (A.x,A.y/2), W);
+        </asymptote>
+        </image>
+        </figure>
+
+        <p>
+        Then we have
+        <me>
+        \begin{array}{rl}
+        \sin(\alpha) \amp = \sin(\alpha_1+\alpha_2)\\
+        \amp =\sin(\alpha_1)\cos(\alpha_2)+\cos(\alpha_1)\sin(\alpha_2)\\
+        \amp =\frac{a_1}c \frac hb + \frac hc \frac {a_2}b\\
+        \amp =\frac{ha}{bc}
+        \end{array}
+        </me>
+        and so
+        \[
+        \frac{\sin(\alpha)}a = \frac h{bc}
+        \]
+        Using <m>\sin(\beta)=\frac hc</m> and <m>\sin(\gamma)=\frac hb</m>,
+        it follows that
+        \[
+        \frac{\sin(\beta)}b = \frac h{bc} \textrm{ and }
+        \frac{\sin(\gamma)}c = \frac h{bc}
+        \]
+        and so
+        \[
+        \frac h{bc}=\frac{\sin(\alpha)}a =\frac{\sin(\beta)}b =\frac{\sin(\gamma)}c
+        \]
+        </p>
+        </proof>
+        </theorem>
+        
+        </subsection>
+    </section>
+    
+    <section xml:id="RREF_calculator">
+    <title>RREF and determinant calculator</title>
+    <introduction>
+        <p>
+        This is a calculator for computing the reduced row echelon form
+        of a matrix. In the box below
+        <ul>
+        <li> Set the value of <c>rows</c> to the number of rows.</li>
+        <li> Set the value of <c>cols</c> to the number of columns.</li>
+        <li> Enter the matrix entries as a comma-separated list.
+            The placement on lines is not important as long as there
+            are <c>rows*cols</c> entries.</li>
+        </ul>
+        </p>
+        </introduction>
+    
+            <subsection><title>RREF</title>
+            <sage>
+            <input>
+            rows=3 
+            cols=4
+            M=Matrix(rows,cols,[
+            1,2,3,4,
+            5,6,7,8,
+            9,10,11,12
+            ])
+            print ("The reduced row echelon form of ")
+            print (M)
+            print ("is")
+            M.rref()
+            </input>
+            </sage>
+            </subsection>
+    
+            <subsection><title>Determinant</title>
+            <sage>
+            <input>
+            rows=cols=3 
+            M=Matrix(rows,cols,[
+            1,2,3,
+            1,2,1,
+            3,-1,2
+            ])
+            print ("The determinant of ")
+            print (M)
+            print ("is")
+            M.determinant()
+            </input>
+            </sage>
+        </subsection>
+    </section>
+
+
+</chapter>
+

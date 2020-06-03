@@ -1,0 +1,25 @@
+
+<docinfo xml:id="Docinfo" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<brandlogo url="http://www.umanitoba.ca" source="images/umlogo.png" /> 
+   <macros>
+   <!-- Blackboard bold characters -->
+   \def\R{{\mathbb R}}
+   \def\C{{\mathbb C}}
+   \def\Q{{\mathbb Q}}
+   \def\Z{{\mathbb Z}}
+   \def\N{{\mathbb N}}
+   <!-- redefine \vec from overarrow to bf -->
+   \def\vec#1{\mathbf #1}
+   <!-- New operators -->
+   \newcommand{\adj}{\mathop{\textrm{adj}}}
+   \newcommand{\proj}{\mathop{\textrm{proj}}}
+   \newcommand{\Span}{\mathop{\textrm{span}}} <!-- \span is a TeX primitive  -->
+   <!-- Shortcuts for typesetting elementary row operations-->
+   \newcommand{\rowint}[2]{R_{#1} \leftrightarrow R_{#2}}
+   \newcommand{\rowmul}[2]{R_{#1}\gets {#2}R_{#1}}
+   \newcommand{\rowadd}[3]{R_{#1}\gets R_{#1}+#2R_{#3}}
+   \newcommand{\rowsub}[3]{R_{#1}\gets R_{#1}-#2R_{#3}}
+   </macros>
+</docinfo>
+

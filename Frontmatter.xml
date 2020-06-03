@@ -1,0 +1,26 @@
+
+<frontmatter xml:id="Frontmatter" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Title Page</title>
+
+<titlepage>
+      <author>
+         <personname>Michael Doob (editor)</personname>
+         <department> Department of Mathematics </department>
+         <institution> The University of Manitoba 
+         </institution>
+         <email>Michael_Doob@UManitoba.ca</email>
+      </author>
+      <credit>
+      <title>
+      </title>
+      <author>
+         <personname>
+         </personname>
+      </author>
+      </credit>
+      <date>
+         <today />
+      </date>
+   </titlepage>
+</frontmatter>
+

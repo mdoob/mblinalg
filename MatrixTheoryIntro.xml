@@ -1,0 +1,3679 @@
+
+<chapter xml:id="MatrixTheoryIntro" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Matrix Theory</title>
+
+    <section><title>First definitions</title>
+    <p> We start our study of matrix theory with some important definitions: </p>
+
+    <definition><title>Matrix</title>
+    <statement>
+    <p>A <term> matrix</term> (the plural is <term>matrices</term>) is a rectangular array of numbers. </p>
+    </statement>
+    </definition>
+
+    <p>Here is a matrix:
+    <me>
+    \begin{bmatrix}
+    1\amp2\amp-1\amp4\\
+    2\amp1\amp3\amp0\\
+    4\amp4\amp3\amp1
+    \end{bmatrix}
+    </me>
+    The <term>rows</term> are horizontal parts of the array and the <term>columns</term> are 
+    the vertical ones. We often denote the rows by <m>R_1, R_2,\dots</m>
+    and the columns by <m>C_1, C_2,\dots</m>.</p>
+    
+    <p>In the previous example we have three rows and four columns:</p>
+    
+    <p>Rows: 
+    <m>R_1=\begin{bmatrix}1\amp2\amp-1\amp4\end{bmatrix}</m>, 
+    <m>R_2=\begin{bmatrix}2\amp1\amp3\amp0\end{bmatrix}</m> and 
+    <m>R_3=\begin{bmatrix}4\amp4\amp3\amp1\end{bmatrix}</m> 
+    </p>
+    
+    <p>Columns:
+    <m>C_1=\begin{bmatrix}1\amp2\amp4\end{bmatrix}</m>, 
+    <m>C_2=\begin{bmatrix}2\amp1\amp4\end{bmatrix}</m>, 
+    <m>C_3=\begin{bmatrix}-1\amp3\amp3\end{bmatrix}</m> and  
+    <m>C_4=\begin{bmatrix}4\amp0\amp1\end{bmatrix}</m>.
+    </p>
+    
+    <p>Sometimes the columns are written vertically:
+    <me>C_1=\begin{bmatrix}1\\2\\4\end{bmatrix}, 
+    C_2=\begin{bmatrix}2\\1\\4\end{bmatrix}, 
+    C_3=\begin{bmatrix}-1\\3\\3\end{bmatrix} \textrm{and } 
+    C_4=\begin{bmatrix}4\\0\\1\end{bmatrix}.</me>
+    </p>
+    
+    
+    <definition><title> Size of a matrix</title>
+    <statement>
+    <p>
+    If a matrix had <m>m</m> rows and <m>n</m> columns, then we say that the
+    matrix has <term>size</term> <m>m\times n</m>. We call this an <m>m</m> by <m>n</m> matrix.
+    When it is desirable to emphasize the size of a matrix <m>A</m>, 
+    the following notation is used:
+    <me>
+    A=
+    \begin{bmatrix}
+    a_{1,1} \amp \cdots \amp a_{1,n}\\
+    \amp\vdots\amp\\
+    a_{m,1} \amp \cdots \amp a_{m,n}
+    \end{bmatrix}_{m,n}
+    </me>
+    Notice the special notation used: <m>a_{i,j}</m> is the one and only entry in the matrix
+    that is both in the <m>i</m>-th row and in the <m>j</m>-th column. 
+    </p>
+    <p>
+    Sometimes <m>m\times n</m> is called the <term>shape</term> of the matrix.
+    </p>
+    </statement>
+    </definition>
+    
+    
+    <definition xml:id="Square_matrix_definition"><title>Square matrix</title>
+    <statement>
+    <p>An <m>m\times n</m> matrix is called <term>square</term> if <m>m=n.</m>
+    To emphasize the size of a square matrix, a single subscript is may be
+    used: 
+    <me>
+    A=
+    \begin{bmatrix}
+    a_{1,1} \amp \cdots \amp a_{1,n}\\
+    \amp\vdots\amp\\
+    a_{n,1} \amp \cdots \amp a_{n,n}
+    \end{bmatrix}_n
+    </me>
+    </p>
+    </statement>
+    </definition>
+    
+    <definition><title>Equality of matrices</title>
+    <statement>
+    <p>Two matrices <m>A=[a_{i,j}]</m> and <m>B = [b_{i,j}]</m> 
+    are <term>equal</term> if they are the same size, say <m>m</m> by <m>n,</m>
+    and
+    <me>
+    a_{i,j}=b_{i,j}, \text{ for } i=1,2,\dots,m \text{ and } j=1,2,\dots,n.
+    </me>
+    In other words, they matrices are equal entry-wise.</p>
+    </statement>
+    </definition>
+    
+    <example><title>Equal matrices</title>
+    <p>
+    <ol>
+       <li>
+       <p>As a first example, consider
+       <me>
+       \begin{bmatrix}
+       1 \amp 2 \amp 1\\
+       1 \amp -1 \amp 0
+       \end{bmatrix}
+       =
+       \begin{bmatrix}
+       5-4 \amp 12/6 \amp \cos(0)\\
+       10^0 \amp (-1)^5 \amp \sin(4\pi)
+       \end{bmatrix}
+       </me>
+    
+        There are six entries in these matrices. We need to check all six to establish equality;
+        they are 
+       <md>
+       <mrow>1\amp=5-4</mrow>
+       <mrow>2\amp=\frac{12}6</mrow>
+       <mrow>1\amp=\cos(0)</mrow>
+       <mrow>1\amp=10^0</mrow>
+       <mrow>-1\amp=(-1)^5</mrow>
+       <mrow>0\amp=\sin(4\pi)</mrow>
+       </md>
+       Since all of the individual equations are valid, the two matrices are equal.
+       </p>
+       </li>
+    
+       <li><p> Matrix equality can encode interesting information.
+            <me>\begin{bmatrix}
+            x+y \amp x+2y\\
+            2x+y \amp 2x+2y
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+            2 \amp 3 \\
+            3 \amp 4
+            \end{bmatrix}
+            </me> 
+            (note that this is the same as four equations in two unknowns; they imply <m>x=y=1</m>)
+            </p>
+        </li>
+    </ol>
+    </p>
+    </example>
+    
+    <p>
+    On the face of it, in order to show that two <m>m\times n</m> matrices are equal, we must
+    check the equaltiy of all <m>mn</m> entries. One reason we study mathematics is to make
+    calculations easier. Our mathematical development will, in fact, 
+    do just that.
+    </p>
+    
+    <p>
+    There are two matrices that appear so often that they have special names:
+    </p>
+    
+    <definition> <title>The zero matrix</title>
+    <statement>
+    <p>
+    The <term>zero matrix</term>, written as <m>\vec0</m>, has every entry equal to <m>0</m>.
+    <me>
+    \vec0=
+    \begin{bmatrix}
+    0 \amp 0\amp \cdots \amp 0\\
+    0 \amp 0\amp \cdots \amp 0\\
+     \amp \amp \vdots \amp \\
+    0 \amp 0\amp \cdots \amp 0
+    \end{bmatrix}
+    </me>
+    </p>
+    </statement>
+    </definition>
+    
+    <definition><title>The identity matrix</title>
+    <statement>
+    <p>
+    The <term>identity matrix</term>, written as <m>I</m>, is a square matrix 
+    in which every entry equal to <m>0</m> or <m>1</m>.
+    <me>
+    I=
+    \begin{bmatrix}
+    1 \amp 0\amp \cdots \amp 0 \amp 0\\
+    0 \amp 1\amp \cdots \amp 0 \amp 0\\
+     \amp \amp \vdots \amp \\
+    0 \amp 0\amp \cdots \amp 1 \amp 0\\
+    0 \amp 0\amp \cdots \amp 0 \amp 1
+    \end{bmatrix}
+    </me>
+    When we want to emphasize the size of the matrix is <m>n\times n</m>, we write it as <m>I_n</m>.
+    Hence, if <m>I_n=[a_{i,j}]</m>, we have
+    <me>
+    a_{i,j}=
+    \begin{cases}
+    1 \amp \textrm{if } i=j\\
+    0 \amp \textrm{if } i\not=j
+    \end{cases}
+    </me>
+    </p>
+    </statement>
+    </definition>
+    
+    </section>
+    
+    <section><title>Addition and subtraction of matrices</title>
+
+        <subsection><title>Definitions of addition and subtraction of matrices</title>
+        <p>
+        For two matrices <m>A=[a_{i,j}]</m> and <m>B = [b_{i,j}]</m>, addition is defined if and
+        only if the matrices have the same size. In that case, we say that the matrix 
+        <m>C = [c_{i,j}]</m> satisfies <m>C=A+B</m> if and only if
+        <me>
+        c_{i,j} = a_{i,j}+b_{i,j}
+        </me>
+        for all <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>.
+        </p>
+
+        <p>
+        Similarly, for two matrices <m>A</m> and <m>B</m> of the same size, <m>C=A-B</m> is defined by 
+        <me>
+        c_{i,j} = a_{i,j}-b_{i,j} 
+        </me>
+        for all <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>.
+        When two matrices are of the same size, and hence their addition
+        is defined, they are called
+        <term>conformable for addition.</term>
+        </p>
+        
+        <example><title>Addition and subtraction of matrices</title>
+        <p>
+        <me>
+        A=
+        \begin{bmatrix}
+        1 \amp 2 \amp 3\\
+        4 \amp 5 \amp 6
+        \end{bmatrix}
+        \text{ and } 
+        B=
+        \begin{bmatrix}
+        5 \amp 3 \amp 1\\
+        0 \amp -1 \amp -2
+        \end{bmatrix}
+        </me>
+        then
+        <me>
+        A+B=
+        \begin{bmatrix}
+        6 \amp 5 \amp 4\\
+        4 \amp 4 \amp 4
+        \end{bmatrix}
+        </me>
+        and
+        <me>
+        A-B=
+        \begin{bmatrix}
+        -4 \amp -1 \amp 2\\
+        4 \amp 6 \amp 8
+        \end{bmatrix}
+        </me>
+        </p>
+        </example>
+        
+        
+        <p>In short, addition and subtraction of two matrices are carried 
+        out by adding or subtracting the corresponding positions within the matrices.</p>
+        </subsection>
+        
+        
+        <subsection><title> Some properties of addition of matrices </title> 
+        
+        <theorem xml:id="MatrixAdditionProperties"><title>Addition properties of Matrices</title>
+        <statement>
+        <p>
+        Suppose <m>A</m>, <m>B</m> and <m>C</m> are matrices of the same size, then
+        <ul>
+           <li><p> If <m>A</m> and <m>B</m> are <m>m\times n</m> matrices, 
+               then so is <m>A+B</m>.</p></li>
+           <li><p> <m>A+B=B+A\qquad</m> (commutativity of addition) </p></li>
+           <li><p><m>(A+B)+C = A+(B+C)\qquad</m> (associativity of addition)</p></li>
+        </ul>
+        </p>
+        </statement>
+        <proof>
+        <p>
+        <ul>
+           <li><p>By the definition of matrix addition, the sum of two matrices is a matrix of the same size. </p></li>
+           <li><p> We use <m>A=[a_{i,j}]</m> and <m>B=[b_{i,j}]</m>.
+               The <m>i</m>-<m>j</m> entry of <m>A+B</m> is <m>a_{i,j}+b_{i,j}</m> while
+               the <m>i</m>-<m>j</m> entry of <m>B+A</m> is <m>b_{i,j}+a_{i,j}</m>.
+               Hence <m>A+B=B+A</m> means 
+               <m>a_{i,j}+b_{i,j}=b_{i,j}+a_{i,j}</m> for each possible <m>i</m> and <m>j</m>.
+               We know this latter equation is valid since it uses the known commutative
+               property of real numbers.
+               (see properties of real numbers in <xref ref="RealNumberProperties" />.)
+               </p> 
+           </li>
+           <li>
+           <p>
+           The <m>i</m>-<m>j</m> entries of <m>(A+B)+C</m> and <m>A+(B+C)</m> must
+           be equal. This says <m>(a_{i,j}+b_{i,j})+c_{i,j}=a_{i,j}+(b_{i,j}+c_{i,j})</m>
+           for all possible <m>i</m> and <m>j</m>, and this equation is valid by the distributive
+           property of real numbers.
+           </p>
+           </li>
+        </ul>
+        </p>
+        </proof>
+        </theorem> 
+              
+        </subsection>
+    </section>
+
+    <section><title>Scalar multiplication</title>
+    <definition><title>Scalars</title>
+    <statement>
+    <p>A <term>scalar</term> is a real number.</p>
+    </statement>
+    </definition>
+    
+    <p>We next define the multiplication of a scalar and a matrix.</p>
+    <definition><title>Scalar multiplication</title>
+    <statement>
+    <p>
+    If <m>A=[a_{i,j}]</m> is a matrix and <m>r</m>
+    is a scalar, then the matrix <m>C=[c_{i,j}]=rA</m> is defined by
+    <me>
+    c_{i,j}=ra_{i,j}
+    </me>
+    In other words, every entry of the matrix <m>C</m> is multiplied by <m>r</m>.
+    </p> 
+    </statement>
+    </definition>
+    
+    <example><title>Scalar multiplication of a matrix</title>
+    <p>
+    If
+    <me>
+    A=
+    \begin{bmatrix}
+    1 \amp 2 \amp 3\\
+    4 \amp 5 \amp 6
+    \end{bmatrix}
+    \text{ and }
+    r=2
+    </me>
+    then 
+    <me>
+    rA=2A=
+    \begin{bmatrix}
+    2 \amp 4 \amp 6\\
+    8 \amp 10 \amp 12
+    \end{bmatrix}.
+    </me>
+    </p>
+    </example>
+    <p>In short, the product <m>rA</m> is computed by multiplying every entry of <m>A</m> by <m>r</m>.</p>
+    
+    
+    <theorem xml:id="ScalarMultiplicationProperties"><title>Properties of scalar multiplication</title>
+    <statement>
+    <p>Suppose that <m>A</m> and <m>B</m> are matrices of the same size, and <m>r</m> and <m>s</m> are scalars,
+    then
+    <ul>
+        <li><p> If <m>A</m> is an <m>m\times n</m> matrix, then <m>rA</m> is also <m>m\times n</m>. </p></li>
+        <li><p><m>r(A+B)=rA+rB</m></p></li>
+        <li><p><m>(r+s)A=rA+sA</m></p></li>
+        <li><p><m>(rs)A=r(sA)</m> </p></li>
+        <li><p><m>1A=A</m> </p></li>
+    </ul>
+    </p>
+    </statement>
+    <proof>
+    <p>
+    <ul>
+        <li><p>
+            By the definition of scalar multiplication, if <m>A</m> is an <m>m\times n</m> matrix,
+            then <m>rA</m> is an <m>m\times n</m> matrix also.
+        </p></li>
+        <li><p>
+            We use <m>A=[a_{i,j}]</m> and <m>B=[b_{i,j}]</m>.
+            Then the <m>i</m>-<m>j</m> entry 
+            of <m>r(A+B)</m> is <m>r(a_{i,j}+b_{i,j})</m>
+            while he <m>i</m>-<m>j</m> entry 
+            of <m>rA+rB</m> is <m>ra_{i,j}+rb_{i,j}</m>.
+            Hence the for the equality to be valid, we need
+            <m>r(a_{i,j}+b_{i,j})=ra_{i,j}+rb_{i,j}</m>,
+            which is the distributive law for real numbers.
+            (see properties of real numbers in <xref ref="RealNumberProperties" />.)
+        </p></li>
+        <li><p>
+            We use <m>A=[a_{i,j}].</m>
+            The <m>i</m>-<m>j</m> entry of <m>(r+s)A</m>
+            is <m>(r+s)a_{i,j}</m> while the
+            <m>i</m>-<m>j</m> entry of <m>rA+sA</m> is
+            <m>ra_{i,j}+sa_{i,j}</m>. Hence the matrix equation is valid
+            if <m>(r+s)a_{i,j}=ra_{i,j}+sa_{i,j}</m>. Since this equation
+            is the distributive law for real numbers, the validity is clear.
+        </p></li>
+        <li><p> 
+            We use <m>A=[a_{i,j}].</m>
+            The <m>i</m>-<m>j</m> entry of
+            <m>(rs)A</m> is  <m>(rs)a_{i,j}</m>
+            while the <m>i</m>-<m>j</m> entry of
+            <m>r(sA)</m> is <m>r(sa_{i,j}).</m>
+            Hence the matrix equation is valid if
+            <m>(rs)a_{i,j}=r(sa_{i,j}).</m> Since this
+            is the associative law for real numbers,
+            the result is clear.
+        </p></li>
+        <li><p> We use <m>A=[a_{i,j}].</m>
+            The <m>i</m>-<m>j</m> entry of <m>1A</m> is <m>1a_{i,j}=a_{i,j}</m>,
+            and so <m>1A=A.</m> 
+        </p></li>
+    </ul>
+    </p>
+    </proof>
+    </theorem>
+    
+    
+    <paragraphs><title>Linear combinations</title>
+        <p>
+        Matrix addition and scalar multiplication are both used to 
+        compute linear combinations.
+        </p>
+    </paragraphs>
+    
+    <example><title>A linear combination</title>
+        <p>
+        Suppose 
+        <m>A=\begin{bmatrix} 1\amp 2\\3\amp 4 \end{bmatrix}</m>
+        and
+        <m>B=\begin{bmatrix} -1\amp 0\\2\amp 1 \end{bmatrix}</m>.
+        Then the expression <m>2A+3B</m> makes sense and can
+        be evaluated as
+        <me>
+        \begin{array}{rl}
+        2A+3B
+        \amp =2 \begin{bmatrix} 1\amp 2\\3\amp 4 \end{bmatrix}
+        +3\begin{bmatrix} -1\amp 0\\2\amp 1 \end{bmatrix}\\
+        \amp =\begin{bmatrix} 2\amp 4\\6\amp 8 \end{bmatrix}
+        +\begin{bmatrix} -3\amp 0\\6\amp 3 \end{bmatrix}\\
+        \amp =\begin{bmatrix} -1\amp 4\\ 12\amp 11 \end{bmatrix}
+        \end{array}
+        </me>.
+        </p>
+    </example>
+    
+    <definition><title>Linear combination of two matrices</title>
+    <statement>
+        <p>
+        If <m>A</m> and <m>B</m> are matrices conformable for addition, and
+        <m>r</m> and <m>s</m> are scalars, then the matrix of the form
+        \[
+        rA+sB
+        \]
+        is called a <term>linear combination of <m>A</m> and <m>B</m>.</term>
+        </p>
+    </statement>
+    </definition>
+
+    <p>
+    The concept can be applied easily to more than two matrices.
+    </p>
+    
+    <definition xml:id="LinearCombinationDefinition"><title>Linear combination of matrices</title>
+    <statement>
+        <p>
+        If <m>A_1,A_2,\ldots,A_n</m> are matrices conformable for addition,
+        then, for any choice of scalars <m>r_1,r_2,\ldots,r_n</m>, the matrix 
+        \[
+        r_1A_1+r_2A_2+\cdots+r_nA_n
+        \]
+        is called a <term>linear combination of <m>A_1,A_2,\ldots,A_n</m></term>.
+        </p>
+    </statement>
+    </definition>
+    
+    <exercises><title>Scalar multiplication exercises</title>
+    <exercise>
+    <statement>
+        <p>
+        Let 
+        <m>
+        A=
+        \begin{bmatrix}
+        1\amp2 \amp3\\ 3\amp2\amp1
+        \end{bmatrix}
+        </m>
+        Evaluate
+        <ul>
+        <li><p><m>2A</m></p></li>
+        <li><p><m>-2A</m></p></li>
+        <li><p><m>\frac12 A</m></p></li>
+        <li><p><m>(-1) A</m></p></li>
+        <li><p><m>0A</m></p></li>
+        </ul>
+        </p>
+    </statement>
+    
+    <solution>
+        <p>
+        <ul>
+        <li><p><m>2A=
+            \begin{bmatrix}
+            2\amp 4\amp 6\\ 6\amp 4\amp 2
+            \end{bmatrix}
+            </m></p></li>
+        <li><p><m>-2A=
+            \begin{bmatrix}
+            -2\amp -4\amp -6\\ -6\amp -4\amp -2
+            \end{bmatrix}
+            </m></p></li>
+        <li><p><m>\frac12 A=
+            \begin{bmatrix}
+            \frac12 \amp 1\amp \frac32\\ \frac32 \amp 1\amp \frac12
+            \end{bmatrix}
+            </m></p></li>
+        <li><p><m>(-1) A=
+        \begin{bmatrix}
+        -1\amp-2 \amp-3\\ -3\amp-2\amp-1
+        \end{bmatrix}
+            </m></p></li>
+        <li><p><m>0A=
+        \begin{bmatrix}
+        0\amp0 \amp0\\ 0\amp0\amp0
+        \end{bmatrix}
+            </m></p></li>
+        </ul>
+        </p>
+    </solution>
+    </exercise>
+    
+    <exercise>
+    <statement>
+        <p>
+        Recall the that zero matrix <m>\vec0</m> has every
+        entry equal to zero.
+        Show that <m>A+(-1)A=\vec 0</m>.
+        </p>
+    </statement>
+    <solution>
+        <p>
+        The <m>i</m>-<m>j</m> entry of <m>A+(-1)A</m> is
+        <m>a_{i,j}+(-1)a_{i,j}=0</m> and so <m>A+(-1)A=\vec 0</m>.
+        </p>
+    </solution>
+    </exercise>
+    
+    <exercise>
+    <statement>
+        <p>
+        Let <m>A</m> be a any matrix and <m>r</m> any scalar.
+        Show that <m>0A=r\vec 0</m> where <m>\vec 0</m> is
+        the zero matrix with the same size as <m>A</m>.
+        </p>
+    </statement>
+    <solution>
+        <p>
+        The <m>i</m>-<m>j</m> entry of <m>0A</m> is <m>0a_{i,j}=0</m>
+        and
+        the <m>i</m>-<m>j</m> entry of <m>r\vec0</m> is <m>r0=0</m>.
+        Hence <m>0A=\vec0=r\vec0</m>.
+     
+        </p>
+    </solution>
+    </exercise>
+    </exercises>
+    </section>
+    
+    
+    <section><title>Matrix multiplication</title>
+    
+      
+        <subsection><title> First concepts</title>
+        <paragraphs><title>Definition of matrix multiplication</title>
+        <p>
+        The definition of matrix multiplication is very different from that
+        of addition and subtraction.  Suppose we have two matrices <m>A</m> and
+        <m>B</m> with respective sizes <m>m\times n</m> and <m>r\times s.</m> 
+        <em>The product of A and B is defined if and only if <m>n=r</m></em>,
+        that is, the number of
+        columns of <m>A</m> is equal to the number of rows of <m>B.</m> When this
+        is the case, the matrices are said to be 
+        <em>conformable for multiplication</em>, and it is possible to evaluate
+        the product <m>AB</m>.
+        </p>
+        </paragraphs>
+        
+        <definition><title>Matrix multiplication</title>
+        <statement>
+        <p>
+        Consider the entries in row <m>R_i</m> of the matrix <m>A</m>:
+        <m>a_{i,1}, a_{i,2},\dots, a_{i,n}</m> and also the entries in column
+        <m>C_j</m> of the matrix <m>B:</m> <m>b_{1,j}, b_{2,j},\dots, b_{r,j}.</m>
+        
+        <me>
+        A=\begin{bmatrix} \amp\amp\vdots \\
+        \color{red}{a_{i,1}} \amp \color{red}{a_{i,2}}\amp\cdots\amp \color{red}{a_{i,n}}
+        \rlap{\quad R_i}\\ \amp\amp\vdots\\ 
+        \end{bmatrix}
+        \qquad\quad
+        \begin{matrix}
+        B=\begin{bmatrix}
+        \cdots\amp \color{green}{b_{1,j}}\amp\cdots\\
+        \cdots\amp \color{green}{b_{2,j}}\amp\cdots\\
+        \amp\vdots\\ 
+        \cdots\amp \color{green}{b_{r,j}}\amp\cdots
+        \end{bmatrix} \\
+        \qquad C_j
+        \end{matrix}
+        </me>
+        
+        Then for <m>C=AB</m>, each <m>c_{i,j}</m> is computed in the following way:
+        <me>
+        c_{i,j}=
+        \color{red}{a_{i,1}}\color{green}{b_{1,j}}+ 
+        \color{red}{a_{i,2}}\color{green}{b_{2,j}}+\cdots +
+        \color{red}{a_{i,n}}\color{green}{b_{r,j}}
+        </me>
+        </p>
+        </statement>
+        </definition>
+        
+        <p>
+        Notice that the assumption <m>n=r</m> implies that there is just the
+        right number of entries in the rows of <m>A</m> and columns of <m>B</m>
+        to allow <m>c_{i,j}</m> to be defined.  The number <m>c_{i,j}</m> is
+        also called the <em>inner product of row <m>R_i</m> of <m>A</m> and column
+        <m>C_j</m> of <m>B.</m></em> 
+        This product is written as
+        <me>c_{i,j}=R_i\cdot C_j</me>
+        Notice that this definition implies that the
+        size of the product is <m>m\times s.</m>
+        </p>
+        
+        <example><title>Examples of matrix multiplication</title>
+        <p>
+        <ul>
+            <li><p> Suppose 
+            <m>A=\begin{bmatrix} 
+            1 \amp 2 \amp 3 \\ 
+            4 \amp 5 \amp 6\end{bmatrix}_{2\times 3}</m> 
+            and 
+            <m>B=\begin{bmatrix} 
+            3 \amp 1\\ 
+            4 \amp 1 \\
+            5 \amp 9
+            \end{bmatrix}_{3\times 2}</m>. 
+            Then <m>C=AB</m> is defined and has size <m>2\times2</m>. 
+            Here are the entries in <m>C</m>:
+            <me>\begin{array}{rclcl}
+            c_{11}\amp=\amp1\cdot3 + 2\cdot4 + 3\cdot5 \amp=\amp 3+8+15=26\\
+            c_{12}\amp=\amp1\cdot1 + 2\cdot1 + 3\cdot9 \amp=\amp 1+2+27=30\\
+            c_{21}\amp=\amp4\cdot3 + 5\cdot4 + 6\cdot5 \amp=\amp 12+20+30=62\\
+            c_{22}\amp=\amp4\cdot1 + 5\cdot1 + 6\cdot9 \amp=\amp 4+5+54=63
+            \end{array}</me>
+            In other words
+            <m>C=\begin{bmatrix}26\amp30\\62\amp63\end{bmatrix}</m></p>
+            </li>
+        
+            <li><p> Using <m>A</m> and <m>B</m> from the previous example, 
+            the matrix <m>D=BA</m> is also defined. In this case the product is of size 
+            <m>3\times3.</m> In this case we have
+            <md>
+            <mrow>
+            D\amp =\begin{bmatrix}
+            3\cdot1 + 1\cdot4 \amp 3\cdot2 + 1\cdot5 \amp 3\cdot3 + 1\cdot6\\
+            4\cdot1 + 1\cdot4 \amp 4\cdot2 + 1\cdot5 \amp 4\cdot3 + 1\cdot6\\
+            5\cdot1 + 9\cdot4 \amp 5\cdot2 + 9\cdot5 \amp 5\cdot3 + 9\cdot6
+            \end{bmatrix}
+            </mrow>
+            <mrow>
+            \amp =\begin{bmatrix}
+            7\amp11\amp15\\8\amp13\amp18\\41\amp55\amp69
+            \end{bmatrix}
+            </mrow>
+            </md>
+            Note that <m>AB\not=BA</m> since the two matrices have different size.</p> 
+            </li>
+        
+            <li><p> Let <m>I_2=\begin{bmatrix}1\amp0\\0\amp1\end{bmatrix}</m> and 
+            <m>A</m> as in the previous examples. Then 
+            <md>
+            <mrow>
+            I_2A
+            \amp =
+            \begin{bmatrix}
+            1\cdot1+0\cdot4 \amp 1\cdot2+0\cdot5 \amp 1\cdot3 + 0\cdot6\\
+            0\cdot1+1\cdot4 \amp 0\cdot2+1\cdot5 \amp 0\cdot3 + 1\cdot6
+            \end{bmatrix}
+            </mrow>
+            <mrow>
+            \amp =\begin{bmatrix} 1 \amp 2 \amp 3 \\ 4 \amp 5 \amp 6\end{bmatrix}
+            </mrow>
+            <mrow>
+            \amp =A
+            </mrow>
+            </md>
+            </p></li>
+        
+            <li>
+            <p>Let
+            <m>I_3=\begin{bmatrix}1\amp0\amp0\\0\amp1\amp0\\0\amp0\amp1\end{bmatrix}.</m> 
+            Computing as in the last example, we have
+            <m>AI_3=A.</m></p>
+            </li>
+        </ul>
+        </p>
+        </example>
+        
+        <paragraphs><title>Systems of linear equations and matrix multiplication</title>
+        <p>
+        We may use matrix multiplication to write systems of linear equations 
+        compactly. Suppose we have a system of linear equations written as
+        <md>
+        <mrow> a_{1,1}x_1+a_{1,2}x_2+\cdots+ a_{1,n}x_n=b_1 </mrow>
+        <mrow> a_{2,1}x_1+a_{2,2}x_2+\cdots+ a_{2,n}x_n=b_2 </mrow>
+        <mrow> \vdots </mrow>
+        <mrow> a_{m,1}x_1+a_{m,2}x_2+\cdots+ a_{m,n}x_n=b_m </mrow>
+        </md>
+        We then have <m>A=[a_{i,j}]</m> as the coefficient matrix. We also define
+        <me>
+        \vec{b} = \begin{bmatrix} b_1\\b_2\\ \vdots \\b_m \end{bmatrix}
+        </me>
+        and
+        <me>
+        \vec{x} = \begin{bmatrix} x_1\\x_2\\ \vdots \\x_n \end{bmatrix}
+        </me>
+        Matrix multiplication is defined so that the system of linear equations
+        is exactly the same as the matrix equation
+        <me>
+        A\vec x=\vec b
+        </me>
+        </p>
+        </paragraphs>
+           <exercise>
+           <statement>
+           <p>
+           Let 
+           <m>A=\left[\begin{smallmatrix}2\amp1\\ -1\amp0\end{smallmatrix}\right]</m>
+           and
+           <m>B=\left[\begin{smallmatrix}1\amp2\\ -1\amp2\end{smallmatrix}\right]</m>.
+           Evaluate
+           <ul>
+           <li><p><m>AB</m></p></li>
+           <li><p><m>BA</m></p></li>
+           <li><p><m>A^2=AA</m></p></li>
+           <li><p><m>B^2=BB</m></p></li>
+           <li><p><m>ABA</m></p></li>
+           <li><p><m>BAB</m></p></li>
+           </ul></p>
+           </statement>
+           <solution>
+           <p>
+           <ul>
+           <li><p><m>AB=\left[
+              \begin{smallmatrix}1\amp 6\\-1\amp -2\end{smallmatrix}\right]</m></p></li>
+           <li><p><m>BA=\left[
+              \begin{smallmatrix}0\amp 1\\-4\amp -1\end{smallmatrix}\right]</m></p></li>
+           <li><p><m>A^2=AA=\left[
+              \begin{smallmatrix}3\amp 2\\-2\amp -1\end{smallmatrix}\right]</m></p></li>
+           <li><p><m>B^2=BB=\left[
+              \begin{smallmatrix}-1\amp 6\\-3\amp 2\end{smallmatrix}\right]</m></p></li>
+           <li><p><m>ABA=\left[
+              \begin{smallmatrix}-4\amp 1\\0\amp -1\end{smallmatrix}\right]</m></p></li>
+           
+           <li><p><m>BAB=\left[
+              \begin{smallmatrix}-1\amp 2\\-3\amp -10\end{smallmatrix}\right]</m></p></li>
+           </ul>
+           </p>
+           </solution>   
+           </exercise>
+        <paragraphs><title>Linear combinations and matrix multiplication</title>
+        <p>
+        Suppose we start with an <m>m\times n</m> matrix <m>A</m> whose columns are
+        <m>C_1,C_2,\ldots,C_n</m>.
+        Recall from
+        <xref ref="LinearCombinationDefinition" /> 
+        that a linear combination of these columns has the form
+        \[r_1C_1+r_2C_2+\cdots+r_nC_n.\]
+        Consider the equation
+        <mdn>
+        <mrow xml:id="LinearCombinationEquation">
+        B=r_1C_1+r_2C_2+\cdots+r_nC_n.
+        </mrow>
+        </mdn>
+        Since <m>B</m> is conformable for addition, it must have <m>m</m> rows, and so we have
+        <me>
+        B=
+        \begin{bmatrix}
+        b_1 \\b_2 \\ \vdots\\ b_m
+        \end{bmatrix}
+        \textrm{ and }
+        R=
+        \begin{bmatrix}
+        r_1 \\r_2 \\ \vdots\\ r_n
+        \end{bmatrix}
+        </me>
+        
+        Then then <xref ref="LinearCombinationEquation" />
+        is identical to the equation
+        \[
+        AR=B.
+        \]
+        </p>
+        </paragraphs>
+        
+        </subsection>
+            
+        <subsection><title> Properties of Matrix Multiplication </title>
+        
+        <paragraphs><title>Matrix multiplication is <em>not</em> commutative</title>
+        <p>
+        The most important difference between the multiplication of matrices
+        and the multiplication of real numbers is that real numbers <m>x</m> and <m>y</m>
+        always commute (that is <m>xy=yx</m>), but the same in not true for 
+        matrices. For matrices
+        <me>
+        X=
+        \begin{bmatrix}
+        1\amp2\\3\amp4
+        \end{bmatrix}
+        \textrm{ and }
+        Y=
+        \begin{bmatrix}
+        2\amp1\\0\amp-1
+        \end{bmatrix}
+        </me>
+        we have
+        <me>
+        XY=
+        \begin{bmatrix}
+        2\amp-1\\6\amp-1
+        \end{bmatrix}
+        \textrm{ and }
+        YX=
+        \begin{bmatrix}
+        5\amp8\\-3\amp-4
+        \end{bmatrix}
+        </me>.
+        On the other hand, if 
+        <me>
+        Z=
+        \begin{bmatrix}
+        -2\amp 2\\3\amp 1
+        \end{bmatrix}
+        </me>
+        then
+        <me>
+        XZ=
+        \begin{bmatrix}
+        4\amp 4\\6\amp 10
+        \end{bmatrix}
+        =ZX
+        </me>.
+        When <m>ZX=XZ</m>, we say that <m>X</m> and <m>Z</m> are
+        <term>commuting matrices</term>.
+        </p>
+        </paragraphs>
+        
+        <!--
+        <exercises>
+        <exercisegroup>
+        -->
+            <exercise>
+            <statement>
+            <p>
+            Suppose two matrices <m>X</m> and <m>Z</m> commute, that is, satisfy the equation
+            <me>XZ=ZX.</me>
+            Show that <m>X</m> and <m>Z</m> 
+            are square matrices of the same size.
+            </p>
+            </statement>
+            <solution>
+            <p>
+            Suppose that <m>X</m> is of size <m>m\times n</m> and
+            <m>Z</m> is of size <m>r\times s</m>. Since the matrix <m>XZ</m> exists,
+            the comformability condition says <m>n=r</m>. Similarly since <m>ZX</m>
+            exists we have <m>s=m</m>. Since <m>XZ</m> is of size <m>m\times s</m> and 
+            <m>ZX</m> is of size <m>n\times r</m>, the equation <m>XZ=ZX</m>
+            implies that <m>m=n</m> and <m>s=r</m>. Putting the equalities together,
+            we have <m>m=n=r=s</m>.
+            </p>
+            </solution>
+            </exercise>
+        
+            <exercise>
+            <statement>
+            <p>
+            Let <m>X=
+            \left[\begin{smallmatrix}
+            1\amp2\\3\amp4
+            \end{smallmatrix}\right]</m>. Find all matrices <m>Z</m> so that
+            <m>XZ=ZX</m>.
+            </p>
+            </statement>
+            <hint>
+            <p>
+            Let 
+            <m>Z=
+            \begin{bmatrix}
+            x\amp y\\ z\amp w
+            \end{bmatrix}
+            </m>
+            and evaluate <m>XZ</m> and <m>ZX</m>
+            </p>
+            </hint>
+            </exercise>
+        
+        <!--
+        </exercisegroup>
+        </exercises>
+        -->
+        
+        <theorem><title>Left distributive law</title>
+        <statement>
+            <p>Let <m>A</m>, <m>B</m> and <m>C</m> be matrices of the right size
+            for matrix multiplication. Then <m>A(B+C)=AB+AC</m>
+            </p>
+        </statement>
+        <proof>
+        <p>We compute the <m>i</m>-<m>j</m> entry on both sides of the equation:
+        <ul>
+            <li><p>
+                Left hand side:
+                The <m>k</m>-<m>j</m> entry of <m>B+C</m>
+                is <m>b_{k,j}+c_{k,j}</m>, and so the <m>i</m>-<m>j</m> entry of
+                <m>A(B+C)</m> is
+                <md>
+                <mrow>
+                \amp a_{i,1}(b_{1,j}+c_{1,j})+
+                a_{i,2}(b_{2,j}+c_{2,j})+
+                \cdots+ a_{i,n}(b_{n,j}+c_{n,j})
+                </mrow>
+                <mrow>  \amp = a_{i,1}b_{1,j}+a_{i,1}c_{1,j} </mrow>
+                <mrow> \amp +a_{i,2}b_{2,j}+a_{i,2}c_{2,j} </mrow>
+                <mrow> \amp \ \vdots </mrow>
+                <mrow> \amp +a_{i,n}b_{n,j}+a_{i,n}c_{n,j} </mrow>
+                </md>
+            </p></li>
+            <li><p>
+                Right hand side:
+                The the <m>i</m>-<m>j</m> entry of <m>AB</m> is
+                <m>a_{i,1}b_{1,j}+a_{i,2}b_{2,j}+\cdots+a_{i,n}b_{n,j}</m> 
+                and the <m>i</m>-<m>j</m> entry of <m>AC</m> is
+                <m>a_{i,1}c_{1,j}+a_{i,2}c_{2,j}+\cdots+a_{i,n}c_{n,j}</m>
+                Hence the <m>i</m>-<m>j</m> entry of <m>AB+AC</m> is
+                <md>
+                <mrow>
+                \amp a_{i,1}b_{1,j}+a_{i,2}b_{2,j}+\cdots+a_{i,n}b_{n,j} 
+                </mrow>
+                <mrow>
+                +\amp a_{i,1}c_{1,j}+a_{i,2}c_{2,j}+\cdots+a_{i,n}c_{n,j}.
+                </mrow>
+                </md>
+            </p>
+            </li>
+        </ul>
+            Notice that the first column of sums for the left-hand side
+            is the same as the first row of sums for the right-hand side,
+            and similarly for the second column and second row. Hence
+            the entries on the left-hand side and the right-hand side
+            are equal.
+        </p>
+        </proof>   
+        
+        <proof>
+        <p>
+        Using summation notation:
+        <md>
+        <mrow> \bigl(A(B+C)\bigr)_{i,j} \amp = \sum_{k=1}^n A_{i,k}(B+C)_{k,j} </mrow>
+        <mrow> \amp = \sum_{k=1}^n a_{i,k}(b_{k,j}+c_{k,j}) </mrow>
+        <mrow> \amp = \sum_{k=1}^n (a_{i,k} b_{k,j}+a_{i,k} c_{k,j}) </mrow>
+        <mrow> \amp = \sum_{k=1}^n a_{i,k} b_{k,j}+\sum_{k=1}^na_{i,k} c_{k,j} </mrow>
+        <mrow> \amp = (AB)_{i,j} + (AC)_{i,j}</mrow> 
+        </md>
+        </p>
+        </proof>
+        
+        </theorem>
+        
+        <theorem><title>Right distributive law</title>
+        <statement>
+            <p>Let <m>A</m>, <m>B</m> and <m>C</m> be matrices of the right size
+            for matrix multiplication. Then <m>(B+C)A = BA+CA</m>.</p>
+        </statement>
+        <proof>
+        <p>Let <m>B</m>  and <m>C</m> be of size <m>m\times n</m>,
+        and <m>A</m> be of size <m>n\times r</m>.
+        We use <m>A=[a_{i,j}],</m>  <m>B=[b_{i,j}]</m> and  <m>C=[c_{i,j}]</m>,
+        and we compute the <m>i</m>-<m>j</m> entry on both sides of the equation.
+        
+        <ul>
+            <li><p>
+                Left hand side:
+                The <m>i</m>-<m>k</m> entry of <m>B+C</m> is 
+                <m>b_{i,k}+c_{i,k}</m>, 
+                and so the  <m>i</m>-<m>j</m> entry of
+                <m>(B+C)A</m> is
+                <md>
+                <mrow>
+                (b_{i,1}+c_{i,1})a_{1,j} +
+                (b_{i,2}+c_{i,2})a_{2,j}+
+                \cdots+ (b_{i,n}+c_{i,n})a_{n,j}
+                </mrow>
+                <mrow>
+                = b_{i,1}a_{1,j}+c_{i,1}a_{1,j} +\cdots
+                + b_{i,n}a_{1,n}+c_{i,n}a_{n,j} 
+                </mrow>
+                </md>.
+            </p></li>
+        
+            <li><p>
+                Right hand side:
+                The <m>i</m>-<m>j</m> entry of <m>BA</m> is
+                <m>b_{i,1}a_{1,j}+b_{i,2}a_{2,j}+\cdots+b_{i,n}a_{n,j}</m> 
+                and the <m>i</m>-<m>j</m> entry of <m>CA</m> is
+                <m>c_{i,1}a_{1,j}+c_{i,2}a_{2,j}+\cdots+c_{i,n}a_{n,j}</m>
+                Hence the <m>i</m>-<m>j</m> entry of <m>BA+CA</m> is
+                <md>
+                <mrow>
+                b_{i,1}a_{1,j}+b_{i,2}a_{2,j}+\cdots+b_{i,n}a_{n,j}
+                </mrow>
+                <mrow>
+                +  c_{i,1}a_{1,j}+c_{i,2}a_{2,j}+\cdots+c_{i,n}a_{n,j}
+                </mrow>
+                </md>
+                Reordering the summands, we get 
+                the <m>i</m>-<m>j</m> entry of <m>BA+CA</m> to be
+                <m>b_{i,1}a_{1,j}+ c_{i,1}a_{1,j}
+                 +\cdots+b_{i,n}a_{n,j}+c_{i,n}a_{n,j}</m>
+            </p></li>
+        </ul>
+
+        The left-hand side and the right-side agree, and so  <m>(B+C)A=BA+CA</m>.
+        </p>
+        </proof>   
+        
+        <proof>
+        <p>
+        Using summation notation:
+        <md>
+        <mrow> \bigl((B+C)A\bigr)_{i,j} \amp = \sum_{k=1}^n (B+C)_{i,k}A_{k,j} </mrow>
+        <mrow> \amp = \sum_{k=1}^n  (b_{i,k}+c_{i,k}) a_{k,j}</mrow>
+        <mrow> \amp = \sum_{k=1}^n (b_{i,k}a_{k,j} + c_{i,k} a_{k,j}) </mrow>
+        <mrow> \amp = \sum_{k=1}^n b_{i,k}a_{k,j} + \sum_{k=1}^n c_{i,k} a_{k,j} </mrow>
+        <mrow> \amp = (BA)_{i,j} + (CA)_{i,j}</mrow> 
+        </md>
+        </p>
+        </proof>
+        </theorem>
+        
+        
+        <theorem><title>Associativity of matrix multiplication</title>
+        <statement>
+            <p>Let <m>A</m>, <m>B</m> and <m>C</m> be matrices of the right size
+            for matrix multiplication. Then <m>A(BC)=(AB)C</m>.</p>
+        </statement>
+        <proof>
+        <p>
+            Let <m>A</m> be of size <m>m\times n</m>, and
+            <m>B</m>  of size <m>n\times r</m> and
+            <m>C</m> of size <m>r\times s</m>.
+            We use <m>A=[a_{i,j}],</m>  
+            <m>B=[b_{i,j}]</m> and  
+            <m>C=[c_{i,j}]</m>,
+            and we compute 
+            the <m>i</m>-<m>j</m> entry 
+            on both sides of the equation.
+         
+            <ul>
+            <li>
+            <p>
+                Left hand side:
+                The <m>i</m>-<m>j</m> entry of <m>A(BC)</m> is
+                <m>a_{i,1}(BC)_{1,j} +
+                a_{i,2}(BC)_{2,j} + \cdots +
+                a_{i,n}(BC)_{n,j}.</m>
+         
+                In addition, for any <m>t, 1\leq t\leq n,</m> we have
+         
+                <m>(BC)_{t,j}=b_{t,1}c_{1,j} + b_{t,2}c_{2,j} + \cdots + b_{t,r}c_{r,j}</m>
+         
+                This means that the left-hand side is
+         
+                <md>
+                <mrow>
+                a_{i,1}(b_{1,1}c_{1,j} + b_{1,2}c_{2,j} + \cdots + b_{1,r}c_{r,j})
+                </mrow><mrow>
+                + a_{i,2}(b_{2,1}c_{1,j} + b_{2,2}c_{2,j} + \cdots + b_{2,r}c_{r,j})
+                </mrow><mrow>
+                + a_{i,3}(b_{3,1}c_{1,j} + b_{3,2}c_{2,j} + \cdots + b_{3,r}c_{r,j})
+                </mrow><mrow>
+                \vdots
+                </mrow><mrow>
+                + a_{i,n}(b_{n,1}c_{1,j} + b_{n,2}c_{2,j} + \cdots + b_{n,r}c_{r,j})
+                </mrow>
+                </md>
+                which is
+                <me>\begin{matrix}
+                a_{i,1}b_{1,1}c_{1,j} + a_{i,1}b_{1,2}c_{2,j} + \cdots + a_{i,1}b_{1,r}c_{r,j}\\
+                + a_{i,2}b_{2,1}c_{1,j} + a_{i,2}b_{2,2}c_{2,j} + \cdots + a_{i,2}b_{2,r}c_{r,j}\\
+                + a_{i,3}b_{3,1}c_{1,j} + a_{i,3}b_{3,2}c_{2,j} + \cdots + a_{i,3}b_{3,r}c_{r,j}\\
+                \vdots\\
+                + a_{i,n}b_{n,1}c_{1,j} + a_{i,n}b_{n,2}c_{2,j} + \cdots + a_{i,n}b_{n,r}c_{r,j}
+                \end{matrix}</me>
+         
+                Notice what this result is actually stating. Each summand is of the form
+                <m>a_{i,t}b_{t,u}c_{u,j}</m> where <m>1\leq t\leq n</m> and <m>1\leq u\leq r.</m>
+                Since there are <m>nr</m> summands, all different, each possible 
+                <m>a_{i,t}b_{t,u}c_{u,j}</m>
+                appears exactly once within the sum.
+            </p>
+        </li>
+        
+        <li>
+            <p>
+            Right hand side:
+            The argument is almost identical with the one used on the left-hand side.
+            The <m>i</m>-<m>j</m> entry of <m>(AB)C</m> is
+            <m>(AB)_{i,1}c_{1,j} +
+            (AB)_{i,2}c_{2,j} + \cdots +
+            (AB)_{i,r}c_{r,j}.</m>
+            In addition, for any <m>t, 1\leq t\leq r,</m> we have
+            <m>(AB)_{i,t}=a_{i,1}b_{1,t} + a_{i,2}b_{2,t} + \cdots + a_{i,n}b_{n,t}</m>
+            This means that the right-hand side is
+            
+            <md>
+            <mrow>
+            (a_{i,1}b_{1,1} + a_{i,2}b_{2,1} + \cdots + a_{i,n}b_{n,1})c_{1,j}
+            </mrow><mrow>
+            (a_{i,1}b_{1,2} + a_{i,2}b_{2,2} + \cdots + a_{i,n}b_{n,2})c_{2,j}
+            </mrow><mrow>
+            (a_{i,1}b_{1,3} + a_{i,2}b_{2,3} + \cdots + a_{i,n}b_{n,3})c_{3,j}
+            </mrow><mrow>
+            \vdots
+            </mrow><mrow>
+            (a_{i,1}b_{1,r} + a_{i,2}b_{2,r} + \cdots + a_{i,n}b_{n,r})c_{r,j}
+            </mrow>
+            </md>
+            which is
+            <md>
+            <mrow> 
+            a_{i,1}b_{1,1}c_{1,j} + a_{i,2}b_{2,1}c_{1,j} + \cdots + a_{i,n}b_{n,1}c_{1,j}
+            </mrow><mrow>
+            a_{i,1}b_{1,2}c_{2,j} + a_{i,2}b_{2,2}c_{2,j} + \cdots + a_{i,n}b_{n,2}c_{2,j}
+            </mrow><mrow>
+            \vdots
+            </mrow><mrow>
+            a_{i,1}b_{1,r}c_{r,j} + a_{i,2}b_{2,r}c_{r,j} + \cdots + a_{i,n}b_{n,r}c_{r,j}
+            </mrow>
+            </md>
+            
+            Once again, each summand is of the form
+            <m>a_{i,t}b_{t,u}c_{u,j}</m> where <m>1\leq t\leq n</m> and <m>1\leq u\leq r.</m>
+            Since there are <m>nr</m> summands, all different, each possible 
+            <m>a_{i,t}b_{t,u}c_{u,j}</m>
+            appears exactly once within the sum. Hence the left-hand side and right-hand side are equal.
+            </p>
+        </li>
+        </ul>
+        
+        </p>
+        </proof>
+        
+        <proof>
+        <p>
+            Let <m>A</m> be of size <m>m\times n</m>, and
+            <m>B</m>  of size <m>n\times r</m> and
+            <m>C</m> of size <m>r\times s</m>.
+            Using summation notation:
+            <me>
+            \bigl((AB)C\bigr)_{i,j} = \sum_{k=1}^r (AB)_{i,k}c_{k,j} 
+            </me>
+            while
+            <me>
+            (AB)_{i,k}=\sum_{\ell=1}^n a_{i,\ell}b_{\ell,k} 
+            </me>
+            Now we have
+            <md>
+            <mrow> \bigl((AB)C\bigr)_{i,j} \amp = 
+            \sum_{k=1}^r \bigl(\sum_{\ell=1}^n a_{i,\ell}b_{\ell,k}\bigr) c_{k,j} </mrow>
+            <mrow> \amp = \sum_{k=1}^r \bigl(\sum_{\ell=1}^n a_{i,\ell}b_{\ell,k}c_{k,j}\bigr) </mrow>
+            <mrow> \amp = \sum_{k=1}^r \sum_{\ell=1}^n a_{i,\ell}b_{\ell,k}c_{k,j} </mrow>
+            </md>
+            On ther other hand
+            <me>
+            \bigl(A(BC)\bigr)_{i,j} = \sum_{\ell=1}^n a_{i,\ell} (BC)_{\ell,j}
+            </me>
+            while
+            <me>
+            (BC)_{\ell,j}=\sum_{k=1}^r b_{\ell,k}c_{k,j} 
+            </me>
+            and so
+            <md>
+            <mrow>
+            \bigl(A(BC)\bigr)_{i,j} 
+            \amp =  \sum_{\ell=1}^n a_{i,\ell}\bigl(\sum_{k=1}^r b_{\ell,k}c_{k,j} \bigr) </mrow>
+            <mrow>\amp =  \sum_{\ell=1}^n \sum_{k=1}^r a_{i,\ell} b_{\ell,k}c_{k,j} </mrow>
+            </md>
+            and so
+            <me>(AB)C=A(BC)</me>
+        </p>
+        </proof>
+        </theorem>
+        </subsection>
+        
+        <subsection><title> Solving a matrix equation <m>AX=B</m> </title>
+            <p> 
+            Suppose that <m>A</m> is an <m>m\times n</m> matrix and 
+            <m>B</m> is an <m>m\times r</m> matrix. We want find a matrix <m>X</m> so that
+            <m>AX=B.</m> To be conformable for multiplication, <m>X</m> must be of size
+            <m>n\times r.</m> Specifically,
+            if <m>A=[a_{i,j}]</m>, <m>X=[x_{i,j}]</m>  and <m>B=[b_{i,j}]</m>,
+            then we have
+         
+            <me>
+            \begin{bmatrix}
+            a_{1,1} \amp a_{1,2} \amp \cdots \amp a_{1,n}\\
+            a_{2,1} \amp a_{2,2} \amp \cdots \amp a_{2,n}\\
+                    \amp       \amp \vdots \amp\\
+            a_{m,1} \amp a_{m,2} \amp \cdots \amp a_{m,n}
+            \end{bmatrix}
+            \begin{bmatrix}
+            x_{1,1} \amp x_{1,2} \amp \cdots \amp x_{1,r}\\
+            x_{2,1} \amp x_{2,2} \amp \cdots \amp x_{2,r}\\
+                    \amp       \amp \vdots \amp\\
+            x_{n,1} \amp x_{n,2} \amp \cdots \amp x_{n,r}
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+            b_{1,1} \amp b_{1,2} \amp \cdots \amp b_{1,r}\\ 
+            b_{2,1} \amp b_{2,2} \amp \cdots \amp b_{2,r}\\
+                    \amp       \amp \vdots \amp\\
+            b_{m,1} \amp b_{m,2} \amp \cdots \amp b_{m,r}
+            \end{bmatrix}
+            </me>
+         
+            If we look at the <m>i</m>-<m>j</m> entry on both sides of this equation, we get
+         
+            <me>
+            a_{i,1}x_{1,j} +a_{i,2}x_{2,j}+\cdots +a_{i,n}x_{n,j} = b_{i,j}.
+            </me>
+         
+            If we keep the column number <m>j</m> of <m>X</m> fixed for the moment
+            and let <m>i</m> range from <m>1</m> to <m>m</m>, 
+            we get a system of linear equations:
+         
+            <me>
+            \begin{bmatrix}
+            a_{1,1} \amp a_{1,2} \amp \cdots \amp a_{1,n}\\
+            a_{2,1} \amp a_{2,2} \amp \cdots \amp a_{2,n}\\
+                    \amp       \amp \vdots \amp\\
+            a_{m,1} \amp a_{m,2} \amp \cdots \amp a_{m,n}
+            \end{bmatrix}
+            \begin{bmatrix}
+            x_{1,j}\\
+            x_{2,j}\\ 
+            \vdots \\
+            x_{n,j}
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+            b_{1,j} \\
+            b_{2,j}\\
+            \vdots\\
+            b_{m,j}
+            \end{bmatrix}
+            </me>
+        
+            We can solve this system by finding the reduced row echelon form
+            of the augmented matrix. Here's the beautiful part: there are <m>n</m>
+            different systems of linear equations that arise as <m>j</m> takes on the
+            values from <m>1</m> to <m>n</m>, and they all have the identical coefficient
+            matrix. This means that the same sequence of elementary row operations
+            may be used on each of the equations to find the solutions.
+        </p>
+        
+        <example>
+        <p>
+        <ul>
+        <li><p>
+                Let 
+                <me>
+                A=\begin{bmatrix} 1\amp2\amp3\\4\amp5\amp6\end{bmatrix}
+                \textrm{ and }  
+                B=\begin{bmatrix} 3\amp1\\4\amp1\end{bmatrix}
+                </me>. 
+                Then <m>X</m> must be a <m>3\times2</m> matrix so that
+                <me>
+                X=\begin{bmatrix} x_{1,1}\amp x_{1,2}\\
+                x_{2,1}\amp x_{2,2}\\
+                x_{3,1}\amp x_{3,2}\end{bmatrix}.
+                </me>
+                Solving for the first column means finding the reduced row echelon form of
+                <m>\left[\begin{smallmatrix} 1\amp2\amp3\amp3 \\4\amp5\amp6\amp4\end{smallmatrix}\right].</m> 
+                It is
+                <m>\left[\begin{smallmatrix} 1\amp0\amp-1\amp-\tfrac73
+                \\0\amp1\amp2\amp\tfrac83\end{smallmatrix}\right]</m>
+                and so
+                <m>x_{1,1}=-\tfrac73+s </m>, <m>x_{2,1}=\tfrac83-2s</m>, and <m>x_{3,1}=s.</m>
+                Solving for the second column means finding the reduced row echelon form of
+                <m>\left[\begin{smallmatrix} 1\amp2\amp3\amp1 \\4\amp5\amp6\amp1\end{smallmatrix}\right]</m> 
+                which is
+                <m>\left[\begin{smallmatrix} 1\amp0\amp-1\amp-1 \\0\amp1\amp2\amp1\end{smallmatrix}\right]</m> 
+                and so
+                <m>x_{1,2}=-1+t </m>, <m>x_{2,2}=1-2t</m>, and <m>x_{3,2}=t.</m> 
+                Hence we conclude that
+                <me>X=\begin{bmatrix}
+                -\tfrac73+s \amp-1+t\\
+                \tfrac83-2s \amp 1-2t\\
+                s\amp t
+                \end{bmatrix}</me>
+                is a solution of the matrix equation <m>AX=B</m> for any choice of <m>s</m> and <m>t</m>.
+                Notice the similarty of the two matrices to be put into reduced
+                row echelon form. They differ, of course, only in the last column. In
+                fact, this means that exactly the same elementary row operations were
+                used to put both matrices into reduced row echelon form. Since both
+                computations used the same  coefficient matrix, we could have carried
+                out both computations at once by starting with the matrix
+                <m>\left[\begin{smallmatrix}
+                1\amp2\amp3\amp3\amp1\\ 4\amp5\amp6\amp4\amp1
+                \end{smallmatrix}\right]</m> 
+                and obtaining
+                <m>\left[\begin{smallmatrix}
+                1\amp0\amp-1\amp-\tfrac73 \amp-1\\0\amp1\amp2\amp\tfrac83\amp1
+                \end{smallmatrix}\right]</m> 
+                for the reduced row echelon form.
+        </p></li>
+            
+        <li><p>
+                An even more striking example can be obtained when there are no free variables. Let
+                <m>A=\left[\begin{smallmatrix} 1\amp1\amp3\\3\amp2\amp5\\1\amp1\amp1\end{smallmatrix}\right]</m> and 
+                <m>B=\left[\begin{smallmatrix} 1\amp1\amp2\\ 2\amp2\amp3\\ 3\amp3\amp4\end{smallmatrix}\right]</m> 
+                so that <m>X</m> is a <m>3\times3</m> matrix. Then the augmented matrix
+                <me>\left[\begin{array}{ccc|rrr}
+                1\amp1\amp3\amp1\amp1\amp2\\3\amp2\amp5\amp2\amp2\amp3\\1\amp1\amp1\amp3\amp3\amp4
+                \end{array}\right]</me> 
+                has reduced row echelon form
+                <me>\left[\begin{array}{ccc|rrr}
+                1\amp0\amp0\amp-1\amp-1\amp-2\\0\amp1\amp0\amp5\amp5\amp7\\0\amp0\amp1\amp-1\amp-1\amp-1
+                \end{array}\right]</me>
+                From the first column of <m>B</m> we get <m>x_{1,1}=-1</m>, <m>x_{2,1}=5</m> and <m>x_{3,1}=-1.</m>
+                From the second column of<m>B</m> we get <m>x_{1,2}=-1</m>, <m>x_{2,2}=5</m> and <m>x_{3,2}=-1.</m>
+                From the third column of <m>B</m> we get <m>x_{1,3}=-2</m>, <m>x_{2,3}=7</m> and <m>x_{3,3}=1.</m>
+                So 
+                <me>
+                X= \begin{bmatrix}
+                -1\amp-1\amp-2 \\5\amp5\amp7\\-1\amp-1\amp-1
+                \end{bmatrix}.
+                </me> 
+                Notice that <m>X</m> is the right half of the reduced row echelon form, 
+                and note that it follows directly from the identity matrix in the left half of the same matrix.
+        </p></li>
+        
+        <li><p>
+                If <m>A</m> and <m>B</m> are both square <m>n\times n</m> matrices, 
+                and the reduced row echelon form of <m>A</m> is <m>I_n</m>, then the reduced row echelon form of
+                <m>[A| B]</m> is <m>[I_n|X]</m> where <m>X</m> satisfies <m>AX=B.</m>
+                
+                As an example, let us solve the matrix equation
+                <me>
+                \begin{bmatrix}
+                1\amp2\amp-1\\3\amp1\amp0\\2\amp1\amp1
+                \end{bmatrix}
+                X=\begin{bmatrix}
+                -2\amp3\amp3\\2\amp2\amp1\\4\amp2\amp2
+                \end{bmatrix}
+                </me>
+                Then <m>X</m> is a <m>3\times 3</m> matrix, and the reduced row echelon form of
+                <me>
+                [A| B]=
+                \left[\begin{array}{ccr|rrr}
+                1\amp2\amp-1\amp-2\amp3\amp3\\ 3\amp1\amp0\amp2\amp2\amp1\\2\amp1\amp1\amp4\amp2\amp2
+                \end{array}\right]
+                </me>
+                is
+                <me>
+                \left[\begin{array}{ccc|rrr}
+                1\amp0\amp0\amp-2\amp1\amp3\\ 0\amp1\amp0\amp2\amp2\amp1\\0\amp0\amp1\amp4\amp2\amp2
+                \end{array}\right]
+                </me>
+                and
+                <me>
+                X=
+                \begin{bmatrix}
+                -2\amp1\amp3\\ 2\amp2\amp1 \\4\amp2\amp2
+                \end{bmatrix}.
+                </me>
+        </p></li>
+        </ul>
+        </p>
+        </example>
+        
+        <paragraphs><title>The reduced row echelon form of a square matrix</title>
+        <p>
+        When a square matrix <m>A_n</m> is in reduced row echelon form, one of two things
+        happens:
+        <ul>
+        <li><p>The bottom row is an all-zero row.</p></li>
+        <li><p>The bottom row is <em>not</em> an all-zero row.</p></li>
+        </ul>
+        In the second case, this means that every row has a leading one, and,
+        since the matrix is square, every column also has a leading one. This means that
+        there are no free variables, and so the leading ones are all on the diagonal,
+        that is, the reduced row echelon form is <m>I_n</m>.
+        </p>
+        </paragraphs>
+        
+        <theorem><title>Reduced row echelon form of a square matrix</title>
+        <statement>
+        <p>
+        The reduced row echelon form of a square matrix <m>A_n</m> 
+        <ul>
+        <li><p>is <m>I_n</m>, and so the rank is <m>n</m>, or</p></li>
+        <li><p>has a bottom row that is an all-zero row,
+        and so the rank is less than <m>n</m>.</p></li>
+        </ul>
+        </p>
+        </statement>
+        </theorem>
+           
+        </subsection>
+        
+    </section>
+    
+    
+    
+    <section><title>The transpose and trace of a matrix</title>
+    
+    <definition><title>The transpose of a matrix</title>
+    <statement>
+    <p>
+        The <term>transpose</term> of <m>A</m> is the matrix <m>A^T</m> derived
+        by making the first row of <m>A</m> the first column of <m>A^T</m>,
+        the second row of <m>A</m> the second column of <m>A^T</m>, etc. In
+        other words, when taking a transpose,
+        the rows and columns are interchanged. Another way
+        of saying this is that the subscripts have been interchanged,
+        that is, if <m>A^T=B=[b_{i,j}].</m> then 
+        <m>b_{i,j}=a_{j,i}</m>
+    </p>
+    </statement>
+    </definition>
+    
+    <example><title>Matrix transposes</title>
+    <p>
+    <ul>
+    <li><p>
+        Let <m>A=\begin{bmatrix}
+        1\amp2\amp3\\4\amp5\amp6\\7\amp8\amp9
+        \end{bmatrix}.</m> Then
+        <m>A^T=\begin{bmatrix}
+        1\amp4\amp7\\2\amp5\amp8\\3\amp6\amp9
+        \end{bmatrix}</m>
+    </p></li>
+    
+    <li>
+        The <em>identity matrix</em> <m>I_n</m> of order n has all
+        diagonal entries equal to one and all other entries equal to zero.
+        <m>I_n=\begin{bmatrix}
+            1 \amp 0 \amp 0 \amp \cdots \amp 0\\
+            0 \amp 1 \amp 0 \amp \cdots \amp 0\\
+            0 \amp 0 \amp 1 \amp \cdots \amp 0\\
+            \amp   \amp   \amp \ddots \amp  \\ 
+            0 \amp 0 \amp 0 \amp \cdots \amp 1
+            \end{bmatrix}_n
+        </m>
+        Clearly <m>I_n^T=I_n.</m>
+    </li>
+    
+    <li><p>
+        The transpose is defined for nonsquare matrices, too.
+            Let
+            <m>A=\begin{bmatrix}
+            1 \amp 2 \amp 3 \amp 4 \\
+            5 \amp 6 \amp 7 \amp 8 \\
+            9 \amp10\amp11\amp12
+            \end{bmatrix}.</m>
+           Then     
+        <m>A^T=\begin{bmatrix}
+           1 \amp 5 \amp9\\
+           2 \amp 6 \amp 10\\
+           3 \amp 7 \amp 11\\
+           4 \amp 8 \amp 12
+           \end{bmatrix}.</m>
+    </p></li>
+    </ul>
+    </p>
+    </example>
+    
+    <p>
+    Here is an animation that illustrates that <m>A^T</m> may
+    be derived from <m>A</m> by reflection on the main diagonal.
+    </p>
+    <figure>
+    <caption/>
+    <image width="50%" source="images/300px-Matrix-transpose.gif" />
+    </figure>
+    
+    
+    <theorem><title>Properties of the transpose of a matrix</title>
+    <statement>
+    <p>
+    <ul>
+        <li><p><m>(A^T)^T=A</m></p></li>
+        <li><p><m>(A+B)^T=A^T+B^T</m></p></li>
+        <li><p><m>(rA)^T=rA^T</m></p></li>
+        <li><p><m>(AB)^T=B^TA^T</m></p></li>
+    </ul>
+    </p>
+    </statement>
+    
+    <proof>
+    <p>
+    <ul>
+        <li><p>
+            The <m>i</m>-<m>j</m> entry of <m>A^T</m> is <m>a_{j,i}</m>, obtained by
+            interchanging the subscripts of <m>A</m>. Taking the transpose
+            again interchanges the subscripts again, and so the <m>i</m>-<m>j</m>
+            entry of <m>(A^T)^T</m> is <m>a_{i,j}</m>, the same as for <m>A</m>.
+            Hence <m>(A^T)^T=A</m>.
+        </p></li>
+    
+        <li><p> 
+            The <m>i</m>-<m>j</m> entry on both sides of the equation
+            is <m>a_{j,i}+b_{j,i}</m>.
+        </p></li>
+    
+        <li><p> 
+            The <m>i</m>-<m>j</m> entry on both sides of the equation
+            is <m>ra_{j,i}`</m>.
+        </p></li>
+    
+        <li><p> 
+            The <m>i</m>-<m>j</m> entry of <m>(AB)^T</m> is
+            the <m>j</m>-<m>i</m> entry of <m>AB,</m> 
+            which in turn is
+            <me>a_{j,1}b_{1,i} +a_{j,2}b_{2,i}+\cdots +a_{j,n}b_{n,i}.</me>
+    
+    
+            The <m>i</m>-<m>j</m> entry of <m>B^TA^T</m> is
+            <m>(B^T)_{i,1}(A^T)_{1,j} + (B^T)_{i,2}(A^T)_{2,j}
+            +\cdots + (B^T)_{i,n}(A^T)_{n,j}
+            =\\
+            b_{1,i}a_{j,1} + b_{2,i}a_{j,2}
+            +\cdots + b_{n,i}a_{j,n}.</m>
+            Hence both sides of the equation have the same
+            <m>i</m>-<m>j</m> entry, and so the matrices are equal.
+        </p></li>
+    </ul>
+    </p>
+    </proof>
+    
+    <proof>
+    <p>
+    <md>
+    <mrow>(AB)^T_{i,j} \amp = (AB)_{j,i}</mrow>
+    <mrow>\amp = \sum_{k=1}^n a_{j,k}b_{k,i}</mrow>
+    <mrow>\amp = \sum_{k=1}^n b_{k,i}a_{j,k}</mrow>
+    <mrow>\amp = \sum_{k=1}^n B^T_{i,k}A^T_{k,j}</mrow>
+    <mrow>\amp = (B^T A^T)_{i,j}</mrow>
+    
+    </md>
+    </p>
+    </proof>
+    </theorem>
+    
+    <definition><title>Trace of a square matrix</title>
+    <statement>
+    <p>
+        The <term>trace</term>  of a square matrix <m>A</m> of size <m>n</m>
+        is the sum of the diagonal elements,
+        that is,
+        <me>
+        \mathrm{tr}A=a_{1,1}+a_{2,2}+\cdots + a_{n,n}=\sum_{i=1}^n a_{i,i}
+        </me>
+    </p>
+    </statement>
+    </definition>
+    
+    <theorem> <title>Traces of <m>AB</m> and <m>BA</m> are equal</title>
+    <statement>
+        <p>If <m>AB</m> and <m>BA</m> are each square, then
+        <m>\mathrm{tr}(AB)=\mathrm{tr}(BA)</m></p>
+    </statement>
+    
+    <proof>
+        <p>
+        Suppose that <m>A</m> is <m>m\times n</m> and <m>B</m> is <m>n\times
+        m</m> (remember that <m>AB</m> is then defined and square).
+        To evalute both <m>\mathrm{tr}(AB)</m> and <m>\mathrm{tr}(BA)</m>, we
+        consider the following rectangular array of numbers:
+    
+        <me>
+        \begin{matrix}
+        \amp\amp\amp\amp\amp\text{Row sums}\\
+        a_{1,1}b_{1,1}\amp a_{1,2}b_{2,1}\amp a_{1,3}b_{3,1}\amp\cdots\amp
+        a_{1,n}b_{n,1} \amp\gets (AB)_{1,1}\\
+        a_{2,1}b_{1,2}\amp a_{2,2}b_{2,2}\amp a_{2,3}b_{3,2}\amp\cdots\amp
+        a_{2,n}b_{n,2} \amp\gets(AB)_{2,2}\\
+        \vdots\amp\vdots\amp\vdots\amp\amp\vdots\amp\vdots\\
+        a_{m,1}b_{1,m}\amp a_{m,2}b_{2,m}\amp a_{m,3}b_{3,m}\amp\cdots\amp
+        a_{m,n}b_{n,m} \amp\gets (AB)_{m,m}\\
+        \\
+        \uparrow\amp\uparrow\amp\uparrow\amp\amp\uparrow\\
+        \llap{\text{Column sums:}\quad}
+        (BA)_{1,1}\amp(BA)_{2,2}\amp(BA)_{3,3}\amp\amp(BA)_{n,n}
+        \end{matrix}
+        </me>
+        
+        
+        We are going to compute the sum of all the elements of this array in
+        two ways.
+        Having done this, the two answers will be equal.
+        </p>
+        
+        <p>First we find the sum of all the entries of the array by adding
+        row-wise.
+        Observe that the sum of the elements in the first row is
+        <m>(AB)_{1,1}</m>,
+        the sum of those in the second row is <m>(AB)_{2,2}</m>, and so on until
+        the sum of
+        the elements in the last row is <m>(AB)_{m,m}</m>. Hence the sum of all
+        of the
+        elements in the array is
+        <m>(AB)_{1,1}+(AB)_{2,2}+\cdots+(AB)_{m,m}=\mathrm{tr}(AB)</m>.</p>
+        
+        <p>Now we add columnwise. Notice that the first column sums to
+        <md>
+        <mrow>a_{1,1}b_{1,1}\amp +a_{2,1}b_{1,2}+\cdots+a_{m,1}b_{1,m}</mrow>
+        <mrow>\amp = b_{1,1}a_{1,1}+b_{2,1}a_{1,2}+\cdots+b_{m,1}a_{1,m}</mrow>
+        <mrow>\amp =(BA)_{1,1},</mrow>
+        </md>
+        the second column sums to <m>(BA)_{2,2}</m> and so on until the last
+        column sums to
+        <m>(BA)_{n,n}</m>.Hence the sum of all of the
+        elements in the array is
+        <m>(BA)_{1,1}+(BA)_{2,2}+\cdots+(BA)_{n,n}=\mathrm{tr}(BA)</m>.
+        
+        Equating the two evaluations gives
+        <m>\mathrm{tr}(AB)=\mathrm{tr}(BA)</m>.
+        </p>
+    </proof>
+    
+    <proof>
+        <p>
+        Suppose that <m>A</m> is <m>m\times n</m>. Then, since <m>AB</m> and
+        <m>BA</m> are defined, the conformability ensures that
+        <m>B</m> is <m>n\times m</m>.
+        <md>
+        <mrow> \mathrm{tr}(AB) \amp = \sum_{i=1}^m(AB)_{i,i} </mrow>
+        <mrow>\amp =  \sum_{i=1}^m  \sum_{j=1}^n a_{i,j}b_{j,i}</mrow>
+        <mrow>\amp =  \sum_{i=1}^m  \sum_{j=1}^n b_{j,i}a_{i,j}</mrow>
+        <mrow>\amp =   \sum_{j=1}^n\sum_{i=1}^m  b_{j,i}a_{i,j}</mrow>
+        <mrow>\amp =   \sum_{j=1}^n (BA)_{j,j}</mrow>
+        <mrow>\amp =   \mathrm{tr}(BA)</mrow>
+        </md>
+        </p>
+    </proof>
+    </theorem>
+    
+    </section>
+    
+    
+    <section><title>Powers of a matrix (nonnegative exponents)</title>
+    
+        <subsection><title> Computing the powers of a square matrix <m>A</m> </title>
+            <p>
+            If <m>A</m> and <m>B</m> are both square matrices of order <m>n</m>, 
+            then <m>AB</m> is also a square matrix
+        	of order <m>n</m>. In particular, if <m>A=B</m>, then <m>AA</m> is defined. 
+            We call this matrix <m>A^2</m>.
+        	We also let <m>A^3=AAA</m>. Similarly we have higher powers of <m>A</m>:
+        
+            <me>
+            A^n=\underbrace{A A A \cdots A A}_{n \text{ factors}}\quad
+            \text{ for } n=1,2,\ldots
+            </me>.
+        
+            In addition, we define <m>A^1=A</m>.
+        
+            For example, if
+            <m>A=\begin{bmatrix}1\amp2\\2\amp1\end{bmatrix}</m> then
+        
+            <me>
+            A^1=\begin{bmatrix}1\amp2\\2\amp1\end{bmatrix}\\
+            A^2=\begin{bmatrix}5\amp4\\4\amp5\end{bmatrix}\\
+            A^3=\begin{bmatrix}13\amp14\\14\amp13\end{bmatrix}\\
+            A^4=\begin{bmatrix}40\amp41\\41\amp40\end{bmatrix}\\
+            A^5=\begin{bmatrix}121\amp122\\122\amp121\end{bmatrix}\\
+            </me>
+        
+            </p>
+        </subsection>
+    
+        <subsection xml:id="LawOfExponents"> <title> The law of exponents </title>
+        
+            <p>
+            If <m>m</m> and <m>n</m> are positive integers, then by simply counting the factors we
+        	get the following two equations:
+            
+            <ul>
+            <li><p>
+                <m>A^m A^n=\underbrace{A\cdots A}_{m \text{ factors}}\ 
+                \underbrace{A\cdots A}_{n \text{ factors}}=
+                \underbrace{A\cdots A}_{m+n\text{ factors}}=A^{m+n},
+                </m>
+            </p></li>
+            
+            <li><p> 
+                <m>(A^m)^n 
+                    =\underbrace{(\underbrace{A\cdots A}_{m \text{ factors}})
+                    (\underbrace{A\cdots A}_{m \text{ factors}})\cdots
+                    (\underbrace{A\cdots A}_{m \text{ factors}})}_{n \text{ times}}=A^{mn}
+                </m>
+            </p></li>
+            </ul>
+        
+            These two equations together are called <term>the law of exponents</term>.
+            </p>
+        </subsection>
+    
+        <subsection><title> What is <m>A^0</m>? </title>
+    
+            <p>We want to define <m>A^0</m> so the the law of exponents remains valid. This says
+            <me>
+            A^n A^0= A^{n+0}=A^n
+            </me>
+            We observe that if <m>A^0=I</m>, the identity matrix, then this equation is valid.
+            With this in mind we <m>\textbf{define}</m> <m>A^0=I</m>.
+            </p>
+        </subsection>
+    
+        <subsection><title> Polynomials and powers of a matrix </title>
+            <p>
+            Recall that polynomials are functions of the form
+            <m> p(x)=a_nx^n + a_{n-1}x^{n-1}+\cdots+a_1x+a_0</m>. If we have a square matrix, we may
+            refer to <m>p(A)</m>. By this we mean we substitute the matrix <m>A</m> for each <m>x</m> appearing
+            in the polynomial. Whenever <m>x^k</m> appears, we substitute <m>A^k</m> for it and do the
+            computations. For example, using the same <m>A</m> as before, if <m>p(x)=x^2-2x+1</m>, then
+            <me>
+            p(A)=A^2-2A+I=
+            \begin{bmatrix}5\amp4\\4\amp5\end{bmatrix} 
+            -2\begin{bmatrix}1\amp2\\2\amp1\end{bmatrix}
+            +\begin{bmatrix}1\amp0\\0\amp1\end{bmatrix}
+            =
+            \begin{bmatrix}4\amp0\\0\amp4\end{bmatrix}
+            </me>
+            
+            Now consider the matrix
+            <me>
+            B=\begin{bmatrix}2\amp-1\\1\amp0\end{bmatrix} 
+            </me>
+            and the same polynomial <m>(x)=x^2-2x+1</m>. In this case
+            
+            <me>
+            p(B)=B^2-2B+I=
+            \begin{bmatrix}3\amp-2\\2\amp-1\end{bmatrix} 
+            -2\begin{bmatrix}2\amp-1\\1\amp0\end{bmatrix}
+            +\begin{bmatrix}1\amp0\\0\amp1\end{bmatrix}
+            =
+            \begin{bmatrix}0\amp0\\0\amp0\end{bmatrix}
+            </me>
+            
+            and so we get the (matrix) equation <m>P(B)=0</m>.
+            When a matrix <m>B</m> satisfies the equation <m>P(B)=0</m>, we call 
+            <m>B</m> a <em>root</em> of <m>p(x)</m>.
+            </p>
+        </subsection>
+    
+    </section>
+    
+         
+    <section><title> Inverses and powers: Rules of Matrix Arithmetic </title>
+    
+        <subsection><title> What about division of matrices? </title>
+    
+        <p>
+        We have considered addition, subtraction and multiplication
+        of matrices. What about division? When we consider real numbers,
+        we can write <m>\tfrac ba</m> as <m>b\cdot\tfrac 1a.</m> In
+        addition, we may think of <m>\tfrac 1a</m> as the multiplicative
+        inverse of <m>a</m>, that is, it is the number which, when
+        multiplied by <m>a</m> yields <m>1.</m> In other words, if we
+        set <m>a^{-1}=\tfrac1a</m>, then <m>a\cdot a^{-1}=a^{-1}\cdot
+        a=1.</m> Finally, <m>1</m> is the multiplicative identity, that
+        is, <m>r1=1r=r</m> for any real number <m>r</m>.  While these
+        concepts can not be extended to matrices completely, there are
+        some circumstances when they do  make sense.
+        </p>
+    
+        <p>
+        First, we can note that <m>1\times1</m> matrices satisfy
+        <m>[a] + [b] = [a+b]</m> and <m>[a][b]=[ab]</m>.  This means
+        that both addition and multiplication of these matrices are
+        just like the addition and multiplication of the real numbers.
+        In this sense, matrices may be thought of as a generalization
+        of the real numbers.
+        </p>
+    
+        <p>
+        Next we remember that if <m>A</m> is <m>m\times n</m>, then
+        <m>I_mA=A=AI_n.</m> This means that the identity matrix (or,
+        more properly, matrices) acts in the same way as <m>1</m> does
+        for the real numbers.  This also means that if we want there
+        to be a (single) matrix <m>I</m> satisfying <m>IA=A=AI</m>,
+        then we must have <m>m=n</m>. This means we have to restrict
+        ourselves to square matrices.
+        </p>
+
+        <p>
+        If <m>A</m> is an <m>n\times n</m> matrix, then
+        <m>I_nA=A=AI_n,</m> and so <m>I_n</m> acts in the same manner as
+        does <m>1</m> for the real numbers.  Indeed, that is the reason
+        it is called the identity matrix.
+        </p>
+
+        <p>
+        Finally, we want to find (if possible) a matrix <m>A^{-1}</m>
+        so that <m>A^{-1}A=AA^{-1}=I.</m> When such a matrix exists,
+        it is called the <em>inverse</em> of <m>A</m>, and the matrix
+        <m>A</m> itself is called <em>invertible.</em>
+        </p>
+
+        <definition xml:id="InverseMatrixDefinition"> <title>The inverse of a matrix</title> 
+        <statement> 
+        <p> 
+            Let <m>A</m> be a square
+            matrix. If there exists a matrix <m>B</m> so that <me> AB=BA=I
+            </me> then <m>B</m> is called the <term>inverse of <m>A</m></term>
+            and it is written as <m>A^{-1}</m>.  
+        </p> 
+        </statement> 
+        </definition>
+
+        <definition>
+        <title>Matrix invertability</title>
+        <statement> 
+        <p> 
+            A matrix <m>A</m> is <term>invertible</term> if it has an inverse,
+            that is, if the matrix <m>A^{-1}</m> exists.  
+        </p> 
+        </statement>
+        </definition>
+
+        </subsection>
+
+        <subsection><title>Properties of the Inverse of a Matrix</title>
+        <p> 
+            We consistently refer to <em>the</em> inverse of <m>A</m>
+            rather than <em>an</em> inverse of <m>A,</m> which would seem
+            to imply that a matrix can have only one inverse.  This is
+            indeed true.
+        </p>
+
+        <theorem> <title> Uniqueness of Inverse </title> <statement>
+        <p>
+            A square matrix <m>A</m> can have no more than one inverse.
+        </p>
+        </statement>
+
+        <proof> 
+        <p>
+            Suppose we have matrices <m>B</m> and <m>C</m>
+            which both act as inverses, that is, <m>AB=BA=I</m> and
+            <m>AC=CA=I</m>. We evaluate <m>BAC</m> in two different ways
+            and equate the results: <me> BAC=(BA)C=IC=C\\ BAC=B(AC)=BI=B,
+            </me> and so <m>B=C</m>.  
+        </p> 
+        </proof> 
+        </theorem>
+
+
+        <paragraphs> <title>Inverse Test </title>
+        <p> 
+            If <m>A</m> and
+            <m>B</m> are square matrices of the same size, then <m>B</m> is
+            a <term>left inverse</term> of <m>A</m> if <m>BA=I.</m> Similarly,
+            it is a <term>right inverse</term> of <m>A</m> if <m>AB=I</m>. 
+        </p>
+        <p>
+            By definition <m>B</m> is the inverse of <m>A</m> if
+            <m>AB=BA=I,</m> that is, <m>B</m> is both a left inverse and a
+            right inverse. We will show presently that if <m>B</m> is a right
+            inverse of a square matrix <m>A</m>, then it is also a left inverse
+            of <m>A</m> and hence the inverse of <m>A</m>.  
+        </p>
+        <p> 
+            We next make an observation about the reduced row echelon
+            form of square matrices: 
+        </p> 
+        </paragraphs>
+
+        <lemma> <title >The Reduced Row Echelon Form for Square Matrices
+        </title>
+        <statement> 
+        <p> 
+        If <m>A</m> is an <m>n\times n</m> matrix then 
+            <ol> 
+            <li><p> 
+                The reduced row echelon form of <m>A</m> is <m>I_n,</m> or 
+                </p></li> 
+                <li><p> 
+                The last row of the reduced row echelon form of <m>A</m> is all zero. 
+            </p></li> 
+            </ol> 
+        </p>
+        </statement>
+
+        <proof> 
+        <p> 
+            If every row in the reduced row echelon form of
+            <m>A</m> has a leading one, then, since <m>A</m> has the same
+            number of rows as columns, so does every column.  This means that
+            the leading ones must be on the diagonal, and the every other
+            entry of the matrix is zero. In other words, the reduced row
+            echelon form is <m>I_n.</m> If, on the other hand, some row does
+            not have a leading one, then it is an all-zero row.  Since these
+            rows are at the bottom of the matrix when it is in reduced row
+            echelon form, the last row, in particular, must be all zero.
+        </p> 
+        </proof> 
+        </lemma>
+
+        <definition xml:id="SingularMatrixDefinition"> <title>Matrix
+        singularity</title> 
+        <statement> 
+        <p> 
+            A square matrix is <term>nonsingular</term> if its reduced 
+            row echelon form is <m>I</m>. Otherwise it is <term>singular</term>.
+        </p>
+        </statement> 
+        </definition>
+
+        <p> 
+        Next we give a criterion for nonsingularity. It is trivial
+        that if <m>\vec x=\vec0,</m> then <m>M\vec x=\vec0.</m> If this is the
+        only vector <m>\vec x</m> for which this is true, then <m>M</m>
+        is nonsingular.  
+        </p>
+
+        <lemma> <title>Condition for Singularity </title> 
+        <statement> 
+            <p>
+            <m>M</m> is nonsingular if and only if <m>Mx=\vec0</m> 
+            implies <m>\vec x=\vec0</m>. 
+            </p> 
+        </statement> 
+        <proof> 
+            <p> First, suppose
+            that <m>M</m> is nonsingular. The the equation <m>M\vec x=\vec0</m>
+            has an augmented matrix which, in reduced row echelon form,
+            gives the equation <m>I\vec x=\vec0</m>. Hence <m>\vec x=\vec0</m>. 
+            </p>
+
+            <p>
+            Now suppose that <m>M</m> is singular. The reduced row echelon
+            form is not <m>I_n,</m>  and so some column does not contain a
+            leading 1, that is, there must exist a free variable. It can be
+            assigned a nonzero value, and thus provide a nonzero solution
+            to <m>M\vec x=\vec0.</m> 
+            </p> 
+        </proof> 
+        </lemma>
+
+        <lemma> <title> AB=I and Nonsingularity </title> 
+        <statement>
+        <p> 
+        If <m>AB=I</m> then <m>B</m> is nonsingular.
+        </p> 
+        </statement>
+
+        <proof> 
+        <p> 
+            Suppose that <m>B\vec x=\vec0.</m> Multiply both sides
+            of the equation by <m>A</m>: <me> A(B\vec x)=A(\vec0)=\vec0\\
+            A(B\vec x)=(AB)\vec x=I\vec x=\vec x </me> and so <m>\vec x=\vec0.</m> Hence
+            <m>B\vec x=\vec0</m> implies <m>\vec x=\vec0</m> and so <m>B</m> is
+            nonsingular.  
+        </p> 
+        </proof> 
+        </lemma>
+
+        <proposition> <title> AB=I implies BA=I </title>
+        <statement>
+        <p> 
+            Suppose the <m>A</m> and <m>B</m> are square matrices with
+            <m>AB=I.</m> Then <m>BA=I.</m> </p> </statement> <proof> <p> From
+            the previous lemma we know that <m>B</m> is nonsingular. Hence
+            we know how to find <!-- link goes here --> <m>C</m> which
+            is a solution to the equation <m>BX=I</m>, that is, so that
+            <m>BC=I.</m> We now evaluate <m>BABC</m> in two different
+            ways and equate the results: 
+            <me> BABC=B(AB)C=BIC=BC=I\\ BABC=(BA)(BC)=BA(I)=BA </me> 
+        </p> 
+        </proof> 
+        </proposition>
+
+        <p> We get an important result from this Proposition.  </p>
+
+        <theorem> <title> A Right Inverse is an Inverse </title>
+        <statement>
+        <p> 
+            Suppose <m>A</m> and <m>B</m> are square matrices
+            with <m>AB=I.</m> Then <m>B=A^{-1}.</m> 
+        </p> 
+        </statement>
+
+        <proof> 
+        <p> 
+            By the Proposition above, <m>AB=I</m> implies
+            <m>BA=I.</m> <!-- link goes here --> Since the inverse of <m>A</m>
+            is unique, <m>B=A^{-1}.</m> 
+        </p> 
+        </proof> 
+        </theorem>
+
+        <paragraphs><title>New Inverse Test </title>
+        <p> 
+        If <m>A</m>
+        and <m>B</m> are square matrices then <m>B</m> is the inverse
+        of <m>A</m> if and only if <m>AB=I.</m> 
+        </p> 
+        </paragraphs>
+
+        <p>Here is an application of the previous theorem:</p>
+
+        <theorem> <title> Exponents and Transpose </title>
+        <statement> 
+        <p> 
+            If <m>A</m> is a square matrix with inverse
+            <m>A^{-1}</m> then <m>(A^T)^{-1}=(A^{-1})^T</m> 
+        </p> 
+        </statement>
+        <proof> 
+        <p> 
+            Let <m>B=(A^{-1})^T.</m> Then <me> A^TB=A^T(A^{-1})^T
+            = (A^{-1}A)^T=I^T=I </me> and so <m>B=(A^T)^{-1}</m>.  
+        </p>
+        </proof> 
+        </theorem>
+
+
+        <p> Here is another application of the previous theorem: </p>
+
+        <theorem> <title> Inverse of Product of Matrices </title>
+        <statement>
+        <p> 
+            If <m>A</m> and <m>B</m> are invertible
+            matrices of the same size, then <m>AB</m> is also invertible
+            and <m>(AB)^{-1}=B^{-1}A^{-1}</m> 
+        </p> 
+        </statement>
+
+        <proof> 
+        <p>
+            Since <me> (AB)(B^{-1}A^{-1})=
+            A(BB^{-1})A^{-1}=AIA^{-1}=AA^{-1}=I, </me> it follows that
+            <m>B^{-1}A^{-1}</m> is the inverse of <m>AB</m>.  
+        </p> 
+        </proof>
+        </theorem> 
+        
+        </subsection>
+
+
+        <subsection><title>The Computation of the Inverse of a Matrix</title>
+
+        <p> 
+        Suppose we have a square matrix <m>A</m> and the reduced
+        row echelon form of <m>A</m> is <m>I</m> (that is, <m>A</m> is
+        nonsingular). <m>X</m> is the inverse of <m>A</m> if it satisfies
+        the equation <m>AX=I.</m> We have seen <!-- link goes here -->
+        how to solve such equations.  We conclude that if we start with
+        the matrix <m>[A|I]</m> then the reduced row echelon form will
+        be <m>[I|A^{-1}]</m>. This not only allows us to compute the
+        inverse of <m>A</m> but it also shows that nonsingular matrices
+        are invertible and vice-versa.  
+        </p>
+
+        <p> 
+        Example: If we start with 
+        <me>
+        A=\begin{bmatrix}1\amp2\amp1\\2\amp3\amp5\\1\amp2\amp0\end{bmatrix},
+        </me> 
+        then 
+        <me> 
+        [A\mid I]=
+        \left[\begin{array}{ccc|ccc}
+             1\amp2\amp1\amp1\amp0\amp0\\
+             2\amp3\amp5\amp0\amp1\amp0\\
+             1\amp2\amp0\amp0\amp0\amp1
+        \end{array}\right] 
+        </me> 
+        has, as its reduced row echelon form, 
+        <me> [I\mid A^{-1}]=
+        \left[\begin{array}{ccc|ccc}
+            1\amp0\amp0\amp-10\amp2\amp7\\
+            0\amp1\amp0\amp5\amp-1\amp-3\\
+            0\amp0\amp1\amp1\amp0\amp-1
+        \end{array}\right] 
+        </me> 
+        and so we conclude that 
+        <me>
+        A^{-1}=\begin{bmatrix}
+             ]-10\amp2\amp7\\
+             5\amp-1\amp-3\\
+             1\amp0\amp-1
+        \end{bmatrix}.  
+        </me> 
+        </p>
+
+        <p> 
+        <m>\textbf{The inverse of a}</m> <m>2\times2</m>
+        <m>\textbf{matrix}</m> We start with the matrix 
+        <me> 
+            A=
+            \begin{bmatrix} a\amp b\\c\amp d \end{bmatrix} 
+        </me> 
+        Now we carry out row reduction: 
+        <me> 
+           \left[ \begin{array}{cc|cc}
+               a\amp b\amp1\amp0\rlap{\qquad R_1\gets \frac1a R_1}\\
+               c\amp d\amp0\amp1
+           \end{array} \right]  \\ 
+           \left[ \begin{array}{cc|cc}
+               1\amp\frac ba\amp\frac1a\amp0\\ 
+               c\amp d\amp0\amp1 \rlap{\qquad R_2\gets R_2-cR_1}
+           \end{array} \right]\\ 
+           \left[ \begin{array}{cc|cc}
+                1\amp\frac ba\amp\frac1a\amp0
+                \\ 0\amp d-\frac{bc}a\amp-\frac ca\amp1
+            \end{array} \right] \rlap{\hbox{(Rewrite last row)}}   \\
+            \left[\begin{array}{cc|cc}
+                1\amp\frac ba\amp\frac1a\amp0\\ 
+                0\amp\frac{ad-bc}a\amp-\frac ca\amp1 \rlap{\qquad R_2\gets \frac a{ad-bc}R_2}
+            \end{array} \right]\\ 
+            \left[ \begin{array}{cc|cc}
+                1\amp\frac ba\amp\frac1a\amp0\\ 
+                0\amp1\amp-\frac c{ad-cb}\amp \frac a{ad-cb} \rlap{\qquad R_1\gets R_1-\frac ba R_2}
+            \end{array}\right]\\ \left[ \begin{array}{cc|cc}
+                1\amp0\amp \frac d{ad-cb}\amp -\frac b{ad-cb}   \\
+                0\amp1\amp-\frac c{ad-cb}\amp \frac a{ad-cb}
+            \end{array} \right] 
+        </me>
+
+        On the face of it, this seems to say 
+        <me> 
+            A^{-1} 
+            =
+            \begin{bmatrix}
+                \frac d{ad-cb}\amp -\frac b{ad-cb} \\
+                -\frac c{ad-cb}\amp \frac a{ad-cb}
+            \end{bmatrix} 
+            = \frac1{ad-cb}
+            \begin{bmatrix} d\amp-b\\ -c\amp a \end{bmatrix}
+        </me>
+
+        But notice that we have blithely ignored the possibility that
+        <m>a=0</m> or that <m>ad-bc=0</m>. Nonetheless we may compute:
+
+        <me> 
+        \begin{bmatrix} a\amp b\\c\amp d \end{bmatrix}
+        \begin{bmatrix} d\amp-b\\-c\amp a \end{bmatrix} =
+        \begin{bmatrix} ad-bc\amp0\\0\amp ad-bc \end{bmatrix}
+        =(ad-bc)I </me>
+
+        Hence if 
+        <me> 
+            A=
+            \begin{bmatrix} a\amp b\\c\amp d \end{bmatrix} 
+            \hbox{ and } 
+            B=
+            \frac1{ad-bc}\begin{bmatrix} d\amp-b\\-c\amp a \end{bmatrix}
+        </me> 
+        then 
+        <me> AB=I </me> 
+        and so 
+        <me>    B=A^{-1}
+        </me> 
+        we conclude that if 
+        <me> 
+        A= \begin{bmatrix} a\amp b\\c\amp d \end{bmatrix} 
+        </me> 
+        where <m>ad-bc\neq 0</m> then 
+        <me> 
+        A^{-1}=
+        \frac1{ad-bc}\begin{bmatrix} d\amp-b\\-c\amp a \end{bmatrix}
+        </me> 
+        </p> 
+        </subsection>
+
+
+        <subsection> <title>Applying the Inverse of a Matrix to Systems of Linear Equations</title>
+        <theorem><title> Solving Equations Using the Matrix Inverse
+        </title> <statement>
+        <p> 
+            If a system of linear equations is given by the
+            equations <m>Ax=b</m>, and <m>A</m> has an inverse, then
+            <m>x=A^{-1}b</m>.  
+        </p>
+        </statement> 
+        <proof>
+        <p> 
+            We take the equation <m>Ax=b</m> and multiply
+            both sides by <m>A^{-1}:</m> 
+            <me> 
+            A^{-1}(Ax)=A^{-1}b\\
+            A^{-1}(Ax)=(A^{-1}A)x=Ix=x 
+            </me> 
+            and so <m>x=A^{-1}b</m>.
+        </p>
+        </proof>
+        </theorem>
+
+
+        <example> <title>Solving a system of linear equations using
+        the matrix inverse</title> 
+        <statement> 
+        <p>
+        Suppose we want to
+        solve the system of equations 
+        <me> 
+            \begin{array}{rrrrrrr}
+            %x_1\amp+\amp2x_2\amp+\ampx_3\amp=\amp1\\
+            %2x_1\amp+\amp3x_2\amp+\amp5x_3\amp=\amp1\\
+            %x_1\amp+\amp2x_2\amp\amp\amp=\amp1
+            x_1+2x_2+x_3\amp=\amp1\\ 
+            2x_1+3x_2+5x_3\amp=\amp1\\
+            x_1+2x_2\phantom{+0x_3}\amp=\amp1
+            \end{array} 
+        </me> 
+        </p>
+
+        <p>Then let 
+        <me>
+        A=
+        \begin{bmatrix}
+            1\amp2\amp1\\
+            2\amp3\amp5\\
+            1\amp2\amp0
+        \end{bmatrix}
+        \hbox{ and } 
+        b=
+        \begin{bmatrix}
+            1\\1\\1
+        \end{bmatrix}
+        </me> 
+        so that we are solving <m>Ax=b.</m> We have
+        already done the computation to determine that 
+        <me>
+        A^{-1}=
+        \begin{bmatrix}
+            -10\amp2\amp7\\
+            5\amp-1\amp-3\\
+            1\amp0\amp-1
+        \end{bmatrix}.  
+        </me> 
+        Hence 
+        <me> 
+            x=
+            \begin{bmatrix}
+                -10\amp2\amp7\\ 
+                5\amp-1\amp-3\\ 
+                1\amp0\amp-1
+            \end{bmatrix} 
+            \begin{bmatrix}1\\1\\1\end{bmatrix}
+            = 
+            \begin{bmatrix}-1\\1\\0\end{bmatrix}, 
+        </me> and the (only)
+        solution is <m>x_1=-1, x_2=1, x_3=0.</m> 
+        </p> 
+        </statement>
+        </example> 
+        </subsection>
+    </section>
+
+
+    <section><title>Some special matrices</title> 
+    <introduction>
+        <p> 
+        There are several matrices that repeatedly show up in many
+        different mathematical investigations. These matrices are given
+        particular names.  We gather the most important ones and present
+        them here.  
+        </p>
+    </introduction>
+
+        <subsection><title>Square matrices</title> 
+        <definition><title>Square matrices</title>
+        <statement>
+        <p> 
+            A <term>square matrix</term> has the same number
+            of rows and columns, this is, it is <m>n\times n</m>. The number
+            <m>n</m> is called the <term>order of the matrix</term>. 
+        </p>
+        </statement>
+        </definition>
+
+        <p> 
+        Here are some square matrices of order <m>3</m>:  
+        <me> 
+            A=
+            \begin{bmatrix} 
+            1\amp2\amp3\\
+            6\amp2\amp-1\\
+            3\amp4\amp4
+            \end{bmatrix} 
+            \qquad
+            I_3= 
+            \begin{bmatrix} 
+            1\amp0\amp0\\
+            0\amp1\amp0\\
+            0\amp0\amp1
+            \end{bmatrix}
+            \qquad
+            0_3= 
+            \begin{bmatrix} 
+            0\amp0\amp0\\
+            0\amp0\amp0\\
+            0\amp0\amp0
+            \end{bmatrix}
+        </me>.
+        </p>
+
+        <definition> <title>Zero matrix</title> 
+        <statement>
+        <p> 
+            The <term>zero matrix</term> <m>0_n</m> is the square
+            matrix of order <m>n</m> with every entry equal to <m>0</m>.
+        </p>
+        </statement> 
+        </definition>
+
+        <definition> <title>Identity matrix</title>
+        <statement>
+        <p> 
+            The <term>identity matrix</term> <m>I_n</m> is a
+            square matrix of order <m>n</m> that looks like 
+            <me> 
+            I_n=
+            \begin{bmatrix} 
+                1\amp0\amp0\amp\cdots\amp0\amp0\\
+                0\amp1\amp0\amp\cdots\amp0\amp0\\
+                0\amp0\amp1\amp\cdots\amp0\amp0\\
+                \amp\amp\amp\ddots\amp\amp\\ 
+                0\amp0\amp0\amp\cdots\amp1\amp0\\
+                0\amp0\amp0\amp\cdots\amp0\amp1 
+                \end{bmatrix} 
+            </me>
+            More specifically, if <m>I_n=[a_{i,j}]</m>, then 
+            <me>
+            a_{i,j}
+            = 
+            \begin{cases} 
+                1 \amp \textrm{ if } i=j\\ 
+                0 \amp
+            \textrm{otherwise} \end{cases} 
+            </me> 
+            When it is not necessary
+            to emphasize the order of the matrix, the identity matrix
+            is simply written as <m>I</m>.  </p>
+        </statement> </definition>
+
+        </subsection>
+
+        <subsection><title>Diagonal matrices</title>
+        <p> 
+            For any square matrix <m>A</m> of order <m>n</m>, 
+            the <term>diagonal entries</term> are
+                <m>a_{1,1},a_{2,2},a_{3,3},\ldots, a_{n,n}</m>:
+                <me> 
+                A= 
+                \begin{bmatrix} 
+                \color{red}{a_{1,1}} \amp a_{1,2}\amp\cdots \amp a_{1,n-1}\amp a_{1,n}\\ 
+                a_{2,1} \amp \color{red}{a_{2,2}}\amp\cdots \amp a_{2,n-1}\amp a_{2,n}\\ 
+                \amp\amp\ddots\amp\\ 
+                a_{n-1,1} \amp a_{n-1,2}\amp\cdots \amp \color{red}{a_{n-1,n-1}} \amp a_{n-1,n}\\ 
+                a_{n,1} \amp a_{n,2}\amp\cdots \amp a_{n,n-1}\amp\color{red}{a_{n,n}} 
+                \end{bmatrix} 
+                </me>
+
+                So these are the entries that start at the upper-left
+                corner of the matrix and go down the diagonal to the
+                lower-right one. This is also called the <term>main
+                diagonal</term> of the matrix.
+
+                Clearly we can describe an identity matrix as one
+                whose diagonal entries are <m>1</m> and whose
+                remaining entries are <m>0</m>.  
+        </p>
+
+        <definition> <title>Diagonal matrices</title>
+		    <statement> 
+            <p>
+		        A <term>diagonal matrix</term> is one for which
+		        nonzero entries may only occur on the main diagonal.
+		    </p> 
+            </statement>
+	    </definition>
+
+		<p> 
+            This means that the matrix is of the form 
+            <me>
+		    A=
+            \begin{bmatrix} 
+                a_{1,1} \amp 0 \amp 0 \amp 0 \amp \cdots \amp 0 \\ 
+                0 \amp a_{2,2} \amp 0 \amp 0 \amp \cdots \amp 0 \\ 
+                0 \amp 0 \amp a_{3,3} \amp 0 \amp \cdots \amp 0 \\ 
+                0 \amp 0 \amp 0 \amp a_{4,4} \amp \cdots \amp 0 \\ 
+                \amp\amp\amp\amp\ddots\\ 
+                0 \amp 0 \amp 0 \amp 0 \amp \cdots \amp a_{n,n} 
+            \end{bmatrix}.
+		    </me> 
+            Once we know the diagonal entries, we know the
+		    whole matrix. Sometimes we abbreviate this as 
+            <me>
+		        A=\mathrm{diag}(a_{1,1},\ldots,a_{n,n}). 
+            </me>
+
+		    An example of a diagonal matrix is the identity matrix <m>I</m>:
+
+		    <me> 
+            I= 
+            \begin{bmatrix} 
+                1\amp0\amp\cdots\amp0\amp0\\
+		        0\amp1\amp\cdots\amp0\amp0\\ 
+                \amp\amp\ddots\\
+		        0\amp0\amp\cdots\amp1\amp0\\ 
+                0\amp0\amp\cdots\amp0\amp1
+		    \end{bmatrix} 
+            =\mathrm{diag}(1,\ldots,1) 
+            </me>
+
+		    An alternative way of describing a diagonal matrix 
+		    <m>A=[a_{i,j}]</m> is by the condition that <m>a_{i,j}=0</m>
+		    whenever <m>i\not=j</m>.  
+        </p>
+
+	    <paragraphs><title>Multiplication of diagonal matrices</title>
+		    <p>
+            Multiplication of diagonal matrices is particularly
+		    easy. If 
+            <me> 
+            D=\mathrm{diag}(d_1,d_2,\ldots,d_n)
+		    </me> 
+            and 
+            <me> 
+            E=\mathrm{diag}(e_1,e_2,\ldots,e_n)
+		    </me> 
+            then it is easy to verify that 
+            <me>
+		    DE=\mathrm{diag}(d_1e_1,d_2e_2,\ldots,d_ne_n) 
+            </me>. 
+            </p>
+	    </paragraphs>
+
+	    </subsection>
+
+	    <subsection><title>Symmetric matrices</title>
+
+	    <definition> <title>Symmetric matrix</title> <statement>
+		    <p> 
+                A matrix <m>A=[a_{i,j}]</m> is <term>symmetric</term>
+		        if <m>a_{i,j}=a_{j,i}</m> for all <m>i,j=1,2,\ldots,n</m>.
+		        Alternatively, we may write this as <m>A=A^T</m>.  
+            </p>
+	        </statement> 
+        </definition>
+
+	    <p> 
+            The following matrix is symmetric: 
+            <me>
+		    \begin{bmatrix} 
+            0\amp1\amp2\amp3\amp4\\
+		    1\amp5\amp6\amp7\amp8\\ 
+            2\amp6\amp9\amp10\amp11\\
+		    3\amp7\amp10\amp12\amp13\\ 
+            4\amp8\amp11\amp13\amp14\\
+		\end{bmatrix}
+	    </me>. 
+        Notice that the rows <m>R_1, R_2, R_3, R_4, R_5</m>
+	    and columns <m>C_1, C_2, C_3, C_4, C_5</m> satisfy 
+        <md>
+	    <mrow>R_1\amp =C_1</mrow> <mrow>R_2\amp =C_2</mrow>
+	    <mrow>R_3\amp =C_3</mrow> <mrow>R_4\amp =C_4</mrow>
+	    <mrow>R_5\amp =C_5</mrow> 
+        </md>
+
+	    In addition, there is a geometric property. The entry
+	    <m>a_{j,i}</m> can be derived from <m>a_{i,j}</m> by
+	    reflection across the diagonal.
+
+	    <me> 
+        \begin{bmatrix} 
+            *\amp\amp\amp\cdots \amp\amp a_{i,j}\amp\\ 
+            \amp*\amp\amp\cdots \amp\amp\amp\\ 
+            \amp\amp*\amp\cdots \amp\amp\amp\\
+	        \amp\amp\amp\ddots\amp\amp\amp\\ 
+            \amp\amp\amp\cdots \amp*\amp\\ 
+            \amp\amp\amp\cdots \amp\amp*\amp\\ 
+            \amp a_{j,i}\amp\amp\cdots \amp\amp\amp*
+        \end{bmatrix} 
+        \qquad
+	    a_{i,j}=a_{j,i} 
+        </me> 
+        </p>
+	</subsection>
+
+
+	<subsection><title>Triangular matrices</title>
+
+	    <definition> <title>Upper triangular matrices</title>
+		<statement> 
+        <p> 
+        A matrix is <term>upper triangular</term>
+		if every nonzero entry is on or above the main
+		diagonal. This means that an upper triangular matrix
+		<m>A=[a_{i,j}]</m> satisfies 
+        <me>
+        a_{i,j}=0 \textrm{ if } i\gt j.
+        </me>
+		 </p>
+		</statement>
+	    </definition>
+
+	    <p> 
+        Notice what we use here.  An entry is below the main
+	    diagonal if the row number of the entry is greater than the
+	    column number. In other words, <m>a_{i,j}</m> is below the
+	    main diagonal if and only if <m>i \gt j</m>.
+
+	    An upper triangular matrix <m>A</m> has the following pattern
+	    (<m>*</m> may be zero or nonzero):
+	    <me> 
+        A= 
+        \begin{bmatrix} 
+            *\amp*\amp*\amp*\\ 
+            0\amp*\amp*\amp*\\
+	        0\amp0\amp*\amp*\\ 
+            0\amp0\amp0\amp* 
+        \end{bmatrix} 
+        </me>
+	    This matrix is upper triangular: 
+        <me>
+		A= 
+        \begin{bmatrix} 
+            1\amp2\amp3\amp4\\ 
+            0\amp5\amp6\amp7\\
+		    0\amp0\amp8\amp9\\ 
+            0\amp0\amp0\amp10 \end{bmatrix}
+	    </me>
+
+	    A lower triangular matrix may be thought of at the transpose
+	    of an upper triangular matrix.  
+        </p>
+
+
+	    <definition> <title>Lower triangular matrices</title>
+	    <statement> 
+        <p> 
+        A matrix is <term>lower triangular</term> if
+	    every nonzero entry is on or below the main diagonal. This
+	    means that an lower triangular matrix <m>A=[a_{i,j}]</m>
+	    satisfies 
+        <me>
+        a_{i,j}=0 \textrm{ if } i\lt j.
+        </me> 
+        </p>
+	    </statement>
+
+	    </definition> 
+        <p> 
+        The following matrix is lower triangular:
+	    <me> 
+        B= \begin{bmatrix} 
+            1\amp0\amp0\amp0\\ 
+            2\amp3\amp0\amp0\\
+	        4\amp5\amp6\amp0\\ 
+            6\amp7\amp8\amp9 
+            \end{bmatrix} 
+        </me> 
+        </p>
+
+	    <definition> <title>Triangular matrix</title> 
+        <statement>
+	    <p> 
+        A matrix is <term>triangular</term> if it is either upper
+	    triangular or lower triangular 
+        </p> 
+        </statement> 
+        </definition>
+
+		<theorem> <title>Product of upper triangular matrices is upper triangular</title> 
+        <statement> 
+        <p>
+	        <ul>
+		    <li><p> 
+                If <m>A</m> and <m>B</m> are upper triangular matrices,
+		        the <m>AB</m> is also upper triangular.
+            </p></li>
+		    <li><p> 
+                If <m>A</m> and <m>B</m> are lower triangular matrices,
+		        the <m>AB</m> is also lower triangular.
+            </p></li>
+		    </ul>
+	    </p>
+		</statement>
+
+		<proof>
+        <p> 
+            We compute the <m>(i,j)</m> entry of <m>AB</m>
+		    by considering row <m>i</m> of <m>A</m> and column
+		    <m>j</m> of <m>B</m>: 
+            <me> 
+            (AB)_{i,j} =a_{i,1}b_{1,j}+ a_{i,2}b_{2,j}+\cdots+ a_{i,n}b_{n,j} 
+            </me>
+		    Now <m>A</m> and <m>B</m> being upper triangular implies
+	        <m>a_{i,1}=a_{i,2}=\cdots=a_{i,i-1}=0</m>
+		    and <m>b_{j,j+1}=b_{j,j+2}=\cdots=b_{j,n}=0</m>. This
+		    means that
+	       <me> 
+           (AB)_{i,j}=a_{i,i}b_{i,j}+ a_{i,i+1}b_{i+1,j}
+               +\cdots+ a_{i,j-1}b_{j,j-1}+a_{i,j}b_{j,j} 
+           </me>
+	        Hence we see that <m>(AB)_{i,j}\not=0</m> only if <m>i\leq
+	        j</m>, or, <m>(AB)_{i,j}=0</m> whenever <m>i \gt j</m>. This,
+	        by definition, makes <m>AB</m> upper triangular.
+
+	        The argument for lower triangular matrices <m>A</m> and
+	        <m>B</m> is essentially identical.  
+        </p> 
+        </proof>
+
+	   <proof> 
+       <p>
+	        We consider the <m>(i,j)</m> entry of <m>AB</m> by considering
+	        row <m>i</m> of <m>A</m> and column <m>j</m> of <m>B</m>: 
+            <me>
+		    (AB)_{i,j} =a_{i,1}b_{1,j}+ a_{i,2}b_{2,j}+\cdots+
+		    a_{i,n}b_{n,j}.  
+            </me>
+	        If <m>(AB)_{i,j} \not= 0</m>, then there is some <m>k</m>
+	        so that
+	        <m>a_{i,k}b_{k,j}\not=0</m>. This means that
+	        <m>a_{i,k}\not=0</m>, and, since <m>A</m> is upper triangular,
+	        we have <m>k \geq i </m>.  Similarly <m>b_{k,j}\not=0</m>
+	        implies <m>j \geq k </m>. Hence, if  <m>(AB)_{i,j} \not=
+	        0</m>, then <m>j \geq k \geq i</m>, which makes <m>AB</m>
+	        upper triangular.
+	   </p> 
+       </proof>
+	   </theorem>
+
+	   <theorem> <title>An upper triangular matrix is invertible if
+	   and only if all the diagonal entries are nonzero</title>
+	   <statement> 
+       <p>
+	   An upper triangular matrix <m>A</m> is invertible if and only
+	   if every diagonal entry <m>A</m> is nonzero.  
+       </p> 
+       </statement>
+
+	   <proof> 
+       <p> 
+       Suppose all diagonal entries of <m>A</m> are
+	   nonzero, and <m>A</m> is of size <m>n</m>.  If we carry out
+	   the	elementary operations <m>R_i\gets\frac1{a_{i,i}}R_i</m>
+	   for <m>i=1,\dots,n</m>, then the diagonal elements are all
+	   <m>1</m>. Suppose <m>a_{i,j}</m> is some entry above the
+	   diagonal (so <m>i \lt j</m>). Then we use the elementary row
+	   operation <m>R_j\gets R_j-a_{ij}R_i</m> to change that entry to
+	   <m>0</m>. We may proceed by columns from left to right deleting
+	   every <m>a_{i,j}\neq0</m> By this process we reduce <m>A</m>
+	   to the matrix <m>I</m>, and so <m>A</m> is invertible.  
+       </p>
+
+	   <p> On the other hand, if some diagonal element is zero, then
+	   it stays zero as we row reduce an upper triangular matrix
+	   (since <m>R_i\gets R_i+\lambda R_j</m> only occurs when 
+       <m>i \lt j</m>). That implies that the variable corresponding to
+	   that column is free, and that the matrix in not invertible.
+	   </p> 
+       </proof> 
+       </theorem>
+
+	   <theorem> <title> The inverse of an upper triangular matrix is upper triangular </title> 
+       <statement> 
+       <p> 
+        If <m>A</m> is upper triangular and invertible, then <m>A^{-1}</m> is
+	    also upper triangular.  
+       </p> 
+       </statement>
+
+	   <proof> 
+       <p> 
+       When <m>A</m> is row reduced to <m>I</m>, each row
+	   operation corresponds to an elementary matrix that is diagonal
+	   or upper triangular.  Since <m>A^{-1}</m> is the product
+	   of these elementary matrices, it is also upper triangular.
+	   </p> 
+       </proof> 
+       </theorem>
+	</subsection>
+
+	<subsection><title>Permutation matrices</title>
+
+	    <definition> <title>Permutation matrix</title>
+		<statement> 
+        <p> 
+        A <term>permutation matrix</term> is a
+		square matrix with two properties: 
+        <ol> 
+            <li><p> 
+            Each entry of the matrix is either <m>0</m> or <m>1</m>. 
+            </p></li>
+		    <li><p> 
+            Every row and every column contains exactly one <m>1</m>.   
+            </p></li> 
+        </ol> 
+        </p> 
+        </statement>
+
+	    </definition> 
+        <p>
+        The only permutation of order <m>1</m>
+	    is <m>\begin{bmatrix}1\end{bmatrix}</m>.
+        </p>
+
+	    <p>There are two permutation matrices of order <m>2</m>:
+	    <me>
+        \begin{bmatrix}1\amp0\\ 0\amp1\end{bmatrix}\qquad
+	    \begin{bmatrix}0\amp1\\1\amp0\end{bmatrix} 
+        </me> 
+        </p>
+
+	    <p>There are six permutation matrices of order <m>3</m>:
+	    <me> 
+            \begin{bmatrix} 
+                1\amp0\amp0\\ 
+                0\amp1\amp0\\
+	            0\amp0\amp1
+            \end{bmatrix}
+            \qquad 
+            \begin{bmatrix}
+                1\amp0\amp0\\
+	            0\amp0\amp1\\ 
+                0\amp1\amp0
+            \end{bmatrix}
+            \qquad
+	        \begin{bmatrix}
+                0\amp1\amp0\\ 
+                1\amp0\amp0\\
+	            0\amp0\amp1
+            \end{bmatrix} 
+        </me>
+
+	    <me> 
+        \begin{bmatrix}
+            0\amp0\amp1\\ 
+            1\amp0\amp0\\
+	        0\amp1\amp0
+        \end{bmatrix}
+        \qquad 
+        \begin{bmatrix}
+            0\amp0\amp1\\
+	        0\amp1\amp0\\ 
+            1\amp0\amp0
+        \end{bmatrix}\qquad
+	    \begin{bmatrix}
+            0\amp1\amp0\\ 
+            0\amp0\amp1\\
+	        1\amp0\amp0
+        \end{bmatrix} 
+        </me> 
+        </p>
+
+	</subsection>
+
+    </section>
+
+
+    <section><title>Powers of a matrix (negative exponents)</title>
+	<p> 
+    Suppose we have a square matrix <m>A</m>.  For positive
+    <m>m</m> and <m>n</m> we have proven the law of exponents:
+	in <xref ref="LawOfExponents" />.  
+        <ul>
+	    <li>
+            <m>A^n=\underbrace{A\cdots A}_{n \text{ factors}},</m> 
+            (Note that <m>A^1=A</m>) 
+        </li>
+
+	    <li>
+            <m>A^m A^n=\underbrace{A\cdots A}_{m \text{ factors}}
+                \underbrace{A\cdots A}_{n \text{ factors}}
+	        =\underbrace{A\cdots A}_{m+n \text{ factors}}=A^{m+n},</m>
+	    </li>
+
+	    <li>
+            <m>(A^m)^n =\underbrace{(\underbrace{A\cdots A}_{m
+	        \text{ factors}})
+	       (\underbrace{A\cdots A}_{m \text{ factors}})\cdots
+	       (\underbrace{A\cdots A}_{m \text{ factors}})}_{n \text{
+	       times}}=A^{mn}
+	       </m>
+        </li>
+	    </ul>
+
+	Our goal is to extend this law for invertible matrices so that
+	it is valid for any integer exponents.  It turns out that there
+	is only one way to do so, and we will see this in successive
+	steps.</p>
+
+
+    <p>
+	<ul>
+	    <li> <m>n=0</m>: For any matrix <m>A</m>,
+	    <me>A^mA^0=A^{m+0}=A^m\\A^0A^m=A^{0+m}=A^m,</me> and so
+        it must be that <m>A^0=I</m>.
+        </li>
+
+	    <li><m>m=1, n=-1</m>: <me>A^1
+	    A^{-1}=A^{1+(-1)}=A^0=I\\A^{-1} A^1=A^{-1+1}=A^0=I </me> so
+	    <m>A^{-1}</m> is the inverse of <m>A</m> (and hence the notation).
+	    </li>
+
+	    <li><m>n=-m</m>: <me>A^m A^{-m}=A^{m+(-m)}=A^0=I\\A^{-m}
+	    A^m=A^{-m+m}=A^0=I</me> so <m>A^{-m}</m> is the inverse of
+	    <m>A^m.</m> Notationally this says <m>A^{-m}=(A^m)^{-1}</m>.
+	    </li>
+	</ul>
+    </p>
+
+    <theorem> <title> Laws of Exponents </title> 
+    <statement>
+	<p>
+        For any invertible square matrix <m>A</m> and integers <m>m</m>
+	    and <m>n</m>, 
+        <ul>
+	    <li> <p><m>A^mA^n=A^{m+n}</m></p> </li>
+	    <li> <p><m>(A^m)^n=A^{mn}</m></p> </li>
+	    <li> <p><m>(A^{-1})^{-1}=A</m></p> </li>
+	    <li> <p>(<m>A^n)^{-1}=(A^{-1})^n</m></p> </li>
+	    <li> <p><m>(rA)^{-1}=\tfrac 1r A^{-1}</m></p> </li>
+	    </ul> 
+    </p> 
+    </statement>
+
+	<proof>
+    <p>
+        The first two results have already been verified. The
+	    method for the last three is similar: 
+        <ul>
+        <li><p> 
+            <m>(A^{-1})A=I</m> implies that  <m>A</m> is the inverse 
+            of <m>A^{-1}</m>, that is, <m>A=(A^{-1})^{-1}.</m>
+        </p></li>
+        <li><p> 
+            Evaluate so the the middle factors "disappear":
+	        <me>\begin{array}{rl}
+		    A^n(A^{-1})^n 
+            \amp= \underbrace{A\cdots A}_{n\text{ factors}}\ 
+               \underbrace{A^{-1}\cdots A^{-1}}_{n\text{ factors}} \\ 
+            \amp= \underbrace{A\cdots A}_{n-1\text{ factors}}(AA^{-1})
+               \underbrace{A^{-1}\cdots A^{-1}}_{n-1\text{ factors}} \\ 
+            \amp= \underbrace{A\cdots A}_{n-1\text{ factors}}(I)
+               \underbrace{A^{-1}\cdots A^{-1}}_{n-1\text{ factors}}\\ 
+            \amp= \underbrace{A\cdots A}_{n-1\text{ factors}}
+               \underbrace{A^{-1}\cdots A^{-1}}_{n-1\text{ factors}}\\ 
+            \amp=\underbrace{A\cdots A}_{n-2\text{ factors}}(AA^{-1}) 
+               \underbrace{A^{-1}\cdots A^{-1}}_{n-2\text{ factors}} \\ 
+            \amp\vdots\\ 
+            \amp= AA^{-1}\\ 
+            \amp= I 
+            \end{array}
+	        </me> 
+            and so <m>(A^{-1})^n</m> is the inverse of <m>A^n</m>.
+        </p></li>
+        <li><p>
+            <m>(rA)(\tfrac 1r A^{-1}) = r\tfrac 1r A A^{-1}=1I=I</m> 
+            andso <m>\tfrac 1r A^{-1}</m> is the inverse of <m>rA</m>.  
+        </p></li>
+	    </ul> 
+    </p>
+    </proof> 
+    </theorem>
+
+    </section>
+
+    <section><title>Elementary matrices</title>
+    <introduction>
+	<p> 
+        We put matrices into reduced row echelon form by a series of
+	    elementary row operations.  
+    <!-- add a link (<m>\textbf{link}</m> elementary row operations). --> 
+        Our first goal is to show that
+	    each elementary row operation may be carried out using matrix
+	    multiplication.  The matrix <m>E=[e_{i,j}]</m> used in each case
+	    is almost an identity matrix.  The product <m>EA</m> will carry
+	    out the corresponding elementary row operation on <m>A</m>.  
+    </p>
+    </introduction> 
+    
+    <subsection><title>The three types of elementary matrices</title> 
+    <p> 
+    There are three different elementary row operations:
+    <!-- Change to a table -->
+	    <ol> 
+        <li><p>
+            Interchanging two rows (<m>R_i\leftrightarrow R_j)</m>
+        </p></li>
+        <li><p>
+            Multiplying a row by a scalar (<m>R_i\gets \lambda R_i</m> where <m>\lambda\not=0)</m> 
+        </p></li>
+        <li><p>
+            Adding a multiple of one row to another (<m>R_i\gets R_i+\lambda R_j)</m>
+        </p></li> 
+        </ol>
+    We now define an elementary matrix <m>E=[e_{i,j}]</m> for each one of
+    these operations: </p>
+
+    <definition xml:id="ElementaryMatrices"> <title>Elementary matrices</title>
+	<statement> 
+    <p> 
+        <ol>
+	    <li><p>
+            (<m>R_i\leftrightarrow R_j)</m> 
+            <me>
+            E_1=
+            \begin{bmatrix} 
+            1 \\ 
+            \amp\ddots \\ 
+            \amp\amp1\amp\amp\\
+	        \amp\amp\amp0\amp\cdots\amp\cdots\amp\cdots\amp1\amp \\
+            \amp\amp\amp\vdots\amp1\amp\amp\amp\vdots \\
+	        \amp\amp\amp\vdots\amp\amp\ddots \amp\amp\vdots\\
+	        \amp\amp\amp\vdots\amp\amp\amp1\amp\vdots \\
+	        \amp\amp\amp1\amp\cdots\amp\cdots\amp\cdots\amp0 \\ 
+            \amp\amp\amp\amp\amp\amp\amp\amp1 \\
+	        \amp\amp\amp\amp\amp\amp\amp\amp\amp\ddots 
+            \end{bmatrix} 
+            </me>
+	        In this case <m>e_{i,i}=e_{j,j}=0</m> and <m>e_{i,j}=e_{i,j}=1</m>.
+	        All other entries are the same as those in <m>I</m>.
+	    </p></li>
+
+	    <li><p> 
+            (<m>R_i\gets \lambda R_i</m> where <m>\lambda\not=0)</m>
+	        <me>
+            E_2=
+            \begin{bmatrix} 
+                 1 \\ 
+                 \amp\ddots \\ 
+                 \amp\amp1 \\ 
+                 \amp\amp\amp\lambda \\ 
+                 \amp\amp\amp\amp1 \\
+                 \amp\amp\amp\amp\amp\ddots \\ 
+                 \amp\amp\amp\amp\amp\amp1
+            \end{bmatrix} 
+            </me> 
+            In this case <m>e_{i,i}=\lambda</m>.  All other entries are the same as those in
+            <m>I</m>.
+	    </p></li>
+
+	    <li><p> 
+            (<m>R_i\gets R_i+\lambda R_j)</m> 
+            <me>
+            E_3=
+            \begin{bmatrix} 
+                1 \\ 
+                \amp\ddots \\ 
+                \amp\amp1 \\ 
+                \amp\amp\amp1\amp\cdots\amp\lambda \\ 
+                \amp\amp\amp\amp1\amp\vdots \\ 
+                \amp\amp\amp\amp\amp\ddots \\ 
+                \amp\amp\amp\amp\amp\amp1 
+            \end{bmatrix} 
+            </me> 
+            In this case <m>e_{i,j}=\lambda</m>.  All other entries are the same as those in <m>I</m>.
+	    </p></li> 
+        </ol> 
+        </p> 
+    
+        <p>A matrix <m>E</m> of any of the three types is called an <term>elementary matrix.</term>
+        </p> 
+        </statement>
+        </definition>
+    </subsection>
+
+    <subsection><title>Elementary matrices and reduced row echelon form</title>
+
+	<theorem xml:id="ElementaryMatrixRowMultiplication"> <title>Carrying out row operations using matrix multiplication </title>
+	<statement>
+    <p>
+	    Suppose we start with a matrix <m>A</m> and carry out one
+	    elementary row operation to get the matrix <m>B</m>. Then there
+	    is an elementary matrix <m>E_1</m>, <m>E_2</m>, or <m>E_3</m> so that:
+    	<ol>
+	    <li><p>
+        Interchange rows (<m>R_i\leftrightarrow R_j</m>)
+	    \[B=E_1A\]</p></li> <li><p>Multiply a row by a constant
+	    (<m>R_i\leftarrow \lambda R_i</m>) \[B=E_2A\]
+        </p></li>
+	    <li><p>
+        Add a multiple of one row to another (<m>R_i\leftarrow
+	    R_i + \lambda R_j</m>) \[B=E_3A\]
+        </p></li>
+	    </ol> 
+    </p> 
+    </statement> 
+    <proof> 
+    <p> 
+        We use the elementary matrices
+	    given in <xref ref="ElementaryMatrices" />.
+	    The proof is is then a careful observation of the effect of the
+	    nonzero entries in each case.  
+    </p> 
+    </proof> 
+    </theorem>
+
+	<example> <title>Multiplying by an elementary matrix</title> 
+    <statement> 
+    <p> 
+    Let 
+    <me> A=
+	    \begin{bmatrix} 
+            1\amp2\amp3\amp4\amp5\amp6\\
+	        7\amp8\amp9\amp10\amp11\amp12\\
+            13\amp14\amp15\amp16\amp17\amp18\\
+	        19\amp20\amp21\amp22\amp23\amp24\\
+	        25\amp26\amp27\amp28\amp29\amp30 
+        \end{bmatrix} 
+    </me> 
+    The entries in the elementary matrices in red are the only ones that differ
+	from an identity matrix <m>I</m>.  
+        <ol> 
+        <li> <p> 
+        Interchange rows 2 and 4 (<m>R_2\leftrightarrow R_4</m>) 
+        <me>E= 
+        \begin{bmatrix}
+	        1\amp0\amp0\amp0\amp0\\ 0\amp{\color{red}0}\amp0\amp
+	        {\color{red}1} \amp0\\ 0\amp0\amp1\amp0\amp0\\
+	        0\amp{\color{red}1} \amp0\amp{\color{red}0}\amp0\\
+	        0\amp0\amp0\amp0\amp1 \end{bmatrix} </me> <me>EA= \begin{bmatrix}
+	        1\amp2\amp3\amp4\amp5\amp6\\ 19\amp20\amp21\amp22\amp23\amp24\\
+	        13\amp14\amp15\amp16\amp17\amp18\\ 7\amp8\amp9\amp10\amp11\amp12\\
+	        25\amp26\amp27\amp28\amp29\amp30 \end{bmatrix} 
+            </me> 
+            </p></li>
+
+	        <li><p> 
+            Multiply row 4 by 3 (<m>R_4\leftarrow 3R_4</m>) 
+            <me>
+                E=
+	            \begin{bmatrix} 
+                1\amp0\amp0\amp0\amp0\\ 
+                0\amp1\amp0\amp0\amp0\\
+	            0\amp0\amp1\amp0\amp0\\ 
+                0\amp0\amp0\amp{\color{red}3}\amp0\\
+	            0\amp0\amp0\amp0\amp1 
+                \end{bmatrix} 
+            </me> 
+            <me>
+                EA= 
+                \begin{bmatrix}
+	                1\amp2\amp3\amp4\amp5\amp6\\ 
+                    7\amp8\amp9\amp10\amp11\amp12\\
+	                13\amp14\amp15\amp16\amp17\amp18\\
+	                57\amp60\amp63\amp66\amp69\amp72\\
+	                25\amp26\amp27\amp28\amp29\amp30
+                \end{bmatrix} 
+            </me> 
+            </p></li>
+
+	        <li><p> 
+            Subtract twice row 2 from row 4 
+            (<m>R_4\leftarrow R_4-2R_2</m>) 
+            <me>
+                E= 
+                \begin{bmatrix} 
+                    1\amp0\amp0\amp0\amp0\\
+	                0\amp1\amp0\amp0\amp0\\ 0\amp0\amp1\amp0\amp0\\
+	                0\amp{\color{red}{-2}}\amp0\amp1\amp0\\ 0\amp0\amp0\amp0\amp1
+	            \end{bmatrix} 
+            </me>
+
+	        <me>
+            EA= 
+            \begin{bmatrix} 
+                1\amp2\amp3\amp4\amp5\amp6\\
+	            7\amp8\amp9\amp10\amp11\amp12\\ 
+                13\amp14\amp15\amp16\amp17\amp18\\
+	            5\amp4\amp3\amp2\amp1\amp0\\ 
+                25\amp26\amp27\amp28\amp29\amp30
+	        \end{bmatrix}
+            </me> 
+            </p></li> 
+            </ol>
+	</p> 
+    
+    </statement> 
+    </example>
+    <p> 
+        Notice that  
+        <xref ref="ElementaryMatrixRowMultiplication" /> 
+        can be applied to a sequence of elementary row
+        operations.  If, for example, we have three elementary row operations
+        whose corresponding elementary matrices are <m>E_1</m>, <m>E_2</m>
+        and <m>E_3</m>, and we apply them in sequence to <m>A</m>, then the
+        resulting matrix is the product <m>E_3(E_2(E_1(A)))</m>, or, more
+        simply, <m>E_3E_2E_1A</m>.	Note that we are applying <m>E_1</m>
+        first followed by <m>E_2</m> and finally <m>E_3</m>.  
+    </p>
+
+    <example> <title>Reduction to reduced row echelon form by matrix
+    multiplication</title> 
+    <statement> 
+    <p>
+    Let 
+    <m>A= \begin{bmatrix}
+        1\amp2\amp2 \\
+        2\amp4\amp5 \\
+        0\amp1\amp1 
+        \end{bmatrix} 
+        </m>.  
+    We put this matrix into reduced row echelon form:
+    </p>
+
+    <table> 
+    <title> Row reduction by matrix multiplication </title>
+    <tabular>
+	<row>
+	    <cell><m>\textbf{Matrix}</m> </cell>
+	    <cell><m>\textbf{Elementary Row}</m> </cell>
+	    <cell><m>\textbf{Corresponding}</m></cell>
+	</row> <row>
+	    <cell><m></m> </cell> <cell><m>\textbf{Operations}</m></cell>
+        <cell><m>\textbf{Matrix}</m></cell>
+	</row>
+
+	<row>
+	    <cell>
+            <m>A=
+            \begin{bmatrix}
+	            1\amp2\amp2\\
+                2\amp4\amp5\\
+                0\amp1\amp1
+	        \end{bmatrix}
+            </m>
+        </cell> 
+        <cell>
+        <m>R_2\gets R_2-2R_1</m></cell>
+        <cell>
+        <m>E_1=
+            \begin{bmatrix}
+	            1\amp0\amp0\\
+                -2\amp1\amp0\\
+                0\amp0\amp1
+	        \end{bmatrix}
+        </m>
+        </cell>
+	</row>
+
+	<row>
+	    <cell>
+        <m>E_1A=
+            \begin{bmatrix}
+	            1\amp2\amp2\\
+                0\amp0\amp1\\
+                0\amp1\amp1
+	        \end{bmatrix}
+        </m>
+        </cell> 
+        
+        <cell> <m>R_2\leftrightarrow R_3</m></cell>
+        <cell>
+        <m>E_2=
+            \begin{bmatrix}
+	            1\amp0\amp0\\
+                0\amp0\amp1\\
+                0\amp1\amp0 
+            \end{bmatrix}
+        </m>
+        </cell>
+	</row>
+
+	<row>
+	    <cell>
+        <m>E_2E_1A=
+            \begin{bmatrix}
+	            1\amp2\amp2\\
+                0\amp1\amp1\\
+                0\amp0\amp1
+	        \end{bmatrix}
+        </m>
+        </cell> 
+        
+        <cell><m>R_1\gets R_1-2R_2</m></cell>
+	    <cell>
+        <m>
+        E_3=
+            \begin{bmatrix} 
+                1\amp-2\amp0\\
+                0\amp1\amp0\\
+                0\amp0\amp1
+            \end{bmatrix}
+        </m>
+        </cell>
+	</row>
+
+	<row>
+	    <cell><m>E_3E_2E_1A=\begin{bmatrix}
+	    1\amp0\amp0\\0\amp1\amp1\\0\amp0\amp1
+	    \end{bmatrix}</m></cell> <cell><m>R_2\gets R_2-R_3</m></cell>
+	    <cell><m>E_4=\begin{bmatrix} 1\amp0\amp0\\0\amp1\amp-1
+	    \\0\amp0\amp1\end{bmatrix}</m></cell>
+	</row>
+
+	<row>
+	    <cell>
+        <m>
+        E_4E_3E_2E_1A=
+            \begin{bmatrix}
+	            1\amp0\amp0\\
+                0\amp1\amp0\\
+                0\amp0\amp1 
+            \end{bmatrix}
+        </m>
+        </cell>
+	</row>
+    </tabular> 
+    </table>
+
+    <p>There is a bonus from this computation: since
+    <m>(E_4E_3E_2E_1)A=I,</m> <!-- (<m>\textbf{link}</m> we know that) -->
+     we know that <m>A(E_4E_3E_2E_1)=I</m>
+    and <m>A^{-1}=(E_4E_3E_2E_1).</m> Indeed, 
+    <md> 
+    <mrow>
+        \begin{bmatrix}
+            1\amp0\amp0\\
+            0\amp1\amp-1 \\
+            0\amp0\amp1
+            \end{bmatrix}\amp
+        \begin{bmatrix} 
+            1\amp-2\amp0\\
+            0\amp1\amp0 \\
+            0\amp0\amp1
+        \end{bmatrix}
+        \begin{bmatrix} 
+            1\amp0\amp0\\
+            0\amp0\amp1\\
+            0\amp1\amp0 
+        \end{bmatrix}
+        \begin{bmatrix} 
+            1\amp0\amp0\\
+            -2\amp1\amp0\\
+            0\amp0\amp1
+        \end{bmatrix}
+    </mrow> 
+    <mrow>
+        \amp= 
+        \begin{bmatrix}
+            1\amp0\amp-2\\
+            2\amp-1\amp1\\
+            -2\amp1\amp0 
+        \end{bmatrix}
+    </mrow>
+    <mrow>
+        \amp = A^{-1}
+    </mrow> 
+     </md>
+
+
+    We shall see shortly that every elementary matrix
+    has an inverse which itself is elementary, and so
+    <m>A=E_1^{-1}E_2^{-1}E_3^{-1}E_4^{-1}</m>. Thus <m>A</m> is a product
+    of elementary matrices.  
+    </p> 
+    </statement> 
+    </example> 
+    </subsection>
+
+    <subsection>
+    <title>Inverses of Elementary Row Operation Matrices</title>
+	<p> 
+    Each matrix associated with the three elementary row
+	operations has an inverse.  While it is easy to define and
+	verify the matrix in each case, it is useful to think of the
+	effect of the inverse. If <m>E</m> is the matrix associated
+	with an elementary row operation, then <m>EA</m> carries out
+	that operation on <m>A.</m> Since <m>E^{-1}EA=A,</m> the effect
+	of <m>E^{-1}</m> is to undo the operation and return <m>A</m>
+	to its original form.
+
+	    <ol>
+        <li><p>
+	        If <m>E</m> corresponds to interchanging two rows
+	        (<m>R_i\leftrightarrow R_j</m>), to undo the operation we
+	        just interchange them again. This means the <m>E^{-1}=E.</m>
+	    </p></li> 
+        <li><p> 
+            If <m>E</m> corresponds to multiplying a row
+	        by <m>\lambda</m> (<m>R_i\gets\lambda R_i</m>), then multiplying
+	        the same row by <m>\tfrac1\lambda</m> returns it to its original
+	        form. Hence <m>E^{-1}</m> is formed by replacing <m>\lambda</m> by
+	        <m>\tfrac1\lambda</m> in <m>E</m>.  </p></li> <li><p> If <m>E</m>
+	        corresponds to adding <m>\lambda</m> times row <m>j</m> to row
+	        <m>i</m> (<m>R_i\gets R_i+\lambda R_j</m>), then subtracting
+	        <m>\lambda</m> times row <m>j</m> from row <m>i</m> (<m>R_i\gets
+	        R_i-\lambda R_j</m>) returns  <m>A</m> to its original form.
+	        Hence <m>E^{-1}</m> is formed by replacing <m>\lambda</m> by
+	        <m>-\lambda</m> in <m>E</m>. i
+        </p></li> 
+        </ol> 
+    </p>
+
+	<theorem xml:id="ElementaryMatrixInverse"> <title> Inverses of Elementary Matrices </title>
+	<statement>
+       <p>
+       Every elementary matrix is invertible. In particular
+       <ol>
+       <li><m>E_1^{-1}=E_1</m>.</li> 
+       <li>
+           <m>E_2^{-1}</m> has <m>\lambda</m> in <m>E_2</m> 
+           replaced by <m>\tfrac 1\lambda</m>. 
+       </li>
+       <li>
+           <m>E_3^{-1}</m> has <m>\lambda</m> in <m>E_3</m> 
+           replaced by <m>-\lambda</m>.
+       </li>
+       </ol>
+       </p>
+	</statement>
+
+	<proof> 
+        <p>We give the inverse in each case: 
+            <ol>
+	        <li><p>
+            Interchange rows (<m>R_i\leftrightarrow R_j</m>) 
+            <m>E=
+	        \begin{bmatrix}
+	            1 \\
+	            \amp\ddots \\ 
+                \amp\amp1\amp\amp\\
+	            \amp\amp\amp0\amp\cdots\amp\cdots\amp\cdots\amp1\amp \\ 
+                \amp\amp\amp\vdots\amp1\amp\amp\amp\vdots \\
+	            \amp\amp\amp\vdots\amp\amp\ddots \amp\amp\vdots\\
+	            \amp\amp\amp\vdots\amp\amp\amp1\amp\vdots \\
+	            \amp\amp\amp1\amp\cdots\amp\cdots\amp\cdots\amp0 \\ 
+                \amp\amp\amp\amp\amp\amp\amp\amp1 \\
+	            \amp\amp\amp\amp\amp\amp\amp\amp\amp\ddots 
+            \end{bmatrix}
+	        </m> and <m>E^{-1}=E</m>. 
+            </p></li>
+
+	        <li><p>
+            Multiply a row by a constant (<m>R_i\leftarrow \lambda R_i</m>) 
+            <m>
+            E=
+            \begin{bmatrix} 
+                1 \\ 
+                \amp\ddots \\
+	            \amp\amp1 \\ 
+                \amp\amp\amp\lambda \\ 
+                \amp\amp\amp\amp1 \\
+	            \amp\amp\amp\amp\amp\ddots \\ 
+                \amp\amp\amp\amp\amp\amp1
+	        \end{bmatrix} 
+            </m> 
+        
+            <m>E^{-1}=
+            \begin{bmatrix} 1 \\ 
+                \amp\ddots \\
+	            \amp\amp1 \\ 
+                \amp\amp\amp\tfrac1\lambda \\ 
+                \amp\amp\amp\amp1 \\ 
+                \amp\amp\amp\amp\amp\ddots \\ 
+                \amp\amp\amp\amp\amp\amp1
+	        \end{bmatrix}
+            </m> 
+            </p></li>
+
+            <li><p>
+            Add a multiple of one row to another 
+            (<m>R_i\leftarrow R_i + \lambda R_j</m>) 
+            <m>E=
+            \begin{bmatrix} 
+                1 \\ 
+                \amp\ddots \\ 
+                \amp\amp1 \\ 
+                \amp\amp\amp1\amp\cdots\amp\lambda \\
+	            \amp\amp\amp\amp1\amp\vdots \\ 
+                \amp\amp\amp\amp\amp\ddots \\
+	            \amp\amp\amp\amp\amp\amp1 
+            \end{bmatrix}
+	        </m> 
+            and so  
+            <m>
+            E^{-1}=
+            \begin{bmatrix}
+	            1 \\ 
+                \amp\ddots \\
+                \amp\amp1 \\
+	            \amp\amp\amp1\amp\cdots\amp-\lambda \\ 
+                \amp\amp\amp\amp1\amp\vdots \\ 
+                \amp\amp\amp\amp\amp\ddots \\ 
+                \amp\amp\amp\amp\amp\amp1
+	        \end{bmatrix}
+	        </m> 
+            </p></li>
+	        </ol>
+    
+        </p> 
+        </proof> 
+        </theorem>
+
+        <p>
+	    An easy observation:  the inverse in each case of
+        <xref ref="ElementaryMatrixInverse"/>, the inverse
+        is also an elementary matrix,
+	    and so we have proven the following theorem:
+        </p>
+
+        <theorem> <title> The Inverse of an Elementary Matrix is Elementary</title> 
+        <statement> 
+        <p>
+        The inverse of an elementary matrix is elementary.
+        </p> 
+        </statement> 
+        </theorem>
+
+        <theorem> <title>An Invertible Matrix is a Product of Elementary Matrices</title>
+
+        <statement> 
+        <p>
+        Let <m>A</m> be an invertible matrix. Then <m>A=F_1F_2\cdots F_t</m> 
+        where each <m>F_i</m> is an elementary matrix.
+        </p> 
+        </statement>
+
+        <proof> 
+        <p>
+        <!-- 
+        By <xref ref=.../>, the reduced row echelon form of <m>A</m> is <m>I</m>.
+        -->
+        Put <m>A</m> into reduced row echelon form. Suppose this takes
+        <m>t</m> elementary row operations. Then this implies
+        that <m>E_tE_{t-1}\cdots E_2E_1A=I.</m> Let <m>F_i=E_i^{-1}</m>
+        for <m>i=1,\dots,t.</m> Then <m>F_i</m> is an  elementary matrix,
+        and <m>F_1F_2\cdots F_t=F_1F_2\cdots F_tI=F_1F_2\cdots F_t
+        E_tE_{t-1}\cdots E_2E_1A=A.</m> 
+        </p> 
+        </proof>
+    
+        </theorem> 
+        </subsection> 
+        </section>
+    
+        <section><title>Equivalent forms of Invertibility and Singularity of Matrices</title> 
+        <p>
+    	We have already defined  singular and nonsingular matrices
+    	in <xref ref="SingularMatrixDefinition" /> and
+    	the inverse of a matrix in 
+        <xref ref="InverseMatrixDefinition" />.  
+        We now have a new goal: to show that a square
+    	matrix is invertible if and only if it is nonsingular. In fact we
+    	want to give several other conditions that are equivalent to being
+    	invertible. By this we mean that if any one of the conditions
+    	are true for a matrix <m>A</m>, then all them are true for that
+    	matrix <m>A</m>, and we then call <m>A</m> <em>nonsingular</em> or
+    	<em>invertible</em>.  Equivalently, if any one of the conditions
+    	are false for a matrix <m>A</m>, then all of them are false
+    	for that matrix <m>A</m>. In this case the matrix <m>A</m>
+    	is called <em>singular</em>.  </p> <p> The method for showing
+    	statements to be equivalent is a little different.  Suppose we
+    	have (as will be our case) six statements numbered 
+        <m>(1), (2), \ldots,(6)</m> that we wish to show equivalent.  
+        We start by
+    	showing that if <m>(1)</m> is true, then it follows that <m>(2)</m>
+    	is true. We denote this by <m> (1)\Rightarrow(2) </m>.  We continue
+    	with <m> (2)\Rightarrow(3), (3)\Rightarrow(4), (4)\Rightarrow(5),
+    	(5)\Rightarrow(6), (6)\Rightarrow(1)</m>.  Once this has been done,
+    	we may visualize our result: 
+        </p> 
+    
+        <figure>
+        <caption>A cycle of implications</caption>
+        <image width="30%">
+        <asymptote>
+        unitsize(1.5cm);
+        pair [] Pts = {dir(180), dir(240), dir(300), dir(0), dir(60), dir(120), dir(180)};
+        for (int k: sequence(6)) {
+            label("$("+string(6-k)+")$", Pts[k]);
+            label(rotate(120+60*k)*"$\Rightarrow$",0.5*Pts[k]+0.5*Pts[k+1]);
+            }
+        </asymptote>
+        </image>
+        </figure>
+
+        <!--
+        <figure> 
+        <caption />
+        <image width="25%" source="images/matrixequivalences.png" /> 
+        </figure> 
+        -->
+
+        <p> 
+        and so
+    	once one statement becomes true, all of them are true.	This also
+    	means that once one statement is false then all of them are false
+    	(think about the logic!).
+        </p>
+    
+        <theorem xml:id="InvertibilityEquivalence"><title>Equivalent Forms of Invertibility</title>
+        <statement> 
+        <p>
+        Suppose that <m>A</m> is an <m>n\times n</m>
+        square matrix.  Then the following statements are equivalent: 
+            <ol>
+            <li><p> 
+            <m>A</m> is invertible
+            </p></li> 
+            <li><p> 
+            <m>A\vec x=0</m>
+            if and only if <m>\vec x=0</m>
+            </p></li> 
+            <li><p> 
+                The reduced row echelon form of <m>A</m> is <m>I_n</m>
+            </p></li> 
+            <li><p> 
+                <m>A</m> is a product of elementary matrices
+            </p></li> 
+            <li><p> 
+                <m>A\vec x=\vec b</m> is consistent for any <m>\vec b</m>
+            </p></li>
+            <li><p> 
+                <m>A\vec x=\vec b</m> has exactly one solution for
+                any <m>\vec b</m>
+            </p></li> 
+            </ol> 
+        </p> 
+        </statement> 
+        <proof> 
+        <p>
+        The logic of the proof is to show that</p>
+    
+            <p>(1) true implies (2) true (which we write as (1) <m>\Rightarrow </m>(2)),</p>
+            <p>(2) true implies (3) true (which we write as (2) <m> \Rightarrow</m> (3)),</p>
+            <p>(3) true implies (4) true (which we write as (3) <m>\Rightarrow</m> (4)),</p>
+            <p>(4) true implies (5) true (which we write as (4) <m>\Rightarrow</m> (5)),</p>
+            <p>(5) true implies (6) true (which we write as (5) <m>\Rightarrow</m> (6)), and</p>
+            <p>(6) true implies (1) true (which we write as (6) <m>\Rightarrow</m> (1))</p>
+    
+        <p> 
+        We now proceed to prove the implications one at a time.  
+        </p>
+    
+    	<p> 
+        (1) <m>\Rightarrow</m> (2): Assuming (1) means that
+    	<m>A</m> is invertible.  If <m>x=\vec0</m>, then
+    	<m>A\vec x=A\vec0=\vec0</m>.  Now suppose that
+    	<m>A\vec x=\vec0.</m>  Then, since <m>A^{-1}</m> exists,
+    	we may evaluate <m>A^{-1}A\vec x</m> in two ways: <me>
+    	A^{-1}(A\vec x) = A^{-1}\vec0=\vec0\\ (A^{-1}A)\vec x
+        =I\vec x=\vec x </me> Equating the two evaluations,
+    	we get <m>\vec x=\vec0.</m> 
+        </p>
+    
+    	<p> 
+        (2) <m>\Rightarrow</m> (3): Consider the augmented matrix
+    	for the system of linear equations <m>A\vec x=\vec0.</m>
+    	If the reduced row echelon from of <m>A</m> is not <m>I_n,</m>
+    	then the form for augmented matrix has a free variable; this may
+    	be assigned a nonzero value, resulting in a nonzero solution to
+    	<m>A\vec x=\vec0.</m> 
+        </p>
+    
+    	<p> 
+        (3) <m>\Rightarrow</m> (4): Suppose <m>A</m> is reduced
+    	to <m>I_n</m> by a series of elementary row operations whose
+    	corresponding elementary matrices are <m>E_1,E_2,\dots,E_k</m>.
+    	Then <m>E_kE_{k-1}\cdots E_2E_1A=I_n</m>, and 
+        <me>
+    	    A=E_1^{-1}E_2^{-1}\cdots E_{k-1}^{-1}E_k^{-1}=F_1F_2\cdots
+    	    F_{k-1}F_k.
+    	</me> 
+        </p>
+    
+    	<p>
+        (4) <m>\Rightarrow</m> (5): Suppose we want to solve
+    	<m>A\vec x=\vec b</m> where <m>\vec b</m> is any vector
+    	and <m>A=F_1F_2\cdots F_{k-1}F_k.</m> Then we have 
+        <me>
+    	   F_1F_2\cdots F_{k-1}F_k \vec x=\vec b,
+    	</me> 
+        and 
+        <me> 
+        \vec x=F_k^{-1}F_{k-1}^{-1}\cdots
+    	F_2^{-1}F_1^{-1} \vec b 
+        </me> 
+        which then satisfies
+    	<me> 
+        \begin{split} A\vec x \amp =(F_1F_2\cdots
+    	F_{k-1}F_k)(F_k^{-1}F_{k-1}^{-1}\cdots F_2^{-1}F_1^{-1}\vec
+    	b)\\ \amp=(F_1F_2\cdots F_{k-1}F_k)(F_k^{-1}F_{k-1}^{-1}\cdots
+    	F_2^{-1}F_1^{-1})\vec b \\ \amp=\vec b \end{split} 
+        </me>
+    	and so gives a solution to <m>A\vec x=\vec b.</m> Hence
+    	<m>A\vec x=\vec b</m> is consistent.  
+        </p>
+    
+    	<p> (5) <m>\Rightarrow</m> (6): We take the following values for
+    	<m>\vec b_1,\vec b_2,\dots,\vec b_n</m>: 
+        <me> 
+        \vec b_1=
+            \begin{bmatrix} 
+            1 \\ 0 \\ 0 \\ \vdots \\ 0
+            \end{bmatrix}, 
+        \quad 
+        \vec b_2=
+            \begin{bmatrix} 
+            0 \\ 1 \\ 0 \\ \vdots \\ 0
+            \end{bmatrix}, 
+        \quad 
+        \vec b_3=
+            \begin{bmatrix} 0 \\ 0 \\ 1 \\ \vdots \\ 0
+            \end{bmatrix}, 
+        \ldots, 
+        \quad 
+        \vec b_n=
+            \begin{bmatrix} 0 \\ 0 \\ 0 \\ \vdots \\ 1
+            \end{bmatrix} 
+        </me>.
+    	Then <m>A\vec x=\vec b_1</m> has a solution <m>\vec c_1</m>, 
+        <m>A\vec x=\vec b_2</m> has a solution <m>\vec c_2</m>, 
+        <m>A\vec x=\vec b_3</m> has a solution <m>\vec c_3, \dots,</m> 
+        <m>A\vec x=\vec b_n</m> has a solution <m>\vec c_n</m>.  
+        </p> 
+        
+        <p>
+        Now define the matrix <m>C</m> as the one with 
+        <m>\vec c_1,\vec c_2,\dots,\vec c_n</m> as columns, that is,
+    	<me> 
+        C=
+        \begin{bmatrix}
+        \vec c_1 \amp\vec c_2 \amp\vec c_3 \amp\cdots \amp\vec c_n
+        \end{bmatrix}.  
+        </me>
+    
+    	Then <m>AC=I</m>, and so <m>C=A^{-1}</m> and <m>CA=I.</m> Now
+    	if <m>A\vec x=\vec b</m> is consistent, then <m>\vec
+    	x=I\vec x=CA\vec x=C\vec b</m> and so <m>\vec
+    	x=C\vec b</m> is the one and only solution to <m>A\vec
+    	x=\vec b.</m> 
+        </p>
+    
+    	<p>
+        (6) <m>\Rightarrow</m> (1): Use the vectors <m>\vec b_1,
+    	\vec b_2,\dots,\vec b_n</m> given just above. In each
+    	case there is exactly one vector <m>\vec c_k</m> which
+    	is a solution to the equation <m>A\vec x=\vec b_k</m>.
+    	Let <m>C</m> be the matrix with <m>\vec c_1,\dots,\vec
+    	c_n</m> as columns. This matrix satisfies <m>AC=I</m> which
+    	makes <m>C=A^{-1}</m> and so <m>A</m> is invertible.
+        </p> 
+        </proof>
+    	</theorem>
+        </section>
+    
+</chapter>
+    

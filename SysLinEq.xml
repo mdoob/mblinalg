@@ -1,0 +1,2969 @@
+<chapter xml:id="SysLinEq" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Systems of Linear Equations</title>
+  
+  <section><title>Review of two equations in two unknowns </title>
+    
+    <subsection xml:id="TwoEquationsTwoUnknownsSample">
+    <title>The standard method for finding the solution </title>
+      <p>Suppose we want to find <em>all</em> solutions to the equations</p>
+      <p>
+      <md>
+      <mrow>2x+3y \amp = 5</mrow>
+      <mrow>3x+2y \amp= 7</mrow>
+      </md>
+      </p>
+      
+      <p>
+      The <em>standard</em> technique is to manipulate one or both 
+      of the equations until either <m>x</m> has the same coefficient 
+      in both equations or <m>y</m> has the same coefficient, and then 
+      subtract to eliminate one variable. Since there is only one variable left,
+      its value can be found; with this information, the value 
+      for the other variable can be found.
+      </p>
+     
+      <p>In the case above, we can multiply both sides of the second equation by
+      <m>\frac23</m>,
+      to get
+      <me>
+      2x+\tfrac43 y= \tfrac{14}3,
+      </me>
+      and subtracting from the first equation gives
+      <me>
+      \frac53y = \frac13,
+      </me>
+      or
+      <me>
+      y=\frac15.
+      </me>
+      </p>
+
+      <p>
+      Using the first equation and the (now) known value of <m>y</m>, we find that
+      <me>
+      x=\frac{11}5.
+      </me>
+      </p>
+      
+      <p>
+      Hence we see that there is exactly one pair of values for 
+      <m>x</m>
+      and 
+      <m>y</m> that simultaneously satisfy both equations:
+      <m>x=\frac{11}5</m> and <m>y=\tfrac15.</m> We can also write this
+      as <m>(x,y)=(\frac{11}5,\frac15).</m>
+      In this case we say that there is a <em>unique</em> solution (in mathematics, the term
+      unique means <em>exactly one</em>).
+      </p>
+    </subsection>
+    
+    <subsection><title>The geometric method of finding the solution</title> 
+      
+      <p>
+      The set of equations solved in  <xref ref="TwoEquationsTwoUnknownsSample"/>
+      can also be
+      viewed geometrically. The points in the <m>x</m>-<m>y</m>
+      plane satisfying one of the equations lie on a  straight line, and
+      any point satisfying both of the equations must lie on both lines.
+      The plot of the two lines looks like this:
+      </p>
+      
+      <figure>
+      <caption>Intersection of two lines in the plane</caption>
+      <image xml:id="TwoLinesInPlane" width="40%" archive="pdf svg">
+      <asymptote>
+      import graph;
+      unitsize(30);
+      real xmin=-1; real xmax=4;
+      xaxis(LeftTicks);yaxis(LeftTicks);
+
+      real f1(real x) {return (5-2*x)/3;}
+      real f2(real x) {return (7-3*x)/2;}
+
+      draw((xmin,f1(xmin))--(xmax,f1(xmax)),green);
+      draw((xmin,f2(xmin))--(xmax,f2(xmax)),red);
+      dot((11/5,1/5));
+      label("\((\frac{11}5,\frac15)\)",(11/5,1/5),NE);
+      </asymptote>
+      </image>
+      </figure>
+
+      <p>The point of intersection is <m>(x,y)=(\frac{11}5,\frac15)</m>,
+      so this is the only solution, just as before.</p>
+
+      <exercise>
+         <statement>
+         <p>
+         Are the points satisfying the equation 
+         <m>2x+3y = 5</m> on the red line or the green line?
+         </p>
+         </statement>
+         <solution>
+         <p>
+         Setting <m>x=0</m> gives <m>y=\frac53</m> as the point where the
+         line intersects the <m>y</m>-axis. Hence it is the green line.
+         </p>
+         </solution>
+      </exercise>
+    </subsection>
+ </section> 
+  
+  <section><title>Equations with multiple solutions or no solutions</title>
+    <subsection><title>Equations with no solutions</title> 
+     <p>
+     Suppose we want to find all solutions to the equations
+      <md>
+      <mrow>2x+4y \amp = 5</mrow>
+      <mrow>-x-2y \amp = 1</mrow>
+      </md>
+     Using the <em>standard</em> approach we multiply the second equation by <m>2</m> and add it
+      to the first one to eliminate the variable <m>x</m>.  This leaves us
+      with the equation
+      0=7
+      This is certainly an equality that is not valid. What happened? We can see by
+      multiplying the second equation by <m>-2</m>. We then have 
+      <md>
+      <mrow>2x+4y \amp = 5</mrow>
+      <mrow>2x+4y \amp = -2</mrow>
+      </md>
+     </p>
+
+      <p>
+      Whatever <m>x</m> and <m>y</m> are, the value of <m>2x+4y</m> can't be 
+      <m>5</m> and <m>-2</m> at the same time. So there are no solutions.
+      What happens if we try to graph these two equations? Here is what we get:
+     </p>
+     
+     <figure>
+     <caption>Two Parallel lines in the Plane</caption>
+     <image xml:id="ParallelLinesInPlane" width="70%">
+     <asymptote>
+      import graph;
+      unitsize(40);
+      real xmin=-2; real xmax=4;
+      xaxis(LeftTicks);yaxis(LeftTicks);
+
+      real f1(real x) {return (5-2*x)/4;}
+      real f2(real x) {return (1+x)/-2;}
+
+      draw((xmin,f1(xmin))--(xmax,f1(xmax)),green);
+      draw((xmin,f2(xmin))--(xmax,f2(xmax)),red);
+      </asymptote>
+      </image>
+     </figure>
+      
+      <p>
+      The geometry of the situation is now clear: 
+      the two lines are parallel and so there is no 
+      point on both lines (indeed, both lines have slope <m>-\tfrac12</m>).
+      When we have equations with no common solution, they are called <em>inconsistent</em>.
+      </p>
+    </subsection>
+    
+    <subsection><title> Equations with more than one solution </title>
+      
+      <p>Now let's alter the equations of <xref ref="TwoEquationsTwoUnknownsSample"/> 
+      slightly.  We consider the pair of equations
+
+      <md>
+      <mrow>2x+4y \amp = -2</mrow>
+      <mrow>-x-2y \amp = 1</mrow>
+      </md>
+
+      We apply the <em>standard</em> method again: multiply the second equation by <m>2</m>
+      and add it to the first. The result is
+      <me>0=0</me> 
+      This is certainly a valid, although not very interesting, equation. In fact, if we
+      multiply both sides of the second equation by <m>-2</m> the system becomes
+
+      <md>
+      <mrow>2x+4y \amp = -2</mrow>
+      <mrow>2x+4y \amp = -2</mrow>
+      </md>
+
+      This means that any solution of the first equation is also a solution of the second one.
+      Geometrically, if we plot the graph of the two equations, the same line results for
+      each one. How do we find all solutions in this case? Let us assign a value to <m>y</m>.
+      Let's call it <m>t</m> so <m>y=t</m>. Then, using either equation, we have
+      <m>x=-2t-1</m>.
+      This means that for <em>any</em> value of <m>t</m> we know that
+      <m>(x,y)=(-2t-1,t)</m> is a solution to both equations. So, in fact we have an infinite
+      number of solutions.</p>
+
+      <theorem xml:id="TwoEquationaTwoUnknowns"><title>Two equations in two unknowns</title>
+         <statement>
+         <p>Two equations in two unknowns may have:
+         <ul>
+         <li><p>No solutions</p></li>
+         <li><p>A single (unique)  solutions</p></li>
+         <li><p>An infinite number of solutions</p></li>
+         </ul>
+         </p>
+         </statement>
+         <proof><p>
+        The corresponding lines in the plane are parallel, intersect at
+        a single point, or are identical.
+         </p></proof>
+      </theorem>
+    </subsection>
+  </section>
+  
+  <section><title>Important Definitions for Linear Equations</title> 
+   
+   <subsection><title>The Definition of a Linear Equation</title>
+     
+     <p>
+     The equations given in the in  <xref ref="TwoEquationsTwoUnknownsSample"/>
+     are examples of <em>linear equations</em>  in two variables. 
+      A <em>linear equation in <m>n</m> variables</em> 
+      <m>x_1, x_2, \dots, x_n</m> is an equation of the form
+
+      <me>
+      a_1x_1+ a_2x_2+ \cdots +a_n x_n= b
+      </me>
+
+      where <m>a_1,\dots,a_n</m> and <m>b</m> are constants.
+      The numbers <m>a_1,a_2,\dots,a_n</m> are called the <em>coefficients</em>
+      of the equation, that is, <m>a_1</m> is the coefficient of <m>x_1</m>, 
+      <m>a_2</m> is the coefficient of <m>x_2</m>, <etc />
+      This is also called a <em>linear equation in <m>n</m> unknowns</em>.</p>
+      
+      <p>The following are examples of linear equations:
+      <ul>
+        <li><p> <m>2x=4</m>   (one variable)</p></li> 
+        <li><p> <m>4x-2y=7</m>   (two variables)</p></li> 
+        <li><p><m>\tfrac12 x -\tfrac35 y +\pi z=0</m>   (three variables)</p></li> 
+        <li><p> <m>x_1-3x_2+4x_3-7x_4=100</m>   (four variables: a coefficient of
+        <m>1</m> is usually omitted)</p></li> 
+        <li><p><m>3x_1+15x_5=-10</m>
+            (five variables: the ones with a coefficient of zero are not written)</p>
+        </li> 
+      </ul>
+      </p>
+   </subsection>
+ 
+   <subsection><title>The Definition of a System of Linear Equations</title>
+      
+      <p>A <em>system of <m>m</m> linear equations in <m>n</m>
+      unknowns</em> is a list of <m>m</m> linear equations, each of which
+      has the same set of <m>n</m> unknowns. They are usually presented
+      with the purpose of finding all of their simultaneous solutions.</p>
+      
+      <p>The original example given in
+      <xref ref="TwoEquationsTwoUnknownsSample"/>
+      is a system of 2 equations in 2 unknowns.
+      Here are some more examples:
+      <ul>
+        <li><p>A system of 2 equations in 3 unknowns:
+            <md>
+            <mrow>x-y+z \amp = 1</mrow>
+            <mrow>2x+3y-z \amp = 2</mrow>
+            </md>
+            </p>
+        </li>
+        <li><p>A system of 3 equations in 2 unknowns:
+            <md>
+            <mrow>u+v \amp = 1</mrow>
+            <mrow>2u+v \amp = 3</mrow>
+            <mrow>u+2v \amp =3</mrow>
+            </md>
+            </p>
+        </li>
+        <li><p>A system of 4 equations in 5 unknowns:
+            <md alignment="alignat">
+            <mrow>x_1 \amp \ +\  \amp x_2 \amp \amp \amp \amp \amp \amp \amp \ =\ 1</mrow>
+            <mrow>\amp \amp x_2 \amp \ +\ \amp x_3 \amp \amp \amp \amp \amp  \ =\ 2</mrow>
+            <mrow>\amp \amp \amp \amp x_3 \amp \ +\ \amp x_4 \amp \amp \amp  \ =\ 3</mrow>
+            <mrow>\amp \amp \amp \amp \amp \amp x_4 \amp \ +\ \amp x_5 \amp  \ =\ 4</mrow>
+            </md>
+            </p>
+        </li>
+        <li><p>A system of <m>m</m> equations in <m>n</m> unknowns <m>x_1, x_2, x_3\dots,x_n</m>:
+            <md>
+            <mrow>a_{1,1}x_1 + a_{1,2}x_2 + \cdots + a_{1,n}x_n  = b_1</mrow>
+            <mrow>a_{2,1}x_1 + a_{2,2}x_2 + \cdots + a_{2,n}x_n  = b_2</mrow>
+            <mrow>\vdots</mrow>
+            <mrow>a_{m,1}x_1 + a_{m,2}x_2 + \cdots + a_{m,n}x_n  = b_m</mrow>
+            </md>
+            </p>
+        </li>
+      </ul>
+      </p>
+      
+   </subsection>
+ 
+   <subsection><title>The Coefficient and Augmented Matrix of a System of Linear Equations </title>
+      
+      <p>A <em>matrix</em> is a rectangular array of numbers (the plural is <em>matrices</em>). Here is a matrix:
+      <me>
+      \begin{bmatrix}
+      1 \amp  2 \amp  3 \amp  4\\
+      5 \amp  6 \amp  7 \amp  8\\
+      9 \amp  10\amp 11\amp 12
+      \end{bmatrix}
+      </me>
+      This matrix has 3 rows:
+      <ul>
+      <li>
+       <m>
+          \begin{bmatrix}
+          1 \amp  2 \amp  3 \amp  4
+          \end{bmatrix}
+      </m> is row 1,
+      </li>
+      <li>
+      <m>
+         \begin{bmatrix}
+         5 \amp  6 \amp  7 \amp  8
+         \end{bmatrix}
+      </m> is row 2 and
+      </li>
+      <li>
+      <m>
+         \begin{bmatrix}
+         9 \amp  10\amp 11\amp 12
+         \end{bmatrix}
+      </m>
+      is row 3.
+      </li>
+      </ul>
+      </p>
+      
+      <p>Similarly, the matrix has 4 columns:
+      <ul>
+      <li>
+      <m>
+         \begin{bmatrix}
+         1\\ 5\\ 9 
+         \end{bmatrix}
+      </m>
+      is  column <m>1</m>
+      </li>
+      <li>
+      <m>
+         \begin{bmatrix}
+         2\\ 6\\ 10
+         \end{bmatrix}
+      </m>
+      is  column <m>2</m>
+      </li>
+      
+      <li>
+      <m>
+         \begin{bmatrix}
+         3 \\ 7\\ 11
+         \end{bmatrix}
+      </m>
+      is  column <m>3</m>, and
+      </li>
+      <li>
+      <m>
+         \begin{bmatrix}
+         4\\ 8\\ 12
+         \end{bmatrix}
+      </m>
+      is  column <m>4</m>
+      </li>
+      </ul>
+      </p>
+
+      <p>We call a matrix with 3 rows and 4 columns a <m>3\times4</m>
+      matrix.</p>
+      
+      <p>More generally, a matrix with <m>m</m> rows and <m>n</m> columns is called an
+      <m>m\times n</m> <em>matrix</em>. An <m>m\times n</m> matrix <m>A</m> has the form
+      <me>
+      A=\begin{bmatrix}
+      a_{1,1} \amp  a_{1,2} \amp  \cdots \amp  a_{1,n}\\
+      a_{2,1} \amp  a_{2,2} \amp  \cdots \amp  a_{2,n}\\
+      \amp \amp \vdots\\
+      a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}
+      \end{bmatrix}
+     </me>
+      This notation means that <m>a_{i,j}</m> is the number in both row
+      <m>i</m> and column <m>j</m>. We will call the rows
+      <m>R_1, R_2,\ldots,R_m</m> and the columns <m>C_1, C_2, \ldots,C_n</m>.
+      In other words,
+      <me>
+      R_i =\begin{bmatrix} a_{i,1} \amp  a_{i,2} \amp  a_{i,3}, 
+          \amp \cdots \amp  a_{i,n}\end{bmatrix},
+      </me>
+      and
+      <me>
+      C_j=\begin{bmatrix}
+      a_{1,j}\\ a_{2,j}\\ a_{3,j}\\ \vdots\\ a_{m,j}
+      \end{bmatrix}
+      </me>
+      The notation for this matrix is similar to that used for
+      a system of linear equations, and for good reason. Suppose
+      we have a system of <m>m</m> linear equations in <m>n</m> unknowns:
+      <me>
+      \begin{array}{lcl}
+      a_{1,1}x_1 + a_{1,2}x_2 +{} \amp \cdots \amp {}+ a_{1,n}x_n  = b_1\\
+      a_{2,1}x_1 + a_{2,2}x_2 +{} \amp \cdots \amp {}+ a_{2,n}x_n  = b_2\\
+      \amp \vdots\\
+      a_{m,1}x_1 + a_{m,2}x_2 +{} \amp \cdots \amp {}+ a_{m,n}x_n  = b_m
+      \end{array}
+      </me>
+      The <em>coefficient matrix</em> <m>A</m> is then the <m>m\times n</m> matrix
+      <me>
+      A=\begin{bmatrix}
+      a_{1,1} \amp  a_{1,2} \amp  \cdots \amp  a_{1,n}\\
+      a_{2,1} \amp  a_{2,2} \amp  \cdots \amp  a_{2,n}\\
+      \amp \amp \vdots\\
+      a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}
+      \end{bmatrix}
+      </me>
+      and the <em>augmented matrix</em> of the system is the <m>m\times( n+1)</m> matrix
+      <me>
+      A=\begin{bmatrix}
+      a_{1,1} \amp  a_{1,2} \amp  \cdots \amp  a_{1,n}\amp b_1\\
+      a_{2,1} \amp  a_{2,2} \amp  \cdots \amp  a_{2,n}\amp b_2\\
+      \amp \amp \vdots\amp \amp \\
+      a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_m
+      \end{bmatrix}
+      </me>
+      Hence the augmented is the coefficient matrix with one column (the constants on the
+      right side of the equations) added. To emphasize the extra column, the augmented
+      matrix is sometimes written as
+      <me>
+      A=\left[\begin{array}{llcl|l}
+      a_{1,1} \amp  a_{1,2} \amp  \cdots \amp  a_{1,n}\amp b_1\\
+      a_{2,1} \amp  a_{2,2} \amp  \cdots \amp  a_{2,n}\amp b_2\\
+      \amp \amp \vdots\amp \amp \\
+      a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_m
+      \end{array}\right]
+      </me></p>
+      
+      <p>Here are some examples of coefficient matrices and augmented matrices:
+      <ul>
+      <li><p>A system of 2 equations in 3 unknowns:
+            <md>
+            <mrow>x-y+z \amp = 1</mrow>
+            <mrow>2x+3y-z \amp = 2</mrow>
+            </md>
+      Coefficient matrix: 
+        <me>
+        \begin{bmatrix}
+        1\amp -1\amp 1\\
+        2\amp 3\amp -1
+        \end{bmatrix}
+        </me>
+      Augmented matrix: 
+        <me>
+        \begin{bmatrix}
+        1\amp -1\amp 1\amp 1\\
+        2\amp 3\amp -1\amp 2
+        \end{bmatrix}
+        </me>
+      </p></li> 
+     
+     <li>
+      <p>A system of 3 equations in 2 unknowns:
+      <md>
+      <mrow>u+v  \amp = 1</mrow>
+      <mrow>2u+v \amp = 3</mrow>
+      <mrow>u+2v \amp =3</mrow>
+      </md>
+      </p>
+      
+      <p>Coefficient matrix: <m>\begin{bmatrix}
+      1\amp 1\\
+      2\amp 1\\
+      1\amp 2
+      \end{bmatrix}</m></p>
+      
+      <p>Augmented matrix: <m>\left[\begin{array}{cc|c}
+      1\amp 1\amp 1\\
+      2\amp 1\amp 3\\
+      1\amp 2\amp 3
+      \end{array}\right]</m></p>
+      </li> 
+      
+     <li><p>A system of 4 equations in 5 unknowns
+            <md alignment="alignat">
+            <mrow>x_1 \amp \ +\  \amp x_2 \amp \amp \amp \amp \amp \amp \amp \ =\ 1</mrow>
+            <mrow>\amp \amp x_2 \amp \ +\ \amp x_3 \amp \amp \amp \amp \amp  \ =\ 2</mrow>
+            <mrow>\amp \amp \amp \amp x_3 \amp \ +\ \amp x_4 \amp \amp \amp  \ =\ 3</mrow>
+            <mrow>\amp \amp \amp \amp \amp \amp x_4 \amp \ +\ \amp x_5 \amp  \ =\ 4</mrow>
+            </md>
+            </p> 
+      <p>Coefficient matrix: 
+         <m>\begin{bmatrix}
+            \begin{array}{rrrrr}
+                1\amp 1\amp 0\amp 0\amp 0\\
+                0\amp 1\amp 1\amp 0\amp 0\\
+                0\amp 0\amp 1\amp 1\amp 0\\
+                0\amp 0\amp 0\amp 1\amp 1
+            \end{array}
+            \end{bmatrix}
+         </m>
+      </p>
+      
+      <p>Augmented matrix: <m>\left[\begin{array}{ccccc|c}
+      1\amp 1\amp 0\amp 0\amp 0\amp 1\\
+      0\amp 1\amp 1\amp 0\amp 0\amp 2\\
+      0\amp 0\amp 1\amp 1\amp 0\amp 3\\
+      0\amp 0\amp 0\amp 1\amp 1\amp 4
+      \end{array}\right]</m></p></li> 
+      </ul>
+    </p>     
+    <exercises> 
+       <exercise>
+       <statement>
+       <p>Which of the following equations are linear?
+       <ol>
+       <li> <p><m>x+y-z^2=0</m></p></li>
+       <li> <p><m>2x+yz=1</m></p></li>
+       <li> <p><m>z=3</m></p></li>
+       <li> <p><m>\pi^2 x-\sqrt[3]{3}y=8\sqrt{5}</m></p></li>
+       <li> <p><m>3x-4y=\frac73 z-5+t</m></p></li>
+       <li> <p><m>\cos{x}=3y+2z</m></p></li>
+       </ol></p>
+       </statement>
+       <solution>
+       <p>
+       <ol>
+       <li><p>Not linear because of <m>z^2</m></p></li>
+       <li><p>Not linear because of <m>yz</m></p></li>
+       <li><p>Linear</p></li>
+       <li><p>Linear (the exponents involve the constants, but not the variables)</p></li>
+       <li><p>Linear (Tricky because variables are on both sides of the equal sign.
+       It is the same as <m>3x-4y-\frac73 z-t =-5 </m>.)</p></li>
+       <li><p>Not linear because of the <m>\cos</m> function</p></li>
+       </ol>
+       </p>
+       </solution>    
+       </exercise>
+
+       <exercise>
+       <statement>
+       <p>Consider the following system of linear equations:
+       <me>
+       2x-4y+z=-1\\
+       3x-3y+z=1
+       </me>
+       Which of the following are solutions to this system
+       <ul>
+       <li><p><m> (x,y,z)=(2,1,-1) </m></p></li>
+       <li><p><m> (x,y,z)=(1,1,1) </m></p></li>
+       <li><p><m> (x,y,z)=(0,0,1) </m></p></li>
+       </ul>
+       </p>
+       </statement>
+       <solution>
+       <p>
+       <ul>
+       <li><p>
+       Substitute <m> (x,y,z)=(2,1,-1) </m> into the equations:
+       <me>
+         2x-4y+z=4-4-1=-1\\
+         3x-3y+z=6-3-1=2 \not=1
+       </me>
+       and so <m>(2,1,-1)</m> is <em>not</em> a solution.
+       </p></li>
+       <li><p> Substitute <m> (x,y,z)=(1,1,1) </m> into the equations:
+       <me>
+         2x-4y+z=2-4+1=-1\\
+         3x-3y+z=3-3+1=1
+       </me>
+       and so <m>(1,1,1)</m> <em>is</em> a solution.
+       </p></li>
+       <li><p> Substitute <m> (x,y,z)=(0,0,1) </m> into the equations:
+       <me>
+         2x-4y+z=0+0+1\not=-1\\
+         3x-3y+z=0+0+1=1
+       </me>
+       and so <m>(0,0,1)</m> is <em>not</em> a solution.
+       </p></li>
+       </ul></p>
+       </solution>
+       </exercise>
+   
+       <exercise>
+       <statement>
+       <p>
+       Give a system of two equations in two unknowns that has <m>(1,2)</m>
+       as its unique solution.
+       </p>
+       </statement>
+       <solution>
+       <p>
+       There are many solutions corresponding to two lines intersecting
+       at <m>(1,2)</m>. Surely the easiest is
+       <md>
+       <mrow>x\amp=1</mrow>
+       <mrow>y\amp=2</mrow>
+       </md>
+       </p>
+       </solution>
+       </exercise>
+   
+       <exercise>
+       <statement>
+           <p>
+           Give the coefficient matrix and the augmented matrix this system of
+           linear equations:
+           <md>
+           <mrow>x+y \amp= 2 </mrow>
+           <mrow>x-y \amp= 0 </mrow>
+           </md>
+           </p>
+       </statement>
+       <solution>
+         <p>
+         <m>
+          \begin{bmatrix}
+          1\amp1\\1\amp-1
+          \end{bmatrix}
+         </m> 
+      and
+      <m>
+         \left[\begin{array}{cc|c}
+         1 \amp 1 \amp 2 \\  1 \amp -1 \amp 0
+         \end{array}\right]
+      </m>
+      </p>
+       </solution>    
+       </exercise>
+   
+       <exercise>
+       <statement>
+           <p>
+           Give the coefficient matrix and the augmented matrix this system of
+           linear equations:
+           <md>
+           <mrow>x_1+x_2-x_3+x_5\amp= 4 </mrow>
+           <mrow>2x_1-3x_2 +x_4\amp= 7 </mrow>
+           </md>
+           </p>
+       </statement>
+       <solution>
+      <p>
+      <m>
+      \begin{bmatrix}
+      1 \amp 1 \amp -1 \amp 0 \amp 1 \\
+      2\amp-3 \amp 0 \amp 1 \amp 0 
+      \end{bmatrix}
+      </m> 
+      and
+      <m>
+      \left[\begin{array}{ccccc|c}
+      1 \amp 1 \amp -1 \amp 0 \amp 1 \amp 4\\
+      2\amp-3 \amp 0 \amp 1 \amp 0 \amp7
+      \end{array}\right]
+      </m>
+      </p>
+       </solution>
+       </exercise>
+   
+       <exercise>
+       <statement>
+           <p>
+           Give the coefficient matrix and the augmented matrix this system of
+           linear equations:
+           <md>
+           <mrow>x+y-z \amp=1</mrow>
+           <mrow>3x+y\amp= 2</mrow>
+           <mrow>y+z \amp=3</mrow>
+           <mrow>x+z\amp=4</mrow>
+           <mrow>x+y+z\amp=5</mrow>
+           </md>
+           </p>
+       </statement>
+       <solution>
+      <p>
+      <m>
+      \begin{bmatrix}
+      1 \amp 1 \amp -1 \\
+      3 \amp 1\amp 0 \\
+      0 \amp 1 \amp 1\\
+      1 \amp 0 \amp 1 \\
+      1 \amp 1 \amp 1
+      \end{bmatrix}
+      </m> 
+      and
+      <m>
+      \left[\begin{array}{ccc|c}
+      1 \amp 1 \amp -1 \amp 1\\
+      3 \amp 1\amp 0 \amp 2\\
+      0 \amp 1 \amp 1\amp 3\\
+      1 \amp 0 \amp 1 \amp 4\\
+      1 \amp 1 \amp 1\amp 5
+      \end{array}\right]
+      </m>
+      </p>
+       </solution>
+       </exercise>
+   
+       <exercise>
+       <statement>
+       <p>
+       Give the system of equations whose augmented matrix is
+       <me>
+      \left[\begin{array}{cc|c}
+      1 \amp 4  \amp 1\\
+      3 \amp -2\amp 0 \\
+      0 \amp 1 \amp 1\\
+      -1 \amp 1 \amp 3
+      \end{array}\right]
+       </me>
+       </p>
+       </statement>
+       <solution>
+       <p>
+       <md>
+       <mrow>x+4y\amp= 1</mrow>
+       <mrow>3x-2y\amp=0</mrow>
+       <mrow>y\amp=1</mrow>
+       <mrow>-x+y\amp=3</mrow>
+       </md>
+       </p>
+       </solution>
+       </exercise>
+   
+   
+       <exercise>
+       <statement>
+       <p>
+       There is a special matrix <m>I_n</m> called the identity
+       matrix. It has <m>n</m> rows and <m>n</m> columns. The entries <m>a_{i,j}</m>
+       of the matrix satisfy
+       <me>
+       a_{i,j}=
+       \begin{cases}
+       1 \amp \text{if } i=j\\
+       0 \amp \text{if } i\not=j\\
+       \end{cases}
+       </me>
+       <ol>
+       <li><p>
+       Show the the matrix <m>I_n</m> has the value <m>1</m> along the (main) diagonal going from the upper
+       left corner to the lower right corner of the matrix, and has the value <m>0</m> elsewhere.
+       </p></li> 
+       <li><p>Suppose that a system of linear equations has an augmented matrix of the form
+       <me>
+       \left[ I_n \mid B \right]
+       </me>
+       where
+       <me>
+       B= \begin{bmatrix}
+       b_1\\b_2\\ \vdots\\b_n
+       \end{bmatrix}
+       </me>
+       What does the say about the number of variables (unknowns)
+       for the corresponding system of linear equations, and
+       what does it say about the solutions to the system?
+       </p>
+       </li>
+       </ol>
+       </p>
+       </statement>
+   
+       <solution>
+       <p>
+       <ol>
+       <li>
+       <p>
+       When <m>i=j</m>, the row number and column number are identical, and so the entry
+       <m>a_{i.j}</m> is on the diagonal. This implies that 
+       <me>
+       a_{i,j}=
+       \begin{cases}
+       1 \amp \text{ for entries on the main diagonal}\\
+       0 \amp \text{ for entries not on the main diagonal} \\
+       \end{cases}
+       </me>
+       </p>
+       </li>
+       <li>
+       <p>
+       The number of unknowns is <m>n</m>, the number of columns in the matrix.
+       We may call them <m>x_1, x_2,\dots,x_n</m>.
+       The augmented matrix now says that
+       <md>
+       <mrow>x_1\amp =b_1</mrow>
+       <mrow>x_2\amp =b_2</mrow>
+       <mrow>\amp \vdots</mrow>
+       <mrow>x_n\amp =b_n</mrow>
+       </md>
+       </p>
+       </li>
+       </ol>
+       </p>
+       </solution>
+       </exercise>
+  
+   </exercises>
+   
+   </subsection>
+   
+</section>
+
+
+<section><title>Elementary row operations</title>
+    <introduction>
+      <p>
+      Gaussian elimination, which we shall describe in detail
+      presently, is an algorithm (a well-defined procedure for computation
+      that eventually completes) that finds all solutions to any <m>m\times n</m> system
+      of linear equations. It is defined via certain operations carried out
+      on the augmented matrix. These operations change the matrix (and hence
+      the system of linear equations associated with it), <em>but they leave the
+      set of solutions unchanged</em>. There are three of them, which we now describe.
+     </p></introduction>
+
+      <subsection><title>First operation: interchanging two rows</title>
+      <p>
+         Exchanging two rows in the augmented matrix is the same as writing the the equations 
+         in a different order. The equations themselves are unchanged, as is the set of all 
+         solutions. When we interchange row <m>i</m> and row <m>j</m>, we denote it by 
+         <m>R_i\leftrightarrow R_j</m>. 
+      </p>
+
+        <example><title>Augmented matrix change (interchange rows)</title>
+        <p>The system of equations
+        <me>
+        \begin{array}{rl}
+        2x+3y-z \amp = 2\\
+        -x+y+z \amp =4\\
+        3x-y-z \amp = 3
+        \end{array}
+        </me> 
+        corresponds to the augmented matrix
+        <me>
+        \left[\begin{array}{ccc|c}
+        2 \amp 3 \amp -1 \amp 2\\
+        -1 \amp 1 \amp 1 \amp 4\\
+        3 \amp -1 \amp -1 \amp 3
+        \end{array}\right]
+        </me>
+        Now we interchange rows 1 and 3 (<m>R_1\leftrightarrow R_3</m>) to get
+        the matrix
+        <me>
+        \left[\begin{array}{ccc|c}
+        3 \amp -1 \amp -1 \amp 3\\
+        -1 \amp 1 \amp 1 \amp 4\\
+        2 \amp 3 \amp -1 \amp 2
+        \end{array}\right]
+        </me>
+        which corresponds to the equations
+        <me>
+        \begin{array}{rl}
+        3x-y-z \amp = 3\\
+        -x+y+z \amp =4\\
+        2x+3y-z \amp = 2
+        \end{array}
+        </me>
+        </p>
+        </example>
+
+      </subsection>
+      
+      <subsection><title>Second operation: multiplying a row by a nonzero constant</title>
+       <p>
+       If we have a linear equation and multiply both sides of the equation by a nonzero
+        constant <m>\lambda</m>, (The symbol <m>\lambda</m> is the Greek letter lambda; it
+        is the traditional name for this constant.) then the linear equation
+        <me>
+        a_1x_1 + a_2x_2 +a_3x_3 + \cdots + a_nx_n =b
+        </me>
+        becomes
+        <me>
+        \lambda(a_1x_1 + a_2x_2 +a_3x_3 + \cdots + a_nx_n) =\lambda b
+        </me>
+        and so
+        <me> \lambda a_1x_1 + \lambda a_2x_2 +\lambda a_3x_3 + \cdots +\lambda a_nx_n =\lambda b.
+        </me>
+        This would apply to any equation in a system, of course, 
+        and so when we apply this operation to row <m>i</m> we denote it by 
+        <m>R_i \gets \lambda R_i</m> (The symbol <m>\gets</m> means <em>is replaced by</em>). 
+        <em>As long as <m>\lambda</m> is nonzero</em>, 
+        this operation leaves the set of solutions unchanged.
+        </p>
+
+        <example><title>Augmented matrix change (multiply row by <m>\lambda</m>)</title>
+        <p>The system of equations
+        <me>
+        \begin{array}{rl}
+        2x+3y-z \amp = 2\\
+        -x+y+z \amp =4\\
+        3x-y-z \amp = 3
+        \end{array}
+        </me> 
+        corresponds to the augmented matrix
+        <me>
+        \begin{bmatrix}
+        2 \amp 3 \amp -1 \amp 2\\
+        -1 \amp 1 \amp 1 \amp 4\\
+        3 \amp -1 \amp -1 \amp 3
+        \end{bmatrix}
+        </me>
+        Now we multiply row <m>2</m> by <m>\lambda=-3</m> (<m>R_2\gets -3R_2</m>) to get
+        the matrix
+        <me>
+        \begin{bmatrix}
+        2 \amp 3 \amp -1 \amp 2\\
+        3 \amp -3 \amp -3 \amp -12\\
+        3 \amp -1 \amp -1 \amp 3
+        \end{bmatrix}
+        </me>
+        which corresponds to the system of equations
+        <me>
+        \begin{array}{rl}
+        2x+3y-z \amp = 2\\
+        3x-3y-3z \amp =-12\\
+        3x-y-z \amp = 3
+        \end{array}
+        </me>
+        </p>
+        </example>
+      
+      </subsection>
+
+      <subsection><title>Third operation: adding a multiple of one row to another</title>
+        <p>Recall that one of our basic techniques for solving a
+        system of equations is to pick a variable,
+        make the coefficients of that variable equal in two equations
+        and then take the difference of the equations
+        to create a new one with that variable eliminated. In terms of
+        the associated augmented matrix, this means we get a new row
+        formed by subtracting the corresponding entries in the rows of
+        the two equations.  In other words, we replace one row by the
+        difference of two rows. We use the notation <m>R_i\gets R_i-R_j</m>
+        to indicate that row <m>i</m> is replaced by the difference of
+        row <m>i</m> and row <m>j</m>.  The set of solutions is unchanged. We
+        have already seen that multiplying a row by a nonzero constants
+        leaves the set of solutions unchanged; it is often convenient to
+        combine these two steps as one: <m>R_i\gets R_i+\lambda R_j.</m>
+        Note that <m>\lambda=-1</m> is the case of subtracting one row
+        from another.</p>
+
+        <example><title>Augmented matrix change (add multiple of one
+        row to another)</title> 
+        <p>Eliminating <m>x</m> from the second
+        equation: 
+        <me> 
+        \begin{array}{rl}
+        -x+y+z \amp =4\\
+        2x+3y-z \amp = 2\\
+        3x-y-z \amp = 3
+        \end{array}
+        </me> 
+        corresponds to the
+        augmented matrix 
+        <me> 
+        \begin{bmatrix} 
+        -1 \amp 1 \amp 1 \amp 4\\
+        2 \amp 3 \amp -1 \amp 2\\ 
+        3 \amp -1 \amp -1 \amp 3 
+        \end{bmatrix}
+        </me> 
+        Now we replace row 2 by the sum of row 2 and twice row 1
+        <m>(R_2\gets R_2+2R_1)</m> to get the matrix 
+        <me> 
+        \begin{bmatrix}
+        -1 \amp 1 \amp 1 \amp 4\\ 
+        0 \amp 5 \amp 1 \amp 10\\ 
+        3 \amp -1 \amp -1 \amp 3 
+        \end{bmatrix} 
+        </me> 
+        which corresponds to the system of linear equations 
+        <me> 
+        \begin{array}{rl} -
+        x+y+z
+        \amp =4\\ 
+        5y+z \amp =10\\ 
+        3x-y-z \amp = 3 
+        \end{array} 
+        </me>
+        </p> 
+        </example>
+      </subsection>
+
+      <subsection><title>Summary of the three elementary row operations</title>
+        <p> In summary, here is a table of the three elementary row
+        operations: 
+        </p>
+
+        <table xml:id="TableOfElemantaryRowOperations">
+        <title>Elementary Row Operations</title>
+        <tabular bottom="minor" top="minor" left="minor" right="minor" halign="center">
+        <row>
+            <cell><em>Elementary Operation</em></cell>
+            <cell><em>Notation</em></cell>
+        </row>
+        <row>
+            <cell>Interchange rows</cell>
+            <cell><m>R_i\leftrightarrow R_j</m></cell>
+        </row>
+        <row>
+            <cell>Multiply row by a nonzero constant</cell>
+            <cell><m>R_i\gets\lambda R_i</m>, <m>\lambda\not=0</m></cell>
+        </row>
+        <row>
+            <cell>Add multiple of one row to another</cell>
+            <cell><m>R_i\gets R_i+\lambda R_j</m></cell>
+        </row>
+        </tabular>
+        </table>
+        
+        <p>
+        Each operation changes
+        the matrix and the associated system of linear equations, but
+        it leaves the set of solutions unchanged.  </p>
+      </subsection>
+
+      <subsection><title>Changing a specific entry of a matrix using elementary row
+      operations</title>
+
+      <p>
+      We want to show that it is possible to change specific entries
+      in a matrix in an advantageous way using elementary row 
+      operations. Specifically, we will show two things:
+      <ul>
+      <li><p> Any <m>a_{i,k}\not=0</m> may be changed to <m>1</m> with one elementary row
+         operation. </p>
+      </li>
+      <li>
+        <p>If <m>a_{i,k}\not=0</m>, then any other entry in the same column
+        may be changed to <m>0</m> with one elementary row operation.
+        </p>
+      </li>
+      </ul>
+      </p>
+
+      <theorem xml:id="ChangeTo01"><title>Change a matrix entry to <m>0</m> or <m>1</m> 
+      with elementary row operations</title>
+      <statement>
+      <p>
+      <ol>
+      <li>
+        <p>If a matrix has an entry <m>a_{i,k}\not=0</m>, then, with one elementary
+        row operation, it may be changed to <m>1</m>.</p>
+      </li>
+      <li>
+        <p>If some column <m>k</m> of a matrix has two non-zero entries
+        <m>a_{i,k}</m> and <m>a_{j,k}</m> then, with one elementary row
+        operation, (either) one of them 
+        may be changed to <m>0</m>. </p>
+      </li>
+      </ol>
+      </p>
+      </statement>
+      <proof>
+    <p>
+    <ol>
+      <li>
+      <p>If a matrix has an entry <m>a_{i,k}\not=0</m>, then multiply
+      the row <m>R_i</m> by <m>\frac 1{a_{i,k}}</m>, that is, carry out
+      the elementary row operation <m>R_i\gets \frac 1{a_{i,k}}R_i</m>.
+      In the resulting matrix, the <m>i</m>-<m>k</m> entry is
+      <m>\frac {a_{i,k}}{a_{i,k}}=1</m>.
+      </p>
+      </li>
+      <li>
+      <p>Suppose a matrix has two non-zero entries <m>a_{i,k}</m> and <m>a_{j,k}</m>.
+      First, do the elementary row operation 
+      <m>R_i\gets \frac 1{a_{i,k}}R_i</m> to change <m>a_{i,k}</m> to <m>1</m>.
+      Then, do the elementary row operation 
+      <m>R_j\gets R_j-a_{j,k}R_i</m>. The matrix  now has a new value
+      in the <m>j</m>-<m>k</m> position which is <m>a_{j,k}-a_{j,k}=0</m>, and we
+      have accomplished our goal using two elementary operations.
+      Now we note that these two operations can be carried out with
+      the single operation 
+      <m>
+      R_j\gets R_j-\frac {a_{j,k}}{a_{i,k}}R_i
+      </m>.
+      </p>
+      </li>
+      </ol>
+      </p>
+      </proof>
+      </theorem>
+
+   <exercises>
+   <exercisegroup>
+   <introduction>
+   <p>
+   For these exercises, let
+   <m>A=
+   \begin{bmatrix}
+   1\amp2\amp3\amp4\\  5\amp6\amp7\amp-6\\ -5\amp-4\amp-3\amp-2
+   \end{bmatrix}
+   </m>.
+   </p>
+   </introduction>
+   <exercise>
+   <statement>
+   <p>Find the elementary row operation that
+   <ul>
+   <li><p>changes the <m>2</m> in the first row to a <m>1</m></p></li>
+   <li><p>changes the <m>7</m> in the second row to a <m>1</m></p></li>
+   <li><p>changes the <m>-4</m> in the third row to a <m>1</m></p></li>
+   </ul>
+   In each case give the matrix that results from the 
+   application of your elementary row operation.</p>
+   </statement>
+   <solution>
+   
+   <p>
+   <ul>
+   <li><m>R_1\gets \frac12 R_1\colon
+   \begin{bmatrix}
+   \frac12\amp1\amp\frac32\amp\frac12\\  5\amp6\amp7\amp-6\\ -5\amp-4\amp-3\amp-2
+   \end{bmatrix}</m>
+   </li>
+   <li><m>R_2\gets \frac17 R_2\colon
+   \begin{bmatrix}
+   1\amp2\amp3\amp4\\  \frac57\amp\frac67\amp1\amp-\frac67\\ -5\amp-4\amp-3\amp-2
+   \end{bmatrix}
+   </m>
+   </li>
+   <li><m>R_3\gets -\frac14 R_3\colon
+   \begin{bmatrix}
+   1\amp2\amp3\amp4\\  5\amp6\amp7\amp-6\\ \frac54\amp1\amp\frac34\amp\frac12
+   \end{bmatrix}</m>
+   </li>
+   </ul>
+   </p>
+   </solution>
+   </exercise>
+   
+   <exercise>
+   <statement>
+   <p>Find an elementary row operation that
+   <ul>
+       <li>changes the <m>5</m> in the second row to a <m>0</m></li>
+       <li>changes the <m>6</m> in the second row to a <m>0</m></li>
+       <li>changes the <m>-4</m> in the third row to a <m>0</m></li>
+       <li>changes the <m>7</m> in the second row to a <m>0</m></li>
+   </ul>
+   In each case give the matrix that results from the 
+   application of your elementary row operation.</p>
+   </statement>
+   <solution>
+   <p>
+   <ul>
+       <li><m>R_2\gets R_2+R_3\colon
+       \begin{bmatrix}
+       1\amp2\amp3\amp4\\  0\amp2\amp4\amp-8\\ -5\amp-4\amp-3\amp-2
+       \end{bmatrix}</m>
+       </li>
+   
+       <li><m>R_2\gets R_2-3R_1\colon
+       \begin{bmatrix}
+       1\amp2\amp3\amp4\\  2\amp0\amp-2\amp-18\\ -5\amp-4\amp-3\amp-2
+       \end{bmatrix}</m>
+       </li>
+   
+       <li><m>R_3\gets R_3+2R_1\colon
+       \begin{bmatrix}
+       1\amp2\amp3\amp4\\  5\amp6\amp7\amp-6\\ -3\amp0\amp3\amp6
+       \end{bmatrix}</m>
+       </li>
+   
+       <li><m>R_2\gets R_2-\frac73 R_1\colon
+       \begin{bmatrix}
+       1\amp2\amp3\amp4\\  \frac83\amp\frac43\amp0\amp-\frac{46}3\\ -5\amp-4\amp-3\amp-2
+       \end{bmatrix}</m>
+       </li>
+   </ul>
+   </p>
+   </solution>
+   </exercise>
+   
+    <exercise>
+    <statement>
+    <p>Use two elementary rwo operations to make the first column
+    of the resulting matrix
+    <m>
+    \begin{bmatrix}
+    1\\0\\0
+    \end{bmatrix}
+    </m></p>
+    </statement>
+    <solution>
+    <p><m>R_2\gets R_2-5R_1</m> and  <m>R_3\gets R_3+5R_1</m> give
+    <me>
+    \begin{bmatrix}
+    1\amp2\amp3\amp4\\
+    0\amp-4\amp-8\amp-26\\
+    0\amp6\amp12\amp18
+    \end{bmatrix}
+    </me>
+    </p>
+    </solution>
+    </exercise>
+
+   </exercisegroup>
+   </exercises>
+
+   </subsection>
+
+   </section>
+
+    
+    <section><title>The Gaussian elimination algorithm</title>
+    
+        <subsection><title> Some matrices whose associated system of equations
+        are easy to solve</title>
+        <p>The elementary row operations allow us to change matrices
+        and their associated system of linear equations without
+        changing the solutions of those equations. The goal is
+        to end up with matrices which make these common solutions
+        obvious.  Here are some examples.
+
+        <ul> <li><p>The augmented matrix 
+        <me>
+        \left[\begin{array}{cccc|c} 
+        1\amp 0\amp 0\amp 0\amp 1\\ 
+        0\amp 1\amp 0\amp 0\amp 2\\
+        0\amp 0\amp 1\amp 0\amp 5\\ 
+        0\amp 0\amp 0\amp 1\amp -1 
+        \end{array}\right] 
+        </me> 
+        corresponds to the system of linear equations 
+        <me>\begin{array}{cccccc} 
+        x_1\amp
+        \amp \amp \amp =\amp 1\\ 
+        \amp x_2\amp \amp \amp =\amp 2\\ 
+        \amp \amp x_3\amp \amp =\amp 5\\ 
+        \amp \amp \amp x_4\amp =\amp -1
+        \end{array} </me> 
+        The equations themselves actually describe
+        the unique solution! Notice the structure of the coefficient
+        matrix that makes this possible. There is only one nonzero
+        entry in each row, its value is 1, and as you proceed down
+        through from one row to the next, the nonzero entry moves
+        one column to the right.</p></li>
+
+        <li><p> The augmented matrix 
+        <me> 
+        \left[\begin{array}{cc|c}
+        1\amp 1\amp 4\\ 0\amp 2\amp 6 
+        \end{array}\right]
+        </me> 
+        corresponds to the system of linear equations
+        <me>
+        \begin{array}{rcc}
+        x_1+x_2\amp =\amp 4\\ 
+        2x_2\amp =\amp 6   
+        \end{array} 
+        </me> 
+        The last row is easy to solve:
+        we get <m>x_2=3</m>. Using this value, it is also easy to solve
+        <m>x_1+x_2=x_1+3=4</m>, or <m>x_1=1</m>.  </p></li>
+
+       <li><p>
+        The augmented matrix <me> \left[\begin{array}{ccc|c} 1\amp
+        1\amp 1\amp 4\\ 0\amp 0\amp 2\amp 6 \end{array}\right]
+        </me> corresponds to the system of linear equations <me>
+        \begin{array}{rcc} x_1+x_2+x_3\amp =\amp 4\\ 2x_3\amp =\amp 6
+        \end{array} </me> As before, we get <m>x_3=3</m>. We still have two
+        variables undefined: we assign a parameter to the second one:
+        <m>x_2=t</m>. Using this value, we have <m>x_1+x_2+x_3=x_1+t+3=4</m>,
+        or <m>x_1=1-t</m>. We now know the solutions: <m>x_1=1-t</m>, <m>x_2=t</m>,
+        <m>x_3=3</m> where <m>t</m> can be any real number. 
+        In fact we can check this result with the first
+        equation: <m>x_1+x_2+x_3=(1-t) + t + 3=4</m>. The compact way
+        of writing this solution is <m>(x_1,x_2,x_3)=(1-t,t,3)</m>.
+        </p></li> </ul>
+
+         It's clear from the examples given that having lots of
+        zeros in the coefficient matrix is helpful for computing the
+        solutions. It's also clear that 
+        if the first nonzero entry in a row is one, then
+        the computation easier. Our plan is to use elementary row
+        operations to change a given coefficient matrix into one with
+        these properties, and then to describe all the solutions.
+        Here are some observations that will help us:
+        <ol>
+       <li><p>If a column has some nonzero entry, we can always 
+           make the top entry nonzero by interchanging rows, if
+            necessary using <m>R_1\leftrightarrow R_i</m>
+            for some <m>i>1</m>.</p></li> 
+        <li><p>If the first nonzero entry of
+            a row <m>R_i</m> is <m>\lambda</m>, we can turn it into a 1 by using
+            <m>R_i\leftarrow \tfrac 1\lambda R_i</m>.</p></li> 
+        <li><p> If two rows <m>R_i</m> and <m>R_j</m> have nonzero entries 
+            in some column <m>k</m>, we can turn the <m>j,k</m> entry into 
+            a zero using <m>R_j \leftarrow R_j - \frac{a_{j,k}}{a_{i,k}} R_i</m>.
+            </p></li> 
+        </ol></p> 
+
+       </subsection>
+
+
+       <subsection><title>Row echelon form</title>
+       <p>
+        We now want to define a general class of matrices whose
+        corresponding system of linear equations have solutions
+        that are easy to find. These matrices have a special pattern
+        of zeros and ones, and are said to be in
+        <em>row echelon form.</em>
+        </p>
+
+        
+        <figure>
+        <caption>A matrix in row echelon form</caption>
+        <image source="images/gausselim.png" width="50%">
+        </image>
+        </figure>
+        
+        <p>
+        The matrix above gives an idea of what we want.
+        Notice the staircase line drawn through the matrix
+        has all entries below it equal to zero.
+        The entries marked with a <m>*</m> can take on any value.
+        </p>
+        <p>
+        The first nonzero entry in a row (if there is one)
+        is called the <em>leading entry.</em>
+        If it equals <m>1</m>, then it is called a <em>leading one.</em>
+        </p>
+        
+        <definition><title>Row echelon form</title>
+        <statement>
+        <p>A matrix is in <term> row echelon form</term> if
+        <ul>
+        <li><p>Every leading entry is a leading one. </p></li>
+        <li><p>Every entry below a leading one is <m>0</m>. </p></li>
+        <li><p>As you go down the matrix, the leading ones move to the right.</p></li>
+        <li><p>Any all zero rows are at the bottom.</p></li>
+        </ul></p>
+        </statement>
+        </definition>
+        
+        <exercise>
+        <statement>
+        <p>Which of the following matrices are in row echelon form?
+        <ul>
+       
+        <li><p><m>
+        \begin{bmatrix}
+        1\amp2\amp3\amp4\\
+        0\amp5\amp6\amp7\\
+        0\amp0\amp8\amp9\\
+        0\amp0\amp0\amp10
+        \end{bmatrix}
+        </m></p></li>
+        
+        <li><p><m>
+        \begin{bmatrix}
+        1\amp2\amp3\amp4\\
+        0\amp1\amp2\amp3\\
+        0\amp0\amp0\amp0\\
+        0\amp0\amp0\amp1
+        \end{bmatrix}
+        </m></p></li>
+        
+        <li><p><m>
+        \begin{bmatrix}
+        1\amp2\amp3\amp4\\
+        0\amp1\amp2\amp3\\
+        0\amp0\amp0\amp1\\
+        0\amp0\amp0\amp0
+        \end{bmatrix}
+        </m></p></li>
+        
+        <li><p><m>
+        \begin{bmatrix}
+        1\amp2\amp3\amp4\\
+        0\amp1\amp6\amp7\\
+        0\amp0\amp1\amp1\\
+        0\amp0\amp1\amp1
+        \end{bmatrix}
+        </m></p></li>
+        
+        <li><p><m>
+        \begin{bmatrix}
+        1\amp0\amp0\amp0\\
+        0\amp0\amp0\amp0\\
+        0\amp0\amp0\amp0\\
+        0\amp0\amp0\amp0
+        \end{bmatrix}
+        </m></p></li>
+        
+        
+        </ul></p>
+        </statement>
+        <solution>
+        <p>
+        <ul>
+        <li><p>Not in row echelon form because not every leading entry is a <m>1</m>. </p></li>
+        <li><p>Not in row echelon form because the zero row is not at the bottom. </p></li>
+        <li><p>It is row echelon form.</p></li>
+        <li><p>Not row echelon form because a leading entry has a 
+        nonzero entry below it.</p></li>
+        <li><p>It is row echelon form.</p></li>
+        </ul></p>
+        </solution>
+        </exercise>
+
+        </subsection>
+    
+        <subsection><title>The Gaussian elimination algorithm </title> 
+         <p>The plan is now start with the augmented matrix and, by using
+         a sequence of elementary row operations, change it to a
+         new matrix where it is easy to identify the solutions of
+         the associated system of linear
+        equations. Since any elementary row operation leaves the
+        solutions unchanged, the solutions to the final system of
+        linear equations will be identical to the solutions of the
+        original one. </p>
+
+        <p>We work on the columns of the matrix from left to
+        right and change the matrix in the following way:
+        <ol> 
+        <li><p>Start with the first column. If it has all
+        entries equal to zero, move on to the next column to the
+        right.
+        </p></li> 
+        <li><p>If the column has nonzero entries,
+        interchange rows, if necessary, to get a nonzero entry on
+        top.
+        </p></li> 
+        <li>
+        <p>
+        Change the top entry, if necessary, to make it a <m>1</m>.
+        </p>
+        </li>
+        <li><p>For any nonzero entry below the top one,
+        use an elementary row operation to change it to zero.
+        </p></li>
+        <li><p>Now consider the part of the matrix below the top
+        row and to the right of the column under consideration: if
+        there are no such rows or columns, stop since the procedure
+        is finished.Otherwise, carry out the same procedure on the
+        new matrix.
+        </p></li> 
+        </ol></p> 
+        
+        <p>Here is a first example:
+        <me>
+        \begin{array}{r}
+        3x_1-2x_2-x_3+x_4=1\\
+        6x_1-8x_2+x_3+2x_4=4
+        \end{array}
+        </me>
+        has augmented matrix
+        <me>
+        \begin{bmatrix}
+        3 \amp  -2 \amp  -1 \amp 1 \amp 1 \\
+        6 \amp  -8 \amp  1 \amp  2 \amp  4
+        \end{bmatrix}.
+       </me>
+       We don't need to exchange rows to make the top entry of the
+       first column nonzero, so we proceed to make the top entry <m>1</m> using
+       the elementary row operation
+       <m>R_1\gets \frac13R_1</m>. The matrix becomes
+        <me>
+        \begin{bmatrix}
+        1 \amp  -\frac23 \amp  -\frac13 \amp \frac13 \amp \frac13 \\
+        6 \amp  -8 \amp  1 \amp  2 \amp  4
+        \end{bmatrix}.
+       </me>
+
+
+       Now we must make all entries below the top
+       one in the column equal to zero. There is, of course, only one such entry,
+       and so,  using <m>R_2\leftarrow R_2-6R_1</m>, we get
+       <me>
+       \begin{bmatrix}
+        1 \amp  -\frac23 \amp  -\frac13 \amp \frac13 \amp \frac13 \\
+        0 \amp  -4 \amp  3 \amp  0 \amp  2
+       \end{bmatrix}
+       </me>.
+
+       We're now done with the first column, so we 
+       continue with the same procedure on the matrix obtained by deleting the first
+       row and first column:
+
+       <me>
+       \begin{bmatrix}
+         -4 \amp  3 \amp  0 \amp  2
+       \end{bmatrix}.
+       </me>
+
+       Since there is only one row, we need only change the top entry to <m>1</m>
+       using division by <m>-4</m>, that is, <m>R_1\gets -\frac14R_1</m>. We then get
+       <me>
+       \begin{bmatrix}
+         1 \amp  -\frac34 \amp  0 \amp  -\frac12
+       \end{bmatrix}.
+       </me>
+       and, putting it back into the original matrix, we get
+       <me>
+       \begin{bmatrix}
+        1 \amp  -\frac23 \amp  -\frac13 \amp \frac13 \amp \frac13 \\
+          0 \amp  1 \amp  -\frac34 \amp  0 \amp  -\frac12
+      \end{bmatrix}
+      </me></p>
+    
+      <p>The matrix is in row echelon form. Now we can determine all of the solutions
+      to the original system of linear equations. 
+      The first nonzero
+      entry in the first row is in the first column, the column associated
+      with <m>x_1</m>. The first nonzero entry in the second row, similarly, is
+      associated with <m>x_2</m>. We assign parameters to the other variables:
+      <m>x_3=s</m> and <m>x_4=t</m>. The second row then tells us that
+      <m>x_2-\frac34s =-\frac12 </m>, or <m>x_2=\frac34s-\frac12</m>. Now
+      that we know <m>x_2</m>, we can use the first row to find <m>x_1</m>: we get
+      <m>x_1-\frac23x_2-\frac13s+\frac13t=\frac13</m>. We substitute in our known
+      value for <m>x_2</m> into this equation, and after some
+      simplification, we get <m>x_1=\tfrac56s-\tfrac13t</m>.  In summary, we have:
+      All solutions to
+      <me>
+      \begin{array}{r}
+      3x_1-2x_2-x_3+x_4=1\\
+      6x_1-8x_2+x_3+2x_4=4
+      \end{array}
+      </me>
+      are of the form
+      <me>
+      \begin{array}{rcl}
+      x_1\amp =\amp \tfrac56s-\tfrac13t\\
+      x_2\amp =\amp -\tfrac12 +\tfrac34 s\\
+      x_3\amp =\amp s\\
+      x_4\amp =\amp t
+      \end{array}
+      </me>
+      where <m>s</m> and <m>t</m> are any real numbers. 
+      More compactly, we write this as
+      <m>(x_1,x_2,x_3,x_4)= \tfrac56s-\tfrac13t,-\tfrac12 +\tfrac34 s,s,t)</m>.
+      In other words, for any assignment of real numbers to
+      <m>s</m> and <m>t</m>, we get a solution to the system of linear equations.</p>
+      
+      <p>It is easy (and worthwhile) to check that substituting <m>x_1,\dots,x_4</m>
+      into the two equations does indeed give a solution.</p>
+    
+      <!-- continue here -->
+      <p>Now consider another example with the equations
+      <md alignment="alignat">
+      <mrow>x_1  \amp {}+2x_2   \amp{}-2x_3  \amp{}= \amp{}-1</mrow>
+      <mrow>3x_1 \amp {}-  2x_2 \amp{}-4x_3  \amp{}= \amp{}3</mrow>
+      <mrow>4x_1 \amp           \amp{}-2x_3 \amp{}= \amp{}-2</mrow>
+      <mrow>-x_1 \amp {}-x_2    \amp{}+2x_3  \amp{}= \amp{}0</mrow>
+      </md>
+      and its corresponding augmented matrix as it is changed 
+      by Gaussian elimination:
+      <me>
+      \begin{bmatrix}
+      1\amp 2\amp -2\amp -1 \\
+      3\amp -2\amp -4\amp 3\\
+      4\amp 0\amp -2\amp -2\\
+      -1\amp -1\amp 2\amp 0
+      \end{bmatrix}
+      \begin{array}{c}
+      \\R_2 \leftarrow R_2-3R_1\\ R_3\gets R_3-4R_1\\ R_4\gets R_4+R_1
+      \end{array}
+      </me>
+      <me>\begin{bmatrix}
+      1\amp 2\amp -2\amp -1 \\
+      0\amp -8\amp 2\amp 6\\
+      0\amp -8\amp 6\amp 2\\
+      0\amp 1\amp 0\amp -1
+      \end{bmatrix}
+      \begin{array}{c}
+      R_2\gets-\frac18 R_2\\ R_3\gets R_3+8R_2\\R_4\gets R_4-R_2
+      \end{array}
+      </me>
+      <me>
+      \begin{bmatrix}
+      1\amp 2\amp -2\amp -1 \\
+      0\amp 1\amp -\frac14\amp -\frac34\\
+      0\amp 0\amp 4\amp -4\\
+      0\amp 0\amp \tfrac14 \amp -\tfrac14
+      \end{bmatrix}
+      \begin{array}{c}
+       R_3 \gets \frac14 R_3\\R_4\gets R_4-\frac14 R_3
+      \end{array}
+      </me>
+      <me>
+      \begin{bmatrix}
+      1\amp 2\amp -2\amp -1 \\
+      0\amp 1\amp -\frac14\amp -\frac34\\
+      0\amp 0\amp 1\amp -1\\
+      0\amp 0\amp 0\amp 0
+      \end{bmatrix}
+      </me>
+      The last row, for any choice of <m>x_1, x_2, x_3</m>, reduces to
+      <m>0=0,</m> so any solution of the associated first three equations 
+      will also be a solution to the last one. In other words, 
+      the last row of the matrix has no effect
+      on the solution set and may be dropped from the matrix. The third row gives
+      <m>x_3=-1.</m> The second row gives <m>x_2=-1</m> 
+      and the first row gives <m>x_1=-1.</m>
+      Hence there is one solution: <m>(x_1,x_2,x_3)=(-1,-1,-1).</m>
+      </p>
+    
+      <p>
+      Now change the equations from the last example very slightly 
+      (the right-hand side of the last equation is changed from <m>0</m> to <m>1</m>):
+      <md alignment="alignat">
+      <mrow>x_1  \amp {}+2x_2   \amp{}-2x_3  \amp{}= \amp{}-1</mrow>
+      <mrow>3x_1 \amp {}-  2x_2 \amp{}-4x_3  \amp{}= \amp{}3</mrow>
+      <mrow>4x_1 \amp           \amp{}-2x_3 \amp{}= \amp{}-2</mrow>
+      <mrow>-x_1 \amp {}-x_2    \amp{}+2x_3  \amp{}= \amp{}1</mrow>
+      </md>
+      The Gaussian elimination is almost identical as
+      <me>
+      \begin{bmatrix}
+      1\amp 2\amp -2\amp -1 \\
+      3\amp -2\amp -4\amp 3\\
+      4\amp 0\amp -2\amp -2\\
+      -1\amp -1\amp 2\amp 1
+      \end{bmatrix}
+      </me>
+      is reduced to
+      <me>
+      \begin{bmatrix}
+      1\amp 2\amp -2\amp -1 \\
+      0\amp 1\amp -\frac14\amp -\frac34\\
+      0\amp 0\amp 1\amp -1\\
+      0\amp 0\amp 0\amp 1
+
+      \end{bmatrix}
+      </me>
+      </p>
+    
+      <p>Now the last row says <m>0x_1+0x_2+0x_3=1</m>, which, for any choice of
+      <m>x_1</m>, <m>x_2</m> and <m>x_3</m>, reduces to <m>0=1</m>
+      and is never true. This means the original system of equations
+      have no solutions, that is, the system is inconsistent.
+      </p>
+    
+      <p>We can make a useful observation here: 
+      If a row of the augmented matrix is of the form
+      <me>
+      \begin{bmatrix}
+      0 \amp 0 \amp 0 \amp \cdots \amp 0 \amp *
+      \end{bmatrix}
+      </me>
+      where <m>*</m> is either zero or nonzero, then one of two things happens:
+      <ol>
+      <li><p><m>*=0</m> in which case the row may be dropped from the matrix</p></li>
+      <li><p><m>*\not=0</m> in which case there is no solution.</p></li>
+      </ol>
+      </p>
+    
+      <example>
+      <p>Consider the system of linear equations:
+      <me>
+      \begin{array}{rcl}
+      x+y+z\amp =\amp  1\\
+      2x+y+z \amp =\amp  2\\
+      3x+ay+bz\amp =\amp c
+      \end{array}
+      </me>
+      We wish to know the values of <m>a,</m> <m>b</m> and <m>c</m> for which there 
+      are there no solutions, one solution or more than one solution.
+      To solve this problem, we apply Gaussian elimination to the augmented matrix: 
+      
+      <me>
+      \begin{bmatrix} 
+        1\amp 1\amp 1\amp 1\\
+        2\amp 1\amp 1\amp 2\\
+        3\amp a\amp b\amp c 
+      \end{bmatrix}
+      \begin{matrix}R_2\gets R_2-2R_1\\ R_3\gets R_3-3 R_1\end{matrix}
+      </me> 
+      <me>
+      \begin{bmatrix} 1\amp 1\amp 1\amp 1\\0\amp -1\amp -1\amp 0\\0\amp a-3\amp b-3\amp c-3 \end{bmatrix}
+      \begin{matrix}R_2\gets -R_2\\R_3\gets R_3-(a-3)R_2\end{matrix}
+      </me>
+      <me>
+      \begin{bmatrix} 1\amp 1\amp 1\amp 1\\0\amp 1\amp 1\amp 0\\0\amp 0\amp b-a\amp c-3 \end{bmatrix}
+      </me>
+
+      An analysis of the last row tells us everything: If <m>b-a\not=0,</m>
+      then there is exactly one solution. If <m>b-a=0,</m> and <m>c-3\not=0,</m> 
+      then there are no solutions. Otherwise (when
+      <m>b=a</m> and <m>c=3</m>) there are an infinite number of solutions. 
+      </p>
+      </example>
+
+      <exercises>
+      <exercise>
+      <statement>
+      <p>
+        Find all solutions to the system of equations
+        <md>
+        <mrow>x+2y-z \amp=2</mrow>
+        <mrow>x+y-z\amp=0</mrow>
+        <mrow>2x-y+z\amp=3</mrow>
+        </md>
+      </p>
+      </statement>
+      <solution>
+      <p>We put the augemented matrix into row echelon form:
+        <me>
+        \begin{bmatrix}
+        1 \amp 2 \amp -1 \amp 2\\
+        1 \amp 1 \amp -1 \amp 0\\
+        2 \amp -1 \amp 1 \amp 3\\
+        \end{bmatrix}
+        \\
+        \begin{array}{l}
+        R_2\gets R_2 - R_1\\
+        R_3\gets R_3-2R_1
+        \end{array}
+        \\
+        \begin{bmatrix}
+        1 \amp 2 \amp -1 \amp 2\\
+        0 \amp -1 \amp 0 \amp -2\\
+        0 \amp -5 \amp 3 \amp -1\\
+        \end{bmatrix}
+        \\
+        \begin{array}{l}
+        R_2\gets -R_2\\
+        \end{array}
+        \\
+        \begin{bmatrix}
+        1 \amp 2 \amp -1 \amp 2\\
+        0 \amp 1 \amp 0 \amp 2\\
+        0 \amp -5 \amp 3 \amp -1\\
+        \end{bmatrix}
+        \\
+        R_3\gets R_3+5R_2
+        \\
+        \begin{bmatrix}
+        1 \amp 2 \amp -1 \amp 2\\
+        0 \amp 1 \amp 0 \amp 2\\
+        0 \amp 0 \amp 3 \amp 9\\
+        \end{bmatrix}
+        \\
+        R_3\gets \frac13 R_3
+        \\
+        \begin{bmatrix}
+        1 \amp 2 \amp -1 \amp 2\\
+        0 \amp 1 \amp 0 \amp 2\\
+        0 \amp 0 \amp 1 \amp 3\\
+        \end{bmatrix}
+        </me>
+        The last row gives <m>z=3</m>. The second row gives <m>y=2</m>. The first row gives
+        <m>x=2-2y+z=2-4+3=1</m>, and so there is a unique solution <m>(x,y,z)=(1,2,3)</m>.
+      </p>
+      </solution>
+      </exercise>
+      </exercises>
+      </subsection>
+    </section>
+    
+    
+    <section><title>Gauss-Jordan reduction</title>
+    <introduction>
+     <p>Gauss-Jordan reduction is an extension of the Gaussian elimination algorithm.
+      It produces a matrix, called <em>the reduced row echelon form</em> in the following
+      way: after carrying out Gaussian elimination, continue by changing
+      all nonzero entries <em>above</em> the leading ones to a zero. The resulting
+      matrix looks something like:
+      </p>
+      
+        
+        <figure>
+        <caption/>
+        <image source="images/rref.png" width="50%">
+        <description>A matrix in row echelon form</description>
+        </image>
+        </figure>
+        
+        <p>
+        The matrix above gives an idea of what we want.
+        Notice the staircase line drawn through the matrix
+        has all entries below it equal to zero.
+        The entries marked with a <m>*</m> can take on any value.
+        </p>
+
+        <definition><title>Reduced row echelon form</title>
+        <statement>
+        <p>A matrix is in <term>reduced row echelon form</term>  if
+        <ul>
+        <li><p>Every leading entry is a leading one. </p></li>
+        <li><p>Every entry below <em>and above</em> a leading one is <m>0</m>. </p></li>
+        <li><p>As you go down the matrix, the leading ones move to the right.</p></li>
+        <li><p>Any all zero rows are at the bottom.</p></li>
+        </ul></p>
+        </statement>
+        </definition>
+
+      <p>
+
+      For completeness, we'll describe Gauss-Jordan reduction algorithm in detail. As with Gaussian 
+      elimination, the columns of the matrix are processed from left to right.
+      
+      <ol>
+      <li><p>Start with the first column. If it has all entries equal to zero, 
+      move on to the next column to the right.</p></li>
+      <li><p>If, to the contrary, the column has nonzero entries, interchange rows, 
+      if necessary, to get a nonzero entry on top.</p></li>
+      <li><p>Multiply the top row by a constant to change the nonzero entry to a (leading) one.</p></li>
+      <li><p>If there are nonzero entries above or below this (leading) one, 
+      use an elementary row operation on each one to change it to a zero.</p></li>
+      <li><p>Now consider the part of the matrix below the top row and to the right of the column 
+      under consideration: if there are no such rows or columns, 
+      stop and the algorithm is finished. Otherwise, carry out the same procedure on the 
+      new matrix.</p></li>
+      </ol>
+      </p>
+      
+      <example><title>Putting a matrix in reduced row echelon form</title>
+      <p>
+      <m>
+      \begin{align}
+      \amp \begin{bmatrix}
+      1 \amp  2 \amp  3 \\
+      4 \amp  5 \amp  6 \\
+      7 \amp  8 \amp  9 \\
+      10 \amp  12 \amp  15 
+      \end{bmatrix} \amp \amp 
+      \begin{array}{l}
+      R_2\gets R_2-4R_1\\
+      R_3\gets R_3-7R_1\\
+      R_4\gets R_4-10R_1
+      \end{array}\\[6pt]
+
+      \amp \begin{bmatrix}
+      1 \amp  2 \amp  3 \\
+      0 \amp  -3 \amp  -6 \\
+      0 \amp  -6 \amp  -12 \\
+      0 \amp  -8 \amp  -15
+      \end{bmatrix} \amp \amp 
+      \begin{array}{l}
+      R_2\gets -\tfrac13 R_2
+      \end{array}\\[6pt]
+
+      \amp \begin{bmatrix}
+      1 \amp  2 \amp  3 \\
+      0 \amp  1 \amp  2 \\
+      0 \amp  -6 \amp  -12 \\
+      0 \amp  -8 \amp  -15
+      \end{bmatrix} \amp \amp 
+      \begin{array}{l}
+      R_1\gets R_1-2R_2\\
+      R_3\gets R_3+6R_2\\
+      R_4\gets R_4+8R_2
+      \end{array}\\[6pt]
+
+      \amp \begin{bmatrix}
+      1 \amp  0 \amp  -1 \\
+      0 \amp  1 \amp  2 \\
+      0 \amp  0 \amp  0 \\
+      0 \amp  0 \amp  1
+      \end{bmatrix} \amp \amp 
+      \begin{array}{l}
+      R_3\leftrightarrow R_4 \\
+      \end{array}\\[6pt]
+
+      \amp \begin{bmatrix}
+      1 \amp  0 \amp  -1 \\
+      0 \amp  1 \amp  2 \\
+      0 \amp  0 \amp  1 \\
+      0 \amp  0 \amp  0
+      \end{bmatrix} \amp \amp 
+      \begin{array}{l}
+      R_1 \gets R_1+R_3 \\
+      R_2\gets R_2-2R_3
+      \end{array}\\[6pt]
+
+      \amp \begin{bmatrix}
+      1 \amp  0 \amp  0 \\
+      0 \amp  1 \amp  0 \\
+      0 \amp  0 \amp  1 \\
+      0 \amp  0 \amp  0
+      \end{bmatrix}
+      \end{align} 
+      </m>
+      </p>
+      </example>
+     
+     <example><title>Putting another matrix in reduced row echelon form</title>
+     <p>
+     <m>
+      \begin{align}
+      \amp \begin{bmatrix}
+      1 \amp  2 \amp  6 \amp  1 \amp  4 \amp  6 \\
+      2 \amp  4 \amp  9 \amp  2 \amp  8 \amp  9 \\
+      1 \amp  2 \amp  9 \amp  2 \amp  10 \amp  9
+      \end{bmatrix}\amp \amp 
+      \begin{array}{c}
+      R_2 \gets R_2-2R_1 \\
+      R_3 \gets R_3-R_1
+      \end{array}\\[6pt]
+
+      \amp \begin{bmatrix}
+      1 \amp  2 \amp  6 \amp  1 \amp  4 \amp  6 \\
+      0 \amp  0 \amp  -3 \amp  0 \amp  0 \amp  -3 \\
+      0 \amp  0 \amp  3 \amp  1 \amp  6 \amp  3
+      \end{bmatrix}\amp \amp 
+      \begin{array}{c}
+      R_2 \gets -\tfrac13R_2
+      \end{array}\\[6pt]
+
+      \amp \begin{bmatrix}
+      1 \amp  2 \amp  6 \amp  1 \amp  4 \amp  6 \\
+      0 \amp  0 \amp  1 \amp  0 \amp  0 \amp  1 \\
+      0 \amp  0 \amp  3 \amp  1 \amp  6 \amp  3
+      \end{bmatrix}\amp \amp 
+      \begin{array}{c}
+      R_1 \gets R_1 -6R_2\\
+      R_3 \gets R_3 -3R_2
+      \end{array}\\[6pt]
+
+      \amp \begin{bmatrix}
+      1 \amp  2 \amp  0 \amp  1 \amp  4 \amp  0 \\
+      0 \amp  0 \amp  1 \amp  0 \amp  0 \amp  1 \\
+      0 \amp  0 \amp  0 \amp  1 \amp  6 \amp  0
+      \end{bmatrix}\amp \amp 
+      \begin{array}{c}
+      R_1 \gets R_1 - R_3
+      \end{array}\\[6pt]
+
+      \amp \begin{bmatrix}
+      1 \amp  2 \amp  0 \amp  0 \amp  -2 \amp  0 \\
+      0 \amp  0 \amp  1 \amp  0 \amp  0 \amp  1 \\
+      0 \amp  0 \amp  0 \amp  1 \amp  6 \amp  0
+      \end{bmatrix}
+      \end{align}
+     </m>
+     </p> 
+     </example>
+      
+      <p>
+      Notice the pattern of zero, 1 and nonzero entries after Gauss-Jordan reduction
+      (with the leading ones in red):
+      <me>
+      \left[\begin{array}{ccccccc}
+      {{\color{red}1}} \amp  0 \amp  0 \amp  * \amp  0 \amp  \cdots \amp  *\\
+      0 \amp  {\color{red}1} \amp  0 \amp  * \amp  0 \amp  \cdots \amp  *\\
+      0 \amp  0 \amp  {\color{red}1}\amp  * \amp  0 \amp  \cdots \amp  *\\
+      0 \amp  0 \amp  0 \amp  0 \amp  {\color{red}1} \amp  \cdots \amp  *\\
+      \end{array}\right]
+      </me>
+
+      Now that we can put a matrix in reduced row echelon form, let's see what this implies for 
+      finding all solutions to the associated system of linear equations. Remember that the 
+      first <m>n</m> columns correspond to coefficients of variables 
+      <m>x_1,x_2,\dots,x_n</m>, and the last column corresponds to the constants on
+      the right side of the equations. Each column either contains a leading one or it does not.
+      If it does, the corresponding variable is called <term>constrained</term> or
+      <term>basic</term>. 
+      If not, the variable is called <term>free.</term> 
+      Each free variable is assigned a parameter which may take on any number
+      when finding solutions. The values of the constrained variables are then determined by
+      the reduced row echelon form.
+      </p>
+      
+      <p>
+     As an example, suppose we have a system of linear equations whose augmented matrix has
+      the following reduced row echelon form:
+      
+      <me>
+      \begin{bmatrix}
+      {\color{red}1} \amp  2 \amp  0 \amp  1 \amp  0 \amp  1\\
+      0 \amp  0 \amp   {\color{red}1}\amp  2 \amp  0 \amp  2\\
+      0 \amp  0 \amp  0 \amp  0 \amp  {\color{red}1} \amp  3
+      \end{bmatrix}
+      </me>
+      
+      Notice that this means that our system has three equations and five unknowns.
+      The leading ones are in columns one, three and five, so <m>x_1</m>, 
+      <m>x_3</m> and <m>x_5</m> are constrained variables. This leaves
+      <m>x_2</m> and <m>x_4</m> as free variables. We assign parameters
+      to the free variables: <m>x_2=s</m> and <m>x_4=t</m>. The rows of
+      the matrix then determine the constrained variables: 
+      
+     <ul>
+     <li><p><m>x_5=3</m> from the bottom row</p></li> 
+     <li><p><m>x_3 = 2-2t</m> from the middle row</p></li> 
+     <li><p><m>x_1=1-2s-t</m> from the top row</p></li> 
+     </ul>
+     </p>
+      
+     <p>
+      The compact way of writing this is 
+      <m>(x_1,x_2,x_3,x_4,x_5) = (1-2s-t,s,2-2t,t,3).</m>
+     </p>
+      
+     <p>
+     Notice the role of the zeros above and below each leading one: the evaluation of a
+      constrained variable involves only free variables.
+     </p>
+      
+     <p>
+      In summary, we can say the following:
+     <ol>
+     <li><p>
+         If the reduced row echelon form has a row of the form <m>[0,0,\dots,0,1]</m>, 
+        then the system of linear equations has no solution.</p></li>
+     <li><p>
+        If the reduced row echelon form has no free variables, then it looks like:
+        <me>
+        \begin{bmatrix}
+        1 \amp  0 \amp  0 \amp \cdots \amp 0 \amp 0 \amp c_1\\
+        0 \amp  1 \amp  0 \amp \cdots \amp 0 \amp 0 \amp c_2\\
+        0 \amp  0 \amp  1 \amp \cdots \amp 0 \amp 0 \amp c_3\\
+            \amp    \amp    \amp \vdots \\
+        0 \amp  0 \amp  0 \amp \cdots \amp 1 \amp 0 \amp c_{n-1}\\
+        0 \amp  0 \amp  0 \amp \cdots \amp 0 \amp 1 \amp c_n
+        \end{bmatrix}
+        </me>
+        and there is a unique solution, namely, <m>x_1=c_1, x_2=c_2,\dots x_n=c_n</m>.
+     </p></li>
+     <li><p>
+        If the reduced row echelon form has free variables, then there are an infinite 
+        number of solutions. Indeed, the parameter assigned to any one free variable can take 
+        on an infinite number of values.
+     </p></li>
+     </ol> 
+      
+      Consider the following system of linear equations:
+      <me>
+      \begin{array}{rl}
+      x_1-x_2+2x_3-x_4 \amp =  -1 \\
+      2x_1+x_2-2x_3-2x_4 \amp =  -2 \\
+      -x_1+2x_2-4x_3+x_4 \amp =  1 \\
+      3x_1-3x_4 \amp =  -3
+      \end{array}
+      </me>
+
+
+    The augmented matrix is then put into reduced row echelon form:
+
+      <me>\begin{bmatrix}
+      1 \amp  -1 \amp  2 \amp  -1 \amp  -1\\
+      2 \amp  1 \amp -2 \amp  -2 \amp  -2\\
+      -1 \amp  2 \amp  -4 \amp  1 \amp  1\\
+      3 \amp  0 \amp  0 \amp  -3 \amp  -3
+      \end{bmatrix}</me>
+
+      <me>\begin{array}{rl}
+      R_2 \amp \gets R_2-2R_1\\
+      R_3 \amp \gets R_3+R_1\\
+      R_4 \amp \gets R_4-3R_1
+      \end{array}</me>
+      </p>
+      
+      <p>
+     <me>\begin{bmatrix}
+      1 \amp  -1 \amp  2 \amp  -1 \amp  -1\\
+      0 \amp  3 \amp  -6 \amp  0 \amp  0\\
+      0 \amp  1 \amp  -2 \amp  0 \amp  0\\
+      0 \amp  3 \amp  -6 \amp  0 \amp  0
+      \end{bmatrix}</me>
+
+      <me>\begin{array}{rl}
+      R_2 \amp \gets \tfrac13 R_2\\
+      \end{array}</me>
+
+      <me>\begin{bmatrix}
+      1 \amp  -1 \amp  2 \amp  -1 \amp  -1\\
+      0 \amp  1 \amp  -2 \amp  0 \amp  0\\
+      0 \amp  1 \amp  -2 \amp  0 \amp  0\\
+      0 \amp  3 \amp  -6 \amp  0 \amp  0
+      \end{bmatrix}</me>
+      
+      <me>\begin{array}{rl}
+      R_1 \amp \gets R_1 + R_2\\
+      R_3 \amp \gets R_3- R_2\\
+      R_4 \amp \gets R_4- 3R_2
+      \end{array}</me> 
+      
+      <me>\begin{bmatrix}
+      {\color{red} 1} \amp  0 \amp  0 \amp  -1 \amp  -1\\
+      0 \amp  {\color{red} 1} \amp  -2 \amp  0 \amp  0\\
+      0 \amp  0 \amp  0 \amp  0 \amp  0\\
+      0 \amp  0 \amp  0 \amp  0 \amp  0
+      \end{bmatrix}</me>
+      </p>
+      
+      <p>
+     Since  <m>x_3</m> and <m>x_4</m> are free variables,
+      we assign them parameters: <m>x_3=s</m> and <m>x_4=t</m>.  We can 
+      now evaluate the constrained variables:
+      <m>x_1=-1+t</m> (from the first row) and <m>x_2=2s</m> (from the second row).
+      In short, <m>(x_1,x_2,x_3,x_4)=(-1+t,2s,s,t)</m> for any choice of <m>s</m> or <m>t</m>. 
+      </p>
+      
+     <p>
+       Now, as a check, let's put these solutions back into the original equations.
+
+      <m>\begin{array}{rlll}
+      x_1-x_2+2x_3-x_4 \amp =\amp  (-1+t) - (2s) + 2(s) - (t) \amp= -1\\
+      2x_1+x_2-2x_3-2x_4 \amp =\amp  2(-1+t) + 2s -2s-2t \amp= -2\\
+      -x_1+2x_2-4x_3+x_4 \amp =\amp  -(-1+t) +2(2s) -4s+t \amp= 1 \\
+      3x_1-3x_4 \amp =\amp  3(-1+t) -3t \amp= -3
+      \end{array}</m> 
+     </p>
+
+    <example>
+    <title>A matrix row-reducing itself</title>
+        <p>
+        The following example is a matrix row reducing itself. Notice how it
+        proceeds left to right in columns, and each column with a leading one
+        has zeros above and below when the algorithm completes.
+        </p>
+    </example>
+
+    <figure>
+    <caption>A matrix row reduces itself</caption>
+    <image width="100%" source="images/rref.gif" />
+    </figure>
+    
+</introduction>
+
+    <subsection><title>The rank of a matrix</title>
+    <definition>
+    <statement>
+    <p>
+        The <term>rank</term> of a matrix is the number of leading ones in the reduced row
+        echelon form.
+    </p>
+    </statement>
+    </definition>
+
+    <p>
+    Since the matrix
+    <me>A=
+    \begin{bmatrix}
+    1\amp 2\amp 3\amp 4\amp 5 \\
+    6\amp 7\amp 8\amp 9\amp 10 \\
+    11\amp 12\amp 13\amp 14\amp 15 \\
+    \end{bmatrix}
+    </me>
+    has a reduced row echelon form of
+    <me>
+    \begin{bmatrix}
+    1\amp 0\amp -1\amp -2\amp -3 \\
+    0\amp 1\amp 2\amp 3\amp 4 \\
+    0\amp 0\amp 0\amp 0\amp 0 \\
+    \end{bmatrix}
+    </me>
+    the rank of <m>A</m> is <m>2</m>.
+    </p>
+
+    </subsection>
+
+      <exercises>
+
+      <exercisegroup>
+      <introduction><p>Put the following matrices into reduced row echelon
+      form.</p></introduction>
+       
+            <exercise> <statement> <p>
+            <me>
+            \begin{bmatrix}
+            2\amp4\amp6\amp8\\
+            3\amp6\amp9\amp10
+            \end{bmatrix}
+            </me>
+            </p> </statement> <solution> <p> 
+            <me>
+            \begin{bmatrix}
+            2\amp4\amp6\amp8\\
+            3\amp6\amp9\amp10
+            \end{bmatrix}\\
+            \rowmul1{\frac12}\\
+            \begin{bmatrix}
+            1\amp2\amp3\amp4\\
+            3\amp6\amp9\amp10
+            \end{bmatrix}\\
+            \rowsub231\\
+            \begin{bmatrix}
+            1\amp2\amp3\amp4\\
+            0\amp0\amp0\amp-2
+            \end{bmatrix}\\
+            \rowmul 2{-\frac12}\\
+            \begin{bmatrix}
+            1\amp2\amp3\amp4\\
+            0\amp0\amp0\amp1
+            \end{bmatrix}\\
+            \rowsub142\\
+            \begin{bmatrix}
+            1\amp2\amp3\amp0\\
+            0\amp0\amp0\amp1
+            \end{bmatrix}
+            </me>
+            </p></solution> </exercise>
+        
+            <exercise> <statement> <p>
+            <me>
+            \begin{bmatrix}
+            0 \amp  1 \amp -1\\
+            1 \amp  0 \amp -1\\
+            1 \amp -1 \amp  0
+            \end{bmatrix}
+            </me>
+            </p> </statement> <solution> <p> 
+            <me>
+            \begin{bmatrix}
+            0 \amp  1 \amp -1\\
+            1 \amp  0 \amp -1\\
+            1 \amp -1 \amp  0
+            \end{bmatrix}\\
+            \rowint 12\\
+            \begin{bmatrix}
+            1 \amp  0 \amp -1\\
+            0 \amp  1 \amp -1\\
+            1 \amp -1 \amp  0
+            \end{bmatrix}\\
+            \rowsub 3{}1\\
+            \begin{bmatrix}
+            1 \amp  0 \amp -1\\
+            0 \amp  1 \amp -1\\
+            0 \amp -1 \amp  1
+            \end{bmatrix}\\
+            \rowadd3{}2\\
+            \begin{bmatrix}
+            1 \amp  0 \amp -1\\
+            0 \amp  1 \amp -1\\
+            0 \amp  0 \amp  0
+            \end{bmatrix}\\
+            </me>
+            </p></solution> </exercise>
+            
+            <exercise> <statement> <p>
+            <me>\begin{bmatrix}
+            1\amp 2\amp3\\
+            4\amp5\amp6\\
+            7\amp8\amp9
+            \end{bmatrix}</me>
+            </p> </statement> <solution> <p> 
+            <me>\begin{bmatrix}
+            1\amp 2\amp3\\
+            4\amp5\amp6\\
+            7\amp8\amp9
+            \end{bmatrix}\\
+            \rowsub241\\
+            \rowsub371\\
+            \begin{bmatrix}
+            1\amp 2\amp3\\
+            0\amp-3\amp-6\\
+            0\amp-6\amp-12
+            \end{bmatrix}\\
+            \rowmul2{-\frac13}\\
+            \begin{bmatrix}
+            1\amp 2\amp3\\
+            0\amp1\amp2\\
+            0\amp-6\amp-12
+            \end{bmatrix}\\
+            \rowsub 122\\
+            \begin{bmatrix}
+            1\amp 0\amp-1\\
+            0\amp1\amp2\\
+            0\amp-6\amp-12
+            \end{bmatrix}\\
+            \rowadd 362\\
+            \begin{bmatrix}
+            1\amp 0\amp-1\\
+            0\amp1\amp2\\
+            0\amp0\amp0
+            \end{bmatrix}</me>
+            </p></solution> </exercise>
+        
+            <exercise> <statement> <p>
+            <me>
+            \begin{bmatrix}
+            1\amp2\\ 1\amp3 \\1\amp4
+            \end{bmatrix}
+            </me>
+            </p> </statement> <solution> <p> 
+            <me>
+            \begin{bmatrix}
+            1\amp2\\ 1\amp3 \\1\amp4
+            \end{bmatrix}\\
+            \rowsub 2 {} 1\\
+            \rowsub 3 {} 1\\
+            \begin{bmatrix}
+            1\amp2\\ 0\amp1 \\0\amp2
+            \end{bmatrix}\\
+            \rowsub 1 2 2\\
+            \rowsub 3 2 2\\
+            \begin{bmatrix}
+            1\amp0\\ 0\amp1 \\0\amp0
+            \end{bmatrix}\\
+            </me>
+            </p></solution> </exercise>
+        
+            <exercise> <statement> <p>
+            <me>
+            \begin{bmatrix}
+            0\amp 1\amp 2\amp 3\amp 4 \\
+            4\amp 3\amp 2\amp 1\amp 0 
+            \end{bmatrix}
+            </me>
+            </p> </statement> <solution> <p> 
+            <me>
+            \begin{bmatrix}
+            0\amp 1\amp 2\amp 3\amp 4 \\
+            4\amp 3\amp 2\amp 1\amp 0 
+            \end{bmatrix}\\
+            \rowint12\\
+            \begin{bmatrix}
+            4\amp 3\amp 2\amp 1\amp 0 \\
+            0\amp 1\amp 2\amp 3\amp 4 
+            \end{bmatrix}\\
+            \rowmul1{\frac14}\\
+            \begin{bmatrix}
+            1\amp \frac34\amp \frac12\amp \frac14\amp 0 \\
+            0\amp 1\amp 2\amp 3\amp 4 
+            \end{bmatrix}\\
+            \rowsub 1{\frac34}2\\
+            \begin{bmatrix}
+            1\amp 0\amp -1\amp -2\amp -3 \\
+            0\amp 1\amp 2\amp 3\amp 4 
+            \end{bmatrix}
+            </me>
+            </p></solution> </exercise>
+            </exercisegroup>
+
+            <exercisegroup>
+                <introduction>
+                <p>Consider the system of four linear equations in four unknowns:
+                <md>
+                <mrow>a_{1,1}x_1+a_{1,2}x_2+a_{1,3}x_3+a_{1,4}x_4=b_1</mrow>
+                <mrow>a_{2,1}x_1+a_{2,2}x_2+a_{2,3}x_3+a_{2,4}x_4=b_2</mrow>
+                <mrow>a_{3,1}x_1+a_{2,2}x_2+a_{3,3}x_3+a_{3,4}x_4=b_3</mrow>
+                <mrow>a_{4,1}x_1+a_{4,2}x_2+a_{4,3}x_3+a_{4,4}x_4=b_4</mrow>
+                </md>
+                In each case, suppose that the given matrix is the reduced
+                row echelon form of the augmented matrix. Find all of the solutions.
+                to the original system of linear equations.
+                </p>
+                </introduction>
+            <exercise>
+            <statement>
+            <p>
+            <m>
+            \begin{bmatrix}
+            1\amp 0 \amp 0 \amp 0 \amp 1 \\
+            0\amp 1 \amp 0 \amp 0 \amp -1 \\
+            0\amp 0 \amp 1 \amp 0 \amp 2 \\
+            0\amp 0 \amp 0 \amp 1 \amp 3 \\
+            \end{bmatrix}
+            </m>
+            </p></statement>
+            <solution><p> 
+            <m>x_1=1</m>, <m>x_2=-1</m>, <m>x_3=2</m> and <m>x_4=3</m> is the unique solution. 
+            </p></solution>
+            </exercise>
+            <exercise>
+            <statement>
+            <p>
+            <m>
+            \begin{bmatrix}
+            1\amp 0 \amp 0 \amp 0 \amp 1 \\
+            0\amp 1 \amp 0 \amp 0 \amp -1 \\
+            0\amp 0 \amp 1 \amp 3 \amp 2 \\
+            0\amp 0 \amp 0 \amp 0 \amp 1 \\
+            \end{bmatrix}
+            </m>
+            </p>
+            </statement>
+            <solution>
+            <p>
+            The last line satisfies the condition for there to be no solution.
+            </p>
+            </solution>
+            </exercise>
+        
+            <exercise> <statement> <p>
+            <m>
+            \begin{bmatrix}
+            1\amp 0 \amp 0 \amp 1 \amp 1 \\
+            0\amp 1 \amp 0 \amp -1 \amp -1 \\
+            0\amp 0 \amp 1 \amp 3 \amp 2 \\
+            0\amp 0 \amp 0 \amp 0 \amp 0 \\
+            \end{bmatrix}
+            </m>
+            </p> </statement> 
+            <solution> 
+            <p><m>x_4=t</m> since it is a free variable.</p> 
+            <p>From row 1, we have <m>x_1=1-t</m></p> 
+            <p>From row 2, we have <m>x_2=-1+t</m></p> 
+            <p>From row 3, we have <m>x_3=2-3t</m></p> 
+            <p>
+            In other words, <m>(x_1,x_2,x_3,x_4)=(1-t,-1+t,2-3t,t)</m>.
+            </p>
+            </solution></exercise>
+        
+            <exercise> <statement> <p>
+            <m>
+            \begin{bmatrix}
+            1\amp -2 \amp 0 \amp 3 \amp -1 \\
+            0\amp 0 \amp 1 \amp 1 \amp 2 \\
+            0\amp 0 \amp 0 \amp 0 \amp 0 \\
+            0\amp 0 \amp 0 \amp 0 \amp 0 \\
+            \end{bmatrix}
+            </m>
+            </p> </statement> 
+            <solution> 
+            <p><m>x_2=t</m> and <m>x_4=u</m> since they are free variables.</p> 
+            <p>From row 1, we have <m>x_1=-1+2t-3u</m></p> 
+            <p>From row 2, we have <m>x_3=2-u</m></p> 
+            <p>
+            In other words, <m>(x_1,x_2,x_3,x_4)=(-1+2t-3u,t,2-u,u)</m>.
+            </p>
+            </solution></exercise>
+            </exercisegroup>
+
+       <exercisegroup>
+       <introduction>
+        <p>Find <em>all</em> solutions to the following 
+        systems of linear equations
+        </p>
+       </introduction>
+      <exercise>
+      <statement>
+        <p>
+        <md>
+        <mrow>x+2y-z =2</mrow>
+        <mrow>x+y-z=0</mrow>
+        <mrow>2x-y+z=3</mrow>
+        </md>
+        </p>
+      </statement>
+      <solution>
+      <p>We put the augemented matrix into reduced row echelon form:
+        <m>
+        \begin{bmatrix}
+        1 \amp 2 \amp -1 \amp 2\\
+        1 \amp 1 \amp -1 \amp 0\\
+        2 \amp -1 \amp 1 \amp 3\\
+        \end{bmatrix}
+        \\
+        \begin{array}{l}
+        R_2\gets R_2 - R_1\\
+        R_3\gets R_3-2R_1
+        \end{array}
+        \\
+        \begin{bmatrix}
+        1 \amp 2 \amp -1 \amp 2\\
+        0 \amp -1 \amp 0 \amp -2\\
+        0 \amp -5 \amp 3 \amp -1\\
+        \end{bmatrix}
+        \\
+        \begin{array}{l}
+        R_2\gets -R_2\\
+        \end{array}
+        \\
+        \begin{bmatrix}
+        1 \amp 2 \amp -1 \amp 2\\
+        0 \amp 1 \amp 0 \amp 2\\
+        0 \amp -5 \amp 3 \amp -1\\
+        \end{bmatrix}
+        \\
+        R_3\gets R_3-5R_2
+        \\
+        \begin{bmatrix}
+        1 \amp 2 \amp -1 \amp 2\\
+        0 \amp 1 \amp 0 \amp 2\\
+        0 \amp 0 \amp 3 \amp 9\\
+        \end{bmatrix}
+        \\
+        R_3\gets \frac13 R_3
+        \\
+        \begin{bmatrix}
+        1 \amp 2 \amp -1 \amp 2\\
+        0 \amp 1 \amp 0 \amp 2\\
+        0 \amp 0 \amp 1 \amp 3\\
+        \end{bmatrix} \\
+        R_1 \gets R_1-2R_2
+        \\
+        \begin{bmatrix}
+        1 \amp 0 \amp -1 \amp-2\\
+        0 \amp 1 \amp 0 \amp 2\\
+        0 \amp 0 \amp 1 \amp 3\\
+        \end{bmatrix} \\
+        R_1 \gets R_1+R_3
+        \\
+        \begin{bmatrix}
+        1 \amp 0 \amp 0 \amp1\\
+        0 \amp 1 \amp 0 \amp 2\\
+        0 \amp 0 \amp 1 \amp 3\\
+        \end{bmatrix} \\
+        </m>
+        The first, second and third rows give us, respectively,
+        <me>
+        \begin{matrix}
+        x=1\\y=2\\z=3
+        \end{matrix}
+        </me>
+      </p>
+      </solution>
+      </exercise>
+
+      <exercise> <statement> 
+      <p>
+      <md>
+      <mrow>x+2y+z=0</mrow>
+      <mrow>x+y+2z=5</mrow>
+      <mrow>-x+y+z=0</mrow>
+      </md>
+      </p>
+      </statement> <solution> <p> 
+      <m>
+      \begin{bmatrix}
+      1 \amp 2 \amp 1 \amp 0\\
+      1 \amp 1 \amp 2 \amp 5\\
+      -1 \amp 1 \amp 1 \amp 0
+      \end{bmatrix}\\
+      \rowsub 211\\
+      \rowadd 3{}1\\
+      \begin{bmatrix}
+      1 \amp 2 \amp 1 \amp 0\\
+      0 \amp -1 \amp 1 \amp 5\\
+      0 \amp 3 \amp 2 \amp 0
+      \end{bmatrix}\\
+      \rowmul 2{-}\\
+      \begin{bmatrix}
+      1 \amp 2 \amp 1 \amp 0\\
+      0 \amp 1 \amp -1 \amp -5\\
+      0 \amp 3 \amp 2 \amp 0
+      \end{bmatrix}\\
+      \rowsub122\\
+      \rowsub332\\
+      \begin{bmatrix}
+      1 \amp 0 \amp 3 \amp 10\\
+      0 \amp 1 \amp -1 \amp -5\\
+      0 \amp 0 \amp 5 \amp 15
+      \end{bmatrix}\\
+      \rowmul3{\frac15}\\
+      \begin{bmatrix}
+      1 \amp 0 \amp 3 \amp 10\\
+      0 \amp 1 \amp -1 \amp -5\\
+      0 \amp 0 \amp 1 \amp 3
+      \end{bmatrix}\\
+      \rowsub 133\\
+      \rowadd 3{}2\\
+      \begin{bmatrix}
+      1 \amp 0 \amp 0 \amp 1\\
+      0 \amp 1 \amp 0 \amp -2\\
+      0 \amp 0 \amp 1 \amp 3
+      \end{bmatrix}\\
+      </m>
+      and so the unique solution is <m>(x,y,z)=(1,-2,3)</m>. 
+      </p>
+      </solution> 
+      </exercise>
+
+      <exercise> <statement>
+      <p>
+      <md>
+      <mrow>x+y-z-w=2</mrow>
+      <mrow>x-y-z+w=4</mrow>
+      <mrow>2x+y-z+w=1</mrow>
+      </md>
+      </p>
+      </statement> <solution> <p> 
+      <m>
+      \begin{bmatrix} 
+      1 \amp 1 \amp -1 \amp -1 \amp 2\\
+      1 \amp -1 \amp -1 \amp 1 \amp 4\\
+      2 \amp 1 \amp -1 \amp 1 \amp 1
+      \end{bmatrix} \\
+      \rowsub 2{}1\\
+      \rowsub 321\\
+      \begin{bmatrix} 
+      1 \amp 1 \amp -1 \amp -1 \amp 2\\
+      0 \amp -2 \amp 0 \amp 2 \amp 2\\
+      0 \amp -1 \amp 1 \amp 3 \amp -3
+      \end{bmatrix} \\
+      \rowmul2{-\frac12}\\
+      \begin{bmatrix} 
+      1 \amp 1 \amp -1 \amp -1 \amp 2\\
+      0 \amp 1 \amp 0 \amp -1 \amp -1\\
+      0 \amp -1 \amp 1 \amp 3 \amp -3
+      \end{bmatrix} \\
+      \rowsub1{}2\\
+      \rowadd3{}2\\
+      \begin{bmatrix} 
+      1 \amp 0 \amp -1 \amp 0 \amp 3\\
+      0 \amp 1 \amp 0 \amp -1 \amp -1\\
+      0 \amp 0 \amp 1 \amp 2 \amp -4
+      \end{bmatrix} \\
+      \rowadd1{}3\\
+      \begin{bmatrix} 
+      1 \amp 0 \amp 0 \amp 2 \amp -1\\
+      0 \amp 1 \amp 0 \amp -1 \amp -1\\
+      0 \amp 0 \amp 1 \amp 2 \amp -4
+      \end{bmatrix} 
+      </m>
+      and so <m>w</m> is a free variable that can be set equal to <m>t</m>. This gives
+      <m>(x,y,z,w)=(-1-2t, -1+t, -4-2t,t)</m>.
+      </p></solution> </exercise>
+  
+      <exercise> <statement>
+      <p>
+      <md>
+      <mrow>x-y=0</mrow>
+      <mrow>y-z=0</mrow>
+      <mrow>x-z=0</mrow>
+      </md>
+      
+      Clearly, if <m>x=y</m> and <m>y=z</m>, then we have a solution
+      to this system. Show that every solution is of this form.
+      </p> </statement> <solution> <p> 
+      We put the augmented matrix in reduced row echelon form:
+      <m>
+      \begin{bmatrix}
+      1 \amp -1 \amp 0 \amp 0\\
+      0 \amp  1 \amp -1 \amp 0\\
+      1 \amp  0 \amp -1 \amp 0\\
+      \end{bmatrix}\\
+      \rowsub3{}1\\
+      \begin{bmatrix}
+      1 \amp -1 \amp 0 \amp 0\\
+      0 \amp  1 \amp -1 \amp 0\\
+      0 \amp  1\amp -1 \amp 0\\
+      \end{bmatrix}\\
+      \rowadd1{}2\\
+      \begin{bmatrix}
+      1 \amp 0\amp -1 \amp 0\\
+      0 \amp  1 \amp -1 \amp 0\\
+      0 \amp  1\amp -1 \amp 0\\
+      \end{bmatrix}\\
+      \rowsub3{}2\\
+      \begin{bmatrix}
+      1 \amp  0 \amp -1 \amp 0\\
+      0 \amp  1 \amp -1 \amp 0\\
+      0 \amp  0\amp 0 \amp 0\\
+      \end{bmatrix}
+      </m>
+      We then have that <m>z</m> is a free variable that may be set to <m>t</m>.
+      All solutions are then of the form <m>(x,y,z)=(t,t,t)</m>, which
+      implies that <m>x=y</m> and <m>y=z</m>.
+      </p></solution> </exercise>
+        
+       </exercisegroup> 
+  
+      <exercise> <statement> <p>
+      Consider the two systems of linear equations:
+      
+      <md>
+      <mrow>3x+y-2z\amp=2 \amp x+y-z\amp=1</mrow>
+      <mrow>-x+3y-z\amp=1 \amp -3x+y+z\amp=-1</mrow>
+      </md>
+   
+      Show that every solution of the first set is a solution of
+      the second set, and vice-versa.
+      </p> </statement> 
+      <hint><p>Compare the RREF of the corresponding augmented matrices. </p></hint>  
+      
+      <solution> <p> 
+      Each system has a RREF of
+      <m>
+      \begin{bmatrix}
+      1 \amp 0 \amp -\frac12 \amp \frac12\\
+      0 \amp 1 \amp -\frac12 \amp \frac12\\
+      \end{bmatrix}
+      </m>
+      and so all the solutions for either system consist of
+      <m>(x,y,z)=(\frac12+\frac12t,\frac12+\frac12t,t)</m> where <m>t</m> is any
+      real number.
+      </p></solution> </exercise>
+  
+      </exercises>
+
+    </section>
+
+
+    
+    <section><title>Geometric examples of three equations in three unknowns</title>
+      
+      <p>
+      A single equation in three unknowns can be interpreted geometrically
+      in 3-dimensional space. An equation
+      <me>
+      Ax+By+Cz=D
+      </me>
+      has solutions that form a plane as long as at least one of <m>A, B, C</m> is
+      nonzero.
+      If we look at a system of such linear equations, the solution set is
+      the set of all points lying in all of the corresponding planes. 
+      </p>
+      
+      
+      <example><title>Three planes intersecting at a point</title>
+      <p>
+      Consider the system of linear equations
+      <me>
+      \begin{array}{rl}
+      x+y+z \amp= 2\\
+      x+2y+z\amp=3\\
+      x+2y-3z \amp=2
+      \end{array}
+      </me>
+      The augmented matrix is
+      
+      <me>
+      \begin{bmatrix}
+      1\amp1\amp1\amp2\\
+      1\amp2\amp1\amp3\\
+      1\amp2\amp-3\amp2
+      \end{bmatrix}
+      </me>
+      whose reduced row echelon form is 
+      <me>
+      \begin{bmatrix}
+      1\amp0\amp0\amp\frac34\\
+      0\amp1\amp0\amp1\\
+      0\amp0\amp1\amp\frac14
+      \end{bmatrix}
+      </me>
+      
+      This means that there is a single solution: <m>(x,y,z)=(\frac34,1,\frac14)</m>.
+      Here are the three planes corresponding to the three equations:
+      </p>
+      
+      <figure>
+      <caption> Three planes intersecting at a single point</caption>
+      <image width="100%" xml:id="ThreePlanesPoint">
+      <asymptote>
+      import graph3;
+      unitsize(4cm);
+      
+      currentprojection=perspective(11,2,-9);
+      currentprojection=perspective(14.5,3.2,1.1);
+      //currentprojection=oblique;
+      
+      real A,B,C,D;
+      real f(real x, real y) { return (D-A*x-B*y)/C;} // equation of plane
+      triple F(real x, real y) {return (x,y,f(x,y));} // point above (x,y)
+      
+      A=1; B=1; C=1; D=2;
+      triple u=F(2,0), v=F(0,2), w=F(0.5,0.5);
+      path3 g1=plane(u-w,v-w,w);
+      draw(surface(g1),paleblue,nolight);
+      draw(g1,linewidth(0.85));
+      label("\(x+y+z=2\)",F(0,2.0),NE,blue);
+      
+      A=1; B=2; C=1; D=3;
+      triple u=F(2,0), v=F(0,2), w=F(0.5,0.5);
+      path3 g2=plane(u-w,v-w,w);
+      draw(surface(g2),lightyellow,nolight);
+      draw(g2,linewidth(0.75));
+      label("\(x+2y+z=3\)",F(0,2),E,olive);
+      
+      A=1; B=2; C=-3; D=3;
+      triple u=F(2,0), v=F(0,2), w=F(0.5,0.5);
+      path3 g3=plane(u-w,v-w,w);
+      draw(surface(g3),lightgreen,nolight);
+      draw(g3,linewidth(0.75));
+      label("\(x+2y-3z=3\)",F(0,2),NE,heavygreen);
+      
+      triple [] s1,s2,s3;
+      
+      s1=intersectionpoints(g1,g2);
+      draw(s1[0]--s1[1],linewidth(1));
+      s2=intersectionpoints(g1,g3);
+      draw(s2[0]--s2[1],linewidth(1));
+      s3=intersectionpoints(g2,g3);
+      draw(s3[0]--s3[1],linewidth(1));
+      
+      triple t;
+      t=intersectionpoint(s1[0]--s1[1],s2[0]--s2[1]);
+      dot(t,red+linewidth(5.75));
+
+      triple u=(3,2.5,-0.2);
+      draw(u--t, Arrow3,Margin3(1,2));
+      label("$(x,y,z)=(\frac34,1,\frac14)$",u,E);
+      axes3("\(x\)","\(y\)","\(z\)",(0,0,0),(4,3,2));
+      </asymptote>
+      </image>
+      </figure>
+      </example>
+      
+      <example><title>Three planes intersecting in a single line</title>
+      <p>
+      Consider the system of linear equations
+      <me>
+      \begin{array}{rl}
+      x+y-z \amp= 3\\
+      x+y+z\amp=1\\
+      2x+2y \amp=4
+      \end{array}
+      </me>
+      The augmented matrix is
+      
+      <me>
+      \begin{bmatrix}
+      1\amp1\amp-1\amp3\\
+      1\amp1\amp1\amp1\\
+      2\amp2\amp0\amp4
+      \end{bmatrix}
+      </me>
+      whose reduced row echelon form is
+      <me>
+      \begin{bmatrix}
+      1\amp1\amp0\amp2\\
+      0\amp0\amp1\amp-1\\
+      0\amp0\amp0\amp0
+      \end{bmatrix}
+      </me>
+      This means <m>y=t</m>, <m>x=2-t</m> and <m>z=-1</m> 
+      so that <m>(x,y,z)=(2-t,t,-1)</m> is a solution
+      for any real number <m>t</m>.
+      </p>
+
+      <figure>
+      <caption>Three planes intersecting in a line</caption>
+      <image width="100%" xml:id="ThreePlanesLine">
+      <asymptote>
+      import graph3;
+      size(400);
+      currentprojection=orthographic(99,25,20);
+      currentlight=White;
+      defaultpen(1); // Change default pen width to 1bp 
+      
+      triple dirvec=1.5(-1,1,0);
+      path3 Plane(triple a, triple b) {
+         return a--b--b+dirvec--a+dirvec--cycle;
+         }
+      
+      triple a=(1,-1,1), b=(3,1,-3);
+      path3 g=Plane(a,b);
+      draw(surface(g),grey,nolight);
+      draw(g);
+      label("\(x+y+z=1\)",b,S,deepgrey);
+      
+      triple a=(3,1,1), b=(1,-1,-3);
+      path3 g=Plane(a,b);
+      draw(surface(g),paleblue,nolight);
+      draw(g);
+      label("\(x+y-z=3\)",b,S,deepblue);
+      
+      triple a=(2,0,1), b=(2,0,-3);
+      path3 g=Plane(a,b);
+      draw(surface(g),lightgreen,nolight);
+      draw(g);
+      label("\(x+y=2\)",b,S,deepgreen);
+      
+      draw((2,0,-1)-0.5*dirvec--(2,0,-1)+1.5*dirvec,red+linewidth(1));
+      
+      axes3("\(x\)","\(y\)","\(z\)",(-3,-2,-2),(5,2,2));
+      </asymptote>
+      </image>
+      </figure>
+      </example>
+      
+      <example><title>Three intersecting planes with no solutions</title>
+      <p>
+      Consider the system of linear equations
+      <me>
+      \begin{array}{rl}
+      2x-y+z \amp= 1\\
+      x+y+z\amp=2\\
+      4x+y+3z \amp=3
+      \end{array}
+      </me>
+      The augmented matrix is
+      <me>
+      \begin{bmatrix}
+      2\amp-1\amp1\amp1\\
+      1\amp1\amp1\amp2\\
+      4\amp1\amp3\amp3
+      \end{bmatrix}
+      </me>
+      whose reduced row echelon form is
+      <me>
+      \begin{bmatrix}
+      1\amp0\amp\frac23\amp0\\
+      0\amp1\amp\frac13\amp0\\
+      0\amp0\amp0\amp1
+      \end{bmatrix}
+      </me>
+      The last row indicates that there is no solution.
+      </p>
+
+      <figure>
+      <caption>Three pairwise intersecting planes with no common point</caption>
+      <image width="90%" xml:id="ThreePlanesNoSolution">
+      <asymptote>
+      import graph3;
+      unitsize(120);
+      currentprojection=orthographic(7.25,3.36,-9.7);
+      currentlight=White;
+      defaultpen(1); // Change default pen width to 1bp  
+      
+      triple P1=(6/7,3/7,-2/7), P2=(1,1,0), P3=(3/7,12/7,-1/7);
+      triple dirvec=(2,1,-3);
+      real t=1.25;
+      triple Q1=P1+t*dirvec, Q2=P2+t*dirvec, Q3=P3+t*dirvec;
+      
+      real eps=0.15, p=1+eps, q=-eps;
+      path3 q4=(p*P1+q*P2)--(p*P2+q*P1)--(p*Q2+q*Q1)--(p*Q1+q*Q2)--cycle;
+      draw(q4);
+      draw(surface(q4),heavygrey,nolight);
+      path3 q5=(p*P1+q*P3)--(p*P3+q*P1)--(p*Q3+q*Q1)--(p*Q1+q*Q3)--cycle;
+      draw(surface(q5),green,nolight);
+      draw(q5);
+      path3 q6=(p*P2+q*P3)--(p*P3+q*P2)--(p*Q3+q*Q2)--(p*Q2+q*Q3)--cycle;
+      draw(surface(q6),lightblue,nolight);
+      draw(q6);
+      
+      draw(P1--Q1);
+      draw(P2--Q2);
+      draw(P3--Q3);
+      
+      label("\(2x-y+z=1\)",P2--P3,NE,blue);
+      label("\(x+y+z=2\)",P1--P2,NW,heavygrey);
+      label("\(4x+y+3z=3\)",Q1--Q3,2SE,deepgreen);
+      //axes3("\(x\)","\(y\)","\(z\)",(0,0,0),(1,1,1.1));
+      </asymptote>
+      </image> 
+      </figure> 
+      </example>
+
+      <example><title>Three nonintersecting planes with no
+      solutions</title> <p> Consider the system of linear equations <me>
+      \begin{array}{rl} 2x-y+z \amp= 1\\ 2x-y+z \amp= 2\\ 2x-y+z \amp=3
+      \end{array} </me> The augmented matrix is
+
+      <me> \begin{bmatrix} 2\amp-1\amp1\amp1\\ 2\amp-1\amp1\amp2\\
+      2\amp-1\amp1\amp3 \end{bmatrix} </me> whose reduced row echelon
+      form is <me> \begin{bmatrix} 1\amp -\frac12\amp\frac12\amp0\\
+      0\amp0\amp0\amp1\\ 0\amp0\amp0\amp0\\ \end{bmatrix} </me> The
+      middle row indicates that there is no solution.  </p>
+
+      <figure>
+      <caption>Three parallel planes</caption>
+      <image width="100%" xml:id="ThreeParallelPlanes">
+      <asymptote>
+      import graph3;
+      size(300);
+      currentprojection=orthographic(-6.2,-4.3,9.7);
+      currentlight=White;
+      
+      real A,B,C=1,D;
+      real f(real x, real y) { return (D-A*x-B*y)/C;} // equation of plane
+      triple F(real x, real y) {return (x,y,f(x,y));} // point above (x,y)
+
+      A=2; B=-1; C=1; D=1;
+      path3 g1=plane(F(1,0)-F(-2,-2),F(-1,0)-F(-2,-2),F(-2,-2));
+      draw(surface(g1),lightblue,nolight);
+      draw(g1);
+      label("\(2x-y+z=1\)",F(-2,-2),E,deepblue);
+
+      A=2; B=-1; C=1; D=2;
+      path3 g2=plane(F(1,0)-F(-2,-2),F(-1,0)-F(-2,-2),F(-2,-2));
+      draw(g2);
+      draw(surface(g2),grey,nolight);
+      label("\(2x-y+z=2\)",F(-2,-2),E,deepgrey);
+      
+      A=2; B=-1; C=1; D=3;
+      path3 g3=plane(F(1,0)-F(-2,-2),F(-1,0)-F(-2,-2),F(-2,-2));
+      draw(g3);
+      draw(surface(g3),green,nolight);
+      label("\(2x-y+z=3\)",F(-2,-2),E,deepgreen);
+      
+      axes3("\(x\)","\(y\)","\(z\)",(-1,-1,-1),(1.5,1,4));
+      </asymptote>
+      </image>
+      </figure>
+      </example>
+
+      </section>
+</chapter>
+
