@@ -1,0 +1,2012 @@
+<chapter xml:id="Determinants" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>The Determinant</title>
+    
+    <section><title>The determinant of small matrices</title>
+    <p>
+        Each square matrix of order <m>n</m> has a number associated with it called its 
+        <term>determinant.</term>  A matrix <m>A</m> has its determinant denoted by
+        <m>\det(A).</m> For small values of <m>n</m>, we can give a straightforward
+        method of evaluation.
+    </p>
+    
+    <definition xml:id="DeterminantofSmallMatrices"><title>Determinants of small matrices</title>
+    <statement>
+    <p>
+    Let <m>A</m> be a square matrix of order <m>n</m>. Then
+        <ul>
+        <li><p>
+    	    If <m>n=1</m>, and <m>A=[a_{1,1}]</m> then <m>\det(A)=a_{1,1}.</m>
+        </p></li>
+        <li><p>
+    	    If <m>n=2</m> and 
+            <m>A=\begin{bmatrix}a_{1,1}\amp a_{1,2}\\a_{2,1}\amp a_{2,2}\end{bmatrix}</m>, 
+            then <m>\det(A)=a_{1,1}a_{2,2}-a_{1,2}a_{2,1}.</m>
+        </p></li>
+        <li><p>
+            If <m>n=3</m> and 
+            <m>A=\begin{bmatrix}a_{1,1}\amp a_{1,2}\amp a_{1,3}\\
+            a_{2,1}\amp a_{2,2}\amp a_{2,3}\\
+            a_{3,1}\amp a_{3,2}\amp a_{3,3}\end{bmatrix}</m>, 
+            then <m>\det(A)=a_{1,1}a_{2,2}a_{3,3}+a_{1,2}a_{2,3}a_{3,1}+a_{1,3}a_{2,1}a_{3,2}
+    	    -a_{1,1}a_{2,3}a_{3,2}  -a_{1,2}a_{2,1}a_{3,3} -a_{1,3}a_{2,2}a_{3,1} .</m>
+        </p></li>
+        </ul>
+    </p>
+    </statement>
+    </definition>
+    
+    <example xml:id="det_example1"><title> Determinants of small matrices</title>
+    <p>
+        <ul>
+        <li><p>
+            <m>\det\begin{bmatrix}1\amp2\\3\amp4\end{bmatrix}=4-6=-2.</m>
+        </p></li>
+    
+        <li><p>
+    	    <m>\det
+            \begin{bmatrix}
+                1\amp2\amp3\\
+                3\amp4\amp-1\\
+                1\amp2\amp1
+            \end{bmatrix}
+            =4-2+18-(-2)-6-12=4.</m>
+        </p></li>
+    </ul>
+    </p>
+    </example>
+    
+    
+    <p>There is a nice way to visualize these determinants by considering the diagonals:</p>
+    
+    <p>
+    For <m>n=2</m>, 
+    <m>A=\begin{bmatrix}\color{red} {a_{1,1}}\amp\color{green}{a_{1,2}}\\
+         \color{green}{a_{2,1}}\amp\color{red}{a_{2,2}}\end{bmatrix}
+    </m> 
+    and the determinant is the product of the two diagonal elements minus the product 
+    of the other two elements. 
+    <m>
+    \det(A)=
+    {\color{red}{a_{1,1}}\color{red}{{a_{2,2}}}-\color{green}{a_{1,2}a_{2,1}}}.
+    </m>
+    </p>
+    
+    <p>
+    For <m>n=3</m>, we may take <m>A</m> and append a copy of the first
+    two columns to the right side. Then the determinant is the sum
+    of six terms: the three positive ones are the product of terms on the
+    upper-left to lower-right diagonals while the three		 negative
+    ones are the product of terms on the lower-left to upper-right diagonals.
+    
+    <me>
+    \begin{array}{c c}
+        \begin{bmatrix}
+            \color{red}{a_{1,1}}\amp\color{green}{a_{1,2}}\amp\color{blue}{a_{1,3}}\amp a_{1,1}\amp a_{1,2}\\
+            a_{2,1}\amp\color{red}{a_{2,2}}\amp\color{green}{a_{2,3}}\amp\color{blue}{a_{2,1}}\amp a_{2,2}\\
+            a_{3,1}\amp a_{3,2}\amp\color{red}{a_{3,3}}\amp\color{green}{a_{3,1}}\amp\color{blue}{a_{3,2}}
+        \end{bmatrix}
+    \amp
+        \begin{bmatrix}
+            a_{1,1}\amp a_{1,2}\amp\color{red}{a_{1,3}}\amp\color{green}{a_{1,1}}\amp\color{blue}{a_{1,2}}\\
+            a_{2,1}\amp\color{red}{a_{2,2}}\amp\color{green}{a_{2,3}}\amp\color{blue}{a_{2,1}}\amp a_{2,2}\\
+            \color{red}{a_{3,1}}\amp\color{green}{a_{3,2}}\amp\color{blue}{a_{3,3}}\amp a_{3,1}\amp a_{3,2}
+        \end{bmatrix}\\
+        \text{(positive terms are in same colour)}
+    \amp
+        \text{(negative terms are in same colour)}
+    \end{array}
+    </me>
+    Alternatively, by letting the diagonals wrap around to from the right side of the matrix
+    to the left side for the first matrix, and from the left side to the right side in the
+    second matrix.
+    <me>
+        \begin{array}{c c}
+        \begin{bmatrix}
+            \color{red}{a_{1,1}}\amp\color{green}{a_{1,2}}\amp\color{blue}{a_{1,3}}\\
+            \color{blue}{a_{2,1}}\amp\color{red}{a_{2,2}}\amp\color{green}{a_{2,3}}\\
+            \color{green}{a_{3,1}}\amp \color{blue}{a_{3,2}}\amp\color{red}{a_{3,3}}
+        \end{bmatrix}
+        \amp
+        \begin{bmatrix}
+            \color{green}{a_{1,1}}\amp\color{blue}{a_{1,2}}\amp\color{red}{a_{1,3}}\\
+            \color{blue}{a_{2,1}}\amp\color{red}{a_{2,2}}\amp\color{green}{a_{2,3}}\\
+            \color{red}{a_{3,1}}\amp\color{green}{a_{3,2}}\amp\color{blue}{a_{3,3}}
+        \end{bmatrix}\\
+        \text{(positive terms are in same colour)}
+        \amp\text{(negative terms are in same colour)}
+    \end{array}
+    </me>
+    However visualized, we can evalaute
+    <m>\det(A)=
+    ({\color{red}{a_{1,1}a_{2,2}a_{3,3}}}
+    +{\color{green}{a_{1,2}a_{2,3}a_{3,1}}}
+    +{\color{blue}{a_{1,3}a_{2,1}a_{3,2}}})
+    -({\color{green}{a_{1,1}a_{2,3}a_{3,2}}} 
+    +{\color{blue}{ a_{1,2}a_{2,1}a_{3,3}}}
+    +{\color{red}{a_{1,3}a_{2,2}a_{3,1}}}).
+    </m>
+    
+    So it's pretty easy to compute the determinant of a matrix of order <m>n</m> when <m>n\leq 3</m>.
+    Unfortunately, there is no straightforward generalization for <m>n\gt3</m>.
+    </p>
+    
+    <p>
+        There is a theoretical formula for the  evaluation of the determinant for larger <m>n</m>, but
+        the number of summands grows quickly (for <m>n=4</m> there are 24 terms to add, and for <m>n=5</m>
+        there are 120). The present goal is to find better methods to evaluate the determinant. 
+        The first technique involves objects called
+        <em>cofactors</em>, and so we need to make a digression to define and to see how to use them.
+    </p>
+    
+    </section>
+    
+    
+    
+    <section><title>Minors and cofactors</title>
+    <p>
+       The evaluation of the determinant by cofactors changes the problem
+    	of finding the determinant of a matrix of order <m>n</m> to that of finding
+    	the determinant several matrices of order <m>n-1.</m>
+    	So far, we know how to evaluate the determinant of a matrix of order
+    	<m>n</m> when <m>n\leq 3.</m> This method will, then, allow us
+    	to evaluate the determinant of a matrix of order <m>n=4</m> by reducing the
+    	problem to solving the determinant of several matrices of order <m>n=3.</m>
+    </p>
+    
+    <p>
+       We focus on a partcular element <m>a_{i,j}</m> of a square matrix <m>A</m>.
+   </p>
+    
+    <definition xml:id="MatrixMinorDefinition"><title>The <m>i,j</m> minor of a matrix <m>A</m></title>
+    <statement>
+    <p>
+    <m>M_{i,j}</m>, the
+    <term> <m>i,j</m> minor</term> of a matrix <m>A</m> 
+    is computed by deleting the row and column 
+    containing <m>a_{i,j}</m> and evaluating the determinant of what remains.
+    <me>
+    \qquad\qquad\qquad\downarrow \text{ column } C_j \text{ deleted}\\
+    M_{i,j}=\det
+    \left[\begin{array}{c|c|c}
+    {}******\amp \amp *****\\
+    {}******\amp \amp *****\\
+    {}******\amp \amp *****\\\hline
+    \cdots\amp a_{i,j}\amp\cdots\\ \hline
+    {}******\amp \amp *****\\
+    {}******\amp \amp *****\\
+    {}******\amp \amp *****
+    \end{array}\right]
+    \gets \text{ row } R_i \text{ deleted}
+    </me>
+    </p>
+    </statement>
+    </definition>
+    
+    <definition xml:id="MatrixCofactorDefinition" ><title>The <m>i,j</m> cofactor of a matrix <m>A</m></title>
+    <statement>
+    <p>
+    <m>C_{i,j}</m>, the <term><m>i,j</m> cofactor of a matrix</term>  <m>A</m>, satisfies
+    <me>
+    C_{i,j}=(-1)^{i+j}M_{i,j}
+    </me>
+    </p>
+    </statement>
+    </definition>
+    
+    <p>
+    In other words, <m>C_{i,j}=\pm M_{i,j}</m>, with the sign being
+    <m>+</m> if <m>i+j</m> is even and <m>-</m> if <m>i+j</m> is odd.  
+    </p>
+    
+    <example><title>A cofactor of a matrix</title>
+    <p>
+    We find <m>M_{2,3}</m> and <m>C_{2,3}</m> for the matrix 
+    <me>
+        A=
+        \begin{bmatrix}1\amp2\amp2\amp3\\
+            -1\amp4\amp5\amp3\\
+            3\amp4\amp8\amp-1\\
+            1\amp2\amp2\amp1 \end{bmatrix}
+    </me> 
+    When we delete row <m>R_2</m> and column <m>C_3</m> from <m>A</m> we get the matrix
+    <me>
+        \begin{bmatrix}
+            1\amp2\amp3\\
+            3\amp4\amp-1\\
+            1\amp2\amp1
+        \end{bmatrix}
+    </me> 
+    We have already calculated the determinant of this matrix in 
+    <xref ref="det_example1" /> 
+    to be <m>4,</m> so <m>M_{2,3}=4</m> and <m>C_{2,3}=(-1)^5 4=-4.</m>
+    </p>
+    </example>
+    
+   <p>
+   There is a nice way of visualizing the pattern of <m>(-1)^{i+j}.</m> Consider 
+   the matrix <m>P=[p_{i,j}]</m> where <m>p_{i,j}=(-1)^{i+j}</m>.  The next entry
+   to the right of <m>p_{i,j}</m> is <m>p_{i,j+1}</m>, so that the exponent of <m>-1</m>
+   is increased by one. Hence if 
+    <m>p_{i,j}=1</m> then <m>p_{i,j+1}=-1</m> and
+    <m>p_{i,j}=-1</m> then <m>p_{i,j+1}=1</m>. This means that the entries in a row
+    alternate between <m>1</m> and <m>-1</m>. By an analogous argument, the columns
+    also alternate between <m>1</m> and <m>-1</m>. The upper left entry is 
+    <m>-1^{1+1}=1</m>, and so the whole matrix is determined. It looks like
+    <men xml:id="CheckerboardMatrix">
+    P=
+    \begin{bmatrix}
+    +1\amp-1\amp+1\amp-1\amp+1\cdots \\
+    -1\amp+1\amp-1\amp+1\amp-1\cdots \\
+    +1\amp-1\amp+1\amp-1\amp+1\cdots \\
+    -1\amp+1\amp-1\amp+1\amp-1\cdots \\
+    +1\amp-1\amp+1\amp-1\amp+1\cdots \\
+    \amp\amp\vdots
+    \end{bmatrix}
+    </men>
+    In other words, the pattern of <m>1</m> and <m>-1</m> is like a checkerboard pattern
+    of light squares and dark squares.
+    </p>
+
+
+    <p>
+    Since the minor <m>M_{i,j}</m> is simply a number, we may form an new
+    matrix called the <em>matrix of minors</em> <m>M</m> whose entries are minors.
+    Similarly since the cofactor <m>C_{i,j}</m> is simply a number, we may form an new
+    matrix called the <em>cofactor matrix</em> whose entries are cofactors.
+    </p>
+
+    <definition><title>Cofactor matrix and the matrix of minors</title>
+    <statement>
+    <p>
+    The 
+    <em> matrix of minors</em> <m>M</m> is defined by
+    <me>
+    M=[M_{i,j}]
+    </me>
+    and the 
+    <em> cofactor matrix</em> <m>C</m> is defined by
+    <me>
+    C=[C_{i,j}]
+    </me>
+    </p>
+    </statement>
+    </definition>
+
+    <example xml:id="MatrixMinorsExmaple"><title>Matrix of minors</title>
+    <p>
+    We will compute the matrix of minors for the matrix
+    <me>
+        \begin{bmatrix}
+            1\amp 2\amp3\\
+            3\amp 4\amp -1\\
+            1\amp 2\amp 1
+        \end{bmatrix}
+    </me>
+    From the defintion of the matrix of minors:
+    <md>
+    <mrow>
+        M \amp=
+        \begin{bmatrix}
+            M_{1,1} \amp M_{1,2} \amp M_{1,3} \\
+            M_{2,1} \amp M_{2,2} \amp M_{2,3} \\
+            M_{3,1} \amp M_{3,2} \amp M_{3,3} 
+        \end{bmatrix} 
+    </mrow>
+    <mrow>
+        \amp=
+        \begin{bmatrix}
+            \det \begin{bmatrix} 4\amp -1 \\ 2\amp 1 \end{bmatrix}
+            \amp
+            \det \begin{bmatrix} 3\amp -1 \\ 1\amp 1 \end{bmatrix}
+            \amp
+            \det \begin{bmatrix} 3\amp 4 \\ 1\amp 2 \end{bmatrix}
+            \\
+            \det \begin{bmatrix} 2\amp 3 \\ 2\amp 1 \end{bmatrix}
+            \amp
+            \det \begin{bmatrix} 1\amp 3 \\ 1\amp 1 \end{bmatrix}
+            \amp
+            \det \begin{bmatrix} 1\amp 2 \\ 1\amp 2 \end{bmatrix}
+            \\
+            \det \begin{bmatrix} 2\amp 3 \\ 4\amp -1 \end{bmatrix}
+            \amp
+            \det \begin{bmatrix} 1\amp 3 \\ 3\amp -1 \end{bmatrix}
+            \amp
+            \det \begin{bmatrix} 1\amp 2 \\ 3\amp 4 \end{bmatrix}
+        \end{bmatrix}
+    </mrow>
+    <mrow>
+        \amp=
+        \begin{bmatrix}
+            6\amp 4 \amp 2\\
+            -4\amp -2\amp 0\\
+            -14 \amp -10 \amp -2
+        \end{bmatrix}
+    </mrow>
+    </md>
+    </p>
+    </example>
+
+
+    <example xml:id="CofactorMatrixExmaple"><title>Cofactor matrix</title>
+    <p>
+    We will compute the cofactor matrix of the matrix
+    <me>
+    \begin{bmatrix}
+        1\amp 2\amp3\\
+        3\amp 4\amp -1\\
+        1\amp 2\amp 1
+    \end{bmatrix}
+    </me>
+    From the defintion of the cofactor matrix:
+    <md>
+    <mrow>
+        C \amp=
+        \begin{bmatrix}
+            C_{1,1} \amp C_{1,2} \amp C_{1,3} \\
+            C_{2,1} \amp C_{2,2} \amp C_{2,3} \\
+            C_{3,1} \amp C_{3,2} \amp C_{3,3} 
+        \end{bmatrix} 
+    </mrow>
+    <mrow>
+        \amp=
+        \begin{bmatrix}
+            \det \begin{bmatrix} 4\amp -1 \\ 2\amp 1 \end{bmatrix}
+            \amp
+            -\det \begin{bmatrix} 3\amp -1 \\ 1\amp 1 \end{bmatrix}
+            \amp
+            \det \begin{bmatrix} 3\amp 4 \\ 1\amp 2 \end{bmatrix}
+            \\
+            -\det \begin{bmatrix} 2\amp 3 \\ 2\amp 1 \end{bmatrix}
+            \amp
+            \det \begin{bmatrix} 1\amp 3 \\ 1\amp 1 \end{bmatrix}
+            \amp
+            -\det \begin{bmatrix} 1\amp 2 \\ 1\amp 2 \end{bmatrix}
+            \\
+            \det \begin{bmatrix} 2\amp 3 \\ 4\amp -1 \end{bmatrix}
+            \amp
+            -\det \begin{bmatrix} 1\amp 3 \\ 3\amp -1 \end{bmatrix}
+            \amp
+            \det \begin{bmatrix} 1\amp 2 \\ 3\amp 4 \end{bmatrix}
+        \end{bmatrix}
+    </mrow>
+    <mrow>
+        \amp=
+        \begin{bmatrix}
+            6\amp -4 \amp 2\\
+            4\amp -2\amp 0\\
+            -14 \amp 10 \amp -2
+        \end{bmatrix}
+    </mrow>
+    </md>
+    </p>
+    </example>
+
+    <observation xml:id="MinorsCofactorsCheckerboard">
+    <title>Minors, cofactors and the checkerboard pattern</title>
+    <p>
+    The answers from 
+    <xref ref="MatrixMinorsExmaple"/> and
+    <xref ref="CofactorMatrixExmaple"/> are quite similar, each matrix entry
+    being either identical or multiplied by <m>-1</m>. The entries multiplied by
+    <m>-1</m> are in the same positions the <m>-1</m> entries of the matrix
+    <m>P</m> <xref ref="CheckerboardMatrix"/> with the checkerboard pattern.
+    This is a general pattern: Given the matrix of minors <m>M</m> the matrix
+    of cofactors <m>C</m> is then computed by multiplying the entries of <m>M</m>
+    by <m>\pm1</m> using the checkerboard pattern.
+    </p>
+    </observation>
+    
+    <exercise>
+    <statement> 
+       <p>
+       Suppose a matrix <m>A</m> has cofactor matrix
+          <me>M=
+          \begin{bmatrix}
+          1 \amp 3 \amp 4\\
+          2 \amp -1\amp 2\\
+          0 \amp -2\amp 5
+          \end{bmatrix}
+          </me>.
+       What is <m>C</m>, the cofactor matrix of <m>A</m>?
+    </p> 
+    </statement>
+    <answer>
+       <p>
+          <me>C=
+          \begin{bmatrix}
+          1 \amp-3 \amp 4\\
+         -2 \amp -1\amp-2\\
+          0 \amp  2\amp 5
+          \end{bmatrix}
+          </me>.
+       </p>
+    </answer>
+    </exercise>
+    
+    </section>
+    
+    <section><title>The determinant of large matrices</title>
+    <introduction>
+    <p>
+    In <xref ref="DeterminantofSmallMatrices" /> the
+    determinant of matrices of size <m>n \le 3</m> was defined using
+    simple formulas. For larger matrices, unfortunately, there is no
+    simple formula, and so we use a different approach. We reduce the
+    problem of finding the determinant of one matrix of order <m>n</m> to
+    a problem of finding <m>n</m> determinants of matrices of order <m>n-1</m>.
+    So, for example, we find the determinant of a matrix of order <m>4</m>
+    by evaluating the determinants of <m>4</m> matrices of order <m>3</m>.
+    We have a formula for matrices of order <m>3</m>, so, in principle, it
+    will be possible to evaluate the determinant for any matrix of order
+    <m>4</m>. We can use this ability for finding the determinant of any matrix
+    of order <m>5</m>: reduce it to a problem of <m>5</m> matrices of order <m>4</m>,
+    which we already know how to solve.
+    Continuing with the line of reasoning gives us the ability to evaluate
+    determinants of any size. 
+    </p>
+
+    <p>
+    While this gives the theoretical ability to compute determinants, the number
+    of computations may quickly become unworkable. We need to improve
+    our mathematical techniques to enable practical computations. The material
+    developed in this section will allow this. 
+    </p>
+    </introduction>
+    
+        <subsection><title>A motivating computation</title>
+        <p>
+        This subsection contains optional material. The goal is to motivate
+        <xref ref="HadamardRowSums"/>. It may be skipped on first reading if desired. 
+        </p>
+
+        <definition xml:id="HadamardProductDef"><title>Hadamard product of two matrices</title>
+            <statement>
+            <p>
+            If <m>A=[a_{i,j}]</m> and  <m>B=[b_{i,j}]</m> are both <m>m\times n</m> matrices,
+            then the 
+            <term> Hadamard product</term> <m>A\circ B</m> is an <m>m\times n</m> matrix defined
+            by
+            <me>
+            (A\circ B)_{i,j}= a_{i,j}b_{i,j}
+            </me>
+            In other words, multiplication is done element-wise.
+            </p>
+        </statement>
+        </definition>
+
+        <lemma>
+        
+        <statement>
+            <p>
+            If <m>M</m> is the matrix of minors, and <m>C</m> is the cofactor matrix,
+            then
+            <me>
+            C=P\circ M
+            </me>
+            </p>
+        </statement>
+
+        <proof>
+            <p> 
+            This is just restating <xref ref="MinorsCofactorsCheckerboard"/>
+            </p>
+        </proof>
+
+        </lemma>
+
+        <p>
+        Compare the results of
+        <xref ref="MatrixMinorsExmaple" />
+        and
+        <xref ref="CofactorMatrixExmaple" />.
+        </p>
+
+        <p>
+        Starting with a given square matrix <m>A</m>, we have defined the matrix of minors 
+        <m>M</m>and the cofactor matrix <m>C</m> using <xref ref="MatrixMinorDefinition" />
+        and <xref ref="MatrixCofactorDefinition" />. We have also used
+        Hadamard multiplication of matrices <xref ref="HadamardProductDef" />
+        to see that <m>C=P\circ M</m>. We wish to do the further evaluation of <m>A\circ P\circ M</m>.
+        </p>
+       
+        <example xml:id="DeterminantSizeFour">
+        <p>
+        Let
+        <me>
+        A=
+        \begin{bmatrix}
+            1\amp0\amp-1\amp2\\
+            1\amp-1\amp1\amp0\\
+            0\amp1\amp-2\amp1\\
+            -1\amp1\amp0\amp1
+        \end{bmatrix}
+        </me>
+        The matrix of minors, <m>M</m>, is then
+        <me>
+        M=
+        \begin{bmatrix}
+            2 \amp -3 \amp 1 \amp 1\\
+            4\amp -5\amp 2\amp 1\\
+            -3\amp 4\amp -1\amp -1\\
+            1\amp -2\amp 1\amp 0
+        \end{bmatrix}
+        </me>
+        and the cofactor matrix <m>C</m> is then
+        <me>
+        C=
+        \begin{bmatrix}
+            2 \amp 3 \amp 1 \amp -1\\
+            -4\amp -5\amp -2\amp 1\\
+            -3\amp -4\amp -1\amp 1\\
+            -1\amp -2\amp -1\amp 0
+        \end{bmatrix}
+        </me>
+        As noted before, <m>C=P\circ M</m> where
+        <me>
+        P=
+        \begin{bmatrix}
+            1 \amp -1 \amp 1\amp -1\\
+            -1 \amp 1 \amp -1\amp 1\\
+            1 \amp -1 \amp 1\amp -1\\
+            -1 \amp 1 \amp -1\amp 1
+        \end{bmatrix}
+        </me>
+        We continue by computing <m>A\circ C=A\circ P\circ M</m>.
+        <md>
+        <mrow>
+        A\circ C
+        \amp =
+        \begin{bmatrix}
+            1\amp0\amp-1\amp2\\
+            1\amp-1\amp1\amp0\\
+            0\amp1\amp-2\amp1\\
+            -1\amp1\amp0\amp1
+        \end{bmatrix}
+        \circ
+        \begin{bmatrix}
+            2 \amp 3 \amp 1 \amp -1\\
+            -4\amp -5\amp -2\amp 1\\
+            -3\amp -4\amp -1\amp 1\\
+            -1\amp -2\amp -1\amp 0
+        \end{bmatrix}
+        </mrow>
+        <mrow>
+        \amp =
+        \begin{bmatrix}
+            2 \amp 0 \amp -1 \amp -2 \\
+            -4 \amp 5 \amp -2 \amp 0 \\
+            0 \amp -4 \amp 2 \amp 1 \\
+            1 \amp -2 \amp 0 \amp 0
+        \end{bmatrix}
+        </mrow>
+        </md>
+        Finally, we compte the sums of the entries in each row and each column.
+        <me>
+        \begin{matrix}
+            \amp \textrm{Row sums} \\
+            \begin{bmatrix}
+                2 \amp 0 \amp -1 \amp -2 \\
+                -4 \amp 5 \amp -2 \amp 0 \\
+                0 \amp -4 \amp 2 \amp 1 \\
+                1 \amp -2 \amp 0 \amp 0
+            \end{bmatrix}
+            \amp
+            \begin{matrix} 
+                -1\\-1\\-1\\-1
+            \end{matrix}
+            \\
+            \begin{matrix}
+            \llap{\textrm{Column sums: }}-1\amp -1\amp-1\amp-1
+            \end{matrix}
+        \end{matrix}
+        </me>
+        </p>
+        </example>
+     
+        <p>
+        An astonishing result is seen in this example. Adding the entries in any given row or in
+        any given column gives row sums and column sums that are identical.
+        </p>
+    
+        <theorem xml:id="HadamardRowSums">
+        <statement>
+        <p>
+        Let <m>A</m> be any square matrix, <m>M</m> be its matrix of minors and
+        <m>P</m> satisfy <m>p_{i,j}=(-1)^{i+j}</m>.
+        Then the row sums and column sums of <m>A\circ P\circ M</m> are identical.
+        </p>
+        </statement>
+        <proof>
+        <p>
+        We don't have the tools for the proof yet, so we postpone it.
+        <!-- added emoji frown -->
+        </p>
+        <sidebyside>
+        <image width="5%" source="images/sademoji.jpeg"/>
+        </sidebyside>
+        </proof>
+        </theorem>
+    
+        <p>
+        We now use <xref ref="HadamardRowSums" /> to
+        define the determinant for large matrices.
+        </p>
+
+        <definition><title>The determinant of a square matrix</title> 
+        <statement>
+        <p>
+        Let <m>A</m> be a square matrix with <m>M</m> as the matrix of minors
+        and <m>C</m> as cofactor matrix.
+        Then the
+        <term>determinant</term> of <m>A</m> is the common row and column sum of 
+        <m>A\circ P\circ M= A\circ C</m>.
+        </p>
+        </statement>
+        </definition>
+    
+        </subsection>
+    
+        <subsection><title>The definition of the determinant</title>
+
+        <p>
+        We can make the definition more explicit by focusing on a particular row. 
+        For any square matrix <m>A</m> of order <m>n</m>,
+        the entries in the first row of the cofactor matrix 
+        are <m>C_{1,1}, C_{1,2},\ldots,C_{1,n}</m>. The entries of the first row of <m>A</m> are
+        <m>a_{1,1},a_{1,2},a_{1,3},\ldots,a_{1,n}</m>. Hence the sum of the entries in the first row
+        of <m>A\circ C</m> is
+        <me>
+        a_{1,1}C_{1,1}+a_{1,2}C_{1,2}+a_{1,3}C_{1,3}+\cdots+a_{1,n}C_{1,n}=\sum_{j=1}^n a_{1,j}C_{1,j}
+        </me>
+        This number, by definition, is the determinant of <m>A</m>.
+        It is called the 
+        <em>first row expansion</em> of <m>A</m>. There is nothing special about the
+        first row. An analogous definition exists for all rows.
+        </p>
+    
+        <definition><title>The <m>i</m>-th row expansion of <m>A</m></title>
+        <statement>
+        <p>
+        Let <m>A</m> be a square matrix of order <m>n</m>.
+        Then the 
+        <term><m>i</m>-th row expansion</term> of <m>A</m> is
+        <me>
+        \sum_{j=1}^n a_{i,j}C_{i,j}.
+        </me>
+        </p>
+        </statement>
+        </definition>
+    
+        <p>
+        Columns are handled in exactly the same way
+        </p>
+    
+        <definition><title>The <m>j</m>-th column expansion of <m>A</m></title>
+        <statement>
+        <p>
+        Let <m>A</m> be a square matrix of order <m>n</m>.
+        Then the 
+        <term><m>j</m>-th column expansion</term> of <m>A</m> is
+        <me>
+        \sum_{i=1}^n a_{i,j}C_{i,j}.
+        </me>
+        </p>
+        </statement>
+        </definition>
+    
+        <p>
+        We now restate the definition of the determinant using different
+        notation.
+        </p>
+        <definition><title>The determinant of a square matrix</title> 
+        <statement>
+        <p>
+        For any square matrix <m>A</m>, the determinant of <m>A</m> is
+        the common value of the <m>i</m>-th row expansions
+        <m>j</m>-th column expansions of <m>A</m>.
+        </p>
+        </statement>
+        </definition>
+    
+        <example><title>An example of cofactor expansion with <m>n=4</m></title>
+        <p>
+        Let 
+        <m>A=
+        \begin{bmatrix}
+            1\amp 2\amp 2\amp 3\\
+            -1\amp 4\amp 5\amp 3\\ 3\amp
+            4\amp 8\amp -1\\
+            1\amp 2\amp 2\amp 1
+        \end{bmatrix}</m>.
+        </p>
+        <p>
+        We will evaluate <m>\det(A)</m> by expanding on the first row. 
+        The formula for the first row expansion is
+        <me>
+        \det(A)=a_{1,1}C_{1,1} + a_{1,2}C_{1,2}+ a_{1,3}C_{1,3}+ a_{1,4}C_{1,4}.
+        </me>
+        Here is the computation of the individual pieces.
+        <me>
+        \begin{array}{|c|c|c|}
+        \hline
+        a_{1,1}=1 
+            \amp  M_{1,1}= 
+            \det\begin{bmatrix}4\amp 5\amp 3\\ 
+               4\amp 8\amp -1\\
+               2\amp 2\amp 1\end{bmatrix}
+               =-14 
+            \amp  C_{1,1}=(-1)^2 M_{1,1}=-14 \\ 
+            \hline
+         a_{1,2}=2
+            \amp  M_{1,2}=
+            \det\begin{bmatrix}-1\amp 5\amp 3\\
+                3\amp 8\amp -1\\
+                1\amp 2\amp 1\end{bmatrix}=-36
+            \amp  C_{1,2}=(-1)^3 M_{1,2}=36 \\ 
+        \hline
+         a_{1,3}=2
+            \amp  M_{1,3}=
+            \det\begin{bmatrix}-1\amp 4\amp 3\\
+                3\amp 4\amp -1\\
+                1\amp 2\amp 1\end{bmatrix}=-16
+            \amp  C_{1,3}=(-1)^4 M_{1,3}=-16 \\ 
+        \hline
+         a_{1,4}=3
+            \amp  M_{1,4}=
+            \det\begin{bmatrix}-1\amp 4\amp 5\\
+                3\amp 4\amp -8\\
+                1\amp 2\amp 2\end{bmatrix}=26
+            \amp  C_{1,4}=(-1)^5 M_{1,4}=-26\\ \hline
+        \end{array}
+        </me>
+        </p>
+        <p>
+        Now we can compute
+        <md>
+        <mrow>a_{1,1}C_{1,1} \amp + a_{1,2}C_{1,2} + a_{1,3}C_{1,3} + a_{1,4}C_{1,4}</mrow>
+        <mrow>\amp = 1\cdot(-14)  +2\cdot 36 + 2\cdot(-16) + 3\cdot(-26)</mrow>
+        <mrow>\amp =-52</mrow>
+        </md>
+        </p>
+        <p>
+        The cofactor expansion on column <m>C_3</m> is
+        </p>
+        <p>
+        <md>
+        <mrow>a_{1,3}C_{1,3} + \amp a_{2,3}C_{2,3} +a_{3,3}C_{3,3} + a_{4,3}C_{4,3}</mrow>
+        <mrow>\amp = a_{1,3}M_{1,3} - a_{2,3}M_{2,3} +a_{3,3}M_{3,3} - a_{4,3}M_{4,3}</mrow>
+        </md>
+        The individual pieces are
+        <me>
+        \begin{array}{c}
+        M_{1,3}=
+            \det\begin{bmatrix}
+                -1\amp 4\amp 3\\ 
+                3\amp 4\amp -1\\
+                1\amp 2\amp 1
+            \end{bmatrix}
+               =-16                       \\ 
+        M_{2,3}=
+            \det\begin{bmatrix}
+                1\amp 2\amp 3\\ 
+                3\amp 4\amp -1\\
+                1\amp 2\amp 1
+            \end{bmatrix}
+               =4                          \\
+        M_{3,3}=
+            \det\begin{bmatrix}
+                1\amp 2\amp 3\\ 
+                -1\amp 4\amp 3\\
+                1\amp 2\amp 1
+            \end{bmatrix}
+               =-12                        \\
+        M_{4,3}=
+            \det\begin{bmatrix}
+                1\amp 2\amp 3\\ 
+                -1\amp 4\amp 3\\
+                3\amp 4\amp -1
+                \end{bmatrix}
+               =-48
+        \end{array}
+        </me>
+        and so
+        <md>
+        <mrow>a_{1,3}M_{1,3} - \amp a_{2,3}M_{2,3}+a_{3,3}M_{3,3} - a_{4,3}M_{4,3}</mrow>
+        <mrow>\amp= 2(-16)-5(4)+8(-12)-2(-48)</mrow>
+        <mrow>\amp= -52</mrow>
+        </md>
+        </p>
+
+        <p>
+        Similarly, the cofactor expansion on column <m>C_4</m> evaluates to 
+        <m>-3(26)+3(0)+1(0)+1(26)=-52</m>.
+        </p>
+        <p>
+        The three cofactor expansions of <m>A</m> give the identical result.
+        </p>
+        </example>
+        </subsection>
+    </section>
+    
+    <section><title>Properties derived from cofactor expansion</title>
+    
+    <introduction>
+    <p>
+    The cofactor expansion theorem turns out to be a powerful tool, both for
+    computation and for the derivation of theoretical results. In this section
+    we derive several of these results.
+    </p>
+    
+    <p>
+    All matrices under discussion in the section will be square of order <m>n</m>.
+    </p>
+    </introduction>
+    
+        <subsection><title>All zero rows</title>
+        <theorem xml:id="DeterminantAllZeroRow"><title>All zero row or column implies <m>\det A=0</m></title>
+        <statement>
+        <p>
+        If <m>A</m> has an all zero row or all zero column, then <m>\det(A)=0</m>.
+        </p>
+        </statement>
+        <proof>
+        <p>
+        Suppose row <m>R_i</m> is all zero. Then the expansion on <m>R_i</m> is
+        <me>
+        \sum_{j=1}^n a_{i,j}C_{i,j} =
+        \sum_{j=1}^n 0C_{i,j} =0.
+        </me>
+        </p>
+        </proof>
+        </theorem>
+        </subsection>
+    
+        <subsection><title>Triangular matrices</title>
+        <theorem xml:id="DeterminantTriangularMatrix"><title>The determinant of a triangular matrix</title>
+        <statement>
+        <p>
+        If <m>A</m> is triangular, then <m>\det(A)=a_{1,1}a_{2,2}\cdots a_{n,n}</m>.
+        </p>
+        </statement>
+        <proof>
+        <p>
+        Suppose <m>A</m> is lower triangular (the upper triangular case uses
+        essentially the same argument). We repeatedly expand on the first
+        row.
+        <md>
+        <mrow>
+        \det A
+        \amp = \det
+           \begin{bmatrix}
+               a_{1,1} \amp 0 \amp 0 \amp \cdots \amp 0\\
+               * \amp a_{2,2} \amp 0 \amp \cdots \amp 0\\
+               * \amp * \amp a_{3,3} \amp \cdots \amp 0\\
+               \amp \amp \amp \vdots\\
+               * \amp * \amp * \amp \cdots \amp a_{n,n}\\
+           \end{bmatrix}
+        </mrow>
+        <mrow>
+        \amp = a_{1,1} 
+           \det 
+           \begin{bmatrix}
+               a_{2,2} \amp 0 \amp \cdots \amp 0\\
+               * \amp a_{3,3} \amp \cdots \amp 0\\
+               \amp \amp \vdots\\
+               * \amp * \amp \cdots \amp a_{n,n}\\
+           \end{bmatrix}
+        </mrow>
+        <mrow>
+        \amp = a_{1,1} a_{2,2} 
+           \det 
+           \begin{bmatrix}
+               a_{3,3} \amp \cdots \amp 0\\
+               \amp \vdots\\
+               * \amp \cdots \amp a_{n,n}\\
+           \end{bmatrix}
+        </mrow>
+        <mrow> \amp \phantom{x}\vdots</mrow> <!-- fix centring vdots with = -->
+        <mrow>\amp = a_{1,1}a_{2,2}\cdots a_{n,n}</mrow>
+        </md>
+        </p>
+        </proof>
+        </theorem>
+    
+        <corollary><title>The determinant of a diagonal matrix the product of its diagonal entries</title>
+        <statement>
+        <p>
+        If <m>A</m> is a diagonal matrix, 
+        then <m>\det(A)=a_{1,1}a_{2,2}\cdots a_{n,n}</m>.
+        </p>
+        </statement>
+        <proof>
+        <p>
+        A diagonal matrix is certainly triangular.
+        </p>
+        </proof>
+        </corollary>
+    
+        <example><title><m>\det I=1</m></title>
+        <p>
+        Since the identity matrix <m>I</m> is a diagonal matrix,
+        <me>\det I=1</me>
+        </p>
+        </example>
+        </subsection>
+    
+        <subsection><title>Interchanging rows</title>
+        <p>
+        The purpose of this section is to show that if a matrix <m>B</m> is
+        derived from <m>A</m> by interchanging two rows, then 
+        <m>\det B = -\det A</m>. We do this in three steps:
+        </p>
+    
+        <lemma><title>Interchanging rows <m>R_1</m> and <m>R_2</m> changes the
+            sign of the determinant</title>
+        <statement>
+        <p>
+        If <m>B</m> is derived from <m>A</m> by interchanging
+        the first and second rows (that is, <m>R_1\leftrightarrow R_2</m>),
+        then <m>\det B = -\det A</m>.
+        </p>
+        </statement>
+        <proof>
+        <p>
+        We compute the determinant of <m>A</m> by cofactor expansion along the
+        first row and the determinant of <m>B</m> by cofactor expansion along
+        the second row. This means that 
+        <me>
+            \det A =\sum_{j=1}^n (-1)^{1+j} a_{1,j}M_{1,j}\\
+            \det B =\sum_{j=1}^n (-1)^{2+j} b_{2,j}M'_{2,j}
+        </me>
+        Since the first row of <m>A</m> is the second row of <m>B</m>, we have
+        <m>a_{1,j}=b_{2,j}</m> for <m>j=1,2,\ldots,n</m>. In addition, deleting
+        <m>R_1</m> and <m>C_j</m> from <m>A</m> yields exactly the same matrix
+        as deleting <m>R_2</m> and <m>C_j</m> from <m>B</m> which implies that
+        <m>M_{1,j}=M'_{2,j}</m>. Hence we have
+        <md>
+            <mrow>\det B
+                  \amp=\sum_{j=1}^n (-1)^{2+j} b_{2,j}M'_{2,j}</mrow>
+            <mrow>\amp= \sum_{j=1}^n (-1)^{2+j} a_{1,j}M_{1,j}</mrow>
+            <mrow>\amp= -\sum_{j=1}^n (-1)^{1+j} a_{1,j}M_{1,j}</mrow>
+            <mrow>\amp= -\det A</mrow>
+        </md>
+        </p>
+        </proof>
+        </lemma>
+    
+        <lemma><title>Interchanging rows <m>R_i</m> and <m>R_{i+1}</m> changes the
+            sign of the determinant</title>
+        <statement>
+        <p>
+        If <m>B</m> is derived from <m>A</m> by interchanging <m>R_i</m> and <m>R_{i+1}</m>
+        (that is, <m>R_i\leftrightarrow R_{i+1}</m>), then <m>\det B = -\det A</m>.
+        </p>
+        </statement>
+        <proof>
+        <p>
+        We compute the determinants by cofactor expansion  along the <m>i</m>-th row of <m>A</m> 
+        and along the the <m>i+1</m>-st row of <m>B</m>.  This means that 
+        <me>
+            \det A =\sum_{j=1}^n (-1)^{i+j} a_{i,j}M_{i,j}\\
+            \det B =\sum_{j=1}^n (-1)^{i+1+j} b_{i+1,j}M'_{i+1,j}
+        </me>
+        We have
+        <m>a_{i,j}=b_{{i+1},j}</m> for <m>j=1,2,\ldots,n</m>. In addition, deleting
+        <m>R_i</m> and <m>C_j</m> from <m>A</m> yields exactly the same matrix
+        as deleting <m>R_{i+1}</m> and <m>C_j</m> from <m>B</m> which implies that
+        <m>M_{i,j}=M'_{i+1,j}</m>. Hence we have
+        <md>
+            <mrow>\det B
+                  \amp=\sum_{j=1}^n (-1)^{i+1+j} b_{i+1,j}M'_{i+1,j}</mrow>
+            <mrow>\amp= \sum_{j=1}^n (-1)^{i+1+j} a_{i,j}M_{i,j}</mrow>
+            <mrow>\amp= -\sum_{j=1}^n (-1)^{i+j} a_{i,j}M_{i,j}</mrow>
+            <mrow>\amp= -\det A</mrow>
+        </md>
+        </p>
+        </proof>
+        </lemma>
+    
+        <theorem xml:id="DeterminantRowInterchange"><title>Interchanging rows <m>R_i</m> and <m>R_j</m> changes the
+            sign of the determinant</title>
+        <statement>
+        <p>
+        If <m>B</m> is derived from <m>A</m> by interchanging the <m>i</m>-th and <m>j</m>-th rows 
+        (that is, <m>R_i\leftrightarrow R_j</m>), then <m>\det B = -\det A</m>.
+        </p>
+        </statement>
+        <proof>
+        <p>
+        With no loss of generality, we assume that <m>i\lt j</m>.
+        Interchange <m>R_i</m> with the one below it so that it is
+        one row lower. Repeat the process until it is just above
+        <m>R_j</m>. This take <m>j-i-1</m> interchanges. Now interchange
+        <m>R_j</m> with the one above it repeatedly until it is 
+        in the <m>i</m>-th row. This takes <m>j-i</m> interchanges. The net
+        effect is to interchange <m>R_i</m> and <m>R_j</m>. Each interchange
+        multiplies the determinant by <m>-1</m>. Since there are
+        <m>2(j-i)-1</m> (an odd number) interchanges in total, we have
+        <me>
+            \det B = (-1)^{2(j-i)-1} \det A = -\det A.
+        </me>
+        </p>
+        </proof>
+        </theorem>
+          
+        <p>
+        Here is an example to see how the proof actually works. The
+        second row (in red) and sixth row (in green) will be interchanged. The
+        red row is interchanged with the one below it until it is just below
+        the green row. Then the green row is interchanged with the one above
+        it until it is in the position originally occupied by the red row. It
+        takes four interchanges to get the red row below the green row and three
+        interchanges to get the green row in the original position of the red row.
+        </p>
+            
+        <figure>
+        <caption/>
+        <image width="50%" source="images/300px-Matrix_rows.gif" />
+        </figure>
+        </subsection>
+    
+        <subsection><title>Multiplying a row by a constant <m>\lambda</m></title>
+        <theorem xml:id="DeterminantRowMultiply"><title>Multiplying a row by <m>\lambda</m> 
+        multiplies the determinant by <m>\lambda</m></title>
+        <statement>
+        <p>
+        If <m>B</m> is derived from <m>A</m> by multiplying the <m>i</m>-th row by <m>\lambda</m>
+        (that is, <m>R_i\gets \lambda R_i</m>), then <m>\det B=\lambda \det A</m>.
+        </p>
+        </statement>
+        <proof>
+        <p>
+        Expanding on the <m>i</m>-th row:
+        <md>
+            <mrow> \det B \amp = \sum_{j=1}^n b_{i,j}M_{i,j} </mrow>
+            <mrow> \amp = \sum_{j=1}^n \lambda a_{i,j}M_{i,j} </mrow>
+            <mrow> \amp = \lambda \sum_{j=1}^n a_{i,j}M_{i,j} </mrow>
+            <mrow> \amp = \lambda\det A </mrow>
+        </md>
+        </p>
+        </proof>
+        </theorem>
+
+        <p>
+        We use this theorem to evaluate the determinant of <m>\lambda A</m>.
+        </p>
+    
+        <corollary>
+        <statement>
+        <p>
+        If <m>A</m> is a square matrix of order <m>n</m> and <m>\lambda</m> is
+        any real number, then
+        <me>
+            \det \lambda A=\lambda^n A.
+        </me>
+        </p>
+        </statement>
+        <proof>
+        <p>
+        The matrix <m>\lambda A</m> is derived from <m>A</m> by applying
+        <m>R_i\gets \lambda R_i</m> for <m>i=1,2,\ldots,n</m>. Each application
+        multiplies the determinant by <m>\lambda</m>, and so after the 
+        <m>n</m> applications we have
+        <me>
+            \det \lambda A=\lambda^n A.
+        </me>
+        </p>
+        </proof>
+        </corollary>
+        </subsection>
+    
+        <subsection><title>Row additivity</title>
+        <p>
+        We wish to consider two matrices <m>A</m> and <m>B</m> that are identical except for the 
+        <m>i</m>-th row. We may visualize this at
+        <me>
+            A=
+            \begin{bmatrix}
+                R_1\\ R_2\\ \vdots\\ R_i\\ \vdots\\ R_n
+            \end{bmatrix}
+            \textrm{ and }
+            B=
+            \begin{bmatrix}
+                R_1\\ R_2\\ \vdots\\ R_i'\\ \vdots\\ R_n
+            \end{bmatrix}.
+        </me>
+        We then define the matrix <m>C</m> by
+        <me>
+            C=
+            \begin{bmatrix}
+                R_1\\ R_2\\ \vdots\\ R_i+R_i'\\ \vdots\\ R_n
+            \end{bmatrix}.
+        </me>
+        </p>
+    
+        <theorem xml:id="RowAdditivityTheorem"><title>Row additivity theorem</title>
+        <statement>
+        <p>
+        If <m>A</m>, <m>B</m> and <m>C</m> are as above,
+        then <m>\det C=\det A + \det B</m>.
+        </p>
+        </statement>
+        <proof>
+        <p>
+        We expand by cofactors on the <m>i</m>-th row.
+        <md>
+            <mrow> \det C \amp = \sum_{j=1}^n (-1)^{i+j}c_{i,j} M_{i,j} </mrow>
+            <mrow> \amp = \sum_{j=1}^n (-1)^{i+j}(a_{i,j}+b_{i,j}) M_{i,j} </mrow>
+            <mrow> \amp = \sum_{j=1}^n (-1)^{i+j}a_{i,j} M_{i,j} + \sum_{j=1}^n (-1)^{i+j}b_{i,j} M_{i,j} </mrow>
+            <mrow> \amp =\det A + \det B</mrow>
+        </md>
+        </p>
+        </proof>
+        </theorem>
+        </subsection>
+    
+        <subsection><title>Identical and proportional rows</title>
+        <theorem xml:id="DeterminantIdenticalRows"><title>A matrix <m>A</m> with two identical rows has <m>\det A=0</m> </title>
+        <statement>
+        <p>
+        Suppose a matrix <m>A</m> has two equal rows: <m>R_i=R_j</m> with <m>i\not=j</m>.
+        Then <m>\det A=0</m>.
+        </p>
+        </statement>
+        <proof>
+        <p>
+        Let <m>B</m> be the matrix obtained by the elementary row operation
+        <m>R_i\leftrightarrow R_j</m>. The equality of the two rows implies <m>B=A</m>, and
+        so <m>\det B = \det A</m>. On the other hand, 
+        <xref ref="DeterminantRowInterchange" />
+        implies <m>\det B = -\det A</m>. Hence <m>\det A=0</m>.
+        </p>
+        </proof>
+        </theorem>
+    
+        <definition><title>Proportional rows of a matrix</title>
+        <statement>
+        <p>
+        Two rows, <m>R_i</m> and <m>R_j</m> are <term>proportional</term>
+        if <m>R_i=\lambda R_j</m> for some <m>\lambda\not=0</m>.
+        </p>
+        </statement>
+        </definition>
+    
+        <theorem xml:id="DeterminantProportionalRows"><title>A matrix <m>A</m> with two proportional rows has <m>\det
+        A=0</m> </title>
+        <statement>
+        <p>
+        Suppose a matrix <m>A</m> has two proportional rows: <m>R_i=\lambda R_j</m> with <m>i\not=j</m>
+        and <m>\lambda\not=0</m>.
+        Then <m>\det A=0</m>.
+        </p>
+        </statement>
+        <proof>
+        <p>
+        Let <m>B</m> be the matrix obtained by the elementary row operation
+        <m>R_i\gets \lambda R_i</m>. 
+        By <xref ref="DeterminantRowMultiply" />, 
+        <m>\det B = \lambda \det A</m>.
+        However, <m>B</m> has two identical rows and so <m>\det B=0</m>.
+        Hence <m>\det A=0</m>.
+        </p>
+        </proof>
+        </theorem>
+        </subsection>
+    
+        <subsection><title>Adding a multiple of one row to another</title>
+        <p>
+        We can now use
+        <xref ref="RowAdditivityTheorem" />
+        and
+        <xref ref="DeterminantProportionalRows" />
+        to find the effect of the third elementary row operation on the determinant
+        of a matrix.
+        </p>
+
+        <theorem xml:id="DeterminantRowAdd"><title>Adding a multiple of one row to another 
+        leaves the determinant unchanged</title>
+        <statement>
+        <p>
+        If <m>B</m> is derived from <m>A</m> by adding a multiple of one row to another
+        (that is, <m>R_i\gets R_i+\lambda R_j</m>) then <m>\det B=\det A</m>.
+        </p>
+        </statement>
+        <proof>
+        <p>
+        The matrices <m>A</m> and <m>B</m> are identical except for the <m>i</m>-th row.
+        In <m>A</m> the <m>i</m>-th row is <m>R_i</m>, and in
+        <m>B</m> the <m>i</m>-th row is <m>R_i+\lambda R_j</m>. The row additivity theorem
+        then says
+        <md>
+        <mrow> \det B 
+            \amp = \det \begin{bmatrix}
+                R_1\\ 
+                \vdots\\ 
+                R_{i-1}\\ 
+                R_i+\lambda R_j\\ 
+                R_{i+1}\\ 
+                \vdots\\ 
+                R_n
+            \end{bmatrix} </mrow>
+        <mrow> 
+            \amp = \det
+                \begin{bmatrix}
+                R_1\\ \vdots\\ R_{i-1}\\ R_i\\ R_{i+1}\\ \vdots\\ R_n
+                \end{bmatrix}
+                +\det \begin{bmatrix}
+                R_1\\ \vdots\\R_{i-1}\\\lambda R_j\\ R_{i+1}\\ \vdots\\ R_n
+                \end{bmatrix} 
+        </mrow>
+        <mrow>\amp \textrm{(The second matrix has two proportional rows)}</mrow>
+        <mrow>\amp =\det A + 0  </mrow>
+        <mrow>\amp =\det A </mrow>
+        </md>
+        </p>
+        </proof>
+        </theorem>
+        </subsection>
+    
+        <subsection xml:id="DeterminantElementaryMatrices"><title>The determinant of elementary matrices</title>
+        <p>
+        As seen in
+        <xref ref="ElementaryMatrices" />,
+        there are three types of elementary row operations, and each one
+        has an elementary matrix associated with it. We can now evaluate the 
+        determinant of these matrices <m>E_1</m>, <m>E_2</m> and <m>E_3</m>.
+            <ul>
+            <li><p>
+                <m>R_i\leftrightarrow R_j</m>: If we interchange <m>R_i</m> and <m>R_j</m>
+                of <m>E_1</m>, we get the matrix <m>I</m>. Hence
+                <m>\det E_1=-\det I=-1</m>.
+            </p></li>
+            <li><p>
+                <m>R_i\gets \lambda R_i</m> with <m>\lambda\not=0</m>:
+                <m>\det E_2=\det \mathrm{diag} (1,1,\ldots, 1,\lambda,1,\ldots,1)=\lambda</m>.
+            </p></li>
+            <li><p>
+                <m>R_i\gets R_i+\lambda R_j</m>:
+                <m>\det E_3=1</m> since <m>E_3</m> is triangular.
+            </p></li>
+            </ul>
+        We may combine these three results into one wonderful theorem:
+        </p>
+    
+        <theorem xml:id="DeterminantsElementaryRowOperations"><title>Determinants and elementary row operations</title>
+        <statement>
+        <p>
+        If <m>B</m> is derived from <m>A</m> by one elementary row operation
+        whose elementary matrix is <m>E</m>, then
+        <me>
+            B=EA \textrm{ and }
+            \det B= \det (EA) = \det E \det A.
+        </me>
+        </p>
+        </statement>
+        <proof>
+        <p>
+        There are three possible elementary row operations, and the
+        equation is valid in each one of them.
+        </p>
+    
+        
+        <table>
+        <title/>
+        <tabular halign="center">
+           <row bottom="medium">
+           <cell>Row operation</cell>
+           <cell>matrix determinant</cell>
+           <cell><m>\det B</m></cell>
+           </row>
+           
+           <row>
+              <cell>
+                <m>R_i\leftrightarrow R_j</m>          
+              </cell>
+              <cell>
+                <m>\det E_1=-1</m>          
+              </cell>
+              <cell>
+                <m>\det B=-\det A</m> by <xref ref="DeterminantRowInterchange" />.          
+              </cell>
+           </row>
+           
+           <row>
+              <cell>
+                <m>R_i\gets \lambda R_i</m>          
+              </cell>
+              <cell>
+                <m>\det E_2=\lambda</m>          
+              </cell>
+              <cell>
+                <m>\det B=\lambda\det A</m> by <xref ref="DeterminantRowMultiply" />.          
+              </cell>
+           </row>
+           
+           <row>
+              <cell>
+                <m>R_i\gets R_i+\lambda R_j</m>          
+              </cell>
+              <cell>
+                <m>\det E_3=1</m>          
+              </cell>
+              <cell>
+                <m>\det B=\det A</m> by <xref ref="DeterminantRowAdd" />.          
+              </cell>
+           </row>
+        </tabular>
+        </table>
+        </proof>
+        </theorem>
+    
+    
+        <example><title>Using elementary row operations to evaluate a determinant</title>
+        <p>
+        We recalculate the determinant from <xref ref="DeterminantSizeFour" />.
+        Let
+        <me>
+            A=
+            \begin{bmatrix}
+                1\amp0\amp-1\amp2\\
+                1\amp-1\amp1\amp0\\
+                0\amp1\amp-2\amp1\\
+                -1\amp1\amp0\amp1
+            \end{bmatrix}
+        </me>
+        We apply the two elementary row operations to <m>A</m>:
+        <m>R_2\gets R_2-R_1</m>
+        and <m> R_3 \gets R_3+R_1</m> to get
+        <me>
+            B=
+            \begin{bmatrix}
+                1\amp0\amp-1\amp2\\
+                0\amp-1\amp2\amp-2\\
+                0\amp1\amp-2\amp1\\
+                0\amp1\amp-1\amp3
+            \end{bmatrix}
+        </me>
+        From 
+        <xref ref="DeterminantRowAdd" />
+        we have <m>\det A=\det B</m>.
+        Expanding on the first column gives, 
+        <me>
+            \det A=\det B =
+            \det
+            \begin{bmatrix}
+                -1\amp2\amp-2\\
+                1\amp-2\amp1\\
+                1\amp-1\amp3
+            \end{bmatrix}
+        </me>
+        
+        Now we use 
+        <m>R_2\gets R_2+R_1</m>
+        and
+        <m>R_3\gets R_3+R_1</m>
+        to get
+        <me>
+            \det A=\det B =
+            \det
+            \begin{bmatrix}
+                -1\amp2\amp-2\\
+                0\amp0\amp-1\\
+                0\amp1\amp1
+            \end{bmatrix}
+        </me>
+        
+        Expanding on the first column once again gives
+        <me>
+            \det A=\det B =(-1)
+            \det
+            \begin{bmatrix}
+                0\amp-1\\
+                1\amp1
+            \end{bmatrix}
+            =-1
+        </me>
+        </p>
+        </example>
+        </subsection>
+    
+        <subsection><title>The determinant of invertible matrices</title>
+        <p>
+        From
+        <xref ref="InvertibilityEquivalence" />
+        we have a test for matrix invertibility: a matrix <m>A</m> 
+        of order <m>n</m> is invertible
+        if and only if its reduced row echelon form is <m>I</m>,
+        whose determinant is one. If a matrix is not invertible, 
+        then the number of leading ones in the reduced row echelon
+        form is less than <m>n</m>, and so the last row is all zero. 
+        From 
+        <xref ref="DeterminantAllZeroRow" />
+        the determinant of this matrix must be zero.
+        </p>
+    
+        <lemma><title>Determinant of the reduced row echelon form</title>
+        <statement>
+        <p>
+        Let <m>B</m> be the reduced row echelon form of <m>A</m>.
+        Then
+        <me>
+            \det B =
+            \begin{cases}
+             1 \amp \textrm{if } A \textrm{ is invertible}\\
+             0 \amp A \textrm{ otherwise}
+            \end{cases}
+        </me>
+        </p>
+        </statement>
+        </lemma>
+    
+        <p>
+        Next, we relate the determinant of a matrix <m>A</m> to that
+        of its reduced row echelon form <m>B</m>. From
+        <xref ref="ElementaryMatrixRowMultiplication" />
+        we write
+        <me>
+        B=E_k E_{k-1}E_{k-2}\cdots E_2 E_1 A
+        </me>
+        and then note from 
+        <xref ref="DeterminantsElementaryRowOperations" />
+        that
+        <md>
+            <mrow>\det B
+                \amp = \det (E_k E_{k-1}E_{k-2}\cdots E_2 E_1 A)</mrow>
+            <mrow>\amp = \det E_k \det( E_{k-1}E_{k-2}\cdots E_2 E_1 A)</mrow>
+            <mrow>\amp = \det E_k \det E_{k-1}\det(E_{k-2}\cdots E_2 E_1 A)</mrow>
+            <mrow>\amp \vdots</mrow>
+            <mrow>\amp = \det E_k \det E_{k-1}\det E_{k-2}\cdots \det E_2 \det E_1 \det A</mrow>
+        </md>
+        We further note that for any elementary matrix <m>E</m>, we have
+        <me>
+            \det E =
+            \begin{cases}
+             -1 \amp \textrm{ for } R_i\leftrightarrow R_j\\
+             \lambda \amp \textrm{ for } R_i\gets \lambda R_i \textrm{ where } \lambda\not=0\\
+             1 \amp \textrm{ for } R_i\gets R_i+\lambda R_j\\
+            \end{cases}
+        </me>
+        In particular, this means that for any elementary matrix <m>E</m> we have <m>\det E\not=0</m>,
+        and so we have:
+        <me>
+        \det B = \underbrace{\det E_k \det E_{k-1} \cdots \det E_2 \det E_1}_{\not=0} \det A
+        </me>
+        and so <m>\det B=0</m> if and only if <m>\det A=0</m>. In summary:
+        </p>
+        <theorem xml:id="DeterminantInvertibleNonzero"><title>Invertible matrices have nonzero 
+        determinants</title>
+        <statement>
+        <p>
+        <m>A</m> is invertible if and only if <m>\det A \not= 0</m>.
+        </p>
+        </statement>
+        </theorem>
+
+        <p>
+        We can now add an extra condition to 
+        <xref ref="InvertibilityEquivalence" />.
+        </p>
+        <theorem xml:id="InvertibilityEquivalence2"><title>Equivalent forms of invertibility</title> 
+        <statement>
+        <p>
+        Suppose that <m>A</m> is an <m>n\times n</m> square matrix.
+        Then the following statements are equivalent:
+            <ol>
+            <li><p> <m>A</m> is invertible</p></li>
+            <li><p> <m>A\mathbf x=0</m> if and only if <m>\mathbf x=0</m></p></li>
+            <li><p> The reduced row echelon form of <m>A</m> is <m>I_n</m></p></li>
+            <li><p> <m>A</m> is a product of elementary matrices</p></li>
+            <li><p> <m>A\mathbf x=\mathbf b</m> is consistent for any <m>\mathbf b</m></p></li>
+            <li><p> <m>A\mathbf x=\mathbf b</m> has exactly one solution for any <m>\mathbf b</m></p></li>
+            <li><p><m>\det A\not=0</m></p></li>
+            </ol>
+        </p>
+        </statement>
+        </theorem>
+        </subsection>
+        
+        <subsection><title>The determinant of the product of two matrices</title>
+        <p>
+        In <xref ref="DeterminantsElementaryRowOperations" />
+        we proved that <m>\det E \det A = \det(EA)</m> for any elementary matrix <m>E</m>.
+        In other words, in this case the determinant of the product 
+        is the product of the determinants. We can now show that this is true for
+        any pair of matrices.
+        </p>
+    
+        <theorem><title>The determinant of <m>AB</m></title>
+        <statement>
+        <p>
+        For any square matrices <m>A</m> and <m>B</m> of the same size
+        <me>
+            \det(AB)=\det A\; \det B.
+        </me>
+        </p>
+        </statement>
+        <proof>
+        <p>
+        We proceed by considering three cases:
+            <ol>
+            <li><p>
+                <m>\det B=0</m>: In this case <m>\det A\;\det B=0</m>. In addition,
+                from <xref ref="InvertibilityEquivalence2" />,
+                The is an <m>\mathbf x\not=0</m> so that <m>B\mathbf x=0</m>. Then
+                <m>AB\mathbf x=0</m> and so <m>\det(AB)=0</m>. This gives
+                <me>
+                \det(AB)=0=\det A\;\det B.
+                </me>
+            </p></li>
+            <li><p>
+                <m>\det B\not=0</m> and <m> \det A=0</m>:
+                Once again, <m>\det A \det B=0</m>.
+                Again, using 
+                <xref ref="InvertibilityEquivalence2" /> (twice),
+                there is <m>\mathbf y\not=0</m> so that <m>A\mathbf y=0</m> and there
+                is an <m>\mathbf x</m> so that <m>B\mathbf x=\mathbf y</m>. Notice
+                that <m>\mathbf x\not=0</m>, for otherwise <m>\mathbf y=B\mathbf x=0</m>.
+                We then have <m>AB\mathbf x=A\mathbf y=0</m> with <m>\mathbf y\not=0</m>,
+                and so <m>\det(AB)=0</m>, which, once again gives
+                <me>
+                \det(AB)=0=\det A\;\det B.
+                </me>
+            </p></li>
+            <li><p>
+                <m>\det B\not=0</m> and <m> \det A\not=0</m>:
+                Once again, using 
+                <xref ref="InvertibilityEquivalence2" />,
+                <me>
+                A=F_1 F_2\cdots F_k \textrm{, a product of elementary matrices.}
+                </me>
+                Using <xref ref="DeterminantsElementaryRowOperations" />
+                repeatedly,
+                <me>
+                \det A= \det F_1\;\det F_2\cdots\det F_k
+                </me>
+                and so
+                <me>
+                \det A\; \det B=\det F_1\;\det F_2\cdots\det F_k \det B
+                </me>
+                But also by using <xref ref="DeterminantsElementaryRowOperations" />
+                repeatedly,
+                <md>
+                <mrow>\det(AB)
+                    \amp =\det(F_1F_2\cdots F_k B)</mrow>
+                <mrow>\amp =\det F_1\;\det F_2\cdots\det F_k\;\det B</mrow>
+                <mrow>\amp =\det A\;\det B</mrow>
+                </md>
+            </p></li>
+            </ol>
+        </p>
+        </proof>
+        </theorem>
+    
+        <corollary><title>The determinant of the inverse of <m>A</m></title>
+        <statement>
+        <p>
+        If <m>A</m> is an invertible matrix, then
+        <me>
+        \det A^{-1}=\frac 1{\det A}.
+        </me>
+        </p>
+        </statement>
+        <proof>
+        <p>
+        Since <m>A A^{-1}=I</m>, we have <m>\det A\;\det A^{-1}=\det I=1</m>.
+        </p>
+        </proof>
+        </corollary>
+        <p>
+        Notice how this reinforces the idea that an invertible matrix must
+        have a nonzero determinant.
+        </p>
+        </subsection> 
+    
+        <subsection><title>The determinant of the transpose of <m>A</m></title>
+        <p>
+        As discussed in <xref ref="DeterminantElementaryMatrices" />,
+        the determinants of the three types of elementary matrices can be evaluated
+        easily. In two cases the matrices are symmetric, and in the third case it
+        is triangular. This leads to an easy result:
+        </p>
+        <lemma xml:id="DeterminantElelmentaryTronspose"><title>The determinant of the transpose of an elementary matrix</title>
+        <statement>
+        <p>
+        For any elementary matrix <m>E</m>,
+        <me>
+        \det(E^T)=\det E
+        </me>
+        </p>
+        </statement>
+        </lemma>
+        <p>
+        We now extend this result to all matrices.
+        </p>
+        <theorem><title>The determinant of the transpose of <m>A</m></title>
+        <statement>
+        <p>
+        <me>\det A = \det A^T</me>
+        </p>
+        </statement>
+        <proof>
+        <p>
+        If <m>B</m> is the reduced row echelon form of <m>A</m>, then
+        <me>
+        B=E_k E_{k-1}\cdots E_2 E_1 A
+        </me>
+        and 
+        <me>
+        B^T=A^T E_1^T E_2^T\cdots E_{k-1}^T  E_k^T.
+        </me>
+        Hence
+        <me>
+        \det B=\det E_k \det E_{k-1}\cdots \det E_2 \det E_1 \det A
+        </me>
+        and
+        <me>
+        \det B^T=\det A^T \det E_1^T \det E_2^T\cdots \det E_{k-1}^T \det E_k^T.
+        </me>
+        There are two possibilities for <m>B</m>:
+            <ul>
+            <li><p>
+                When <m>A</m> is invertible, <m>B=B^T=I</m> and so <m>\det B= \det B^T=1</m>.
+            </p></li>
+            <li><p>
+                When <m>A</m> is singular, <m>B</m> has an all zero last row and
+                <m>B^T</m> has an all zero last column. This implies
+                <m>\det B=\det B^T=0</m> 
+            </p></li>
+            </ul>
+        In either case we have <m>\det B=\det B^T</m>,
+        and so we can equate the values given above to get
+        <me>
+        \det E_k \cdots  \det E_1 \det A=
+        \det A^T \det E_1^T \cdots \det E_k^T.
+        </me>
+        Using <xref ref="DeterminantElelmentaryTronspose" />,
+        we have <m>\det E_j=\det E_j^T</m> for <m>j=1,2,\ldots,k.</m>
+        Hence <m>\det A=\det A^T.</m>
+        </p>
+        </proof>
+        </theorem>
+        </subsection>
+    </section>
+    
+    <section><title>The adjoint of a matrix and Cramer's rule</title>
+    <p>
+     We have already used
+     <xref ref="MatrixCofactorDefinition" />
+     to define the cofactor matrix <m>C</m> of a matrix <m>A</m>.
+     We use this to define the adjoint of a square matrix.
+    </p>
+
+    <definition><title>The adjoint of a matrix</title>
+    <statement>
+    <p>
+    If a matrix <m>A</m> has <m>C</m> as a cofactor matrix then the
+    <term>adjoint of <m>A</m></term> is <m>C^T</m>. We write this as
+    <m>\adj(A)=C^T</m>.
+    </p>
+    </statement>
+    </definition>
+
+    <example><title>The adjoint of a matrix</title>
+    <p>
+    Let
+    <me>
+        A=
+        \begin{bmatrix}
+        1\amp2\amp1 \\ 3\amp1\amp1 \\ 1\amp2\amp2
+        \end{bmatrix}.
+    </me>
+    Then 
+    <me>
+        \det A = -5\\
+        M=
+        \begin{bmatrix}
+        0\amp5\amp 5 \\ 2 \amp 1 \amp 0 \\ 1\amp -2\amp -5
+        \end{bmatrix}
+        \\
+        C=
+        \begin{bmatrix}
+        0\amp-5\amp 5 \\ -2 \amp 1 \amp 0 \\ 1\amp 2\amp -5
+        \end{bmatrix}
+        \\
+        \adj(A)=C^T=
+        \begin{bmatrix}
+        0\amp-2\amp1 \\ -5\amp1\amp 2\\ 5\amp0\amp-5
+        \end{bmatrix}
+    </me>
+    and so
+    <me>
+        A^{-1}=-\frac 15
+        \begin{bmatrix}
+        0\amp-2\amp1 \\ -5\amp1\amp 2\\ 5\amp0\amp-5
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+        0\amp\frac25\amp-\frac15 \\ 1\amp-\frac15\amp -\frac25\\ -1\amp0\amp1
+        \end{bmatrix}
+    </me>
+    </p>
+    </example>
+
+    <theorem><title>The inverse and the adjoint of a matrix</title>
+    <statement>
+    <p>
+    Let <m>A</m> be an invertible matrix. Then
+    <me>
+    A^{-1}=\frac1{\det A} \adj A
+    </me>
+    </p>
+    </statement>
+    <proof>
+    <p>
+    <me>
+        A \adj A=
+        \begin{bmatrix}
+            a_{1,1} \amp a_{1,2} \amp \cdots \amp a_{1,n} \\
+            a_{2,1} \amp a_{2,2}  \amp \cdots \amp a_{2,n} \\
+            \amp\amp\vdots\\
+            a_{n,1} \amp a_{n,2} \amp \cdots \amp a_{n,n} \\
+        \end{bmatrix}
+        \begin{bmatrix}
+            C_{1,1} \amp C_{2,1} \amp \cdots \amp C_{n,1} \\
+            C_{1,2} \amp C_{2,2} \amp \cdots \amp C_{n,2} \\
+            \amp\amp\vdots\\
+            C_{1,n} \amp C_{2,n} \amp \cdots \amp C_{n,n} \\
+        \end{bmatrix}
+    </me>
+    Consider the <m>i</m>-<m>j</m> entry of <m>A \adj A</m>,
+    which we write as
+    <me>
+        (A \adj A)_{i,j}=\sum_{k=1}^n A_{i,k}(\adj A)_{k,j}
+        =\sum_{k=1}^n a_{i,k} C_{j,k}.
+    </me>
+    
+    There are two cases:
+        <ul>
+        <li><p>
+            <m>i=j</m>: In this case, from the <m>i</m>-th row expansion of <m>A</m>,
+            <me>
+                (A \adj A)_{i,i}=\sum_{k=1}^n a_{i,k} C_{i,k}=\det A
+            </me>
+        </p></li>
+        <li><p>
+            <m>i\not=j</m>:
+            For this case we use a new matrix <m>B</m> constructed from <m>A</m>
+            by replacing <m>R_j</m> with <m>R_i</m>, that is <m>R_j\gets R_i</m>
+            (this is not an elementary row operation). This means 
+            <m>B_{j,k}=A_{i,k}=a_{i,k}</m> for <m>k=1,2,\ldots n</m>. Since <m>B</m> has two identical rows,
+            <xref ref="DeterminantIdenticalRows" />
+            tells us that <m>\det B=0</m>. On the other hand, by expanding
+            on <m>R_j</m> of <m>B</m>, we have
+            <me>
+                0
+                =\sum_{k=1}^n B_{j,k} C_{j,k}
+                =\sum_{k=1}^n a_{i,k} C_{j,k}=
+                (A \adj A)_{i,j}
+            </me>
+            Combining the two cases.
+            <md>
+            <mrow>
+                A \adj A
+                \amp =
+                \begin{cases}
+                    \det A \amp \textrm{if } i=j\\
+                    0 \amp \textrm{otherwise}
+                \end{cases}
+            </mrow>
+            <mrow>
+                \amp = (\det A)I
+            </mrow>
+            </md>
+            Hence
+            <me>
+                A\frac1{\det A} \adj A=I
+            </me>
+            and 
+            <me>
+                \frac1{\det A} \adj A=A^{-1}.
+            </me>
+        </p></li>
+        </ul>
+    </p>
+    </proof>
+    </theorem>
+
+    <example><title>The inverse computed using the adjoint of <m>A</m></title>
+    <p>
+    Let 
+    <me>
+        A=
+        \begin{bmatrix}
+            1\amp 2\amp 1\\ 2\amp 3\amp 5 \\1\amp 2\amp 0
+        \end{bmatrix}
+    </me>
+    First we compute <m>\det A=1</m>
+    </p>
+
+    <p>
+    Next we compute the minors:
+    <me>
+    \begin{array}{lll}
+        M_{1,1}= -10 \amp M_{1,2}= -5 \amp M_{1,3}= 1 \\
+        M_{2,1}= -2 \amp M_{2,2}= -1 \amp M_{2,3}= 0 \\
+        M_{3,1}= 7 \amp M_{3,2}= 3 \amp M_{3,3}= -1 
+    \end{array}
+    </me>
+    from which we deduce
+    <me>
+        M=
+        \begin{bmatrix}
+            -10 \amp -5 \amp 1 \\
+            -2 \amp -1 \amp 0 \\
+            7 \amp 3 \amp -1 
+        \end{bmatrix}
+        \qquad
+        C=
+        \begin{bmatrix}
+            -10 \amp 5 \amp 1 \\
+            2 \amp -1 \amp 0 \\
+            7 \amp -3 \amp -1 
+        \end{bmatrix}
+    </me>
+    from which follows
+    <me>
+        A^{-1}=\frac1{\det A} \adj A=\frac 11 C^T
+        =
+        \begin{bmatrix}
+            -10 \amp 2 \amp 7\\ 
+            5 \amp -1 \amp -3 \\ 
+            1\amp 0 \amp -1 
+        \end{bmatrix}
+    </me>
+    </p>
+    </example>
+
+    <proposition><title>Intergral matrices with integral inverses</title>
+    <statement>
+    <p>
+    If <m>A</m> is a square matrix with integer entries, then
+    <m>A^{-1}</m> has all integer entries  if and only if
+    <m>\det A=\pm 1</m>.
+    </p>
+    </statement>
+    <proof>
+    <p>
+    If <m>\det A=\pm1</m> then
+    <me>
+        A^{-1}=\frac1{\det A} \adj A = \pm C^T.
+    </me>
+    where <m>C</m> is the cofactor matrix. But the 
+    entries of <m>C</m> are computed by taking the
+    determinant of matrices with integer entries.
+    Since this determinant is computed using products
+    and sums of integers, <m>C</m> must have all integer
+    entries, and hence so does <m>A^{-1}</m>.
+    </p>
+    <p>
+    Conversely, if both <m>A</m> and <m>A^{-1}</m> have
+    all integer entries, the <m>\det A</m> and <m>\det A^{-1}</m>
+    are both integers. But then
+    <me>
+        \det A\,\det A^{-1}= \det(AA^{-1})=\det I=1
+    </me>
+    Hence either 
+    <m>\det A=\det A^{-1}=1</m>
+    or
+    <m>\det A=\det A^{-1}=-1</m>.
+    </p>
+    </proof>
+    </proposition>
+
+    <p>
+    There is a nice application of the adjoint to the solution of
+    <m>n</m> equations in <m>n</m> unknowns. We can write such
+    a system of linear equations as
+    <me>
+        Ax=b.
+    </me>
+    If <m>A</m> is nonsingular, then this system has a unique
+    solution <m>x=A^{-1}b= \frac1{\det A} \adj Ab</m>. We define
+    new matrices <m>A_1,A_2,\ldots,A_n</m>:
+    construct <m>A_k</m> by replacing
+    the <m>k</m>-th column of <m>A</m> with <m>b</m>. 
+    More specifically, if the columns of <m>A</m> are <m>C_1,C_2,\ldots,C_n</m>,
+    then
+    <me>
+        A_k= 
+        \begin{bmatrix}
+        C_1  \cdots  C_{k-1}\amp b\amp C_{k+1} \cdots C_n
+        \end{bmatrix}
+    </me>
+    </p>
+    <theorem><title>Cramer's rule</title>
+    <statement>
+    <p>
+    Let <me>Ax=b</me>
+    be a system of <m>n</m> linear equations in <m>n</m> unknowns,
+    and <m>A_k</m> be the matrix obtained by replacing the <m>k</m>-th
+    column of <m>A</m> with <m>b</m>. If <m>A</m> is nonsingular, then
+    the unique solution <m>x</m> satisfies
+    <me>
+        x_i=\frac{\det A_i}{\det A}
+    </me>
+    </p>
+    </statement>
+    <proof>
+    <p>
+    Since <m>A</m> is invertible, we may use the cofactor matrix <m>C</m> to get
+    <me>
+        x=A^{-1}b=\frac1{\det A} (\adj A) b=\frac1{\det A} C^T b.
+    </me>
+    Then
+    <me>
+        (C^Tb)_i=\sum_{k=1}^n C_{k,i}b_k =\sum_{k=1}^n b_kC_{k,i}
+        =\det A_i
+    </me>
+    since <m>\sum_{k=1}^n b_kC_{k,i}</m> is the
+    <m>i</m>-th column expansion for the evaluation of <m>\det A_i</m>.
+    Hence
+    <me>
+        x_i=\frac1{\det A} \det A_i=\frac{\det A_i}{\det A}.
+    </me>
+    </p>
+    </proof>
+    </theorem>
+
+    <example><title>Cramer's rule</title>
+    <p>
+    Consider the system of linear equations
+    <me>
+        x_1+x_2+x_3=2\\
+        x_1-x_2+x_3=0\\
+        2x_1-x_2+x_3=2
+    </me>
+    We have
+    <me>
+        A=
+        \begin{bmatrix}
+            1 \amp 1\amp 1\\
+            1 \amp -1 \amp 1 \\
+            2 \amp -1 \amp 1
+        \end{bmatrix}
+        \qquad
+        \det A=2 \\
+        A_1=
+        \begin{bmatrix}
+            2 \amp 1\amp 1\\
+            0 \amp -1 \amp 1 \\
+            2 \amp -1 \amp 1
+        \end{bmatrix}
+        \qquad
+        \det A_1=4 \\
+        A_2=
+        \begin{bmatrix}
+            1 \amp 2\amp 1\\
+            1 \amp 0 \amp 1 \\
+            2 \amp 2 \amp 1
+        \end{bmatrix}
+        \qquad
+        \det A_2=2 \\
+        A_3=
+        \begin{bmatrix}
+            1 \amp 1\amp 2\\
+            1 \amp -1 \amp 0 \\
+            2 \amp -1 \amp 2
+        \end{bmatrix}
+        \qquad
+        \det A_3=-2 
+    </me>
+    and so
+    <me>
+        x_1=\frac42=2\\
+        x_2=\frac22=1\\
+        x_3=\frac{-2}2=-1
+    </me>
+    </p>
+    </example>
+
+    </section>
+</chapter>
+

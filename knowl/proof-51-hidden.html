@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-06-04T17:58:35-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><div class="displaymath">
+\begin{equation*}
+A \adj A=
+\begin{bmatrix}
+a_{1,1} \amp a_{1,2} \amp \cdots \amp a_{1,n} \\
+a_{2,1} \amp a_{2,2}  \amp \cdots \amp a_{2,n} \\
+\amp\amp\vdots\\
+a_{n,1} \amp a_{n,2} \amp \cdots \amp a_{n,n} \\
+\end{bmatrix}
+\begin{bmatrix}
+C_{1,1} \amp C_{2,1} \amp \cdots \amp C_{n,1} \\
+C_{1,2} \amp C_{2,2} \amp \cdots \amp C_{n,2} \\
+\amp\amp\vdots\\
+C_{1,n} \amp C_{2,n} \amp \cdots \amp C_{n,n} \\
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">Consider the \(i\)-\(j\) entry of \(A \adj A\text{,}\) which we write as</p>
+<div class="displaymath">
+\begin{equation*}
+(A \adj A)_{i,j}=\sum_{k=1}^n A_{i,k}(\adj A)_{k,j}
+=\sum_{k=1}^n a_{i,k} C_{j,k}.
+\end{equation*}
+</div>
+<p data-braille="continuation">There are two cases:</p>
+<ul class="disc">
+<li>
+<p>\(i=j\text{:}\) In this case, from the \(i\)-th row expansion of \(A\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+(A \adj A)_{i,i}=\sum_{k=1}^n a_{i,k} C_{i,k}=\det A
+\end{equation*}
+</div>
+</li>
+<li>
+<p>\(i\not=j\text{:}\) For this case we use a new matrix \(B\) constructed from \(A\) by replacing \(R_j\) with \(R_i\text{,}\) that is \(R_j\gets R_i\) (this is not an elementary row operation). This means \(B_{j,k}=A_{i,k}=a_{i,k}\) for \(k=1,2,\ldots n\text{.}\) Since \(B\) has two identical rows, <a class="xref" data-knowl="./knowl/DeterminantIdenticalRows.html" title="Theorem 3.4.12: A matrix \(A\) with two identical rows has \(\det A=0\)">Theorem 3.4.12</a> tells us that \(\det B=0\text{.}\) On the other hand, by expanding on \(R_j\) of \(B\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+0
+=\sum_{k=1}^n B_{j,k} C_{j,k}
+=\sum_{k=1}^n a_{i,k} C_{j,k}=
+(A \adj A)_{i,j}
+\end{equation*}
+</div>
+<p data-braille="continuation">Combining the two cases.</p>
+<div class="displaymath">
+\begin{align*}
+A \adj A
+\amp =
+\begin{cases}
+\det A \amp \textrm{if } i=j\\
+0 \amp \textrm{otherwise}
+\end{cases}\\
+\amp = (\det A)I
+\end{align*}
+</div>
+<p data-braille="continuation">Hence</p>
+<div class="displaymath">
+\begin{equation*}
+A\frac1{\det A} \adj A=I
+\end{equation*}
+</div>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+\frac1{\det A} \adj A=A^{-1}.
+\end{equation*}
+</div>
+</li>
+</ul></article></body>
+</html>

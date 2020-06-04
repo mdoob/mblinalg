@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-03T15:50:04-05:00    *-->
+<!--*    on 2020-06-04T17:58:27-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -9,7 +9,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Summation notation</title>
+<title>Minors and cofactors</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
@@ -82,10 +82,10 @@ MathJax.Hub.Config({
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-19.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ExtraTopics.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-21.html" title="Next">Next</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-19.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Determinants.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-21.html" title="Next">Next</a></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-19.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ExtraTopics.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-21.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-19.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="Determinants.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-21.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -93,230 +93,223 @@ MathJax.Hub.Config({
 <li class="link frontmatter"><a href="Frontmatter.html" data-scroll="Frontmatter"><span class="title">Title Page</span></a></li>
 <li class="link"><a href="SysLinEq.html" data-scroll="SysLinEq"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations</span></a></li>
 <li class="link"><a href="MatrixTheoryIntro.html" data-scroll="MatrixTheoryIntro"><span class="codenumber">2</span> <span class="title">Matrix Theory</span></a></li>
-<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">3</span> <span class="title">Additional Topics</span></a></li>
+<li class="link"><a href="Determinants.html" data-scroll="Determinants"><span class="codenumber">3</span> <span class="title">The Determinant</span></a></li>
+<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">4</span> <span class="title">Additional Topics</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-20"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Summation notation</span>
+<span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Minors and cofactors</span>
 </h2>
-<section class="subsection" id="subsection-40"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">3.2.1</span> <span class="title">Basic definitions</span>
-</h3>
-<p id="p-537">Summation notation is a compact form for writing sums. It is written with three pieces. \[ \sum_{\fbox{\(k=1\)}}^\fbox{\(5\)} \fbox{\(2k\)} \] The part below the greek letter sigma (\(\Sigma\)) tells us to start with \(k=1\text{.}\) We increment \(k\) by \(1\) until we get to the value above the sigma. In this case we let \(k\) take on the values \(1, 2, 3, 4, 5\text{.}\) We next substitute those values of \(k\) into the expression to the right of the sigma successively and take the sum all of the resulting terms. Here is a table of the resulting values:</p>
-<div class="displaymath">
-\begin{align*}
-k \amp\amp 2k\\
-1 \amp\amp 2\\
-2 \amp\amp 4\\
-3 \amp\amp 6\\
-4 \amp\amp 8\\
-5 \amp\amp 10
-\end{align*}
-</div>
-<p data-braille="continuation">which evaluates to</p>
+<p id="p-543">The evaluation of the determinant by cofactors changes the problem of finding the determinant of a matrix of order \(n\) to that of finding the determinant several matrices of order \(n-1.\) So far, we know how to evaluate the determinant of a matrix of order \(n\) when \(n\leq 3.\) This method will, then, allow us to evaluate the determinant of a matrix of order \(n=4\) by reducing the problem to solving the determinant of several matrices of order \(n=3.\)</p>
+<p id="p-544">We focus on a partcular element \(a_{i,j}\) of a square matrix \(A\text{.}\)</p>
+<article class="definition definition-like" id="MatrixMinorDefinition"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">The \(i,j\) minor of a matrix \(A\).</span>
+</h6>
+<p id="p-545">\(M_{i,j}\text{,}\) the <dfn class="terminology">\(i,j\) minor</dfn> of a matrix \(A\) is computed by deleting the row and column containing \(a_{i,j}\) and evaluating the determinant of what remains.</p>
 <div class="displaymath">
 \begin{equation*}
-2+4+6+8+10=30 
+\qquad\qquad\qquad\downarrow \text{ column } C_j \text{ deleted}\\
+M_{i,j}=\det
+\left[\begin{array}{c|c|c}
+{}******\amp \amp *****\\
+{}******\amp \amp *****\\
+{}******\amp \amp *****\\\hline
+\cdots\amp a_{i,j}\amp\cdots\\ \hline
+{}******\amp \amp *****\\
+{}******\amp \amp *****\\
+{}******\amp \amp *****
+\end{array}\right]
+\gets \text{ row } R_i \text{ deleted}
 \end{equation*}
-</div>
-<p data-braille="continuation">and so we write</p>
+</div></article><article class="definition definition-like" id="MatrixCofactorDefinition"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">The \(i,j\) cofactor of a matrix \(A\).</span>
+</h6>
+<p id="p-546">\(C_{i,j}\text{,}\) the <dfn class="terminology">\(i,j\) cofactor of a matrix</dfn>  \(A\text{,}\) satisfies</p>
 <div class="displaymath">
 \begin{equation*}
-\sum_{k=1}^5 2k=30\text{.}
+C_{i,j}=(-1)^{i+j}M_{i,j}
 \end{equation*}
-</div>
-<p data-braille="continuation">The variable \(k\) is called <dfn class="terminology">the index of summation</dfn>. The number above the sigma is called <dfn class="terminology">the limit of summation</dfn>. The example shows us how to write a sum of even numbers. We can write the sum of odd numbers, too.</p>
-<div class="displaymath">
-\begin{equation*}
-\sum_{k=1}^8 (2k-1)=1+3+5+7+9+11+13+15=64 \text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">It is not necessary to use \(k\) as a variable or to start the summation at \(k=1\text{.}\) It is easy to verify that</p>
-<div class="displaymath">
-\begin{equation*}
-\sum_{k=1}^8(2k-1)=\sum_{l=0}^7(2l+1)=64 \text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">The number above the sigma can also be written as a variable:</p>
-<div class="displaymath">
-\begin{gather*}
-\sum_{k=1}^n a_k=a_1+a_2+\cdots+a_{n-1}+a_n\\
-\sum_{k=0}^n a_kb_k=a_0b_0+a_1b_1+a_2b_2+\cdots+a_{n-1}b_{n-1}+a_nb_n\\
-\sum_{k=1}^n (2k-1) = 1+3+5+7+\cdots+(2n-1)
-\end{gather*}
-</div>
-<p data-braille="continuation">Next we take the last expression and vary \(n\text{,}\) the limit of summation. Here is a table that includes some small vaules of \(n\text{:}\)</p>
-<figure class="table table-like" id="table-4"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.2.1<span class="period">.</span></span><span class="space"> </span></figcaption><table>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">\(\sum_{k=1}^1(2k-1)=1\)</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(n=1\)</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">\(\sum_{k=1}^2(2k-1)=4\)</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(n=2\)</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">\(\sum_{k=1}^3(2k-1)=9\)</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(n=3\)</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">\(\sum_{k=1}^4(2k-1)=16\)</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(n=4\)</td>
-</tr>
-<tr><td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\vdots\)</td></tr>
-<tr><td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\sum_{k=1}^n(2k-1)=1+3+5+\cdots+2n-1=?\)</td></tr>
-</table></figure><article class="exercise exercise-like" id="exercise-35"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-35"><h6 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-35"><article class="exercise exercise-like"><p id="p-538">What simple expression involving \(n\) can replace the question mark?</p></article></div>
-<p id="p-539">The summands can be symbolic, too. If \(f(x)\) is any function, we may write</p>
-<div class="displaymath">
-\begin{gather*}
-\sum_{i=1}^r f(i)=f(1)+f(2)+\cdots+f(r-1)+f(r)
-\end{gather*}
-</div></section><section class="subsection" id="subsection-41"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">3.2.2</span> <span class="title">Alternating sums</span>
-</h3>
-<p id="p-540">A sum is <dfn class="terminology">alternating</dfn> if the signs of consecutive terms are alternate between positive and negative. An example: \(1-2+3-4+5\text{.}\) These sums appear frequently enough to have this special name. They are easy to write using summation notation because of a simple fact:</p>
-<div class="displaymath">
-\begin{equation*}
-(-1)^k=
-\begin{cases}
-1 \amp  \text{if \(k\) is even}\\
--1 \amp  \text{if \(k\) is odd}
-\end{cases}
-\end{equation*}
-</div>
-<p data-braille="continuation">We can then write</p>
-<div class="displaymath">
-\begin{equation*}
-\sum_{k=1}^6 (-1)^k k^2=-1+4-9+16-25+36=21 \text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">We can interchange the order of the signs by adding (or subtracting) one to the exponent of \(-1\text{:}\)</p>
-<div class="displaymath">
-\begin{equation*}
-\sum_{k=1}^6 (-1)^{k+1} k^2=1-4+9-16+25-36=-21\text{.}
-\end{equation*}
-</div></section><section class="subsection" id="subsection-42"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">3.2.3</span> <span class="title">Manipulation with summation notation identities</span>
-</h3>
-<p id="p-541">Summation notation is more that mere shorthand. There are rules of manipulation that are quite useful.</p>
-<p id="p-542">For any constant \(c\text{,}\)</p>
-<div class="displaymath">
-\begin{equation*}
-\sum_{k=1}^n c=\underbrace{c+c+\cdots+c+c}_{n \textrm{ summands}}=nc 
-\end{equation*}
-</div>
-<p data-braille="continuation">and</p>
-<div class="displaymath">
-\begin{equation*}
-\sum_{k=1}^n ca_k
-=ca_1+\cdots+ca_n
-=c(a_1+\cdots+a_n)
-=c\sum_{k=1}^n a_k
-\end{equation*}
-</div>
-<p data-braille="continuation">The process of the last equation is sometimes referred to as <em class="emphasis">pulling a constant across the summation sign</em>.</p>
-<p id="p-543">In addition,</p>
-<div class="displaymath">
-\begin{equation*}
-\sum_{k=1}^n(a_k+b_k)= \sum_{k=1}^na_k+\sum_{k=1}^nb_k,\\
-\sum_{k=1}^n(a_k-b_k)= \sum_{k=1}^na_k-\sum_{k=1}^nb_k
-\end{equation*}
-</div>
-<p data-braille="continuation">and</p>
-<div class="displaymath">
-\begin{equation*}
-\sum_{k=0}^na_k= \sum_{k=t}^{n+t}a_{k-t}
-\end{equation*}
-</div>
-<p data-braille="continuation">The last identity is sometimes called <em class="emphasis">shifting the index of summation.</em></p>
-<article class="example example-like" id="example-22"><a data-knowl="" class="id-ref original" data-refid="hk-example-22"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-22"><article class="example example-like"><p id="p-544">Suppose we want to evaluate the sum of the first \(n\) positive integers. In other words, we want to find</p>
-<div class="displaymath">
-\begin{equation*}
-s_n=1+2+\cdots+n=\sum_{k=1}^nk.
-\end{equation*}
-</div>
-<p data-braille="continuation">If we are convinced that \(\sum_{k=1}^n(2k-1)=1+3+5+\cdots+2n-1=n^2\text{,}\) then</p>
-<div class="displaymath">
-\begin{align*}
-n^2\amp =\sum_{k=1}^n(2k-1)\\
-\amp =\sum_{k=1}^n(2k)-\sum_{k=1}^n1\\
-\amp =2\sum_{k=1}^nk-n\\
-\amp =2s_n-n
-\end{align*}
-</div>
-<p data-braille="continuation">which yields</p>
-<div class="displaymath">
-\begin{equation*}
-s_n=\frac12n(n+1).
-\end{equation*}
-</div></article></div>
-<article class="exercise exercise-like" id="exercise-36"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-36"><h6 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.4</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-36"><article class="exercise exercise-like"><p id="p-545">Evaluate the following sums</p>
-<ul class="disc">
-<li id="li-228"><p id="p-546">\(\displaystyle \sum_{j=1}^5 2j\)</p></li>
-<li id="li-229"><p id="p-547">\(\displaystyle \sum_{k=1}^5 k(k-1)\)</p></li>
-<li id="li-230"><p id="p-548">\(\displaystyle \sum_{i=0}^4 2^i\)</p></li>
-<li id="li-231"><p id="p-549">\(\displaystyle \sum_{\ell=1}^3\ell^2+\frac1\ell\)</p></li>
-<li id="li-232"><p id="p-550">\(\displaystyle \sum_{j=1}^5 ij\)</p></li>
-</ul>
-<div class="solutions">
-<a data-knowl="" class="id-ref original" data-refid="hk-solution-34" id="solution-34"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-34"><div class="solution solution-like"><ul id="p-551" class="disc">
-<li id="li-233"><p id="p-552">\(\displaystyle 2+4+6+8+10=30\)</p></li>
-<li id="li-234"><p id="p-553">\(\displaystyle 2+6+12+20+30=70\)</p></li>
-<li id="li-235"><p id="p-554">\(\displaystyle 1+2+4+8+16=31\)</p></li>
-<li id="li-236"><p id="p-555">\(\displaystyle 1+1+4+\frac12+9+\frac13=15\frac56\)</p></li>
-<li id="li-237"><p id="p-556">\(\displaystyle i+2i+3i+4i+5i=15i\)</p></li>
-</ul></div></div>
-</div></article></div>
-<article class="exercise exercise-like" id="exercise-37"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-37"><h6 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.5</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-37"><article class="exercise exercise-like"><p id="p-557">Evaluate \(\sum_{k=0}^n 2^k\) for \(n=1,2,3,4\text{.}\) Find a simple expression that works for any \(n\text{.}\) Justify your answer.</p>
-<div class="solutions">
-<a data-knowl="" class="id-ref original" data-refid="hk-solution-35" id="solution-35"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-35"><div class="solution solution-like">
-<div class="displaymath" id="p-558">
-\begin{equation*}
-\begin{array}{cc}
-n \amp \sum_{k=0}^n 2^k\\
-\hline
-1 \amp 3\\
-2 \amp 7\\
-3\amp 15\\
-4\amp 31
-\end{array}
-\end{equation*}
-</div>
-<p data-braille="continuation">We note that each answer is one less than a power of \(2\text{.}\) This leads to the equation \[ \sum_{k=0}^n 2^k=2^{n+1}-1. \] To justify the equation we note that \[ 2(\sum_{k=0}^n 2^k)=\sum_{k=0}^n 2^{k+1}=\sum_{k=1}^{n+1} 2^k =\bigl(\sum_{k=0}^{n+1} 2^k\bigr) -1 \] so we get the sum for a given value on \(n\) by doubling the value for \(n-1\) and adding \(1\text{.}\)</p>
-</div></div>
-</div></article></div></section><section class="subsection" id="subsection-43"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">3.2.4</span> <span class="title">Double summations</span>
-</h3>
-<p id="p-559">Sometimes it is useful to have a formula with two summations, each with its own index of summation. It is interpreted in the following way: \[ \sum_{i=1}^m \sum_{j=1}^n f(i,j)= \sum_{i=1}^m \bigl(\sum_{j=1}^n f(i,j)\bigr) \] and so, for example, \[ \sum_{i=1}^3 \sum_{j=1}^2 i^j=\sum_{i=1}^3 (i^1+i^2)=(1+1)+(2+4)+(3+9)=20 \]</p>
-<p id="p-560">Double summations are often used with matrices. Suppose we have a matrix</p>
+</div></article><p id="p-547">In other words, \(C_{i,j}=\pm M_{i,j}\text{,}\) with the sign being \(+\) if \(i+j\) is even and \(-\) if \(i+j\) is odd.</p>
+<article class="example example-like" id="example-23"><a data-knowl="" class="id-ref original" data-refid="hk-example-23"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">A cofactor of a matrix.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-23"><article class="example example-like"><p id="p-548">We find \(M_{2,3}\) and \(C_{2,3}\) for the matrix</p>
 <div class="displaymath">
 \begin{equation*}
 A=
+\begin{bmatrix}1\amp2\amp2\amp3\\
+-1\amp4\amp5\amp3\\
+3\amp4\amp8\amp-1\\
+1\amp2\amp2\amp1 \end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">When we delete row \(R_2\) and column \(C_3\) from \(A\) we get the matrix</p>
+<div class="displaymath">
+\begin{equation*}
 \begin{bmatrix}
-a_{1,1}\amp a_{1,2}\amp \cdots \amp a_{1,n}\\
-a_{2,1}\amp a_{2,2}\amp \cdots \amp a_{2,n}\\
-\vdots\amp \vdots\amp \vdots\amp \vdots\\
-a_{m,1}\amp a_{m,2}\amp \cdots \amp a_{m,n}
+1\amp2\amp3\\
+3\amp4\amp-1\\
+1\amp2\amp1
 \end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">Then \[ \sum_{j=1}^n a_{i,j} = a_{i,1}+a_{i,2}+\cdots+a_{i,n} \] which is the sum of the entries in the \(i\)-th row of the matrix. Similarly \[ \sum_{i=1}^m a_{i,j} = a_{1,j}+a_{2,j}+\cdots+a_{m,j} \] which is the sum of the entries in the \(j\)-th column of the matrix. We can now see that</p>
+<p data-braille="continuation">We have already calculated the determinant of this matrix in <a class="xref" data-knowl="./knowl/det_example1.html" title="Example 3.1.2: Determinants of small matrices">Example 3.1.2</a> to be \(4,\) so \(M_{2,3}=4\) and \(C_{2,3}=(-1)^5 4=-4.\)</p></article></div>
+<p id="p-549">There is a nice way of visualizing the pattern of \((-1)^{i+j}.\) Consider the matrix \(P=[p_{i,j}]\) where \(p_{i,j}=(-1)^{i+j}\text{.}\)  The next entry to the right of \(p_{i,j}\) is \(p_{i,j+1}\text{,}\) so that the exponent of \(-1\) is increased by one. Hence if \(p_{i,j}=1\) then \(p_{i,j+1}=-1\) and \(p_{i,j}=-1\) then \(p_{i,j+1}=1\text{.}\) This means that the entries in a row alternate between \(1\) and \(-1\text{.}\) By an analogous argument, the columns also alternate between \(1\) and \(-1\text{.}\) The upper left entry is \(-1^{1+1}=1\text{,}\) and so the whole matrix is determined. It looks like</p>
+<div class="displaymath">
+\begin{equation}
+P=
+\begin{bmatrix}
++1\amp-1\amp+1\amp-1\amp+1\cdots \\
+-1\amp+1\amp-1\amp+1\amp-1\cdots \\
++1\amp-1\amp+1\amp-1\amp+1\cdots \\
+-1\amp+1\amp-1\amp+1\amp-1\cdots \\
++1\amp-1\amp+1\amp-1\amp+1\cdots \\
+\amp\amp\vdots
+\end{bmatrix}\label{CheckerboardMatrix}\tag{3.2.1}
+\end{equation}
+</div>
+<p data-braille="continuation">In other words, the pattern of \(1\) and \(-1\) is like a checkerboard pattern of light squares and dark squares.</p>
+<p id="p-550">Since the minor \(M_{i,j}\) is simply a number, we may form an new matrix called the <em class="emphasis">matrix of minors</em> \(M\) whose entries are minors. Similarly since the cofactor \(C_{i,j}\) is simply a number, we may form an new matrix called the <em class="emphasis">cofactor matrix</em> whose entries are cofactors.</p>
+<article class="definition definition-like" id="definition-33"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Cofactor matrix and the matrix of minors.</span>
+</h6>
+<p id="p-551">The <em class="emphasis">matrix of minors</em> \(M\) is defined by</p>
 <div class="displaymath">
 \begin{equation*}
-\sum_{i=1}^m\sum_{j=1}^n a_{i,j}
-=\sum_{j=1}^n\sum_{i=1}^m a_{i,j}
+M=[M_{i,j}]
 \end{equation*}
 </div>
-<p data-braille="continuation">since each sides of the equation is equal to the sum of all of the entries in the matrix. This is called <em class="emphasis">interchanging the order of summation.</em></p>
-<p id="p-561">Another way of looking at these double summations \(\sum_{i=1}^m \sum_{j=1}^n f(i,j)\) is that it is the sum of \(f(i,j)\) as \(i\) takes on values from \(1\) to \(m\) and \(j\) takes on values from \(1\) to \(n\text{.}\) Clearly there are \(mn\) summands altogether.</p></section></section></div></main>
+<p data-braille="continuation">and the <em class="emphasis">cofactor matrix</em> \(C\) is defined by</p>
+<div class="displaymath">
+\begin{equation*}
+C=[C_{i,j}]
+\end{equation*}
+</div></article><article class="example example-like" id="MatrixMinorsExmaple"><a data-knowl="" class="id-ref original" data-refid="hk-MatrixMinorsExmaple"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix of minors.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-MatrixMinorsExmaple"><article class="example example-like"><p id="p-552">We will compute the matrix of minors for the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1\amp 2\amp3\\
+3\amp 4\amp -1\\
+1\amp 2\amp 1
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">From the defintion of the matrix of minors:</p>
+<div class="displaymath">
+\begin{align*}
+M \amp=
+\begin{bmatrix}
+M_{1,1} \amp M_{1,2} \amp M_{1,3} \\
+M_{2,1} \amp M_{2,2} \amp M_{2,3} \\
+M_{3,1} \amp M_{3,2} \amp M_{3,3} 
+\end{bmatrix} \\
+\amp=
+\begin{bmatrix}
+\det \begin{bmatrix} 4\amp -1 \\ 2\amp 1 \end{bmatrix}
+\amp
+\det \begin{bmatrix} 3\amp -1 \\ 1\amp 1 \end{bmatrix}
+\amp
+\det \begin{bmatrix} 3\amp 4 \\ 1\amp 2 \end{bmatrix}
+\\
+\det \begin{bmatrix} 2\amp 3 \\ 2\amp 1 \end{bmatrix}
+\amp
+\det \begin{bmatrix} 1\amp 3 \\ 1\amp 1 \end{bmatrix}
+\amp
+\det \begin{bmatrix} 1\amp 2 \\ 1\amp 2 \end{bmatrix}
+\\
+\det \begin{bmatrix} 2\amp 3 \\ 4\amp -1 \end{bmatrix}
+\amp
+\det \begin{bmatrix} 1\amp 3 \\ 3\amp -1 \end{bmatrix}
+\amp
+\det \begin{bmatrix} 1\amp 2 \\ 3\amp 4 \end{bmatrix}
+\end{bmatrix}\\
+\amp=
+\begin{bmatrix}
+6\amp 4 \amp 2\\
+-4\amp -2\amp 0\\
+-14 \amp -10 \amp -2
+\end{bmatrix}
+\end{align*}
+</div></article></div>
+<article class="example example-like" id="CofactorMatrixExmaple"><a data-knowl="" class="id-ref original" data-refid="hk-CofactorMatrixExmaple"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Cofactor matrix.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-CofactorMatrixExmaple"><article class="example example-like"><p id="p-553">We will compute the cofactor matrix of the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1\amp 2\amp3\\
+3\amp 4\amp -1\\
+1\amp 2\amp 1
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">From the defintion of the cofactor matrix:</p>
+<div class="displaymath">
+\begin{align*}
+C \amp=
+\begin{bmatrix}
+C_{1,1} \amp C_{1,2} \amp C_{1,3} \\
+C_{2,1} \amp C_{2,2} \amp C_{2,3} \\
+C_{3,1} \amp C_{3,2} \amp C_{3,3} 
+\end{bmatrix} \\
+\amp=
+\begin{bmatrix}
+\det \begin{bmatrix} 4\amp -1 \\ 2\amp 1 \end{bmatrix}
+\amp
+-\det \begin{bmatrix} 3\amp -1 \\ 1\amp 1 \end{bmatrix}
+\amp
+\det \begin{bmatrix} 3\amp 4 \\ 1\amp 2 \end{bmatrix}
+\\
+-\det \begin{bmatrix} 2\amp 3 \\ 2\amp 1 \end{bmatrix}
+\amp
+\det \begin{bmatrix} 1\amp 3 \\ 1\amp 1 \end{bmatrix}
+\amp
+-\det \begin{bmatrix} 1\amp 2 \\ 1\amp 2 \end{bmatrix}
+\\
+\det \begin{bmatrix} 2\amp 3 \\ 4\amp -1 \end{bmatrix}
+\amp
+-\det \begin{bmatrix} 1\amp 3 \\ 3\amp -1 \end{bmatrix}
+\amp
+\det \begin{bmatrix} 1\amp 2 \\ 3\amp 4 \end{bmatrix}
+\end{bmatrix}\\
+\amp=
+\begin{bmatrix}
+6\amp -4 \amp 2\\
+4\amp -2\amp 0\\
+-14 \amp 10 \amp -2
+\end{bmatrix}
+\end{align*}
+</div></article></div>
+<article class="observation remark-like" id="MinorsCofactorsCheckerboard"><h6 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">3.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Minors, cofactors and the checkerboard pattern.</span>
+</h6>
+<p id="p-554">The answers from <a class="xref" data-knowl="./knowl/MatrixMinorsExmaple.html" title="Example 3.2.5: Matrix of minors">Example 3.2.5</a> and <a class="xref" data-knowl="./knowl/CofactorMatrixExmaple.html" title="Example 3.2.6: Cofactor matrix">Example 3.2.6</a> are quite similar, each matrix entry being either identical or multiplied by \(-1\text{.}\) The entries multiplied by \(-1\) are in the same positions the \(-1\) entries of the matrix \(P\) <a class="xref" data-knowl="./knowl/CheckerboardMatrix.html" title="Equation 3.2.1">(3.2.1)</a> with the checkerboard pattern. This is a general pattern: Given the matrix of minors \(M\) the matrix of cofactors \(C\) is then computed by multiplying the entries of \(M\) by \(\pm1\) using the checkerboard pattern.</p></article><article class="exercise exercise-like" id="exercise-35"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-35"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.8</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-35"><article class="exercise exercise-like"><p id="p-555">Suppose a matrix \(A\) has cofactor matrix</p>
+<div class="displaymath">
+\begin{equation*}
+M=
+\begin{bmatrix}
+1 \amp 3 \amp 4\\
+2 \amp -1\amp 2\\
+0 \amp -2\amp 5
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">What is \(C\text{,}\) the cofactor matrix of \(A\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-1" id="answer-1"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1"><div class="answer solution-like"><div class="displaymath" id="p-556">
+\begin{equation*}
+C=
+\begin{bmatrix}
+1 \amp-3 \amp 4\\
+-2 \amp -1\amp-2\\
+0 \amp  2\amp 5
+\end{bmatrix}\text{.}
+\end{equation*}
+</div></div></div>
+</div></article></div></section></div></main>
 </div>
 </body>
 </html>

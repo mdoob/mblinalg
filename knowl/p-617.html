@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-03T15:50:09-05:00    *-->
+<!--*    on 2020-06-04T17:58:35-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>With no loss of generality, we may assume that \(\alpha\) is the largest angle. It may be acute or obtuse, but \(\beta\) and \(\gamma\) are definitely acute. That implies that we may drop a perpendicular from \(A\) that will divide the angle \(\alpha\) into \(\alpha_1\) and  \(\alpha_2\) the side opposite into segements with lengths \(a_1\) and \(a_2\text{.}\)</p>
-<span class="incontext"><a href="section-21.html#p-617">in-context</a></span>
+<p>As seen in <a class="xref" data-knowl="./knowl/ElementaryMatrices.html" title="Definition 2.10.1: Elementary matrices">Definition 2.10.1</a>, there are three types of elementary row operations, and each one has an elementary matrix associated with it. We can now evaluate the determinant of these matrices \(E_1\text{,}\) \(E_2\) and \(E_3\text{.}\)</p>
+<ul class="disc">
+<li><p>\(R_i\leftrightarrow R_j\text{:}\) If we interchange \(R_i\) and \(R_j\) of \(E_1\text{,}\) we get the matrix \(I\text{.}\) Hence \(\det E_1=-\det I=-1\text{.}\)</p></li>
+<li><p>\(R_i\gets \lambda R_i\) with \(\lambda\not=0\text{:}\) \(\det E_2=\det \mathrm{diag} (1,1,\ldots, 1,\lambda,1,\ldots,1)=\lambda\text{.}\)</p></li>
+<li><p>\(R_i\gets R_i+\lambda R_j\text{:}\) \(\det E_3=1\) since \(E_3\) is triangular.</p></li>
+</ul>
+<p data-braille="continuation">We may combine these three results into one wonderful theorem:</p>
+<span class="incontext"><a href="section-22.html#p-617">in-context</a></span>
 </body>
 </html>

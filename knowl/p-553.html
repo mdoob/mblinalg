@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-03T15:50:09-05:00    *-->
+<!--*    on 2020-06-04T17:58:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,53 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>\(\displaystyle 2+6+12+20+30=70\)</p>
+<p>We will compute the cofactor matrix of the matrix</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1\amp 2\amp3\\
+3\amp 4\amp -1\\
+1\amp 2\amp 1
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">From the defintion of the cofactor matrix:</p>
+<div class="displaymath">
+\begin{align*}
+C \amp=
+\begin{bmatrix}
+C_{1,1} \amp C_{1,2} \amp C_{1,3} \\
+C_{2,1} \amp C_{2,2} \amp C_{2,3} \\
+C_{3,1} \amp C_{3,2} \amp C_{3,3} 
+\end{bmatrix} \\
+\amp=
+\begin{bmatrix}
+\det \begin{bmatrix} 4\amp -1 \\ 2\amp 1 \end{bmatrix}
+\amp
+-\det \begin{bmatrix} 3\amp -1 \\ 1\amp 1 \end{bmatrix}
+\amp
+\det \begin{bmatrix} 3\amp 4 \\ 1\amp 2 \end{bmatrix}
+\\
+-\det \begin{bmatrix} 2\amp 3 \\ 2\amp 1 \end{bmatrix}
+\amp
+\det \begin{bmatrix} 1\amp 3 \\ 1\amp 1 \end{bmatrix}
+\amp
+-\det \begin{bmatrix} 1\amp 2 \\ 1\amp 2 \end{bmatrix}
+\\
+\det \begin{bmatrix} 2\amp 3 \\ 4\amp -1 \end{bmatrix}
+\amp
+-\det \begin{bmatrix} 1\amp 3 \\ 3\amp -1 \end{bmatrix}
+\amp
+\det \begin{bmatrix} 1\amp 2 \\ 3\amp 4 \end{bmatrix}
+\end{bmatrix}\\
+\amp=
+\begin{bmatrix}
+6\amp -4 \amp 2\\
+4\amp -2\amp 0\\
+-14 \amp 10 \amp -2
+\end{bmatrix}
+\end{align*}
+</div>
 <span class="incontext"><a href="section-20.html#p-553">in-context</a></span>
 </body>
 </html>

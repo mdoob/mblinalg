@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-03T15:50:09-05:00    *-->
+<!--*    on 2020-06-04T17:58:35-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,31 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose a triangle has sides of lengths \(a\text{,}\) \(b\) and \(c\text{,}\) and \(\alpha\text{,}\) \(\beta\text{,}\) and \(\gamma\) are the angles opposite \(a\text{,}\) \(b\) and \(c\) respectively. Then \[ \frac{\sin(\alpha)}{a} =\frac{\sin(\beta)}{b} =\frac{\sin(\gamma)}{c} \]</p>
-<span class="incontext"><a href="section-21.html#p-616">in-context</a></span>
+<p>The matrices \(A\) and \(B\) are identical except for the \(i\)-th row. In \(A\) the \(i\)-th row is \(R_i\text{,}\) and in \(B\) the \(i\)-th row is \(R_i+\lambda R_j\text{.}\) The row additivity theorem then says</p>
+<div class="displaymath">
+\begin{align*}
+\det B 
+\amp = \det \begin{bmatrix}
+R_1\\ 
+\vdots\\ 
+R_{i-1}\\ 
+R_i+\lambda R_j\\ 
+R_{i+1}\\ 
+\vdots\\ 
+R_n
+\end{bmatrix} \\
+\amp = \det
+\begin{bmatrix}
+R_1\\ \vdots\\ R_{i-1}\\ R_i\\ R_{i+1}\\ \vdots\\ R_n
+\end{bmatrix}
++\det \begin{bmatrix}
+R_1\\ \vdots\\R_{i-1}\\\lambda R_j\\ R_{i+1}\\ \vdots\\ R_n
+\end{bmatrix} \\
+\amp \textrm{(The second matrix has two proportional rows)}\\
+\amp =\det A + 0  \\
+\amp =\det A 
+\end{align*}
+</div>
+<span class="incontext"><a href="section-22.html#p-616">in-context</a></span>
 </body>
 </html>

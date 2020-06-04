@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-03T15:50:05-05:00    *-->
+<!--*    on 2020-06-04T17:58:28-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -90,10 +90,10 @@ MathJax.Hub.Config({
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-21.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ExtraTopics.html" title="Up">Up</a><span id="nextbutton" class="next-button button toolbar-item disabled">Next</span></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-26.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ExtraTopics.html" title="Up">Up</a><span id="nextbutton" class="next-button button toolbar-item disabled">Next</span></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-21.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ExtraTopics.html" title="Up">Up</a><span class="next-button button toolbar-item disabled">Next</span>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-26.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ExtraTopics.html" title="Up">Up</a><span class="next-button button toolbar-item disabled">Next</span>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -101,19 +101,20 @@ MathJax.Hub.Config({
 <li class="link frontmatter"><a href="Frontmatter.html" data-scroll="Frontmatter"><span class="title">Title Page</span></a></li>
 <li class="link"><a href="SysLinEq.html" data-scroll="SysLinEq"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations</span></a></li>
 <li class="link"><a href="MatrixTheoryIntro.html" data-scroll="MatrixTheoryIntro"><span class="codenumber">2</span> <span class="title">Matrix Theory</span></a></li>
-<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">3</span> <span class="title">Additional Topics</span></a></li>
+<li class="link"><a href="Determinants.html" data-scroll="Determinants"><span class="codenumber">3</span> <span class="title">The Determinant</span></a></li>
+<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">4</span> <span class="title">Additional Topics</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="RREF_calculator"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">3.4</span> <span class="title">RREF and determinant calculator</span>
+<span class="type">Section</span> <span class="codenumber">4.4</span> <span class="title">RREF and determinant calculator</span>
 </h2>
-<section class="introduction" id="introduction-10"><p id="p-619">This is a calculator for computing the reduced row echelon form of a matrix. In the box below</p>
+<section class="introduction" id="introduction-12"><p id="p-757">This is a calculator for computing the reduced row echelon form of a matrix. In the box below</p>
 <ul class="disc">
-<li id="li-265">Set the value of <code class="code-inline tex2jax_ignore">rows</code> to the number of rows.</li>
-<li id="li-266">Set the value of <code class="code-inline tex2jax_ignore">cols</code> to the number of columns.</li>
-<li id="li-267">Enter the matrix entries as a comma-separated list. The placement on lines is not important as long as there are <code class="code-inline tex2jax_ignore">rows*cols</code> entries.</li>
-</ul></section><section class="subsection" id="subsection-50"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">3.4.1</span> <span class="title">RREF</span>
+<li id="li-287">Set the value of <code class="code-inline tex2jax_ignore">rows</code> to the number of rows.</li>
+<li id="li-288">Set the value of <code class="code-inline tex2jax_ignore">cols</code> to the number of columns.</li>
+<li id="li-289">Enter the matrix entries as a comma-separated list. The placement on lines is not important as long as there are <code class="code-inline tex2jax_ignore">rows*cols</code> entries.</li>
+</ul></section><section class="subsection" id="subsection-63"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.4.1</span> <span class="title">RREF</span>
 </h3>
 <div class="sagecell-sage" id="sage-1"><script type="text/x-sage">rows=3 
 cols=4
@@ -126,8 +127,8 @@ print ("The reduced row echelon form of ")
 print (M)
 print ("is")
 M.rref()
-</script></div></section><section class="subsection" id="subsection-51"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">3.4.2</span> <span class="title">Determinant</span>
+</script></div></section><section class="subsection" id="subsection-64"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.4.2</span> <span class="title">Determinant</span>
 </h3>
 <div class="sagecell-sage" id="sage-2"><script type="text/x-sage">rows=cols=3 
 M=Matrix(rows,cols,[

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-03T15:50:09-05:00    *-->
+<!--*    on 2020-06-04T17:58:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,48 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>\(\displaystyle c^2 = b_2^2 + h^2\)</p>
+<p>We will evaluate \(\det(A)\) by expanding on the first row. The formula for the first row expansion is</p>
+<div class="displaymath">
+\begin{equation*}
+\det(A)=a_{1,1}C_{1,1} + a_{1,2}C_{1,2}+ a_{1,3}C_{1,3}+ a_{1,4}C_{1,4}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Here is the computation of the individual pieces.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{|c|c|c|}
+\hline
+a_{1,1}=1 
+\amp  M_{1,1}= 
+\det\begin{bmatrix}4\amp 5\amp 3\\ 
+4\amp 8\amp -1\\
+2\amp 2\amp 1\end{bmatrix}
+=-14 
+\amp  C_{1,1}=(-1)^2 M_{1,1}=-14 \\ 
+\hline
+a_{1,2}=2
+\amp  M_{1,2}=
+\det\begin{bmatrix}-1\amp 5\amp 3\\
+3\amp 8\amp -1\\
+1\amp 2\amp 1\end{bmatrix}=-36
+\amp  C_{1,2}=(-1)^3 M_{1,2}=36 \\ 
+\hline
+a_{1,3}=2
+\amp  M_{1,3}=
+\det\begin{bmatrix}-1\amp 4\amp 3\\
+3\amp 4\amp -1\\
+1\amp 2\amp 1\end{bmatrix}=-16
+\amp  C_{1,3}=(-1)^4 M_{1,3}=-16 \\ 
+\hline
+a_{1,4}=3
+\amp  M_{1,4}=
+\det\begin{bmatrix}-1\amp 4\amp 5\\
+3\amp 4\amp -8\\
+1\amp 2\amp 2\end{bmatrix}=26
+\amp  C_{1,4}=(-1)^5 M_{1,4}=-26\\ \hline
+\end{array}
+\end{equation*}
+</div>
 <span class="incontext"><a href="section-21.html#p-578">in-context</a></span>
 </body>
 </html>

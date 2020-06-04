@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-03T15:50:09-05:00    *-->
+<!--*    on 2020-06-04T17:58:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,14 +13,23 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Evaluate the following sums</p>
-<ul class="disc">
-<li><p>\(\displaystyle \sum_{j=1}^5 2j\)</p></li>
-<li><p>\(\displaystyle \sum_{k=1}^5 k(k-1)\)</p></li>
-<li><p>\(\displaystyle \sum_{i=0}^4 2^i\)</p></li>
-<li><p>\(\displaystyle \sum_{\ell=1}^3\ell^2+\frac1\ell\)</p></li>
-<li><p>\(\displaystyle \sum_{j=1}^5 ij\)</p></li>
-</ul>
+<p>\(M_{i,j}\text{,}\) the <dfn class="terminology">\(i,j\) minor</dfn> of a matrix \(A\) is computed by deleting the row and column containing \(a_{i,j}\) and evaluating the determinant of what remains.</p>
+<div class="displaymath">
+\begin{equation*}
+\qquad\qquad\qquad\downarrow \text{ column } C_j \text{ deleted}\\
+M_{i,j}=\det
+\left[\begin{array}{c|c|c}
+{}******\amp \amp *****\\
+{}******\amp \amp *****\\
+{}******\amp \amp *****\\\hline
+\cdots\amp a_{i,j}\amp\cdots\\ \hline
+{}******\amp \amp *****\\
+{}******\amp \amp *****\\
+{}******\amp \amp *****
+\end{array}\right]
+\gets \text{ row } R_i \text{ deleted}
+\end{equation*}
+</div>
 <span class="incontext"><a href="section-20.html#p-545">in-context</a></span>
 </body>
 </html>
