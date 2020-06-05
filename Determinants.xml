@@ -392,7 +392,7 @@
     <m>P</m> <xref ref="CheckerboardMatrix"/> with the checkerboard pattern.
     This is a general pattern: Given the matrix of minors <m>M</m> the matrix
     of cofactors <m>C</m> is then computed by multiplying the entries of <m>M</m>
-    by <m>\pm1</m> using the checkerboard pattern.
+    by <m>\pm1</m> according to the checkerboard pattern.
     </p>
     </observation>
     
@@ -447,9 +447,9 @@
 
     <p>
     While this gives the theoretical ability to compute determinants, the number
-    of computations may quickly become unworkable. We need to improve
+    of computations quickly becomes unworkable. We need to improve
     our mathematical techniques to enable practical computations. The material
-    developed in this section will allow this. 
+    developed in this section allows the easy evaluation of many larger matrices. 
     </p>
     </introduction>
     
@@ -475,6 +475,7 @@
         </definition>
 
         <lemma>
+        <title> <m>C=P\circ M</m> </title>
         
         <statement>
             <p>
@@ -506,10 +507,12 @@
         <m>M</m>and the cofactor matrix <m>C</m> using <xref ref="MatrixMinorDefinition" />
         and <xref ref="MatrixCofactorDefinition" />. We have also used
         Hadamard multiplication of matrices <xref ref="HadamardProductDef" />
-        to see that <m>C=P\circ M</m>. We wish to do the further evaluation of <m>A\circ P\circ M</m>.
+        to see that <m>C=P\circ M</m>. We now wish to do the further evaluation of 
+        <m>A\circ P\circ M=A\circ C</m>.
         </p>
        
         <example xml:id="DeterminantSizeFour">
+        <title> <m>A\circ C</m> has constant row and column sums </title>
         <p>
         Let
         <me>
@@ -609,6 +612,7 @@
         </p>
     
         <theorem xml:id="HadamardRowSums">
+        <title> <m>A\circ C</m> has constant row and column sums </title>
         <statement>
         <p>
         Let <m>A</m> be any square matrix, <m>M</m> be its matrix of minors and

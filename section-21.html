@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-05T10:59:05-05:00    *-->
+<!--*    on 2020-06-05T13:50:49-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -101,10 +101,10 @@ MathJax.Hub.Config({
 <span class="type">Section</span> <span class="codenumber">3.3</span> <span class="title">The determinant of large matrices</span>
 </h2>
 <section class="introduction" id="introduction-9"><p id="p-557">In <a class="xref" data-knowl="./knowl/DeterminantofSmallMatrices.html" title="Definition 3.1.1: Determinants of small matrices">Definition 3.1.1</a> the determinant of matrices of size \(n \le 3\) was defined using simple formulas. For larger matrices, unfortunately, there is no simple formula, and so we use a different approach. We reduce the problem of finding the determinant of one matrix of order \(n\) to a problem of finding \(n\) determinants of matrices of order \(n-1\text{.}\) So, for example, we find the determinant of a matrix of order \(4\) by evaluating the determinants of \(4\) matrices of order \(3\text{.}\) We have a formula for matrices of order \(3\text{,}\) so, in principle, it will be possible to evaluate the determinant for any matrix of order \(4\text{.}\) We can use this ability for finding the determinant of any matrix of order \(5\text{:}\) reduce it to a problem of \(5\) matrices of order \(4\text{,}\) which we already know how to solve. Continuing with the line of reasoning gives us the ability to evaluate determinants of any size.</p>
-<p id="p-558">While this gives the theoretical ability to compute determinants, the number of computations may quickly become unworkable. We need to improve our mathematical techniques to enable practical computations. The material developed in this section will allow this.</p></section><section class="subsection" id="subsection-38"><h3 class="heading hide-type">
+<p id="p-558">While this gives the theoretical ability to compute determinants, the number of computations quickly becomes unworkable. We need to improve our mathematical techniques to enable practical computations. The material developed in this section allows the easy evaluation of many larger matrices.</p></section><section class="subsection" id="subsection-38"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.3.1</span> <span class="title">A motivating computation</span>
 </h3>
-<p id="p-559">This subsection contains optional material. The goal is to motivate <a class="xref" data-knowl="./knowl/HadamardRowSums.html" title="Theorem 3.3.4">Theorem 3.3.4</a>. It may be skipped on first reading if desired.</p>
+<p id="p-559">This subsection contains optional material. The goal is to motivate <a class="xref" data-knowl="./knowl/HadamardRowSums.html" title="Theorem 3.3.4: \(A\circ C\) has constant row and column sums">Theorem 3.3.4</a>. It may be skipped on first reading if desired.</p>
 <article class="definition definition-like" id="HadamardProductDef"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Hadamard product of two matrices.</span>
 </h6>
@@ -115,7 +115,7 @@ MathJax.Hub.Config({
 \end{equation*}
 </div>
 <p data-braille="continuation">In other words, multiplication is done element-wise.</p></article><article class="lemma theorem-like" id="lemma-4"><a data-knowl="" class="id-ref original" data-refid="hk-lemma-4"><h6 class="heading">
-<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="period">.</span>
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">\(C=P\circ M\).</span>
 </h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-lemma-4">
 <article class="lemma theorem-like"><p id="p-561">If \(M\) is the matrix of minors, and \(C\) is the cofactor matrix, then</p>
 <div class="displaymath">
@@ -125,9 +125,9 @@ C=P\circ M
 </div></article><article class="hiddenproof" id="proof-33"><a data-knowl="" class="id-ref original" data-refid="hk-proof-33"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-33"><article class="hiddenproof"><p id="p-562">This is just restating <a class="xref" data-knowl="./knowl/MinorsCofactorsCheckerboard.html" title="Observation 3.2.7: Minors, cofactors and the checkerboard pattern">Observation 3.2.7</a></p></article></div>
 </div>
 <p id="p-563">Compare the results of <a class="xref" data-knowl="./knowl/MatrixMinorsExmaple.html" title="Example 3.2.5: Matrix of minors">Example 3.2.5</a> and <a class="xref" data-knowl="./knowl/CofactorMatrixExmaple.html" title="Example 3.2.6: Cofactor matrix">Example 3.2.6</a>.</p>
-<p id="p-564">Starting with a given square matrix \(A\text{,}\) we have defined the matrix of minors \(M\)and the cofactor matrix \(C\) using <a class="xref" data-knowl="./knowl/MatrixMinorDefinition.html" title="Definition 3.2.1: The \(i,j\) minor of a matrix \(A\)">Definition 3.2.1</a> and <a class="xref" data-knowl="./knowl/MatrixCofactorDefinition.html" title="Definition 3.2.2: The \(i,j\) cofactor of a matrix \(A\)">Definition 3.2.2</a>. We have also used Hadamard multiplication of matrices <a class="xref" data-knowl="./knowl/HadamardProductDef.html" title="Definition 3.3.1: Hadamard product of two matrices">Definition 3.3.1</a> to see that \(C=P\circ M\text{.}\) We wish to do the further evaluation of \(A\circ P\circ M\text{.}\)</p>
+<p id="p-564">Starting with a given square matrix \(A\text{,}\) we have defined the matrix of minors \(M\)and the cofactor matrix \(C\) using <a class="xref" data-knowl="./knowl/MatrixMinorDefinition.html" title="Definition 3.2.1: The \(i,j\) minor of a matrix \(A\)">Definition 3.2.1</a> and <a class="xref" data-knowl="./knowl/MatrixCofactorDefinition.html" title="Definition 3.2.2: The \(i,j\) cofactor of a matrix \(A\)">Definition 3.2.2</a>. We have also used Hadamard multiplication of matrices <a class="xref" data-knowl="./knowl/HadamardProductDef.html" title="Definition 3.3.1: Hadamard product of two matrices">Definition 3.3.1</a> to see that \(C=P\circ M\text{.}\) We now wish to do the further evaluation of \(A\circ P\circ M=A\circ C\text{.}\)</p>
 <article class="example example-like" id="DeterminantSizeFour"><a data-knowl="" class="id-ref original" data-refid="hk-DeterminantSizeFour"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">\(A\circ C\) has constant row and column sums.</span>
 </h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-DeterminantSizeFour"><article class="example example-like"><p id="p-565">Let</p>
 <div class="displaymath">
 \begin{equation*}
@@ -227,12 +227,12 @@ A\circ C
 </div></article></div>
 <p id="p-566">An astonishing result is seen in this example. Adding the entries in any given row or in any given column gives row sums and column sums that are identical.</p>
 <article class="theorem theorem-like" id="HadamardRowSums"><a data-knowl="" class="id-ref original" data-refid="hk-HadamardRowSums"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.4</span><span class="period">.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">\(A\circ C\) has constant row and column sums.</span>
 </h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-HadamardRowSums">
 <article class="theorem theorem-like"><p id="p-567">Let \(A\) be any square matrix, \(M\) be its matrix of minors and \(P\) satisfy \(p_{i,j}=(-1)^{i+j}\text{.}\) Then the row sums and column sums of \(A\circ P\circ M\) are identical.</p></article><article class="hiddenproof" id="proof-34"><a data-knowl="" class="id-ref original" data-refid="hk-proof-34"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-34"><article class="hiddenproof"><p id="p-568">We don't have the tools for the proof yet, so we postpone it. </p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sademoji.jpeg" style="width: 100%; height: auto;" alt=""></div></div></div></article></div>
 </div>
-<p id="p-569">We now use <a class="xref" data-knowl="./knowl/HadamardRowSums.html" title="Theorem 3.3.4">Theorem 3.3.4</a> to define the determinant for large matrices.</p>
+<p id="p-569">We now use <a class="xref" data-knowl="./knowl/HadamardRowSums.html" title="Theorem 3.3.4: \(A\circ C\) has constant row and column sums">Theorem 3.3.4</a> to define the determinant for large matrices.</p>
 <article class="definition definition-like" id="definition-35"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">The determinant of a square matrix.</span>
 </h6>
