@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-05T13:50:47-05:00    *-->
+<!--*    on 2020-07-05T18:40:19-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -94,7 +94,9 @@ MathJax.Hub.Config({
 <li class="link"><a href="SysLinEq.html" data-scroll="SysLinEq"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations</span></a></li>
 <li class="link"><a href="MatrixTheoryIntro.html" data-scroll="MatrixTheoryIntro"><span class="codenumber">2</span> <span class="title">Matrix Theory</span></a></li>
 <li class="link"><a href="Determinants.html" data-scroll="Determinants"><span class="codenumber">3</span> <span class="title">The Determinant</span></a></li>
-<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">4</span> <span class="title">Additional Topics</span></a></li>
+<li class="link"><a href="EuclideanSpace.html" data-scroll="EuclideanSpace"><span class="codenumber">4</span> <span class="title">Vectors in Euclidean \(n\) space</span></a></li>
+<li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
+<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">6</span> <span class="title">Additional Topics</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-12"><h2 class="heading hide-type">
@@ -131,10 +133,10 @@ MathJax.Hub.Config({
 </ul></article></div>
 <p id="p-360">Here is an animation that illustrates that \(A^T\) may be derived from \(A\) by reflection on the main diagonal.</p>
 <figure class="figure figure-like" id="figure-10"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/300px-Matrix-transpose.gif" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.5.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure><article class="theorem theorem-like" id="theorem-9"><a data-knowl="" class="id-ref original" data-refid="hk-theorem-9"><h6 class="heading">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.5.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure><article class="theorem theorem-like" id="theorem-9"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of the transpose of a matrix.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-theorem-9">
-<article class="theorem theorem-like"><ul id="p-361" class="disc">
+</h6>
+<ul id="p-361" class="disc">
 <li id="li-167"><p id="p-362">\(\displaystyle (A^T)^T=A\)</p></li>
 <li id="li-168"><p id="p-363">\(\displaystyle (A+B)^T=A^T+B^T\)</p></li>
 <li id="li-169"><p id="p-364">\(\displaystyle (rA)^T=rA^T\)</p></li>
@@ -166,7 +168,6 @@ b_{1,i}a_{j,1} + b_{2,i}a_{j,2}
 \amp = (B^T A^T)_{i,j}
 \end{align*}
 </div></article></div>
-</div>
 <article class="definition definition-like" id="definition-16"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Trace of a square matrix.</span>
 </h6>
@@ -175,10 +176,10 @@ b_{1,i}a_{j,1} + b_{2,i}a_{j,2}
 \begin{equation*}
 \mathrm{tr}A=a_{1,1}+a_{2,2}+\cdots + a_{n,n}=\sum_{i=1}^n a_{i,i}
 \end{equation*}
-</div></article><article class="theorem theorem-like" id="theorem-10"><a data-knowl="" class="id-ref original" data-refid="hk-theorem-10"><h6 class="heading">
+</div></article><article class="theorem theorem-like" id="theorem-10"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Traces of \(AB\) and \(BA\) are equal.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-theorem-10">
-<article class="theorem theorem-like"><p id="p-373">If \(AB\) and \(BA\) are each square, then \(\mathrm{tr}(AB)=\mathrm{tr}(BA)\)</p></article><article class="hiddenproof" id="proof-13"><a data-knowl="" class="id-ref original" data-refid="hk-proof-13"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-13"><article class="hiddenproof"><p id="p-374">Suppose that \(A\) is \(m\times n\) and \(B\) is \(n\times
+</h6>
+<p id="p-373">If \(AB\) and \(BA\) are each square, then \(\mathrm{tr}(AB)=\mathrm{tr}(BA)\)</p></article><article class="hiddenproof" id="proof-13"><a data-knowl="" class="id-ref original" data-refid="hk-proof-13"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-13"><article class="hiddenproof"><p id="p-374">Suppose that \(A\) is \(m\times n\) and \(B\) is \(n\times
 m\) (remember that \(AB\) is then defined and square). To evalute both \(\mathrm{tr}(AB)\) and \(\mathrm{tr}(BA)\text{,}\) we consider the following rectangular array of numbers:</p>
 <div class="displaymath">
 \begin{equation*}
@@ -219,8 +220,7 @@ a_{1,1}b_{1,1}\amp +a_{2,1}b_{1,2}+\cdots+a_{m,1}b_{1,m}\\
 \amp =   \sum_{j=1}^n (BA)_{j,j}\\
 \amp =   \mathrm{tr}(BA)
 \end{align*}
-</div></article></div>
-</div></section></div></main>
+</div></article></div></section></div></main>
 </div>
 </body>
 </html>

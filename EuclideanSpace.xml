@@ -1,0 +1,4690 @@
+    
+<chapter xml:id="EuclideanSpace" ><title>Vectors in Euclidean <m>n</m> space</title>
+    <section><title>Initial definitions</title>
+        <subsection><title>The definitions of Euclidean <m>n</m>-space</title>
+        <p>
+        Euclidean <m>n</m> space, also called <m>\R^n</m>, is formally
+        written as
+        <me>
+            \{(x_1,x_2,\ldots,x_n)\mid x\in\R\}.
+        </me>
+        This means that it consists of elements called
+        <term><m>n</m>-tuples</term>, which are written as
+        <m>(x_1,x_2,\ldots,x_n)</m> where each 
+        <m>x_i</m> is a real number. Each such element is
+        called a <term>vector</term>.
+        </p>
+        <example><title>Examples of <m>n</m>-tuples in <m>\R^n</m></title>
+        <p>
+            <ul>
+            <li><p><m>(2,3)</m> is in <m>\R^2</m></p></li>
+            <li><p><m>(-3,0,\frac12)</m> is in <m>\R^3</m></p></li>
+            <li><p><m>(-1,0,4,\sqrt2,\frac\pi2,1000)</m> is in <m>\R^6</m></p></li>
+            </ul>
+        </p>
+        </example>
+    
+        <p>
+        The most familiar examples, of course, are <m>\R^2</m>, the plane, and
+        <m>\R^3</m>, ordinary 3-dimensional space. For <m>\R^2</m> we
+        have an <m>x</m>-axis and a <m>y</m>-axis, and the points in the plane
+        as <m>2</m>-tuples are defined by dropping perpediculars to each axis.
+        </p>
+    
+        <figure>
+        <caption/>
+        <image width="50%">
+        <asymptote>
+            import graph;
+            size(175,175);
+            pair pt1=(1.5,2.5);
+            real dotradius=0.05;
+            xaxis("\\)x\\)-axis", xmin=-1, xmax=3, RightTicks); 
+            yaxis("$y$-axis", ymin=-1, ymax=3, RightTicks);
+            label("$x$", (pt1.x,0), SE);
+            label("$y$", (0,pt1.y), NW);
+            draw((pt1.x,0)--pt1,red);
+            dot((pt1.x,0),red);
+            draw(pt1--(0,pt1.y),red);
+            dot((0,pt1.y),red);
+            label("$(x,y)$", pt1, NE);
+            fill(circle(pt1,dotradius));
+        </asymptote>
+        </image>
+        </figure>
+        <p>
+        Euclidean <m>3</m>-space is viewed analogously. 
+        </p>
+     
+        <figure>
+        <caption/>
+        <image width="60%">
+        <asymptote>
+            import graph;
+            unitsize(3cm);
+            settings.render=4;
+            import graph3;
+            defaultpen(fontsize(20pt));
+            currentprojection=orthographic(3,3,1);
+            xaxis3("$x$",xmin=0,xmax=3.0,InOutTicks(Label,3,1));
+            yaxis3("$y$",ymin=0,ymax=3.5,InOutTicks());
+            zaxis3("$z$",zmin=0,zmax=3.5,InOutTicks());
+            dot((1,2,3)); label("$(x,y,z)$",(1,2,3),(1,5,0));
+            dot((1,0,0)); label("$(x,0,0)$",(1,0,0),(2.5,0,1));
+            dot((0,2,0)); label("$(0,y,0)$",(0,2,0),(0,2.4,1));
+            dot((0,0,3)); label("$(0,0,z)$",(0,0,3),(0,2,1.5));
+            draw((1,2,3)--(1,0,0),linewidth(1));
+            draw((1,2,3)--(0,2,0),linewidth(1));
+            draw((1,2,3)--(0,0,3),linewidth(1));
+            draw(box((0,0,0),(1,2,3)),linewidth(1)+red);
+        </asymptote>
+        </image>
+        </figure>
+        <p>
+        There are, of course, many geometric concepts studied in <m>\R^2</m>
+        and <m>\R^3</m>. One of our goals is to see how these concepts can
+        be extended to <m>\R^n</m>.
+        </p>
+        <p>
+        While Euclidean <m>n</m>-space consists of <m>n</m>-tuples, they
+        are sometimes viewed from different mathematical perspectives.
+            <ul>
+            <li><p>
+                Points in <m>n</m>-space: the vectors are just the <m>n</m>-tuples
+                <m>(x_1,x_2,\ldots,x_n)</m>.
+            </p></li>
+            <li><p>
+                Directed vectors: the vectors may be thought of as arrows from an
+                initial point <m>P</m> to a terminal point <m>Q</m>.  
+            </p></li>
+            </ul>
+        </p>
+    
+        <figure>
+        <caption/>
+        <image width="60%">
+        <asymptote>
+            unitsize(48);
+            pair initial=(3,1/2), terminal=(1,2);
+         
+            draw ((-1/2,0)--(3.3,0));
+            draw ((0,-1/2)--(0,2.5));
+            draw(initial--terminal, Arrow);
+            label("$P$", initial, E); 
+            label("$Q$", terminal, NW); 
+        </asymptote>
+        </image>
+        </figure>
+    
+        <p>
+            <ul>
+            <li><p>
+                Column vectors where the vector is an <m>n\times 1</m> matrix:
+            <me>
+                \begin{bmatrix} x_1\\ x_2\\ \vdots\\ x_n \end{bmatrix}
+            </me>
+            </p></li>
+            <li><p>
+                Row vectors where the vector is a <m>1\times n</m> matrix:
+                <me>
+                    \begin{bmatrix} x_1, x_2, \ldots, x_n \end{bmatrix}
+                </me>
+            </p></li>
+            </ul>
+        For our initial discussion, we will concentrate on <m>n</m>-tuples
+        and column vectors.
+        </p>
+        </subsection>
+
+        <subsection><title>Equality, addition and scaler multiplication of vectors</title>
+        <p>
+        The equality, addition and scalar multiplication of <m>n</m>-tuples is very
+        much like that of matrices:
+            <ul>
+            <li><p>
+                Equality: <m>(x_1,x_2,\ldots,x_n)=(y_1,y_2,\ldots,y_n)</m> means
+                <m>x_i=y_i</m> for <m>i=1,2,\ldots,n</m>.
+            </p></li>
+            <li><p>
+                Addition: 
+                <m>(x_1,x_2,\ldots,x_n)+(y_1,y_2,\ldots,y_n) 
+                =(x_1+y_1,x_2+y_2,\ldots,x_n+y_n)</m>.
+            </p></li>
+            <li><p>
+                Scalar multiplication: For any scalar <m>r</m>,
+                <m>r(x_1,x_2,\ldots,x_n) =(rx_1,rx_2,\ldots,rx_n)</m>.
+            </p></li>
+            </ul>
+        In fact, if we look at the <m>n</m>-tuples as column vectors,
+        then equality, addition and scalar multiplication are the
+        same as matrix equality, addition and scalar multiplication.
+        </p>
+        <theorem><title>First properties of <m>n</m>-tuples</title>
+        <statement>
+        <p>
+        Let
+        <m>\vec x=(x_1,\ldots,x_n)</m>,
+        <m>\vec y=(y_1,\ldots,y_n)</m>, and
+        <m>\vec z=(z_1,\ldots,z_n)</m> be vectors in <m>\R^n</m>,
+        and let <m>r</m> and <m>s</m> be scalars. In addition,
+        let <m>\vec 0=(0,\ldots,0)</m>
+        and <m>-\vec x=(-x_1,-x_2,\ldots,-x_n)</m>. Then
+        </p>
+        <table>
+        <title/>
+        <tabular>
+        <row>
+            <cell>(A<m>_1</m>) <m>\phantom{|}\vec x + \vec y</m> is in <m>\R^n</m></cell>
+            <cell>(M<m>_1</m>) <m>\phantom{|}r\vec x</m> is in <m>\R^n</m></cell>
+        </row>
+        <row>
+            <cell>(A<m>_2</m>) <m>\phantom{|}\vec x + (\vec y + \vec x)
+            =(\vec x + \vec y) + \vec x\phantom{xx}</m></cell>
+            <cell>(M<m>_2</m>) <m>\phantom{|}r(\vec x+\vec y)=r\vec x+r\vec y</m></cell>
+        </row>
+        <row>
+            <cell>(A<m>_3</m>) <m>\phantom{|}\vec x + \vec 0 = \vec x</m></cell>
+            <cell>(M<m>_3</m>) <m>\phantom{|}(r+s)\vec x =r\vec x+s\vec x</m></cell>
+        </row>
+        <row>
+            <cell>(A<m>_4</m>) <m>\phantom{|}\vec x+ (-\vec x) = \vec 0</m></cell>
+            <cell>(M<m>_4</m>) <m>\phantom{|}(rs)\vec x =r(s\vec x)</m></cell>
+        </row>
+        <row>
+            <cell>(A<m>_5</m>) <m>\phantom{|}\vec x + \vec y = \vec y + \vec x </m></cell>
+            <cell>(M<m>_5</m>) <m>\phantom{|}1\vec x =\vec x</m></cell>
+        </row>
+        </tabular>
+        </table>
+        </statement>
+        <proof>
+        <p>
+        If we view each vector as a column vector, then each of the statements
+        have been proven already in our study of matrix theory.
+        (see 
+        <xref ref="MatrixAdditionProperties" />
+        and
+        <xref ref="ScalarMultiplicationProperties" />).
+        There is no need to do it again!
+        </p>
+        </proof>
+        </theorem>
+        </subsection>
+    </section>
+
+    <section><title>The dot product of vectors in <m>\R^n</m></title>
+    <introduction>
+    <p>
+    We now look at something different: a product of two vectors in <m>\R^n</m>.
+    </p>
+    </introduction>
+        <subsection><title>Definition of the dot product</title>
+        <definition><title>The dot product</title>
+        <statement>
+        <p>
+        If 
+        <m>\vec x=(x_1,x_2,\ldots,x_n)</m> and
+        <m>\vec y=(y_1,y_2,\ldots,y_n)</m>,
+        then the
+        <term>dot product</term> (or <term>inner product</term>) 
+        of <m>\vec x</m> and <m>\vec y</m> is
+        <me>
+            \vec x\cdot \vec y= x_1y_1+x_2y_2+\cdots+x_n y_n
+            =\sum_{i=1}^n x_iy_i
+        </me>
+        </p>
+        </statement>
+        </definition>
+    
+        <p>
+        Notice that if <m>\vec x</m> and <m>\vec y</m> are
+        viewed as column vectors <m>x</m> and <m>y</m>, then
+        <me>
+        \vec x\cdot \vec y=x^T y
+        </me>
+        and so we see that the dot product may be viewed as a special case of
+        matrix multiplication.
+        </p>
+
+        <remark>
+        <p>
+        Since <m>\vec x\cdot\vec y</m> is a real number
+        and <m>x^Ty</m> is a <m>1\times 1</m> matrix, to be completely precise we would say
+        <m>x^Ty=[\vec x\cdot\vec y]</m>. We will be this precise only when not being so
+        might create confusion.
+        </p>
+        </remark>
+    
+        <proposition xml:id="DotProductFirstProperties"><title>First properties of the dot product</title>
+        <statement>
+        <p>
+        Let <m>\vec x</m>, <m>\vec y</m> and <m>\vec u</m>
+        be vectors in <m>\R^n</m>, and let <m>r</m> be a scalar. Then
+            <ol>
+            <li><p>
+            <m>\vec x \cdot \vec y = \vec y\cdot \vec x</m>
+            </p></li>
+            <li><p>
+                <m>\vec u\cdot(\vec x+\vec y) =  \vec u\cdot \vec x+\vec u\cdot \vec y</m>
+            </p></li>
+            <li><p>
+                <m>(\vec x+\vec y)\cdot\vec u =  \vec x\cdot \vec u + \vec y\cdot \vec u</m>
+            </p></li>
+            <li><p>
+                <m>r(\vec x\cdot\vec y)= (r\vec x)\cdot \vec y = \vec x\cdot (r\vec y)</m>
+            </p></li>
+            <li><p>
+                <m>\vec x\cdot \vec x\ge 0</m> with equality if and only if <m>\vec x=\vec 0</m>
+            </p></li>
+        </ol>
+        </p>
+        </statement>
+        <proof>
+        <p>
+            <ol>
+            <li><p>
+                <m>\vec x\cdot \vec y=\sum_{i=1}^n x_iy_i=\sum_{i=1}^n y_ix_i=\vec y\cdot\vec x</m>
+            </p></li>
+    
+            <li><p>
+                By direct evaluation
+                <md>
+                <mrow>
+                    \vec u\cdot(\vec x+\vec y)   
+                    \amp = \sum_{i=1}^n u_i(x_i+y_i)
+                </mrow>
+                <mrow>\amp = \sum_{i=1}^n (u_ix_i+u_iy_i)</mrow>
+                <mrow>\amp = \sum_{i=1}^n u_ix_i+\sum_{i=1}^nu_iy_i</mrow>
+                <mrow>\amp =\vec u\cdot \vec x+\vec u\cdot \vec y</mrow>
+                </md>
+            </p></li>
+            <li><p>
+                Using (1) and (2),
+                <me>
+                    (\vec x+\vec y)\cdot\vec u 
+                    =  \vec u\cdot(\vec x+\vec y) =  \vec u\cdot \vec x+\vec u\cdot \vec y
+                    = \vec x\cdot \vec u + \vec y\cdot \vec u
+                </me>
+            </p></li>
+            <li><p>
+                Evaluating each term:
+                <me>
+                    r(\vec x\cdot\vec y)= r\sum_{i=1}^n x_iy_i      \\
+                    (r\vec x)\cdot \vec y = \sum_{i=1}^n (rx_i)y_i
+                    = \sum_{i=1}^n r(x_iy_i)= r\sum_{i=1}^n x_iy_i        \\
+                    \vec x\cdot (r\vec y)= \sum_{i=1}^n x_i(ry_i)
+                    = \sum_{i=1}^n r(x_iy_i)= r\sum_{i=1}^n x_iy_i
+                </me>
+            </p></li>
+            <li><p>
+                <m>\vec x\cdot \vec x=\sum_{i=1}^n x_i^2</m>, and since <m>x_i^2\ge0</m> for any
+                real number, we have <m>\vec x\cdot \vec x\ge0</m>. For the value to actually
+                be <m>0</m>, we must have each <m>x_i^2=0</m> and hence <m>x_i=0</m> for 
+                <m>i=1,\ldots,n</m>. In this case <m>\vec x=\vec0</m>.
+            </p></li>
+            </ol> 
+        </p>
+        </proof>
+        </proposition>
+        <exercise>
+        <statement>
+        <p>
+        Show that <m>\vec x\cdot \vec0=0</m> for any vector <m>\vec x</m>.
+        </p>
+        </statement>
+        </exercise>
+        </subsection>
+                
+        <subsection><title>The dot product and the length of a vector</title>
+        <p>
+        In <m>\R^2</m> the length of a vector is its distance to the origin 
+        and so for the vector <m>\vec x=(x,y)</m>, the Pythagorean theorem
+        is used to compute the distance <m>d=\sqrt{x^2+y^2}</m>.
+        </p>
+
+        <figure>
+        <caption/>
+        <image width="50%">
+        <asymptote>
+            import graph;
+            size(175,175);
+            pair pt1=(1.5,2.5);
+            real dotradius=0.05;
+            xaxis("$x$-axis", xmin=-1, xmax=3); 
+            yaxis("$y$-axis", ymin=-1, 
+            ymax=3);
+            draw(pt1--(0,0));
+            draw(pt1--(pt1.x,0)--(0,0)--cycle, linewidth(1.0pt));
+            label("$(x,y)$", pt1, NE);
+            label("$d$", 1/2*pt1, NW);
+            fill(circle(pt1,dotradius));
+            fill(circle((0,0),dotradius));
+            fill(circle((pt1.x,0),dotradius));
+            label("$|x|$",1/2*(pt1.x,0),S);
+            label("$|y|$",1/2*(2*pt1.x,pt1.y),E);
+        </asymptote>
+        </image>
+        </figure>
+        
+        <p>
+            This gives us the following definition.
+        </p>
+        
+        <definition><title>Length of a vector in <m>\R^2</m></title>
+        <statement>
+        <p>
+        If <m>\vec x=(x,y)</m> is a vector in <m>\R^2</m>,
+        then the 
+        <term>length</term> of <m>\vec x</m> is
+        <me>
+            \|\vec x\|=\sqrt{x^2+y^2}
+        </me>
+        </p>
+        </statement>
+        </definition>
+
+        <p>
+        The situation is similar in <m>\R^3</m>. As in <m>\R^2</m>,
+        we get <m>d'=\sqrt{x^2+y^2}</m>. Applying the Pythagorean theorem
+        again, we get <m>d^2={d'}^2+|z|^2</m>, which gives us length in
+        <m>\R^3</m>
+        </p>
+
+        <figure>
+        <caption/>
+        <image width="85%">
+        <asymptote>
+            settings.render=4;
+            import graph3;
+            defaultpen(fontsize(20pt));
+            currentprojection=orthographic(3,3,1);
+            unitsize(3cm);
+            defaultpen(fontsize(20pt));
+            currentprojection=orthographic(3,4,1);
+            real x=4, y=4, z=2;
+            xaxis3("$x$",xmin=0,xmax=x+0.5);
+            yaxis3("$y$",ymin=0,ymax=y+0.5);
+            zaxis3("$z$",zmin=0,zmax=z+0.5);
+            label("$\vec u=(x,y,z)$",(x,y,z+0.2));
+            label("$|x|$",(x/2,0,0),(0,0,1));
+            label("$|x|$",(x/2,y,0),(0,6,0));
+            label("$|y|$",(0,y/2,0),(-6,0,0));
+            label("$|y|$",(x,y/2,0),(8,0,0));
+            label("$|z|$",(x,y,z/2),(6,4,4));
+            label("$d'=\sqrt{x^2+y^2}$",(x,y,0)/2,2.2E);
+            label("$d=\sqrt{x^2+y^2+z^2}$",(x,y,z)/2,2.0*E);
+            
+            draw((0,0,0)--(x,y,0)--(x,y,z)--cycle,linewidth(1.5)+green);
+            draw(box((0,0,0),(x,y,z)),linewidth(1)+red);
+        </asymptote>
+        </image>
+        </figure>
+
+        <definition><title>Length of a vector in <m>\R^3</m></title>
+        <statement>
+        <p>
+        If <m>\vec x=(x,y,z)</m> is a vector in <m>\R^3</m>,
+        then the 
+        <term>length</term> of <m>\vec x</m> is
+        <me>
+            \|\vec x\|=\sqrt{x^2+y^2+z^2}
+        </me>
+        </p>
+        </statement>
+        </definition>
+
+        <proposition>
+        <title>For any vector <m>\vec x</m>, we have <m>\|\vec x\|^2=\vec x\cdot \vec x</m></title>
+        <statement>
+        <p>
+        If <m>\vec x</m> is a vector in <m>\R^2</m> or <m>\R^3</m>, then
+        <me>
+            \vec x\cdot \vec x=\|\vec x\|^2
+        </me>
+        </p>
+        </statement>
+        </proposition>
+        <p>
+        We generalize the idea of length to <m>\R^n</m> in the most 
+        straightforward way:
+        </p>
+        <definition><title>The length of a vector in <m>\R^n</m></title>
+        <statement>
+        <p>
+        Let <m>\vec x</m> be a vector in <m>\R^n</m>. Then 
+        the <term>length</term> of <m>\vec x</m> is defined by
+        <me>
+            \|\vec x\|^2=\vec x\cdot\vec x
+        </me>
+        or, equivalently,
+        <me>
+            \|\vec x\|=\sqrt{\sum_{i=1}^n x_i^2}.
+        </me>
+        </p>
+        </statement>
+        </definition>
+
+        <p>
+        Note that <xref ref="DotProductFirstProperties" />
+        ensures that there will indeed be a nonnegative real square root
+        of <m>\vec x\cdot\vec x</m>.
+        </p>
+
+        <p>
+        Vectors with length one are often important and are given a special name.
+        </p>
+
+        <definition><title>Unit vectors in <m>\R^n</m></title>
+        <statement>
+        <p>
+        A <term>unit vector</term> is one with length one.
+        </p>
+        </statement>
+        </definition>
+
+        <p>
+        It is clear the <m>\vec x</m> is a unit vector if and only if
+        <m>\|\vec x\|^2=\vec x\cdot\vec x=1</m>.
+        </p> 
+
+        <proposition xml:id="UnitVectorConstruction"><title>Unit vector construction</title>
+        <statement>
+        <p>
+        Let <m>\vec x</m> be any nonzero vector in <m>\R^n</m>.
+        Then 
+        <m>\frac{\vec x}{\|\vec x\|}</m> is a unit vector.
+       </p>
+        </statement>
+        <proof>
+        <p>
+        <me>
+            \frac{\vec x}{\|\vec x\|} \cdot \frac{\vec x}{\|\vec x\|}
+            = \frac{\vec x \cdot \vec x}{\|\vec x\|^2}
+            = \frac{\|\vec x\|^2}{\|\vec x\|^2}
+            =1
+        </me>
+        </p>
+        </proof>
+        </proposition>
+        </subsection>
+    
+        <subsection><title>The dot product and the angle between vectors in <m>\R^n</m></title>
+        <p>
+        We start the discussion of angles by considering <m>\R^2</m>. We take two nonzero vectors
+        <m>\vec x</m> and <m>\vec y</m> and connect them by a line with <m>\vec0</m>.
+        The angle between these vectors is the angle <m>\theta</m> between these lines.
+        </p>
+    
+        <figure>
+        <caption/>
+        <image width="50%">
+        <asymptote>
+            import graph;
+            size(175,175);
+            pair pt1=(1.5,2.5);
+            pair pt2=(3.5,1.5);
+            real dotradius=0.05;
+            xaxis("$x$-axis", xmin=-1, xmax=5); 
+            yaxis("$y$-axis", ymin=-1, ymax=3);
+            draw(pt1--(0,0)--pt2);
+            label("$\vec x=(x_1,x_2)$", pt1, NE);
+            label("$\vec y=(y_1,y_2)$", pt2, NE);
+            label("$\theta$", 1/5*(pt1+pt2));
+            label("$\vec0$", (0,0), SW);
+            fill(circle(pt1,dotradius));
+            fill(circle(pt2,dotradius));
+            fill(circle((0,0),dotradius));
+        </asymptote>
+        </image>
+        </figure>
+
+        <p>
+        We use the law of cosines (<xref ref="LawOfCosines" />)
+        with <m>a=\|\vec x\|</m>, <m>b=\|\vec y\|</m> and
+        <m>c</m> equal to the distance from <m>\vec x</m> to <m>\vec y</m>:
+        <me>
+           (x_1-y_1)^2+(x_2-y_2)^2 =(x_1^2+x_2^2) +(y_1^2+y_2^2) 
+                - 2 \|\vec x\| \|\vec y\| \cos\theta \\
+           x_1y_1+x_2y_2 = \|\vec x\| \|\vec y\| \cos\theta \\
+           \vec x\cdot\vec y = \|\vec x\| \|\vec y\| \cos\theta 
+        </me>
+        which gives us the following:
+        </p>
+    
+        <proposition xml:id="DotProductR2">
+        <statement>
+        <p>
+        If <m>\vec x</m> and <m>\vec y</m> are nonzero vectors in <m>\R^2</m>,
+        then <me>\vec x\cdot\vec y = \|\vec x\| \|\vec y\| \cos\theta.</me>
+        </p>
+        </statement>
+        </proposition>
+        
+        <exercise>
+        <statement>
+        <p>
+        If <m>\vec x</m> and <m>\vec y</m> are nonzero vectors in <m>\R^3</m>,
+        then <me>\vec x\cdot\vec y = \|\vec x\| \|\vec y\| \cos\theta.</me>
+        </p>
+        </statement>
+        <solution>
+        <p>
+        Use the triangle in <m>\R^3</m> with vertices <m>\vec x</m>, <m>\vec y</m> 
+        and <m>\vec 0</m> and apply the law of cosines.
+        </p>
+        </solution>
+        </exercise>
+    
+        <observation>
+        <p>
+            <ul>
+            <li><p>
+                We have assumed the vectors <m>\vec x</m> and <m>\vec y</m>
+                to be nonzero. If <m>\vec x=\vec0</m>, then <m>\vec x\cdot\vec y=0</m>
+                and <m>\|\vec x\|=0</m>, and so
+                <m>\vec x\cdot\vec y = \|\vec x\| \|\vec y\| \cos\theta</m>
+                is still the valid (but perhaps uninteresting) equation <m>0=0</m>.
+            </p></li>
+            <li><p>
+                If <m>\vec x</m> and <m>\vec y</m> are both nonzero, then
+                <me>
+                    \frac{\vec x\cdot\vec y}{\|\vec x\| \|\vec y\|}=\cos\theta
+                </me>
+                and so 
+                <me>
+                    -1 \leq \frac{\vec x\cdot\vec y}{\|\vec x\| \|\vec y\|} \leq 1.
+                </me>
+                Taking absolute values,
+                <me>
+                    | \vec x\cdot\vec y| \leq \|\vec x\| \|\vec y\|.
+                </me>
+                This inequality is called the <term>Cauchy-Schwarz inequality</term>.
+            </p></li>
+            </ul>
+        </p>
+        </observation>
+        </subsection>
+    
+        <subsection><title>The Cauchy-Schwarz inequality</title>
+        <p>
+        The following theorem is the key that allows many geometric concepts
+        from <m>\R^2</m> and <m>\R^3</m> to be extended to <m>\R^m</m>.
+        </p>
+    
+        <theorem xml:id="CauchySchwarz"><title>Cauchy-Schwarz</title>
+        <statement>
+        <p>
+        If <m>\vec x</m> and <m>\vec y</m> are vectors in <m>\R^n</m>, then
+        <me>
+            | \vec x\cdot\vec y| \leq \|\vec x\| \|\vec y\|.
+        </me>
+        </p>
+        </statement>
+        <proof>
+        <title>Proof using elementary algebra</title>
+        <p>
+        This proof makes clever use of the quadratic formula for the solution
+        of quadratic equations.
+        We take a real number <m>x</m> and let it act as a variable in an equation.
+    
+        <me>
+        \begin{array}{rl}
+         0 
+        \amp \le (x\vec u+\vec v)\cdot(x\vec u+\vec v)\\
+        \amp = (x\vec u+\vec v)\cdot x\vec u + (x\vec u+\vec v)\cdot \vec v\\
+        \amp = x\vec u\cdot x\vec u 
+             + \vec v \cdot x\vec u +x\vec u\cdot \vec v+ \vec v\cdot \vec v\\
+        \amp = (\vec u\cdot\vec u) x^2 +2(\vec u\cdot \vec v) x+\vec v\cdot \vec v\\
+        \amp = \|\vec u\|^2 x^2 +2(\vec u\cdot \vec v) x+\|\vec v\|^2\\
+        \amp= ax^2+bx+c
+        \end{array}
+        </me>
+        where <m>a=\|\vec u\|^2</m>, <m>b=2(\vec u\cdot\vec v)</m> and
+        <m>c=\|\vec v\|^2</m>. This means that the graph of <m> ax^2+bx+c</m>
+        is a parabola that is never below the <m>x</m>-axis.  In particular, this means that 
+        there can not be two real roots. Now the two roots of a quadratic equation are
+        <me>
+            x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
+        </me>
+        and so the polynomial will have two real roots if <m>b^2-4ac>0</m>. 
+        <em>This is exactly what can not happen</em>,
+        and so <m>b^2-4ac\le0</m>, or <m>b^2\le4ac</m>. 
+        Using our known values of <m>a</m>, <m>b</m> and <m>c</m>, we get
+        <me>
+             4(\vec u\cdot\vec v)^2\le 4\|\vec u\|^2\|\vec v\|^2\\
+             (\vec u\cdot\vec v)^2\le\|\vec u\|^2\|\vec v\|^2\\
+             |\vec u\cdot\vec v|\le\|\vec u\|\,\|\vec v\|\\
+        </me>
+        </p>
+        </proof>
+
+        <proof>
+        <title>Proof using <xref ref="DotProductFirstProperties" /></title>
+        <case>
+            <title> First case: <m>\vec x=\vec0</m> or <m>\vec y=\vec0</m></title>
+           <p>
+           In this case
+           <m>\vec x\cdot\vec y=0</m> and <m>\|\vec x\| \|\vec y\|=0</m>,
+           and so the inequality reduces to <m>0\leq 0</m>.
+           </p>
+        </case>
+        <case>
+            <title>Second case: <m> \|\vec x\|=\|\vec y\|=1</m></title>
+            <p>
+            Using
+            <xref ref="DotProductFirstProperties" />,
+            <md>
+            <mrow> 0\amp \leq \|(\vec x+\vec y)\|^2 </mrow>
+            <mrow> \amp = (\vec x+\vec y)\cdot(\vec x+\vec y) </mrow>
+            <mrow> \amp =(\vec x+\vec y)\cdot\vec x+ (\vec x+\vec y)\cdot\vec y</mrow>
+            <mrow> \amp =\vec x \cdot \vec x+ \vec y\cdot \vec x i
+                + \vec x\cdot \vec y +\vec y\cdot\vec y</mrow>
+            <mrow> \amp =\|\vec x\|^2 +2(\vec x\cdot \vec y) + \|\vec y\|^2</mrow>
+            <mrow> \amp =2(\vec x\cdot \vec y) +2</mrow>
+            </md>
+            and so 
+            <me>-1\leq \vec x\cdot \vec y</me>.
+            Similarly
+            <me>
+            0\leq(\vec x-\vec y)\cdot(\vec x-\vec y) =-2(\vec x\cdot \vec y) +2
+            </me>
+            and
+            <me>\vec x\cdot \vec y \leq 1</me>.
+            These inequalities imply
+            <me>|\vec x\cdot \vec y| \leq 1=\|\vec x\|\, \|\vec y\|</me>.
+            </p>
+        </case>
+        <case>
+            <title>Third case: <m> \|\vec x\|\neq 0</m> and  <m>\|\vec y\|\neq0</m></title>
+            <p>
+            As seen in <xref ref="UnitVectorConstruction"/>,
+            if <m>\vec u=\frac{\vec x}{\|\vec x\|}</m> and
+            <m>\vec v=\frac{\vec y}{\|\vec y\|}</m>, then both <m>\vec u</m>
+            and <m>\vec v</m> are unit vectors, and, as such, the second case is
+            applicable. This means
+            <me>|\vec u\cdot \vec v| \leq \|\vec u\| \|\vec v\|</me>
+            and so 
+            <me>|\vec u\cdot\vec v|=
+            \left|\frac{\vec x}{\|\vec x\|} \cdot \frac{\vec y}{\|\vec y\|}\right|
+            = \frac1{\|\vec x\|}\,\frac1{\|\vec y\|} |\vec x\cdot\vec y|
+            \leq 1</me>
+            which implies 
+            <me>|\vec x \cdot \vec y| \leq \|\vec x\| \|\vec y\|</me>.
+            </p>
+        </case>
+        </proof>
+        </theorem>
+    
+        <p>
+        The Cauchy-Schwarz theorem gives us further results about the length
+        of vectors in <m>\R^n</m>.
+        </p>
+    
+        <theorem xml:id="VectorLengths"><title>Properties of lengths of vectors in <m>\R^n</m></title>
+        <statement>
+        <p>
+        Suppose that <m>\vec x=(x_1,x_2,\ldots,x_n)</m> and 
+        <m>\vec y=(y_1,y_2,\ldots,y_n)</m> are vectors in <m>\R^n</m>, 
+        and that <m>r</m> is any real number. Then
+            <ol>
+             <li><p> <m>\|\vec x\| \ge 0</m> with equality if and only if <m>\vec x=\vec0.</m></p></li>
+             <li><p> <m>\|r\vec x\|=|r| \|\vec x\|</m></p></li>
+             <li><p> <m>|\vec x\cdot\vec y|\le\|\vec x\|\,\|\vec y\|</m> (Cauchy-Schwarz inequality)</p></li>
+             <li><p> <m>\|\vec x+\vec y\|^2 + \|\vec x-\vec y\|^2 =
+                2(\|\vec x\|^2 +\|\vec y\|^2)</m> (Parallelogram equality)</p></li>
+             <li><p> <m>\|\vec x+\vec y\| \le \|\vec x\|+\|\vec y\|</m> (Triangle inequality)</p></li>
+            </ol>
+        </p> 
+        </statement> 
+        <proof>
+        <p>
+            <ol>
+            <li><p> 
+                Since <m>\|\vec x\|= \vec x\cdot\vec x</m>, this result is contained in
+                <xref ref="DotProductFirstProperties" />.
+            </p></li>
+            <li><p> 
+                From direct evaluation:
+                <me>
+                \begin{array}{rl}
+                \|r\vec x\|^2
+                \amp=\|r(x_1,x_2,\ldots,x_n)\|^2\\
+                \amp=\|(rx_1,rx_2,\ldots,rx_n)\|^2\\
+                \amp=r^2x_1^2+r^2x_2^2+\cdots+r^2x_n^2\\
+                \amp=r^2(x_1^2+x_2^2+\cdots+x_n^2)
+                \end{array}
+                </me>
+                and so by taking square roots, <m>\|r\vec x\|=|r| \|\vec x\|</m>.
+            </p></li>
+            <li><p> 
+                This is just <xref ref="CauchySchwarz" />
+            </p></li>
+            <li><p> 
+                Again, a direct evaluation: 
+                <me>
+                \begin{array}{rl}
+                \|\vec x+\vec y\|^2 + \|\vec x-\vec y\|^2 
+                \amp= (\vec x+\vec y) \cdot (\vec x+\vec y) 
+                    +(\vec x-\vec y) \cdot (\vec x-\vec y)\\
+                \amp=  (\vec x\cdot\vec x + \vec x\cdot\vec y 
+                    +\vec y\cdot\vec x +\vec y\cdot\vec y)\\
+                \amp \phantom{=} +  (\vec x\cdot\vec x - \vec x\cdot\vec y 
+                    -\vec y\cdot\vec x +\vec y\cdot\vec y)\\
+                \amp=2(\|\vec x\|^2 +\|\vec y\|^2)
+                \end{array}
+                </me>
+            </p></li>
+            <li><p> 
+                The triangle inequality is a consequence of the Cauchy-Schwarz inequality:
+                <me>
+                \begin{array}{rll}
+                \|\vec x+\vec y\|^2
+                \amp= (\vec x+\vec y)\cdot(\vec x+\vec y)\\
+                \amp= \vec x\cdot\vec x+2(\vec x\cdot\vec y)+\vec y\cdot\vec y\\
+                \amp= \|\vec x\|^2 +2(\vec x\cdot\vec y)+\|\vec y\|^2\\
+                \amp\le \|\vec x\|^2 +2|\vec x\cdot\vec y|+\|\vec y\|^2
+                \amp\amp\gets r\le|r|\text{ used here.}\\
+                \amp\le \|\vec x\|^2 +2\|\vec x\|\|\vec y\|+\|\vec y\|^2
+                \amp\amp\gets \text{ Cauchy-Schwarz used here.}\\
+                \amp= (\|\vec x\|+\|\vec y\|)^2
+                \end{array}
+                </me>
+            </p></li>
+            </ol>
+        </p>
+        </proof>
+        </theorem>
+    
+        <p>
+        The parallelogram equality has a nice geometric interpretation in <m>\R^2</m>.
+        Consider the four sides and two diagonals of a parallelogram.
+
+        </p>
+        <figure>
+        <caption/>
+        <image width="50%">
+        <asymptote>
+            unitsize(48);
+            pair x1=(1.3,3.3);
+            pair y1=(3,1);
+            
+            dot((0,0)); label("$\vec0$",(0,0),SE);
+            draw((-1,0)--(3,0)); label("$x$",(3,0),E);
+            draw((0,-1)--(0,3.5)); label("$y$",(0,3.5),N);
+            
+            fill((0,0)--y1--x1+y1--x1--cycle, lightyellow); 
+            draw((0,0)--y1--x1+y1--x1--cycle, linewidth(1pt)); 
+            draw((0,0)--x1+y1);
+            draw(x1--y1);
+            dot(x1); dot(y1); dot(x1+y1);
+            label("$\vec{x}$",x1,N);
+            label("$\vec{y}$",y1,SE);
+            label("$\vec{x}+\vec{y}$",x1+y1,E);
+            label(rotate(aTan(x1.y/x1.x))*"$\|\vec x\|$", x1/2, NW);
+            label(rotate(aTan(x1.y/x1.x))*"$\|\vec x\|$", y1+x1/2, SE);
+            label(rotate(aTan(y1.y/y1.x))*"$\|\vec y\|$", y1/2, SE);
+            label(rotate(aTan(y1.y/y1.x))*"$\|\vec y\|$", x1+y1/2, NW);
+            label(rotate(aTan((x1.y+y1.y)/(x1.x+y1.x)))*"$\|\vec x+\vec y\|$", 0.65*(x1+y1), NW);
+            label(rotate(aTan((x1.y-y1.y)/(x1.x-y1.x)))*"$\|\vec x-\vec y\|$", 0.30*x1+.70*y1, NE );
+        </asymptote>
+        </image>
+        </figure>
+    
+        <p>
+        The parallelogram equality says <m>\|\vec x+\vec y\|^2 + \|\vec x-\vec y\|^2 =
+        2(\|\vec x\|^2 +\|\vec y\|^2)</m>. This implies that the sum of the squares of the 
+        lengths of the diagonals is equal to the sum of the squares of the length of the four sides.
+        </p>
+        </subsection>
+    
+        <subsection><title>Computing angles between vectors in <m>\R^n</m></title>
+        <p>
+        The angles between vectors is pretty easy to visualize in
+        <m>\R^2</m> or <m>\R^3</m>, but we lose our nice geometric interpretation
+        of vectors in <m>\R^n</m>. Nonetheless, there is something that still makes
+        sense. 
+            <ul>
+            <li><p>
+                If either <m>\vec x=\vec0</m> or <m>\vec y=\vec0</m>, then
+                the angle <m>\theta</m> between them is simply <m>\theta=0</m>.
+            </p></li>
+            <li><p>
+                On the other hand, if either <m>\vec x\not=\vec0</m> and <m>\vec y\not=\vec0</m>, 
+                then the <xref ref="CauchySchwarz" text="custom"> Cauchy-Schwarz Theorem </xref> says
+                <me>
+                    \frac{| \vec x\cdot\vec y |}{\|\vec x\| \|\vec y\|} \leq 1
+                </me>
+                which implies
+                <me>
+                    -1\leq \frac{\vec x\cdot\vec y}{\|\vec x\| \|\vec y\|} \leq 1.
+                </me>
+                The <xref ref="GraphCos" text="custom"> graph of <m>\cos(x)</m></xref> 
+                descends from <m>1</m> to <m>-1</m>
+                between <m>x=0</m> and <m>x=\pi</m>, and so there is one value 
+                <m>\theta</m> in that range so that
+                <me>
+                    \frac{\vec x\cdot\vec y}{\|\vec x\| \|\vec y\|} =\cos \theta.
+                </me>
+                That is the angle between <m>\vec x</m> and <m>\vec y</m>. 
+                (If you have studied the calculus, the existence and uniqueness of
+                <m>\theta</m> follows from the intermediate value theorem applied
+                to the continuous strictly decreasing function <m>\cos x</m>.)
+            </p></li>
+            </ul>
+        </p>
+
+        <p>
+        Defining <m>\cos\theta</m> in this way extends the result from <m>\R^2</m>
+        to <m>\R^n</m>.
+        </p>
+    
+        <theorem xml:id="DotProductRn">
+        <statement>
+        <p>
+        For any vectors <m>\vec x</m> and <m>\vec y</m> in <m>\R^n</m>,
+        <me>\vec x\cdot \vec y= \|\vec x\| \|\vec y\| \cos\theta</me>
+        </p>
+        </statement>
+        </theorem>
+    
+        <example>
+        <p>
+        Let <m>\vec x=(1,2,3,2,1)</m> and <m>\vec y= (1,-1,1,-1,1)</m>
+        be vectors in <m>\R^5</m>. Then
+        <me>
+            \frac{\vec x\cdot\vec y}{\|\vec x\| \|\vec y\|} 
+            = \frac 1{\sqrt{19}\sqrt5} \approx 0.102597835
+            =\cos \theta.
+        </me>
+        and so <m>\theta=1.4680</m> radians (or <m>84.1112^\circ</m>).
+        </p>
+        </example>
+    
+        <theorem>
+        <statement>
+        <p>
+        If <m>\theta</m> is the angle between <m>\vec x</m> and 
+        <m>\vec y</m>, then
+            <ul>
+            <li><p>
+                <m>0\lt\theta\lt\frac\pi2</m> if and only if <m>\vec x\cdot\vec y \gt 0</m>
+                (so <m>\theta</m> is an acute angle)
+            </p></li>
+            <li><p><m>
+                \theta=\frac\pi2</m> if and only if <m>\vec x\cdot\vec y = 0</m>
+            </p></li>
+            <li><p>
+                <m>\frac\pi2\lt\theta\lt\pi</m> if and only if <m>\vec x\cdot\vec y \lt 0</m>
+                (so <m>\theta</m> is an obtuse angle)
+            </p></li>
+            </ul>
+        </p>
+        </statement>
+        <proof>
+        <p>
+        This is clear from the <xref ref="GraphCos" text="custom"> graph of <m>\cos(x)</m></xref>.
+        </p>
+        </proof>
+        </theorem>
+    
+        <definition><title>Orthogonal vectors in <m>\R^n</m></title>
+        <statement>
+        <p>
+        Two vectors <m>\vec x</m> and <m>\vec y</m> are
+        <term>orthogonal</term> (or <em>perpendicular</em>) if and only if <m>\vec x\cdot\vec y=0</m>.
+        </p>
+        </statement>
+        </definition>
+        </subsection>
+    
+        <subsection><title>Distance between vectors in <m>\R^n</m></title>
+        <p>
+        The Cauchy-Schwartz theorem allowed us to define the angle between vectors
+        in <m>\R^n</m>. This leads to the definition of the distance between vectors
+        in a natural way. Consider the following figure, drawn in <m>\R^2</m> as
+        the pattern for our discussion.
+        </p>
+
+        <figure>
+        <caption/>
+        <image width="50%">
+         <asymptote>
+            unitsize(48);
+            pair x1=(1.3,3.3);
+            pair y1=(3,1);
+            
+            dot((0,0)); label("$\vec0$",(0,0),SE);
+            draw((-1,0)--(3,0)); label("$x$",(3,0),E);
+            draw((0,-1)--(0,3.5)); label("$y$",(0,3.5),N);
+            
+            fill((0,0)--y1--x1--cycle, lightyellow);
+            draw((0,0)--y1--x1--cycle, linewidth(1pt));
+            draw(x1--y1--(0,0)--cycle);
+            dot(x1); dot(y1);
+            label("$\vec{x}$",x1,N);
+            label("$\theta$",(00),3*NE);
+            label("$\vec{y}$",y1,SE);
+            label(rotate(aTan(x1.y/x1.x))*"$\|\vec x\|$", x1/2, NW);
+            label(rotate(aTan(y1.y/y1.x))*"$\|\vec y\|$", y1/2, SE);
+            label(rotate(aTan((x1.y-y1.y)/(x1.x-y1.x)))*"$d$", 0.50*x1+.50*y1, NE );
+        </asymptote>
+        </image>
+        </figure>
+
+        <p>
+        The law of cosines then implies
+        <md>
+            <mrow>d^2 \amp= \|\vec x\|^2 + \|\vec y\|^2 -2 \|\vec x\| \|\vec y\| \cos\theta</mrow>
+            <mrow>\amp= \|\vec x\|^2 + \|\vec y\|^2 -2 (\vec x\cdot \vec y) </mrow>
+            <mrow>\amp= \vec x\cdot \vec x +\vec y\cdot \vec y  -2 (\vec x\cdot \vec y) </mrow>
+            <mrow>\amp= \vec x\cdot \vec x  -2 (\vec x\cdot \vec y) +\vec y\cdot \vec y </mrow>
+            <mrow>\amp= (\vec x - \vec y)\cdot (\vec x - \vec y)</mrow>
+            <mrow>\amp= \|\vec x - \vec y\|^2</mrow>
+        </md>
+        and so, if we denote the distance from <m>\vec x</m> to <m>\vec y</m> 
+        by <m>d(\vec x,\vec y)</m>, we have
+        <me>
+        d(\vec x,\vec y)= \sqrt{\|\vec x-\vec y\|^2}= \|\vec x-\vec y\|
+        </me>
+        The figure is certainly valid for <m>\R^2</m> (and <m>\R^3</m>), and it motivates our
+        general definition in <m>\R^n</m>:
+        </p>
+    
+        <definition><title>Distance in <m>\R^n</m></title>
+        <statement>
+        <p>
+        If <m>\vec x</m> and <m>\vec y</m> are in <m>\R^n</m>,
+        then the <term>distance</term>  between them is 
+        <me>
+        d(\vec x,\vec y)= \|\vec x-\vec y\|
+        </me>
+        </p>
+        </statement>
+        </definition>
+        
+        <theorem><title>Properties of distance in <m>\R^n</m></title>
+        <statement>
+         <p>Let <m>\vec x</m>, <m>\vec y</m> and <m>\vec z</m> be vectors in <m>\R^n</m>. Then
+            <ol>
+            <li><p> 
+                <m>d(\vec x,\vec y) \ge 0</m>
+                with equality if and only if <m>\vec x=\vec y</m>
+            </p></li>
+            <li><p> 
+                <m>d(\vec x,\vec y) =d(\vec y,\vec x)</m>
+            </p></li>
+            <li><p> 
+                <m>d(\vec x,\vec z) \leq d(\vec x,\vec y)+d(\vec y,\vec z)</m> 
+                    (the triangle inequality)
+            </p></li>
+            </ol>
+        </p>
+        </statement>
+        <proof>
+        <p>
+        These results are easy adaptations from <xref ref="VectorLengths" />
+        using <m>d(\vec x,\vec y)=\|\vec x-\vec y\|</m>.
+        </p>
+        </proof>
+        </theorem>
+
+        <p>
+        The triangle inequality is so named because the length of one side of a triangle
+        is less than or equal to the sum of the lengths of the other two sides:
+        </p>
+        <figure>
+        <caption/>
+        <image width="60%">
+        <asymptote>
+            unitsize(38);
+            pair x1=(1.3,3.3);
+            pair y1=(5,1);
+            dot((0,0)); 
+            fill((0,0)--y1--x1--cycle, lightyellow); 
+            draw((0,0)--y1--x1--cycle, linewidth(1pt)); 
+            draw(x1--y1--(0,0)--cycle);
+            dot(x1); dot(y1); 
+            label("$\vec{y}$",x1,N);
+            label("$\vec{z}$",y1,SE);
+            label("$\vec x$",(0,0),SE);
+            label(rotate(aTan(x1.y/x1.x))*"$d(\vec x,\vec y)$", x1/2, NW);
+            label(rotate(aTan(y1.y/y1.x))*"$d(\vec x,\vec z)$", y1/2, SE);
+            label(rotate(aTan((x1.y-y1.y)/(x1.x-y1.x)))*"$d(\vec y,\vec z)$", 0.50*x1+.50*y1, NE );
+        </asymptote>
+        </image>
+        </figure>
+    
+        <corollary><title>Equality in triangle inequality</title>
+        <statement>
+        <p>
+        Suppose vectors <m>\vec x</m>, <m>\vec y</m> and <m>\vec z</m> satisfy
+        <m> d(\vec x,\vec z) = d(\vec x,\vec y)+d(\vec y,\vec z) </m>  
+        and <m> \theta </m>  is the angle between <m>\vec x</m> and
+        <m>\vec y </m>.  
+        Then <m>\theta=0</m> or <m>\theta=\pi.</m>
+        </p>
+        </statement>
+        <proof>
+        <p>
+        To get equality in the triangle inequality, we must have
+        equality in the Cauchy-Schwarz inequality (see the proof of
+        <xref ref="CauchySchwarz" />).
+        <me>
+            |\vec x\cdot \vec y|= \|\vec x\|  \|\vec y\| \\
+            \|\vec x\| \|\vec y\|\, |\cos\theta| = \|\vec x\|  \|\vec y\| \\
+            \cos\theta=\pm1\\
+            \theta = 0\textrm{ or } \pi
+        </me>
+        </p>
+        </proof>
+        </corollary>
+        </subsection>
+    </section>
+    
+
+    <section><title>Lines, planes, and generalizations</title>
+    
+        <subsection><title>Review: scalar multiplication in <m>\R^2</m></title> 
+        <p>
+        One of the most attractive features of scalar multiplication is that it may be interpreted
+        geometrically in <m>\R^2</m>. Take the vector <m>\vec v=(1,2)</m>, and consider the following points
+        in <m>\R^2</m>:
+            <ol>
+            <li><p> <m>\vec v=(1,2)</m></p></li>
+            <li><p> <m>2\vec v=(2,4)</m></p></li>
+            <li><p> <m>3\vec v=(3,6)</m></p></li>
+            <li><p> <m>\frac12\vec v=(\frac12,1)</m></p></li>
+            <li><p> <m>-1\vec v=(-1,-2)</m></p></li>
+            <li><p> <m>-2\vec v=(-2,-4)</m></p></li>
+            <li><p> <m>-3\vec v=(-3,-6)</m></p></li>
+            </ol>
+        These are all scalar multiples of <m>\vec v</m>, that is, each one is of the form 
+        <m>t\vec v</m> for some number <m>t</m>. 
+        Here is an accurate plot of these points in <m>\R^2</m>:
+        </p>
+    
+        <figure>
+        <caption/>
+        <image width="60%">
+            <asymptote>
+            import graph;
+            size(250);
+            //xaxis("$x$-axis", xmin=-4, xmax=4,Ticks(Step=1)); 
+            //yaxis("$y$-axis", ymin=-3, ymax=3,Ticks);
+                xaxis(); yaxis();
+            dot((1,2));   label("$\vec v=(1,2)$",(1,2),E); 
+            dot((2,4));   label("$2\vec v=(2,4)$",(2,4),E); 
+            dot((3,6));   label("$3\vec v=(3,6)$",(3,6),E);
+            dot((.5,1));  label("$\frac12\vec v=(\frac12,1)$",(.5,1),E); 
+            dot((-1,-2)); label("$-1\vec v=(-1,-2)$",(-1,-2),W);
+            dot((-2,-4)); label("$-2\vec v=(-2,-4)$",(-2,-4),W);
+            dot((-3,-6)); label("$-3\vec v=(-3,-6)$",(-3,-6),W);
+            dot((0,0));   label("$0\vec v=(0,0)$",(0,0),NW);
+            draw((-3,-6)--(3,6));
+            </asymptote>
+        </image>
+        </figure>
+    
+        <p>
+         Notice that all of the points lie on a straight line that passes through <m>\vec 0=(0,0)</m>.
+         In addition, if we start from <m>(0,0)</m> and follow the line through the first quadrant, we
+         pass through <m>\vec 0</m>,  <m>\frac12\vec v</m>, <m>\vec v</m>, <m>2\vec v</m> and
+         <m>3\vec v</m> in that order.
+         It would seem that as <m>t</m> starts at <m>0</m> and increases through positive values, the
+         points <m>t\vec v</m> starts at <m>\vec0</m> and moves along the line in the first quadrant.
+         Similarly, as  <m>t</m> starts at <m>0</m> and decreases through negative values, the
+         points <m>t\vec v</m> starts at <m>\vec0</m> and moves along the line in the third quadrant.
+        </p>
+
+        <paragraphs><title>A linearity test</title>
+        <p>
+        Suppose we wish to determine whether or not two vectors <m>\vec v</m> and <m>\vec w</m>
+        are collinear with <m>\vec 0</m>. There are two cases, depending on whether or not
+        <m>\vec 0</m> lies between <m>\vec v</m> and <m>\vec w</m>:
+        </p>
+        
+        <figure>
+        <caption/>
+        <image width="60%">
+        <asymptote>
+            import graph;
+            size(250);
+            pair v=(1,2), w=-2*v;
+            draw((-3,0)--(2,0));
+            draw((0,-4)--(0,2));
+            dot(v);   label("$\vec v$",  v,E); 
+            dot(w); label("$\vec w$",w,W);
+            dot((0,0));   label("$\vec0$",(0,0),NW);
+            draw(v--w);
+             
+            pair offset=(6,-4); 
+            draw((-1,0)+offset--(3,0)+offset);
+            draw((0,-1)+offset--(0,6)+offset);
+            pair w=3*v+offset, v=(1,2)+offset;
+            dot(v);   label("$\vec v$", v,E); 
+            dot(w); label("$\vec w$",w,W);
+            dot((0,0)+offset);   label("$\vec0$",(0,0)+offset,NW);
+            draw((0,0)+offset--w);
+        </asymptote>
+        </image>
+        </figure>
+
+        <p>
+        In the right-hand figure, the angle <m>\theta</m> between <m>\vec v</m> and
+        <m>\vec w</m> (at <m>\vec0</m>) is <m>0</m> and so
+        <m>\cos\theta=1</m>,
+        while in the left-hand figure, the angle <m>\theta</m> between <m>\vec v</m> and
+        <m>\vec w</m>  is <m>\pi</m> and so <m>\cos\theta=-1.</m>
+        Hence <m>\vec v</m> and <m>\vec w</m>
+        are collinear with <m>\vec 0</m> if and only if <m>|\cos\theta|=1</m>.
+        </p>
+
+        <p>
+        However, we know from <xref ref="DotProductR2" /> that
+        <me>
+            |\vec x\cdot\vec y|= \|\vec x\| \|\vec y\|\, |\cos \theta|
+        </me>
+        and so we now have another equivalent condition for for linearity:
+        <me>
+            |\vec x\cdot\vec y|= \|\vec x\| \|\vec y\| 
+        </me>
+        Notice that this condition says that the Cauchy-Schwarz inequality
+        given in <xref ref="CauchySchwarz" />).  is actually equality.
+        </p>
+        </paragraphs>
+    
+        <theorem><title>Geometry of scalar multiplication in <m>\R^2</m></title>
+        <statement>
+        <p>
+        For any vector <m>\vec v\not=\vec0</m> in <m>\R^2</m>, the scalar multiples of <m>\vec v</m>
+        are the points on the line joining <m>\vec v</m> and <m>\vec 0</m>.
+        </p>
+        </statement>
+        <proof>
+        
+        <p>
+        First, suppose that <m>\vec w</m> is on the line joining <m>\vec v</m> and <m>\vec 0</m>.
+        Here is the picture:
+        </p>
+    
+        <figure>
+        <caption/>
+        <image width="60%">
+        <asymptote>
+        import graph;
+        size(200);
+        pair pt1=(2,3); pair pt2=3pt1;
+        xaxis(); yaxis();
+        draw((pt1.x,0)--pt1,red);
+        draw((0,0)--(pt2.x,0)--pt2,green);
+        draw((0,0.05)--(pt1.x,0.05),linewidth(.70)+red);
+        
+        dot(pt1);   label("$\vec v=(a,b)$",pt1,E); 
+        dot(pt2);   label("$\vec w=(x,y)$",pt2,E);
+        dot((0,0));   label("$\vec 0$",(0,0),NW);
+        draw(-pt1--3.5pt1);
+        
+        label("$a$",(pt1.x/2,0),S,red); label("$b$",(pt1.x,pt1.y/2),E,red);
+        label("$x$",(pt2.x/2,0),S,green); label("$y$",(pt2.x,pt2.y/2),E,green);
+        label("$\theta$",(pt1.x/3,pt1.y/3),ESE);
+        draw(arc((0,0),.5*pt1.x,0,degrees(atan(pt1.y/pt1.x))));
+        </asymptote>
+        </image>
+        </figure>
+        
+        <p>
+        Notice that the red lines indicate that <m>\tan(\theta)=\frac ba</m> and the green lines
+        indicate that <m>\tan(\theta)=\frac yx</m>.This implies that <m>\frac ba=\frac yx</m>.
+        Now let <m>t=\frac xa</m>. We then have <m>x=ta</m> and <m>y=\frac{bx}a=\frac{bta}{a}=bt</m>,
+        and so <m>\vec w=(x,y)=(ta,tb)=t(a,b)=t\vec v</m>.
+        </p>
+    
+        <p>
+        Next we start with <m>\vec v</m> and consider <m>\vec w=t\vec v</m>. 
+        We want to show that <m>\vec w</m> is on the line joining <m>\vec0</m> and <m>\vec v</m>.
+        To verify this with the linearity test, we evaluate:
+        <me>
+            |\vec v\cdot \vec w|=|\vec v\cdot t\vec v|=|t| |\vec v\cdot \vec v|=|t|\|\vec v\|^2\\
+            \|\vec v\| \|\vec w\|=\|\vec v\| \|t\vec v\|=|t| \|\vec v\| \|\vec v\|=|t|\|\vec v\|^2
+        </me>
+        Hence <m>\vec w</m> is on the line joining <m>\vec0</m> and <m>\vec v</m>, as desired.
+        </p>
+        </proof>
+        </theorem>
+        </subsection>
+    
+    
+        <subsection><title>Review: addition in <m>\R^2</m></title> 
+        <paragraphs><title>A construction: completing the parallelogram</title>
+        <p>
+        Start with two points <m>(a,b)</m> and <m>(c,d)</m>, both not <m>\vec0</m>. Further, assume that
+        the three points <m>(a,b)</m>, <m>(c,d)</m> and <m>\vec0</m> do not line on a single line.
+        </p>
+    
+        <figure>
+        <caption/>
+        <image width="60%">
+        <asymptote>
+           import graph;    
+           size(0,200); 
+           xaxis(above=true); yaxis();
+           pair pt1=(1,2); pair pt2=(3,1);
+           fill((0,0)--pt1--pt1+pt2--pt2--cycle,lightyellow);
+           label("$(a,b)$",pt1,W);
+           label("$(c,d)$",pt2,SE);
+           label("$(x,y)$", pt1+pt2, SE);
+           label("$\vec0$",(0,0),SW);
+           path L1=(0,0)--1.2*pt1;
+           path L2=(0,0)--1.2*pt2;
+           draw(L1,red);
+           draw(L2,green);
+           draw(shift(pt2)*L1,red);
+           draw(shift(pt1)*L2,green);
+           dot(pt1); dot(pt2); dot(pt1+pt2);
+        </asymptote>
+        </image>
+        </figure>
+    
+        <p>
+            Draw the line through <m>\vec0</m> and <m>(a,b)</m> (red in the figure)
+            and a line through <m>\vec0</m> and <m>(c,d)</m> (green in the figure).
+            At <m>(a,b)</m> draw a line parallel to the one through <m>\vec0</m> and <m>(c,d)</m> 
+            (green in the figure) and, similarly, one through <m>(c,d)</m> parallel to
+            the line through <m>\vec0</m> and <m>(a,b)</m>. Call the point where these two
+            new lines meet <m>(x,y)</m>. The four points <m>\vec0</m>, <m>(a,b)</m>, <m>(c,d)</m> and
+            <m>(x,y)</m> are the four vertices of a parallelogram. Starting with three points
+            <m>\vec0</m>, <m>(a,b)</m> and <m>(c,d)</m>, the construction or the fourth point <m>(x,y)</m>
+            is called <term>completing the parallelogram.</term>
+        </p>
+    
+        <p>
+            Next, we want to find the values of <m>x</m> and <m>y</m>. We drop perpendiculars
+            from <m>(a,b)</m>, <m>(c,d)</m> and <m>(x,y)</m> to the <m>x</m>-axis. 
+        </p>
+    
+        <figure>
+        <caption/>
+        <image width="60%">
+        <asymptote>
+            import graph;    
+            size(0,200); 
+            xaxis(above=true); yaxis();
+            pair pt1=(1,2); pair pt2=(3,1);
+            fill((0,0)--pt1--(pt1.x,0)--cycle,lightyellow);
+            fill(pt2--pt1+pt2--(pt1.x+pt2.x,pt2.y)--cycle,lightyellow);
+            label("$(a,b)$",pt1,W);
+            label("$(c,d)$",pt2,SE);
+            label("$(x,y)$", pt1+pt2, SE);
+            label("$\vec0$",(0,0),SW);
+            path L1=(0,0)--1.2*pt1;
+            path L2=(0,0)--1.2*pt2;
+            draw(L1,red);
+            draw(L2,green);
+            draw(shift(pt2)*L1,red);
+            draw(shift(pt1)*L2,green);
+            draw((pt1.x,0)--pt1);
+            draw((pt2.x,0)--pt2);
+            draw((pt1.x+pt2.x,0)--pt1+pt2);
+            draw(pt2--(pt1.x+pt2.x,pt2.y));
+            dot(pt1); dot(pt2); dot(pt1+pt2);
+            label("$(a,0)$",(pt1.x,0),S);
+            label("$(c,0)$",(pt2.x,0),S);
+            label("$(x,0)$",(pt1.x+pt2.x,0),S);
+        </asymptote>
+        </image>
+        </figure>
+    
+        <p>
+         Notice that the two yellow triangles
+         are the same size (that is, congruent). This means that the distance from <m>x</m>
+         to <m>c</m> on the <m>x</m>-axis is the same as that from <m>a</m> to <m>0</m>. In other words,
+         <m>x-c=a-0</m>, or <m>x=a+c</m>. Using similar perpendiculars to the <m>y</m>-axis, we get
+         <m>y=b+d</m>. We conclude that
+         <me>
+         (x,y)=(a+c,b+d)=(a,b)+(c,d)
+         </me>
+         </p>
+    
+         <p>
+         This gives a geometric method for constructing the sum of two vectors.
+         The figure constructed above has both points in the first quadrant, and using
+         points in other quadrants changes the figure. If there are points in the
+         first and second quadrant, the figure becomes
+         </p>
+    
+        <figure>
+        <caption/>
+        <image width="60%">
+        <asymptote>
+            import graph;    
+            size(0,200); 
+            xaxis(above=true); yaxis();
+            pair pt1=(1,2); pair pt2=(-3,1);
+            fill((0,0)--pt1--(pt1.x,0)--cycle,lightyellow);
+            fill(pt2--pt1+pt2--(pt1.x+pt2.x,pt2.y)--cycle,lightyellow);
+            label("$(a,b)$",pt1,W);
+            label("$(c,d)$",pt2,SE);
+            label("$(x,y)$", pt1+pt2, SE);
+            label("$\vec0$",(0,0),SW);
+            path L1=(0,0)--1.2*pt1;
+            path L2=(0,0)--1.2*pt2;
+            draw(L1,red);
+            draw(L2,green);
+            draw(shift(pt2)*L1,red);
+            draw(shift(pt1)*L2,green);
+            draw((pt1.x,0)--pt1);
+            draw((pt2.x,0)--pt2);
+            draw((pt1.x+pt2.x,0)--pt1+pt2);
+            draw(pt2--(pt1.x+pt2.x,pt2.y));
+            dot(pt1); dot(pt2); dot(pt1+pt2);
+            label("$(a,0)$",(pt1.x,0),S);
+            label("$(c,0)$",(pt2.x,0),S);
+            label("$(x,0)$",(pt1.x+pt2.x,0),S);
+        </asymptote>
+        </image>
+        </figure>
+    
+    
+        <p>
+        In this case, <m>a=x-c</m> and once again
+        <me>
+        (x,y)=(a+c,b+d)=(a,b)+(c,d)
+        </me>
+        Variations of the same argument work when the points are in other quadrants.
+        </p>
+        </paragraphs>
+    
+        <theorem xml:id="ParallelogramRule"><title>Parallelogram rule</title>
+        <statement>
+    
+        <p>
+        If <m>(a,b)</m> and <m>(c,d)</m> are two points in the plane not collinear 
+        with <m>\vec0</m>, and  <m>(x,y)</m> is obtained 
+        by completing the parallelogram, then
+        <me>
+        (x,y)=(a,b)+(c,d)
+        </me>.
+        </p>
+        </statement>
+        </theorem>
+        </subsection>
+    
+        <subsection><title>Directed vectors in <m>\R^2</m> and <m>\R^n</m></title> 
+        <p>
+        We have looked at vectors as <m>n</m>-tuples, that is,
+        <m>\vec x=(x_1,x_2,\ldots,x_n)</m>. 
+        There is another way to look at vectors, namely, as objects
+        having both length and direction. We visualize this as an arrow
+        joining two points with the length being the length of the arrow
+        and the direction that where the arrow points. Here are two such
+        vectors in <m>\R^2</m>.
+        </p>
+    
+        <figure>
+        <caption/>
+        <image width="60%">
+        <asymptote>
+            import graph;
+            size(250);
+            xaxis(Ticks()); yaxis(Ticks());
+            pair P1=(1,2), Q1=(2,3), P2=(1,1), Q2=(2,2);
+            pair Z=(0,0);
+            draw(P1--Q1,Arrow);
+            draw(P2--Q2,Arrow);
+            label("(1,2)=$P_1$",P1,W);
+            label("$Q_1=(2,3)$",Q1,NE);
+            label("$(2,1)=P_2$",P2,W);
+            label("$Q_2=(3,2)$",Q2,NE);
+            label("$\overrightarrow{P_1Q_1}$",1/2*(P1+Q1),NW);
+            label("$\overrightarrow{P_2Q_2}$",1/2*(P2+Q2),SE);
+            label("$\vec0$",Z,NE);
+            dot(P1);
+            dot(Q1);
+            dot(P2);
+            dot(Q2);
+            dot(Z);
+        </asymptote>
+        </image>
+        </figure>
+    
+        <p>
+        The point <m>P_1</m> is the <em>tail</em> of <m>\overrightarrow{P_1Q_1}</m> while
+        <m>Q_1</m> is the <em>head</em>. Apparently the vectors <m>\overrightarrow{P_1Q_1}</m> 
+        and <m>\overrightarrow{P_2Q_2}</m> have the same direction and length, and so they
+        should be the same vector. We next give the criterion that determines whether or
+        not <m>\overrightarrow{P_1Q_1}=\overrightarrow{P_2Q_2}</m> in general.  
+        </p>
+    
+        <figure>
+        <caption/>
+        <image width="80%">
+        <asymptote>
+            import graph;
+            size(300);
+            xaxis(); yaxis();
+            pair P1=(1,2), Q1=(3,4), P2=(4,1), Q2=(6,3);
+            pair Z=(0,0);
+            filldraw(Z--P1--Q1--Q1-P1--cycle,lightyellow);
+            draw(Z--P1--Q1--Q1-P1--cycle,linewidth(0.75)+red);
+            filldraw(Z--P2--Q2--Q2-P2--cycle,lightgreen);
+            draw(Z--P2--Q2--Q2-P2--cycle,linewidth(0.75)+red);
+            draw(P1--Q1,linewidth(1),Arrow);
+            draw(P2--Q2,linewidth(1),Arrow);
+            draw(Z--Q1-P1,linewidth(1),Arrow);
+            label("$P_1$",P1,W);
+            label("$Q_1$",Q1,NE);
+            label("$P_2$",P2,SE);
+            label("$Q_2$",Q2,NE);
+            label("$\vec0$",Z,SW);
+            label("$\overrightarrow{P_1Q_1}$",1/2*(P1+Q1),NW);
+            label("$\overrightarrow{P_2Q_2}$",1/2*(P2+Q2),SE);
+            label("$X$",Q1-P1,4*NE);
+            dot(P1);
+            dot(Q1);
+            dot(Q1-P1);
+            dot(P2);
+            dot(Q2);
+            dot(Z);
+        </asymptote>
+        </image>
+        </figure>
+    
+        <p>
+        Starting with <m>\overrightarrow{P_1Q_1}</m>, construct <m>\overrightarrow{\vec0 X}</m>
+        that is parallel to it and has the same length. This constructs the yellow
+        parallelogram in the figure above. The parallelogram rule then implies
+        <m>P_1+X=Q_1</m>, or <m>X=Q_1-P_1</m>. Repeating the construction with
+        <m>\overrightarrow{P_2Q_2}</m>, we get the same vector <m>\overrightarrow{\vec0 }</m>
+        if and only if  <m>\overrightarrow{P_1Q_1}</m> and  <m>\overrightarrow{P_2Q_2}</m>
+        have the same length and direction, which means <m>X=Q_2-P_2</m>.
+        While the picture is in <m>\R^2</m>, but the idea
+        is easily extended to the same pictue in <m>\R^3</m> by considering the plane containing
+        <m>\vec0</m>, <m>\vec x</m> and <m>\vec y</m>.
+        Indeed, the definition in <m>\R^n</m> follows the same pattern:
+        A vector <m>\overrightarrow{PQ}</m> is visualized as an arrow with tail
+        and head at <m>P</m> and <m>Q</m> in <m>\R^n</m>.
+        </p>
+    
+        <definition><title>Equality of directed vectors</title>
+        <statement>
+        <p>
+         <me>
+            \overrightarrow{P_1Q_1}=\overrightarrow{P_2Q_2} 
+            \textrm{ if and only if } 
+            Q_1-P_1=Q_2-P_2.
+         </me>
+        </p>
+        </statement>
+        </definition>
+        <p>
+        This says, roughly speaking, that head minus tail of the first vector
+        equals head minus tail of the second vector. We can call this the
+        <term>head minus tail rule</term>.
+        </p>
+        
+       <definition><title>Direction number of a vector</title>
+       <statement>
+       <p>
+       The <term>direction number</term> of the vector 
+            <m>\overrightarrow{PQ}</m> is <m>Q-P</m>
+       </p>
+       </statement>
+       </definition> 
+    
+        </subsection>
+    
+        <subsection><title>Scalar multiplication of directed vectors</title>
+        <p>
+        By definition, for any directed vector <m>\overrightarrow{PQ}</m>,
+        we have <m>\overrightarrow{PQ}=\overrightarrow{\vec0(Q-P)}</m>.
+        Scalar multiples of  <m>\overrightarrow{PQ}</m> are defined so
+        that it matches our usual definition for <m>n</m>-tuples and also
+        satisfies the parallelogram rule:
+        </p>
+    
+        <figure>
+        <caption/>
+        <image width="80%">
+        <asymptote>
+            import graph;
+            size(300);
+            xaxis(); yaxis();
+            pair P=(1/2,2), Q=(2,3), R=2*Q-P;
+            pair Z=(0,0);
+            filldraw(Z--P--R--2*(Q-P)--cycle,lightyellow);
+            draw(Z--P--R--2*(Q-P)--cycle,linewidth(0.75)+red);
+            draw((Q-P)--Q,linewidth(0.75)+red);
+            draw(P--Q,linewidth(1),Arrow);
+            draw(Z--Q-P,linewidth(1),Arrow);
+            label("$P$",P,W);
+            label("$Q$",Q,N);
+            label("$\vec0$",Z,SW);
+            label("$\overrightarrow{PQ}$",1/2*(P+Q),NW);
+            label("$Q-P$",Q-P,SE);
+            label("$r(Q-P)$",2*(Q-P),SE);
+            label("$r\overrightarrow{PQ}$",2Q-P,NE);
+            dot(P);
+            draw(P--2*Q-P,linewidth(0.8),Arrow);
+            dot(Q);
+            dot(Q-P);
+            dot(Z);
+        </asymptote>
+        </image>
+        </figure>
+
+        <p>
+        The geometric interpretation of scalar multiplication is now clear.
+        Multiplying a vector <m>\overrightarrow{PQ}</m> by a positive scalar
+        <m>r</m> keeps the tail and direction fixed and stretches the arrow
+        by a factor of <m>r</m>. When <m>r</m> is negative, the arrow is
+        stretched by a factor of <m>-r</m> and the direction is reversed.
+        </p>
+        </subsection>
+    
+        <subsection><title>Addition of directed vectors</title>
+        <p>
+        We next give a geometric intepretation for the addition of directed
+        vectors. We wish to use the same pattern as we did with scalar
+        multiplication: be consistent with the geometric interpretation
+        of the parallelogram rule for <m>n</m>-tuples.
+        </p>
+
+        <p>
+        We start with two vectors <m>\overrightarrow{PQ}</m> and <m>\overrightarrow{RS}</m>.
+        Using the tail minus head rule, these are the same as the vectors
+        <m>\vec x=\overrightarrow{\vec0(Q-P)}</m> and 
+        <m>\vec y=\overrightarrow{\vec0(S-R)}</m>.
+        Now <m>\vec x</m> and <m>\vec y</m> can be viewed as <m>n</m>-tuples, and
+        so the sum gives 
+        <m>\vec x+\vec y=Q-P+S-R</m>.
+        </p>
+    
+        <figure>
+        <caption/>
+        <image width="80%">
+        <asymptote>
+            unitsize(30);
+            pair x1=(2.3,3.3);
+            pair y1=(4,1);
+            dot((0,0)); label("$\vec0$",(0,0),SE);
+            draw((-1,0)--(5,0)); label("$x$",(5,0),E);
+            draw((0,-1)--(0,4.0)); label("$y$",(0,4.0),N);
+            fill((0,0)--y1--x1+y1--x1--cycle, lightyellow); 
+            draw((0,0)--y1--x1+y1--x1--cycle, linewidth(.5pt)); 
+            draw((0,0)--x1+y1--y1--cycle,linewidth(.5pt));
+            draw((0,0)--x1,Arrow);
+            draw((0,0)--y1,Arrow);
+            draw((0,0)--x1+y1,Arrow);
+            dot(x1); dot(y1); dot(x1+y1);
+            label("$\vec{x}=Q-P$",x1,NW);
+            label("$\vec{y}=S-R$",y1,SE);
+            label("$\vec{x}+\vec{y}=Q-P+S-R$",x1+y1,E);
+            label(rotate(aTan(x1.y/x1.x))*"$\overrightarrow{PQ}$", x1/2, NW);
+            label(rotate(aTan(y1.y/y1.x))*"$\overrightarrow{RS}$", y1/2, SE);
+            label(rotate(aTan(y1.y/y1.x))*"$\overrightarrow{RS}$", x1+y1/2, N);
+            label(rotate(aTan((x1.y+y1.y)/(x1.x+y1.x)))*"$\overrightarrow{PQ}+\overrightarrow{RS}$", 1/2*(x1+y1), NW);
+        </asymptote>
+        </image>
+        </figure>
+
+        <p>
+        On the other hand, we can take the 
+         two vectors <m>\overrightarrow{PQ}</m> and <m>\overrightarrow{RS}</m>
+         and find the vector equal to  <m>\overrightarrow{RS}</m> but with
+         tail at <m>Q</m>. By the head minus tail rule, the head of this vector
+         is at <m>Q+S-R</m> (since <m>(Q+S-R)-Q=S-R</m>).
+         Now consider the vector with tail at <m>P</m> and head at <m>Q+S-R</m>.
+         This is the third side of the triangle. The head minus tail rule of evaluation
+         gives <m>Q+S-R-P</m>, which is exactly what we computed for the sum. This gives
+         us a wonderful geometric interpretation fo the sum of two vectors.
+        </p>
+    
+        <figure>
+        <caption/>
+        <image width="60%">
+        <asymptote>
+            unitsize(50);
+            pair s=S;
+            pair P=(1,-1), Q=(2,3), Z=(4,0);
+            pair T=(3,-1);
+            pair R=Q+T, S=Z+T;
+            label("$P$",P,W);
+            label("$Q$",Q,N);
+            label("$R$",R,W);
+            label("$S$",S,E);
+            filldraw(P--Z--Q--cycle,lightyellow);
+            draw(P--Q,linewidth(1pt),Arrow);
+            draw(R--S,linewidth(1pt),Arrow);
+            draw(Q--Z,Arrow);
+            draw(P--Z,Arrow);
+            dot(P); dot(Q); dot(Z);
+            dot(R); dot(S); 
+            label("$Q+S-R$",Z,E);
+            label("$\overrightarrow{RS}$",1/2*(R+S),NE);
+            label("$\overrightarrow{RS}$",1/2*(R+S)-T,NE);
+            label("$\overrightarrow{PQ}$",1/2*(P+Q),W);
+            label("$\overrightarrow{PQ}+\overrightarrow{RS}$",1/2*(P+Z),SE);
+        </asymptote>
+        </image>
+        </figure>
+    
+    
+        </subsection>
+    
+        <subsection><title>Lines in <m>\R^2</m> and <m>\R^n</m></title>
+        <p>
+        There are different equations whose solutions are lines in <m>\R^2</m>.
+        If a line <m>L</m> passes through the points  <m>(x_0,y_0)</m> and <m>(x_1,y_1)</m>,
+        has slope <m>m</m> and intersects the <m>y</m>-axis at <m>(0,b)</m>, then the
+        point <m>(x,y)</m> is on <m>L</m> if and only if it satisfies equations
+        of the following form:
+            <ul>
+            <li><p>
+                The point-slope form: <me>\frac{y-y_0}{x-x_0}=m</me>
+            </p></li>
+            <li><p>
+                The slope-intercept form: <me>y=mx+b</me>
+            </p></li>
+            <li><p>
+                The point-point form:
+                <me>\frac{y-y_0}{x-x_0}=\frac{y_1-y_0}{x_1-x_0}
+                \textrm{ (if } x_1\not=x_0\textrm{)}</me>
+            </p></li>
+            <li><p>
+                The symmetric form:
+                For this example, let <m>a=x_1-x_0\not=0</m> and <m>b=y_1-y_0\not=0</m>. Then
+                <me>\frac{x-x_0}a=\frac{y-y_0}b</me>
+            </p></li>
+            <li><p>
+                The parametric form:
+                <me>(x,y)=(x_0,y_0) + t\bigl((x_1,y_1)-(x_0,y_0)\bigr)=(1-t)(x_0,y_0)+t(x_1,y_1)</me>
+                which may be visualized as
+                </p> 
+          <!-- figure within a list does not satisfy the dtd -->
+                <figure>
+                <caption/>
+                <image width="80%">
+                <asymptote>
+                    unitsize(1.5cm);
+                    pair A=(-2,-1), B=(-1,-1/2), C=(1,1/2), D=(2,1);
+                    draw(A--D);
+                    dot(B);
+                    dot(C);
+                    label("$\vec x=(x_0,y_0)$",B,SE);
+                    label("$\vec y=(x_1,y_1)$",C,SE);
+                    label("$L\colon (1-t)\vec x + t\vec y$",D,E);
+                </asymptote>
+                </image>
+                </figure>
+                </li> 
+            </ul>
+        </p>
+        <definition><title>General equation of a line in <m>\R^2</m></title>
+        <statement>
+        <p>
+        A line <m>L</m> is the set of points <m>(x,y)</m> satisfying
+        the equation
+        <me>ax+by+c=0</me>
+        where <m>a</m> and <m>b</m> are not both <m>0</m>.
+        </p>
+        </statement>
+        </definition>
+    
+        <example><title>Lines in general form</title>
+        <figure>
+        <caption/>
+        <image width="80%">
+        <asymptote>
+            unitsize(1.0cm);
+            import graph;
+            xlimits(-3,3); ylimits(-3,3);
+            xaxis(Ticks(Step=1,step=0)); yaxis(Ticks(Step=1,step=0));
+            defaultpen(linewidth(0.5));
+            draw((-3,1)--(3,1),linewidth(1.5)+red); 
+            label("$y-1=0$",(3,1),E,red);
+            draw((-3,-1)--(2,3),linewidth(1.5)+blue); 
+            label("$4x-5y+7=0$",(2,3),N,blue);
+            draw((-3,-2)--(3,2),linewidth(1.5)+green); 
+            label("$2x-3y=0$",(3,2),E,green);
+            draw((-2,-3)--(-2,3),linewidth(1.5)+orange); 
+            label("$x+2=0$",(-2,3),N,orange);
+            draw((-3,2)--(3,-1),linewidth(1.5)+purple); 
+            label("$x+2y-1=0$",(3,-1),E,purple);
+        </asymptote>
+        </image>
+        </figure>
+        </example>
+        <p>
+        Notice that a line in <m>\R^2</m> is the solution of a single linear
+        equation in two unknowns.
+        </p>
+    
+        <p>
+        Lines in <m>\R^n</m> mirror the symmetric and parametric definitions
+        for <m>\R^2</m>. 
+        </p>
+    
+        <definition><title>Lines in <m>\R^n</m></title>
+        <statement>
+        <p>
+        If <m>\vec x</m> and <m>\vec y</m> are two vectors
+        in <m>\R^n</m>, then the line <m>L</m> containing <m>\vec x</m> and 
+        <m>\vec y</m> consists of all vectors <m>\vec z</m> such that
+        <me>\vec z=(1-t)\vec x+t\vec y</me> for some real number <m>t</m>.
+        </p>
+        </statement>
+        </definition>
+        <p>
+        The following figure gives the geometric interpretation on the number <m>t</m>.
+        Obviously <m>t=0</m> gives <m>\vec x</m> and <m>t=1</m> gives <m>\vec y</m>. As <m>t</m>
+        goes from <m>0</m> to <m>1</m>, the  vector <m>\vec z</m> moves from
+        <m>\vec x</m> to <m>\vec y</m>. In fact, when <m>t=\frac12</m>, the point 
+        <m>\vec z</m> is halfway between <m>\vec x</m> and <m>\vec y</m>.
+        As <m>t</m> becomes larger than <m>1</m>, the vector <m>\vec z</m> passes
+        <m>\vec y</m> and moves further down the line.
+        </p>
+        <figure>
+        <caption/>
+        <image width="95%">
+        <asymptote>
+            unitsize(0.75cm);
+            pair B=(-1,-1/2), C=(1,1/2);
+            pair A=(-3)*C+4*B, D=3*C+(-2)*B;
+            draw(A--D);
+            dot(B);
+            dot(C);
+            label("$\vec x$",B,NW);
+            label("$\vec y$",C,NW);
+            label("$L\colon z=(1-t)\vec x + t\vec y$",D,N);
+ 
+            real t=0.5;
+            pair F;
+            void f(real t) {
+                F=(1-t)*B+t*C;
+                dot(F);
+                label("$\nwarrow\!\lower9pt\hbox{$\vec z$ with $t="+string(t)+"$}$",F,SE);
+            }
+            f(-3);
+            f(-2);
+            f(-3/2);
+            f(-1);
+            f(0);
+            f(0.5);
+            f(1);
+            f(3/2);
+            f(2);
+            f(3);
+        </asymptote>
+        </image>
+        </figure>
+
+        <p>
+        There is a symmetric form for lines in <m>\R^n</m>. If
+        <m>\vec x=(x_1,x_2,\ldots,x_n)</m>,
+        <m>\vec y=(y_1,y_2,\ldots,y_n)</m>
+        and <m>\vec z=(z_1,z_2,\ldots,z_n)</m>,
+        then <m>\vec z</m> is on the line  joining
+        <m>\vec x</m> and <m>\vec y</m> if and only if
+        <me>z_i=(1-t)x_i+ty_i</me>
+        for <m>i=1,2,\ldots,n</m>, and in this case
+        <md>
+        <mrow>
+            t \amp=\frac{z_1-x_1}{y_1-x_1}
+            = \frac{z_2-x_2}{y_2-x_2}
+            =\cdots
+            = \frac{z_n-x_n}{y_n-x_n}
+        </mrow>
+        <mrow>
+            \amp=\frac{z_1-x_1}{a_1}
+            = \frac{z_2-x_2}{a_2}
+            =\cdots
+            = \frac{z_n-x_n}{a_n}
+        </mrow>
+        </md>
+        The vector <m>(a_1,a_2,\ldots,a_n)</m> is the direction
+        number of the line.
+        </p>
+    
+        <paragraphs><title>Determining if a point is on a line</title>
+        <p>
+        From our last result, this is easy. The equation
+        <m>\vec z=(1-t)\vec x+t\vec y</m> gives
+        us <m>n</m> linear equations in the single variable <m>t</m>.
+        If this system of linear equations is consistent, then
+        the point is on the line.
+        </p>
+        </paragraphs>
+    
+        <example><title>Test to see if a point is on a line</title>
+        <p>
+        Let <m>\vec x=(1,2,-1,3)</m> and <m>\vec y=(1,-2,1,3)</m>.
+        Is <m>\vec z=(1,-2,-1,3)</m> on the line joining <m>\vec x</m>
+        and <m>\vec y</m>? The equation 
+        <m>\vec z=(1-t)\vec x+t\vec y</m> gives four equations,
+        one for each coordinate:
+        <md>
+            <mrow> 1(1-t)+1t\amp=1 </mrow>
+            <mrow> 2(1-t)+(-2)t\amp=-2  \amp\amp\to t=1</mrow>
+            <mrow> (-1)(1-t)+1t\amp=-1 \amp\amp\to t=0</mrow>
+            <mrow> 3(1-t)+3t\amp=3 </mrow>
+        </md>
+        Now we have a contradiction. The second equation implies <m> t=1</m> while
+        the third implies <m>t=0</m>, and so the point is <em>not</em> on the line.
+        </p>
+        <p>
+        On the other hand, is <m>\vec z=(1,-6,3,3)</m>. then
+        <m>\vec z=(1-t)\vec x+t\vec y</m> gives four equations,
+        <md>
+            <mrow> 1(1-t)+1t\amp=1 \amp\amp\to 1=1</mrow>
+            <mrow> 2(1-t)+(-2)t\amp=-6  \amp\amp\to t=2</mrow>
+            <mrow> (-1)(1-t)+1t\amp=3 \amp\amp\to t=2</mrow>
+            <mrow> 3(1-t)+3t\amp=3 \amp\amp\to 3=3</mrow>
+        </md>
+        Since all four equation are valid when <m>t=2</m> the vector
+        <m>\vec z</m> is on the line. It is easy to verify that
+        <m>\vec z=-\vec x+2\vec y</m>.
+        </p>
+        </example>
+        
+        </subsection>
+    </section>
+    
+        <section><title>Equations of lines in <m>\R^3</m></title>
+        <p>
+        We want to find the equation of a line <m>L</m>, that is, an equation using
+        the vector <m>(x,y,z)</m> so that <m>(x,y,z)</m> is on <m>L</m> if and only if 
+        <m>(x,y,z)</m> satisfies the equation.
+        </p>
+    
+        <p>
+        We start with the case of a line <m>L</m> that passes through the 
+        origin <m>\vec0=(0,0,0)</m>. Let <m>\vec n=(a,b,c)</m> be any nonzero
+        point on <m>L</m>. In this case it is easy to get the equation we want.
+        </p>
+    
+        <figure>
+        <caption/>
+        <image width="90%">
+        <asymptote>
+         import graph;
+         size(500);
+         unitsize(3cm);
+         settings.render=4;
+         import graph3;
+         defaultpen(fontsize(16pt));
+         defaultpen(linewidth(1));
+         triple Z=(0,0,0);
+         real a=1, b=2, c=3;
+         triple pt=(a,b,c)/2;
+         axes3("$x$","$y$","$z$",min=Z,max=(4,4,4));
+         dot(pt);  label("$\vec n=(a,b,c)$",pt,E);
+         dot(Z);   label("$\vec 0=(0,0,0)$",Z,E);
+         dot(2pt); label("$\vec x=t(a,b,c)=(ta,tb,tc)$",2pt,E);
+         draw(-pt--2.5pt); label("$L$",2.5pt,E);
+        </asymptote>
+        </image>
+        </figure>
+    
+        <p>
+        Any point <m>(x,y,z)</m> is on <m>L</m> if and only if <m>(x,y,z)=t(a,b,c)</m> for  
+        some real number <m>t</m>. In other words, if we have a given vector
+        <m>\vec x=(x_0,y_0,z_0)</m> then <m>\vec x</m> is on <m>L</m> if and only if
+        there is a solution <m>t</m> to the system of equations
+        <me>
+            ta=x_0\\
+            tb=y_0\\
+            tc=z_0
+        </me>
+        </p>
+    
+        <p>
+        The vector <m>\vec n=(a,b,c)</m> is an indication of the direction of the line. 
+        For this reason, it is called the <em>direction vector</em> of the line. The
+        components of this vector, that is, <m>a</m>, <m>b</m> and <m>c</m>, are called the
+        <em>direction numbers</em>.
+        Direction vectors for lines in <m>\R^3</m> are analogous to the slope of a line in <m>\R^2</m>.
+        </p>
+     
+        <theorem><title> Line through <m>(0,0,0)</m></title>
+        <statement>
+        <p>
+        An equation of the line through <m>(0,0,0)</m> and <m>\vec n=(a,b,c)</m> is
+        <me>
+            (x,y,z)=t(a,b,c) 
+        </me>
+        for some real number <m>t</m>.
+        </p>
+        </statement>
+        </theorem>
+    
+        <p>
+        We next consider lines as before, but with the more general assumption
+        that it passes through <m>(x_0,y_0,z_0)</m>. We wish to keep the concept of
+        the direction vector.
+        The parallelogram rule is the tool that leads the way:</p>
+
+        <figure>
+        <caption/>
+        <image width="90%">
+        <asymptote>
+            import graph;
+            size(500);
+            unitsize(3cm);
+            settings.render=4;
+            import graph3;
+            defaultpen(fontsize(16pt));
+            defaultpen(linewidth(1));
+            currentprojection=orthographic(5,3,1/2);
+            triple Z=(0,0,0);
+            real a=1/2, b=1.1, c=3/2;
+            triple n=(a,b,c), offset=(2,3,1);
+            axes3("$x$","$y$","$z$",min=Z,max=(4,4,5));
+            dot(n);
+            draw(-n--2.5n);
+            label("$\vec n=(a,b,c)$",n,W);
+            dot(Z);
+            label("$\vec 0$",Z,W);
+            dot(2n);
+            label("$t(a,b,c)$",2n,W);
+            dot(n+offset);
+            draw(-n+offset--2.5n+offset);
+            label("$\vec (a,b,c)+(x_0,y_0,z_0)$",n+offset,E);
+            dot(Z+offset);
+            label("$(x_0,y_0,z_0)$",Z+offset,E);
+            dot(2n+offset);
+            label("$\vec x=t(a,b,c)+(x_0,y_0,z_0)$",2n+offset,E);
+            label("$L$",2.5n+offset,E);
+            label("$L'$",2.5n,E);
+            draw(Z--Z+offset);
+            draw(n--n+offset);
+            draw(2n--2n+offset);
+            draw(surface(Z--2n--2n+offset--offset--cycle), lightyellow, nolight);
+        </asymptote>
+        </image>
+        </figure>
+    
+        <p>
+        We start with the line <m>L</m> and consider the line, <m>L'</m> through <m>\vec0</m>
+        and with the same direction vector as (that is, parallel to) <m>L</m>. The parallelogram rules shows
+        us that <m>(x,y,z)</m> is on <m>L'</m> if and only if <m>(x,y,z)+(x_0,y_0,z_0)</m> is on
+        <m>L</m>. Since every point on <m>L'</m> is of the form <m>t(a,b,c)</m> for some real number
+        <m>t</m>, we conclude that every point on <m>L</m> is of the form <m>t(a,b,c)+(x_0,y_0,z_0)</m>.
+        </p>
+    
+        <theorem><title> Line through <m>(x_0,y_0,z_0)</m> </title>
+        <statement>
+        <p>
+        A equation of the line through <m>(x_0,y_0,z_0)</m> with direction vector <m>\vec n=(a,b,c)</m> is
+        <me>
+            (x,y,z)=(x_0,y_0,z_0) + t(a,b,c)
+        </me>
+        for some real number <m>t</m>.
+        </p>
+        </statement>
+        </theorem>
+    
+        <p>
+        Finally, we consider a line <m>L</m> passing through two points <m>(x_0,y_0,z_0)</m> and <m>(x_1,y_1,z_1)</m>.
+        Let <m>L'</m> be the line parallel to <m>L</m> passing through <m>\vec0</m>.
+        Then <m>\vec n=(x_1,y_1,z_1)-(x_0,y_0,z_0)</m> is a nonzero point on <m>L'</m>, from which 
+        follows that every point on <m>L'</m> is of the form <m>t\left((x_1,y_1,z_1)-(x_0,y_0,z_0)\right)
+        =t(x_1,y_1,z_1)-t(x_0,y_0,z_0)</m>. This in turn implies that every point on <m>L</m> is of
+        the form <m>t(x_1,y_1,z_1)-t(x_0,y_0,z_0)+(x_0,y_0,z_0)=t(x_1,y_1,z_1)+(1-t)(x_0,y_0,z_0)</m>.
+        </p>
+        
+        <figure>
+        <caption/>
+        <image width="90%">
+        <asymptote>
+            import graph;
+            size(600);
+            unitsize(3cm);
+            settings.render=4;
+            import graph3;
+            defaultpen(fontsize(16pt));
+            defaultpen(linewidth(1));
+            currentprojection=orthographic(5,3,1/2);
+            triple Z=(0,0,0);
+            real a=1/2, b=1.1, c=3/2;
+            triple n=(a,b,c), offset=(2,3,1);
+            axes3("$x$","$y$","$z$",min=Z,max=(4,5,5));
+            dot(n);
+            draw(-n--2.5n);
+            label("$\vec n=(x_1,y_1,z_1)-(x_0,y_0,z_0)$",n,W);
+            dot(Z);
+            label("$\vec 0$",Z,W);
+            dot(2n);
+            label("$t(x_1,y_1,z_1)-t(x_0,y_0,z_0)$",2n,W);
+            dot(n+offset);
+            draw(-n+offset--2.5n+offset);
+            label("$(x_1,y_1,z_1)=\vec v$",n+offset,E);
+            dot(Z+offset);
+            label("$(x_0,y_0,z_0)=\vec u$",Z+offset,E);
+            dot(2n+offset);
+            label("$t(x_1,y_1,z_1)+(1-t)(x_0,y_0,z_0)$",2n+offset,E);
+            label("$L$",2.5n+offset,E);
+            label("$L'$",2.5n,E);
+            draw(Z--Z+offset);
+            draw(n--n+offset);
+            draw(2n--2n+offset);
+            draw(surface(Z--2n--2n+offset--offset--cycle), lightyellow, nolight);
+        </asymptote>
+        </image>
+        </figure>
+    
+    
+        <theorem>
+        <statement>
+        <p>
+        The point <m>(x,y,z)</m> is on the line through <m>\vec u=(x_0,y_0,z_0)</m> 
+        and <m>\vec v=(x_1,y_1,z_1)</m> if
+        <me>
+            (x,y,z)=(1-t)\vec u+t\vec v
+        </me>
+        for some real number <m>t</m>. 
+        In addition, the direction vector for that line is 
+        <m>\vec n=(x_1,y_1,z_1)-(x_0,y_0,z_0)=\vec v-\vec u</m> and
+        <me>
+            (x,y,z)=\vec u + t\vec n
+        </me>
+        </p>
+        </statement>
+        </theorem>
+        </section>
+    
+    <section xml:id="CrossProduct"><title>Cross Product of Vectors in <m>\R^3</m></title>
+        <subsection><title>Definition of the cross product</title> 
+        <p>
+        The cross product is only defined for vectors in <m>\R^3</m>. Given two 
+        such vectors
+        <m>\vec x=(x_1,x_2,x_3)</m> and <m>\vec y=(y_1,y_2,y_3)</m>, the
+        cross product <m>\vec x\times\vec y</m> is a vector in <m>\R^3</m>
+        defined by
+        <me>
+            \vec x\times\vec y
+            =
+            (x_2y_3-x_3y_2,\, x_3y_1-x_1y_3,\,x_1y_2-x_2y_1)
+        </me>
+        </p>
+    
+        <p>
+        This is pretty complicated and, as yet, unmotivated. Here is a neat
+        trick to make the computation a little easier. Take the two vectors
+        and make an array by writing the three coordinates and then repeating the
+        first two coordinates again:
+        <me>\begin{matrix}
+            x_1\amp x_2\amp x_3\amp x_1\amp x_2\\
+            y_1\amp y_2\amp y_3\amp y_1\amp y_2
+        \end{matrix}</me>
+        </p>
+    
+        <p>
+        We then use three <q>sliding windows</q>: 
+        the first (for the first coordinate) uses columns two and three,
+        the next (for the second coordinate) uses columns three and four,
+        and
+        the last (for the third coordinate) uses columns four and five.
+            <ul>
+            <li><p> 
+                First coordinate: <m>\color{red}{x_2y_3}-\color{green}{x_3y_2}</m>
+                <me>
+                \begin{matrix}
+                    \begin{matrix}
+                    x_1\\y_1
+                    \end{matrix}
+    
+                    \begin{bmatrix}
+                    \color{red}{x_2} \amp \color{green}{x_3}\\
+                    \color{green}{y_2} \amp \color{red}{y_3}
+                    \end{bmatrix}
+                 
+                    \begin{matrix}
+                    x_1 \amp x_2\\
+                    y_1 \amp y_2
+                    \end{matrix}
+                \end{matrix}
+                </me>
+            </p></li>
+            <li><p> 
+                Second coordinate: <m>\color{red}{x_3y_1}-\color{green}{x_1y_3}</m>
+                <me>
+                \begin{matrix}
+                    \begin{matrix}
+                    x_1 \amp x_2\\
+                    y_1 \amp y_2
+                    \end{matrix}
+                    \begin{bmatrix}
+                    \color{red}{x_3} \amp \color{green}{x_1}\\
+                    \color{green}{y_3} \amp \color{red}{y_1}
+                    \end{bmatrix}
+                    \begin{matrix}
+                    x_2\\y_2
+                    \end{matrix}
+                \end{matrix}
+                </me>
+            </p></li>
+            <li><p> 
+                Third coordinate: <m>\color{red}{x_1y_2}-\color{green}{x_2y_1}</m>
+                <me>
+                    \begin{matrix}
+                        \begin{matrix}
+                            x_1\amp x_2\amp x_3\\
+                            y_1\amp y_2\amp y_3
+                        \end{matrix}
+                        \begin{bmatrix}
+                            \color{red}{x_1} \amp \color{green}{x_2}\\
+                            \color{green}{y_1} \amp \color{red}{y_2}
+                        \end{bmatrix}
+                \end{matrix}
+                </me>
+            </p></li>
+            </ul>
+        
+        In each case the window is evaluated by
+        <me>
+        (\textrm{upper left})(\textrm{lower right})
+        -(\textrm{upper right})(\textrm{lower left})
+        </me>
+        which is actually the determinant as seen in
+        <xref ref="DeterminantofSmallMatrices" />.
+        </p>
+    
+        <p>
+        Here is an animation showing two vectors (the blue vectors) 
+        and their cross product (the red vector):
+        </p>
+    
+        <figure>
+        <caption/>
+        <image width="50%" source="images/250px-Crossproduct.gif" />
+        </figure>
+    
+    
+        <p>
+        There are (at least) four interesting relationships between the
+        two blue vectors and their cross product. 
+        </p>
+    
+        <p>
+        Can you see some of them? Press to reveal:
+        </p>
+    
+        <example><title>Interesting properties of the cross product</title>
+        <p>
+            <ul>
+            <li><p> 
+                <m>\vec x\times\vec y</m> is perpendicular to both 
+                <m>\vec x</m> and <m>\vec y</m>.
+            </p></li>
+            <li><p> 
+                <m>\vec x\times\vec y</m> has zero length 
+                when <m>\vec x</m> and <m>\vec y</m> are collinear.
+            </p></li>
+            <li><p> 
+                <m>\vec x\times\vec y</m> has maximum length 
+                when <m>\vec x</m> and <m>\vec y</m> are perpendicular.
+            </p></li>
+            <li><p> 
+                As <m>\vec y</m> goes through one cycle around <m>\vec x</m>, 
+                the length of <m>\vec x\times\vec y</m> goes 
+                up and down like the function <m>\sin(x)</m>.
+            </p></li>
+            </ul>
+        </p>
+        </example>
+    
+        <p>
+        These relationships are all valid, as we now show.
+        </p>
+    
+        <theorem>
+        <title>
+        <m>x\perp\vec x\times\vec y</m> and <m>y\perp\vec x\times\vec y</m>
+        </title>
+        <statement>
+        <p>
+        <m>\vec x\times\vec y</m> is perpendicular to both <m>\vec x</m> 
+           and <m>\vec y</m>.
+        </p>
+        </statement>
+        <proof>
+        <p>
+        The desired result is shown if <m>\vec x\cdot(\vec x\times\vec y)=0</m>
+        and <m>\vec y\cdot(\vec x\times\vec y)=0</m>. By direct computation
+        <me>
+        \begin{array}{rl}
+            (x_1,x_2,x_3) \cdot  \amp(x_2y_3-x_3y_2, x_3y_1-x_1y_3,x_1y_2-x_2y_1)\\
+            \amp=x_1 (x_2y_3-x_3y_2) +x_2 (x_3y_1-x_1y_3) + x_3 (x_1y_2-x_2y_1)\\
+            \amp= x_1x_2y_3-x_1x_3y_2 +x_2 x_3y_1-x_2x_1y_3+ x_3x_1y_2-x_3x_2y_1\\
+            \amp=0
+        \end{array}
+        </me>
+        and
+        <me>
+        \begin{array}{rl}
+            (y_1,y_2,y_3) \amp\cdot  (x_2y_3-x_3y_2, x_3y_1-x_1y_3,x_1y_2-x_2y_1)\\
+            \amp=y_1 (x_2y_3-x_3y_2) +y_2 (x_3y_1-x_1y_3) + y_3 (x_1y_2-x_2y_1)\\
+            \amp= y_1x_2y_3-y_1x_3y_2 +y_2 x_3y_1-y_2x_1y_3+ y_3x_1y_2-y_3x_2y_1\\
+            \amp=0
+        \end{array}
+        </me>
+        </p>
+        </proof>
+        </theorem>
+        
+        <theorem>
+        <title>
+        <m>\vec x \times r\vec x=\vec0</m>
+        </title>
+        <statement>
+        <p>
+        If <m>\vec x</m> and <m>\vec y</m> are collinear, 
+        then <m>\vec x\times\vec y=\vec 0</m>. 
+        </p>
+        </statement>
+        <proof>
+        <p>
+        The collinearity of <m>\vec x</m> and <m>\vec y</m> means that
+        <m>\vec x=r\vec y</m> for some real number <m>r</m>, 
+        and so <m>x_1=ry_1</m>, <m>x_2=ry_2</m>, and <m>x_3=ry_3</m>.
+        This means 
+        <me>
+        \begin{array}{rl}
+            \vec x\times\vec y \amp= (ry_1,ry_2,ry_3)\times(y_1,y_2,y_3)\\
+            \amp= (ry_2y_3-ry_3y_2, ry_3y_1-ry_1y_3,ry_1y_2-ry_2y_1)\\
+            \amp=(0,0,0)=\vec 0
+        \end{array}
+        </me>
+        </p>
+        </proof>
+        </theorem>
+    
+        <p>
+        Now we carry out some computations:
+        <md>
+            <mrow>\|\vec x\times\vec y\|^2
+                  \amp=\|(x_2y_3-x_3y_2, x_3y_1-x_1y_3, x_1y_2-x_2y_1)\|^2</mrow>
+            <mrow>\amp= x_2^2y_3^2 - 2x_2x_3y_2y_3 + x_3^2y_2^2</mrow>
+            <mrow>\amp\quad+x_3^2y_1^2 - 2x_1x_3y_1y_3 + x_1^2y_3^2</mrow>
+            <mrow>\amp\quad+x_1^2y_2^2 - 2x_1x_2y_1y_2 + x_1^2y_2^2</mrow>
+            <mrow>\|\vec x\|^2 \|\vec y\|^2
+                \amp=x_1^2y_1^2 + x_1^2y_2^2 + x_1^2y_3^2</mrow>
+            <mrow>\amp=+ x_2^2y_1^2 +x_2^2y_2^2 + x_2^2y_3^2</mrow>
+            <mrow>\amp\quad+x_3^2y_1^2 +x_3^2y_2^2 + x_3^2y_3^2</mrow>
+            <mrow>(\vec x\cdot\vec y)^2
+                \amp=(x_1y_1+x_2y_2+x_3y_3)^2</mrow>
+            <mrow>\amp= x_1^2y_1^2+x_2^2y_2^2+x_3^2y_3^2
+                +2 x_1x_2y_1y_2 +2x_1x_3y_1y_3 +2 x_2x_3y_2y_3</mrow>
+        </md>
+        
+        Upon careful examination we conclude
+        <me>
+            \|\vec x\times\vec y\|^2 + (\vec x\cdot\vec y)^2 
+            = \|\vec x\|^2 \|\vec y\|^2
+        </me>
+        </p>
+        
+        <theorem>
+        <title> <m>\|\vec x\times\vec y\|=\|\vec x\|\,\|\vec y\|\sin\theta</m></title>
+        <statement>
+        <p>
+        For any vectors <m>\vec x</m> and <m>\vec y</m> in <m>\R^3</m>,
+        <m>\|\vec x\times\vec y\|=\|\vec x\|\,\|\vec y\|\sin\theta</m>.
+        </p>
+        </statement>
+        <proof>
+        <p>
+        <me>
+        \begin{array}{rl}
+            \|\vec x\times\vec y\|^2
+            \amp= \|\vec x\|^2\|\vec y\|^2 -(\vec x\cdot\vec y)^2 \\
+            \amp=  \|\vec x\|^2 \|\vec y\|^2 -\|\vec x\|^2\|\vec y\|^2\cos^2(\theta) \\
+            \amp= \|\vec x\|^2\|\vec y\|^2(1-\cos^2(\theta))\\
+            \amp= \|\vec x\|^2\|\vec y\|^2\sin^2(\theta)
+        \end{array}
+        </me>
+    
+        Taking the square root of both sides, we get
+        <me>
+            \|\vec x\times\vec y\| =\pm \|\vec x\|\, \|\vec y\| |\sin(\theta)|
+        </me>
+    
+        Now <m>\|\vec x\times\vec y\|\geq 0</m>, that is, the left side of the
+        equation is nonnegative. Also 
+        <m>\|\vec x\|\, \|\vec y\|\geq 0</m>. In addition, <m>\sin(\theta)\geq 0</m> for
+        <m>0\leq \theta \leq \pi</m>. This means that to make the right side of the
+        equation nonnegative, the <m>\pm</m> is actually <m>+</m>. Hence
+        <me>
+            \|\vec x\times\vec y\| =\|\vec x\|\, \|\vec y\| \sin(\theta)
+        </me>
+        </p>
+        </proof>
+        </theorem>
+
+        <theorem>
+        <title>Additional cross product properties</title>
+        <statement>
+        <p>
+        Let <m>\vec u</m> and <m>\vec v</m> be vectors in <m>\mathbb{R}^n</m>, and
+        let <m>r</m> be a real number. Then
+        <ul>
+            <li><m>\vec u\times\vec v=-(\vec v\times\vec u)</m></li>
+            <li><m>(r\vec u)\times\vec v=r(\vec u\times\vec v)</m></li>
+            <li><m>\vec u \times (\vec v+\vec w)
+                =(\vec u \times \vec v)+(\vec u\times\vec w)</m></li>
+        </ul>
+        </p>
+        </statement>
+        <proof>
+        <p>
+        All of the parts may be verified by direct computation. But more
+        easily:
+        <ul>
+        <li> 
+            <m>
+            \det
+            \begin{bmatrix}
+            \vec i \amp \vec j\amp \vec j\\
+            u_1 \amp u_2 \amp u_3\\
+            v_1 \amp v_2 \amp v_3
+            \end{bmatrix}
+            =-
+            \det
+            \begin{bmatrix}
+            \vec i \amp \vec j\amp \vec j\\
+            v_1 \amp v_2 \amp v_3\\
+            u_1 \amp u_2 \amp u_3
+            \end{bmatrix}
+            </m>
+        </li>
+        <li>
+            <m>
+            \det
+            \begin{bmatrix}
+            \vec i \amp \vec j\amp \vec j\\
+            ru_1 \amp ru_2 \amp ru_3\\
+            v_1 \amp v_2 \amp v_3
+            \end{bmatrix}
+            =r
+            \det
+            \begin{bmatrix}
+            \vec i \amp \vec j\amp \vec j\\
+            u_1 \amp u_2 \amp u_3\\
+            v_1 \amp v_2 \amp v_3
+            \end{bmatrix}
+            </m>
+        </li>
+        <li>
+            <m>
+            \det
+            \begin{bmatrix}
+            \vec i \amp \vec j\amp \vec j\\
+            u_1 \amp u_2 \amp u_3\\
+            (v_1+w_1) \amp (v_2+w_2) \amp (v_3+w_3)
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+            \vec i \amp \vec j\amp \vec j\\
+            u_1 \amp u_2 \amp u_3\\
+            v_1 \amp v_2 \amp v_3
+            \end{bmatrix}
+            +
+            \begin{bmatrix}
+            \vec i \amp \vec j\amp \vec j\\
+            u_1 \amp u_2 \amp u_3\\
+            w_1 \amp w_2 \amp w_3
+            \end{bmatrix}
+            </m>
+        </li>
+        </ul>
+        </p>
+        </proof>
+        </theorem>
+    
+        <paragraphs><title> Justification of the definition of the cross product </title>
+        <p>
+        Now suppose we have two vectors <m>\vec x=(x_1,x_2,x_3)</m> and 
+        <m>\vec y=(y_1,y_2,y_3)</m>. We are looking for a third vector which
+        (like the cross product) is perpendicular to both <m>\vec x</m> and <m>\vec y</m>.
+        Let's call such a vector <m>(a,b,c)</m>. The perpendicularity assumptions mean
+        <m>(a,b,c)\cdot(x_1,x_2,x_3)=0</m> and <m>(a,b,c)\cdot(y_1,y_2,y_3)=0</m>. This means
+        <m>
+        \begin{align*}
+            ax_1+bx_2+cx_3\amp =0\tag{1}\\
+            ay_1+by_2+cy_3\amp =0.\tag{2}
+        \end{align*}
+        </m>
+        </p>
+        <p>
+        Multiply equation <m>(1)</m> by <m>y_1</m>, equation <m>(2)</m> by <m>x_1</m> and subtract.
+        This gives
+        <me>
+            b(x_2y_1-x_1y_2)+c(x_3y_1-x_1y_3)=0
+        </me>
+        </p>
+        <p>
+        and so
+        <me>
+            b=\frac{x_3y_1-x_1y_3}{x_1y_2-x_2y_1}c
+        </me>
+        </p>
+        
+        <p>
+        Now multiply equation <m>(1)</m> by <m>y_2</m>, equation <m>(2)</m> by <m>x_2</m> and subtract.
+        </p>
+        
+        <p>This gives
+        <me>
+            a(x_1y_2-x_2y_1)+c(x_3y_2-x_2y_3)=0
+        </me>
+        </p>
+
+        <p>
+        and so
+        <me>
+            a=\frac{x_2y_3-x_3y_2}{x_1y_2-x_2y_1}c
+        </me>
+        </p>
+
+        <p>
+        This implies that our vector
+        <me>
+        (a,b,c)=\left(\frac{x_2y_3-x_3y_2}{x_1y_2-x_2y_1}c,
+            \frac{x_3y_1-x_1y_3}{x_1y_2-x_2y_1}c,c\right)
+        </me>
+        is perpendicular to both <m>\vec x</m> and <m>\vec y</m> for any choice of <m>c</m>.
+        If we set <m>c=x_1y_2-x_2y_1</m> then we get
+        <me>
+            (a,b,c)=(x_2y_3-x_3y_2,x_3y_1-x_1y_3,x_1y_2-x_2y_1)
+        </me>
+        which is precisely <m>\vec x\times\vec y</m>. Hence the definition of
+        the cross product, which at first seems bizarre, is actually natural if
+        we wish the product to be perpendicular to both of the factors.
+        </p>
+        </paragraphs>
+        </subsection>
+        </section>
+    
+        <section><title>Equations of Planes in <m>\R^3</m></title>
+            <subsection><title>Three Dimensional Point-normal Form</title>
+            <p>
+            Suppose we start with a nonzero vector <m>\vec n=(a,b,c)</m>.
+            We then consider the plane (through <m>\vec0</m>) that is perpendicular
+            to <m>\vec n</m>. 
+            The picture below illustrates the situation.
+            Any point <m>(x,y,z)</m> on this plane must be perpendicular
+            to <m>\vec n</m>. This means that <m>(x,y,z)\cdot\vec n= ax+by+cz=0</m>.
+            </p>
+
+            <figure>
+            <caption/>
+            <image width="75%">
+            <asymptote>
+                unitsize(3cm);
+                settings.render=4;
+                import graph3;
+                defaultpen(fontsize(16pt));
+                currentprojection=orthographic(5,3,1/2);
+                triple Z=(0,0,0);
+                real x=3, y=2, z=1;
+                //axes3("$x$","$y$","$z$",min=Z,max=(x,y,z)+(0.5,0.5,0.5));
+                real a=1/2, b=1, c=2.0;
+                triple f(real x, real y) {
+                    return (x,y,(-a*x-b*y)/c);
+                    }
+                triple A=f(3,1), B=f(3,-1), C=f(-2,-1), D=f(-2,1);
+                path3 g=A--B--C--D--cycle;
+                draw(g);
+                draw(surface(g),yellow,nolight);
+                draw(Z--(a,b,c),red+linewidth(1),Arrow3);
+                dot(Z,linewidth(3));
+                label("$\vec0=(0,0,0)$",Z,(2.1,5.5,2));
+                triple p=(a,b,c)+(1,-1,0);
+                label("$\vec n=(a,b,c)$",(a,b,c),(0,1.2,1/2));
+                label("$ax+by+cz=0$",p,(0,0,1));
+                draw(p{(0,0,-1)}..{-(a,b,c)}f(2.5,-1/2),linewidth(1),Arrow3);
+                triple p=f(1,-1/2)+(0,0,.1);
+                dot(p,linewidth(3));
+                draw(Z--p,linewidth(1),Arrow3);
+                label("$(x,y,z)$",p,(0,0,1));
+            </asymptote>
+            </image>
+            </figure>
+    
+            <p>
+            In addition, the converse is true, that is, if we have numbers <m>a</m>, <m>b</m> and 
+            <m>c</m>, not all zero, then the set of all points <m>(x,y,z)</m> satisfying
+            <m>ax+by+cz=0</m> must be perpendicular to <m>\vec n=(a,b,c)</m> and so is a plane
+            through <m>\vec0</m>. In this case <m>\vec n</m> is called the 
+            <term>normal vector</term> to the plane.
+            </p>
+    
+            <theorem><title> Point-normal form through <m>\vec0</m></title>
+            <statement>
+            <p>The equation of a plane orthogonal to <m>\vec n=(a,b,c)</m> through <m>\vec0</m> is
+                 <me>ax+by+cz=0</me>
+            </p>
+            </statement>
+            </theorem>
+    
+            <p>
+            Next we consider the equation of a plane passing through an arbitrary
+            point <m>(x_0,y_0,z_0)</m>. The picture in this case is pretty similar to
+            the previous one:
+            </p>
+
+            <figure>
+            <caption/>
+            <image width="95%">
+            <asymptote>
+                import graph;
+                size(500);
+                unitsize(3cm);
+                settings.render=4;
+                import graph3;
+                defaultpen(fontsize(16pt));
+                currentprojection=orthographic(5,3,1/2);
+                triple Z=(0,0,0);
+                real x=3, y=2, z=1;
+                real a=1/2, b=1, c=2.0;
+                real a=3/8, b=3/4, c=1.5;
+                triple f(real x, real y) {
+                    return (x,y,(-a*x-b*y)/c);
+                    }
+             
+                triple A=f(3,1), B=f(3,-1), C=f(-2,-1), D=f(-2,1);
+                path3 g=A--B--C--D--cycle;
+                draw(g);
+                draw(surface(g),yellow,nolight);
+                draw(Z--(a,b,c),red+linewidth(1),Arrow3);
+                dot(Z,linewidth(4));
+                dot((a,b,c),linewidth(3));
+                label("$(x_0,y_0,z_0)$",Z,(2.1,5.5,2));
+                triple p=(a,b,c)+(1,-1.0,0.3);
+                label("$\vec n=(a+x_0,b+y_0,c+z_0)$",(a,b,c),(0,1.2,1/2));
+                label("$a(x-x_0)+b(y-y_0)+c(z-z_0)=0$",p,(0,0,1));
+                draw(p{(1,3,-1)}..{(1,2,-1)}f(2.5,-1/2),linewidth(1),Arrow3);
+                triple p=f(1,-1/2)+(0,0,.1);
+                dot(p,linewidth(3));
+                draw(Z--p,linewidth(1),Arrow3);
+                label("$(x,y,z)$",p,(0,0,1));
+            </asymptote>
+            </image>
+            </figure>
+    
+            <p>
+            In this case the perpendicularity means that
+            <m>(x-x_0,y-y_0,z-z_0)\cdot(a,b,c)=0</m>. In other words,
+            <me>
+                 a(x-x_0)+b(y-y_0)+c(z-z_0)=0
+            </me>
+            </p>
+    
+        <theorem><title>Point-normal form</title>
+        <statement>
+        <p>The equation of the plane through <m>(x_0,y_0,z_0)</m> perpendicular to the vector
+        <m>\vec n=(a,b,c)</m> is
+        <me>a(x-x_0)+b(y-y_0)+c(z-z_0)=0</me>.
+        </p>
+        </statement>
+        </theorem>
+        </subsection>
+    
+        <subsection><title>General Equation of a Plane</title>
+        <p>
+        The point-normal equation of a plane may be written as
+        <me>
+            a(x-x_0)+b(y-y_0)+c(z-z_0)=ax+by+cz-(ax_0+by_0+cz_0)=0
+        </me>
+        </p>
+
+        <p>
+        If we set <m>d=-(ax_0+by_0+cz_0)</m>, we get the general equation
+        of a plane.
+        </p>
+
+        <theorem><title>General equation of a plane</title>
+        <statement>
+        <p>
+        The general equation of a plane is
+        <me>
+            ax+by+cz+d=0
+        </me>
+        where <m>\vec n=(a,b,c)</m> is orthogonal to the plane.
+        </p>
+        </statement>
+        </theorem>
+        
+        <p>
+        Different values <m>a</m>, <m>b</m>, <m>c</m>, and <m>d</m>
+        may give the same plane. If we consider the planes with equations
+        <md>
+            <mrow>2x+3y+4z=0</mrow>
+            <mrow>4x+6y+8z=0</mrow>
+        </md>
+        then any vector <m>(x,y,z)</m> that satisfies the first equation
+        clearly satisfies the second one. 
+        More generally, if <m>ax+by+cz+d=0</m>, then for
+        any real number <m>r\not=0</m> we have <m>r(ax+by+cz+d)=0</m> and so
+        <m>(ra)x+(rb)y+(rc)z+rd=0</m>. If we let <m>a'=ra</m>, <m>b'=rb</m>, <m>c'=rc</m>  and
+        <m>d'=rd</m>, then 
+        <me>
+            ax+by+cz+d=0 \quad\textrm{ if and only if }\quad a'x+b'y+c'z+d'=0
+        </me>
+        and so they are the general equation of the same plane. We may
+        write <m>(a',b',c',d')=r(a,b,c,d)</m>. This is the exact condition 
+        we need to have two different equations of the same plane.
+        </p>
+        
+        <theorem><title>Different equations for the same plane</title>
+        <statement>
+        <p>
+        The two equations
+        <me>
+            a_1x+b_1y+c_1z+d_1=0\\
+            a_2x+b_2y+c_2z+d_2=0
+        </me>
+        are equations of the same plane if and only if
+        <me>
+            (a_2,b_2,c_2,d_2)=r (a_1,b_1,c_1,d_1)
+            \textrm{ for some } r\not=0.
+        </me>
+        </p>
+        </statement>
+        <proof>
+        <p>
+        First, if <m>(a_2,b_2,c_2,d_2)=r (a_1,b_1,c_1,d_1)</m>,
+        and <m>(x_0,y_0,z_0)</m> is in the first plane, then
+        <me> a_1x_0+b_1y_0+c_1z_0+d_1=0.</me>
+        Multiplying both sides of the equation by <m>r</m> gives
+        <md>
+            <mrow>0 \amp= r(a_1x_0+b_1y_0+c_1z_0+d_1)</mrow>
+            <mrow>\amp =ra_1x_0+rb_1y_0+rc_1z_0+rd_1</mrow>
+            <mrow>\amp =a_2x_0+b_2y_0+c_2z_0+d_2</mrow>
+        </md>
+        and so <m>(x_0,y_0,z_0)</m> is in the second plane.
+        A similar argument shows that any vector in the second
+        plane is also in the first plane.
+        </p>
+        <p>
+        Next, suppose that the two equations are equations of the same plane.
+        We consider this as a system of linear equations with augmented
+        matrix
+        <me>
+        \begin{bmatrix}
+            a_1\amp b_1\amp c_1\amp -d_1\\
+            a_2\amp b_2\amp c_2\amp -d_2
+        \end{bmatrix}
+        </me>
+        which we put into reduced row echelon form to find all points in
+        both planes. It takes just two elementary row operations.
+        The first nonzero entry in the first row is changed to a one using
+        <m>R_1\gets \lambda_1R_1</m> and the entry below this leading one is
+        changed to a zero using <m>R_2=R_2-\lambda_2R_1</m>. This means that
+        the second row in the reduced row echelon form is 
+        <me> (a_2,b_2,c_2,d_2)-\lambda_2\lambda_1(a_1,b_1,c_1,d_1)</me>.
+        However, the first and second equations together have the same solutions as 
+        the first equation alone, that is, the second equation is actually superfluous.
+        This makes the second row all zero, and so, setting <m>r=\lambda_1\lambda_2</m>,
+        we have
+        <me> (a_2,b_2,c_2,d_2)=r(a_1,b_1,c_1,d_1)</me>.
+        </p>
+        </proof>
+        </theorem>
+        </subsection>
+    
+        <subsection><title>The equation of a plane through three given points</title>
+        <p>Suppose we have three (presumably noncollinear) points <m>(x_0,y_0,z_0)</m>,
+        <m>(x_1,y_1,z_1)</m> and <m>(x_2,y_2,z_2)</m>. We want to find the equation of the
+        plane containing the three points. We will give three different methods,
+        and apply each method to a specific example.
+        </p>
+        
+        <paragraphs><title>Finding the plane containing three points: method 1</title>
+        <p>The general equation of the plane is
+        <me>
+            ax+by+cz+d=0
+        </me>
+        for some <m>a</m>, <m>b</m> and <m>c</m> not all zero.
+        Substitute the three points in the equation to get three equations
+        in four unknowns (the unknowns are <m>a</m>, <m>b</m>, <m>c</m> and <m>d</m>). 
+        </p>
+        
+        <p>
+        Example of this method: Let the three points be
+        <m>(1,1,3)</m>,
+        <m>(1,0,2)</m> and
+        <m>(2,1,1)</m>. Each point gives an equation:
+        
+        <m>
+        \begin{align}
+            a+b+3c+d\amp=0 \tag{from the point \((1,1,3)\)}\\
+            a\phantom{+2b}+2c+d\amp=0\tag{from the point \((1,0,2)\)}\\
+            2a+b+c+d\amp=0\tag{from the point \((2,1,1)\)}
+        \end{align}
+        </m>.
+        
+        The augmented matrix for this system is
+        <me>
+        \left[\begin{array}{cccc|c}
+        1\amp1\amp3\amp1\amp0\\
+        1\amp0\amp2\amp1\amp0\\
+        2\amp1\amp1\amp1\amp0
+        \end{array}\right]
+        </me>
+        </p>
+
+        <p>
+        which has the reduced row echelon form:
+        <me>
+            \left[\begin{array}{cccc|c}
+                1\amp0\amp0\amp\frac12\amp0\\
+                0\amp1\amp0\amp-\frac14\amp0\\
+                0\amp0\amp1\amp\frac14\amp0
+            \end{array}\right]
+        </me></p>
+        <p>
+        This means that <m>d</m> is a free variable, <m>c=-\frac14 d</m>, <m>b=\frac14 d</m> and
+        <m>a=-\frac12 d</m>. This makes the equation of the plane
+        <me>
+            ax+by+cz+d=-\frac12 d x+\frac14 d y-\frac14 d z +d =0
+        </me>
+        </p>
+
+        <p>
+        Dividing the equation by <m>d</m> gives the equation
+        <me>
+        -\frac12  x+\frac14 y-\frac14 z +1 =0
+        </me>
+        </p>
+        
+        <p>
+        which is an equation of the plane. Multiplying by <m>-4</m>
+        can make the equation a bit cleaner:
+        <me>
+        2x-y+z-4=0
+        </me>
+        </p>
+        
+        <p>
+        As a check, 
+        for <m>(1,1,3)</m> we have <m>2x-y+z-4=2-1+3-4=0</m>,
+        for <m>(1,0,2)</m> we have <m>2x-y+z-4=2-0+2-4=0</m> and
+        for <m>(2,1,1)</m> we have <m>2x-y+z-4=4-1+1-4=0</m>.
+        </p>
+        </paragraphs>
+        
+        <paragraphs><title> Finding the plane containing three points: method  2</title>
+        <p>
+        The point-normal equation of a plane is
+        <me>
+            a(x-x_0)+b(y-y_0)+c(z-z_0)=0
+        </me>
+        for some <m>a</m>, <m>b</m> and <m>c</m> not all zero.
+        Use one of the points as <m>(x_0,y_0,z_0)</m> and then substitute the
+        other two points in the equation to get two equations
+        in three unknowns (the unknowns are <m>a</m>, <m>b</m> and <m>c</m>). </p>
+        
+        <p>Example of this method: Let the three points be
+        <m>(1,1,3)</m>,
+        <m>(1,0,2)</m> and
+        <m>(2,1,1)</m>. 
+        Let <m>(x_0,y_0,z_0)=(1,1,3)</m> so that the equation of the plane is
+        <me>
+            a(x-1)+b(y-1)+c(z-3)=0
+        </me></p>
+        <p>Using the other two points we get
+        \begin{align}
+            -b-c \amp=0\\
+            a-2c \amp=0
+        \end{align}
+        </p>
+
+        <p>
+        The augmented matrix of these equations is 
+        <me>
+            \left[
+            \begin{array}{ccc|c}
+            0\amp-1\amp-1\amp0\\
+            1\amp0\amp-2\amp0
+            \end{array}
+            \right]
+        </me>
+        </p>
+        
+        <p>
+        whose reduced row echelon form is
+        <me>
+            \left[
+            \begin{array}{ccc|c}
+            1\amp0\amp-2\amp0\\
+            0\amp1\amp1\amp0
+            \end{array}
+            \right]
+        </me>
+        </p>
+        
+        <p>
+        which implies <m>a=2c</m> and <m>b=-c</m>.
+        Hence
+        <me>
+            2c(x-1)-c(y-1)+c(z-3)=0
+        </me>
+        </p>
+        
+        <p>
+        and so
+        <me>
+        2(x-1)-(y-1)+(z-3)=0
+        </me>
+        </p>
+        </paragraphs>
+        
+        <paragraphs><title> Finding the plane containing three points: method 3</title>
+        <p>Once again, the point-normal equation of a plane is
+        <me>
+            a(x-x_0)+b(y-y_0)+c(z-z_0)=0
+        </me>
+        for some <m>a</m>, <m>b</m> and <m>c</m> not all zero. This equation says that
+        the vectors <m>(a,b,c)\cdot(x-x_0,y-y_0,z-z_0)=0</m>
+        and hence they are orthogonal for any <m>(x,y,z)</m> in the plane.</p>
+        
+        <p>Let <m>(x_0,y_0,z_0)</m> be one of the three points. Using each of the other two
+        points as <m>(x,y,z)</m>, we have two vectors <m>(x-x_0,y-y_0,z-z_0)</m> that
+        need to be orthogonal to <m>(a,b,c)</m>. Since the cross product of the
+        two vectors is orthogonal each of them, that cross product may be used as the
+        vector <m>(a,b,c)</m>.
+        </p>
+        </paragraphs>
+        
+        <paragraphs><title>Example of this method</title>
+        <p>
+        Let the three points be
+        <m>(1,1,3)</m>,
+        <m>(1,0,2)</m> and
+        <m>(2,1,1)</m>. 
+        Let <m>(x_0,y_0,z_0)=(1,1,3)</m>.
+        Then the other two points give
+        <m>(x-x_0,y-y_0,z-z_0)</m> as
+        <m>(0,-1,-1)</m> and <m>(1,0,-2)</m>.
+        It's easy to compute
+        <m>(0,-1,-1)\times(1,0,-2)=(-2,-1,1)</m>, and so we may use
+        <m>(a,b,c)=(2,-1,1)</m>. In other words, the equation of the plane is
+        <me>
+            2(x-1)-(y-1)+(z-3)=0
+        </me></p>
+        <p>If we expand this final answer, we get
+        <me>
+        2x-y+z-4=0
+        </me>
+        </p>
+        
+        <p>
+        All three methods give the right answer, but clearly the third one
+        is the easiest to use. It's the theory behind the cross
+        product that enables a much easier computation. This happens often
+        in many areas of mathematics: knowing some theory can make your life
+        much easier.
+        </p>
+        </paragraphs>
+        
+        <p>
+        Here is the graph of the plane with equation
+        <m>2x-y+z-4=0</m> in <m>\R^3</m> including the three points 
+        <m>(1,1,3)</m>, <m>(1,0,2)</m> and <m>(2,1,1)</m> used to determine it. 
+        The plane is blue, and
+        the line joining the origin to <m>(a,b,c)=(2,-1,1)</m> is red.
+        As expected with the point-normal form, the line is orthogonal to 
+        the plane.
+        </p>
+        
+        <figure>
+        <caption/>
+        <image width="60%">
+        <asymptote>
+        settings.render=4;
+        import graph3;
+        currentprojection=orthographic(3,3,1);
+        import graph;
+        size(450);
+        unitsize(3.0cm);
+        currentprojection=orthographic(1.9,1.2,1/5);
+        currentlight=White;
+        defaultpen(linewidth(1.0));
+        defaultpen(fontsize(12pt));
+        
+        limits((0,0,0),(4,2,4));
+        xaxis3("$x$",OutTicks());
+        yaxis3("$y$",OutTicks());
+        zaxis3("$z$",OutTicks());
+        
+        // computes points on the plane above (x,y)
+        triple f(real x, real y) { return (x,y,4-2*x+y);}
+        triple ptA=f(1,1), ptB=f(1,0), ptC=f(2,1);
+        triple n=(2,-1,1);
+        
+        pair X=(0.5,-1.1), Y=(2.1,1.2);
+        path3 g =  f(X.x,X.y)--f(X.x,Y.y)--f(Y.x,Y.y)--f(Y.x,X.y)--cycle;
+        
+        draw ((0,0,0)--n,red);
+        draw(surface(g),lightblue,nolight);
+        draw(g);
+        dot(2/3*n,red);
+        dot(n,red);
+        dot((0,0,0),red);
+        
+        dot(ptA); label("$(1,1,3)$",ptA,(2,0,1));
+        dot(ptB); label("$(1,0,2)$",ptB,(2,0,1));
+        dot(ptC); label("$(2,1,1)$",ptC,(2,0,1));
+        
+        defaultpen(fontsize(14pt));
+        label("$2x-y+z=4$",(3/2,1,2),4E,blue);
+        label("$(2,-1,1)$",n,W,red);
+        </asymptote>
+        </image>
+        </figure>
+        </subsection>   
+    
+        <subsection><title>The area of a triangle and parallelogram determined by three points</title>
+        <p>
+        Suppose we have three points <m>A</m>, <m>B</m> and <m>C</m> in <m>\R^3</m>. 
+        We want to compute the area of the triangle determined by these points. 
+        If the points are collinear, then the triangle collapses to a line and
+        the area is zero, so we may suppose that the points are noncollinear.
+        </p>
+    
+        <figure>
+        <caption/>
+        <image width="70%">
+        <asymptote>
+            import graph;
+            size(400);
+            unitsize(70);
+            pair A=(2.5,0), B=(0,1), C=(2,2);
+     
+            dot(A); label("$A=(x_1,y_1,z_1)$",A,S);
+            dot(B); label("$B=(x_2,y_2,z_2)$",B,W);
+            dot(C); label("$C=(x_3,y_3,z_3)$",C,E);
+     
+            draw(A--B--C--cycle);
+     
+            real Dotprod(pair A, pair B) {
+            return A.x*B.x+A.y*B.y;
+            }
+    
+            real t= Dotprod((A-B),(C-B))/Dotprod(A-B,A-B);
+            pair U= t*A+(1-t)*B;
+            dot(U);
+            draw(C--U);
+            t=.5;
+            label("$h$", t*C+(1-t)*U,.9*NW);
+            label("$\vec v$",(A+C)/2,E);
+            label("$\vec u$",(A+B)/2,SW);
+            label("$b$",(2A+B)/3,SW);
+     
+            draw(arc(A,length(C+B-2A)/15,degrees(B-A),degrees(C-A))); 
+            label("$\theta$",A,(B+C)/2-A);
+        </asymptote>
+        </image>
+        </figure>
+    
+        <p>
+        We define two vectors:
+        <me>
+        \vec u= \overrightarrow{AB}\\
+        \vec v=\overrightarrow{AC}
+        </me>
+        </p>
+    
+        <p>The area of the triangle is <m>\frac12 hb</m> where
+        <m>b=\|\vec u\|</m> and <m>h=\|\vec v\|\sin(\theta)</m>. 
+        Hence the area of the triangle is
+        <m>\frac12 \|\vec u\|\|\vec v\|\sin(\theta) 
+            = \frac12\|\vec u\times\vec v\|</m>.
+        </p>   
+
+        <p>
+        The area of parallelogram follows easily from the triangle (and vice-versa)
+        since the area of the parallelogram is twice that of the triangle.
+        </p>
+    
+        <figure>
+        <caption/>
+        <image width="60%">
+        <asymptote>
+            import graph;
+            size(250);
+            pair P1=(1,1.5), P2=(1.5,.5);
+            pair Z=(0,0);
+            draw(Z--P1--P1+P2--P2--cycle,linewidth(0.75));
+            filldraw(Z--P1--P2--cycle,lightyellow);
+            label("$P$",P1,W); label("$Q$",P2,E); label("$R$",Z,S);
+            dot(P1); dot(P2); dot(P1+P2); dot(Z);
+        </asymptote>
+        </image>
+        </figure>
+    
+        <p>
+        The area of the parallelogram is <m>\|\vec u\times\vec v\|</m>.
+        </p>
+        </subsection>
+    </section>
+    
+    
+    
+    <section><title>Projections in <m>\R^2</m> and <m>\R^n</m></title> 
+        <subsection><title>Projections in <m>\R^2</m></title>
+       	<p>
+        Start with two nonzero vectors <m>\vec u</m> and <m>\vec v</m>. Drop a
+        perpendicular from <m>\vec u</m> to the line through <m>\vec v</m>, and use
+        the point where this perpendicular hits the line to be the end of a new vector.
+        Suppose that <m>\theta</m> is the angle between the vectors <m>\vec u</m> and <m>\vec v</m>.
+        The picture of the construction is slightly different for <m>\theta</m> obtuse and 
+        <m>\theta</m> acute (the new vector is shown in red):
+        </p>
+    
+        <sidebyside>
+        <image width="85%">
+        <asymptote>
+            unitsize(2cm);
+            pair pt1=(3,0), pt2=(2,2);
+            real theta=aTan(pt2.y/pt2.x);
+            if (theta <![CDATA[<]]> 0) {theta += 180;}
+            draw((0,0)--pt1,Arrow);
+            draw((0,0)--pt2,Arrow);
+            draw(arc((0,0),1,0,theta,CCW));
+            label("$\theta$", 1.25*(Cos(theta/2),Sin(theta/2)));
+            draw(pt2--(pt2.x,0));
+            draw((0,0)--(pt2.x,0),linewidth(1)+red,Arrow);
+            label("$\vec v$",pt1,E);
+            label("$\vec u$",pt2,N);
+            label("$\textrm{proj}_{\vec v} \vec u$", (pt2.x,0),S);
+            label("$\textrm{proj}_{\vec v} \vec u$", (pt2.x,0),S);
+        </asymptote>
+        </image>
+
+        <image width="85%">
+        <asymptote>
+            unitsize(1cm);
+            pair pt1=(3,0), pt2=(-2,3);
+            real theta=aTan(pt2.y/pt2.x);
+            if (theta <![CDATA[<]]> 0) {theta += 180;}
+            draw((0,0)--pt1,Arrow);
+            draw((0,0)--pt2,Arrow);
+            draw(arc((0,0),1,0,theta,CCW));
+            label("$\theta$", 1.25*(Cos(theta/2),Sin(theta/2)));
+            draw(pt2--(pt2.x,0));
+            draw((0,0)--(pt2.x,0),linewidth(1)+red,Arrow);
+            label("$\vec v$",pt1,E);
+            label("$\vec u$",pt2,N);
+            label("$\textrm{proj}_{\vec v} \vec u$", (pt2.x,0),S);
+        </asymptote>
+        </image>
+        </sidebyside>
+    
+        <p>
+        In each case the new vector is called 
+        <term>the projection of <m>\vec u</m> along <m>\vec v</m></term> 
+        and is denoted <m>\textrm{proj}_{\vec v} \vec u</m>.
+        </p>
+    
+        <p>
+        Since <m>\textrm{proj}_{\vec v} \vec u</m> and <m>\vec v</m>
+        are collinear, we may write
+        <m>\textrm{proj}_{\vec v} \vec u=k\vec v</m>
+        for some real number <m>k</m>. We next determine the value of <m>k</m>.
+        </p>
+         
+        <p>
+        In the left picture, we have
+        <md>
+        <mrow>
+            \|\textrm{proj}_{\vec v} \vec u\|
+            \amp=\|\vec u\| \cos(\theta)\qquad 
+            \text{(Note that }\cos(\theta)\geq 0\text{)}\\
+        </mrow>
+        <mrow>
+        \|\textrm{proj}_{\vec v} \vec u\| 
+        \amp= |k|\|\vec v\|
+        </mrow>
+        </md>
+        and so
+        <me>
+            k = \frac{\|\vec u\|}{\|\vec v\|}\cos(\theta) 
+                    \qquad \textrm{(Note that }k\geq 0\text{)}.
+        </me>
+        In the right picture, <m>\theta>\frac\pi2</m>, and so <m>\cos(\theta)\lt0</m>. In
+        addition, the direction of  <m>\textrm{proj}_{\vec v} \vec u</m>
+        implies that <m>k\lt0</m>, and <m>|k|=-k</m>. As a result, the equation is still
+        valid:
+        <me>
+            k = \frac{\|\vec u\|}{\|\vec v\|}\cos(\theta)
+        </me>
+        We have seen in <xref ref="DotProductRn" /> that
+        <m>\vec u\cdot\vec v = \|\vec u\|\,\|\vec v\|\cos(\theta)</m>,
+        and so
+        <me>
+            k
+            =\frac{\vec u\cdot\vec v}{\|\vec v\|^2}
+            =\frac{\vec u\cdot\vec v}{\vec v\cdot\vec v}
+        </me>
+        </p>
+    
+        <theorem><title>Projection of <m>\vec u</m> onto <m>\vec v</m> in <m>\R^2</m></title>
+        <statement>
+        <p>
+        If <m>\vec u</m> and <m>\vec v</m> are vectors in <m>\R^2</m> with
+        <m>\vec v\not= \vec0</m>, then
+        <me>
+            \textrm{proj}_{\vec v} \vec u 
+            =\frac{\vec u\cdot\vec v}{\|\vec v\|^2}
+            \vec v
+            =\frac{\vec u\cdot\vec v}{\vec v\cdot\vec v}
+            \vec v
+        </me>
+        </p>
+        </statement>
+        </theorem>
+ 
+        <theorem><title> <m>\vec u-\textrm{proj}_{\vec v} \vec u </m>
+        is orthogonal to <m>\vec v</m></title>
+        <statement>
+        <p>
+        The vectors <m>\vec v</m> and <m>\vec u-\textrm{proj}_{\vec v} \vec u </m>
+        are orthogonal.
+        </p>
+        </statement>
+        <proof>
+        <p>
+        We compute the dot product:
+        <md>
+        <mrow>
+            (\vec u - \textrm{proj}_{\vec v} \vec u)\cdot\vec v 
+            \amp= \vec u\cdot\vec v - \textrm{proj}_{\vec v} \vec u\cdot\vec v
+        </mrow>
+        <mrow>
+            \amp=\vec u \cdot \vec v 
+            - \left(\frac{\vec u\cdot\vec v}{\vec v\cdot\vec v} 
+            \vec v\right) \cdot\vec v
+        </mrow>
+        <mrow>
+        \amp=\vec u \cdot \vec v 
+             - \left(\frac{\vec u\cdot\vec v}{\vec v\cdot\vec v}\right) 
+             (\vec v \cdot\vec v)
+        </mrow>
+        <mrow>
+            \amp=\vec u \cdot \vec v -\vec u \cdot \vec v 
+        </mrow>
+        <mrow>
+            \amp=0
+        </mrow>
+        </md>
+
+        </p>
+        </proof>
+        </theorem>
+        </subsection>
+    
+        <subsection><title>Examples of projections in <m>\R^2</m></title>
+        <p>
+            <ul>
+            <li><p>
+                Suppose that <m>\vec v=(1,0)</m> and <m>\vec u=(u_1,u_2)</m>. 
+                Then the line through <m>\vec v</m> is simply the <m>x</m>-axis, 
+                and <m>\|\vec v\|=1</m>, and so 
+                <m>\textrm{proj}_{\vec v} \vec u =\left((u_1,u_2)\cdot(1,0) \right) \vec v 
+                = (u_1,0)</m>. This means that the projection of <m>(x_1,x_2)</m> onto the	
+                <m>x</m>-axis is <m>(x_1,0)</m>, just as would be expected.  
+            </p></li> 
+            <li><p>
+                Suppose <m>\vec v=(1,1)</m> and <m>\vec u=(u_1,u_2)</m>. 
+                Then the line through <m>\vec v</m> has equation <m>y=x</m>, 
+                and <m>\|\vec v\|=\sqrt2</m>. We then have 
+                <m>\textrm{proj}_{\vec v} \vec u=\frac{(u_1,u_2)\cdot(1,1)}2 \vec v
+                =\left(\frac{(u_1+u_2)}2,\frac{(u_1+u_2)}2\right)</m>
+            </p></li>
+            <li><p> 
+                Suppose we want to drop a perpendicular from the point <m>\vec u=(m,-1)</m> 
+                to the line <m>y=mx</m>. The vector <m>\vec v=(1,m)</m> is on that line. 
+                It then follows that 
+                <m>\textrm{proj}_{\vec v} \vec u
+                =\frac{(m,-1)\cdot(1,m)}{\|\vec v\|^2} \vec v=0\vec v=\vec 0</m>.
+                This implies that the line joining 	<m>(m,-1)</m> and <m>(0,0)</m>, 
+                which has slope <m>-\frac1m</m>, is perpendicular to the line with equation <m>y=mx</m>. 
+                This implies that the product of the slopes of two orthogonal lines is <m>-1</m>.
+            </p></li>
+            <li><p>
+                Suppose we want to drop a perpendicular from the point <m>\vec u=(u_1,u_2)</m> 
+                to the line <m>y=mx</m>.  The vector <m>\vec v=(1,m)</m> is on that line, 
+                and <m>\|\vec v\|=\sqrt{1+m^2}</m>.  It then follows that 
+                <m>\textrm{proj}_{\vec v} \vec u =\frac{(u_1,u_2)\cdot(1,m)}{1+m^2} \vec v
+                =\frac1{1+m^2}(u_1+mu_2, m(u_1+mu_2))
+                =\left(\frac{u_1+mu_2}{1+m^2},\frac{mu_1+m^2u_2}{1+m^2}\right)</m>
+            </p></li>
+            </ul>
+         
+        The following figure illustrates these examples (note that the first examples
+        are just the special cases of the last one).
+        </p>
+
+        <figure>
+        <caption/>
+        <image width="75%">
+        <asymptote>
+            unitsize(2cm);
+             
+            real xmin=-1, ymin=-1, xmax=4, ymax=3;
+            real m=1/2;
+            pair pt=(1,2);
+            pair projpt=1/(1+m^2)*(pt.x+m*pt.y,(m*pt.x+m*m*pt.y));
+             
+            draw((xmin,0)--(xmax,0)); label("$x$", (xmax,0), E);
+            draw((0,ymin)--(0,ymax)); label("$y$", (0,ymax), N);
+            draw((xmin,m*xmin)--(xmax, m*xmax));
+            draw(pt--projpt);
+            dot(pt);
+            dot(projpt);
+             
+            pair pt1=(m,-1);
+            dot(pt1);
+            draw((0,0)--pt1);
+            dot((0,0));
+            label("$(m,-1)$",(m,-1),E);
+            label("$\vec0$",(0,0),NW);
+             
+            label("$\vec u=(u_1,u_2)$",pt,N);
+            label("$\textrm{proj}_{\vec v}\vec u=\left(\frac{u_1+mu_2}{1+m^2},\frac{mu_1+m^2u_2}{1+m^2}\right)$",projpt,SE);
+            label("$y=mx$",(xmax,m*xmax),E);
+        </asymptote>
+        </image>
+        </figure>
+         
+        </subsection>
+    
+    	<subsection><title>Application: distance from a point to a line</title>
+    	<p>
+    	We want to compute the distance from a point <m>\vec u</m> to a line <m>L</m>.
+    	Let <m>\vec u=(x_0,y_0)</m>,
+    	the general equation of <m>L</m> be <m>ax+by+c=0</m>
+    	and <m>D</m> the desired distance.
+    	In addition, let <m>(x_1,y_1)</m> and <m>(x_2,y_2)</m> be two points on <m>L</m>,
+    	and <m>\vec n=(x_1+a,y_1+b)</m>.
+    	These are all included in the following figure:
+    	</p>
+    
+    
+    	<figure>
+        <caption/>
+        <image width="75%">
+        <asymptote>
+    		unitsize(2cm);
+    		pair A=(-2,-1), B=(-1,-1/2), C=(1,1/2), D=(3/2,3/4); //pts on L
+    		pair E=(-1/2,3/2); // pt off of L
+    		pair F= B + dot(E-B,C-B)/dot(C-B,C-B)*(C-B); //projection E on L
+    		pair G=B+E-F; // projection E perp to L
+    		pair H=B+(1.8)*(E-F);
+    		draw(A--D);
+    		draw(H--B--E,Arrow);
+    		draw(B--G--E--F--cycle,linewidth(1.5)+red);
+    		draw(B--C,Arrow);
+    		draw(B--H,Arrow);
+    		dot(B); dot(C); dot(E); dot(F); dot(G); dot(H);
+    		label("$\vec u=(x_0,y_0)$",E,NE);
+    		label("$(x_1,y_1)$",B,SE);
+    		label("$\vec v=(x_2,y_2)$",C,SE);
+    		label("$L\colon ax+by+c=0$",D,SE);
+    		label("$\vec n=(x_1+a,y_1+b)$", H, NE);
+    		label("$D$",(B+G)/2,SW);
+    		label("$D$",(F+E)/2,NE);
+    		label("$\mathrm{proj}_{\vec v}\vec u$",F,SE);
+    		label("$\mathrm{proj}_{\vec n}\vec u$",G,SW);
+    	</asymptote>
+        </image>
+        </figure>
+
+    	<p>
+    	Since <m>(x_1,y_1)</m> and <m>(x_2,y_2)</m> are both on <m>L</m>, we know that
+    	<m>ax_1+by_1+c=ax_2+by_2+c=0</m>.
+    	In addition, if we consider the two displacement vectors
+    	<m>\vec v</m> from <m>(x_1,y_1)</m> to <m>(x_2,y_2)</m> and
+    	<m>\vec n</m> from <m>(x_1,y_1)</m> to <m>(x_1+a,y_1+b)</m>,
+    	then the dot product
+    	<me>
+    		\vec v\cdot\vec n =(x_2-x_1,y_2-y_1)\cdot (a,b)
+    		=ax_2+by_2-(ax_1+by_1)=-c+c=0
+    	</me>
+    	This implies that the quadrilateral with vertices
+    	<m>(x_1,y_1)</m>, 
+    	<m>\mathrm{proj}_{\vec v}\vec u</m>,
+    	<m>\vec u</m> and
+    	<m>\mathrm{proj}_{\vec n}\vec u</m>
+    	is in fact a rectangle, and so  
+    	<m>\|\mathrm{proj}_{\vec n}\vec u\|=D</m>.
+    	<md>
+    		<mrow>\mathrm{proj}_{\vec n}\vec u
+    			\amp= \frac{\vec u\cdot\vec n}{\vec n\cdot\vec n} \vec n</mrow>
+    		<mrow>\amp=\frac{\left((x_0,y_0)-(x_1,y_1)\right)\cdot(a,b)}{\vec n\cdot\vec n} \vec n</mrow>
+    		<mrow>\amp= \frac{ax_0+by_0 -(ax_1+by_1)}{\vec n\cdot\vec n} \vec n</mrow>
+    		<mrow>\amp= \frac{ax_0+by_0 +c}{\vec n\cdot\vec n} \vec n</mrow>
+    	</md>
+    	and so
+    	<me>
+    	    D=\|\mathrm{proj}_{\vec n}\vec u\|=\frac{|ax_0+by_0 +c|}{\sqrt{a^2+b^2}}
+    	</me>
+        </p>
+    
+    
+        <theorem xml:id="DistancePtToLine"><title> Theorem (distance from point to a line) </title>
+        <statement>
+        <p>
+        The distance <m>D</m> from a point <m>(x_0,y_0)</m> to the line
+        <m>ax+by+c=0</m> is
+        <me>
+            D=\frac{|ax_0+by_0+c|}{\|\vec n\|}=\frac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}
+        </me>
+        </p>
+
+        </statement>
+        </theorem>
+    	</subsection>
+    
+        <subsection><title>Projections in <m>\R^3</m> and <m>\R^n</m></title>
+        <p>
+        Projections in <m>\R^3</m> to a plane and in <m>\R^n</m> to a hyperplane are
+        remarkably similar to those in <m>\R^2</m>. 
+        </p>
+    
+        <figure>
+        <caption/>
+        <image width="75%">
+        <asymptote>
+            settings.render=4;
+            import graph3;
+            currentprojection=orthographic(3,3,1);
+            import three;
+            unitsize(3.0cm);
+            currentprojection=orthographic(2,3,1);
+            currentlight=White;
+            defaultpen(linewidth(1.0));
+            defaultpen(fontsize(16pt));
+            path p=box((0,0),(3,3));
+            path3 g=path3(p);
+            draw(surface(g),lightblue,nolight);
+            triple pt0=(1,1,2); dot(pt0);
+            label("$(x_0,y_0,z_0)$",pt0,2E);
+            triple pt1=(2,1/2,0); dot(pt1);
+            label("$(x_1,y_1,z_1)$",pt1,2NW);
+            triple proj=(pt0.x,pt0.y,0); dot(proj);
+            triple n=pt1+(0,0,pt0.z+1); dot(n);
+            label("$n=(x_1,y_1,z_1)+(a,b,c)$",n,2N);
+            triple proj2=(n.x,n.y,pt0.z); dot(proj2);
+            draw(proj--pt0--proj2);
+            draw(pt1--n,red,Arrow3);
+            draw(pt1--pt0,Arrow3);
+            label("$D$",(pt0.x,pt0.y,pt0.z/2),E);
+            label("$D$",(pt1.x,pt1.y,pt0.z/2),W);
+            label("$\vec v$",1/2*(pt0+pt1),E);
+            label("$ax+by+cz+d=0$",(-1,2,0));
+        </asymptote>
+        </image>
+        </figure>
+    
+        <p>
+        In <m>\R^3</m> the projection from the point <m>(x_0,y_0,z_0)</m>
+        to the plane <m>ax+by+cz+d=0</m> can be obtained by taking the line
+        through <m>(x_0,y_0,z_0)</m> orthogonal to the plane. Since the
+        vector <m>\vec n=(a,b,c)</m> is orthogonal to the plane,
+        the line consists of all points of the form 
+        <m>(x_0,y_0,z_))+t(a,b,c)</m>. The value of <m>t</m> that give the point in
+        the plane satisfies
+        <md>
+        <mrow>
+            a(x_0+ta)+b(y_0+tb)+c(z_0+tc)+d
+            \amp =ax_0+by_0+cz_0+d+t(a^2+b^2+c^2)
+        </mrow>
+        <mrow>
+            \amp =0
+        </mrow>
+        </md>
+        and so
+        <me>
+            t=-\frac{ax_0+by_0+cz_0+d}{a^2+b^2+c^2}.
+        </me>
+        </p>
+
+        <p>
+        The distance to the plane is now easy to compute.
+        If <m>\vec x=(x_0,y_0,z_0)</m> and <m>\vec n=(a,b,c)</m>
+        then the distance from <m>\vec x</m> to <m>\vec x+ t\vec n</m>
+        satisfies
+        <me>
+            d(\vec x,\vec x+ t\vec n)
+            =\|\vec x+ t\vec n-\vec x\|
+            =|t|\|\vec n\|
+            =\frac{|ax_0+by_0+cz_0+d|}{\|\vec n\|^2} \|\vec n\|
+        </me>
+        and so the distance <m>D</m> from the point to the plane satisfies
+        <me>
+            D=\frac{|ax_0+by_0+cz_0+d|}{\|\vec n\|}.
+        </me>
+        </p>
+
+        <theorem xml:id="DistancePtToPlane"><title>Distance from a point to a plane</title>
+        <statement>
+        <p>
+        If <m>D</m> is the distance from a point <m>(x_0,y_0,z_0)</m> 
+        to the plane with equation <m>ax+by+cz+d=0</m>, and
+        <m>\vec n=(a,b,c)</m>, then
+        <me>
+            D=\frac{|ax_0+by_0+cz_0+d|}{\|\vec n\|} 
+            =\frac{|ax_0+by_0+cz_0+d|}{\sqrt{a^2+b^2+c^2}} 
+        </me>
+        </p>
+        </statement>
+        </theorem>
+    
+        <p>Compare this result with the one in <m>\R^2</m>:
+        <xref ref="DistancePtToLine" />
+        </p>
+
+        <p>
+        The distance from a point to a hyperplane in <m>\R^n</m> is computed
+        analoguously.
+        </p>
+        </subsection>
+    </section>
+    
+    <section><title>Geometric applications</title>
+    <introduction>
+    <p>The dot product and cross product in <m>\R^3</m> allow us to 
+    compute many different geometric properties of lines and planes. 
+    </p>
+    </introduction>
+      
+        <subsection><title>The equation of the line of intersection of two planes</title>
+        <p>
+        Suppose we are given the equation of two planes and want 
+        the equation of the line of intersection. If the two equations are
+        <me>
+            a_1x+b_1y+c_1z+d_1=0 \rlap{\text{ and}}\\
+            a_2x+b_2y+c_2z+d_2=0
+        </me>
+        then the line of intersection will be the set of all points that
+        satisfy <q>both</q> equations. We can rewrite the two equations as
+        <me>
+            a_1x+b_1y+c_1z=-d_1 \rlap{\text{ and}}\\
+            a_2x+b_2y+c_2z=-d_2
+        </me>
+        and use the augmented matrix
+        <me>
+            \left[
+            \begin{array}{ccc|c}
+                a_1\amp b_1\amp c_1\amp -d_1\\
+                a_2\amp b_2\amp c_2\amp -d_2
+            \end{array}
+            \right]
+        </me>
+        </p>
+        
+        <p>
+        When this matrix is put in reduced row echelon form, there will be
+        one free variable, which we may call <m>t</m>. Writing the solution as
+        a vector and rearranging give the equation of a line.
+        </p>
+    
+        <p>
+        Here is an example to show how this technique works:
+        the equations of the planes are
+        <me>
+            x+y+z=-2\\
+            2x+y-z=2
+        </me>
+        Here is the picture of the two planes and the line of intersection:
+        </p>
+
+        <figure>
+        <caption/>
+        <image width="70%">
+        <asymptote>
+            settings.render=4;
+            import graph3;
+            currentprojection=orthographic(3,3,1);
+            size(250);
+            unitsize(0.5cm);
+            currentprojection=orthographic(1,4,1);
+            currentlight=White;
+            defaultpen(linewidth(1));
+            
+            // 2x+y-z=-2
+            real f(pair z) { return (2+2z.x+z.y);} // equation of plane
+            draw(surface(f,(-2,-2),(2.2,2.2)),lightblue,nolight);
+            label("$2x+y-z=2$",(-3,8,-2),blue);
+            
+            // x+y+z=2
+            real f(pair z) { return (2-z.x-z.y);} // equation of plane
+            draw(surface(f,(-2,-2),(2.2,2.2)),lightgreen,nolight);
+            label("$x+y+z=-2$",(5,6,-2),green);
+            
+            triple F(real t) { return (-4,6,0)+t*(2,-3,1);}
+            
+            draw(F(3)--F(0.75),red+linewidth(1));
+            label("$L$",(-2,8,3),4S);
+            axes3("$x$","$y$","$z$",(-2,-2,-2),(6,9,8));
+        </asymptote>
+        </image>
+        </figure>
+    
+        <p>
+        The augmented matrix for the system is
+        <me>
+            \left[
+            \begin{array}{ccc|c}
+                2\amp1\amp-1\amp2\\
+                1\amp1\amp1\amp-2
+                \end{array}
+            \right]
+        </me>
+        which has a reduced row echelon form of
+        <me>
+            \left[
+            \begin{array}{ccc|c}
+                1\amp0\amp-2\amp-4\\
+                0\amp1\amp3\amp6
+            \end{array}
+            \right]
+        </me>
+        Hence <m>z</m> is a free variable and can be assigned the value <m>t</m>.
+        This gives <m>z=t</m>, <m>y=6-3t</m> and <m>x=-4+2t</m>, which may be written as
+        <me>
+            (x,y,z)=(-4+2t,6-3t,t)=(-4,6,0) + t(2,-3,1)
+        </me>
+        </p>
+    
+        <p>
+        As another example, consider the two planes with equations written as
+        <me>
+            x+y=2\\
+            x+y-z=3
+        </me>
+        </p>
+    
+        <figure>
+        <caption/>
+        <image width="70%">
+        <asymptote>
+            settings.render=4;
+            import graph3;
+            currentprojection=orthographic(3,3,1);
+            size(250);
+            unitsize(0.5cm);
+            currentprojection=orthographic(2,1,6);
+            currentlight=White;
+            defaultpen(linewidth(1));
+            real A=1, B=1, C=-1, D=3;
+            real f(pair z) { return (D-A*z.x-B*z.y)/C;} // equation of plane
+            draw(surface(f,(-5,-5),(5,5)),lightblue,nolight);
+            label("$x+y-z=3$",(-3,8,9),blue);
+            real A=2, B=2, C=0, D=4;
+            path3 g=((-3,5,-10)--(5,-3,-10)--(5,-3,5)--(-3,5,5)--cycle);
+            draw(surface(g),lightgreen,nolight);
+            label("$x+y=2$",(-1,6,-7),green);
+            draw((-6,8,-1)--(8,-6,-1),red+linewidth(1));
+            label("$L$",(-6,8,1),4S);
+            axes3("$x$","$y$","$z$",(-2,-2,-2),(8,8,8));
+        </asymptote>
+        </image>
+        </figure>
+ 
+        <p>
+        Then the augmented matrix is 
+        <me>
+            \left[
+            \begin{array}{ccc|c}
+                1\amp1\amp0\amp2\\
+                1\amp1\amp-1\amp3
+            \end{array}
+            \right]
+        </me>
+        with reduced row echelon form 
+        <me>
+            \left[
+            \begin{array}{ccc|c}
+                1\amp1\amp0\amp2\\
+                0\amp0\amp1\amp-1
+            \end{array}
+            \right].
+        </me>
+        This means that <m>y</m> is a free variable and may be assigned 
+        the value <m>t</m>, from which
+        follows <m>z=-1</m>, <m>y=t</m> and <m>x=2-t</m>. 
+        In other words,
+        <me>
+        (x,y,z)=(2-t,t,-1)= (2,0,-1)+t(-1,1,0)
+        </me>
+        which is the equation of the line <m>L</m>.
+        </p>
+        </subsection>
+
+        <subsection xml:id="IntersectionLinePlane"><title>Intersection of a Line and a Plane</title>
+        <p>
+        Suppose we have a line <m>L</m> with equation <m>(x_0,y_0,z_0)+t\vec {n_0}</m>
+        and a plane with equations <m>ax+by+cz=0</m>. Is there a point in both the
+        line and the plane, and, if so, what is it? As usual when discussing planes, 
+        let <m>\vec n=(a,b,c)</m>. Then a point <m>\vec x=(x,y,z)</m> is in the plane if and 
+        only if <m>\vec x\cdot \vec n=0</m>. If <m>\vec x</m> is also on the line,
+        then <m>\vec x=(x_0,y_0,z_0)=t\vec{n_0}</m> for some <m>t</m>. Then
+        <me>
+            ((x_0,y_0,z_0)+t\vec{n_0})\cdot\vec n=0\\
+            (x_0,y_0,z_0)\cdot \vec n= -t( \vec{n_0}\cdot\vec n)
+        </me>
+        and, if <m>\vec{n_0}\cdot\vec n\not=0</m>,
+        <me>
+            t=-\frac{(x_0,y_0,z_0)\cdot \vec n}{\vec{n_0}\cdot\vec n}
+        </me>
+        </p>
+        <p>
+        Here is the picture of the situation. The points on the line are
+        determined by using all the different values of <m>t</m>. The point of 
+        intersection is the particular <m>t</m> where
+        <m>t=-\frac{(x_0,y_0,z_0)\cdot \vec n}{\vec{n_0}\cdot\vec n}</m>.
+        </p>
+
+        <figure>
+        <caption/>
+        <image width="75%">
+        <asymptote>
+            settings.render=4;
+            import graph3;
+            currentprojection=orthographic(3,3,1);
+            import graph;
+            defaultpen(linewidth(2.0));
+            defaultpen(fontsize(16pt));
+            //size(200);
+            unitsize(1.3cm);
+            import graph3;
+            //unitsize(0.7cm);
+            currentprojection=orthographic(1,4,1);
+            currentlight=White;
+            path p=box((0,0),(8,8));
+            path3 p3=path3(p);
+            triple n0=(2,0,-2);
+            triple n=(0,0,1);
+            triple x0=(0,4,4);
+            triple int_pt=x0-dot(x0,n)/dot(n0,n)*n0;
+            dot(int_pt);
+            draw(surface(p3),lightblue,nolight);
+            label("$ax+by+cz+d=0$",(2,8,-1),blue);
+            triple F(real t) { return x0+t*n0;}
+            draw(F(0)--F(3.5),linewidth(1));
+            label("$L: (x_0,y_0,z_0)+t\vec {n_0}$",x0,2N);
+            label("$t=-\frac{(x_0,y_0,z_0)\cdot \vec n}{\vec{n_0}\cdot\vec n}$", (7,0,2),0.5N);
+            draw((7,0,2){(0,0,-1)}..{(0,0,-1)}int_pt,Arrow3);
+        </asymptote></image>
+        </figure>
+        
+        <p>
+        What if <m>\vec{n_0}\cdot\vec n=0</m>?
+        Then a line with direction vector <m>n</m> (that is, orthogonal to the plane)
+        itself is orthogonal to <m>L</m>. 
+        If <m> (x_0,y_0,z_0)</m> is not in the plane, the line is then 
+        parallel to the plane and never intersects it.
+        On the other hand, if <m> (x_0,y_0,z_0)</m> is in the plane, the line is then 
+        actually contained in the plane, so every point on the line intersects it.
+        </p>
+        
+        <p>
+        In the following picture, the red line had direction vector <m>\vec n=(a,b,c)</m>
+        and hence is orthogonal to the plane. Since the line <m>L</m> has direction vector
+        <m>\vec{n_0}</m>, and <m>\vec{n_0}\cdot\vec{n}=0</m>,
+        <m>L</m> is also orthogonal to the red line. That makes the plane and the line
+        <m>L</m> parallel.
+        </p>
+        
+        <figure>
+        <caption/>
+        <image width="75%">
+        <asymptote>
+            settings.render=4;
+            import graph3;
+            currentprojection=orthographic(3,3,1);
+        import graph;
+        //size(200);
+            unitsize(1.5cm);
+        import graph3;
+        //unitsize(0.8cm);
+        currentprojection=orthographic(1,4,1);
+        currentlight=White;
+        defaultpen(linewidth(1));
+        path p=box((0,0),(8,8));
+        path3 p3=path3(p);
+        triple n0=(1,1,0);
+        triple n=(0,0,1);
+        triple x0=(0,1,4);
+        draw(surface(p3),lightblue,nolight);
+            defaultpen(linewidth(2.0));
+            defaultpen(fontsize(32pt));
+        label("$ax+by+cz+d=0$",(2,8,-1),blue);
+        triple F(real t) { return x0+t*n0;}
+        label("$L: (x_0,y_0,z_0)+t\vec {n_0}$",x0,2N);
+        draw(F(0)--F(7),linewidth(1));
+        dot(F(3.0));
+        triple proj=((F(3.0).x,F(3.0).y,0));
+        dot(proj);
+        draw(F(3.0)--proj,red);
+        </asymptote>
+        </image>
+        </figure>   
+        </subsection>
+    
+        <subsection><title>Distance Between Two Lines</title>
+        <p>
+        If two lines intersect, the distance between them is obviously <m>0</m>. Otherwise,
+        there are two cases:
+            <ul>
+            <li><p> The lines lie in a plane, in which case the lines are <em>parallel</em>.</p></li>
+            <li><p> The lines do not lie in a plane, in which case the lines are <em>skew</em>.</p></li>
+            </ul>
+        </p>
+    
+        <paragraphs><title>Parallel lines</title>
+        <p>
+        We start with two parallel lines with equations
+            <ul>
+            <li><p> <m>L_1</m> with equation <m>(x,y,z)=\vec{X_1} + t_1\vec{n_1}</m></p></li>
+            <li><p> <m>L_2</m> with equation <m>(x,y,z)=\vec{X_2} + t_2\vec{n_2}</m></p></li>
+            </ul>
+        </p>
+
+        <figure>
+        <caption/>
+        <image width="75%">
+        <asymptote>
+            settings.render=4;
+            import graph3;
+            currentprojection=orthographic(3,3,1);
+            import graph3;
+            //import three;
+            unitsize(3.5cm);
+            currentprojection=orthographic(2,3,1);
+            currentlight=White;
+            defaultpen(linewidth(1.0));
+            defaultpen(fontsize(16pt));
+            // Line 1
+            triple x1=(-1,-1,0), n1=(1,-1/2,0);
+            triple x1=(-1,-1,0), n1=(2,2,1);
+            triple F1(real t){
+            return x1+t*n1;
+            }
+            // Line 2
+            triple x2=(-1,-1,1), n2=(2,2,1);
+            triple F2(real t){
+            return x2+t*n2;
+            }
+            real delta=dot(n1,n2)^2-dot(n1,n1)*dot(n2,n2);
+            triple diff=x2-x1;
+            real t1=dot(n1,n2)*dot(diff,n2) - dot(diff,n1)*dot(n2,n2);
+            real t2=dot(n1,n1)*dot(diff,n2) - dot(diff,n1)*dot(n1,n2);
+            dot(x1+t1*n1); dot(x2+t2*n2);
+            //draw(F1(t1-1.5)--F1(t1+1.2),green);
+            draw(F1(t1-2.5)--F1(t1+2.2),green);
+            draw(F2(t2-3)--F2(t2+2),red);
+            draw(F1(t1)--F2(t2));
+            label("$d$",(F1(t1)+F2(t2))/2,E);
+            label("$L_1$",F1(t1+2.2),S);
+            label("$\vec{X_1}+t_1\vec{n_1}$",F1(t1-1/4),2S);
+            label("$L_2$",F2(t2+1.754),N);
+            label("$\vec{X_2}+t_2\vec{n_2}$",F2(t2-1/4),3.5N);
+            axes3("x","y","z",min=(0,0,0),max=(2,2,2));
+            </asymptote>
+        </image>
+        </figure>  
+        </paragraphs>
+    
+        <paragraphs><title>Skew lines</title>
+        <p>
+        We start with the eqations of two skew lines:
+            <ul>
+            <li><p> <m>L_1</m> has equation 
+                <m>(x,y,z)=\vec{X_1}+t_1\vec{n_1}</m>, <m>-\infty \lt t \lt\infty</m></p></li>
+            <li><p> <m>L_2</m> has equation  
+                <m>(x,y,z)=\vec{X_2}+t_2\vec{n_2}</m> <m>-\infty \lt t \lt\infty</m></p></li>
+            </ul>
+        We want the (shortest) distance <m>d</m> between the lines.
+        </p>
+    
+        <figure>
+        <caption/>
+        <image width="75%">
+        <asymptote>
+            settings.render=4;
+            import graph3;
+            currentprojection=orthographic(3,3,1);
+            import graph3;
+            unitsize(3.5cm);
+            currentprojection=orthographic(2,3,1);
+            currentlight=White;
+            defaultpen(linewidth(1.0));
+            defaultpen(fontsize(16pt));
+            
+            // Line 1
+            triple x1=(-1,-1,0), n1=(1,-1/2,0);
+            //triple x1=(-1,-1,0), n1=(2,2,1);
+            triple F1(real t){
+               return x1+t*n1;
+               }
+            
+            // Line 2
+            triple x2=(-1,-1,1), n2=(2,2,1);
+            triple F2(real t){
+               return x2+t*n2;
+               }
+            
+            real delta=dot(n1,n2)^2-dot(n1,n1)*dot(n2,n2);
+            triple diff=x2-x1;
+            real t1=dot(n1,n2)*dot(diff,n2) - dot(diff,n1)*dot(n2,n2);
+            real t2=dot(n1,n1)*dot(diff,n2) - dot(diff,n1)*dot(n1,n2);
+            dot(x1+t1*n1); dot(x2+t2*n2);
+            
+            draw(F1(t1-1.5)--F1(t1+1.2),green);
+            draw(F2(t2-3)--F2(t2+2),red);
+            
+            draw(F1(t1)--F2(t2));
+            label("$d$",(F1(t1)+F2(t2))/2,E);
+            label("$L_1$",F1(t1+1),S);
+            label("$\vec{X_1}+t_1\vec{n_1}$",F1(t1),S);
+            label("$L_2$",F2(t2+1.754),N);
+            label("$\vec{X_2}+t_2\vec{n_2}$",F2(t2),2.5N);
+            axes3("x","y","z",min=(0,0,0),max=(2,2,2));
+        </asymptote>
+        </image>
+        </figure>
+        
+        <p>
+        The direction vector for <m>L_1</m> is <m>\vec{n_1}</m>
+        while that of <m>L_2</m> is <m>\vec{n_2}</m>. Let us say that
+        the shortest line segment joining <m>L_1</m>
+        to <m>L_2</m> is on the line <m>L</m>. The length of the line segment, <m>d</m>,
+        is the distance we wish to compute. In addition, let <m>t_1</m> and <m>t_2</m>
+        be the particular values so both
+        <m>\vec{X_1}+t_1\vec{n_1}</m> and
+        <m>\vec{X_2}+t_2\vec{n_2}</m> lie on <m>L</m>.
+        </p>
+    
+        <p>
+        Now <m>L</m> is perpendicular to both <m>L_1</m> and <m>L_2</m> , so the direction vector
+        of <m>L</m> is orthogonal to both <m>\vec{n_1}</m> and <m>\vec{n_2}</m>.
+        How can such a direction vector be produced? With the cross product, of course!
+        And so we let <m>\vec{n_1}\times\vec{n_2}</m> be the direction vector of <m>L</m>.
+        We then have, for some <m>t_3</m>,
+        </p>
+        <p>
+        <me>
+            \vec{X_1}+t_1\vec{n_1} + t_3(\vec{n_1}\times\vec{n_2})
+            =\vec{X_2}+t_2\vec{n_2}\\
+            t_1\vec{n_1} - t_2\vec{n_2} + t_3(\vec{n_1}\times\vec{n_2})
+            =\vec{X_2}-\vec{X_1}\tag{$*$}
+        </me>
+        </p>
+    
+        <p>
+        In principle the problem is solved. We have three unknowns <m>t_1</m>, <m>t_2</m>
+        and <m>t_3</m>, and each of the three coordinates gives an equation, so we have
+        three equations in three unknowns. There is a quicker way: take the dot
+        product of both sides of (<m>*</m>) above with <m>\vec{n_1}</m> 
+        and then with <m>\vec{n_2}</m>. This gives
+        <me>
+            \|\vec{n_1}\|^2 t_1 -(\vec{n_1}\cdot\vec{n_2})t_2
+            =(\vec{X_2}-\vec{X_1})\cdot \vec{n_1}\\
+            (\vec{n_1}\cdot\vec{n_2}) t_1 -\|\vec{n_2}\|^2t_2
+            =(\vec{X_2}-\vec{X_1})\cdot \vec{n_2}
+        </me>
+        </p>      
+        </paragraphs>
+        </subsection>
+    </section>
+
+
+    <section>
+        <title>Linear indepencence, spanning and bases in <m>\mathbb{R}^n</m></title>
+        <introduction>
+            <p>
+            Recall the definition of linear combinations: <m>\vec w</m> is a linear
+            combination of <m>\vec x_1,\vec x_2,\ldots,\vec x_m</m> if
+            <me>\vec w=r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_m </me>
+            for some real numbers <m>r_1, r_2,\ldots,r_n</m>.
+            </p>
+        </introduction>
+    
+    	<subsection>
+    	    <title>Linear independence</title>
+    	    <p>
+    	        Suppose that <m>\vec x_1,\vec x_2,\ldots,\vec x_m</m> are vectors
+    	        in <m>\mathbb{R}^n</m>. Is it possible that <m>\vec 0</m> is a linear combination
+    	        of <m>\vec x_1,\vec x_2,\ldots,\vec x_m</m>? The answer is certainly yes:
+    	        just set <m>r_1=r_2=\cdots=r_n=0</m>. Is this the only way of doing this? 
+    	        If so, the vectors are called <em>linearly independent.</em>
+    	    </p>
+    	
+    	    <definition>
+    	    <title>Linearly independent vectors</title>
+            <statement>
+    	    <p>
+    	        The set of vectors <m>\{\vec x_1,\vec x_2,\ldots,\vec x_m\}</m> is
+    	        linearly independent if
+    	        <me>
+    	            r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_m=\vec0
+    	        </me>
+    	        implies  <m>r_1=r_2=\cdots=r_n=0</m>.
+    	    </p>
+            </statement>
+    	    </definition>
+    	
+    	    <example>
+    	        <title>Three vectors in <m>\mathbb{R}^4</m></title>
+    	        <p>
+    	            Let <m>\vec x_1=(1,2,1,1)</m>, <m>\vec x_2=(0,1,2,1)</m> and <m>\vec x_3=(-1,1,-1,1)</m>.
+    	            Then the equation
+    	            <me>
+    	            r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_m=\vec0
+    	            </me>
+    	        says
+    	            <md>
+    	             <mrow>  r_1 + 0r_2 -  r_3\amp=0 \amp\amp \textrm{from the first coordinate}</mrow>
+    	             <mrow> 2r_1 +  r_2 +  r_3\amp=0 \amp\amp \textrm{from the second coordinate}</mrow>
+    	             <mrow>  r_1 + 2r_2 -  r_3\amp=0 \amp\amp \textrm{from the third coordinate}</mrow>
+    	             <mrow>  r_1 +  r_2 +  r_3\amp=0 \amp\amp \textrm{from the fourth coordinate}</mrow>
+    	            </md>
+    	            This system of linear equations is easy to solve: the only solution is
+    	            <m>r_1=r_2=r_3=0</m> and so the set of vectors 
+    	            <m>\{\vec x_1,\vec x_2,\vec x_3\}</m> is linearly independent.
+    	            Notice that the reduced row echelon form for this system of equations is
+    	            <me>
+    	             \left[\begin{array}{ccc|c}
+    	             1 \amp 0 \amp 0 \amp 0\\
+    	             0 \amp 1 \amp 0 \amp 0\\
+    	             0 \amp 0 \amp 1 \amp 0\\
+    	             0 \amp 0 \amp 0 \amp 0
+    	             \end{array}\right]
+    	            </me>
+    	        </p>
+    	    </example>
+    	
+    	    <p>
+    	        Now suppose we form a matrix <m>X</m> using <m>\vec x_1,\vec x_2,\ldots,\vec x_m</m> 
+    	        as columns:
+    	        <me>
+    	         X=
+    	         \begin{bmatrix}
+    	         \vec x_1 \amp \vec x_2 \amp \cdots \amp \vec x_m
+    	         \end{bmatrix}
+    	        </me>
+    	        Then the set <m>\{\vec x_1,\vec x_2,\ldots,\vec x_m\}</m> is linearly
+    	        independent if and only if
+    	        <me>
+    	         X \begin{bmatrix} r_1\\r_2\\ \vdots\\ r_m \end{bmatrix}=\vec0
+    	         \textrm{ implies } r_1=r_2=\cdots=r_n=0.
+    	        </me>
+    	        Viewing this as a system of linear equations, this says that the reduced
+    	        row echelon form of <m>X</m> yields no free variables when determining the 
+    	        solutions. 
+    	        This, in turn, means the nonzero rows of the reduced row echelon form of <m>X</m>
+    	        is the identity matrix (see the previous example). 
+    	    </p>
+    	    
+    	    <theorem xml:id="IndependentSize">
+    	        <title>A linearly independent set in <m>\mathbb{R}^n</m> has as most <m>n</m> elements</title>
+    	        <statement>
+    	            <p>
+    	            If <m>\{\vec x_1,\vec x_2,\ldots,\vec x_m\}</m> is a linearly independent
+    	            set in <m>\mathbb{R}^n</m>, then <m>m\leq n</m>.
+    	            </p>
+    	        </statement>
+    	        <proof>
+    	        <p>
+    	        The matrix
+    	            <me>
+    	            X=
+    	            \begin{bmatrix}
+    	            \vec x_1 \amp \vec x_2 \amp \cdots \amp \vec x_m
+    	            \end{bmatrix}
+    	            </me>
+    	        has <m>n</m> rows and <m>m</m> columns. Since the reduced row echelon form
+    	        of <m>X</m> has the identity matrix for its nonzero rows, the number
+    	        of rows is at least as large as the number of columns. This says
+    	        <m>m\leq n</m>.
+    	        </p>
+    	        </proof>
+    	    </theorem>
+        </subsection>
+    
+        <subsection>
+    	    <title>Spanning sets</title>
+    	    <definition>
+    	        <title>Spanning vectors</title>
+                <statement>
+    	        <p>
+    	        A set of vectors <m>\{\vec x_1,\vec x_2,\ldots,\vec x_m\}</m>
+    	        <em>spans</em> <m>\mathbb{R}^n</m> if, for any <m>\vec w</m> in <m>\mathbb{R}^n</m>,
+    	        there exist <m>r_1, r_2,\ldots,r_m</m> so that
+    	        <me>
+    	        r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_m=\vec w.
+    	        </me>
+    	        </p>
+                </statement>
+    	    </definition>
+    	    <p>
+            In other words, for any <m>\vec w</m>, we can find solutions to
+    	        <me>
+    	        r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_m=\vec w.
+    	        </me>
+    	    viewed as an equation with variables <m>r_1,r_2,\ldots,r_m</m>.
+            </p>
+        	
+    	    <example>
+    	    <title>Four vectors in <m>\mathbb{R}^3</m></title>
+    	    <p>
+    	    Let 
+    	    <m>\vec x_1=(1,2,3)</m>,
+    	    <m>\vec x_2=(3,1,1)</m>,
+    	    <m>\vec x_3=(1,0,1)</m>, and
+    	    <m>\vec x_4=(3,2,4)</m>.
+    	    Also, let <m>\vec{w}=(1,3,1)</m>.
+    	    Now the equation
+    	        <me>
+    	        r_1\vec{x_1} +
+    	        r_2\vec{x_2} +
+    	        r_3\vec{x_3} +
+    	        r_4\vec{x_4} = \vec{w}.
+    	        </me>
+    	    becomes
+    	        <md>
+    	        <mrow>  r_1 + 3r_2 + r_3 + 3r_4 \amp=1 \amp\amp \textrm{from the first coordinate}</mrow>
+    	        <mrow> 2r_1 +  r_2 +0r_3 + 2r_4 \amp=3 \amp\amp \textrm{from the second coordinate}</mrow>
+    	        <mrow> 3r_1 +  r_2 + r_3 + 4r_4 \amp=1 \amp\amp \textrm{from the third coordinate}</mrow>
+    	        </md>
+    	    The reduced row echelon form of
+    	        <me>
+    	        \left[\begin{array}{cccc|c}
+    	        1 \amp 3 \amp 1 \amp 3 \amp 1\\
+    	        2 \amp 1 \amp 0 \amp 2 \amp 3\\
+    	        3 \amp 1 \amp 1 \amp 4 \amp 1\\
+    	        \end{array}\right]
+    	        </me>
+    	    is
+    	        <me>
+    	        \left[\begin{array}{cccc|c}
+    	        1 \amp 0 \amp 0 \amp \frac56 \amp 1\\
+    	        0 \amp 1 \amp 0 \amp \frac13 \amp 1\\
+    	        0 \amp 0 \amp 1 \amp \frac76 \amp -3\\
+    	        \end{array}\right]
+    	        </me>
+    	    and so <m>r_1=1</m>, <m>r_2=1</m> and <m>r_3=-3</m> gives
+    	    <m>r_1\vec x_1+r_2\vec x_2+r_3\vec x_3=\vec w</m>.
+    	    Notice that if we replace <m>\vec w</m> by <m>\vec w'</m>,
+    	    the only thing that changes is the last column, and so the
+    	    reduced row echelon form will be the same in the first three
+    	    columns, and hence there will be a solution for <m>\vec{w}'</m>
+    	    too.
+    	    </p>
+    	    </example>
+        	
+    	    <theorem xml:id="SpanningSize">
+    	        <title>A spanning set in <m>\mathbb{R}^n</m> has as least <m>n</m> elements</title>
+    	        <statement>
+    	        <p>
+    	        If <m>\{\vec x_1,\vec x_2,\ldots,\vec x_m\}</m> is a spanning
+    	        set in <m>\mathbb{R}^n</m>, then <m>n\leq m</m>.
+    	        </p>
+    	        </statement>
+    	        <proof>
+    	        <p>
+    	        Define the matrix <m>X</m> by
+    	            <me>
+    	            X=
+    	            \begin{bmatrix}
+    	            \vec x_1 \amp \vec x_2 \amp \cdots \amp \vec x_m
+    	            \end{bmatrix}.
+    	            </me>
+    	        and let <m>X'</m> be the reduced row echelon form of <m>X</m>. This means
+    	        there are elementary matrices <m>E_1,E_2,\ldots,E_k</m> so that
+    	        <m>X'=E_kE_{k-1}\cdots E_2E_1X</m>.
+    	        Let 
+    	        <m>\vec e_n=(0,0,\ldots,0,1)</m>, and
+    	            <me> \vec w= E_1^{-1}E_2^{-1}\cdots E_k^{-1} \vec e_n.</me>
+    	            so that
+    	            <me> E_kE_{k-1}\cdots E_2E_1\vec w= \vec e_n.</me>
+    	        Now consider
+    	            <me>
+                    r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_m=\vec w.
+                    </me>
+    	            which is the same as
+    	            <me>
+    	            X \begin{bmatrix} r_1\\r_2\\ \vdots\\ r_m \end{bmatrix}=\vec w.
+    	            </me>
+    	        To solve this we compute the reduced row echelon form of
+    	            <me>
+    	            \left[\begin{array}{cccc|c}
+    	            \vec x_1 \amp \vec x_2 \amp \cdots \amp \vec x_m \amp \vec w
+    	            \end{array}\right]
+    	            </me>
+    	        We multiply this matrix on the left by 
+    	        <m>E_kE_{k-1}\cdots E_2E_1</m> to get the matrix
+    	            <me>
+    	            \left[\begin{array}{c|c}
+    	            X' \amp \vec e_n
+    	            \end{array}\right]
+    	            </me>
+            	
+    	        Suppose that the last row of <m>X'</m> is all-zero row.
+    	        Then the last row of the reduced row echelon form is 
+    	        <m>[0 \cdots 0 \mid 1]</m>, which is the criterion for the
+    	        system of equations having no solution. 
+                This can't happen because by assumption 
+    	        <m>\{\vec x_1,\vec x_2,\ldots,\vec x_m\}</m> is a spanning set.
+    	        </p>
+    	        <p>
+    	        Since <m>X'</m> has no all-zero row at the bottom, every row must contain
+    	        a leading one. This means the number of columns of <m>X'</m> is at least
+    	        as large as the number of rows, that is to say, <m>n\leq m</m>.
+    	        </p>
+    	        </proof>
+    	    </theorem>
+    	</subsection>
+    
+    	<subsection>
+    		<title>Bases of <m>\mathbb{R}^n</m></title>
+    		<definition>
+    			<title>Basis of <m>\mathbb{R}^n</m></title>
+                <statement>
+    			<p>
+    			A set of vectors <m>\{\vec x_1,\vec x_2,\ldots,\vec x_m\}</m>
+    			is a <em>basis</em> (plural <em>bases</em>) if it is both linearly independent 
+                and spans <m>\mathbb{R}^n</m>.
+    			</p>
+                </statement>
+    		</definition>
+    		
+    		
+    		<theorem>
+    		<title>A basis of <m>\mathbb{R}^n</m> is of size <m>n</m> </title>
+    		<statement>
+    			<p>
+    			If <m>\{\vec x_1,\vec x_2,\ldots,\vec x_m\}</m> is a basis
+    			of <m>\mathbb{R}^n</m>, then <m>m=n</m>.
+    			</p>
+    		</statement>
+    		<proof>
+    			<p>
+    			From <xref ref="IndependentSize" /> we have <m>m\leq n</m>.
+    			From <xref ref="SpanningSize" /> we have <m>n\leq m</m>.
+    			Hence <m>m=n</m>.
+    			</p>
+    		</proof>
+    		</theorem>
+
+        <theorem>
+        <title>Determining if <m>\{\vec x_1,\ldots,\vec x_n\}</m> is a basis for
+        <m>\mathbb{R}^n</m></title>
+        <statement>
+        <p>
+        Let <m>\mathcal{X}=\{\vec x_1,\vec x_2,\ldots,\vec x_n\}</m> be
+        a set of vectors in <m>\mathbb{R}^n</m>, and let <m>X</m> be
+        the matrix with
+        <m>\vec x_1,\vec x_2,\ldots,\vec x_n</m>
+        as columns:
+	    <me>
+	         X=
+	         \begin{bmatrix}
+	         \vec x_1 \amp \vec x_2 \amp \cdots \amp \vec x_n
+	         \end{bmatrix}.
+	    </me>
+        Then <m>\mathcal{X}</m> is a basis
+        of <m>\mathbb{R}^n</m> if and only if <m>X</m> is nonsingular.
+        </p>
+        </statement>
+        <proof>
+        <p>
+        The equation <m>r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_n=\vec w</m>
+        is the same as the matrix equation
+        <me>
+        X \begin{bmatrix} r_1\\r_2\\ \vdots\\r_n \end{bmatrix} = \vec w
+        </me>
+        and so, setting <m>\vec w=\vec0</m>, we see that
+        <m>\mathcal{X}</m> is linearly independent if and only if
+        <m>X \begin{bmatrix} r_1\\ \vdots\\r_n \end{bmatrix} =\vec 0</m>
+        implies <m>\begin{bmatrix} r_1\\ \vdots\\r_n \end{bmatrix} =\vec0</m>.
+        By <xref ref="InvertibilityEquivalence" />, 
+        this is equivalent to <m>X</m> being nonsingular.
+        </p>
+        <p>
+        Also, if <m>\mathcal{X}</m> spans <m>\mathbb{R}^n</m>, then,
+        for any <m>\vec w</m> in <m>\mathbb{R}^n</m>,
+        <m>X \begin{bmatrix} r_1\\ \vdots\\r_n \end{bmatrix} =\vec w</m>
+        always has a solution. Again, by 
+        <xref ref="InvertibilityEquivalence" />, this is equivalent
+        to <m>X</m> being nonsingular.
+        </p>
+        </proof>
+        </theorem>
+        <p>
+        Notice that something interesting happened in the proof of the
+        previous theorem.  When <m>m=n</m>, <m>\mathcal{X}</m> need be only 
+        linearly independent <em>or</em> spanning to show that it is a basis. 
+        </p>
+        <corollary>
+        <title>Determining if <m>\{\vec x_1,\ldots,\vec x_n\}</m> is a basis for
+        <m>\mathbb{R}^n</m></title>
+        <statement>
+        <p>
+        <m>\mathcal{X}=\{\vec x_1,\vec x_2,\ldots,\vec x_m\}</m> is
+        a basis for <m>\mathbb{R}^n</m> if any two of the following three
+        properties hold:
+        <ul>
+        <li><p>
+        <m>\mathcal{X}</m> is linearly independent.
+        </p></li>
+        <li><p>
+        <m>\mathcal{X}</m> is a spanning set for <m>\mathbb{R}^n</m>.
+        </p></li>
+        <li><p>
+        <m>m=n</m>.
+        </p></li>
+        </ul>
+        </p>
+        </statement>
+        </corollary>
+
+        <example>
+        <title>Examples of bases of <m>\mathbb{R}^n</m></title>
+        <p>
+        <ul>
+        <li>
+        <p>
+        Let
+        <md>
+            <mrow>\vec e_1=(1,0,0,\ldots,0)</mrow>
+            <mrow>\vec e_2=(0,1,0,\ldots,0)</mrow>
+            <mrow>\vec e_3=(0,0,1,\ldots,0)</mrow>
+            <mrow>\vdots</mrow>
+            <mrow>\vec e_n=(0,0,0,\ldots,1)</mrow>
+        </md>
+        The set <m>\{\vec e_1,\ldots,\vec e_n\}</m> is called the 
+        <em>standard basis</em> of <m>\mathbb{R}^n</m>.
+        </p>
+        </li>
+        <li>
+        <p>
+        Let
+        <md>
+            <mrow>\vec u_1=(1,1,1,\ldots,1)</mrow>
+            <mrow>\vec u_2=(0,1,1,\ldots,1)</mrow>
+            <mrow>\vec u_3=(0,0,1,\ldots,1)</mrow>
+            <mrow>\vdots</mrow>
+            <mrow>\vec u_n=(0,0,0,\ldots,1)</mrow>
+        </md>
+        The set <m>\{\vec u_1,\ldots,\vec u_n\}</m> a basis
+        of <m>\mathbb{R}^n</m>.
+        </p>
+        </li>
+        </ul>
+        </p>
+
+        </example>
+
+    	</subsection>
+    
+        <subsection>
+            <title>Subspaces of <m>\mathbb{R}^n</m></title>
+            <introduction>
+                <definition xml:id="SubspaceDefinition">
+                <title>Subspace of <m>\mathbb{R}^n</m></title>
+                <statement>
+                <p>
+                A nonempty subset <m>S</m> of <m>\mathbb{R}^n</m> is a <em>subspace</em>
+                if it satisfies the following two conditions:
+                    <ol>
+                    <li> <p>
+                    If <m>\vec x\in S</m> and <m>\vec y\in S</m>, then <m>\vec x+\vec y\in S</m>
+                    (this is called closure under addition).
+                    </p> </li>
+                    <li> <p>
+                    If <m>\vec x\in S</m> and <m>r\in \mathbb{R}</m>, then <m>r\vec x\in S</m>
+                    (this is called closure under scalar multiplication).
+                    </p> </li>
+                    </ol>
+                </p>
+                </statement>
+                </definition>
+                <observation>
+                <p>
+                Since <m>S</m> is nonempty, there is some <m>\vec x\in S</m>, and
+                for any <m>r\in\mathbb{R}</m>, the definition says that <m>r\vec x\in S</m>.
+                Using <m>r=0</m>, it follows that <m>0\vec x=\vec0\in S</m>.
+                </p>
+                </observation>
+            </introduction>
+        
+        	<subsubsection>
+        	    <title>Subspace examples</title>
+                <p>
+                <ul>
+                <li> <p>        Let <m>\vec x\in\mathbb{R}^n</m> and
+                    <m>S=\{\vec y\mid \vec y=r\vec x, r\in\mathbb{R}\}</m> 
+                    <ol>
+                    <li> <p>
+                        If <m>\vec y_1</m> and <m>\vec y_2</m> are in <m>S</m>, then
+                        <m>\vec y_1=r_1\vec x</m> and <m>\vec y_2=r_2\vec x</m>,
+                        and so
+                        <m>\vec y_1 + \vec y_2=r_1\vec x + r_2\vec x
+                        = (r_1+r_2)\vec x\in S</m>.
+                    </p> </li>
+                    <li> <p>
+                        If <m>\vec y\in S</m> and <m>r\in \mathbb{R}</m>, then
+                        <m>\vec y=s\vec x</m> for some <m>s\in\mathbb{R}</m>, and
+                        <m>r\vec y=r(s\vec x) = (rs)\vec x\in S</m>.
+                    </p> </li>
+                    </ol>
+                </p> </li>
+                <li><p> 
+                    <m>S=\{\vec0\}</m>. This follows since <m>\vec0+\vec0 = \vec0</m> and 
+                    <m>r\vec0 = \vec0</m>.
+                </p></li> 
+                <li><p> 
+                    Let <m>A</m> be an <m>m\times n</m> matrix and let 
+                    <m>S=\{\vec x\in\mathbb{R}^n \mid A\vec x=\vec0\}</m>.
+                    <ol>
+                    <li> <p>
+                        If <m>\vec x_1</m> and <m>\vec x_2</m> are in <m>S</m>, then
+                        <m>A\vec x_1=\vec0</m> and <m>A\vec x_2=\vec 0</m>,
+                        and so
+                        <m>A(\vec x_1+ \vec x_2)=A\vec x_1 + A\vec x_2
+                        =\vec0+\vec0 = \vec0</m>. 
+                        Thus <m>\vec x_1+\vec x_2\in S</m>.
+                    </p> </li>
+                    <li> <p>
+                        If <m>\vec x\in S</m> and <m>r\in \mathbb{R}</m>, then
+                        <m>A\vec x=\vec 0</m>, and
+                        <m>A(r\vec x)=r(A\vec x) = r\vec0=\vec0</m>.
+                        Hence <m>r\vec x\in S</m>.
+                    </p> </li>
+                    </ol>
+                This subspace is called the <em>null space</em> of <m>A</m>.
+                </p></li> 
+                <li><p>
+                    Let <m>H</m> be hyperplane in <m>\mathbb{R}^n</m> containing <m>\vec0</m>,
+                    that is, a set of vectors <m>\vec x=(x_1,\ldots,x_n)</m> satisfying an equation
+                    <me>
+                    a_1x_1+a_2x_2+\cdots+a_nx_n=0
+                    </me>
+                    where at least one <m>a_i\not=0</m>.
+                    <ol>
+                    <li><p>
+                        If <m>\vec x=(x_1,\ldots,x_n)</m>
+                        and <m>\vec y=(y_1,\ldots,y_n)</m> are in <m>H</m>,
+                        then from the equations
+                        <md>
+                            <mrow>a_1x_1+a_2x_2+\cdots+a_nx_n=0,</mrow>
+                            <mrow>a_1y_1+a_2y_2+\cdots+a_ny_n=0, \text{ and}</mrow>
+                            <mrow>\vec x+\vec y=(x_1+y_1,\ldots,x_n+y_n)</mrow>
+                        </md>
+                        it follows that
+                        <md>
+                            <mrow>a_1(x_1+y_1)+\cdots+a_n(x_n+y_n)\amp =
+                                (a_1x_1+\cdots+a_nx_n) + (a_1y_1+\cdots+a_ny_n)</mrow>
+                            <mrow>\amp=0+0</mrow>
+                            <mrow>\amp=0,</mrow>
+                        </md>
+                        and <m>\vec x+\vec y\in H</m>.
+                    </p></li>
+                    <li><p>
+                    <m>r\vec x=(rx_1,\ldots,rx_n)</m>, and 
+                    <me>
+                    a_1(rx_1)+\cdots+a_n(rx_n)=r(a_1x_1+\cdots+a_nx_n)=r0=0
+                    </me>
+                    and so <m>r\vec x\in H</m>.
+                    </p></li>
+                    </ol>
+                </p></li>
+        
+                <li><p>
+                Let <m>
+                \mathcal{X}=\{\vec x_1, \vec x_2,\ldots, \vec x_m\}</m> 
+                be a set of vectors in <m>\mathbb{R}^n</m>, and let
+                <me>
+                S=\Span\mathcal{X}=
+                \{r_1\vec x_1 + r_2\vec x_2+\cdots+ r_m\vec x_m
+                \mid r_i\in\mathbb{R}\}.
+                </me>
+                    <ol>
+                    <li><p>
+                    Let <m>\vec y_1</m> and <m>\vec y_2</m> be in <m>S</m>, that is
+                    <md>
+                        <mrow>\vec y_1=r_1\vec x_1 + r_2\vec x_2+\cdots+ r_m\vec x_m</mrow>
+                        <mrow>\vec y_2=s_1\vec x_1 + s_2\vec x_2+\cdots+ s_m\vec x_m.</mrow>
+                    </md>
+                    Then
+                    <me>
+                        \vec y_1+\vec y_2=
+                        (r_1+s_1)\vec x_1 + (r_2+s_2)\vec x_2+\cdots+ (r_m+s_m)\vec x_m \in S. 
+                    </me>
+                    </p></li>
+                    <li><p>
+                    If <m>\vec y=r_1\vec x_1 + r_2\vec x_2+\cdots+ r_m\vec x_m</m>,
+                    then
+                    <md>
+                        <mrow>r\vec y\amp=r(r_1\vec x_1 + r_2\vec x_2+\cdots+ r_m\vec x_m)</mrow>
+                        <mrow>\amp=(rr_1)\vec x_1 + (rr_2)\vec x_2+\cdots+ (rr_m)\vec x_m \in S.</mrow>
+                    </md>
+                    </p></li>
+                    </ol> 
+                </p></li>
+        
+                <li>
+                <p>
+                If <m>A</m> is an <m>m\times n</m> matrix with rows <m>R_1, R_2,\ldots,R_m</m> and 
+                columns <m>C_1,C_2,\ldots,C_n</m>. Then
+                    <ul>
+                    <li><p>
+                    The <em>row space</em> of <m>A</m> is 
+                    <m>\Span \{R_1,R_2,\ldots R_m\}\subseteq\mathbb{R}^n</m>.
+                    </p></li>
+                    <li><p>
+                    The <em>column space</em> of <m>A</m> is 
+                    <m>\Span \{C_1,C_2,\ldots C_n\}\subseteq\mathbb{R}^m</m>.
+                    </p></li>
+                    </ul>
+                </p>
+                </li>
+        
+                <li>
+                <p>
+                If <m>S_1</m> and <m>S_2</m> are subspaces of <m>\mathbb{R}^n</m>, then so is <m>S_1\cap S_2</m>.
+                    <ol>
+                    <li><p>
+                        Let <m>\vec x\in S_1\cap S_2</m> and <m>\vec y\in S_1\cap S_2</m>. Then
+                        <m>\vec x\in S_1</m> and <m>\vec y\in S_1</m>. Since <m>S_1</m> is a subspace,
+                        <m>\vec x+\vec y\in S_1</m>.
+                        Similarly <m>\vec x+\vec y\in S_2</m>, 
+                        and so <m>\vec x+\vec y\in S_1\cap S_2</m>.
+                    </p></li>
+                    <li><p>
+                        Let <m>\vec x\in S_1\cap S_2</m> and <m>r\in\mathbb{R}</m>. 
+                        Then <m>\vec x\in S_1</m>
+                        and <m>S_1</m> a subspace implies <m>r\vec x\in S_1</m>. Similarly,
+                        <m>r\vec x\in S_2</m>, and so <m>r\vec x\in S_1\cap S_2</m>.
+                    </p></li>
+                    </ol>
+                </p>
+                </li>
+                </ul>
+                </p>
+        	</subsubsection>
+        
+            <subsubsection>
+            <title>Bases for a subspaces</title>
+            <definition>
+            <title>Basis for a subspace</title>
+            <statement>
+            <p>
+            Let <m>S</m> be a subspace of <m>\mathbb{R}^n</m>, and let 
+            <m>\mathcal{X}=\{\vec x_1, \vec x_2,\ldots,\vec x_r\}</m> 
+            be a set of vectors in <m>S</m>.
+            Then <m>\mathcal{X}</m> is a <em>basis for <m>S</m></em> if
+            <ul>
+            <li><p>
+                <m>\mathcal{X}</m> is linearly independent, and
+            </p></li>
+            <li><p>
+                <m>\Span\mathcal{X}=S</m>.
+            </p></li>
+            </ul>
+            </p>
+            </statement>
+            </definition>
+
+            <theorem>
+            <title>
+            Linearly independent sets are smaller than spanning sets
+            </title>
+            <statement>
+            <p>
+            Suppose that <m>S</m> is a subspace of <m>\mathbb{R}^n</m>,
+            <m>\mathcal{X}=\{\vec x_1, \vec x_2,\ldots,\vec x_s\}</m>
+            is a linearly independent set in <m>S</m> and
+            <m>\mathcal{Y}=\{\vec y_1, \vec y_2,\ldots,\vec y_t\}</m>
+            spans <m>S</m>.
+            Then <m>s\leq t</m>.
+            </p>
+            </statement>
+            <proof>
+            <p>
+            Since <m>\{\vec y_1, \vec y_2,\ldots,\vec y_t\}</m>
+            is a spanning set, we may write
+            <md>
+            <mrow>\vec x_1 \amp= r_{11}\vec y_1+r_{12}\vec y_2+\cdots+r_{1t}\vec y_t</mrow>
+            <mrow>\vec x_2 \amp= r_{21}\vec y_1+r_{22}\vec y_2+\cdots+r_{2t}\vec y_t</mrow>
+            <mrow>\vdots</mrow>
+            <mrow>\vec x_i \amp= r_{i1}\vec y_1+r_{i2}\vec y_2+\cdots+r_{it}\vec y_t
+            =\sum_{j=1}^t r_{ij}\vec y_j</mrow>
+            <mrow>\vdots</mrow>
+            <mrow>\vec x_s \amp= r_{s1}\vec y_1+r_{s2}\vec y_2+\cdots+r_{st}\vec y_t</mrow>
+            </md>.
+            Now we take a linear combination of 
+            <m>\{\vec x_1, \vec x_2,\ldots,\vec x_s\}</m>
+            and set it equal to <m>\vec0</m>.
+            <md>
+            <mrow>\vec0=
+                \sum_{i=1}^s u_i \vec x_i \amp= \sum_{i=1}^s u_i\sum_{j=1}^t
+                r_{ij}\vec y_j</mrow>
+            <mrow>\amp= \sum_{j=1}^t (\sum_{i=1}^s u_i r_{ij})\vec y_j</mrow>
+            <mrow>\amp= \sum_{j=1}^t (\sum_{i=1}^s r_{ji}^T u_i)\vec y_j</mrow>
+            <mrow>\amp= \sum_{j=1}^t (R^T \vec u)_j \vec y_j</mrow>
+            </md>
+            where <m>R=[r_{ij}]</m> and <m>\vec u=(u_1,\ldots,u_s)</m>.
+            Now if <m>R^T\vec u=\vec 0</m> for some 
+            <m>\vec u\not=\vec0</m>, then 
+            <m>\sum_{i=1}^s u_i \vec x_i =\vec 0</m> with 
+            <m>\vec u\not=\vec0</m>. This contradicts the linear
+            independence of <m>\{\vec y_1, \vec y_2,\ldots,\vec y_t\}</m>.
+            Hence 
+            the reduced row echelon form of <m>R^T</m> can have no free variables,
+            and so <m>R^T</m> can not have more columns than rows. 
+            Since <m>R^T</m> is an <m>t\times s</m> matrix, we have <m>s\leq t</m>.
+            </p>
+            </proof>
+            </theorem>
+        
+            <theorem>
+            <title>All bases of a subspace have the same size</title>
+            <statement>
+            <p>
+            Let <m>S</m> be a subspace of <m>\mathbb{R}^n</m>, and let <m>B_1</m> and
+            <m>B_2</m> be two bases of <m>S</m>. Then <m>B_1</m> and <m>B_2</m> have the same
+            numer of elements.
+            </p>
+            </statement>
+            <proof>
+            <p>Since <m>B_1</m> is linearly independent and  <m>B_2</m>
+            spans <m>S</m>, <m>B_1</m> can not have more elements
+            than <m>B_2</m>. Interchanging <m>B_1</m> and <m>B_2</m> and using 
+            the same argument, <m>B_2</m> can not have more elements than <m>B_1</m>.
+            Hence <m>B_1</m> and <m>B_2</m> have the same size.
+            </p>
+            </proof>
+            </theorem>
+        
+            <definition>
+            <title>The dimension of a subspace</title>
+            <statement>
+            <p>
+            The <em>dimension</em> of a subspace <m>S</m> is the size of any basis.
+            </p>
+            </statement>
+            </definition>
+        
+            <theorem>
+            <title>Dimension of the row space of <m>A</m></title>
+            <statement>
+            <p>
+            The dimension of the row space of <m>A</m> is the number of nonzero
+            rows in the reduced row echelon form of <m>A</m>.
+            </p>
+            </statement>
+            <proof>
+            <p>
+            We first show that the row space is unchanged by an elementary
+            row operation:
+            <ul>
+            <li><p>
+                <m>R_i\leftrightarrow R_j</m>: the set of rows is unchanged, and so
+                the span is also unchanged.
+            </p></li>
+            <li><p>
+                <m>R_i\gets \lambda R_i, \lambda\not=0</m>: 
+                <md>
+                <mrow>r_1R_1\amp+\cdots+ r_i(\lambda R_i)+\cdots+r_nR_n</mrow>
+                <mrow>\amp=r_1R_1+\cdots+ (r_i\lambda) R_i+\cdots+r_nR_n</mrow>
+                </md>
+            </p></li>
+            <li><p>
+                <m>R_i\gets R_i+\lambda R_j</m>:
+                <md>
+                <mrow>r_1R_1\amp+\cdots+ r_i(R_i+\lambda R_j)+\cdots+r_jR_j+\cdots+r_nR_n</mrow>
+                <mrow>\amp=r_1R_1+\cdots+ r_i R_i+\cdots+(r_j+r_i\lambda)R_j+\cdots+r_nR_n</mrow>
+                </md>
+            </p></li>
+            </ul>
+            Next, we observe that the set of nonzero rows 
+            <m>\{R_1,\ldots,R_k\}</m> of the reduced row echelon forms 
+            is a linearly independent set: If <m>r_1R_1+\cdots+r_kR_k=\vec 0</m>, then the
+            reduced row echelon form has a leading one in the first row and zeros below it.
+            This in  turn means <m>1r_1+0r_2+\cdots 0r_k= r_1=0</m>. An 
+            analogous argument shows <m>r_2=r_3=\cdots=r_k=0</m> and so the set of nonzero rows
+            is linearly independent. This makes <m>\{R_1,R_2,\ldots,R_k\}</m> a basis for
+            the row space and the dimension of the row space of both <m>A</m> 
+            and the reduced row echelon form of <m>A</m> is <m>k</m>. This is the number of 
+            nonzero rows in the reduced row echelon form of <m>A</m>.
+            </p>
+            </proof>
+            </theorem>
+        
+            <example>
+            <title>Finding the dimension of the span of a set of vectors</title>
+            <p>
+            Let <m>\vec x_1,\vec x_,\ldots,\vec x_m</m> be vectors in <m>\mathbb{R}^n</m>.
+            Construct the matrix <m>A</m> using these vectors as the rows:
+            <me>A=
+            \begin{bmatrix} \vec x_1\\ \vec x_2\\ \vdots\\ \vec x_m \end{bmatrix}
+            </me>
+            Then the dimension of 
+            <m>\Span\{\vec x_1,\vec x_2,\ldots,\vec x_m\}</m> 
+            is the number of nonzero rows in the reduced row echelon form of <m>A</m>.
+            </p>
+            </example>
+        
+            </subsubsection>
+        
+        </subsection>
+    </section>
+</chapter>
+

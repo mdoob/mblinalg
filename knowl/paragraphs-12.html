@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-07-05T18:40:40-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="paragraphs"><h5 class="heading"><span class="title">Justification of the definition of the cross product.</span></h5>
+<p>Now suppose we have two vectors \(\vec x=(x_1,x_2,x_3)\) and \(\vec y=(y_1,y_2,y_3)\text{.}\) We are looking for a third vector which (like the cross product) is perpendicular to both \(\vec x\) and \(\vec y\text{.}\) Let's call such a vector \((a,b,c)\text{.}\) The perpendicularity assumptions mean \((a,b,c)\cdot(x_1,x_2,x_3)=0\) and \((a,b,c)\cdot(y_1,y_2,y_3)=0\text{.}\) This means \(\begin{align*}
+ax_1+bx_2+cx_3\amp =0\tag{1}\\
+ay_1+by_2+cy_3\amp =0.\tag{2}
+\end{align*}\)</p>
+<p>Multiply equation \((1)\) by \(y_1\text{,}\) equation \((2)\) by \(x_1\) and subtract. This gives</p>
+<div class="displaymath">
+\begin{equation*}
+b(x_2y_1-x_1y_2)+c(x_3y_1-x_1y_3)=0
+\end{equation*}
+</div>
+<p>and so</p>
+<div class="displaymath">
+\begin{equation*}
+b=\frac{x_3y_1-x_1y_3}{x_1y_2-x_2y_1}c
+\end{equation*}
+</div>
+<p>Now multiply equation \((1)\) by \(y_2\text{,}\) equation \((2)\) by \(x_2\) and subtract.</p>
+<p>This gives</p>
+<div class="displaymath">
+\begin{equation*}
+a(x_1y_2-x_2y_1)+c(x_3y_2-x_2y_3)=0
+\end{equation*}
+</div>
+<p>and so</p>
+<div class="displaymath">
+\begin{equation*}
+a=\frac{x_2y_3-x_3y_2}{x_1y_2-x_2y_1}c
+\end{equation*}
+</div>
+<p>This implies that our vector</p>
+<div class="displaymath">
+\begin{equation*}
+(a,b,c)=\left(\frac{x_2y_3-x_3y_2}{x_1y_2-x_2y_1}c,
+\frac{x_3y_1-x_1y_3}{x_1y_2-x_2y_1}c,c\right)
+\end{equation*}
+</div>
+<p data-braille="continuation">is perpendicular to both \(\vec x\) and \(\vec y\) for any choice of \(c\text{.}\) If we set \(c=x_1y_2-x_2y_1\) then we get</p>
+<div class="displaymath">
+\begin{equation*}
+(a,b,c)=(x_2y_3-x_3y_2,x_3y_1-x_1y_3,x_1y_2-x_2y_1)
+\end{equation*}
+</div>
+<p data-braille="continuation">which is precisely \(\vec x\times\vec y\text{.}\) Hence the definition of the cross product, which at first seems bizarre, is actually natural if we wish the product to be perpendicular to both of the factors.</p></article><span class="incontext"><a href="CrossProduct.html#paragraphs-12">in-context</a></span>
+</body>
+</html>

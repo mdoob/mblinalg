@@ -250,7 +250,7 @@
 
     <p>
     Since the minor <m>M_{i,j}</m> is simply a number, we may form an new
-    matrix called the <em>matrix of minors</em> <m>M</m> whose entries are minors.
+    matrix called the <term>matrix of minors</term> <m>M</m> whose entries are minors.
     Similarly since the cofactor <m>C_{i,j}</m> is simply a number, we may form an new
     matrix called the <em>cofactor matrix</em> whose entries are cofactors.
     </p>
@@ -399,7 +399,7 @@
     <exercise>
     <statement> 
        <p>
-       Suppose a matrix <m>A</m> has cofactor matrix
+       Suppose a matrix <m>A</m> has matrix of minors
           <me>M=
           \begin{bmatrix}
           1 \amp 3 \amp 4\\
@@ -622,7 +622,7 @@
         </statement>
         <proof>
         <p>
-        We don't have the tools for the proof yet, so we postpone it.
+        We defer the proof to here.
         <!-- added emoji frown -->
         </p>
         <sidebyside>
@@ -664,7 +664,7 @@
         </me>
         This number, by definition, is the determinant of <m>A</m>.
         It is called the 
-        <em>first row expansion</em> of <m>A</m>. There is nothing special about the
+        <term>first row expansion</term> of <m>A</m>. There is nothing special about the
         first row. An analogous definition exists for all rows.
         </p>
     
@@ -965,7 +965,7 @@
         Since the first row of <m>A</m> is the second row of <m>B</m>, we have
         <m>a_{1,j}=b_{2,j}</m> for <m>j=1,2,\ldots,n</m>. In addition, deleting
         <m>R_1</m> and <m>C_j</m> from <m>A</m> yields exactly the same matrix
-        as deleting <m>R_2</m> and <m>C_j</m> from <m>B</m> which implies that
+        as deleting <m>R_2</m> and <m>C_j</m> from <m>B</m>,  that is to say
         <m>M_{1,j}=M'_{2,j}</m>. Hence we have
         <md>
             <mrow>\det B
@@ -997,7 +997,7 @@
         We have
         <m>a_{i,j}=b_{{i+1},j}</m> for <m>j=1,2,\ldots,n</m>. In addition, deleting
         <m>R_i</m> and <m>C_j</m> from <m>A</m> yields exactly the same matrix
-        as deleting <m>R_{i+1}</m> and <m>C_j</m> from <m>B</m> which implies that
+        as deleting <m>R_{i+1}</m> and <m>C_j</m> from <m>B</m> and so
         <m>M_{i,j}=M'_{i+1,j}</m>. Hence we have
         <md>
             <mrow>\det B
@@ -1010,7 +1010,8 @@
         </proof>
         </lemma>
     
-        <theorem xml:id="DeterminantRowInterchange"><title>Interchanging rows <m>R_i</m> and <m>R_j</m> changes the
+        <theorem xml:id="DeterminantRowInterchange">
+        <title>Interchanging rows <m>R_i</m> and <m>R_j</m> changes the
             sign of the determinant</title>
         <statement>
         <p>
@@ -1021,11 +1022,11 @@
         <proof>
         <p>
         With no loss of generality, we assume that <m>i\lt j</m>.
-        Interchange <m>R_i</m> with the one below it so that it is
-        one row lower. Repeat the process until it is just above
-        <m>R_j</m>. This take <m>j-i-1</m> interchanges. Now interchange
+        Interchange <m>R_i</m> with the one below it so that it has moved
+        one row lower. Repeat the process until it is just below
+        <m>R_j</m>. This take <m>j-i</m> interchanges. Now interchange
         <m>R_j</m> with the one above it repeatedly until it is 
-        in the <m>i</m>-th row. This takes <m>j-i</m> interchanges. The net
+        in the <m>i</m>-th row. This takes <m>j-i-1</m> interchanges. The net
         effect is to interchange <m>R_i</m> and <m>R_j</m>. Each interchange
         multiplies the determinant by <m>-1</m>. Since there are
         <m>2(j-i)-1</m> (an odd number) interchanges in total, we have
@@ -1079,6 +1080,7 @@
         </p>
     
         <corollary>
+        <title>The determinant of <m>\lambda A</m></title>
         <statement>
         <p>
         If <m>A</m> is a square matrix of order <m>n</m> and <m>\lambda</m> is
@@ -1148,7 +1150,8 @@
         </subsection>
     
         <subsection><title>Identical and proportional rows</title>
-        <theorem xml:id="DeterminantIdenticalRows"><title>A matrix <m>A</m> with two identical rows has <m>\det A=0</m> </title>
+        <theorem xml:id="DeterminantIdenticalRows">
+        <title>A matrix <m>A</m> with two identical rows has <m>\det A=0</m> </title>
         <statement>
         <p>
         Suppose a matrix <m>A</m> has two equal rows: <m>R_i=R_j</m> with <m>i\not=j</m>.
@@ -1191,7 +1194,7 @@
         By <xref ref="DeterminantRowMultiply" />, 
         <m>\det B = \lambda \det A</m>.
         However, <m>B</m> has two identical rows and so <m>\det B=0</m>.
-        Hence <m>\det A=0</m>.
+        Hence <m>\lambda\not=0</m> implies <m>\det A=0</m>.
         </p>
         </proof>
         </theorem>
@@ -1250,7 +1253,8 @@
         </theorem>
         </subsection>
     
-        <subsection xml:id="DeterminantElementaryMatrices"><title>The determinant of elementary matrices</title>
+        <subsection xml:id="DeterminantElementaryMatrices">
+        <title>The determinant of elementary matrices</title>
         <p>
         As seen in
         <xref ref="ElementaryMatrices" />,
@@ -1275,7 +1279,8 @@
         We may combine these three results into one wonderful theorem:
         </p>
     
-        <theorem xml:id="DeterminantsElementaryRowOperations"><title>Determinants and elementary row operations</title>
+        <theorem xml:id="DeterminantsElementaryRowOperations">
+        <title>Determinants and elementary row operations</title>
         <statement>
         <p>
         If <m>B</m> is derived from <m>A</m> by one elementary row operation
@@ -1418,7 +1423,7 @@
         we have a test for matrix invertibility: a matrix <m>A</m> 
         of order <m>n</m> is invertible
         if and only if its reduced row echelon form is <m>I</m>,
-        whose determinant is one. If a matrix is not invertible, 
+        a matrix whose determinant is one. If a matrix is not invertible, 
         then the number of leading ones in the reduced row echelon
         form is less than <m>n</m>, and so the last row is all zero. 
         From 
@@ -1455,7 +1460,7 @@
         that
         <md>
             <mrow>\det B
-                \amp = \det (E_k E_{k-1}E_{k-2}\cdots E_2 E_1 A)</mrow>
+                  \amp = \det (E_k E_{k-1}E_{k-2}\cdots E_2 E_1 A)</mrow>
             <mrow>\amp = \det E_k \det( E_{k-1}E_{k-2}\cdots E_2 E_1 A)</mrow>
             <mrow>\amp = \det E_k \det E_{k-1}\det(E_{k-2}\cdots E_2 E_1 A)</mrow>
             <mrow>\amp \vdots</mrow>
@@ -1497,11 +1502,11 @@
         Then the following statements are equivalent:
             <ol>
             <li><p> <m>A</m> is invertible</p></li>
-            <li><p> <m>A\mathbf x=0</m> if and only if <m>\mathbf x=0</m></p></li>
+            <li><p> <m>A\vec x=0</m> if and only if <m>\vec x=0</m></p></li>
             <li><p> The reduced row echelon form of <m>A</m> is <m>I_n</m></p></li>
             <li><p> <m>A</m> is a product of elementary matrices</p></li>
-            <li><p> <m>A\mathbf x=\mathbf b</m> is consistent for any <m>\mathbf b</m></p></li>
-            <li><p> <m>A\mathbf x=\mathbf b</m> has exactly one solution for any <m>\mathbf b</m></p></li>
+            <li><p> <m>A\vec x=\vec b</m> is consistent for any <m>\vec b</m></p></li>
+            <li><p> <m>A\vec x=\vec b</m> has exactly one solution for any <m>\vec b</m></p></li>
             <li><p><m>\det A\not=0</m></p></li>
             </ol>
         </p>
@@ -1534,8 +1539,8 @@
             <li><p>
                 <m>\det B=0</m>: In this case <m>\det A\;\det B=0</m>. In addition,
                 from <xref ref="InvertibilityEquivalence2" />,
-                The is an <m>\mathbf x\not=0</m> so that <m>B\mathbf x=0</m>. Then
-                <m>AB\mathbf x=0</m> and so <m>\det(AB)=0</m>. This gives
+                The is an <m>\vec x\not=0</m> so that <m>B\vec x=0</m>. Then
+                <m>AB\vec x=0</m> and so <m>\det(AB)=0</m>. This gives
                 <me>
                 \det(AB)=0=\det A\;\det B.
                 </me>
@@ -1545,10 +1550,10 @@
                 Once again, <m>\det A \det B=0</m>.
                 Again, using 
                 <xref ref="InvertibilityEquivalence2" /> (twice),
-                there is <m>\mathbf y\not=0</m> so that <m>A\mathbf y=0</m> and there
-                is an <m>\mathbf x</m> so that <m>B\mathbf x=\mathbf y</m>. Notice
-                that <m>\mathbf x\not=0</m>, for otherwise <m>\mathbf y=B\mathbf x=0</m>.
-                We then have <m>AB\mathbf x=A\mathbf y=0</m> with <m>\mathbf y\not=0</m>,
+                there is <m>\vec y\not=0</m> so that <m>A\vec y=0</m> and there
+                is an <m>\vec x</m> so that <m>B\vec x=\vec y</m>. Notice
+                that <m>\vec x\not=0</m>, for otherwise <m>\vec y=B\vec x=0</m>.
+                We then have <m>AB\vec x=A\vec y=0</m> with <m>\vec y\not=0</m>,
                 and so <m>\det(AB)=0</m>, which, once again gives
                 <me>
                 \det(AB)=0=\det A\;\det B.
@@ -1959,7 +1964,7 @@
     </proof>
     </theorem>
 
-    <example><title>Cramer's rule</title>
+    <example><title>Application of Cramer's rule</title>
     <p>
     Consider the system of linear equations
     <me>

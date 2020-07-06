@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-05T13:51:01-05:00    *-->
+<!--*    on 2020-07-05T18:40:37-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,57 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Consider the system of linear equations</p>
+<p>There is a nice application of the adjoint to the solution of \(n\) equations in \(n\) unknowns. We can write such a system of linear equations as</p>
 <div class="displaymath">
 \begin{equation*}
-x_1+x_2+x_3=2\\
-x_1-x_2+x_3=0\\
-2x_1-x_2+x_3=2
+Ax=b.
 \end{equation*}
 </div>
-<p data-braille="continuation">We have</p>
+<p data-braille="continuation">If \(A\) is nonsingular, then this system has a unique solution \(x=A^{-1}b= \frac1{\det A} \adj Ab\text{.}\) We define new matrices \(A_1,A_2,\ldots,A_n\text{:}\) construct \(A_k\) by replacing the \(k\)-th column of \(A\) with \(b\text{.}\) More specifically, if the columns of \(A\) are \(C_1,C_2,\ldots,C_n\text{,}\) then</p>
 <div class="displaymath">
 \begin{equation*}
-A=
+A_k= 
 \begin{bmatrix}
-1 \amp 1\amp 1\\
-1 \amp -1 \amp 1 \\
-2 \amp -1 \amp 1
+C_1  \cdots  C_{k-1}\amp b\amp C_{k+1} \cdots C_n
 \end{bmatrix}
-\qquad
-\det A=2 \\
-A_1=
-\begin{bmatrix}
-2 \amp 1\amp 1\\
-0 \amp -1 \amp 1 \\
-2 \amp -1 \amp 1
-\end{bmatrix}
-\qquad
-\det A_1=4 \\
-A_2=
-\begin{bmatrix}
-1 \amp 2\amp 1\\
-1 \amp 0 \amp 1 \\
-2 \amp 2 \amp 1
-\end{bmatrix}
-\qquad
-\det A_2=2 \\
-A_3=
-\begin{bmatrix}
-1 \amp 1\amp 2\\
-1 \amp -1 \amp 0 \\
-2 \amp -1 \amp 2
-\end{bmatrix}
-\qquad
-\det A_3=-2 
-\end{equation*}
-</div>
-<p data-braille="continuation">and so</p>
-<div class="displaymath">
-\begin{equation*}
-x_1=\frac42=2\\
-x_2=\frac22=1\\
-x_3=\frac{-2}2=-1
 \end{equation*}
 </div>
 <span class="incontext"><a href="section-23.html#p-668">in-context</a></span>

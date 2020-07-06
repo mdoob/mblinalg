@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-07-05T18:40:41-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="paragraphs"><h5 class="heading"><span class="title">Skew lines.</span></h5>
+<p>We start with the eqations of two skew lines:</p>
+<ul class="disc">
+<li><p>\(L_1\) has equation \((x,y,z)=\vec{X_1}+t_1\vec{n_1}\text{,}\) \(-\infty \lt t \lt\infty\)</p></li>
+<li><p>\(L_2\) has equation \((x,y,z)=\vec{X_2}+t_2\vec{n_2}\) \(-\infty \lt t \lt\infty\)</p></li>
+</ul>
+<p data-braille="continuation">We want the (shortest) distance \(d\) between the lines.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-56.html" id="image-56" width="450" height="450"><embed src="images/image-56.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p>The direction vector for \(L_1\) is \(\vec{n_1}\) while that of \(L_2\) is \(\vec{n_2}\text{.}\) Let us say that the shortest line segment joining \(L_1\) to \(L_2\) is on the line \(L\text{.}\) The length of the line segment, \(d\text{,}\) is the distance we wish to compute. In addition, let \(t_1\) and \(t_2\) be the particular values so both \(\vec{X_1}+t_1\vec{n_1}\) and \(\vec{X_2}+t_2\vec{n_2}\) lie on \(L\text{.}\)</p>
+<p>Now \(L\) is perpendicular to both \(L_1\) and \(L_2\) , so the direction vector of \(L\) is orthogonal to both \(\vec{n_1}\) and \(\vec{n_2}\text{.}\) How can such a direction vector be produced? With the cross product, of course! And so we let \(\vec{n_1}\times\vec{n_2}\) be the direction vector of \(L\text{.}\) We then have, for some \(t_3\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\vec{X_1}+t_1\vec{n_1} + t_3(\vec{n_1}\times\vec{n_2})
+=\vec{X_2}+t_2\vec{n_2}\\
+t_1\vec{n_1} - t_2\vec{n_2} + t_3(\vec{n_1}\times\vec{n_2})
+=\vec{X_2}-\vec{X_1}\tag{$*$}
+\end{equation*}
+</div>
+<p>In principle the problem is solved. We have three unknowns \(t_1\text{,}\) \(t_2\) and \(t_3\text{,}\) and each of the three coordinates gives an equation, so we have three equations in three unknowns. There is a quicker way: take the dot product of both sides of (\(*\)) above with \(\vec{n_1}\) and then with \(\vec{n_2}\text{.}\) This gives</p>
+<div class="displaymath">
+\begin{equation*}
+\|\vec{n_1}\|^2 t_1 -(\vec{n_1}\cdot\vec{n_2})t_2
+=(\vec{X_2}-\vec{X_1})\cdot \vec{n_1}\\
+(\vec{n_1}\cdot\vec{n_2}) t_1 -\|\vec{n_2}\|^2t_2
+=(\vec{X_2}-\vec{X_1})\cdot \vec{n_2}
+\end{equation*}
+</div></article><span class="incontext"><a href="section-31.html#paragraphs-18">in-context</a></span>
+</body>
+</html>

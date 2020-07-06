@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-05T13:50:57-05:00    *-->
+<!--*    on 2020-07-05T18:40:33-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,41 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>A matrix \(A=[a_{i,j}]\) is <dfn class="terminology">symmetric</dfn> if \(a_{i,j}=a_{j,i}\) for all \(i,j=1,2,\ldots,n\text{.}\) Alternatively, we may write this as \(A=A^T\text{.}\)</p>
+<p>This means that the matrix is of the form</p>
+<div class="displaymath">
+\begin{equation*}
+A=
+\begin{bmatrix} 
+a_{1,1} \amp 0 \amp 0 \amp 0 \amp \cdots \amp 0 \\ 
+0 \amp a_{2,2} \amp 0 \amp 0 \amp \cdots \amp 0 \\ 
+0 \amp 0 \amp a_{3,3} \amp 0 \amp \cdots \amp 0 \\ 
+0 \amp 0 \amp 0 \amp a_{4,4} \amp \cdots \amp 0 \\ 
+\amp\amp\amp\amp\ddots\\ 
+0 \amp 0 \amp 0 \amp 0 \amp \cdots \amp a_{n,n} 
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Once we know the diagonal entries, we know the whole matrix. Sometimes we abbreviate this as</p>
+<div class="displaymath">
+\begin{equation*}
+A=\mathrm{diag}(a_{1,1},\ldots,a_{n,n}). 
+\end{equation*}
+</div>
+<p data-braille="continuation">An example of a diagonal matrix is the identity matrix \(I\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+I= 
+\begin{bmatrix} 
+1\amp0\amp\cdots\amp0\amp0\\
+0\amp1\amp\cdots\amp0\amp0\\ 
+\amp\amp\ddots\\
+0\amp0\amp\cdots\amp1\amp0\\ 
+0\amp0\amp\cdots\amp0\amp1
+\end{bmatrix} 
+=\mathrm{diag}(1,\ldots,1) 
+\end{equation*}
+</div>
+<p data-braille="continuation">An alternative way of describing a diagonal matrix \(A=[a_{i,j}]\) is by the condition that \(a_{i,j}=0\) whenever \(i\not=j\text{.}\)</p>
 <span class="incontext"><a href="section-15.html#p-436">in-context</a></span>
 </body>
 </html>

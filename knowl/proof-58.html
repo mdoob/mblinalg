@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-07-05T18:40:38-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="hiddenproof"><h6 class="heading"><span class="title">Proof using Proposition 4.2.3.</span></h6>
+<article class="case"><h6 class="heading">First case: \(\vec x=\vec0\) or \(\vec y=\vec0\).</h6>
+<p>In this case \(\vec x\cdot\vec y=0\) and \(\|\vec x\| \|\vec y\|=0\text{,}\) and so the inequality reduces to \(0\leq 0\text{.}\)</p></article><article class="case"><h6 class="heading">Second case: \(\|\vec x\|=\|\vec y\|=1\).</h6>
+<p>Using <a class="xref" data-knowl="./knowl/DotProductFirstProperties.html" title="Proposition 4.2.3: First properties of the dot product">Proposition 4.2.3</a>,</p>
+<div class="displaymath">
+\begin{align*}
+0\amp \leq \|(\vec x+\vec y)\|^2 \\
+\amp = (\vec x+\vec y)\cdot(\vec x+\vec y) \\
+\amp =(\vec x+\vec y)\cdot\vec x+ (\vec x+\vec y)\cdot\vec y\\
+\amp =\vec x \cdot \vec x+ \vec y\cdot \vec x i
++ \vec x\cdot \vec y +\vec y\cdot\vec y\\
+\amp =\|\vec x\|^2 +2(\vec x\cdot \vec y) + \|\vec y\|^2\\
+\amp =2(\vec x\cdot \vec y) +2
+\end{align*}
+</div>
+<p data-braille="continuation">and so</p>
+<div class="displaymath">
+\begin{equation*}
+-1\leq \vec x\cdot \vec y\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Similarly</p>
+<div class="displaymath">
+\begin{equation*}
+0\leq(\vec x-\vec y)\cdot(\vec x-\vec y) =-2(\vec x\cdot \vec y) +2
+\end{equation*}
+</div>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+\vec x\cdot \vec y \leq 1\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">These inequalities imply</p>
+<div class="displaymath">
+\begin{equation*}
+|\vec x\cdot \vec y| \leq 1=\|\vec x\|\, \|\vec y\|\text{.}
+\end{equation*}
+</div></article><article class="case"><h6 class="heading">Third case: \(\|\vec x\|\neq 0\) and  \(\|\vec y\|\neq0\).</h6>
+<p>As seen in <a class="xref" data-knowl="./knowl/UnitVectorConstruction.html" title="Proposition 4.2.12: Unit vector construction">Proposition 4.2.12</a>, if \(\vec u=\frac{\vec x}{\|\vec x\|}\) and \(\vec v=\frac{\vec y}{\|\vec y\|}\text{,}\) then both \(\vec u\) and \(\vec v\) are unit vectors, and, as such, the second case is applicable. This means</p>
+<div class="displaymath">
+\begin{equation*}
+|\vec u\cdot \vec v| \leq \|\vec u\| \|\vec v\|
+\end{equation*}
+</div>
+<p data-braille="continuation">and so</p>
+<div class="displaymath">
+\begin{equation*}
+|\vec u\cdot\vec v|=
+\left|\frac{\vec x}{\|\vec x\|} \cdot \frac{\vec y}{\|\vec y\|}\right|
+= \frac1{\|\vec x\|}\,\frac1{\|\vec y\|} |\vec x\cdot\vec y|
+\leq 1
+\end{equation*}
+</div>
+<p data-braille="continuation">which implies</p>
+<div class="displaymath">
+\begin{equation*}
+|\vec x \cdot \vec y| \leq \|\vec x\| \|\vec y\|\text{.}
+\end{equation*}
+</div></article></article><span class="incontext"><a href="section-25.html#proof-58">in-context</a></span>
+</body>
+</html>

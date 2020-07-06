@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-05T13:50:45-05:00    *-->
+<!--*    on 2020-07-05T18:40:17-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -94,7 +94,9 @@ MathJax.Hub.Config({
 <li class="link"><a href="SysLinEq.html" data-scroll="SysLinEq"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations</span></a></li>
 <li class="link"><a href="MatrixTheoryIntro.html" data-scroll="MatrixTheoryIntro"><span class="codenumber">2</span> <span class="title">Matrix Theory</span></a></li>
 <li class="link"><a href="Determinants.html" data-scroll="Determinants"><span class="codenumber">3</span> <span class="title">The Determinant</span></a></li>
-<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">4</span> <span class="title">Additional Topics</span></a></li>
+<li class="link"><a href="EuclideanSpace.html" data-scroll="EuclideanSpace"><span class="codenumber">4</span> <span class="title">Vectors in Euclidean \(n\) space</span></a></li>
+<li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
+<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">6</span> <span class="title">Additional Topics</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-4"><h2 class="heading hide-type">
@@ -283,10 +285,10 @@ x+y+z
 <li id="li-45"><p id="p-93">Any \(a_{i,k}\not=0\) may be changed to \(1\) with one elementary row operation.</p></li>
 <li id="li-46"><p id="p-94">If \(a_{i,k}\not=0\text{,}\) then any other entry in the same column may be changed to \(0\) with one elementary row operation.</p></li>
 </ul>
-<article class="theorem theorem-like" id="ChangeTo01"><a data-knowl="" class="id-ref original" data-refid="hk-ChangeTo01"><h6 class="heading">
+<article class="theorem theorem-like" id="ChangeTo01"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.4.5</span><span class="period">.</span><span class="space"> </span><span class="title">Change a matrix entry to \(0\) or \(1\) with elementary row operations.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ChangeTo01">
-<article class="theorem theorem-like"><ol id="p-95" class="decimal">
+</h6>
+<ol id="p-95" class="decimal">
 <li id="li-47"><p id="p-96">If a matrix has an entry \(a_{i,k}\not=0\text{,}\) then, with one elementary row operation, it may be changed to \(1\text{.}\)</p></li>
 <li id="li-48"><p id="p-97">If some column \(k\) of a matrix has two non-zero entries \(a_{i,k}\) and \(a_{j,k}\) then, with one elementary row operation, (either) one of them may be changed to \(0\text{.}\)</p></li>
 </ol></article><article class="hiddenproof" id="proof-2"><a data-knowl="" class="id-ref original" data-refid="hk-proof-2"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof"><ol id="p-98" class="decimal">
@@ -294,7 +296,6 @@ x+y+z
 <li id="li-50"><p id="p-100">Suppose a matrix has two non-zero entries \(a_{i,k}\) and \(a_{j,k}\text{.}\) First, do the elementary row operation \(R_i\gets \frac 1{a_{i,k}}R_i\) to change \(a_{i,k}\) to \(1\text{.}\) Then, do the elementary row operation \(R_j\gets R_j-a_{j,k}R_i\text{.}\) The matrix  now has a new value in the \(j\)-\(k\) position which is \(a_{j,k}-a_{j,k}=0\text{,}\) and we have accomplished our goal using two elementary operations. Now we note that these two operations can be carried out with the single operation \(R_j\gets R_j-\frac {a_{j,k}}{a_{i,k}}R_i
 \text{.}\)</p></li>
 </ol></article></div>
-</div>
 <section class="exercises" id="exercises-2"><h4 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">1.4.5.1</span> <span class="title">Exercises</span>
 </h4>

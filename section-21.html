@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-05T13:50:49-05:00    *-->
+<!--*    on 2020-07-05T18:40:21-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -94,41 +94,42 @@ MathJax.Hub.Config({
 <li class="link"><a href="SysLinEq.html" data-scroll="SysLinEq"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations</span></a></li>
 <li class="link"><a href="MatrixTheoryIntro.html" data-scroll="MatrixTheoryIntro"><span class="codenumber">2</span> <span class="title">Matrix Theory</span></a></li>
 <li class="link"><a href="Determinants.html" data-scroll="Determinants"><span class="codenumber">3</span> <span class="title">The Determinant</span></a></li>
-<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">4</span> <span class="title">Additional Topics</span></a></li>
+<li class="link"><a href="EuclideanSpace.html" data-scroll="EuclideanSpace"><span class="codenumber">4</span> <span class="title">Vectors in Euclidean \(n\) space</span></a></li>
+<li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
+<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">6</span> <span class="title">Additional Topics</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-21"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.3</span> <span class="title">The determinant of large matrices</span>
 </h2>
-<section class="introduction" id="introduction-9"><p id="p-557">In <a class="xref" data-knowl="./knowl/DeterminantofSmallMatrices.html" title="Definition 3.1.1: Determinants of small matrices">Definition 3.1.1</a> the determinant of matrices of size \(n \le 3\) was defined using simple formulas. For larger matrices, unfortunately, there is no simple formula, and so we use a different approach. We reduce the problem of finding the determinant of one matrix of order \(n\) to a problem of finding \(n\) determinants of matrices of order \(n-1\text{.}\) So, for example, we find the determinant of a matrix of order \(4\) by evaluating the determinants of \(4\) matrices of order \(3\text{.}\) We have a formula for matrices of order \(3\text{,}\) so, in principle, it will be possible to evaluate the determinant for any matrix of order \(4\text{.}\) We can use this ability for finding the determinant of any matrix of order \(5\text{:}\) reduce it to a problem of \(5\) matrices of order \(4\text{,}\) which we already know how to solve. Continuing with the line of reasoning gives us the ability to evaluate determinants of any size.</p>
-<p id="p-558">While this gives the theoretical ability to compute determinants, the number of computations quickly becomes unworkable. We need to improve our mathematical techniques to enable practical computations. The material developed in this section allows the easy evaluation of many larger matrices.</p></section><section class="subsection" id="subsection-38"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-9"><p id="p-560">In <a class="xref" data-knowl="./knowl/DeterminantofSmallMatrices.html" title="Definition 3.1.1: Determinants of small matrices">Definition 3.1.1</a> the determinant of matrices of size \(n \le 3\) was defined using simple formulas. For larger matrices, unfortunately, there is no simple formula, and so we use a different approach. We reduce the problem of finding the determinant of one matrix of order \(n\) to a problem of finding \(n\) determinants of matrices of order \(n-1\text{.}\) So, for example, we find the determinant of a matrix of order \(4\) by evaluating the determinants of \(4\) matrices of order \(3\text{.}\) We have a formula for matrices of order \(3\text{,}\) so, in principle, it will be possible to evaluate the determinant for any matrix of order \(4\text{.}\) We can use this ability for finding the determinant of any matrix of order \(5\text{:}\) reduce it to a problem of \(5\) matrices of order \(4\text{,}\) which we already know how to solve. Continuing with the line of reasoning gives us the ability to evaluate determinants of any size.</p>
+<p id="p-561">While this gives the theoretical ability to compute determinants, the number of computations quickly becomes unworkable. We need to improve our mathematical techniques to enable practical computations. The material developed in this section allows the easy evaluation of many larger matrices.</p></section><section class="subsection" id="subsection-38"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.3.1</span> <span class="title">A motivating computation</span>
 </h3>
-<p id="p-559">This subsection contains optional material. The goal is to motivate <a class="xref" data-knowl="./knowl/HadamardRowSums.html" title="Theorem 3.3.4: \(A\circ C\) has constant row and column sums">Theorem 3.3.4</a>. It may be skipped on first reading if desired.</p>
+<p id="p-562">This subsection contains optional material. The goal is to motivate <a class="xref" data-knowl="./knowl/HadamardRowSums.html" title="Theorem 3.3.4: \(A\circ C\) has constant row and column sums">Theorem 3.3.4</a>. It may be skipped on first reading if desired.</p>
 <article class="definition definition-like" id="HadamardProductDef"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Hadamard product of two matrices.</span>
 </h6>
-<p id="p-560">If \(A=[a_{i,j}]\) and  \(B=[b_{i,j}]\) are both \(m\times n\) matrices, then the <dfn class="terminology">Hadamard product</dfn> \(A\circ B\) is an \(m\times n\) matrix defined by</p>
+<p id="p-563">If \(A=[a_{i,j}]\) and  \(B=[b_{i,j}]\) are both \(m\times n\) matrices, then the <dfn class="terminology">Hadamard product</dfn> \(A\circ B\) is an \(m\times n\) matrix defined by</p>
 <div class="displaymath">
 \begin{equation*}
 (A\circ B)_{i,j}= a_{i,j}b_{i,j}
 \end{equation*}
 </div>
-<p data-braille="continuation">In other words, multiplication is done element-wise.</p></article><article class="lemma theorem-like" id="lemma-4"><a data-knowl="" class="id-ref original" data-refid="hk-lemma-4"><h6 class="heading">
+<p data-braille="continuation">In other words, multiplication is done element-wise.</p></article><article class="lemma theorem-like" id="lemma-4"><h6 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">\(C=P\circ M\).</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-lemma-4">
-<article class="lemma theorem-like"><p id="p-561">If \(M\) is the matrix of minors, and \(C\) is the cofactor matrix, then</p>
+</h6>
+<p id="p-564">If \(M\) is the matrix of minors, and \(C\) is the cofactor matrix, then</p>
 <div class="displaymath">
 \begin{equation*}
 C=P\circ M
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-33"><a data-knowl="" class="id-ref original" data-refid="hk-proof-33"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-33"><article class="hiddenproof"><p id="p-562">This is just restating <a class="xref" data-knowl="./knowl/MinorsCofactorsCheckerboard.html" title="Observation 3.2.7: Minors, cofactors and the checkerboard pattern">Observation 3.2.7</a></p></article></div>
-</div>
-<p id="p-563">Compare the results of <a class="xref" data-knowl="./knowl/MatrixMinorsExmaple.html" title="Example 3.2.5: Matrix of minors">Example 3.2.5</a> and <a class="xref" data-knowl="./knowl/CofactorMatrixExmaple.html" title="Example 3.2.6: Cofactor matrix">Example 3.2.6</a>.</p>
-<p id="p-564">Starting with a given square matrix \(A\text{,}\) we have defined the matrix of minors \(M\)and the cofactor matrix \(C\) using <a class="xref" data-knowl="./knowl/MatrixMinorDefinition.html" title="Definition 3.2.1: The \(i,j\) minor of a matrix \(A\)">Definition 3.2.1</a> and <a class="xref" data-knowl="./knowl/MatrixCofactorDefinition.html" title="Definition 3.2.2: The \(i,j\) cofactor of a matrix \(A\)">Definition 3.2.2</a>. We have also used Hadamard multiplication of matrices <a class="xref" data-knowl="./knowl/HadamardProductDef.html" title="Definition 3.3.1: Hadamard product of two matrices">Definition 3.3.1</a> to see that \(C=P\circ M\text{.}\) We now wish to do the further evaluation of \(A\circ P\circ M=A\circ C\text{.}\)</p>
+</div></article><article class="hiddenproof" id="proof-33"><a data-knowl="" class="id-ref original" data-refid="hk-proof-33"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-33"><article class="hiddenproof"><p id="p-565">This is just restating <a class="xref" data-knowl="./knowl/MinorsCofactorsCheckerboard.html" title="Observation 3.2.7: Minors, cofactors and the checkerboard pattern">Observation 3.2.7</a></p></article></div>
+<p id="p-566">Compare the results of <a class="xref" data-knowl="./knowl/MatrixMinorsExmaple.html" title="Example 3.2.5: Matrix of minors">Example 3.2.5</a> and <a class="xref" data-knowl="./knowl/CofactorMatrixExmaple.html" title="Example 3.2.6: Cofactor matrix">Example 3.2.6</a>.</p>
+<p id="p-567">Starting with a given square matrix \(A\text{,}\) we have defined the matrix of minors \(M\)and the cofactor matrix \(C\) using <a class="xref" data-knowl="./knowl/MatrixMinorDefinition.html" title="Definition 3.2.1: The \(i,j\) minor of a matrix \(A\)">Definition 3.2.1</a> and <a class="xref" data-knowl="./knowl/MatrixCofactorDefinition.html" title="Definition 3.2.2: The \(i,j\) cofactor of a matrix \(A\)">Definition 3.2.2</a>. We have also used Hadamard multiplication of matrices <a class="xref" data-knowl="./knowl/HadamardProductDef.html" title="Definition 3.3.1: Hadamard product of two matrices">Definition 3.3.1</a> to see that \(C=P\circ M\text{.}\) We now wish to do the further evaluation of \(A\circ P\circ M=A\circ C\text{.}\)</p>
 <article class="example example-like" id="DeterminantSizeFour"><a data-knowl="" class="id-ref original" data-refid="hk-DeterminantSizeFour"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">\(A\circ C\) has constant row and column sums.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-DeterminantSizeFour"><article class="example example-like"><p id="p-565">Let</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-DeterminantSizeFour"><article class="example example-like"><p id="p-568">Let</p>
 <div class="displaymath">
 \begin{equation*}
 A=
@@ -225,58 +226,57 @@ A\circ C
 \end{matrix}
 \end{equation*}
 </div></article></div>
-<p id="p-566">An astonishing result is seen in this example. Adding the entries in any given row or in any given column gives row sums and column sums that are identical.</p>
-<article class="theorem theorem-like" id="HadamardRowSums"><a data-knowl="" class="id-ref original" data-refid="hk-HadamardRowSums"><h6 class="heading">
+<p id="p-569">An astonishing result is seen in this example. Adding the entries in any given row or in any given column gives row sums and column sums that are identical.</p>
+<article class="theorem theorem-like" id="HadamardRowSums"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">\(A\circ C\) has constant row and column sums.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-HadamardRowSums">
-<article class="theorem theorem-like"><p id="p-567">Let \(A\) be any square matrix, \(M\) be its matrix of minors and \(P\) satisfy \(p_{i,j}=(-1)^{i+j}\text{.}\) Then the row sums and column sums of \(A\circ P\circ M\) are identical.</p></article><article class="hiddenproof" id="proof-34"><a data-knowl="" class="id-ref original" data-refid="hk-proof-34"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-34"><article class="hiddenproof"><p id="p-568">We don't have the tools for the proof yet, so we postpone it. </p>
+</h6>
+<p id="p-570">Let \(A\) be any square matrix, \(M\) be its matrix of minors and \(P\) satisfy \(p_{i,j}=(-1)^{i+j}\text{.}\) Then the row sums and column sums of \(A\circ P\circ M\) are identical.</p></article><article class="hiddenproof" id="proof-34"><a data-knowl="" class="id-ref original" data-refid="hk-proof-34"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-34"><article class="hiddenproof"><p id="p-571">We defer the proof to here. </p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sademoji.jpeg" style="width: 100%; height: auto;" alt=""></div></div></div></article></div>
-</div>
-<p id="p-569">We now use <a class="xref" data-knowl="./knowl/HadamardRowSums.html" title="Theorem 3.3.4: \(A\circ C\) has constant row and column sums">Theorem 3.3.4</a> to define the determinant for large matrices.</p>
+<p id="p-572">We now use <a class="xref" data-knowl="./knowl/HadamardRowSums.html" title="Theorem 3.3.4: \(A\circ C\) has constant row and column sums">Theorem 3.3.4</a> to define the determinant for large matrices.</p>
 <article class="definition definition-like" id="definition-35"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">The determinant of a square matrix.</span>
 </h6>
-<p id="p-570">Let \(A\) be a square matrix with \(M\) as the matrix of minors and \(C\) as cofactor matrix. Then the <dfn class="terminology">determinant</dfn> of \(A\) is the common row and column sum of \(A\circ P\circ M= A\circ C\text{.}\)</p></article></section><section class="subsection" id="subsection-39"><h3 class="heading hide-type">
+<p id="p-573">Let \(A\) be a square matrix with \(M\) as the matrix of minors and \(C\) as cofactor matrix. Then the <dfn class="terminology">determinant</dfn> of \(A\) is the common row and column sum of \(A\circ P\circ M= A\circ C\text{.}\)</p></article></section><section class="subsection" id="subsection-39"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.3.2</span> <span class="title">The definition of the determinant</span>
 </h3>
-<p id="p-571">We can make the definition more explicit by focusing on a particular row. For any square matrix \(A\) of order \(n\text{,}\) the entries in the first row of the cofactor matrix are \(C_{1,1}, C_{1,2},\ldots,C_{1,n}\text{.}\) The entries of the first row of \(A\) are \(a_{1,1},a_{1,2},a_{1,3},\ldots,a_{1,n}\text{.}\) Hence the sum of the entries in the first row of \(A\circ C\) is</p>
+<p id="p-574">We can make the definition more explicit by focusing on a particular row. For any square matrix \(A\) of order \(n\text{,}\) the entries in the first row of the cofactor matrix are \(C_{1,1}, C_{1,2},\ldots,C_{1,n}\text{.}\) The entries of the first row of \(A\) are \(a_{1,1},a_{1,2},a_{1,3},\ldots,a_{1,n}\text{.}\) Hence the sum of the entries in the first row of \(A\circ C\) is</p>
 <div class="displaymath">
 \begin{equation*}
 a_{1,1}C_{1,1}+a_{1,2}C_{1,2}+a_{1,3}C_{1,3}+\cdots+a_{1,n}C_{1,n}=\sum_{j=1}^n a_{1,j}C_{1,j}
 \end{equation*}
 </div>
-<p data-braille="continuation">This number, by definition, is the determinant of \(A\text{.}\) It is called the <em class="emphasis">first row expansion</em> of \(A\text{.}\) There is nothing special about the first row. An analogous definition exists for all rows.</p>
+<p data-braille="continuation">This number, by definition, is the determinant of \(A\text{.}\) It is called the <dfn class="terminology">first row expansion</dfn> of \(A\text{.}\) There is nothing special about the first row. An analogous definition exists for all rows.</p>
 <article class="definition definition-like" id="definition-36"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">The \(i\)-th row expansion of \(A\).</span>
 </h6>
-<p id="p-572">Let \(A\) be a square matrix of order \(n\text{.}\) Then the <dfn class="terminology">\(i\)-th row expansion</dfn> of \(A\) is</p>
+<p id="p-575">Let \(A\) be a square matrix of order \(n\text{.}\) Then the <dfn class="terminology">\(i\)-th row expansion</dfn> of \(A\) is</p>
 <div class="displaymath">
 \begin{equation*}
 \sum_{j=1}^n a_{i,j}C_{i,j}.
 \end{equation*}
-</div></article><p id="p-573">Columns are handled in exactly the same way</p>
+</div></article><p id="p-576">Columns are handled in exactly the same way</p>
 <article class="definition definition-like" id="definition-37"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">The \(j\)-th column expansion of \(A\).</span>
 </h6>
-<p id="p-574">Let \(A\) be a square matrix of order \(n\text{.}\) Then the <dfn class="terminology">\(j\)-th column expansion</dfn> of \(A\) is</p>
+<p id="p-577">Let \(A\) be a square matrix of order \(n\text{.}\) Then the <dfn class="terminology">\(j\)-th column expansion</dfn> of \(A\) is</p>
 <div class="displaymath">
 \begin{equation*}
 \sum_{i=1}^n a_{i,j}C_{i,j}.
 \end{equation*}
-</div></article><p id="p-575">We now restate the definition of the determinant using different notation.</p>
+</div></article><p id="p-578">We now restate the definition of the determinant using different notation.</p>
 <article class="definition definition-like" id="definition-38"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">The determinant of a square matrix.</span>
 </h6>
-<p id="p-576">For any square matrix \(A\text{,}\) the determinant of \(A\) is the common value of the \(i\)-th row expansions \(j\)-th column expansions of \(A\text{.}\)</p></article><article class="example example-like" id="example-27"><a data-knowl="" class="id-ref original" data-refid="hk-example-27"><h6 class="heading">
+<p id="p-579">For any square matrix \(A\text{,}\) the determinant of \(A\) is the common value of the \(i\)-th row expansions \(j\)-th column expansions of \(A\text{.}\)</p></article><article class="example example-like" id="example-27"><a data-knowl="" class="id-ref original" data-refid="hk-example-27"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">An example of cofactor expansion with \(n=4\).</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-27"><article class="example example-like"><p id="p-577">Let \(A=
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-27"><article class="example example-like"><p id="p-580">Let \(A=
 \begin{bmatrix}
 1\amp 2\amp 2\amp 3\\
 -1\amp 4\amp 5\amp 3\\ 3\amp
 4\amp 8\amp -1\\
 1\amp 2\amp 2\amp 1
 \end{bmatrix}\text{.}\)</p>
-<p id="p-578">We will evaluate \(\det(A)\) by expanding on the first row. The formula for the first row expansion is</p>
+<p id="p-581">We will evaluate \(\det(A)\) by expanding on the first row. The formula for the first row expansion is</p>
 <div class="displaymath">
 \begin{equation*}
 \det(A)=a_{1,1}C_{1,1} + a_{1,2}C_{1,2}+ a_{1,3}C_{1,3}+ a_{1,4}C_{1,4}.
@@ -318,7 +318,7 @@ a_{1,4}=3
 \end{array}
 \end{equation*}
 </div>
-<p id="p-579">Now we can compute</p>
+<p id="p-582">Now we can compute</p>
 <div class="displaymath">
 \begin{align*}
 a_{1,1}C_{1,1} \amp + a_{1,2}C_{1,2} + a_{1,3}C_{1,3} + a_{1,4}C_{1,4}\\
@@ -326,8 +326,8 @@ a_{1,1}C_{1,1} \amp + a_{1,2}C_{1,2} + a_{1,3}C_{1,3} + a_{1,4}C_{1,4}\\
 \amp =-52
 \end{align*}
 </div>
-<p id="p-580">The cofactor expansion on column \(C_3\) is</p>
-<div class="displaymath" id="p-581">
+<p id="p-583">The cofactor expansion on column \(C_3\) is</p>
+<div class="displaymath" id="p-584">
 \begin{align*}
 a_{1,3}C_{1,3} + \amp a_{2,3}C_{2,3} +a_{3,3}C_{3,3} + a_{4,3}C_{4,3}\\
 \amp = a_{1,3}M_{1,3} - a_{2,3}M_{2,3} +a_{3,3}M_{3,3} - a_{4,3}M_{4,3}
@@ -376,8 +376,8 @@ a_{1,3}M_{1,3} - \amp a_{2,3}M_{2,3}+a_{3,3}M_{3,3} - a_{4,3}M_{4,3}\\
 \amp= -52
 \end{align*}
 </div>
-<p id="p-582">Similarly, the cofactor expansion on column \(C_4\) evaluates to \(-3(26)+3(0)+1(0)+1(26)=-52\text{.}\)</p>
-<p id="p-583">The three cofactor expansions of \(A\) give the identical result.</p></article></div></section></section></div></main>
+<p id="p-585">Similarly, the cofactor expansion on column \(C_4\) evaluates to \(-3(26)+3(0)+1(0)+1(26)=-52\text{.}\)</p>
+<p id="p-586">The three cofactor expansions of \(A\) give the identical result.</p></article></div></section></section></div></main>
 </div>
 </body>
 </html>

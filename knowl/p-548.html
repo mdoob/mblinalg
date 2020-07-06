@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-05T13:50:58-05:00    *-->
+<!--*    on 2020-07-05T18:40:35-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,27 +13,23 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We find \(M_{2,3}\) and \(C_{2,3}\) for the matrix</p>
+<p>\(M_{i,j}\text{,}\) the <dfn class="terminology">\(i,j\) minor</dfn> of a matrix \(A\) is computed by deleting the row and column containing \(a_{i,j}\) and evaluating the determinant of what remains.</p>
 <div class="displaymath">
 \begin{equation*}
-A=
-\begin{bmatrix}1\amp2\amp2\amp3\\
--1\amp4\amp5\amp3\\
-3\amp4\amp8\amp-1\\
-1\amp2\amp2\amp1 \end{bmatrix}
+\qquad\qquad\qquad\downarrow \text{ column } C_j \text{ deleted}\\
+M_{i,j}=\det
+\left[\begin{array}{c|c|c}
+{}******\amp \amp *****\\
+{}******\amp \amp *****\\
+{}******\amp \amp *****\\\hline
+\cdots\amp a_{i,j}\amp\cdots\\ \hline
+{}******\amp \amp *****\\
+{}******\amp \amp *****\\
+{}******\amp \amp *****
+\end{array}\right]
+\gets \text{ row } R_i \text{ deleted}
 \end{equation*}
 </div>
-<p data-braille="continuation">When we delete row \(R_2\) and column \(C_3\) from \(A\) we get the matrix</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{bmatrix}
-1\amp2\amp3\\
-3\amp4\amp-1\\
-1\amp2\amp1
-\end{bmatrix}
-\end{equation*}
-</div>
-<p data-braille="continuation">We have already calculated the determinant of this matrix in <a class="xref" data-knowl="./knowl/det_example1.html" title="Example 3.1.2: Determinants of small matrices">Example 3.1.2</a> to be \(4,\) so \(M_{2,3}=4\) and \(C_{2,3}=(-1)^5 4=-4.\)</p>
 <span class="incontext"><a href="section-20.html#p-548">in-context</a></span>
 </body>
 </html>

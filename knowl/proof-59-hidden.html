@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-07-05T18:40:39-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><ol class="decimal">
+<li><p>Since \(\|\vec x\|= \vec x\cdot\vec x\text{,}\) this result is contained in <a class="xref" data-knowl="./knowl/DotProductFirstProperties.html" title="Proposition 4.2.3: First properties of the dot product">Proposition 4.2.3</a>.</p></li>
+<li>
+<p>From direct evaluation:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+\|r\vec x\|^2
+\amp=\|r(x_1,x_2,\ldots,x_n)\|^2\\
+\amp=\|(rx_1,rx_2,\ldots,rx_n)\|^2\\
+\amp=r^2x_1^2+r^2x_2^2+\cdots+r^2x_n^2\\
+\amp=r^2(x_1^2+x_2^2+\cdots+x_n^2)
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">and so by taking square roots, \(\|r\vec x\|=|r| \|\vec x\|\text{.}\)</p>
+</li>
+<li><p>This is just <a class="xref" data-knowl="./knowl/CauchySchwarz.html" title="Theorem 4.2.17: Cauchy-Schwarz">Theorem 4.2.17</a></p></li>
+<li>
+<p>Again, a direct evaluation:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+\|\vec x+\vec y\|^2 + \|\vec x-\vec y\|^2 
+\amp= (\vec x+\vec y) \cdot (\vec x+\vec y) 
++(\vec x-\vec y) \cdot (\vec x-\vec y)\\
+\amp=  (\vec x\cdot\vec x + \vec x\cdot\vec y 
++\vec y\cdot\vec x +\vec y\cdot\vec y)\\
+\amp \phantom{=} +  (\vec x\cdot\vec x - \vec x\cdot\vec y 
+-\vec y\cdot\vec x +\vec y\cdot\vec y)\\
+\amp=2(\|\vec x\|^2 +\|\vec y\|^2)
+\end{array}
+\end{equation*}
+</div>
+</li>
+<li>
+<p>The triangle inequality is a consequence of the Cauchy-Schwarz inequality:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rll}
+\|\vec x+\vec y\|^2
+\amp= (\vec x+\vec y)\cdot(\vec x+\vec y)\\
+\amp= \vec x\cdot\vec x+2(\vec x\cdot\vec y)+\vec y\cdot\vec y\\
+\amp= \|\vec x\|^2 +2(\vec x\cdot\vec y)+\|\vec y\|^2\\
+\amp\le \|\vec x\|^2 +2|\vec x\cdot\vec y|+\|\vec y\|^2
+\amp\amp\gets r\le|r|\text{ used here.}\\
+\amp\le \|\vec x\|^2 +2\|\vec x\|\|\vec y\|+\|\vec y\|^2
+\amp\amp\gets \text{ Cauchy-Schwarz used here.}\\
+\amp= (\|\vec x\|+\|\vec y\|)^2
+\end{array}
+\end{equation*}
+</div>
+</li>
+</ol></article></body>
+</html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-05T13:51:02-05:00    *-->
+<!--*    on 2020-07-05T18:40:38-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,9 +11,42 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p>The proof can be seen from the following two figures. Applying the law of cosines to the first figure gives \[ c^2=a^2+b^2-2ab\cos(\theta)\tag1 \] while applying it to the second figure gives \[ d^2=a^2+b^2-2ab\cos(\pi-\theta)= a^2+b^2+2ab\cos(\theta)\tag2 \]</p>
-<figure class="figure figure-like"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><object data="images/image-26.html" id="image-26" width="420" height="420"><embed src="images/image-26.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.15<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p>and</p>
-<figure class="figure figure-like"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><object data="images/image-27.html" id="image-27" width="420" height="420"><embed src="images/image-27.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.16<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p>Adding (1) and (2) gives \[ c^2+d^2=2a^2+2b^2 \]</p></article></body>
+<body><article class="hiddenproof"><ol class="decimal">
+<li><p>\(\displaystyle \vec x\cdot \vec y=\sum_{i=1}^n x_iy_i=\sum_{i=1}^n y_ix_i=\vec y\cdot\vec x\)</p></li>
+<li>
+<p>By direct evaluation</p>
+<div class="displaymath">
+\begin{align*}
+\vec u\cdot(\vec x+\vec y)   
+\amp = \sum_{i=1}^n u_i(x_i+y_i)\\
+\amp = \sum_{i=1}^n (u_ix_i+u_iy_i)\\
+\amp = \sum_{i=1}^n u_ix_i+\sum_{i=1}^nu_iy_i\\
+\amp =\vec u\cdot \vec x+\vec u\cdot \vec y
+\end{align*}
+</div>
+</li>
+<li>
+<p>Using (1) and (2),</p>
+<div class="displaymath">
+\begin{equation*}
+(\vec x+\vec y)\cdot\vec u 
+=  \vec u\cdot(\vec x+\vec y) =  \vec u\cdot \vec x+\vec u\cdot \vec y
+= \vec x\cdot \vec u + \vec y\cdot \vec u
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Evaluating each term:</p>
+<div class="displaymath">
+\begin{equation*}
+r(\vec x\cdot\vec y)= r\sum_{i=1}^n x_iy_i      \\
+(r\vec x)\cdot \vec y = \sum_{i=1}^n (rx_i)y_i
+= \sum_{i=1}^n r(x_iy_i)= r\sum_{i=1}^n x_iy_i        \\
+\vec x\cdot (r\vec y)= \sum_{i=1}^n x_i(ry_i)
+= \sum_{i=1}^n r(x_iy_i)= r\sum_{i=1}^n x_iy_i
+\end{equation*}
+</div>
+</li>
+<li><p>\(\vec x\cdot \vec x=\sum_{i=1}^n x_i^2\text{,}\) and since \(x_i^2\ge0\) for any real number, we have \(\vec x\cdot \vec x\ge0\text{.}\) For the value to actually be \(0\text{,}\) we must have each \(x_i^2=0\) and hence \(x_i=0\) for \(i=1,\ldots,n\text{.}\) In this case \(\vec x=\vec0\text{.}\)</p></li>
+</ol></article></body>
 </html>

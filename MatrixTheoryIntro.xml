@@ -1670,7 +1670,8 @@
     
     <section><title>Powers of a matrix (nonnegative exponents)</title>
     
-        <subsection><title> Computing the powers of a square matrix <m>A</m> </title>
+        <subsection>
+        <title> Computing the powers of a square matrix <m>A</m> </title>
             <p>
             If <m>A</m> and <m>B</m> are both square matrices of order <m>n</m>, 
             then <m>AB</m> is also a square matrix
@@ -1684,19 +1685,30 @@
             </me>.
         
             In addition, we define <m>A^1=A</m>.
+            </p>
         
-            For example, if
-            <m>A=\begin{bmatrix}1\amp2\\2\amp1\end{bmatrix}</m> then
-        
-            <me>
-            A^1=\begin{bmatrix}1\amp2\\2\amp1\end{bmatrix}\\
-            A^2=\begin{bmatrix}5\amp4\\4\amp5\end{bmatrix}\\
-            A^3=\begin{bmatrix}13\amp14\\14\amp13\end{bmatrix}\\
-            A^4=\begin{bmatrix}40\amp41\\41\amp40\end{bmatrix}\\
-            A^5=\begin{bmatrix}121\amp122\\122\amp121\end{bmatrix}\\
-            </me>
+            <p>
+            If <m>A=\begin{bmatrix}1\amp2\\2\amp1\end{bmatrix}</m> then
+            it is straightforward to compute the powers of <m>A</m>:
         
             </p>
+            <table xml:id="MatrixPowerExample"> 
+            <title>Powers of 
+                <m>A=\bigl[\begin{smallmatrix}1\amp2\\2\amp1\end{smallmatrix}\bigr]</m>
+            </title> 
+            <tabular>
+	        <row><cell><m>A^1=\begin{bmatrix}1\amp2\\2\amp1\end{bmatrix}</m></cell></row>
+	        <row><cell><m>A^2=\begin{bmatrix}5\amp4\\4\amp5\end{bmatrix}</m></cell></row>
+	        <row><cell><m>A^3=\begin{bmatrix}13\amp14\\14\amp13\end{bmatrix}</m></cell></row>
+	        <row><cell><m>A^4=\begin{bmatrix}40\amp41\\41\amp40\end{bmatrix}</m></cell></row>
+	        <row><cell><m>A^5=\begin{bmatrix}121\amp122\\122\amp121\end{bmatrix}</m></cell></row>
+            </tabular> 
+            </table>
+            <p>
+            It is not easy to write a general expression for <m>A^n</m>.
+            When we have developed more sophisticated tools, we will be able to do so.
+            </p>
+        
         </subsection>
     
         <subsection xml:id="LawOfExponents"> <title> The law of exponents </title>
@@ -2442,24 +2454,29 @@
 		    <m>A=[a_{i,j}]</m> is by the condition that <m>a_{i,j}=0</m>
 		    whenever <m>i\not=j</m>.  
         </p>
+        <p>
+        Multiplication of diagonal matrices is particularly easy. 
+        </p>
 
-	    <paragraphs><title>Multiplication of diagonal matrices</title>
-		    <p>
-            Multiplication of diagonal matrices is particularly
-		    easy. If 
-            <me> 
-            D=\mathrm{diag}(d_1,d_2,\ldots,d_n)
-		    </me> 
-            and 
-            <me> 
-            E=\mathrm{diag}(e_1,e_2,\ldots,e_n)
-		    </me> 
-            then it is easy to verify that 
-            <me>
-		    DE=\mathrm{diag}(d_1e_1,d_2e_2,\ldots,d_ne_n) 
-            </me>. 
-            </p>
-	    </paragraphs>
+	    <proposition xml:id="MultiplyDiagonalMatrices">
+        <title>Multiplication of diagonal matrices</title>
+        <statement>
+		<p>
+        If 
+        <me> 
+        D=\mathrm{diag}(d_1,d_2,\ldots,d_n)
+		</me> 
+        and 
+        <me> 
+        E=\mathrm{diag}(e_1,e_2,\ldots,e_n)
+		</me> 
+        then it is easy to verify that 
+        <me>
+		DE=\mathrm{diag}(d_1e_1,d_2e_2,\ldots,d_ne_n) 
+        </me>. 
+        </p>
+        </statement>
+        </proposition>
 
 	    </subsection>
 
@@ -2911,6 +2928,8 @@
     <subsection><title>The three types of elementary matrices</title> 
     <p> 
     There are three different elementary row operations:
+    <xref ref="TableOfElemantaryRowOperations"/>
+
     <!-- Change to a table -->
 	    <ol> 
         <li><p>

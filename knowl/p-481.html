@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-05T13:50:57-05:00    *-->
+<!--*    on 2020-07-05T18:40:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,22 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose we start with a matrix \(A\) and carry out one elementary row operation to get the matrix \(B\text{.}\) Then there is an elementary matrix \(E_1\text{,}\) \(E_2\text{,}\) or \(E_3\) so that:</p>
-<ol class="decimal">
-<li><p>Interchange rows (\(R_i\leftrightarrow R_j\)) \[B=E_1A\]</p></li>
-<li><p>Multiply a row by a constant (\(R_i\leftarrow \lambda R_i\)) \[B=E_2A\]</p></li>
-<li><p>Add a multiple of one row to another (\(R_i\leftarrow
-R_i + \lambda R_j\)) \[B=E_3A\]</p></li>
-</ol>
+<p>(\(R_i\gets \lambda R_i\) where \(\lambda\not=0)\)</p>
+<div class="displaymath">
+\begin{equation*}
+E_2=
+\begin{bmatrix} 
+1 \\ 
+\amp\ddots \\ 
+\amp\amp1 \\ 
+\amp\amp\amp\lambda \\ 
+\amp\amp\amp\amp1 \\
+\amp\amp\amp\amp\amp\ddots \\ 
+\amp\amp\amp\amp\amp\amp1
+\end{bmatrix} 
+\end{equation*}
+</div>
+<p data-braille="continuation">In this case \(e_{i,i}=\lambda\text{.}\)  All other entries are the same as those in \(I\text{.}\)</p>
 <span class="incontext"><a href="section-17.html#p-481">in-context</a></span>
 </body>
 </html>

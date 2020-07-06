@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-05T13:50:57-05:00    *-->
+<!--*    on 2020-07-05T18:40:33-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,41 +13,20 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>This means that the matrix is of the form</p>
+<p>For any square matrix \(A\) of order \(n\text{,}\) the <dfn class="terminology">diagonal entries</dfn> are \(a_{1,1},a_{2,2},a_{3,3},\ldots, a_{n,n}\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
-A=
+A= 
 \begin{bmatrix} 
-a_{1,1} \amp 0 \amp 0 \amp 0 \amp \cdots \amp 0 \\ 
-0 \amp a_{2,2} \amp 0 \amp 0 \amp \cdots \amp 0 \\ 
-0 \amp 0 \amp a_{3,3} \amp 0 \amp \cdots \amp 0 \\ 
-0 \amp 0 \amp 0 \amp a_{4,4} \amp \cdots \amp 0 \\ 
-\amp\amp\amp\amp\ddots\\ 
-0 \amp 0 \amp 0 \amp 0 \amp \cdots \amp a_{n,n} 
-\end{bmatrix}.
-\end{equation*}
-</div>
-<p data-braille="continuation">Once we know the diagonal entries, we know the whole matrix. Sometimes we abbreviate this as</p>
-<div class="displaymath">
-\begin{equation*}
-A=\mathrm{diag}(a_{1,1},\ldots,a_{n,n}). 
-\end{equation*}
-</div>
-<p data-braille="continuation">An example of a diagonal matrix is the identity matrix \(I\text{:}\)</p>
-<div class="displaymath">
-\begin{equation*}
-I= 
-\begin{bmatrix} 
-1\amp0\amp\cdots\amp0\amp0\\
-0\amp1\amp\cdots\amp0\amp0\\ 
-\amp\amp\ddots\\
-0\amp0\amp\cdots\amp1\amp0\\ 
-0\amp0\amp\cdots\amp0\amp1
+\color{red}{a_{1,1}} \amp a_{1,2}\amp\cdots \amp a_{1,n-1}\amp a_{1,n}\\ 
+a_{2,1} \amp \color{red}{a_{2,2}}\amp\cdots \amp a_{2,n-1}\amp a_{2,n}\\ 
+\amp\amp\ddots\amp\\ 
+a_{n-1,1} \amp a_{n-1,2}\amp\cdots \amp \color{red}{a_{n-1,n-1}} \amp a_{n-1,n}\\ 
+a_{n,1} \amp a_{n,2}\amp\cdots \amp a_{n,n-1}\amp\color{red}{a_{n,n}} 
 \end{bmatrix} 
-=\mathrm{diag}(1,\ldots,1) 
 \end{equation*}
 </div>
-<p data-braille="continuation">An alternative way of describing a diagonal matrix \(A=[a_{i,j}]\) is by the condition that \(a_{i,j}=0\) whenever \(i\not=j\text{.}\)</p>
+<p data-braille="continuation">So these are the entries that start at the upper-left corner of the matrix and go down the diagonal to the lower-right one. This is also called the <dfn class="terminology">main diagonal</dfn> of the matrix. Clearly we can describe an identity matrix as one whose diagonal entries are \(1\) and whose remaining entries are \(0\text{.}\)</p>
 <span class="incontext"><a href="section-15.html#p-434">in-context</a></span>
 </body>
 </html>

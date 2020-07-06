@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-05T13:50:47-05:00    *-->
+<!--*    on 2020-07-05T18:40:19-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -94,7 +94,9 @@ MathJax.Hub.Config({
 <li class="link"><a href="SysLinEq.html" data-scroll="SysLinEq"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations</span></a></li>
 <li class="link"><a href="MatrixTheoryIntro.html" data-scroll="MatrixTheoryIntro"><span class="codenumber">2</span> <span class="title">Matrix Theory</span></a></li>
 <li class="link"><a href="Determinants.html" data-scroll="Determinants"><span class="codenumber">3</span> <span class="title">The Determinant</span></a></li>
-<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">4</span> <span class="title">Additional Topics</span></a></li>
+<li class="link"><a href="EuclideanSpace.html" data-scroll="EuclideanSpace"><span class="codenumber">4</span> <span class="title">Vectors in Euclidean \(n\) space</span></a></li>
+<li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
+<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">6</span> <span class="title">Additional Topics</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-11"><h2 class="heading hide-type">
@@ -347,10 +349,10 @@ XZ=ZX.
 x\amp y\\ z\amp w
 \end{bmatrix}\) and evaluate \(XZ\) and \(ZX\)</p></div></div>
 </div></article></div>
-<article class="theorem theorem-like" id="theorem-5"><a data-knowl="" class="id-ref original" data-refid="hk-theorem-5"><h6 class="heading">
+<article class="theorem theorem-like" id="theorem-5"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.6</span><span class="period">.</span><span class="space"> </span><span class="title">Left distributive law.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-theorem-5">
-<article class="theorem theorem-like"><p id="p-330">Let \(A\text{,}\) \(B\) and \(C\) be matrices of the right size for matrix multiplication. Then \(A(B+C)=AB+AC\)</p></article><article class="hiddenproof" id="proof-5"><a data-knowl="" class="id-ref original" data-refid="hk-proof-5"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-5"><article class="hiddenproof"><p id="p-331">We compute the \(i\)-\(j\) entry on both sides of the equation:</p>
+</h6>
+<p id="p-330">Let \(A\text{,}\) \(B\) and \(C\) be matrices of the right size for matrix multiplication. Then \(A(B+C)=AB+AC\)</p></article><article class="hiddenproof" id="proof-5"><a data-knowl="" class="id-ref original" data-refid="hk-proof-5"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-5"><article class="hiddenproof"><p id="p-331">We compute the \(i\)-\(j\) entry on both sides of the equation:</p>
 <ul class="disc">
 <li id="li-151">
 <p id="p-332">Left hand side: The \(k\)-\(j\) entry of \(B+C\) is \(b_{k,j}+c_{k,j}\text{,}\) and so the \(i\)-\(j\) entry of \(A(B+C)\) is</p>
@@ -387,11 +389,10 @@ a_{i,2}(b_{2,j}+c_{2,j})+
 \amp = (AB)_{i,j} + (AC)_{i,j}
 \end{align*}
 </div></article></div>
-</div>
-<article class="theorem theorem-like" id="theorem-6"><a data-knowl="" class="id-ref original" data-refid="hk-theorem-6"><h6 class="heading">
+<article class="theorem theorem-like" id="theorem-6"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">Right distributive law.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-theorem-6">
-<article class="theorem theorem-like"><p id="p-335">Let \(A\text{,}\) \(B\) and \(C\) be matrices of the right size for matrix multiplication. Then \((B+C)A = BA+CA\text{.}\)</p></article><article class="hiddenproof" id="proof-7"><a data-knowl="" class="id-ref original" data-refid="hk-proof-7"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-7"><article class="hiddenproof"><p id="p-336">Let \(B\)  and \(C\) be of size \(m\times n\text{,}\) and \(A\) be of size \(n\times r\text{.}\) We use \(A=[a_{i,j}],\)  \(B=[b_{i,j}]\) and  \(C=[c_{i,j}]\text{,}\) and we compute the \(i\)-\(j\) entry on both sides of the equation.</p>
+</h6>
+<p id="p-335">Let \(A\text{,}\) \(B\) and \(C\) be matrices of the right size for matrix multiplication. Then \((B+C)A = BA+CA\text{.}\)</p></article><article class="hiddenproof" id="proof-7"><a data-knowl="" class="id-ref original" data-refid="hk-proof-7"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-7"><article class="hiddenproof"><p id="p-336">Let \(B\)  and \(C\) be of size \(m\times n\text{,}\) and \(A\) be of size \(n\times r\text{.}\) We use \(A=[a_{i,j}],\)  \(B=[b_{i,j}]\) and  \(C=[c_{i,j}]\text{,}\) and we compute the \(i\)-\(j\) entry on both sides of the equation.</p>
 <ul class="disc">
 <li id="li-153">
 <p id="p-337">Left hand side: The \(i\)-\(k\) entry of \(B+C\) is \(b_{i,k}+c_{i,k}\text{,}\) and so the  \(i\)-\(j\) entry of \((B+C)A\) is</p>
@@ -428,11 +429,10 @@ b_{i,1}a_{1,j}+b_{i,2}a_{2,j}+\cdots+b_{i,n}a_{n,j}\\
 \amp = (BA)_{i,j} + (CA)_{i,j}
 \end{align*}
 </div></article></div>
-</div>
-<article class="theorem theorem-like" id="theorem-7"><a data-knowl="" class="id-ref original" data-refid="hk-theorem-7"><h6 class="heading">
+<article class="theorem theorem-like" id="theorem-7"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.8</span><span class="period">.</span><span class="space"> </span><span class="title">Associativity of matrix multiplication.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-theorem-7">
-<article class="theorem theorem-like"><p id="p-340">Let \(A\text{,}\) \(B\) and \(C\) be matrices of the right size for matrix multiplication. Then \(A(BC)=(AB)C\text{.}\)</p></article><article class="hiddenproof" id="proof-9"><a data-knowl="" class="id-ref original" data-refid="hk-proof-9"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-9"><article class="hiddenproof"><p id="p-341">Let \(A\) be of size \(m\times n\text{,}\) and \(B\)  of size \(n\times r\) and \(C\) of size \(r\times s\text{.}\) We use \(A=[a_{i,j}],\) \(B=[b_{i,j}]\) and \(C=[c_{i,j}]\text{,}\) and we compute the \(i\)-\(j\) entry on both sides of the equation.</p>
+</h6>
+<p id="p-340">Let \(A\text{,}\) \(B\) and \(C\) be matrices of the right size for matrix multiplication. Then \(A(BC)=(AB)C\text{.}\)</p></article><article class="hiddenproof" id="proof-9"><a data-knowl="" class="id-ref original" data-refid="hk-proof-9"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-9"><article class="hiddenproof"><p id="p-341">Let \(A\) be of size \(m\times n\text{,}\) and \(B\)  of size \(n\times r\) and \(C\) of size \(r\times s\text{.}\) We use \(A=[a_{i,j}],\) \(B=[b_{i,j}]\) and \(C=[c_{i,j}]\text{,}\) and we compute the \(i\)-\(j\) entry on both sides of the equation.</p>
 <ul class="disc">
 <li id="li-155">
 <p id="p-342">Left hand side: The \(i\)-\(j\) entry of \(A(BC)\) is \(a_{i,1}(BC)_{1,j} +
@@ -532,8 +532,7 @@ a_{i,1}b_{1,r}c_{r,j} + a_{i,2}b_{2,r}c_{r,j} + \cdots + a_{i,n}b_{n,r}c_{r,j}
 \begin{equation*}
 (AB)C=A(BC)
 \end{equation*}
-</div></article></div>
-</div></section><section class="subsection" id="subsection-21"><h3 class="heading hide-type">
+</div></article></div></section><section class="subsection" id="subsection-21"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.4.3</span> <span class="title">Solving a matrix equation \(AX=B\)</span>
 </h3>
 <p id="p-345">Suppose that \(A\) is an \(m\times n\) matrix and \(B\) is an \(m\times r\) matrix. We want find a matrix \(X\) so that \(AX=B.\) To be conformable for multiplication, \(X\) must be of size \(n\times r.\) Specifically, if \(A=[a_{i,j}]\text{,}\) \(X=[x_{i,j}]\)  and \(B=[b_{i,j}]\text{,}\) then we have</p>
@@ -701,13 +700,14 @@ X=
 <li id="li-160"><p id="p-351">The bottom row is an all-zero row.</p></li>
 <li id="li-161"><p id="p-352">The bottom row is <em class="emphasis">not</em> an all-zero row.</p></li>
 </ul>
-<p data-braille="continuation">In the second case, this means that every row has a leading one, and, since the matrix is square, every column also has a leading one. This means that there are no free variables, and so the leading ones are all on the diagonal, that is, the reduced row echelon form is \(I_n\text{.}\)</p></article><article class="theorem theorem-like" id="theorem-8"><a data-knowl="" class="id-ref original" data-refid="hk-theorem-8"><h6 class="heading">
+<p data-braille="continuation">In the second case, this means that every row has a leading one, and, since the matrix is square, every column also has a leading one. This means that there are no free variables, and so the leading ones are all on the diagonal, that is, the reduced row echelon form is \(I_n\text{.}\)</p></article><article class="theorem theorem-like" id="theorem-8"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.10</span><span class="period">.</span><span class="space"> </span><span class="title">Reduced row echelon form of a square matrix.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-theorem-8"><article class="theorem theorem-like"><p id="p-353">The reduced row echelon form of a square matrix \(A_n\)</p>
+</h6>
+<p id="p-353">The reduced row echelon form of a square matrix \(A_n\)</p>
 <ul class="disc">
 <li id="li-162"><p id="p-354">is \(I_n\text{,}\) and so the rank is \(n\text{,}\) or</p></li>
 <li id="li-163"><p id="p-355">has a bottom row that is an all-zero row, and so the rank is less than \(n\text{.}\)</p></li>
-</ul></article></div></section></section></div></main>
+</ul></article></section></section></div></main>
 </div>
 </body>
 </html>

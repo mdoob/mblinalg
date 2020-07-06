@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-05T13:51:01-05:00    *-->
+<!--*    on 2020-07-05T18:40:37-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,46 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Conversely, if both \(A\) and \(A^{-1}\) have all integer entries, the \(\det A\) and \(\det A^{-1}\) are both integers. But then</p>
+<p>Next we compute the minors:</p>
 <div class="displaymath">
 \begin{equation*}
-\det A\,\det A^{-1}= \det(AA^{-1})=\det I=1
+\begin{array}{lll}
+M_{1,1}= -10 \amp M_{1,2}= -5 \amp M_{1,3}= 1 \\
+M_{2,1}= -2 \amp M_{2,2}= -1 \amp M_{2,3}= 0 \\
+M_{3,1}= 7 \amp M_{3,2}= 3 \amp M_{3,3}= -1 
+\end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">Hence either \(\det A=\det A^{-1}=1\) or \(\det A=\det A^{-1}=-1\text{.}\)</p>
+<p data-braille="continuation">from which we deduce</p>
+<div class="displaymath">
+\begin{equation*}
+M=
+\begin{bmatrix}
+-10 \amp -5 \amp 1 \\
+-2 \amp -1 \amp 0 \\
+7 \amp 3 \amp -1 
+\end{bmatrix}
+\qquad
+C=
+\begin{bmatrix}
+-10 \amp 5 \amp 1 \\
+2 \amp -1 \amp 0 \\
+7 \amp -3 \amp -1 
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">from which follows</p>
+<div class="displaymath">
+\begin{equation*}
+A^{-1}=\frac1{\det A} \adj A=\frac 11 C^T
+=
+\begin{bmatrix}
+-10 \amp 2 \amp 7\\ 
+5 \amp -1 \amp -3 \\ 
+1\amp 0 \amp -1 
+\end{bmatrix}
+\end{equation*}
+</div>
 <span class="incontext"><a href="section-23.html#p-664">in-context</a></span>
 </body>
 </html>

@@ -1,9 +1,10 @@
 #!/bin/bash
 
-XMLFILE=linalg.xml
+XSLFILE=mathbook-local.xsl
+XMLFILE=mblinalg.xml
 
-xsltproc mathbook-local.xsl $XMLFILE
-$HOME/mathbook/script/mbx -c asy -f html -d ./images $XMLFILE
+xsltproc -xinclude $XSLFILE $XMLFILE
+# $HOME/mathbook/script/mbx -c asy -f html -d ./images $XMLFILE
 # cd ./images
 # ./p2s
 

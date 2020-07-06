@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-07-05T18:40:40-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="paragraphs"><h5 class="heading"><span class="title">Finding the plane containing three points: method 1.</span></h5>
+<p>The general equation of the plane is</p>
+<div class="displaymath">
+\begin{equation*}
+ax+by+cz+d=0
+\end{equation*}
+</div>
+<p data-braille="continuation">for some \(a\text{,}\) \(b\) and \(c\) not all zero. Substitute the three points in the equation to get three equations in four unknowns (the unknowns are \(a\text{,}\) \(b\text{,}\) \(c\) and \(d\)).</p>
+<p>Example of this method: Let the three points be \((1,1,3)\text{,}\) \((1,0,2)\) and \((2,1,1)\text{.}\) Each point gives an equation: \(\begin{align}
+a+b+3c+d\amp=0 \tag{from the point \((1,1,3)\)}\\
+a\phantom{+2b}+2c+d\amp=0\tag{from the point \((1,0,2)\)}\\
+2a+b+c+d\amp=0\tag{from the point \((2,1,1)\)}
+\end{align}
+\text{.}\) The augmented matrix for this system is</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{cccc|c}
+1\amp1\amp3\amp1\amp0\\
+1\amp0\amp2\amp1\amp0\\
+2\amp1\amp1\amp1\amp0
+\end{array}\right]
+\end{equation*}
+</div>
+<p>which has the reduced row echelon form:</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{cccc|c}
+1\amp0\amp0\amp\frac12\amp0\\
+0\amp1\amp0\amp-\frac14\amp0\\
+0\amp0\amp1\amp\frac14\amp0
+\end{array}\right]
+\end{equation*}
+</div>
+<p>This means that \(d\) is a free variable, \(c=-\frac14 d\text{,}\) \(b=\frac14 d\) and \(a=-\frac12 d\text{.}\) This makes the equation of the plane</p>
+<div class="displaymath">
+\begin{equation*}
+ax+by+cz+d=-\frac12 d x+\frac14 d y-\frac14 d z +d =0
+\end{equation*}
+</div>
+<p>Dividing the equation by \(d\) gives the equation</p>
+<div class="displaymath">
+\begin{equation*}
+-\frac12  x+\frac14 y-\frac14 z +1 =0
+\end{equation*}
+</div>
+<p>which is an equation of the plane. Multiplying by \(-4\) can make the equation a bit cleaner:</p>
+<div class="displaymath">
+\begin{equation*}
+2x-y+z-4=0
+\end{equation*}
+</div>
+<p>As a check, for \((1,1,3)\) we have \(2x-y+z-4=2-1+3-4=0\text{,}\) for \((1,0,2)\) we have \(2x-y+z-4=2-0+2-4=0\) and for \((2,1,1)\) we have \(2x-y+z-4=4-1+1-4=0\text{.}\)</p></article><span class="incontext"><a href="section-29.html#paragraphs-13">in-context</a></span>
+</body>
+</html>

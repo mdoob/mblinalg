@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-05T13:51:02-05:00    *-->
+<!--*    on 2020-07-05T18:40:38-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,42 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The proof can be seen from the following two figures. Applying the law of cosines to the first figure gives \[ c^2=a^2+b^2-2ab\cos(\theta)\tag1 \] while applying it to the second figure gives \[ d^2=a^2+b^2-2ab\cos(\pi-\theta)= a^2+b^2+2ab\cos(\theta)\tag2 \]</p>
-<span class="incontext"><a href="section-26.html#p-735">in-context</a></span>
+<p>Using <a class="xref" data-knowl="./knowl/DotProductFirstProperties.html" title="Proposition 4.2.3: First properties of the dot product">Proposition 4.2.3</a>,</p>
+<div class="displaymath">
+\begin{align*}
+0\amp \leq \|(\vec x+\vec y)\|^2 \\
+\amp = (\vec x+\vec y)\cdot(\vec x+\vec y) \\
+\amp =(\vec x+\vec y)\cdot\vec x+ (\vec x+\vec y)\cdot\vec y\\
+\amp =\vec x \cdot \vec x+ \vec y\cdot \vec x i
++ \vec x\cdot \vec y +\vec y\cdot\vec y\\
+\amp =\|\vec x\|^2 +2(\vec x\cdot \vec y) + \|\vec y\|^2\\
+\amp =2(\vec x\cdot \vec y) +2
+\end{align*}
+</div>
+<p data-braille="continuation">and so</p>
+<div class="displaymath">
+\begin{equation*}
+-1\leq \vec x\cdot \vec y\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Similarly</p>
+<div class="displaymath">
+\begin{equation*}
+0\leq(\vec x-\vec y)\cdot(\vec x-\vec y) =-2(\vec x\cdot \vec y) +2
+\end{equation*}
+</div>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+\vec x\cdot \vec y \leq 1\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">These inequalities imply</p>
+<div class="displaymath">
+\begin{equation*}
+|\vec x\cdot \vec y| \leq 1=\|\vec x\|\, \|\vec y\|\text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="section-25.html#p-735">in-context</a></span>
 </body>
 </html>

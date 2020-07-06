@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-05T13:50:58-05:00    *-->
+<!--*    on 2020-07-05T18:40:35-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,54 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>For \(n=3\text{,}\) we may take \(A\) and append a copy of the first two columns to the right side. Then the determinant is the sum of six terms: the three positive ones are the product of terms on the upper-left to lower-right diagonals while the three		 negative ones are the product of terms on the lower-left to upper-right diagonals.</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{c c}
+<p>\(\displaystyle \det
 \begin{bmatrix}
-\color{red}{a_{1,1}}\amp\color{green}{a_{1,2}}\amp\color{blue}{a_{1,3}}\amp a_{1,1}\amp a_{1,2}\\
-a_{2,1}\amp\color{red}{a_{2,2}}\amp\color{green}{a_{2,3}}\amp\color{blue}{a_{2,1}}\amp a_{2,2}\\
-a_{3,1}\amp a_{3,2}\amp\color{red}{a_{3,3}}\amp\color{green}{a_{3,1}}\amp\color{blue}{a_{3,2}}
+1\amp2\amp3\\
+3\amp4\amp-1\\
+1\amp2\amp1
 \end{bmatrix}
-\amp
-\begin{bmatrix}
-a_{1,1}\amp a_{1,2}\amp\color{red}{a_{1,3}}\amp\color{green}{a_{1,1}}\amp\color{blue}{a_{1,2}}\\
-a_{2,1}\amp\color{red}{a_{2,2}}\amp\color{green}{a_{2,3}}\amp\color{blue}{a_{2,1}}\amp a_{2,2}\\
-\color{red}{a_{3,1}}\amp\color{green}{a_{3,2}}\amp\color{blue}{a_{3,3}}\amp a_{3,1}\amp a_{3,2}
-\end{bmatrix}\\
-\text{(positive terms are in same colour)}
-\amp
-\text{(negative terms are in same colour)}
-\end{array}
-\end{equation*}
-</div>
-<p data-braille="continuation">Alternatively, by letting the diagonals wrap around to from the right side of the matrix to the left side for the first matrix, and from the left side to the right side in the second matrix.</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{c c}
-\begin{bmatrix}
-\color{red}{a_{1,1}}\amp\color{green}{a_{1,2}}\amp\color{blue}{a_{1,3}}\\
-\color{blue}{a_{2,1}}\amp\color{red}{a_{2,2}}\amp\color{green}{a_{2,3}}\\
-\color{green}{a_{3,1}}\amp \color{blue}{a_{3,2}}\amp\color{red}{a_{3,3}}
-\end{bmatrix}
-\amp
-\begin{bmatrix}
-\color{green}{a_{1,1}}\amp\color{blue}{a_{1,2}}\amp\color{red}{a_{1,3}}\\
-\color{blue}{a_{2,1}}\amp\color{red}{a_{2,2}}\amp\color{green}{a_{2,3}}\\
-\color{red}{a_{3,1}}\amp\color{green}{a_{3,2}}\amp\color{blue}{a_{3,3}}
-\end{bmatrix}\\
-\text{(positive terms are in same colour)}
-\amp\text{(negative terms are in same colour)}
-\end{array}
-\end{equation*}
-</div>
-<p data-braille="continuation">However visualized, we can evalaute \(\det(A)=
-({\color{red}{a_{1,1}a_{2,2}a_{3,3}}}
-+{\color{green}{a_{1,2}a_{2,3}a_{3,1}}}
-+{\color{blue}{a_{1,3}a_{2,1}a_{3,2}}})
--({\color{green}{a_{1,1}a_{2,3}a_{3,2}}} 
-+{\color{blue}{ a_{1,2}a_{2,1}a_{3,3}}}
-+{\color{red}{a_{1,3}a_{2,2}a_{3,1}}}).\) So it's pretty easy to compute the determinant of a matrix of order \(n\) when \(n\leq 3\text{.}\) Unfortunately, there is no straightforward generalization for \(n\gt3\text{.}\)</p>
+=4-2+18-(-2)-6-12=4.\)</p>
 <span class="incontext"><a href="section-19.html#p-541">in-context</a></span>
 </body>
 </html>

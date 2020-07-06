@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-05T13:50:47-05:00    *-->
+<!--*    on 2020-07-05T18:40:19-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -94,7 +94,9 @@ MathJax.Hub.Config({
 <li class="link"><a href="SysLinEq.html" data-scroll="SysLinEq"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations</span></a></li>
 <li class="link"><a href="MatrixTheoryIntro.html" data-scroll="MatrixTheoryIntro"><span class="codenumber">2</span> <span class="title">Matrix Theory</span></a></li>
 <li class="link"><a href="Determinants.html" data-scroll="Determinants"><span class="codenumber">3</span> <span class="title">The Determinant</span></a></li>
-<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">4</span> <span class="title">Additional Topics</span></a></li>
+<li class="link"><a href="EuclideanSpace.html" data-scroll="EuclideanSpace"><span class="codenumber">4</span> <span class="title">Vectors in Euclidean \(n\) space</span></a></li>
+<li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
+<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">6</span> <span class="title">Additional Topics</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-13"><h2 class="heading hide-type">
@@ -110,24 +112,23 @@ A^n=\underbrace{A A A \cdots A A}_{n \text{ factors}}\quad
 \text{ for } n=1,2,\ldots\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">In addition, we define \(A^1=A\text{.}\) For example, if \(A=\begin{bmatrix}1\amp2\\2\amp1\end{bmatrix}\) then</p>
-<div class="displaymath">
-\begin{equation*}
-A^1=\begin{bmatrix}1\amp2\\2\amp1\end{bmatrix}\\
-A^2=\begin{bmatrix}5\amp4\\4\amp5\end{bmatrix}\\
-A^3=\begin{bmatrix}13\amp14\\14\amp13\end{bmatrix}\\
-A^4=\begin{bmatrix}40\amp41\\41\amp40\end{bmatrix}\\
-A^5=\begin{bmatrix}121\amp122\\122\amp121\end{bmatrix}\\
-\end{equation*}
-</div></section><section class="subsection" id="LawOfExponents"><h3 class="heading hide-type">
+<p data-braille="continuation">In addition, we define \(A^1=A\text{.}\)</p>
+<p id="p-379">If \(A=\begin{bmatrix}1\amp2\\2\amp1\end{bmatrix}\) then it is straightforward to compute the powers of \(A\text{:}\)</p>
+<figure class="table table-like" id="MatrixPowerExample"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.6.1<span class="period">.</span></span><span class="space"> </span>Powers of \(A=\bigl[\begin{smallmatrix}1\amp2\\2\amp1\end{smallmatrix}\bigr]\)</figcaption><table>
+<tr><td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(A^1=\begin{bmatrix}1\amp2\\2\amp1\end{bmatrix}\)</td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(A^2=\begin{bmatrix}5\amp4\\4\amp5\end{bmatrix}\)</td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(A^3=\begin{bmatrix}13\amp14\\14\amp13\end{bmatrix}\)</td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(A^4=\begin{bmatrix}40\amp41\\41\amp40\end{bmatrix}\)</td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(A^5=\begin{bmatrix}121\amp122\\122\amp121\end{bmatrix}\)</td></tr>
+</table></figure><p id="p-380">It is not easy to write a general expression for \(A^n\text{.}\) When we have developed more sophisticated tools, we will be able to do so.</p></section><section class="subsection" id="LawOfExponents"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.2</span> <span class="title">The law of exponents</span>
 </h3>
-<p id="p-379">If \(m\) and \(n\) are positive integers, then by simply counting the factors we get the following two equations:</p>
+<p id="p-381">If \(m\) and \(n\) are positive integers, then by simply counting the factors we get the following two equations:</p>
 <ul class="disc">
-<li id="li-175"><p id="p-380">\(\displaystyle A^m A^n=\underbrace{A\cdots A}_{m \text{ factors}}\ 
+<li id="li-175"><p id="p-382">\(\displaystyle A^m A^n=\underbrace{A\cdots A}_{m \text{ factors}}\ 
 \underbrace{A\cdots A}_{n \text{ factors}}=
 \underbrace{A\cdots A}_{m+n\text{ factors}}=A^{m+n},\)</p></li>
-<li id="li-176"><p id="p-381">\(\displaystyle (A^m)^n 
+<li id="li-176"><p id="p-383">\(\displaystyle (A^m)^n 
 =\underbrace{(\underbrace{A\cdots A}_{m \text{ factors}})
 (\underbrace{A\cdots A}_{m \text{ factors}})\cdots
 (\underbrace{A\cdots A}_{m \text{ factors}})}_{n \text{ times}}=A^{mn}\)</p></li>
@@ -135,7 +136,7 @@ A^5=\begin{bmatrix}121\amp122\\122\amp121\end{bmatrix}\\
 <p data-braille="continuation">These two equations together are called <dfn class="terminology">the law of exponents</dfn>.</p></section><section class="subsection" id="subsection-24"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.3</span> <span class="title">What is \(A^0\text{?}\)</span>
 </h3>
-<p id="p-382">We want to define \(A^0\) so the the law of exponents remains valid. This says</p>
+<p id="p-384">We want to define \(A^0\) so the the law of exponents remains valid. This says</p>
 <div class="displaymath">
 \begin{equation*}
 A^n A^0= A^{n+0}=A^n
@@ -144,7 +145,7 @@ A^n A^0= A^{n+0}=A^n
 <p data-braille="continuation">We observe that if \(A^0=I\text{,}\) the identity matrix, then this equation is valid. With this in mind we \(\textbf{define}\) \(A^0=I\text{.}\)</p></section><section class="subsection" id="subsection-25"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.6.4</span> <span class="title">Polynomials and powers of a matrix</span>
 </h3>
-<p id="p-383">Recall that polynomials are functions of the form \(p(x)=a_nx^n + a_{n-1}x^{n-1}+\cdots+a_1x+a_0\text{.}\) If we have a square matrix, we may refer to \(p(A)\text{.}\) By this we mean we substitute the matrix \(A\) for each \(x\) appearing in the polynomial. Whenever \(x^k\) appears, we substitute \(A^k\) for it and do the computations. For example, using the same \(A\) as before, if \(p(x)=x^2-2x+1\text{,}\) then</p>
+<p id="p-385">Recall that polynomials are functions of the form \(p(x)=a_nx^n + a_{n-1}x^{n-1}+\cdots+a_1x+a_0\text{.}\) If we have a square matrix, we may refer to \(p(A)\text{.}\) By this we mean we substitute the matrix \(A\) for each \(x\) appearing in the polynomial. Whenever \(x^k\) appears, we substitute \(A^k\) for it and do the computations. For example, using the same \(A\) as before, if \(p(x)=x^2-2x+1\text{,}\) then</p>
 <div class="displaymath">
 \begin{equation*}
 p(A)=A^2-2A+I=

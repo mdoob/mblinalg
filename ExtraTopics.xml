@@ -1011,7 +1011,7 @@
         label("\(B=(\cos(\alpha+\beta),\sin(\alpha+\beta))\)",B,NE);
         label("\((1,0)\)",(1,0),E);
         label("\(D=(d,0)\)",D,S);
-        label("\(\mathbf 0\)",(0,0),S);
+        label("\(\vec 0\)",(0,0),S);
         label("\(\alpha\)",Z,9(1,Tan(alpha/2)));
         label("\(\beta\)",Z,7(1,Tan(alpha+beta/2)));
         label("\(\frac\pi2-\alpha\ \)",D,3*NW);

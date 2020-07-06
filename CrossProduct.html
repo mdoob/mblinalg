@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-07-05T18:40:24-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Cross Product of Vectors in \(\R^3\)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_brown_gold.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
+\def\C{{\mathbb C}}
+\def\Q{{\mathbb Q}}
+\def\Z{{\mathbb Z}}
+\def\N{{\mathbb N}}
+
+\def\vec#1{\mathbf #1}
+
+\newcommand{\adj}{\mathop{\textrm{adj}}}
+\newcommand{\proj}{\mathop{\textrm{proj}}}
+\newcommand{\Span}{\mathop{\textrm{span}}} 
+
+\newcommand{\rowint}[2]{R_{#1} \leftrightarrow R_{#2}}
+\newcommand{\rowmul}[2]{R_{#1}\gets {#2}R_{#1}}
+\newcommand{\rowadd}[3]{R_{#1}\gets R_{#1}+#2R_{#3}}
+\newcommand{\rowsub}[3]{R_{#1}\gets R_{#1}-#2R_{#3}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.umanitoba.ca" target="_blank"><img src="images/umlogo.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="mblinalg.html"><span class="title">Manitoba linear algebra</span></a></h1>
+<p class="byline">Michael Doob (editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-27.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="EuclideanSpace.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-29.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-27.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="EuclideanSpace.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-29.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="Frontmatter.html" data-scroll="Frontmatter"><span class="title">Title Page</span></a></li>
+<li class="link"><a href="SysLinEq.html" data-scroll="SysLinEq"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations</span></a></li>
+<li class="link"><a href="MatrixTheoryIntro.html" data-scroll="MatrixTheoryIntro"><span class="codenumber">2</span> <span class="title">Matrix Theory</span></a></li>
+<li class="link"><a href="Determinants.html" data-scroll="Determinants"><span class="codenumber">3</span> <span class="title">The Determinant</span></a></li>
+<li class="link"><a href="EuclideanSpace.html" data-scroll="EuclideanSpace"><span class="codenumber">4</span> <span class="title">Vectors in Euclidean \(n\) space</span></a></li>
+<li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
+<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">6</span> <span class="title">Additional Topics</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="CrossProduct"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.5</span> <span class="title">Cross Product of Vectors in \(\R^3\)</span>
+</h2>
+<section class="subsection" id="subsection-65"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.5.1</span> <span class="title">Definition of the cross product</span>
+</h3>
+<p id="p-834">The cross product is only defined for vectors in \(\R^3\text{.}\) Given two such vectors \(\vec x=(x_1,x_2,x_3)\) and \(\vec y=(y_1,y_2,y_3)\text{,}\) the cross product \(\vec x\times\vec y\) is a vector in \(\R^3\) defined by</p>
+<div class="displaymath">
+\begin{equation*}
+\vec x\times\vec y
+=
+(x_2y_3-x_3y_2,\, x_3y_1-x_1y_3,\,x_1y_2-x_2y_1)
+\end{equation*}
+</div>
+<p id="p-835">This is pretty complicated and, as yet, unmotivated. Here is a neat trick to make the computation a little easier. Take the two vectors and make an array by writing the three coordinates and then repeating the first two coordinates again:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{matrix}
+x_1\amp x_2\amp x_3\amp x_1\amp x_2\\
+y_1\amp y_2\amp y_3\amp y_1\amp y_2
+\end{matrix}
+\end{equation*}
+</div>
+<p id="p-836">We then use three “sliding windows”: the first (for the first coordinate) uses columns two and three, the next (for the second coordinate) uses columns three and four, and the last (for the third coordinate) uses columns four and five.</p>
+<ul class="disc">
+<li id="li-298">
+<p id="p-837">First coordinate: \(\color{red}{x_2y_3}-\color{green}{x_3y_2}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{matrix}
+\begin{matrix}
+x_1\\y_1
+\end{matrix}
+\begin{bmatrix}
+\color{red}{x_2} \amp \color{green}{x_3}\\
+\color{green}{y_2} \amp \color{red}{y_3}
+\end{bmatrix}
+\begin{matrix}
+x_1 \amp x_2\\
+y_1 \amp y_2
+\end{matrix}
+\end{matrix}
+\end{equation*}
+</div>
+</li>
+<li id="li-299">
+<p id="p-838">Second coordinate: \(\color{red}{x_3y_1}-\color{green}{x_1y_3}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{matrix}
+\begin{matrix}
+x_1 \amp x_2\\
+y_1 \amp y_2
+\end{matrix}
+\begin{bmatrix}
+\color{red}{x_3} \amp \color{green}{x_1}\\
+\color{green}{y_3} \amp \color{red}{y_1}
+\end{bmatrix}
+\begin{matrix}
+x_2\\y_2
+\end{matrix}
+\end{matrix}
+\end{equation*}
+</div>
+</li>
+<li id="li-300">
+<p id="p-839">Third coordinate: \(\color{red}{x_1y_2}-\color{green}{x_2y_1}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{matrix}
+\begin{matrix}
+x_1\amp x_2\amp x_3\\
+y_1\amp y_2\amp y_3
+\end{matrix}
+\begin{bmatrix}
+\color{red}{x_1} \amp \color{green}{x_2}\\
+\color{green}{y_1} \amp \color{red}{y_2}
+\end{bmatrix}
+\end{matrix}
+\end{equation*}
+</div>
+</li>
+</ul>
+<p data-braille="continuation">In each case the window is evaluated by</p>
+<div class="displaymath">
+\begin{equation*}
+(\textrm{upper left})(\textrm{lower right})
+-(\textrm{upper right})(\textrm{lower left})
+\end{equation*}
+</div>
+<p data-braille="continuation">which is actually the determinant as seen in <a class="xref" data-knowl="./knowl/DeterminantofSmallMatrices.html" title="Definition 3.1.1: Determinants of small matrices">Definition 3.1.1</a>.</p>
+<p id="p-840">Here is an animation showing two vectors (the blue vectors) and their cross product (the red vector):</p>
+<figure class="figure figure-like" id="figure-39"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/250px-Crossproduct.gif" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.1<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-841">There are (at least) four interesting relationships between the two blue vectors and their cross product.</p>
+<p id="p-842">Can you see some of them? Press to reveal:</p>
+<article class="example example-like" id="example-37"><a data-knowl="" class="id-ref original" data-refid="hk-example-37"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Interesting properties of the cross product.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-37"><article class="example example-like"><ul id="p-843" class="disc">
+<li id="li-301"><p id="p-844">\(\vec x\times\vec y\) is perpendicular to both \(\vec x\) and \(\vec y\text{.}\)</p></li>
+<li id="li-302"><p id="p-845">\(\vec x\times\vec y\) has zero length when \(\vec x\) and \(\vec y\) are collinear.</p></li>
+<li id="li-303"><p id="p-846">\(\vec x\times\vec y\) has maximum length when \(\vec x\) and \(\vec y\) are perpendicular.</p></li>
+<li id="li-304"><p id="p-847">As \(\vec y\) goes through one cycle around \(\vec x\text{,}\) the length of \(\vec x\times\vec y\) goes up and down like the function \(\sin(x)\text{.}\)</p></li>
+</ul></article></div>
+<p id="p-848">These relationships are all valid, as we now show.</p>
+<article class="theorem theorem-like" id="theorem-52"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">\(x\perp\vec x\times\vec y\) and \(y\perp\vec x\times\vec y\).</span>
+</h6>
+<p id="p-849">\(\vec x\times\vec y\) is perpendicular to both \(\vec x\) and \(\vec y\text{.}\)</p></article><article class="hiddenproof" id="proof-64"><a data-knowl="" class="id-ref original" data-refid="hk-proof-64"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-64"><article class="hiddenproof"><p id="p-850">The desired result is shown if \(\vec x\cdot(\vec x\times\vec y)=0\) and \(\vec y\cdot(\vec x\times\vec y)=0\text{.}\) By direct computation</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+(x_1,x_2,x_3) \cdot  \amp(x_2y_3-x_3y_2, x_3y_1-x_1y_3,x_1y_2-x_2y_1)\\
+\amp=x_1 (x_2y_3-x_3y_2) +x_2 (x_3y_1-x_1y_3) + x_3 (x_1y_2-x_2y_1)\\
+\amp= x_1x_2y_3-x_1x_3y_2 +x_2 x_3y_1-x_2x_1y_3+ x_3x_1y_2-x_3x_2y_1\\
+\amp=0
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+(y_1,y_2,y_3) \amp\cdot  (x_2y_3-x_3y_2, x_3y_1-x_1y_3,x_1y_2-x_2y_1)\\
+\amp=y_1 (x_2y_3-x_3y_2) +y_2 (x_3y_1-x_1y_3) + y_3 (x_1y_2-x_2y_1)\\
+\amp= y_1x_2y_3-y_1x_3y_2 +y_2 x_3y_1-y_2x_1y_3+ y_3x_1y_2-y_3x_2y_1\\
+\amp=0
+\end{array}
+\end{equation*}
+</div></article></div>
+<article class="theorem theorem-like" id="theorem-53"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">\(\vec x \times r\vec x=\vec0\).</span>
+</h6>
+<p id="p-851">If \(\vec x\) and \(\vec y\) are collinear, then \(\vec x\times\vec y=\vec 0\text{.}\)</p></article><article class="hiddenproof" id="proof-65"><a data-knowl="" class="id-ref original" data-refid="hk-proof-65"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-65"><article class="hiddenproof"><p id="p-852">The collinearity of \(\vec x\) and \(\vec y\) means that \(\vec x=r\vec y\) for some real number \(r\text{,}\) and so \(x_1=ry_1\text{,}\) \(x_2=ry_2\text{,}\) and \(x_3=ry_3\text{.}\) This means</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+\vec x\times\vec y \amp= (ry_1,ry_2,ry_3)\times(y_1,y_2,y_3)\\
+\amp= (ry_2y_3-ry_3y_2, ry_3y_1-ry_1y_3,ry_1y_2-ry_2y_1)\\
+\amp=(0,0,0)=\vec 0
+\end{array}
+\end{equation*}
+</div></article></div>
+<p id="p-853">Now we carry out some computations:</p>
+<div class="displaymath">
+\begin{align*}
+\|\vec x\times\vec y\|^2
+\amp=\|(x_2y_3-x_3y_2, x_3y_1-x_1y_3, x_1y_2-x_2y_1)\|^2\\
+\amp= x_2^2y_3^2 - 2x_2x_3y_2y_3 + x_3^2y_2^2\\
+\amp\quad+x_3^2y_1^2 - 2x_1x_3y_1y_3 + x_1^2y_3^2\\
+\amp\quad+x_1^2y_2^2 - 2x_1x_2y_1y_2 + x_1^2y_2^2\\
+\|\vec x\|^2 \|\vec y\|^2
+\amp=x_1^2y_1^2 + x_1^2y_2^2 + x_1^2y_3^2\\
+\amp=+ x_2^2y_1^2 +x_2^2y_2^2 + x_2^2y_3^2\\
+\amp\quad+x_3^2y_1^2 +x_3^2y_2^2 + x_3^2y_3^2\\
+(\vec x\cdot\vec y)^2
+\amp=(x_1y_1+x_2y_2+x_3y_3)^2\\
+\amp= x_1^2y_1^2+x_2^2y_2^2+x_3^2y_3^2
++2 x_1x_2y_1y_2 +2x_1x_3y_1y_3 +2 x_2x_3y_2y_3
+\end{align*}
+</div>
+<p data-braille="continuation">Upon careful examination we conclude</p>
+<div class="displaymath">
+\begin{equation*}
+\|\vec x\times\vec y\|^2 + (\vec x\cdot\vec y)^2 
+= \|\vec x\|^2 \|\vec y\|^2
+\end{equation*}
+</div>
+<article class="theorem theorem-like" id="theorem-54"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">\(\|\vec x\times\vec y\|=\|\vec x\|\,\|\vec y\|\sin\theta\).</span>
+</h6>
+<p id="p-854">For any vectors \(\vec x\) and \(\vec y\) in \(\R^3\text{,}\) \(\|\vec x\times\vec y\|=\|\vec x\|\,\|\vec y\|\sin\theta\text{.}\)</p></article><article class="hiddenproof" id="proof-66"><a data-knowl="" class="id-ref original" data-refid="hk-proof-66"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-66"><article class="hiddenproof"><div class="displaymath" id="p-855">
+\begin{equation*}
+\begin{array}{rl}
+\|\vec x\times\vec y\|^2
+\amp= \|\vec x\|^2\|\vec y\|^2 -(\vec x\cdot\vec y)^2 \\
+\amp=  \|\vec x\|^2 \|\vec y\|^2 -\|\vec x\|^2\|\vec y\|^2\cos^2(\theta) \\
+\amp= \|\vec x\|^2\|\vec y\|^2(1-\cos^2(\theta))\\
+\amp= \|\vec x\|^2\|\vec y\|^2\sin^2(\theta)
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">Taking the square root of both sides, we get</p>
+<div class="displaymath">
+\begin{equation*}
+\|\vec x\times\vec y\| =\pm \|\vec x\|\, \|\vec y\| |\sin(\theta)|
+\end{equation*}
+</div>
+<p data-braille="continuation">Now \(\|\vec x\times\vec y\|\geq 0\text{,}\) that is, the left side of the equation is nonnegative. Also \(\|\vec x\|\, \|\vec y\|\geq 0\text{.}\) In addition, \(\sin(\theta)\geq 0\) for \(0\leq \theta \leq \pi\text{.}\) This means that to make the right side of the equation nonnegative, the \(\pm\) is actually \(+\text{.}\) Hence</p>
+<div class="displaymath">
+\begin{equation*}
+\|\vec x\times\vec y\| =\|\vec x\|\, \|\vec y\| \sin(\theta)
+\end{equation*}
+</div></article></div>
+<article class="theorem theorem-like" id="theorem-55"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Additional cross product properties.</span>
+</h6>
+<p id="p-856">Let \(\vec u\) and \(\vec v\) be vectors in \(\mathbb{R}^n\text{,}\) and let \(r\) be a real number. Then</p>
+<ul class="disc">
+<li id="li-305">\(\displaystyle \vec u\times\vec v=-(\vec v\times\vec u)\)</li>
+<li id="li-306">\(\displaystyle (r\vec u)\times\vec v=r(\vec u\times\vec v)\)</li>
+<li id="li-307">\(\displaystyle \vec u \times (\vec v+\vec w)
+=(\vec u \times \vec v)+(\vec u\times\vec w)\)</li>
+</ul></article><article class="hiddenproof" id="proof-67"><a data-knowl="" class="id-ref original" data-refid="hk-proof-67"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-67"><article class="hiddenproof"><p id="p-857">All of the parts may be verified by direct computation. But more easily:</p>
+<ul class="disc">
+<li id="li-308">\(\displaystyle \det
+\begin{bmatrix}
+\vec i \amp \vec j\amp \vec j\\
+u_1 \amp u_2 \amp u_3\\
+v_1 \amp v_2 \amp v_3
+\end{bmatrix}
+=-
+\det
+\begin{bmatrix}
+\vec i \amp \vec j\amp \vec j\\
+v_1 \amp v_2 \amp v_3\\
+u_1 \amp u_2 \amp u_3
+\end{bmatrix}\)</li>
+<li id="li-309">\(\displaystyle \det
+\begin{bmatrix}
+\vec i \amp \vec j\amp \vec j\\
+ru_1 \amp ru_2 \amp ru_3\\
+v_1 \amp v_2 \amp v_3
+\end{bmatrix}
+=r
+\det
+\begin{bmatrix}
+\vec i \amp \vec j\amp \vec j\\
+u_1 \amp u_2 \amp u_3\\
+v_1 \amp v_2 \amp v_3
+\end{bmatrix}\)</li>
+<li id="li-310">\(\displaystyle \det
+\begin{bmatrix}
+\vec i \amp \vec j\amp \vec j\\
+u_1 \amp u_2 \amp u_3\\
+(v_1+w_1) \amp (v_2+w_2) \amp (v_3+w_3)
+\end{bmatrix}
+=
+\begin{bmatrix}
+\vec i \amp \vec j\amp \vec j\\
+u_1 \amp u_2 \amp u_3\\
+v_1 \amp v_2 \amp v_3
+\end{bmatrix}
++
+\begin{bmatrix}
+\vec i \amp \vec j\amp \vec j\\
+u_1 \amp u_2 \amp u_3\\
+w_1 \amp w_2 \amp w_3
+\end{bmatrix}\)</li>
+</ul></article></div>
+<article class="paragraphs" id="paragraphs-12"><h5 class="heading"><span class="title">Justification of the definition of the cross product.</span></h5>
+<p id="p-858">Now suppose we have two vectors \(\vec x=(x_1,x_2,x_3)\) and \(\vec y=(y_1,y_2,y_3)\text{.}\) We are looking for a third vector which (like the cross product) is perpendicular to both \(\vec x\) and \(\vec y\text{.}\) Let's call such a vector \((a,b,c)\text{.}\) The perpendicularity assumptions mean \((a,b,c)\cdot(x_1,x_2,x_3)=0\) and \((a,b,c)\cdot(y_1,y_2,y_3)=0\text{.}\) This means \(\begin{align*}
+ax_1+bx_2+cx_3\amp =0\tag{1}\\
+ay_1+by_2+cy_3\amp =0.\tag{2}
+\end{align*}\)</p>
+<p id="p-859">Multiply equation \((1)\) by \(y_1\text{,}\) equation \((2)\) by \(x_1\) and subtract. This gives</p>
+<div class="displaymath">
+\begin{equation*}
+b(x_2y_1-x_1y_2)+c(x_3y_1-x_1y_3)=0
+\end{equation*}
+</div>
+<p id="p-860">and so</p>
+<div class="displaymath">
+\begin{equation*}
+b=\frac{x_3y_1-x_1y_3}{x_1y_2-x_2y_1}c
+\end{equation*}
+</div>
+<p id="p-861">Now multiply equation \((1)\) by \(y_2\text{,}\) equation \((2)\) by \(x_2\) and subtract.</p>
+<p id="p-862">This gives</p>
+<div class="displaymath">
+\begin{equation*}
+a(x_1y_2-x_2y_1)+c(x_3y_2-x_2y_3)=0
+\end{equation*}
+</div>
+<p id="p-863">and so</p>
+<div class="displaymath">
+\begin{equation*}
+a=\frac{x_2y_3-x_3y_2}{x_1y_2-x_2y_1}c
+\end{equation*}
+</div>
+<p id="p-864">This implies that our vector</p>
+<div class="displaymath">
+\begin{equation*}
+(a,b,c)=\left(\frac{x_2y_3-x_3y_2}{x_1y_2-x_2y_1}c,
+\frac{x_3y_1-x_1y_3}{x_1y_2-x_2y_1}c,c\right)
+\end{equation*}
+</div>
+<p data-braille="continuation">is perpendicular to both \(\vec x\) and \(\vec y\) for any choice of \(c\text{.}\) If we set \(c=x_1y_2-x_2y_1\) then we get</p>
+<div class="displaymath">
+\begin{equation*}
+(a,b,c)=(x_2y_3-x_3y_2,x_3y_1-x_1y_3,x_1y_2-x_2y_1)
+\end{equation*}
+</div>
+<p data-braille="continuation">which is precisely \(\vec x\times\vec y\text{.}\) Hence the definition of the cross product, which at first seems bizarre, is actually natural if we wish the product to be perpendicular to both of the factors.</p></article></section></section></div></main>
+</div>
+</body>
+</html>

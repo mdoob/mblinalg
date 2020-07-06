@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-05T13:50:57-05:00    *-->
+<!--*    on 2020-07-05T18:40:33-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,98 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>\(\textbf{The inverse of a}\) \(2\times2\) \(\textbf{matrix}\) We start with the matrix</p>
-<div class="displaymath">
-\begin{equation*}
-A=
-\begin{bmatrix} a\amp b\\c\amp d \end{bmatrix} 
-\end{equation*}
-</div>
-<p data-braille="continuation">Now we carry out row reduction:</p>
-<div class="displaymath">
-\begin{equation*}
-\left[ \begin{array}{cc|cc}
-a\amp b\amp1\amp0\rlap{\qquad R_1\gets \frac1a R_1}\\
-c\amp d\amp0\amp1
-\end{array} \right]  \\ 
-\left[ \begin{array}{cc|cc}
-1\amp\frac ba\amp\frac1a\amp0\\ 
-c\amp d\amp0\amp1 \rlap{\qquad R_2\gets R_2-cR_1}
-\end{array} \right]\\ 
-\left[ \begin{array}{cc|cc}
-1\amp\frac ba\amp\frac1a\amp0
-\\ 0\amp d-\frac{bc}a\amp-\frac ca\amp1
-\end{array} \right] \rlap{\hbox{(Rewrite last row)}}   \\
-\left[\begin{array}{cc|cc}
-1\amp\frac ba\amp\frac1a\amp0\\ 
-0\amp\frac{ad-bc}a\amp-\frac ca\amp1 \rlap{\qquad R_2\gets \frac a{ad-bc}R_2}
-\end{array} \right]\\ 
-\left[ \begin{array}{cc|cc}
-1\amp\frac ba\amp\frac1a\amp0\\ 
-0\amp1\amp-\frac c{ad-cb}\amp \frac a{ad-cb} \rlap{\qquad R_1\gets R_1-\frac ba R_2}
-\end{array}\right]\\ \left[ \begin{array}{cc|cc}
-1\amp0\amp \frac d{ad-cb}\amp -\frac b{ad-cb}   \\
-0\amp1\amp-\frac c{ad-cb}\amp \frac a{ad-cb}
-\end{array} \right] 
-\end{equation*}
-</div>
-<p data-braille="continuation">On the face of it, this seems to say</p>
-<div class="displaymath">
-\begin{equation*}
-A^{-1} 
-=
-\begin{bmatrix}
-\frac d{ad-cb}\amp -\frac b{ad-cb} \\
--\frac c{ad-cb}\amp \frac a{ad-cb}
-\end{bmatrix} 
-= \frac1{ad-cb}
-\begin{bmatrix} d\amp-b\\ -c\amp a \end{bmatrix}
-\end{equation*}
-</div>
-<p data-braille="continuation">But notice that we have blithely ignored the possibility that \(a=0\) or that \(ad-bc=0\text{.}\) Nonetheless we may compute:</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{bmatrix} a\amp b\\c\amp d \end{bmatrix}
-\begin{bmatrix} d\amp-b\\-c\amp a \end{bmatrix} =
-\begin{bmatrix} ad-bc\amp0\\0\amp ad-bc \end{bmatrix}
-=(ad-bc)I 
-\end{equation*}
-</div>
-<p data-braille="continuation">Hence if</p>
-<div class="displaymath">
-\begin{equation*}
-A=
-\begin{bmatrix} a\amp b\\c\amp d \end{bmatrix} 
-\hbox{ and } 
-B=
-\frac1{ad-bc}\begin{bmatrix} d\amp-b\\-c\amp a \end{bmatrix}
-\end{equation*}
-</div>
-<p data-braille="continuation">then</p>
-<div class="displaymath">
-\begin{equation*}
-AB=I 
-\end{equation*}
-</div>
-<p data-braille="continuation">and so</p>
-<div class="displaymath">
-\begin{equation*}
-B=A^{-1}
-\end{equation*}
-</div>
-<p data-braille="continuation">we conclude that if</p>
-<div class="displaymath">
-\begin{equation*}
-A= \begin{bmatrix} a\amp b\\c\amp d \end{bmatrix} 
-\end{equation*}
-</div>
-<p data-braille="continuation">where \(ad-bc\neq 0\) then</p>
-<div class="displaymath">
-\begin{equation*}
-A^{-1}=
-\frac1{ad-bc}\begin{bmatrix} d\amp-b\\-c\amp a \end{bmatrix}
-\end{equation*}
-</div>
+<p>Suppose we have a square matrix \(A\) and the reduced row echelon form of \(A\) is \(I\) (that is, \(A\) is nonsingular). \(X\) is the inverse of \(A\) if it satisfies the equation \(AX=I.\) We have seen  how to solve such equations.  We conclude that if we start with the matrix \([A|I]\) then the reduced row echelon form will be \([I|A^{-1}]\text{.}\) This not only allows us to compute the inverse of \(A\) but it also shows that nonsingular matrices are invertible and vice-versa.</p>
 <span class="incontext"><a href="section-14.html#p-422">in-context</a></span>
 </body>
 </html>

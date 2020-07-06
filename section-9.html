@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-05T13:50:46-05:00    *-->
+<!--*    on 2020-07-05T18:40:18-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -94,7 +94,9 @@ MathJax.Hub.Config({
 <li class="link"><a href="SysLinEq.html" data-scroll="SysLinEq"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations</span></a></li>
 <li class="link"><a href="MatrixTheoryIntro.html" data-scroll="MatrixTheoryIntro"><span class="codenumber">2</span> <span class="title">Matrix Theory</span></a></li>
 <li class="link"><a href="Determinants.html" data-scroll="Determinants"><span class="codenumber">3</span> <span class="title">The Determinant</span></a></li>
-<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">4</span> <span class="title">Additional Topics</span></a></li>
+<li class="link"><a href="EuclideanSpace.html" data-scroll="EuclideanSpace"><span class="codenumber">4</span> <span class="title">Vectors in Euclidean \(n\) space</span></a></li>
+<li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
+<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">6</span> <span class="title">Additional Topics</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-9"><h2 class="heading hide-type">
@@ -157,20 +159,19 @@ A-B=
 <p id="p-254">In short, addition and subtraction of two matrices are carried out by adding or subtracting the corresponding positions within the matrices.</p></section><section class="subsection" id="subsection-18"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.2.2</span> <span class="title">Some properties of addition of matrices</span>
 </h3>
-<article class="theorem theorem-like" id="MatrixAdditionProperties"><a data-knowl="" class="id-ref original" data-refid="hk-MatrixAdditionProperties"><h6 class="heading">
+<article class="theorem theorem-like" id="MatrixAdditionProperties"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Addition properties of Matrices.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-MatrixAdditionProperties">
-<article class="theorem theorem-like"><p id="p-255">Suppose \(A\text{,}\) \(B\) and \(C\) are matrices of the same size, then</p>
+</h6>
+<p id="p-255">Suppose \(A\text{,}\) \(B\) and \(C\) are matrices of the same size, then</p>
 <ul class="disc">
 <li id="li-109"><p id="p-256">If \(A\) and \(B\) are \(m\times n\) matrices, then so is \(A+B\text{.}\)</p></li>
 <li id="li-110"><p id="p-257">\(A+B=B+A\qquad\) (commutativity of addition)</p></li>
 <li id="li-111"><p id="p-258">\((A+B)+C = A+(B+C)\qquad\) (associativity of addition)</p></li>
 </ul></article><article class="hiddenproof" id="proof-3"><a data-knowl="" class="id-ref original" data-refid="hk-proof-3"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-3"><article class="hiddenproof"><ul id="p-259" class="disc">
 <li id="li-112"><p id="p-260">By the definition of matrix addition, the sum of two matrices is a matrix of the same size.</p></li>
-<li id="li-113"><p id="p-261">We use \(A=[a_{i,j}]\) and \(B=[b_{i,j}]\text{.}\) The \(i\)-\(j\) entry of \(A+B\) is \(a_{i,j}+b_{i,j}\) while the \(i\)-\(j\) entry of \(B+A\) is \(b_{i,j}+a_{i,j}\text{.}\) Hence \(A+B=B+A\) means \(a_{i,j}+b_{i,j}=b_{i,j}+a_{i,j}\) for each possible \(i\) and \(j\text{.}\) We know this latter equation is valid since it uses the known commutative property of real numbers. (see properties of real numbers in <a href="section-24.html#RealNumberProperties" class="internal" title="Subsection 4.1.2: Named properties of real numbers">Subsection 4.1.2</a>.)</p></li>
+<li id="li-113"><p id="p-261">We use \(A=[a_{i,j}]\) and \(B=[b_{i,j}]\text{.}\) The \(i\)-\(j\) entry of \(A+B\) is \(a_{i,j}+b_{i,j}\) while the \(i\)-\(j\) entry of \(B+A\) is \(b_{i,j}+a_{i,j}\text{.}\) Hence \(A+B=B+A\) means \(a_{i,j}+b_{i,j}=b_{i,j}+a_{i,j}\) for each possible \(i\) and \(j\text{.}\) We know this latter equation is valid since it uses the known commutative property of real numbers. (see properties of real numbers in <a href="section-38.html#RealNumberProperties" class="internal" title="Subsection 6.1.2: Named properties of real numbers">Subsection 6.1.2</a>.)</p></li>
 <li id="li-114"><p id="p-262">The \(i\)-\(j\) entries of \((A+B)+C\) and \(A+(B+C)\) must be equal. This says \((a_{i,j}+b_{i,j})+c_{i,j}=a_{i,j}+(b_{i,j}+c_{i,j})\) for all possible \(i\) and \(j\text{,}\) and this equation is valid by the distributive property of real numbers.</p></li>
-</ul></article></div>
-</div></section></section></div></main>
+</ul></article></div></section></section></div></main>
 </div>
 </body>
 </html>

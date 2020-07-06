@@ -5,9 +5,8 @@
 <xsl:import href="/home/mdoob/mathbook/xsl/pretext-html.xsl" />
 <xsl:param name="debug.colors" select="'brown_gold'" /> 
 <xsl:param name="toc.level" select="1" />
-<xsl:param name="chunk.level" select="2" />
 
-<xsl:param name="html.knowl.theorem" select="'yes'" />
+<xsl:param name="html.knowl.theorem" select="'no'" />
 
 
 </xsl:stylesheet>

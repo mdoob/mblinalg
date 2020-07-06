@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-04T13:01:00-05:00    *-->
+<!--*    on 2020-07-05T18:40:23-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -9,7 +9,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>The adjoint of a matrix and Cramer's rule</title>
+<title>Equations of lines in \(\R^3\)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
@@ -82,10 +82,10 @@ MathJax.Hub.Config({
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-26.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Determinants.html" title="Up">Up</a><span id="nextbutton" class="next-button button toolbar-item disabled">Next</span></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-26.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="EuclideanSpace.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="CrossProduct.html" title="Next">Next</a></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-26.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="Determinants.html" title="Up">Up</a><span class="next-button button toolbar-item disabled">Next</span>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-26.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="EuclideanSpace.html" title="Up">Up</a><a class="next-button button toolbar-item" href="CrossProduct.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -93,314 +93,66 @@ MathJax.Hub.Config({
 <li class="link frontmatter"><a href="Frontmatter.html" data-scroll="Frontmatter"><span class="title">Title Page</span></a></li>
 <li class="link"><a href="SysLinEq.html" data-scroll="SysLinEq"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations</span></a></li>
 <li class="link"><a href="MatrixTheoryIntro.html" data-scroll="MatrixTheoryIntro"><span class="codenumber">2</span> <span class="title">Matrix Theory</span></a></li>
-<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">3</span> <span class="title">Additional Topics</span></a></li>
-<li class="link"><a href="Determinants.html" data-scroll="Determinants"><span class="codenumber">4</span> <span class="title">The Determinant</span></a></li>
+<li class="link"><a href="Determinants.html" data-scroll="Determinants"><span class="codenumber">3</span> <span class="title">The Determinant</span></a></li>
+<li class="link"><a href="EuclideanSpace.html" data-scroll="EuclideanSpace"><span class="codenumber">4</span> <span class="title">Vectors in Euclidean \(n\) space</span></a></li>
+<li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
+<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">6</span> <span class="title">Additional Topics</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-27"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">4.5</span> <span class="title">The adjoint of a matrix and Cramer's rule</span>
+<span class="type">Section</span> <span class="codenumber">4.4</span> <span class="title">Equations of lines in \(\R^3\)</span>
 </h2>
-<p id="p-735">We have already used <a class="xref" data-knowl="./knowl/MatrixCofactorDefinition.html" title="Definition 4.2.2: The \(i,j\) cofactor of a matrix \(A\)">Definition 4.2.2</a> to define the cofactor matrix \(C\) of a matrix \(A\text{.}\) We use this to define the adjoint of a square matrix.</p>
-<article class="definition definition-like" id="definition-39"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">The adjoint of a matrix.</span>
+<p id="p-824">We want to find the equation of a line \(L\text{,}\) that is, an equation using the vector \((x,y,z)\) so that \((x,y,z)\) is on \(L\) if and only if \((x,y,z)\) satisfies the equation.</p>
+<p id="p-825">We start with the case of a line \(L\) that passes through the origin \(\vec0=(0,0,0)\text{.}\) Let \(\vec n=(a,b,c)\) be any nonzero point on \(L\text{.}\) In this case it is easy to get the equation we want.</p>
+<figure class="figure figure-like" id="figure-36"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><object data="images/image-37.html" id="image-37" width="540" height="540"><embed src="images/image-37.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.1<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-826">Any point \((x,y,z)\) is on \(L\) if and only if \((x,y,z)=t(a,b,c)\) for some real number \(t\text{.}\) In other words, if we have a given vector \(\vec x=(x_0,y_0,z_0)\) then \(\vec x\) is on \(L\) if and only if there is a solution \(t\) to the system of equations</p>
+<div class="displaymath">
+\begin{equation*}
+ta=x_0\\
+tb=y_0\\
+tc=z_0
+\end{equation*}
+</div>
+<p id="p-827">The vector \(\vec n=(a,b,c)\) is an indication of the direction of the line. For this reason, it is called the <em class="emphasis">direction vector</em> of the line. The components of this vector, that is, \(a\text{,}\) \(b\) and \(c\text{,}\) are called the <em class="emphasis">direction numbers</em>. Direction vectors for lines in \(\R^3\) are analogous to the slope of a line in \(\R^2\text{.}\)</p>
+<article class="theorem theorem-like" id="theorem-49"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">Line through \((0,0,0)\).</span>
 </h6>
-<p id="p-736">If a matrix \(A\) has \(C\) as a cofactor matrix then the <dfn class="terminology">adjoint of \(A\)</dfn> is \(C^T\text{.}\) We write this as \(\adj(A)=C^T\text{.}\)</p></article><article class="example example-like" id="example-31"><a data-knowl="" class="id-ref original" data-refid="hk-example-31"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">The adjoint of a matrix.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-31"><article class="example example-like"><p id="p-737">Let</p>
+<p id="p-828">An equation of the line through \((0,0,0)\) and \(\vec n=(a,b,c)\) is</p>
 <div class="displaymath">
 \begin{equation*}
-A=
-\begin{bmatrix}
-1\amp2\amp1 \\ 3\amp1\amp1 \\ 1\amp2\amp2
-\end{bmatrix}.
+(x,y,z)=t(a,b,c) 
 \end{equation*}
 </div>
-<p data-braille="continuation">Then</p>
+<p data-braille="continuation">for some real number \(t\text{.}\)</p></article><p id="p-829">We next consider lines as before, but with the more general assumption that it passes through \((x_0,y_0,z_0)\text{.}\) We wish to keep the concept of the direction vector. The parallelogram rule is the tool that leads the way:</p>
+<figure class="figure figure-like" id="figure-37"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><object data="images/image-38.html" id="image-38" width="540" height="540"><embed src="images/image-38.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-830">We start with the line \(L\) and consider the line, \(L'\) through \(\vec0\) and with the same direction vector as (that is, parallel to) \(L\text{.}\) The parallelogram rules shows us that \((x,y,z)\) is on \(L'\) if and only if \((x,y,z)+(x_0,y_0,z_0)\) is on \(L\text{.}\) Since every point on \(L'\) is of the form \(t(a,b,c)\) for some real number \(t\text{,}\) we conclude that every point on \(L\) is of the form \(t(a,b,c)+(x_0,y_0,z_0)\text{.}\)</p>
+<article class="theorem theorem-like" id="theorem-50"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Line through \((x_0,y_0,z_0)\).</span>
+</h6>
+<p id="p-831">A equation of the line through \((x_0,y_0,z_0)\) with direction vector \(\vec n=(a,b,c)\) is</p>
 <div class="displaymath">
 \begin{equation*}
-\det A = -5\\
-M=
-\begin{bmatrix}
-0\amp5\amp 5 \\ 2 \amp 1 \amp 0 \\ 1\amp -2\amp -5
-\end{bmatrix}
-\\
-C=
-\begin{bmatrix}
-0\amp-5\amp 5 \\ -2 \amp 1 \amp 0 \\ 1\amp 2\amp -5
-\end{bmatrix}
-\\
-\adj(A)=C^T=
-\begin{bmatrix}
-0\amp-2\amp1 \\ -5\amp1\amp 2\\ 5\amp0\amp-5
-\end{bmatrix}
+(x,y,z)=(x_0,y_0,z_0) + t(a,b,c)
 \end{equation*}
 </div>
-<p data-braille="continuation">and so</p>
+<p data-braille="continuation">for some real number \(t\text{.}\)</p></article><p id="p-832">Finally, we consider a line \(L\) passing through two points \((x_0,y_0,z_0)\) and \((x_1,y_1,z_1)\text{.}\) Let \(L'\) be the line parallel to \(L\) passing through \(\vec0\text{.}\) Then \(\vec n=(x_1,y_1,z_1)-(x_0,y_0,z_0)\) is a nonzero point on \(L'\text{,}\) from which follows that every point on \(L'\) is of the form \(t\left((x_1,y_1,z_1)-(x_0,y_0,z_0)\right)
+=t(x_1,y_1,z_1)-t(x_0,y_0,z_0)\text{.}\) This in turn implies that every point on \(L\) is of the form \(t(x_1,y_1,z_1)-t(x_0,y_0,z_0)+(x_0,y_0,z_0)=t(x_1,y_1,z_1)+(1-t)(x_0,y_0,z_0)\text{.}\)</p>
+<figure class="figure figure-like" id="figure-38"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><object data="images/image-39.html" id="image-39" width="540" height="540"><embed src="images/image-39.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure><article class="theorem theorem-like" id="theorem-51"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.4.6</span><span class="period">.</span>
+</h6>
+<p id="p-833">The point \((x,y,z)\) is on the line through \(\vec u=(x_0,y_0,z_0)\) and \(\vec v=(x_1,y_1,z_1)\) if</p>
 <div class="displaymath">
 \begin{equation*}
-A^{-1}=-\frac 15
-\begin{bmatrix}
-0\amp-2\amp1 \\ -5\amp1\amp 2\\ 5\amp0\amp-5
-\end{bmatrix}
-=
-\begin{bmatrix}
-0\amp\frac25\amp-\frac15 \\ 1\amp-\frac15\amp -\frac25\\ -1\amp0\amp1
-\end{bmatrix}
-\end{equation*}
-</div></article></div>
-<article class="theorem theorem-like" id="theorem-43"><a data-knowl="" class="id-ref original" data-refid="hk-theorem-43"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">The inverse and the adjoint of a matrix.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-theorem-43">
-<article class="theorem theorem-like"><p id="p-738">Let \(A\) be an invertible matrix. Then</p>
-<div class="displaymath">
-\begin{equation*}
-A^{-1}=\frac1{\det A} \adj A
-\end{equation*}
-</div></article><article class="hiddenproof" id="proof-54"><a data-knowl="" class="id-ref original" data-refid="hk-proof-54"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-54"><article class="hiddenproof"><div class="displaymath" id="p-739">
-\begin{equation*}
-A \adj A=
-\begin{bmatrix}
-a_{1,1} \amp a_{1,2} \amp \cdots \amp a_{1,n} \\
-a_{2,1} \amp a_{2,2}  \amp \cdots \amp a_{2,n} \\
-\amp\amp\vdots\\
-a_{n,1} \amp a_{n,2} \amp \cdots \amp a_{n,n} \\
-\end{bmatrix}
-\begin{bmatrix}
-C_{1,1} \amp C_{2,1} \amp \cdots \amp C_{n,1} \\
-C_{1,2} \amp C_{2,2} \amp \cdots \amp C_{n,2} \\
-\amp\amp\vdots\\
-C_{1,n} \amp C_{2,n} \amp \cdots \amp C_{n,n} \\
-\end{bmatrix}
+(x,y,z)=(1-t)\vec u+t\vec v
 \end{equation*}
 </div>
-<p data-braille="continuation">Consider the \(i\)-\(j\) entry of \(A \adj A\text{,}\) which we write as</p>
+<p data-braille="continuation">for some real number \(t\text{.}\) In addition, the direction vector for that line is \(\vec n=(x_1,y_1,z_1)-(x_0,y_0,z_0)=\vec v-\vec u\) and</p>
 <div class="displaymath">
 \begin{equation*}
-(A \adj A)_{i,j}=\sum_{k=1}^n A_{i,k}(\adj A)_{k,j}
-=\sum_{k=1}^n a_{i,k} C_{j,k}.
+(x,y,z)=\vec u + t\vec n
 \end{equation*}
-</div>
-<p data-braille="continuation">There are two cases:</p>
-<ul class="disc">
-<li id="li-288">
-<p id="p-740">\(i=j\text{:}\) In this case, from the \(i\)-th row expansion of \(A\text{,}\)</p>
-<div class="displaymath">
-\begin{equation*}
-(A \adj A)_{i,i}=\sum_{k=1}^n a_{i,k} C_{i,k}=\det A
-\end{equation*}
-</div>
-</li>
-<li id="li-289">
-<p id="p-741">\(i\not=j\text{:}\) For this case we use a new matrix \(B\) constructed from \(A\) by replacing \(R_j\) with \(R_i\text{,}\) that is \(R_j\gets R_i\) (this is not an elementary row operation). This means \(B_{j,k}=A_{i,k}=a_{i,k}\) for \(k=1,2,\ldots n\text{.}\) Since \(B\) has two identical rows, <a class="xref" data-knowl="./knowl/DeterminantIdenticalRows.html" title="Theorem 4.4.12: A matrix \(A\) with two identical rows has \(\det A=0\)">Theorem 4.4.12</a> tells us that \(\det B=0\text{.}\) On the other hand, by expanding on \(R_j\) of \(B\text{,}\) we have</p>
-<div class="displaymath">
-\begin{equation*}
-0
-=\sum_{k=1}^n B_{j,k} C_{j,k}
-=\sum_{k=1}^n a_{i,k} C_{j,k}=
-(A \adj A)_{i,j}
-\end{equation*}
-</div>
-<p data-braille="continuation">Combining the two cases.</p>
-<div class="displaymath">
-\begin{align*}
-A \adj A
-\amp =
-\begin{cases}
-\det A \amp \textrm{if } i=j\\
-0 \amp \textrm{otherwise}
-\end{cases}\\
-\amp = (\det A)I
-\end{align*}
-</div>
-<p data-braille="continuation">Hence</p>
-<div class="displaymath">
-\begin{equation*}
-A\frac1{\det A} \adj A=I
-\end{equation*}
-</div>
-<p data-braille="continuation">and</p>
-<div class="displaymath">
-\begin{equation*}
-\frac1{\det A} \adj A=A^{-1}.
-\end{equation*}
-</div>
-</li>
-</ul></article></div>
-</div>
-<article class="example example-like" id="example-32"><a data-knowl="" class="id-ref original" data-refid="hk-example-32"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">The inverse computed using the adjoint of \(A\).</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-32"><article class="example example-like"><p id="p-742">Let</p>
-<div class="displaymath">
-\begin{equation*}
-A=
-\begin{bmatrix}
-1\amp 2\amp 1\\ 2\amp 3\amp 5 \\1\amp 2\amp 0
-\end{bmatrix}
-\end{equation*}
-</div>
-<p data-braille="continuation">First we compute \(\det A=1\)</p>
-<p id="p-743">Next we compute the minors:</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{lll}
-M_{1,1}= -10 \amp M_{1,2}= -5 \amp M_{1,3}= 1 \\
-M_{2,1}= -2 \amp M_{2,2}= -1 \amp M_{2,3}= 0 \\
-M_{3,1}= 7 \amp M_{3,2}= 3 \amp M_{3,3}= -1 
-\end{array}
-\end{equation*}
-</div>
-<p data-braille="continuation">from which we deduce</p>
-<div class="displaymath">
-\begin{equation*}
-M=
-\begin{bmatrix}
--10 \amp -5 \amp 1 \\
--2 \amp -1 \amp 0 \\
-7 \amp 3 \amp -1 
-\end{bmatrix}
-\qquad
-C=
-\begin{bmatrix}
--10 \amp 5 \amp 1 \\
-2 \amp -1 \amp 0 \\
-7 \amp -3 \amp -1 
-\end{bmatrix}
-\end{equation*}
-</div>
-<p data-braille="continuation">from which follows</p>
-<div class="displaymath">
-\begin{equation*}
-A^{-1}=\frac1{\det A} \adj A=\frac 11 C^T
-=
-\begin{bmatrix}
--10 \amp 2 \amp 7\\ 
-5 \amp -1 \amp -3 \\ 
-1\amp 0 \amp -1 
-\end{bmatrix}
-\end{equation*}
-</div></article></div>
-<article class="proposition theorem-like" id="proposition-2"><a data-knowl="" class="id-ref original" data-refid="hk-proposition-2"><h6 class="heading">
-<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">4.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Intergral matrices with integral inverses.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proposition-2">
-<article class="proposition theorem-like"><p id="p-744">If \(A\) is a square matrix with integer entries, then \(A^{-1}\) has all integer entries  if and only if \(\det A=\pm 1\text{.}\)</p></article><article class="hiddenproof" id="proof-55"><a data-knowl="" class="id-ref original" data-refid="hk-proof-55"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-55"><article class="hiddenproof"><p id="p-745">If \(\det A=\pm1\) then</p>
-<div class="displaymath">
-\begin{equation*}
-A^{-1}=\frac1{\det A} \adj A = \pm C^T.
-\end{equation*}
-</div>
-<p data-braille="continuation">where \(C\) is the cofactor matrix. But the entries of \(C\) are computed by taking the determinant of matrices with integer entries. Since this determinant is computed using products and sums of integers, \(C\) must have all integer entries, and hence so does \(A^{-1}\text{.}\)</p>
-<p id="p-746">Conversely, if both \(A\) and \(A^{-1}\) have all integer entries, the \(\det A\) and \(\det A^{-1}\) are both integers. But then</p>
-<div class="displaymath">
-\begin{equation*}
-\det A\,\det A^{-1}= \det(AA^{-1})=\det I=1
-\end{equation*}
-</div>
-<p data-braille="continuation">Hence either \(\det A=\det A^{-1}=1\) or \(\det A=\det A^{-1}=-1\text{.}\)</p></article></div>
-</div>
-<p id="p-747">There is a nice application of the adjoint to the solution of \(n\) equations in \(n\) unknowns. We can write such a system of linear equations as</p>
-<div class="displaymath">
-\begin{equation*}
-Ax=b.
-\end{equation*}
-</div>
-<p data-braille="continuation">If \(A\) is nonsingular, then this system has a unique solution \(x=A^{-1}b= \frac1{\det A} \adj Ab\text{.}\) We define new matrices \(A_1,A_2,\ldots,A_n\text{:}\) construct \(A_k\) by replacing the \(k\)-th column of \(A\) with \(b\text{.}\) More specifically, if the columns of \(A\) are \(C_1,C_2,\ldots,C_n\text{,}\) then</p>
-<div class="displaymath">
-\begin{equation*}
-A_k= 
-\begin{bmatrix}
-C_1  \cdots  C_{k-1}\amp b\amp C_{k+1} \cdots C_n
-\end{bmatrix}
-\end{equation*}
-</div>
-<article class="theorem theorem-like" id="theorem-44"><a data-knowl="" class="id-ref original" data-refid="hk-theorem-44"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Cramer's rule.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-theorem-44">
-<article class="theorem theorem-like"><p id="p-748">Let</p>
-<div class="displaymath">
-\begin{equation*}
-Ax=b
-\end{equation*}
-</div>
-<p data-braille="continuation">be a system of \(n\) linear equations in \(n\) unknowns, and \(A_k\) be the matrix obtained by replacing the \(k\)-th column of \(A\) with \(b\text{.}\) If \(A\) is nonsingular, then the unique solution \(x\) satisfies</p>
-<div class="displaymath">
-\begin{equation*}
-x_i=\frac{\det A_i}{\det A}
-\end{equation*}
-</div></article><article class="hiddenproof" id="proof-56"><a data-knowl="" class="id-ref original" data-refid="hk-proof-56"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-56"><article class="hiddenproof"><p id="p-749">Since \(A\) is invertible, we may use the cofactor matrix \(C\) to get</p>
-<div class="displaymath">
-\begin{equation*}
-x=A^{-1}b=\frac1{\det A} (\adj A) b=\frac1{\det A} C^T b.
-\end{equation*}
-</div>
-<p data-braille="continuation">Then</p>
-<div class="displaymath">
-\begin{equation*}
-(C^Tb)_i=\sum_{k=1}^n C_{k,i}b_k =\sum_{k=1}^n b_kC_{k,i}
-=\det A_i
-\end{equation*}
-</div>
-<p data-braille="continuation">since \(\sum_{k=1}^n b_kC_{k,i}\) is the \(i\)-th column expansion for the evaluation of \(\det A_i\text{.}\) Hence</p>
-<div class="displaymath">
-\begin{equation*}
-x_i=\frac1{\det A} \det A_i=\frac{\det A_i}{\det A}.
-\end{equation*}
-</div></article></div>
-</div>
-<article class="example example-like" id="example-33"><a data-knowl="" class="id-ref original" data-refid="hk-example-33"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.7</span><span class="period">.</span><span class="space"> </span><span class="title">Cramer's rule.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-33"><article class="example example-like"><p id="p-750">Consider the system of linear equations</p>
-<div class="displaymath">
-\begin{equation*}
-x_1+x_2+x_3=2\\
-x_1-x_2+x_3=0\\
-2x_1-x_2+x_3=2
-\end{equation*}
-</div>
-<p data-braille="continuation">We have</p>
-<div class="displaymath">
-\begin{equation*}
-A=
-\begin{bmatrix}
-1 \amp 1\amp 1\\
-1 \amp -1 \amp 1 \\
-2 \amp -1 \amp 1
-\end{bmatrix}
-\qquad
-\det A=2 \\
-A_1=
-\begin{bmatrix}
-2 \amp 1\amp 1\\
-0 \amp -1 \amp 1 \\
-2 \amp -1 \amp 1
-\end{bmatrix}
-\qquad
-\det A_1=4 \\
-A_2=
-\begin{bmatrix}
-1 \amp 2\amp 1\\
-1 \amp 0 \amp 1 \\
-2 \amp 2 \amp 1
-\end{bmatrix}
-\qquad
-\det A_2=2 \\
-A_3=
-\begin{bmatrix}
-1 \amp 1\amp 2\\
-1 \amp -1 \amp 0 \\
-2 \amp -1 \amp 2
-\end{bmatrix}
-\qquad
-\det A_3=-2 
-\end{equation*}
-</div>
-<p data-braille="continuation">and so</p>
-<div class="displaymath">
-\begin{equation*}
-x_1=\frac42=2\\
-x_2=\frac22=1\\
-x_3=\frac{-2}2=-1
-\end{equation*}
-</div></article></div></section></div></main>
+</div></article></section></div></main>
 </div>
 </body>
 </html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-07-05T18:40:38-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><p>This proof makes clever use of the quadratic formula for the solution of quadratic equations. We take a real number \(x\) and let it act as a variable in an equation.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+0 
+\amp \le (x\vec u+\vec v)\cdot(x\vec u+\vec v)\\
+\amp = (x\vec u+\vec v)\cdot x\vec u + (x\vec u+\vec v)\cdot \vec v\\
+\amp = x\vec u\cdot x\vec u 
++ \vec v \cdot x\vec u +x\vec u\cdot \vec v+ \vec v\cdot \vec v\\
+\amp = (\vec u\cdot\vec u) x^2 +2(\vec u\cdot \vec v) x+\vec v\cdot \vec v\\
+\amp = \|\vec u\|^2 x^2 +2(\vec u\cdot \vec v) x+\|\vec v\|^2\\
+\amp= ax^2+bx+c
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(a=\|\vec u\|^2\text{,}\) \(b=2(\vec u\cdot\vec v)\) and \(c=\|\vec v\|^2\text{.}\) This means that the graph of \(ax^2+bx+c\) is a parabola that is never below the \(x\)-axis.  In particular, this means that there can not be two real roots. Now the two roots of a quadratic equation are</p>
+<div class="displaymath">
+\begin{equation*}
+x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
+\end{equation*}
+</div>
+<p data-braille="continuation">and so the polynomial will have two real roots if \(b^2-4ac&gt;0\text{.}\) <em class="emphasis">This is exactly what can not happen</em>, and so \(b^2-4ac\le0\text{,}\) or \(b^2\le4ac\text{.}\) Using our known values of \(a\text{,}\) \(b\) and \(c\text{,}\) we get</p>
+<div class="displaymath">
+\begin{equation*}
+4(\vec u\cdot\vec v)^2\le 4\|\vec u\|^2\|\vec v\|^2\\
+(\vec u\cdot\vec v)^2\le\|\vec u\|^2\|\vec v\|^2\\
+|\vec u\cdot\vec v|\le\|\vec u\|\,\|\vec v\|\\
+\end{equation*}
+</div></article></body>
+</html>

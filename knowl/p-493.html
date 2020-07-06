@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-05T13:50:58-05:00    *-->
+<!--*    on 2020-07-05T18:40:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Each matrix associated with the three elementary row operations has an inverse.  While it is easy to define and verify the matrix in each case, it is useful to think of the effect of the inverse. If \(E\) is the matrix associated with an elementary row operation, then \(EA\) carries out that operation on \(A.\) Since \(E^{-1}EA=A,\) the effect of \(E^{-1}\) is to undo the operation and return \(A\) to its original form.</p>
-<ol class="decimal">
-<li><p>If \(E\) corresponds to interchanging two rows (\(R_i\leftrightarrow R_j\)), to undo the operation we just interchange them again. This means the \(E^{-1}=E.\)</p></li>
-<li><p>If \(E\) corresponds to multiplying a row by \(\lambda\) (\(R_i\gets\lambda R_i\)), then multiplying the same row by \(\tfrac1\lambda\) returns it to its original form. Hence \(E^{-1}\) is formed by replacing \(\lambda\) by \(\tfrac1\lambda\) in \(E\text{.}\)</p></li>
-<li><p>If \(E\) corresponds to adding \(\lambda\) times row \(j\) to row \(i\) (\(R_i\gets R_i+\lambda R_j\)), then subtracting \(\lambda\) times row \(j\) from row \(i\) (\(R_i\gets
-R_i-\lambda R_j\)) returns  \(A\) to its original form. Hence \(E^{-1}\) is formed by replacing \(\lambda\) by \(-\lambda\) in \(E\text{.}\) i</p></li>
-</ol>
+<p>Notice that <a class="xref" data-knowl="./knowl/ElementaryMatrixRowMultiplication.html" title="Theorem 2.10.2: Carrying out row operations using matrix multiplication">Theorem 2.10.2</a> can be applied to a sequence of elementary row operations.  If, for example, we have three elementary row operations whose corresponding elementary matrices are \(E_1\text{,}\) \(E_2\) and \(E_3\text{,}\) and we apply them in sequence to \(A\text{,}\) then the resulting matrix is the product \(E_3(E_2(E_1(A)))\text{,}\) or, more simply, \(E_3E_2E_1A\text{.}\)	Note that we are applying \(E_1\) first followed by \(E_2\) and finally \(E_3\text{.}\)</p>
 <span class="incontext"><a href="section-17.html#p-493">in-context</a></span>
 </body>
 </html>

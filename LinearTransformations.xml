@@ -1,0 +1,683 @@
+
+<chapter xml:id="LinearTransformations"><title>Linear transformations</title>
+
+    <section><title>Rotations, reflections and dilations</title> 
+      
+        <subsection><title>First Concepts </title> 
+        <p>
+        Consider points <m>(x,y)</m> in the plane. A <term>transformation</term>
+        <m>L</m> is a rule for computing another point in the plane.  For example, 
+        we could say that <m>L((x,y))=(x+y,x−y)</m>. Then, if we take any point, 
+        say <m>(1,2)</m> we can compute <m>L((1,2))=(1+2,1−2)=(3,−1)</m>. 
+        Similarly <m>L((1,1))=(2,0)</m> and <m>L((0,0))=(0,0)</m>.
+        </p>
+       
+        <p>
+        We wish to consider some transformations that are geometrically inspired.
+        In particular we consider some interesting examples in the plane:
+        </p>
+       
+        <example xml:id="PlaneRotation"><title>A rotation in the plane</title>
+            <figure>
+            <caption> The vector <m>\vec x</m> rotated to <m>L(\vec x)</m>
+            though an angle <m>\theta</m></caption>
+            <image width="50%">
+            <asymptote>
+            unitsize(48);
+            pair z1=(2.3,1.3);
+            pair z2=(1/sqrt(2),1/sqrt(2));
+            pair z3=z1*z2;
+            dot((0,0)); label("$\vec0$",(0,0),SE);
+            draw((-1,0)--(3,0)); label("$x$",(3,0),E);
+            draw((0,-1)--(0,3.5)); label("$y$",(0,3.5),N);
+            draw((0,0)--z1, linewidth(1pt)); dot(z1); label("$\vec{x}$",z1,E);
+            draw((0,0)--z3, linewidth(1pt)); dot(z3); label("$L(\vec{x})$",z3,N);
+            draw(arc((0,0),1*length(z3),degrees(z1),degrees(z3)),Arrow); 
+            draw(arc((0,0),.45*length(z3),degrees(z1),degrees(z3))); 
+            label("$\theta$", (1,1)); 
+            </asymptote>
+            </image>
+            </figure>
+       </example>
+       
+       <example xml:id="PlaneReflection"><title> A reflection in the plane</title>
+            <figure>
+            <caption>The reflection of the vector <m>\vec x</m> by the line
+                <m>y=x</m></caption>
+            <image width="50%">
+            <asymptote>
+            unitsize(48);
+            pair x1=(2.5,1.0); dot(x1);
+            pair x2=(x1.y,x1.x); dot(x2);
+            dot((0,0)); label("$\vec0$",(0,0),SE);
+            draw((-1,0)--(3,0)); label("$x$",(3,0),E);
+            draw((0,-1)--(0,3.5)); label("$y$",(0,3.5),N);
+            draw((-1/2,-1/2)--(3,3),linewidth(1pt)); label("$y=x$",(3,3),NE);
+            draw(x1--x2, Arrow); 
+            label("$L(\vec x)$",x2,NW);
+            label("$\vec{x}$",x1,E);
+            </asymptote>
+            </image>
+            </figure>
+       </example>
+       
+       <example xml:id="PlaneProjection"><title> A projection in the plane</title>
+            <figure>
+            <caption/>
+            <image width="50%">
+            <asymptote>
+            unitsize(48);
+            pair x1=(2.5,1.0); dot(x1);
+            pair x2=1/2*(x1.x+x1.y,x1.x+x1.y); dot(x2);
+    
+            dot((0,0)); label("$\vec0$",(0,0),SE);
+            draw((-1,0)--(3,0)); label("$x$",(3,0),E);
+            draw((0,-1)--(0,3.5)); label("$y$",(0,3.5),N);
+            draw((-1/2,-1/2)--(3,3),linewidth(1pt)); label("$y=x$",(3,3),NE);
+            draw(x1--x2, Arrow); 
+    
+            label("$L(\vec x)$",x2,NW);
+            label("$\vec{x}$",x1,E);
+            </asymptote>
+            </image>
+            </figure>
+       </example>
+       
+       <example xml:id="PlaneDilation"><title>A dilation in the plane</title>
+            <figure>
+            <caption/>
+            <image width="50%">
+            <asymptote>
+            unitsize(48);
+            real s=2.5;
+            pair x1=(1.5,1.0); dot(x1);
+            pair x2=s*x1; dot(x2);
+    
+            dot((0,0)); label("$\vec0$",(0,0),SE);
+            draw((-1,0)--(3,0)); label("$x$",(3,0),E);
+            draw((0,-1)--(0,3.5)); label("$y$",(0,3.5),N);
+    
+            dot(x1); label("$\vec x$",x1,NW);
+            dot(x2); label("$L(\vec x)=s\vec x$",x2,NW);
+            draw(x1--x2, Arrow);
+            </asymptote>
+            </image>
+            </figure>
+       </example>
+      </subsection>
+    </section>
+    
+    <section><title>Definition of a linear transformation</title>
+      
+        <subsection><title>Definition of a linear transformation <m>L\colon \R^m\to\R^n</m></title> 
+        <p>
+        A <term>transformation</term> is a map (or a rule) that takes any vector
+        in <m>\R^m</m> and computes a vector in <m>\R^n</m>. We write <m>L\colon \R^m\to\R^n</m>
+        to keep track of the size of the vector we start with and the vector
+        we end up with. So, for example, if we want the rule to start with the
+        vector <m>(x_1,x_2,x_3)</m> and compute <m>(x_1+x_2,x_2+x_3)</m> we would write
+        <m>L\colon \R^3\to\R^2</m> and <m>L((x_1,x_2,x_3))=(x_1+x_2,x_2+x_3)</m>. We can apply 
+        this rule for specific values
+            <ul>
+             <li><p><m>L((1,2,3))=(1+2,2+3)=(3,5)</m></p></li>
+             <li><p><m>L((0,-3,4))=(0-3,-3+4)=(-3,1)</m></p></li>
+             <li><p> <m>L((0,0,0))=(0+0,0+0)=(0,0)</m></p></li>
+            </ul>
+        </p>
+
+        <p>
+        A transformation is <term>linear</term> if it satisfies the following two properties:
+            <ul>
+            <li><p><m>L(\vec u+\vec v)=L(\vec u)+L(\vec v)</m></p></li>
+            <li><p><m>L(r\vec u)=rL(\vec u)</m></p></li>
+            </ul>
+        Notice that <m>\vec u</m> and <m>\vec v</m> are in <m>\R^m</m> while
+        <m>L(\vec u)</m> and <m>L(\vec v)</m> are in <m>\R^n</m>.
+        </p>
+        </subsection>
+      
+        <subsection xml:id="LinearTransformationExamples"><title>Examples of linear transformations</title> 
+        <p>
+        Here are some examples of linear transformations:
+            <ol>
+            <li><p>
+                The zero transformation: <m>L(\vec x)=\vec0</m> for all <m>\vec x</m> 
+                <me>
+                    L(\vec x)+L(\vec y)=\vec0+\vec0=\vec0=L(\vec x + \vec y)\\
+                    rL(\vec x)=r\vec0=\vec0=L(r\vec x)
+                </me>
+            </p></li> 
+            <li><p> 
+                The identity transformation: <m>L(\vec x)=\vec x</m> for all <m>\vec x</m> 
+                <me>
+                    L(\vec x)+L(\vec y)=\vec x+\vec y=L(\vec x + \vec y)\\
+                    rL(\vec x)=r\vec x=L(r\vec x)
+                </me>
+            </p></li> 
+
+            <li><p>
+                Rotations in <m>\R^2</m> as seen in <xref ref="PlaneRotation" />.
+            </p>
+            
+            <p>
+            The following figure shows why rotations have the addition property
+            defining linear transformations:
+            </p>
+
+            <figure>
+            <caption>Rotations are linear</caption>
+            <image width="55%">
+            <asymptote>
+            unitsize(24);
+            pair z=(1/sqrt(2),1/sqrt(2)); //rotation
+         
+            pair x1=(2.3,1.3);
+            pair x2=x1*z;
+         
+            pair y1=(3,1/2);
+            pair y2=y1*z;
+         
+            dot((0,0)); label("$\vec0$",(0,0),SE);
+            draw((-1,0)--(4,0)); label("$x$",(4,0),E);
+            draw((0,-1)--(0,3.5)); label("$y$",(0,3.5),N);
+         
+            fill((0,0)--y2--x2+y2--x2--cycle, lightgreen); 
+            draw((0,0)--y2--x2+y2--x2--cycle, linewidth(1pt)); 
+            dot(x2);
+            dot(y2); 
+            dot(x2+y2);
+            label("$L(\vec x)$",x2,NW);
+            label("$L(\vec{y})$",y2,NE);
+            label("$L(\vec{x}+\vec{y})=L(\vec{x})+L(\vec{y})$",x2+y2,NE);
+         
+            fill((0,0)--y1--x1+y1--x1--cycle, lightyellow); 
+            draw((0,0)--y1--x1+y1--x1--cycle, linewidth(1pt)); 
+            dot(x1);
+            dot(y1); 
+            dot(x1+y1);
+            label("$\vec{x}$",x1,N);
+            label("$\vec{y}$",y1,SE);
+            label("$\vec{x}+\vec{y}$",x1+y1,E);
+         
+            draw(arc((0,0),length(x1), degrees(x1), degrees(x2)), Arrow); 
+            draw(arc((0,0),length(y1), degrees(y1), degrees(y2)), Arrow); 
+            draw(arc((0,0),length(x1+y1), degrees(x1+y1), degrees(x2+y2)), Arrow);
+            </asymptote>
+            </image>
+            </figure>
+
+            <p>
+            The situation is similar for the scalar multiplication property:
+            </p>
+
+            <figure>
+            <caption>Rotations are linear</caption>
+            <image width="50%">
+            <asymptote>
+            unitsize(24);
+            pair z=(1/sqrt(2),1/sqrt(2)); //rotation
+            real r=2.0;
+         
+            pair x1=(2.0,1.0);
+            pair y1=r*x1;
+            pair x2=z*x1;
+            pair y2=r*z*x1;
+         
+            dot((0,0)); label("$\vec0$",(0,0),SE);
+            draw((-1,0)--(3,0)); label("$x$",(3,0),E);
+            draw((0,-1)--(0,3.5)); label("$y$",(0,3.5),N);
+         
+            dot(x1); dot(y1); dot(x2); dot(y2); 
+            draw((0,0)--y1); draw((0,0)--y2);
+            label("$\vec{x}$",x1,S);
+            label("$r\vec x$",y1,SE);
+            label("$L(\vec x)$",x2,NW);
+            label("$L(r\vec{x})=rL(\vec{x})$",y2,N);
+         
+         
+            label("$\theta$",(0,0),3*NE);
+            draw(arc((0,0),length(x1),degrees(x1),degrees(x2)), Arrow); 
+            draw(arc((0,0),length(y1),degrees(y1),degrees(y2)), Arrow); 
+            </asymptote>
+            </image>
+            </figure>
+
+            </li> 
+
+            <li><p>
+                Reflections in <m>\R^2</m> as seen in <xref ref="PlaneReflection" />.
+            </p></li> 
+            <li><p>
+                Projections in <m>\R^2</m> as seen in <xref ref="PlaneProjection" />.
+            </p></li> 
+            <li><p>
+                Dilations in <m>\R^2</m> as seen in <xref ref="PlaneDilation" />.
+            </p></li> 
+            <li><p>
+                <m>L((x_1,x_2,x_3))=(x_1+x_2,x_2+x_3)</m> since 
+                <me>
+                \begin{array}{rl}
+                    L(\vec x)+L(\vec y)
+                    \amp =L((x_1,x_2,x_3))+L((y_1,y_2,y_3))\\
+                    \amp = (x_1+x_2,x_2+x_3)+(y_1+y_2,y_2+y_3)\\
+                    \amp =(x_1+x_2+y_1+y_2, x_2+x_3+y_2+y_3)\\
+                    \amp =(x_1+y_1+x_2+y_2, x_2+y_2+x_3+y_3)\\
+                    \amp =L((x_1+y_1,x_2+y_2,x_3+y_3))\\
+                    \amp =L( (x_1,x_2,x_3)+ (y_1,y_2,y_3))\\
+                    \amp =L(\vec x+\vec y) \text{ and}
+                    \end{array}
+                </me>
+        
+                <me>
+                    \begin{array}{rl}
+                    rL(\vec x)
+                    \amp =rL((x_1,x_2,x_3))\\
+                    \amp =r(x_1+x_2,x_2+x_3)\\
+                    \amp =(rx_1+rx_2,rx_2+rx_3)\\
+                    \amp =L((rx_1,rx_2,rx_3))\\
+                    \amp =L(r\vec x)
+                    \end{array}
+                </me>
+            </p></li> 
+            <li><p> 
+                Let <m>A</m> be an <m>n\times m</m> matrix 
+                (note carefully: <m>n</m> rows and <m>m</m> columns). 
+                Define <m>L\colon\R^m\to\R^n</m> in the following way: 
+                If <m>\vec x</m> is in <m>\R^m</m>, let <m>\vec z=A\vec x</m>. 
+                Note that <m>\vec z</m> is in <m>\R^n</m>. 
+                We then let <m>L(\vec x)=\vec z</m>.  In other words 
+                <m>L(\vec x)=A\vec x</m>. It follows that 
+                <me>
+                    L(\vec x+\vec y) =A(\vec x+\vec y)
+                    =A\vec x+A\vec y=L(\vec x)+L(\vec y)\\
+                    L(r\vec x)=A(r\vec x)=rA\vec x=rL(\vec x)
+                </me> 
+                (There is actually a slight abuse of notation here: <m>\vec x</m> 
+                and <m>\vec y</m> are (vertical) column vectors for the matrix multiplication, 
+                but are written as (horizontal) vectors in <m>\R^m</m> and <m>\R^n</m>.
+                The context of the equation will always make the proper interpretation clear.)
+            </p></li> 
+            </ol>
+        </p>
+        </subsection>
+    </section>
+    
+    <section><title>First properties of linear transformations</title>
+        <p>A linear transformation <m>L\colon\R^m\to\R^n</m>, by definition, satisfies
+            <ul>
+            <li><p> <m>L(\vec x+\vec y)=L(\vec x)+L(\vec y)</m> and</p></li>
+            <li><p><m>L(r\vec x)=rL(\vec x)</m></p></li>
+            </ul>
+        </p>
+        <theorem><title> (First properties)</title>
+        <statement>
+        <p>
+            Any such transformation satisfies
+            <ul>
+            <li><p><m>L(\vec0)=\vec0</m></p></li>
+            <li><p><m>L(\vec x-\vec y)=L(\vec x)-L(\vec y)</m></p></li>
+            <li><p><m>L(\vec x-\vec y)=\vec0</m> if and only if <m>L(\vec x) =L(\vec y)</m></p></li>
+            <li><p><m>L(r_1\vec x_1+r_2\vec x_2)=r_1L(\vec x_1)+r_2L(\vec x_2)</m></p></li>
+            <li><p>
+                For any vectors <m>\vec x_1, \vec x_2,\ldots,\vec x_n</m> 
+                and real numbers <m>r_1, r_2,\ldots,r_n</m> 
+                <me>
+                    L(r_1\vec x_1+r_2 \vec x_2+\cdots+r_n\vec x_n)=
+                    r_1L(\vec x_1)+r_2 L(\vec x_2)+\cdots+r_nL(\vec x_n)
+                </me>
+            </p></li>
+            </ul>
+        </p>
+        </statement>
+        <proof>
+        <p>
+            <ol>
+            <li><p>
+                We evaluate <m>L(\vec 0+\vec 0)</m> in two ways:
+                    <ol>
+                    <li><p>
+                        Since <m>\vec 0+\vec 0=\vec0</m>, we have 
+                        <m>L(\vec 0+\vec 0)=L(\vec 0)</m>
+                    </p></li>
+                    <li><p>
+                        Since <m>\vec 0+\vec 0=2\vec0</m>, 
+                        we have <m>L(\vec 0+\vec 0)= L(2\vec 0)=2L(\vec 0)</m>, and so 
+                    <me>
+                        2L(\vec 0)=L(\vec 0)\\L(\vec 0)=\vec0
+                    </me>
+                    </p></li>
+                    </ol>
+            </p></li>
+       
+            <li><p>
+                <m>L(\vec x-\vec y)
+                =L(\vec x+(-1)\vec y)
+                =L(\vec x)+L((-1)\vec y)
+                L(\vec x)-L(\vec y)</m>
+            </p></li>
+            <li><p>
+                <m>L(\vec x-\vec y)=\vec0</m> if and only if 
+                <m>L(\vec x)-L(\vec y)=\vec0</m> which in turn implies 
+                <m>L(\vec x) =L(\vec y)</m>.</p></li>
+            <li><p><m>L(r_1\vec x_1+r_2\vec x_2)
+                =L(r_1\vec x_1)+L(r_2\vec x_2)
+                =r_1L(\vec x_1)+r_2L(\vec x_2) </m>
+            </p></li>
+            <li><p>We apply the addition property repeatedly: 
+                <me>
+                \begin{array}{rl}
+                L(r_1\vec x_1\amp+r_2 \vec x_2+\cdots+r_n\vec x_n)\\
+                \amp = L(r_1\vec x_1)+L(r_2 \vec x_2+\cdots+r_n\vec x_n)\\
+                \amp = r_1L(\vec x_1)+ L(r_2\vec x_2+\cdots+r_n\vec x_n)\\
+                \amp = r_1L(\vec x_1)+ L(r_2\vec x_2)+L(r_3\vec x_3+\cdots+r_n\vec x_n)\\
+                \amp = r_1L(\vec x_1)+ r_2L(\vec x_2)+L(r_3\vec x_3+\cdots+r_n\vec x_n)\\
+                \amp \,\,\vdots\\
+                \amp = r_1L(\vec x_1)+r_2 L(\vec x_2)+\cdots+r_nL(\vec x_n)
+                \end{array}
+                </me>
+            </p></li>
+            </ol>
+        </p>
+        </proof>
+        </theorem>
+         
+        <p>
+        The <term>standard basis</term> of <m>\R^m</m> is the set of vectors 
+        <m>\{\vec e_1, \vec e_2,\ldots,\vec e_m\}</m> where
+        <me>
+        \vec e_1=(1,0,\ldots,0)\\
+        \vec e_2=(0,1,\ldots,0)\\
+        \vdots\\
+        \vec e_m=(0,0,\ldots,1)
+        </me> 
+        </p>
+         
+        <theorem xml:id="LinearTransformationOnStandardBasis"><title>(The value of <m>L</m> on 
+            the standard basis determines <m>L</m> everywhere)</title>
+        <statement>
+        <p>
+        If the values <m>L(\vec e_1), L(\vec e_2),\ldots L(\vec e_m)</m> are known,
+        then value of <m>L(\vec x)</m> is known for all <m>\vec x</m> in <m>\R^m</m>. 
+        </p>
+        </statement>
+         
+        <proof>
+        <p>
+        Suppose 
+        <m>L(\vec e_1)=\vec f_1,  L(\vec e_2)=\vec f_2,\ldots,L(\vec e_m)=\vec f_m</m>,
+        and <m>\vec x=(x_1,x_2,\ldots,x_m)</m>. Then 
+        <m>(x_1,x_2,\ldots,x_m)=x_1\vec e_1 + x_2\vec e_2+\cdots+x_m\vec e_m</m> and
+        <me>
+        \begin{array}{rl}
+        L(\vec x)
+        \amp =L(x_1\vec e_1 + x_2\vec e_2+\cdots+x_m\vec e_m)\\
+        \amp =x_1L(\vec e_1) + x_2L(\vec e_2)+\cdots+x_mL(\vec e_m)\\
+        \amp =x_1\vec f_1 + x_2\vec f_2+\cdots+x_n\vec f_m
+        \end{array}
+        </me>
+        </p>
+        </proof>
+        </theorem>
+         
+         <corollary>
+         <title><m>L(\vec e_i)=\vec 0, i=1\cdots m</m>,
+         implies <m>L=0</m></title>
+         <statement>
+         <p>
+         If <m>L(\vec e_1)=L(\vec e_2)=\cdots=L(\vec e_m)=i\vec 0</m>,
+         then <m>L</m> is the zero transformation.
+         </p>
+         </statement>
+         </corollary>
+        <p>There is an easy consequence:</p>
+         
+        <theorem><title>Two linear transformations equal on the standard basis are equal everywhere</title>
+        <statement>
+        <p>
+            Suppose <m>L_1\colon \R^m\to\R^n</m>,  <m>L_2\colon \R^m\to\R^n</m> 
+            and <m>L_1(\vec e_i) = L_2(\vec e_i)</m> for <m>i=1,2,\dots m</m>. 
+            Then <m>L_1(\vec x)=L_2(\vec x)</m> for all <m>\vec x</m> in
+            <m>\R^m</m>, and <m>L_1=L_2</m>.
+        </p> 
+        </statement>
+         
+        <proof>
+        <p>
+            <m>L_1(\vec e_i)-L_2(\vec e_i)=\vec 0</m> by assumption. 
+            If <m>\vec x=(x_1,\dots,x_m)</m>, we may write 
+            <m>\vec x = x_1\vec e_1+x_2\vec e_2+\cdots +x_m\vec e_m.</m> Then
+            <md>
+            <mrow>L_1(\vec x)
+            \amp =L_1(x_1\vec e_1+x_2\vec e_2+\cdots +x_m\vec e_m)</mrow>
+            <mrow>\amp =x_1L_1(\vec e_1)+x_2L_1(\vec e_2)+\cdots +x_mL_1(\vec e_m)</mrow>
+            <mrow>\amp =x_1L_2(\vec e_1)+x_2L_2(\vec e_2)+\cdots +x_mL_2(\vec e_m)</mrow>
+            <mrow>\amp =L_2(x_1\vec e_1+x_2\vec e_2+\cdots +x_m\vec e_m)</mrow>
+            <mrow>\amp= L_2(\vec x)</mrow>
+            </md>
+            From this we see that
+            <me>
+            L_1(\vec x)-L_2(\vec x) = \vec 0.
+            </me>
+        </p> 
+        </proof>
+        </theorem>
+    </section>
+     
+    <section><title>Matrix multiplication as a linear transformation</title>
+        <p>
+        If we are given an <m>n\times m</m> matrix <m>A</m>, we may define <m>L(\vec x)=A\vec x</m> and,
+        as we saw in
+        <xref ref="LinearTransformationExamples" />,
+        <m>L\colon\R^m\to\R^n</m> is then 
+        a linear transformation. We will denote this transformation <m>L_A</m>.
+        </p>
+         
+        <p>
+        Now suppose we have two linear transformations <m>L_1\colon\R^m\to\R^n</m> and 
+        <m>L_2\colon\R^n\to\R^s</m>. We then define a new linear transformation called
+        the <term>composition of <m>L_1</m> and <m>L_2</m></term>
+        (and denoted <m>L_2\circ L_1</m>) in the following way: <m>L_2\circ L_1\colon\R^m\to\R^s</m> and
+        <me>
+        (L_2\circ L_1)(\vec x)=L_2(L_1(\vec x))
+        </me>
+        This means that we start with a vector <m>\vec x</m> in <m>\R^m</m> and compute <m>L_1(\vec x)</m>.
+        This vector is in <m>\R^n</m>, which is exactly right if we want to evaluate <m>L_2</m>. Hence
+        <m>L_2(L_1(\vec x))</m> not only makes sense, but upon evaluation we have a vector in <m>\R^s</m>.
+        </p>
+         
+        <p>We can visualize the composition of two functions as:</p>
+     
+        <figure>
+        <caption/>
+        <image width="90%">
+        <asymptote>
+            unitsize(50);
+            draw(scale(1,2)*unitcircle);
+            draw(shift(3,0)*scale(1,2)*unitcircle);
+            draw(shift(-3,0)*scale(1,2)*unitcircle);
+            dot((0,1)); dot((3,1)); dot((-3,1)); 
+            draw((-3,1)..(-1.5,1.5)..(0,1),Arrow);
+            draw((0,1)..(1.5,1.5)..(3,1),Arrow);
+            draw((-3,1)..(0,2.5)..(3,1),Arrow);
+            label("$\vec x$", (-3,1), S);
+            label("$L_1(\vec x)$", (0,1), S);
+            label("$L_2(L_1(\vec x))$", (3,1), S);
+            label("$R^m$", (-3,-2), S);
+            label("$R^n$", (0,-2), S);
+            label("$R^s$", (3,-2), S);
+            label("$L_1$", (-1.5,1.5), N);
+            label("$L_2$", (1.5,1.5), N);
+            label("$L_2\circ L_1$", (0,2.5), N);
+        </asymptote>
+        </image>
+        </figure>
+         
+        <p>
+        The vector <m>\vec x</m> is in <m>\R^m</m>; following the arrow 
+        labelled with <m>L_1</m> gets us to
+        <m>L_1(\vec x)</m> in <m>\R^m</m>; following the next arrow 
+        labelled with <m>L_2</m> gets us to gets us to 
+        <m>L_2(L_1(\vec x))</m> in <m>\R^s</m>. The long arrow corresponds to
+        <m>L_2\circ L_1</m>: it goes directly to the same vector in <m>\R^s.</m>
+        </p>
+
+        <p>
+        Next, we wish to see that this composition is itself linear.
+        </p>
+         
+        <theorem><title>The composition of two linear transformations is linear</title>
+        <statement>
+        <p>
+            Let <m>L_1\colon\R^m\to\R^n</m> and <m>L_2\colon\R^n\to\R^s</m> 
+            be two linear transformations, and let <m>L_3=L_2\circ L_1</m>. 
+            Then <m>L_3\colon\R^m\to\R^s</m> is itself linear.
+        </p>
+        </statement>
+        <proof>
+        <p>
+            For any <m>\vec x</m> in <m>\R^m</m>, we have 
+            <m>L_3(\vec x)=(L_2\circ L_1)(\vec x)=L_2(L_1(\vec x))</m>, 
+            and so we have <m>L_3\colon\R^m\to\R^s</m>.
+            <md>
+                <mrow>L_3(\vec x + \vec y)
+                \amp =L_2(L_1(\vec x+ \vec y))</mrow>
+                <mrow>\amp = L_2(L_1(\vec x) + L_1(\vec y)) 
+                   \amp \gets \text{ since }L_1 \text{ is linear}</mrow>
+                <mrow>\amp = L_2(L_1(\vec x)) + L_2(L_1(\vec y))
+                   \amp \gets \text{ since }L_2\text{ is linear}</mrow>
+                <mrow>\amp = L_3(\vec x) + L_3(\vec y)</mrow>
+            </md>.
+         
+            <md>
+                <mrow>L_3(r\vec x)
+                \amp =L_2(L_1(r\vec x))</mrow>
+                <mrow>\amp =L_2(rL_1(\vec x))
+                    \amp \gets\text{ since }L_1\text{ is linear}</mrow>
+                <mrow>\amp =rL_2(L_1(\vec x)
+                    \amp \gets\text{ since }L_2\text{ is linear}</mrow>
+                <mrow>\amp =rL_3(\vec x)</mrow>
+            </md>.
+            Hence <m>L_3=L_2\circ L_1</m> is linear.
+        </p>
+        </proof>
+        </theorem>
+         
+        <p>
+        Next we note that composition of linear transformations 
+        and matrix multiplication are closely related:
+        </p>
+         
+        <theorem><title>Composition and matrix multiplication</title> 
+        <statement>
+        <p>
+        Let <m>A</m> be an <m>n\times m</m> matrix and <m>B</m> an <m>s\times n</m> matrix. 
+        Also let <m>L_A</m> and <m>L_B</m> be the linear transformations defined by 
+        <m>L_A(\vec x)=A\vec x</m> and <m>L_B(\vec x)=B\vec x</m>. 
+        Then
+        <me>
+            L_{BA}=L_B\circ L_A
+        </me>
+        </p>
+        </statement>
+        <proof>
+        <p>
+            First note that <m>L_A\colon\R^m\to\R^n</m> and <m>L_B:\R^n\to\R^s</m>, and so
+            <m>L_B\circ L_A\colon\R^m\to\R^s</m>. In addition, note that <m>BA</m> is an
+            <m>s\times m</m> matrix, and so <m>L_{BA}\colon\R^m\to\R^s</m> also. Finally note
+            that for any <m>\vec x</m> in <m>\R^m</m>, we have
+            <me>
+                (L_B\circ L_A)\vec x=L_B(L_A(\vec x))=L_B(A\vec x)
+                =BA\vec x=L_{BA}(\vec x)
+            </me>
+            Hence <m>L_{BA}=L_B\circ L_A</m>.
+        </p>
+        </proof>
+        </theorem>
+    </section>
+    
+    <section><title>Linear transformations and bases</title>
+    <p>
+    To be added.
+    </p>
+    </section>
+    
+    <section><title>Matrix representation of a transformation</title>
+     <p>
+        Suppose we have a linear transformation <m>L\colon \R^m\to\R^n</m>. As usual, let
+        <m>\{\vec e_1,\vec e_2,\ldots,\vec e_m\}</m> be the standard basis for <m>\R^m</m>.
+        Consider the vectors <m>\{L(\vec e_1) ,L(\vec e_2), \ldots, L(\vec e_m)\}</m>
+        in <m>\R^n</m>. We form a matrix <m>A</m> by using the entries of <m>L(\vec e_k)</m> 
+        for the <m>k</m>-th column. We can think of the construction in the following way:
+        <me>
+            \begin{array}{cccc}
+                A = \amp [L(\vec e_1) \amp L(\vec e_2) \amp \cdots \amp L(\vec e_m)]\\
+                \amp \uparrow \amp \uparrow  \amp \amp \uparrow\\
+                \amp \text{column } 1\amp \text{column } 2\amp\amp \text{column } m
+            \end{array}
+        </me>
+        Notice that <m>A</m> is an <m>n\times m</m> matrix, and hence we have
+        <m>L_A\colon\R^m\to\R^n</m>. We evaluate this transformation at <m>\vec e_1</m>:
+        <men xml:id="MatrixRep">
+            L_A(\vec e_1)=
+            A\begin{bmatrix}
+                1\\0\\\vdots\\0
+                \end{bmatrix}
+            =L(\vec e_1)
+        </men>
+        Similarly
+        <me>
+            L_A(\vec e_k)=L(\vec e_k) \text{ for } 1\leq k\leq n
+        </me>
+        As we have seen
+        in  
+        <xref ref="LinearTransformationOnStandardBasis" />
+        a linear transformation is determined by its values on the standard basis. This
+        implies <m>L=L_A</m>. We call the constructed matrix <m>A</m> the 
+        <em>matrix representation</em> of <m>L</m>.
+        </p>
+         
+        <theorem><title>(Matrix representation of a linear transformation)</title>
+        <statement>
+        <p>
+        Let <m>L\colon \R^m\to\R^n</m> be a linear transformation, and let <m>A</m>
+        be the matrix formed by letting the <m>k</m>-th column be the entries of
+        <m>L(\vec e_k)</m>. Then
+        <me>
+            L=L_A
+        </me>
+        </p>
+        </statement>
+        <proof>
+        <p>
+        We can compute this in a different way: The equation <xref ref="MatrixRep" /> says 
+        <md>
+            <mrow>L(\vec e_1)
+            \amp=A\begin{bmatrix}1\\0\\\vdots\\0\end{bmatrix}</mrow>
+            <mrow>\amp=\begin{bmatrix}a_{1,1}\\a_{2,1}\\\vdots\\a_{n,1}\end{bmatrix}</mrow>
+            <mrow>\amp=a_{1,1}\vec e_1+a_{2,1}\vec e_2+\cdots+a_{n,1}\vec e_n</mrow>
+        </md>
+        and, similarly,
+        <me>
+        L(\vec e_i)=a_{1,i}\vec e_1+a_{2,i}\vec e_2+\cdots+a_{n,i}\vec e_n
+        </me>
+        </p>
+        </proof>
+        </theorem>
+    </section>
+    
+    <section><title>Linear Operators</title>
+     <p>A <em>linear operator</em> is a linear transformation of the form
+      <me>
+      L\colon \R^n\to\R^n
+      </me>
+      In this case the matrix <m>A</m> that represents <m>L</m> will be square.
+      </p>
+    </section>
+    
+    <section><title>Applications to computer graphics</title>
+    <p>
+    To be added.
+    </p>
+    </section>
+</chapter>
+

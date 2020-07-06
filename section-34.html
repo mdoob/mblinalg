@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-07-05T18:40:25-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Computing eigenvalues</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_brown_gold.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
+\def\C{{\mathbb C}}
+\def\Q{{\mathbb Q}}
+\def\Z{{\mathbb Z}}
+\def\N{{\mathbb N}}
+
+\def\vec#1{\mathbf #1}
+
+\newcommand{\adj}{\mathop{\textrm{adj}}}
+\newcommand{\proj}{\mathop{\textrm{proj}}}
+\newcommand{\Span}{\mathop{\textrm{span}}} 
+
+\newcommand{\rowint}[2]{R_{#1} \leftrightarrow R_{#2}}
+\newcommand{\rowmul}[2]{R_{#1}\gets {#2}R_{#1}}
+\newcommand{\rowadd}[3]{R_{#1}\gets R_{#1}+#2R_{#3}}
+\newcommand{\rowsub}[3]{R_{#1}\gets R_{#1}-#2R_{#3}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.umanitoba.ca" target="_blank"><img src="images/umlogo.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="mblinalg.html"><span class="title">Manitoba linear algebra</span></a></h1>
+<p class="byline">Michael Doob (editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-33.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-5.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-35.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-33.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-5.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-35.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="Frontmatter.html" data-scroll="Frontmatter"><span class="title">Title Page</span></a></li>
+<li class="link"><a href="SysLinEq.html" data-scroll="SysLinEq"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations</span></a></li>
+<li class="link"><a href="MatrixTheoryIntro.html" data-scroll="MatrixTheoryIntro"><span class="codenumber">2</span> <span class="title">Matrix Theory</span></a></li>
+<li class="link"><a href="Determinants.html" data-scroll="Determinants"><span class="codenumber">3</span> <span class="title">The Determinant</span></a></li>
+<li class="link"><a href="EuclideanSpace.html" data-scroll="EuclideanSpace"><span class="codenumber">4</span> <span class="title">Vectors in Euclidean \(n\) space</span></a></li>
+<li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
+<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">6</span> <span class="title">Additional Topics</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="section-34"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.2</span> <span class="title">Computing eigenvalues</span>
+</h2>
+<p id="p-1028">An easy but important fact is used to compute eigenvalues.</p>
+<article class="proposition theorem-like" id="proposition-9"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenvalues \(x\) satisfy \((A-\lambda I)\vec x=\vec0\).</span>
+</h6>
+<div class="displaymath" id="p-1029">
+\begin{equation*}
+A\vec x=\lambda \vec x \textrm{ if and only if } (A-\lambda I)\vec x=\vec0
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-78"><a data-knowl="" class="id-ref original" data-refid="hk-proof-78"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-78"><article class="hiddenproof"><p id="p-1030">If \(A\vec x=\lambda\vec x\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+\vec0=A\vec x -\lambda\vec x=A\vec x -\lambda I\vec x 
+= (A - \lambda I)\vec x.
+\end{equation*}
+</div></article></div>
+<article class="corollary theorem-like" id="corollary-6"><h6 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="period">.</span>
+</h6>
+<p id="p-1031">\(\lambda\) is an eigenvalue of \(A\) if and only if \(A-\lambda I\) is singular.</p></article><article class="hiddenproof" id="proof-79"><a data-knowl="" class="id-ref original" data-refid="hk-proof-79"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-79"><article class="hiddenproof"><p id="p-1032">One of the equivalent conditions of singularity given in <a class="xref" data-knowl="./knowl/InvertibilityEquivalence2.html" title="Theorem 3.4.21: Equivalent forms of invertibility">Theorem 3.4.21</a> is that \(B\) is singular if \(B\vec x=\vec 0\) for some \(\vec x\not=\vec 0\text{.}\) The matrix \(A-\lambda I\) plays the role of \(B\text{.}\)</p></article></div>
+<article class="corollary theorem-like" id="corollary-7"><h6 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="period">.</span>
+</h6>
+<p id="p-1033">\(\lambda\) is an eigenvalue of \(A\) if and only if \(\det (A-\lambda I)=0\)</p></article><article class="hiddenproof" id="proof-80"><a data-knowl="" class="id-ref original" data-refid="hk-proof-80"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-80"><article class="hiddenproof"><p id="p-1034">\(B\) is singular if and only if \(\det B=0\text{.}\)</p></article></div>
+<p id="p-1035">We now can see how these corollaries allow us to compute eigenvalues. We look at the matrix from <a class="xref" data-knowl="./knowl/EigenvalueExample1.html" title="Example 5.1.3: Eigenvalues of \(\begin{bmatrix} 
+5\amp -1\amp -2\\ 
+1\amp 3\amp -2\\ 
+-1\amp -1\amp 4 
+\end{bmatrix} \)">Example 5.1.3</a>.</p>
+<article class="example example-like" id="example-46"><a data-knowl="" class="id-ref original" data-refid="hk-example-46"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-46"><article class="example example-like"><p id="p-1036">We use</p>
+<div class="displaymath">
+\begin{equation*}
+A-\lambda I=
+\begin{bmatrix}
+5-\lambda\amp -1\amp -2\\ 
+1\amp 3-\lambda\amp -2\\ 
+-1\amp -1\amp 4-\lambda 
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+\det(A-\lambda I)=0.
+\end{equation*}
+</div>
+<p data-braille="continuation">Evaluating the determinant gives</p>
+<div class="displaymath">
+\begin{align*}
+\det\amp \begin{bmatrix}
+5-\lambda\amp -1\amp -2\\ 
+1\amp 3-\lambda\amp -2\\ 
+-1\amp -1\amp 4-\lambda 
+\end{bmatrix}\\
+\amp=(5-\lambda)(3-\lambda)(4-\lambda)-2+2
+-2(5-\lambda) -2(3-\lambda)+(4-\lambda)\\
+\amp = -\lambda^3 +12\lambda^2 -44\lambda +48\\
+\amp = -(\lambda-2)(\lambda-4)(\lambda-6)
+\end{align*}
+</div>
+<p data-braille="continuation">So we see that \(\det(A-\lambda I)=0\) only if \(\lambda=2\text{,}\) \(\lambda=4\) or \(\lambda=6\text{.}\) The evaluation of \(\det(A-\lambda I)=0\) gave us a polynomial \(p(\lambda)=-(\lambda-2)(\lambda-4)(\lambda-6)\) whose roots are the eigenvalues.</p></article></div>
+<article class="definition definition-like" id="definition-61"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">The characteristic polynomial.</span>
+</h6>
+<p id="p-1037">The <dfn class="terminology">characteristic polynomial</dfn> of a square matrix \(A\) is the polynomial</p>
+<div class="displaymath">
+\begin{equation*}
+p(\lambda)=\det(\lambda I-A).
+\end{equation*}
+</div></article><article class="note remark-like" id="note-1"><h6 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">5.2.6</span><span class="period">.</span>
+</h6>
+<p id="p-1038">Some sources define the characteristic polynomial as \(\det(A-\lambda I)\text{.}\) Since \(\lambda I-A=-(A-\lambda I)\text{,}\) it follows that for any square matrix \(A\) of size \(n\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\det(\lambda I-A)=(-1)^n\det(A-\lambda I)
+\end{equation*}
+</div>
+<p data-braille="continuation">and so both polynomials have the same roots.</p></article><p id="p-1039">We look at the matrix from <a class="xref" data-knowl="./knowl/EigenvalueExample2.html" title="Example 5.1.4: Eigenvalues of \(\begin{bmatrix}2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5 \end{bmatrix}\)">Example 5.1.4</a>.</p>
+<article class="example example-like" id="example-47"><a data-knowl="" class="id-ref original" data-refid="hk-example-47"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.7</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-47"><article class="example example-like"><p id="p-1040">\(A=\begin{bmatrix}2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5 \end{bmatrix}\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+\det(A-\lambda I)
+\amp =\det\begin{bmatrix}2-\lambda\amp 1\amp 4\\ 
+0\amp 3-\lambda\amp 0\\ 
+2\amp -2\amp -5-\lambda \end{bmatrix}\\
+\amp =(2-\lambda)(3-\lambda)(-5-\lambda)-8(3-\lambda)\\
+\amp = (\lambda+6)(\lambda-3)^2
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">and so the eigenvalues are \(\lambda=-6\) and \(\lambda=3\)</p></article></div>
+<article class="example example-like" id="example-48"><a data-knowl="" class="id-ref original" data-refid="hk-example-48"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenvalues and powers of a matrix.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-48"><article class="example example-like"><p id="p-1041">Let \(A= \begin{bmatrix} 1 \amp 2 \\ 2 \amp 1 \end{bmatrix}\text{.}\)</p>
+<ol class="decimal">
+<li id="li-354">\(\vec x_1= \begin{bmatrix} 1 \\ 1 \end{bmatrix}\) and \(\vec x_2 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}\) are eigenvectors since<div class="displaymath">
+\begin{align*}
+A\vec x_1\amp=3\vec x_1\\
+A\vec x_2\amp=(-1)\vec x_2\text{.}
+\end{align*}
+</div>
+</li>
+<li id="li-355">Let \(P=[\vec x_1\ \vec x_2]= 
+\begin{bmatrix} 1\amp 1\\ 1\amp -1 \end{bmatrix}\text{.}\) Then \(P^{-1}=
+\frac12\begin{bmatrix} 1\amp 1\\ 1\amp -1 \end{bmatrix}\text{.}\)</li>
+<li id="li-356">Let \(D=P^{-1}AP\text{.}\) By direct computation we have<div class="displaymath">
+\begin{equation*}
+D=P^{-1}AP=\frac12 
+\begin{bmatrix} 1\amp 1\\ 1\amp -1 \end{bmatrix}
+\begin{bmatrix} 1 \amp 2 \\ 2 \amp 1 \end{bmatrix}
+\begin{bmatrix} 1\amp 1\\ 1\amp -1 \end{bmatrix}
+=\begin{bmatrix} 3\amp 0\\ 0\amp -1 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-357">We compute the powers of \(D\) as the <a class="xref" data-knowl="./knowl/MultiplyDiagonalMatrices.html" title="Proposition 2.8.5: Multiplication of diagonal matrices">product of diagonal matrices</a>: \(D^n=\begin{bmatrix} 3^n\amp 0\\ 0\amp (-1)^n \end{bmatrix}\text{.}\)</li>
+<li id="li-358">By rebracketing the matrix product,<div class="displaymath">
+\begin{align*}
+A^n \amp =(PDP^{-1})^n\\
+\amp =(PDP^{-1})(PDP^{-1})\cdots (PDP^{-1})(PDP^{-1})\\
+\amp =PD(P^{-1}P)D(P^{-1}P)\cdots D(P^{-1}P)DP^{-1}\\
+\amp =PD^nP^{-1}
+\end{align*}
+</div>
+</li>
+<li id="li-359">By an easy computation,<div class="displaymath">
+\begin{align*}
+P D^n P^{-1} \amp =
+\frac12 \begin{bmatrix} 1\amp 1\\ 1\amp -1 \end{bmatrix}
+\begin{bmatrix} 3^n\amp 0\\ 0\amp (-1)^n \end{bmatrix}
+\begin{bmatrix} 1\amp 1\\ 1\amp -1 \end{bmatrix}\\
+\amp =\frac12 \begin{bmatrix} 
+3^n+(-1)^n \amp 3^n+(-1)^{n+1}\\ 
+3^n+(-1)^{n+1}\amp 3^n+(-1)^n 
+\end{bmatrix}\text{.}
+\end{align*}
+</div>
+</li>
+<li id="li-360">And so<div class="displaymath">
+\begin{equation*}
+A^n=
+\begin{bmatrix} 
+\frac{3^n+(-1)^n}2 \amp \frac{3^n+(-1)^{n+1}}2\\ 
+\frac{3^n+(-1)^{n+1}}2\amp \frac{3^n+(-1)^n}2 
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</li>
+</ol>
+<p data-braille="continuation">Observe that for small values of \(n\) we may easily compute the entries of \(A^n\text{:}\)</p>
+<figure class="table table-like" id="table-6"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.2.9<span class="period">.</span></span><span class="space"> </span></figcaption><table>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">\(n\)</td>
+<td class="c m b1 r0 l0 t0 lines">\(\frac{3^n+(-1)^n}2\)</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">\(\frac{3^n+(-1)^{n+1}}2\)</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">\(1\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(1\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(2\)</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">\(2\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(5\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(4\)</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">\(3\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(13\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(14\)</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">\(4\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(40\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(41\)</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">\(5\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(122\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(121\)</td>
+</tr>
+</table></figure><p id="p-1042">Compare this result with <a class="xref" data-knowl="./knowl/MatrixPowerExample.html" title="Table 2.6.1: Powers of \(A=\bigl[\begin{smallmatrix}1\amp2\\2\amp1\end{smallmatrix}\bigr]\)">these earlier computations</a>.</p></article></div></section></div></main>
+</div>
+</body>
+</html>

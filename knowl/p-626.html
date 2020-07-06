@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-05T13:51:00-05:00    *-->
+<!--*    on 2020-07-05T18:40:36-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,41 +13,66 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Next, we relate the determinant of a matrix \(A\) to that of its reduced row echelon form \(B\text{.}\) From <a class="xref" data-knowl="./knowl/ElementaryMatrixRowMultiplication.html" title="Theorem 2.10.2: Carrying out row operations using matrix multiplication">Theorem 2.10.2</a> we write</p>
+<p>We recalculate the determinant from <a class="xref" data-knowl="./knowl/DeterminantSizeFour.html" title="Example 3.3.3: \(A\circ C\) has constant row and column sums">Example 3.3.3</a>. Let</p>
 <div class="displaymath">
 \begin{equation*}
-B=E_k E_{k-1}E_{k-2}\cdots E_2 E_1 A
+A=
+\begin{bmatrix}
+1\amp0\amp-1\amp2\\
+1\amp-1\amp1\amp0\\
+0\amp1\amp-2\amp1\\
+-1\amp1\amp0\amp1
+\end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">and then note from <a class="xref" data-knowl="./knowl/DeterminantsElementaryRowOperations.html" title="Theorem 3.4.16: Determinants and elementary row operations">Theorem 3.4.16</a> that</p>
-<div class="displaymath">
-\begin{align*}
-\det B
-\amp = \det (E_k E_{k-1}E_{k-2}\cdots E_2 E_1 A)\\
-\amp = \det E_k \det( E_{k-1}E_{k-2}\cdots E_2 E_1 A)\\
-\amp = \det E_k \det E_{k-1}\det(E_{k-2}\cdots E_2 E_1 A)\\
-\amp \vdots\\
-\amp = \det E_k \det E_{k-1}\det E_{k-2}\cdots \det E_2 \det E_1 \det A
-\end{align*}
-</div>
-<p data-braille="continuation">We further note that for any elementary matrix \(E\text{,}\) we have</p>
+<p data-braille="continuation">We apply the two elementary row operations to \(A\text{:}\) \(R_2\gets R_2-R_1\) and \(R_3 \gets R_3+R_1\) to get</p>
 <div class="displaymath">
 \begin{equation*}
-\det E =
-\begin{cases}
--1 \amp \textrm{ for } R_i\leftrightarrow R_j\\
-\lambda \amp \textrm{ for } R_i\gets \lambda R_i \textrm{ where } \lambda\not=0\\
-1 \amp \textrm{ for } R_i\gets R_i+\lambda R_j\\
-\end{cases}
+B=
+\begin{bmatrix}
+1\amp0\amp-1\amp2\\
+0\amp-1\amp2\amp-2\\
+0\amp1\amp-2\amp1\\
+0\amp1\amp-1\amp3
+\end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">In particular, this means that for any elementary matrix \(E\) we have \(\det E\not=0\text{,}\) and so we have:</p>
+<p data-braille="continuation">From <a class="xref" data-knowl="./knowl/DeterminantRowAdd.html" title="Theorem 3.4.15: Adding a multiple of one row to another leaves the determinant unchanged">Theorem 3.4.15</a> we have \(\det A=\det B\text{.}\) Expanding on the first column gives,</p>
 <div class="displaymath">
 \begin{equation*}
-\det B = \underbrace{\det E_k \det E_{k-1} \cdots \det E_2 \det E_1}_{\not=0} \det A
+\det A=\det B =
+\det
+\begin{bmatrix}
+-1\amp2\amp-2\\
+1\amp-2\amp1\\
+1\amp-1\amp3
+\end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">and so \(\det B=0\) if and only if \(\det A=0\text{.}\) In summary:</p>
+<p data-braille="continuation">Now we use \(R_2\gets R_2+R_1\) and \(R_3\gets R_3+R_1\) to get</p>
+<div class="displaymath">
+\begin{equation*}
+\det A=\det B =
+\det
+\begin{bmatrix}
+-1\amp2\amp-2\\
+0\amp0\amp-1\\
+0\amp1\amp1
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">Expanding on the first column once again gives</p>
+<div class="displaymath">
+\begin{equation*}
+\det A=\det B =(-1)
+\det
+\begin{bmatrix}
+0\amp-1\\
+1\amp1
+\end{bmatrix}
+=-1
+\end{equation*}
+</div>
 <span class="incontext"><a href="section-22.html#p-626">in-context</a></span>
 </body>
 </html>

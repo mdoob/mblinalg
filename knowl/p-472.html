@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-05T13:50:57-05:00    *-->
+<!--*    on 2020-07-05T18:40:34-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,28 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>There are three different elementary row operations: </p>
-<ol class="decimal">
-<li><p>Interchanging two rows (\(R_i\leftrightarrow R_j)\)</p></li>
-<li><p>Multiplying a row by a scalar (\(R_i\gets \lambda R_i\) where \(\lambda\not=0)\)</p></li>
-<li><p>Adding a multiple of one row to another (\(R_i\gets R_i+\lambda R_j)\)</p></li>
-</ol>
-<p data-braille="continuation">We now define an elementary matrix \(E=[e_{i,j}]\) for each one of these operations:</p>
-<span class="incontext"><a href="section-17.html#p-472">in-context</a></span>
+<p>Evaluate so the the middle factors "disappear":</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+A^n(A^{-1})^n 
+\amp= \underbrace{A\cdots A}_{n\text{ factors}}\ 
+\underbrace{A^{-1}\cdots A^{-1}}_{n\text{ factors}} \\ 
+\amp= \underbrace{A\cdots A}_{n-1\text{ factors}}(AA^{-1})
+\underbrace{A^{-1}\cdots A^{-1}}_{n-1\text{ factors}} \\ 
+\amp= \underbrace{A\cdots A}_{n-1\text{ factors}}(I)
+\underbrace{A^{-1}\cdots A^{-1}}_{n-1\text{ factors}}\\ 
+\amp= \underbrace{A\cdots A}_{n-1\text{ factors}}
+\underbrace{A^{-1}\cdots A^{-1}}_{n-1\text{ factors}}\\ 
+\amp=\underbrace{A\cdots A}_{n-2\text{ factors}}(AA^{-1}) 
+\underbrace{A^{-1}\cdots A^{-1}}_{n-2\text{ factors}} \\ 
+\amp\vdots\\ 
+\amp= AA^{-1}\\ 
+\amp= I 
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">and so \((A^{-1})^n\) is the inverse of \(A^n\text{.}\)</p>
+<span class="incontext"><a href="section-16.html#p-472">in-context</a></span>
 </body>
 </html>

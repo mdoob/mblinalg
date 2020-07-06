@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-05T13:50:48-05:00    *-->
+<!--*    on 2020-07-05T18:40:20-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -94,28 +94,30 @@ MathJax.Hub.Config({
 <li class="link"><a href="SysLinEq.html" data-scroll="SysLinEq"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations</span></a></li>
 <li class="link"><a href="MatrixTheoryIntro.html" data-scroll="MatrixTheoryIntro"><span class="codenumber">2</span> <span class="title">Matrix Theory</span></a></li>
 <li class="link"><a href="Determinants.html" data-scroll="Determinants"><span class="codenumber">3</span> <span class="title">The Determinant</span></a></li>
-<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">4</span> <span class="title">Additional Topics</span></a></li>
+<li class="link"><a href="EuclideanSpace.html" data-scroll="EuclideanSpace"><span class="codenumber">4</span> <span class="title">Vectors in Euclidean \(n\) space</span></a></li>
+<li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
+<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">6</span> <span class="title">Additional Topics</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-17"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.10</span> <span class="title">Elementary matrices</span>
 </h2>
-<section class="introduction" id="introduction-8"><p id="p-471">We put matrices into reduced row echelon form by a series of elementary row operations.  Our first goal is to show that each elementary row operation may be carried out using matrix multiplication.  The matrix \(E=[e_{i,j}]\) used in each case is almost an identity matrix.  The product \(EA\) will carry out the corresponding elementary row operation on \(A\text{.}\)</p></section><section class="subsection" id="subsection-35"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-8"><p id="p-474">We put matrices into reduced row echelon form by a series of elementary row operations.  Our first goal is to show that each elementary row operation may be carried out using matrix multiplication.  The matrix \(E=[e_{i,j}]\) used in each case is almost an identity matrix.  The product \(EA\) will carry out the corresponding elementary row operation on \(A\text{.}\)</p></section><section class="subsection" id="subsection-35"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.10.1</span> <span class="title">The three types of elementary matrices</span>
 </h3>
-<p id="p-472">There are three different elementary row operations: </p>
+<p id="p-475">There are three different elementary row operations: <a class="xref" data-knowl="./knowl/TableOfElemantaryRowOperations.html" title="Table 1.4.4: Elementary Row Operations">Table 1.4.4</a> </p>
 <ol class="decimal">
-<li id="li-197"><p id="p-473">Interchanging two rows (\(R_i\leftrightarrow R_j)\)</p></li>
-<li id="li-198"><p id="p-474">Multiplying a row by a scalar (\(R_i\gets \lambda R_i\) where \(\lambda\not=0)\)</p></li>
-<li id="li-199"><p id="p-475">Adding a multiple of one row to another (\(R_i\gets R_i+\lambda R_j)\)</p></li>
+<li id="li-197"><p id="p-476">Interchanging two rows (\(R_i\leftrightarrow R_j)\)</p></li>
+<li id="li-198"><p id="p-477">Multiplying a row by a scalar (\(R_i\gets \lambda R_i\) where \(\lambda\not=0)\)</p></li>
+<li id="li-199"><p id="p-478">Adding a multiple of one row to another (\(R_i\gets R_i+\lambda R_j)\)</p></li>
 </ol>
 <p data-braille="continuation">We now define an elementary matrix \(E=[e_{i,j}]\) for each one of these operations:</p>
 <article class="definition definition-like" id="ElementaryMatrices"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.10.1</span><span class="period">.</span><span class="space"> </span><span class="title">Elementary matrices.</span>
 </h6>
-<ol id="p-476" class="decimal">
+<ol id="p-479" class="decimal">
 <li id="li-200">
-<p id="p-477">(\(R_i\leftrightarrow R_j)\)</p>
+<p id="p-480">(\(R_i\leftrightarrow R_j)\)</p>
 <div class="displaymath">
 \begin{equation*}
 E_1=
@@ -136,7 +138,7 @@ E_1=
 <p data-braille="continuation">In this case \(e_{i,i}=e_{j,j}=0\) and \(e_{i,j}=e_{i,j}=1\text{.}\) All other entries are the same as those in \(I\text{.}\)</p>
 </li>
 <li id="li-201">
-<p id="p-478">(\(R_i\gets \lambda R_i\) where \(\lambda\not=0)\)</p>
+<p id="p-481">(\(R_i\gets \lambda R_i\) where \(\lambda\not=0)\)</p>
 <div class="displaymath">
 \begin{equation*}
 E_2=
@@ -154,7 +156,7 @@ E_2=
 <p data-braille="continuation">In this case \(e_{i,i}=\lambda\text{.}\)  All other entries are the same as those in \(I\text{.}\)</p>
 </li>
 <li id="li-202">
-<p id="p-479">(\(R_i\gets R_i+\lambda R_j)\)</p>
+<p id="p-482">(\(R_i\gets R_i+\lambda R_j)\)</p>
 <div class="displaymath">
 \begin{equation*}
 E_3=
@@ -172,23 +174,22 @@ E_3=
 <p data-braille="continuation">In this case \(e_{i,j}=\lambda\text{.}\)  All other entries are the same as those in \(I\text{.}\)</p>
 </li>
 </ol>
-<p id="p-480">A matrix \(E\) of any of the three types is called an <dfn class="terminology">elementary matrix.</dfn></p></article></section><section class="subsection" id="subsection-36"><h3 class="heading hide-type">
+<p id="p-483">A matrix \(E\) of any of the three types is called an <dfn class="terminology">elementary matrix.</dfn></p></article></section><section class="subsection" id="subsection-36"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.10.2</span> <span class="title">Elementary matrices and reduced row echelon form</span>
 </h3>
-<article class="theorem theorem-like" id="ElementaryMatrixRowMultiplication"><a data-knowl="" class="id-ref original" data-refid="hk-ElementaryMatrixRowMultiplication"><h6 class="heading">
+<article class="theorem theorem-like" id="ElementaryMatrixRowMultiplication"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.10.2</span><span class="period">.</span><span class="space"> </span><span class="title">Carrying out row operations using matrix multiplication.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ElementaryMatrixRowMultiplication">
-<article class="theorem theorem-like"><p id="p-481">Suppose we start with a matrix \(A\) and carry out one elementary row operation to get the matrix \(B\text{.}\) Then there is an elementary matrix \(E_1\text{,}\) \(E_2\text{,}\) or \(E_3\) so that:</p>
+</h6>
+<p id="p-484">Suppose we start with a matrix \(A\) and carry out one elementary row operation to get the matrix \(B\text{.}\) Then there is an elementary matrix \(E_1\text{,}\) \(E_2\text{,}\) or \(E_3\) so that:</p>
 <ol class="decimal">
-<li id="li-203"><p id="p-482">Interchange rows (\(R_i\leftrightarrow R_j\)) \[B=E_1A\]</p></li>
-<li id="li-204"><p id="p-483">Multiply a row by a constant (\(R_i\leftarrow \lambda R_i\)) \[B=E_2A\]</p></li>
-<li id="li-205"><p id="p-484">Add a multiple of one row to another (\(R_i\leftarrow
+<li id="li-203"><p id="p-485">Interchange rows (\(R_i\leftrightarrow R_j\)) \[B=E_1A\]</p></li>
+<li id="li-204"><p id="p-486">Multiply a row by a constant (\(R_i\leftarrow \lambda R_i\)) \[B=E_2A\]</p></li>
+<li id="li-205"><p id="p-487">Add a multiple of one row to another (\(R_i\leftarrow
 R_i + \lambda R_j\)) \[B=E_3A\]</p></li>
-</ol></article><article class="hiddenproof" id="proof-29"><a data-knowl="" class="id-ref original" data-refid="hk-proof-29"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-29"><article class="hiddenproof"><p id="p-485">We use the elementary matrices given in <a class="xref" data-knowl="./knowl/ElementaryMatrices.html" title="Definition 2.10.1: Elementary matrices">Definition 2.10.1</a>. The proof is is then a careful observation of the effect of the nonzero entries in each case.</p></article></div>
-</div>
+</ol></article><article class="hiddenproof" id="proof-29"><a data-knowl="" class="id-ref original" data-refid="hk-proof-29"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-29"><article class="hiddenproof"><p id="p-488">We use the elementary matrices given in <a class="xref" data-knowl="./knowl/ElementaryMatrices.html" title="Definition 2.10.1: Elementary matrices">Definition 2.10.1</a>. The proof is is then a careful observation of the effect of the nonzero entries in each case.</p></article></div>
 <article class="example example-like" id="example-20"><a data-knowl="" class="id-ref original" data-refid="hk-example-20"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.10.3</span><span class="period">.</span><span class="space"> </span><span class="title">Multiplying by an elementary matrix.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-20"><article class="example example-like"><p id="p-486">Let</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-20"><article class="example example-like"><p id="p-489">Let</p>
 <div class="displaymath">
 \begin{equation*}
 A=
@@ -204,7 +205,7 @@ A=
 <p data-braille="continuation">The entries in the elementary matrices in red are the only ones that differ from an identity matrix \(I\text{.}\)</p>
 <ol class="decimal">
 <li id="li-206">
-<p id="p-487">Interchange rows 2 and 4 (\(R_2\leftrightarrow R_4\))</p>
+<p id="p-490">Interchange rows 2 and 4 (\(R_2\leftrightarrow R_4\))</p>
 <div class="displaymath">
 \begin{equation*}
 E= 
@@ -225,7 +226,7 @@ EA= \begin{bmatrix}
 </div>
 </li>
 <li id="li-207">
-<p id="p-488">Multiply row 4 by 3 (\(R_4\leftarrow 3R_4\))</p>
+<p id="p-491">Multiply row 4 by 3 (\(R_4\leftarrow 3R_4\))</p>
 <div class="displaymath">
 \begin{equation*}
 E=
@@ -252,7 +253,7 @@ EA=
 </div>
 </li>
 <li id="li-208">
-<p id="p-489">Subtract twice row 2 from row 4 (\(R_4\leftarrow R_4-2R_2\))</p>
+<p id="p-492">Subtract twice row 2 from row 4 (\(R_4\leftarrow R_4-2R_2\))</p>
 <div class="displaymath">
 \begin{equation*}
 E= 
@@ -277,16 +278,16 @@ EA=
 </div>
 </li>
 </ol></article></div>
-<p id="p-490">Notice that <a class="xref" data-knowl="./knowl/ElementaryMatrixRowMultiplication.html" title="Theorem 2.10.2: Carrying out row operations using matrix multiplication">Theorem 2.10.2</a> can be applied to a sequence of elementary row operations.  If, for example, we have three elementary row operations whose corresponding elementary matrices are \(E_1\text{,}\) \(E_2\) and \(E_3\text{,}\) and we apply them in sequence to \(A\text{,}\) then the resulting matrix is the product \(E_3(E_2(E_1(A)))\text{,}\) or, more simply, \(E_3E_2E_1A\text{.}\)	Note that we are applying \(E_1\) first followed by \(E_2\) and finally \(E_3\text{.}\)</p>
+<p id="p-493">Notice that <a class="xref" data-knowl="./knowl/ElementaryMatrixRowMultiplication.html" title="Theorem 2.10.2: Carrying out row operations using matrix multiplication">Theorem 2.10.2</a> can be applied to a sequence of elementary row operations.  If, for example, we have three elementary row operations whose corresponding elementary matrices are \(E_1\text{,}\) \(E_2\) and \(E_3\text{,}\) and we apply them in sequence to \(A\text{,}\) then the resulting matrix is the product \(E_3(E_2(E_1(A)))\text{,}\) or, more simply, \(E_3E_2E_1A\text{.}\)	Note that we are applying \(E_1\) first followed by \(E_2\) and finally \(E_3\text{.}\)</p>
 <article class="example example-like" id="example-21"><a data-knowl="" class="id-ref original" data-refid="hk-example-21"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.10.4</span><span class="period">.</span><span class="space"> </span><span class="title">Reduction to reduced row echelon form by matrix multiplication.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-21"><article class="example example-like"><p id="p-491">Let \(A= \begin{bmatrix}
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-21"><article class="example example-like"><p id="p-494">Let \(A= \begin{bmatrix}
 1\amp2\amp2 \\
 2\amp4\amp5 \\
 0\amp1\amp1 
 \end{bmatrix} 
 \text{.}\) We put this matrix into reduced row echelon form:</p>
-<figure class="table table-like" id="table-2"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.10.5<span class="period">.</span></span><span class="space"> </span>Row reduction by matrix multiplication</figcaption><table>
+<figure class="table table-like" id="table-3"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.10.5<span class="period">.</span></span><span class="space"> </span>Row reduction by matrix multiplication</figcaption><table>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">\(\textbf{Matrix}\)</td>
 <td class="l m b0 r0 l0 t0 lines">\(\textbf{Elementary Row}\)</td>
@@ -356,7 +357,7 @@ EA=
 0\amp1\amp0\\
 0\amp0\amp1 
 \end{bmatrix}\)</td></tr>
-</table></figure><p id="p-492">There is a bonus from this computation: since \((E_4E_3E_2E_1)A=I,\)  we know that \(A(E_4E_3E_2E_1)=I\) and \(A^{-1}=(E_4E_3E_2E_1).\) Indeed,</p>
+</table></figure><p id="p-495">There is a bonus from this computation: since \((E_4E_3E_2E_1)A=I,\)  we know that \(A(E_4E_3E_2E_1)=I\) and \(A^{-1}=(E_4E_3E_2E_1).\) Indeed,</p>
 <div class="displaymath">
 \begin{align*}
 \begin{bmatrix}
@@ -391,24 +392,24 @@ EA=
 <p data-braille="continuation">We shall see shortly that every elementary matrix has an inverse which itself is elementary, and so \(A=E_1^{-1}E_2^{-1}E_3^{-1}E_4^{-1}\text{.}\) Thus \(A\) is a product of elementary matrices.</p></article></div></section><section class="subsection" id="subsection-37"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.10.3</span> <span class="title">Inverses of Elementary Row Operation Matrices</span>
 </h3>
-<p id="p-493">Each matrix associated with the three elementary row operations has an inverse.  While it is easy to define and verify the matrix in each case, it is useful to think of the effect of the inverse. If \(E\) is the matrix associated with an elementary row operation, then \(EA\) carries out that operation on \(A.\) Since \(E^{-1}EA=A,\) the effect of \(E^{-1}\) is to undo the operation and return \(A\) to its original form.</p>
+<p id="p-496">Each matrix associated with the three elementary row operations has an inverse.  While it is easy to define and verify the matrix in each case, it is useful to think of the effect of the inverse. If \(E\) is the matrix associated with an elementary row operation, then \(EA\) carries out that operation on \(A.\) Since \(E^{-1}EA=A,\) the effect of \(E^{-1}\) is to undo the operation and return \(A\) to its original form.</p>
 <ol class="decimal">
-<li id="li-209"><p id="p-494">If \(E\) corresponds to interchanging two rows (\(R_i\leftrightarrow R_j\)), to undo the operation we just interchange them again. This means the \(E^{-1}=E.\)</p></li>
-<li id="li-210"><p id="p-495">If \(E\) corresponds to multiplying a row by \(\lambda\) (\(R_i\gets\lambda R_i\)), then multiplying the same row by \(\tfrac1\lambda\) returns it to its original form. Hence \(E^{-1}\) is formed by replacing \(\lambda\) by \(\tfrac1\lambda\) in \(E\text{.}\)</p></li>
-<li id="li-211"><p id="p-496">If \(E\) corresponds to adding \(\lambda\) times row \(j\) to row \(i\) (\(R_i\gets R_i+\lambda R_j\)), then subtracting \(\lambda\) times row \(j\) from row \(i\) (\(R_i\gets
+<li id="li-209"><p id="p-497">If \(E\) corresponds to interchanging two rows (\(R_i\leftrightarrow R_j\)), to undo the operation we just interchange them again. This means the \(E^{-1}=E.\)</p></li>
+<li id="li-210"><p id="p-498">If \(E\) corresponds to multiplying a row by \(\lambda\) (\(R_i\gets\lambda R_i\)), then multiplying the same row by \(\tfrac1\lambda\) returns it to its original form. Hence \(E^{-1}\) is formed by replacing \(\lambda\) by \(\tfrac1\lambda\) in \(E\text{.}\)</p></li>
+<li id="li-211"><p id="p-499">If \(E\) corresponds to adding \(\lambda\) times row \(j\) to row \(i\) (\(R_i\gets R_i+\lambda R_j\)), then subtracting \(\lambda\) times row \(j\) from row \(i\) (\(R_i\gets
 R_i-\lambda R_j\)) returns  \(A\) to its original form. Hence \(E^{-1}\) is formed by replacing \(\lambda\) by \(-\lambda\) in \(E\text{.}\) i</p></li>
 </ol>
-<article class="theorem theorem-like" id="ElementaryMatrixInverse"><a data-knowl="" class="id-ref original" data-refid="hk-ElementaryMatrixInverse"><h6 class="heading">
+<article class="theorem theorem-like" id="ElementaryMatrixInverse"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.10.6</span><span class="period">.</span><span class="space"> </span><span class="title">Inverses of Elementary Matrices.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ElementaryMatrixInverse">
-<article class="theorem theorem-like"><p id="p-497">Every elementary matrix is invertible. In particular</p>
+</h6>
+<p id="p-500">Every elementary matrix is invertible. In particular</p>
 <ol class="decimal">
 <li id="li-212">\(E_1^{-1}=E_1\text{.}\)</li>
 <li id="li-213">\(E_2^{-1}\) has \(\lambda\) in \(E_2\) replaced by \(\tfrac 1\lambda\text{.}\)</li>
 <li id="li-214">\(E_3^{-1}\) has \(\lambda\) in \(E_3\) replaced by \(-\lambda\text{.}\)</li>
-</ol></article><article class="hiddenproof" id="proof-30"><a data-knowl="" class="id-ref original" data-refid="hk-proof-30"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-30"><article class="hiddenproof"><p id="p-498">We give the inverse in each case:</p>
+</ol></article><article class="hiddenproof" id="proof-30"><a data-knowl="" class="id-ref original" data-refid="hk-proof-30"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-30"><article class="hiddenproof"><p id="p-501">We give the inverse in each case:</p>
 <ol class="decimal">
-<li id="li-215"><p id="p-499">Interchange rows (\(R_i\leftrightarrow R_j\)) \(E=
+<li id="li-215"><p id="p-502">Interchange rows (\(R_i\leftrightarrow R_j\)) \(E=
 \begin{bmatrix}
 1 \\
 \amp\ddots \\ 
@@ -421,7 +422,7 @@ R_i-\lambda R_j\)) returns  \(A\) to its original form. Hence \(E^{-1}\) is form
 \amp\amp\amp\amp\amp\amp\amp\amp1 \\
 \amp\amp\amp\amp\amp\amp\amp\amp\amp\ddots 
 \end{bmatrix}\) and \(E^{-1}=E\text{.}\)</p></li>
-<li id="li-216"><p id="p-500">Multiply a row by a constant (\(R_i\leftarrow \lambda R_i\)) \(E=
+<li id="li-216"><p id="p-503">Multiply a row by a constant (\(R_i\leftarrow \lambda R_i\)) \(E=
 \begin{bmatrix} 
 1 \\ 
 \amp\ddots \\
@@ -439,7 +440,7 @@ R_i-\lambda R_j\)) returns  \(A\) to its original form. Hence \(E^{-1}\) is form
 \amp\amp\amp\amp\amp\ddots \\ 
 \amp\amp\amp\amp\amp\amp1
 \end{bmatrix}\)</p></li>
-<li id="li-217"><p id="p-501">Add a multiple of one row to another (\(R_i\leftarrow R_i + \lambda R_j\)) \(E=
+<li id="li-217"><p id="p-504">Add a multiple of one row to another (\(R_i\leftarrow R_i + \lambda R_j\)) \(E=
 \begin{bmatrix} 
 1 \\ 
 \amp\ddots \\ 
@@ -459,17 +460,15 @@ R_i-\lambda R_j\)) returns  \(A\) to its original form. Hence \(E^{-1}\) is form
 \amp\amp\amp\amp\amp\amp1
 \end{bmatrix}\)</p></li>
 </ol></article></div>
-</div>
-<p id="p-502">An easy observation:  the inverse in each case of <a class="xref" data-knowl="./knowl/ElementaryMatrixInverse.html" title="Theorem 2.10.6: Inverses of Elementary Matrices">Theorem 2.10.6</a>, the inverse is also an elementary matrix, and so we have proven the following theorem:</p>
-<article class="theorem theorem-like" id="theorem-22"><a data-knowl="" class="id-ref original" data-refid="hk-theorem-22"><h6 class="heading">
+<p id="p-505">An easy observation:  the inverse in each case of <a class="xref" data-knowl="./knowl/ElementaryMatrixInverse.html" title="Theorem 2.10.6: Inverses of Elementary Matrices">Theorem 2.10.6</a>, the inverse is also an elementary matrix, and so we have proven the following theorem:</p>
+<article class="theorem theorem-like" id="theorem-22"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.10.7</span><span class="period">.</span><span class="space"> </span><span class="title">The Inverse of an Elementary Matrix is Elementary.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-theorem-22"><article class="theorem theorem-like"><p id="p-503">The inverse of an elementary matrix is elementary.</p></article></div>
-<article class="theorem theorem-like" id="theorem-23"><a data-knowl="" class="id-ref original" data-refid="hk-theorem-23"><h6 class="heading">
+</h6>
+<p id="p-506">The inverse of an elementary matrix is elementary.</p></article><article class="theorem theorem-like" id="theorem-23"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.10.8</span><span class="period">.</span><span class="space"> </span><span class="title">An Invertible Matrix is a Product of Elementary Matrices.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-theorem-23">
-<article class="theorem theorem-like"><p id="p-504">Let \(A\) be an invertible matrix. Then \(A=F_1F_2\cdots F_t\) where each \(F_i\) is an elementary matrix.</p></article><article class="hiddenproof" id="proof-31"><a data-knowl="" class="id-ref original" data-refid="hk-proof-31"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-31"><article class="hiddenproof"><p id="p-505"> Put \(A\) into reduced row echelon form. Suppose this takes \(t\) elementary row operations. Then this implies that \(E_tE_{t-1}\cdots E_2E_1A=I.\) Let \(F_i=E_i^{-1}\) for \(i=1,\dots,t.\) Then \(F_i\) is an  elementary matrix, and \(F_1F_2\cdots F_t=F_1F_2\cdots F_tI=F_1F_2\cdots F_t
-E_tE_{t-1}\cdots E_2E_1A=A.\)</p></article></div>
-</div></section></section></div></main>
+</h6>
+<p id="p-507">Let \(A\) be an invertible matrix. Then \(A=F_1F_2\cdots F_t\) where each \(F_i\) is an elementary matrix.</p></article><article class="hiddenproof" id="proof-31"><a data-knowl="" class="id-ref original" data-refid="hk-proof-31"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-31"><article class="hiddenproof"><p id="p-508"> Put \(A\) into reduced row echelon form. Suppose this takes \(t\) elementary row operations. Then this implies that \(E_tE_{t-1}\cdots E_2E_1A=I.\) Let \(F_i=E_i^{-1}\) for \(i=1,\dots,t.\) Then \(F_i\) is an  elementary matrix, and \(F_1F_2\cdots F_t=F_1F_2\cdots F_tI=F_1F_2\cdots F_t
+E_tE_{t-1}\cdots E_2E_1A=A.\)</p></article></div></section></section></div></main>
 </div>
 </body>
 </html>

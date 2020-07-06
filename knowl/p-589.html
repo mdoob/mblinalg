@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-05T13:50:59-05:00    *-->
+<!--*    on 2020-07-05T18:40:36-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,37 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose \(A\) is lower triangular (the upper triangular case uses essentially the same argument). We repeatedly expand on the first row.</p>
-<div class="displaymath">
-\begin{align*}
-\det A
-\amp = \det
-\begin{bmatrix}
-a_{1,1} \amp 0 \amp 0 \amp \cdots \amp 0\\
-* \amp a_{2,2} \amp 0 \amp \cdots \amp 0\\
-* \amp * \amp a_{3,3} \amp \cdots \amp 0\\
-\amp \amp \amp \vdots\\
-* \amp * \amp * \amp \cdots \amp a_{n,n}\\
-\end{bmatrix}\\
-\amp = a_{1,1} 
-\det 
-\begin{bmatrix}
-a_{2,2} \amp 0 \amp \cdots \amp 0\\
-* \amp a_{3,3} \amp \cdots \amp 0\\
-\amp \amp \vdots\\
-* \amp * \amp \cdots \amp a_{n,n}\\
-\end{bmatrix}\\
-\amp = a_{1,1} a_{2,2} 
-\det 
-\begin{bmatrix}
-a_{3,3} \amp \cdots \amp 0\\
-\amp \vdots\\
-* \amp \cdots \amp a_{n,n}\\
-\end{bmatrix}\\
-\amp \phantom{x}\vdots\\
-\amp = a_{1,1}a_{2,2}\cdots a_{n,n}
-\end{align*}
-</div>
+<p>If \(A\) has an all zero row or all zero column, then \(\det(A)=0\text{.}\)</p>
 <span class="incontext"><a href="section-22.html#p-589">in-context</a></span>
 </body>
 </html>

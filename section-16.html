@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-05T13:50:48-05:00    *-->
+<!--*    on 2020-07-05T18:40:20-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -94,13 +94,15 @@ MathJax.Hub.Config({
 <li class="link"><a href="SysLinEq.html" data-scroll="SysLinEq"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations</span></a></li>
 <li class="link"><a href="MatrixTheoryIntro.html" data-scroll="MatrixTheoryIntro"><span class="codenumber">2</span> <span class="title">Matrix Theory</span></a></li>
 <li class="link"><a href="Determinants.html" data-scroll="Determinants"><span class="codenumber">3</span> <span class="title">The Determinant</span></a></li>
-<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">4</span> <span class="title">Additional Topics</span></a></li>
+<li class="link"><a href="EuclideanSpace.html" data-scroll="EuclideanSpace"><span class="codenumber">4</span> <span class="title">Vectors in Euclidean \(n\) space</span></a></li>
+<li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
+<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">6</span> <span class="title">Additional Topics</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-16"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.9</span> <span class="title">Powers of a matrix (negative exponents)</span>
 </h2>
-<p id="p-459">Suppose we have a square matrix \(A\text{.}\)  For positive \(m\) and \(n\) we have proven the law of exponents: in <a href="section-13.html#LawOfExponents" class="internal" title="Subsection 2.6.2: The law of exponents">Subsection 2.6.2</a>.</p>
+<p id="p-462">Suppose we have a square matrix \(A\text{.}\)  For positive \(m\) and \(n\) we have proven the law of exponents: in <a href="section-13.html#LawOfExponents" class="internal" title="Subsection 2.6.2: The law of exponents">Subsection 2.6.2</a>.</p>
 <ul class="disc">
 <li id="li-183">\(A^n=\underbrace{A\cdots A}_{n \text{ factors}},\) (Note that \(A^1=A\))</li>
 <li id="li-184">\(\displaystyle A^m A^n=\underbrace{A\cdots A}_{m \text{ factors}}
@@ -113,7 +115,7 @@ MathJax.Hub.Config({
 times}}=A^{mn}\)</li>
 </ul>
 <p data-braille="continuation">Our goal is to extend this law for invertible matrices so that it is valid for any integer exponents.  It turns out that there is only one way to do so, and we will see this in successive steps.</p>
-<ul id="p-460" class="disc">
+<ul id="p-463" class="disc">
 <li id="li-186">\(n=0\text{:}\) For any matrix \(A\text{,}\)<div class="displaymath">
 \begin{equation*}
 A^mA^0=A^{m+0}=A^m\\A^0A^m=A^{0+m}=A^m,
@@ -132,21 +134,21 @@ A^m=A^{-m+m}=A^0=I
 \end{equation*}
 </div>so \(A^{-m}\) is the inverse of \(A^m.\) Notationally this says \(A^{-m}=(A^m)^{-1}\text{.}\)</li>
 </ul>
-<article class="theorem theorem-like" id="theorem-19"><a data-knowl="" class="id-ref original" data-refid="hk-theorem-19"><h6 class="heading">
+<article class="theorem theorem-like" id="theorem-19"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.9.1</span><span class="period">.</span><span class="space"> </span><span class="title">Laws of Exponents.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-theorem-19">
-<article class="theorem theorem-like"><p id="p-461">For any invertible square matrix \(A\) and integers \(m\) and \(n\text{,}\)</p>
+</h6>
+<p id="p-464">For any invertible square matrix \(A\) and integers \(m\) and \(n\text{,}\)</p>
 <ul class="disc">
-<li id="li-189"><p id="p-462">\(\displaystyle A^mA^n=A^{m+n}\)</p></li>
-<li id="li-190"><p id="p-463">\(\displaystyle (A^m)^n=A^{mn}\)</p></li>
-<li id="li-191"><p id="p-464">\(\displaystyle (A^{-1})^{-1}=A\)</p></li>
-<li id="li-192"><p id="p-465">(\(A^n)^{-1}=(A^{-1})^n\)</p></li>
-<li id="li-193"><p id="p-466">\(\displaystyle (rA)^{-1}=\tfrac 1r A^{-1}\)</p></li>
-</ul></article><article class="hiddenproof" id="proof-28"><a data-knowl="" class="id-ref original" data-refid="hk-proof-28"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-28"><article class="hiddenproof"><p id="p-467">The first two results have already been verified. The method for the last three is similar:</p>
+<li id="li-189"><p id="p-465">\(\displaystyle A^mA^n=A^{m+n}\)</p></li>
+<li id="li-190"><p id="p-466">\(\displaystyle (A^m)^n=A^{mn}\)</p></li>
+<li id="li-191"><p id="p-467">\(\displaystyle (A^{-1})^{-1}=A\)</p></li>
+<li id="li-192"><p id="p-468">(\(A^n)^{-1}=(A^{-1})^n\)</p></li>
+<li id="li-193"><p id="p-469">\(\displaystyle (rA)^{-1}=\tfrac 1r A^{-1}\)</p></li>
+</ul></article><article class="hiddenproof" id="proof-28"><a data-knowl="" class="id-ref original" data-refid="hk-proof-28"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-28"><article class="hiddenproof"><p id="p-470">The first two results have already been verified. The method for the last three is similar:</p>
 <ul class="disc">
-<li id="li-194"><p id="p-468">\((A^{-1})A=I\) implies that  \(A\) is the inverse of \(A^{-1}\text{,}\) that is, \(A=(A^{-1})^{-1}.\)</p></li>
+<li id="li-194"><p id="p-471">\((A^{-1})A=I\) implies that  \(A\) is the inverse of \(A^{-1}\text{,}\) that is, \(A=(A^{-1})^{-1}.\)</p></li>
 <li id="li-195">
-<p id="p-469">Evaluate so the the middle factors "disappear":</p>
+<p id="p-472">Evaluate so the the middle factors "disappear":</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
@@ -169,9 +171,8 @@ A^n(A^{-1})^n
 </div>
 <p data-braille="continuation">and so \((A^{-1})^n\) is the inverse of \(A^n\text{.}\)</p>
 </li>
-<li id="li-196"><p id="p-470">\((rA)(\tfrac 1r A^{-1}) = r\tfrac 1r A A^{-1}=1I=I\) andso \(\tfrac 1r A^{-1}\) is the inverse of \(rA\text{.}\)</p></li>
-</ul></article></div>
-</div></section></div></main>
+<li id="li-196"><p id="p-473">\((rA)(\tfrac 1r A^{-1}) = r\tfrac 1r A A^{-1}=1I=I\) andso \(\tfrac 1r A^{-1}\) is the inverse of \(rA\text{.}\)</p></li>
+</ul></article></div></section></div></main>
 </div>
 </body>
 </html>

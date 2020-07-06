@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-05T13:50:57-05:00    *-->
+<!--*    on 2020-07-05T18:40:39-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -12,24 +12,22 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<article class="paragraphs"><h5 class="heading"><span class="title">Multiplication of diagonal matrices.</span></h5>
-<p>Multiplication of diagonal matrices is particularly easy. If</p>
+<article class="paragraphs"><h5 class="heading"><span class="title">A linearity test.</span></h5>
+<p>Suppose we wish to determine whether or not two vectors \(\vec v\) and \(\vec w\) are collinear with \(\vec 0\text{.}\) There are two cases, depending on whether or not \(\vec 0\) lies between \(\vec v\) and \(\vec w\text{:}\)</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><object data="images/image-24.html" id="image-24" width="360" height="360"><embed src="images/image-24.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.2<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p>In the right-hand figure, the angle \(\theta\) between \(\vec v\) and \(\vec w\) (at \(\vec0\)) is \(0\) and so \(\cos\theta=1\text{,}\) while in the left-hand figure, the angle \(\theta\) between \(\vec v\) and \(\vec w\)  is \(\pi\) and so \(\cos\theta=-1.\) Hence \(\vec v\) and \(\vec w\) are collinear with \(\vec 0\) if and only if \(|\cos\theta|=1\text{.}\)</p>
+<p>However, we know from <a class="xref" data-knowl="./knowl/DotProductR2.html" title="Proposition 4.2.14">Proposition 4.2.14</a> that</p>
 <div class="displaymath">
 \begin{equation*}
-D=\mathrm{diag}(d_1,d_2,\ldots,d_n)
+|\vec x\cdot\vec y|= \|\vec x\| \|\vec y\|\, |\cos \theta|
 \end{equation*}
 </div>
-<p data-braille="continuation">and</p>
+<p data-braille="continuation">and so we now have another equivalent condition for for linearity:</p>
 <div class="displaymath">
 \begin{equation*}
-E=\mathrm{diag}(e_1,e_2,\ldots,e_n)
+|\vec x\cdot\vec y|= \|\vec x\| \|\vec y\| 
 \end{equation*}
 </div>
-<p data-braille="continuation">then it is easy to verify that</p>
-<div class="displaymath">
-\begin{equation*}
-DE=\mathrm{diag}(d_1e_1,d_2e_2,\ldots,d_ne_n) \text{.}
-\end{equation*}
-</div></article><span class="incontext"><a href="section-15.html#paragraphs-9">in-context</a></span>
+<p data-braille="continuation">Notice that this condition says that the Cauchy-Schwarz inequality given in <a class="xref" data-knowl="./knowl/CauchySchwarz.html" title="Theorem 4.2.17: Cauchy-Schwarz">Theorem 4.2.17</a>).  is actually equality.</p></article><span class="incontext"><a href="section-26.html#paragraphs-9">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-05T13:50:58-05:00    *-->
+<!--*    on 2020-07-05T18:40:35-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,29 +13,14 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>(4) \(\Rightarrow\) (5): Suppose we want to solve \(A\vec x=\vec b\) where \(\vec b\) is any vector and \(A=F_1F_2\cdots F_{k-1}F_k.\) Then we have</p>
+<p>(1) \(\Rightarrow\) (2): Assuming (1) means that \(A\) is invertible.  If \(x=\vec0\text{,}\) then \(A\vec x=A\vec0=\vec0\text{.}\)  Now suppose that \(A\vec x=\vec0.\)  Then, since \(A^{-1}\) exists, we may evaluate \(A^{-1}A\vec x\) in two ways:</p>
 <div class="displaymath">
 \begin{equation*}
-F_1F_2\cdots F_{k-1}F_k \vec x=\vec b,
+A^{-1}(A\vec x) = A^{-1}\vec0=\vec0\\ (A^{-1}A)\vec x
+=I\vec x=\vec x 
 \end{equation*}
 </div>
-<p data-braille="continuation">and</p>
-<div class="displaymath">
-\begin{equation*}
-\vec x=F_k^{-1}F_{k-1}^{-1}\cdots
-F_2^{-1}F_1^{-1} \vec b 
-\end{equation*}
-</div>
-<p data-braille="continuation">which then satisfies</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{split} A\vec x \amp =(F_1F_2\cdots
-F_{k-1}F_k)(F_k^{-1}F_{k-1}^{-1}\cdots F_2^{-1}F_1^{-1}\vec
-b)\\ \amp=(F_1F_2\cdots F_{k-1}F_k)(F_k^{-1}F_{k-1}^{-1}\cdots
-F_2^{-1}F_1^{-1})\vec b \\ \amp=\vec b \end{split} 
-\end{equation*}
-</div>
-<p data-braille="continuation">and so gives a solution to \(A\vec x=\vec b.\) Hence \(A\vec x=\vec b\) is consistent.</p>
+<p data-braille="continuation">Equating the two evaluations, we get \(\vec x=\vec0.\)</p>
 <span class="incontext"><a href="section-18.html#p-527">in-context</a></span>
 </body>
 </html>

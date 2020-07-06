@@ -1,0 +1,863 @@
+
+<chapter><title>Eigenvalues and eigenvectors</title>
+
+    <section><title>Defintions and examples</title>
+    <p>
+    Eigenvalues and eigenvectors are defined for a square matrix <m>A.</m>
+    </p>
+    <definition><title>The eigenvalue of a matrix</title>
+    <statement>
+    <p>
+    A number <m>\lambda</m> is an <term>eigenvalue</term> of a square matrix <m>A</m>
+    if
+    <me>A\vec x=\lambda\vec x</me> 
+    for some 
+    <m>\vec x\not=\vec0</m>.
+    </p>
+    </statement>
+    </definition>
+    
+    <definition><title>The eigenvector of a matrix</title>
+    <statement>
+    <p>
+    If 
+    <me>
+        A\vec x=\lambda\vec x
+    </me> 
+    for some <m>\vec x\not=\vec0</m>,
+    then <m>\vec x</m> is called an <term>eigenvector</term> of <m>A</m>
+    corresponding to the eigenvalue <m>\lambda</m>.
+    </p>
+    </statement>
+    </definition>
+    
+    <p>
+    Notice that if <m>\vec x=\vec 0</m>, then <m>A\vec x=\lambda\vec x</m>
+    is simply the equation <m>\vec0=\vec0</m> for any value of <m>\lambda</m>.
+    This is not too interesting, and so we always have the restriction 
+    <m>\vec x\not=\vec0</m>.
+    </p>
+    
+    <example xml:id="EigenvalueExample1"><title>Eigenvalues of
+    <m>
+    \begin{bmatrix} 
+        5\amp -1\amp -2\\ 
+        1\amp 3\amp -2\\ 
+        -1\amp -1\amp 4 
+    \end{bmatrix} 
+    </m>
+    </title>
+    <p>
+    Let 
+    <m>
+    A=
+    \begin{bmatrix}
+        5\amp -1\amp -2\\ 
+        1\amp 3\amp -2\\ 
+        -1\amp -1\amp 4 
+    \end{bmatrix}
+    </m>. 
+    Then we have
+    <me>
+    \begin{bmatrix}
+        5\amp -1\amp -2\\ 
+        1\amp 3\amp -2\\ 
+        -1\amp -1\amp 4 
+    \end{bmatrix}
+    \begin{bmatrix}
+        1\\1\\1
+    \end{bmatrix}
+    = 
+    \begin{bmatrix}
+        2\\2\\2
+    \end{bmatrix}=2 
+    \begin{bmatrix}
+        1\\1\\1
+    \end{bmatrix}
+    </me>
+    which makes 
+    <m>\vec x=\begin{bmatrix}1\\1\\1\end{bmatrix}</m> 
+    an eigenvector with corresponding eigenvalue
+    <m>\lambda=2</m>.
+    In addition we have
+    <me>
+    \begin{bmatrix}
+        5\amp -1\amp -2\\ 
+        1\amp 3\amp -2\\ 
+        -1\amp -1\amp 4 
+    \end{bmatrix}
+    \begin{bmatrix}
+    1\\-1\\1
+    \end{bmatrix}
+    = \begin{bmatrix}
+    4\\-4\\4
+    \end{bmatrix}=4 
+    \begin{bmatrix}
+        1\\-1\\1
+    \end{bmatrix}
+    </me>
+    which makes makes 
+    <m>\vec 
+    x=\begin{bmatrix}
+        1\\-1\\1
+    \end{bmatrix}
+    </m> 
+    an eigenvector with corresponding eigenvalue <m>\lambda=4</m>. Finally we have
+    <me>
+    \begin{bmatrix}
+        5\amp -1\amp -2\\ 
+        1\amp 3\amp -2\\ 
+        -1\amp -1\amp 4 
+        \end{bmatrix}
+    \begin{bmatrix}
+        -1\\-1\\1
+    \end{bmatrix}= 
+    \begin{bmatrix}
+        -6\\-6\\6
+    \end{bmatrix}=6 
+    \begin{bmatrix}
+        -1\\-1\\1
+    \end{bmatrix}
+    </me>
+    which makes makes 
+    <m>\vec x=\begin{bmatrix}-1\\-1\\1\end{bmatrix}</m> 
+    an eigenvector with corresponding eigenvalue
+    <m>\lambda=6</m>.
+    In this case we have now computed all of the eigenvalues of <m>A</m>: 
+    <m>\lambda=2</m>, <m>\lambda=4</m> and
+    <m>\lambda=6</m>. 
+    Shortly we will be able to compute the eigenvalues of a matrix and will see that in fact 
+    <m>A</m> has no others.
+    </p>
+    </example>
+    
+    <example xml:id="EigenvalueExample2"><title>Eigenvalues of
+    <m>\begin{bmatrix}2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5 \end{bmatrix}</m>
+    </title>
+    <p>
+    Let 
+    <m>A=\begin{bmatrix}2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5 \end{bmatrix}</m>
+    Then we have
+    <me>
+    \begin{bmatrix} 2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5\end{bmatrix}
+    \begin{bmatrix}1\\1\\0\end{bmatrix}= \begin{bmatrix}3\\3\\0\end{bmatrix}
+    =3 \begin{bmatrix}1\\1\\0\end{bmatrix}
+    </me>
+    which makes <m>\vec x=\begin{bmatrix}1\\1\\0\end{bmatrix}</m> 
+    an eigenvector with corresponding eigenvalue
+    <m>\lambda=3</m>.
+    
+    Also
+    <me>
+    \begin{bmatrix} 2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5\end{bmatrix}
+    \begin{bmatrix}4\\0\\1\end{bmatrix}= 
+    \begin{bmatrix}12\\0\\3\end{bmatrix}=3 \begin{bmatrix}4\\0\\1\end{bmatrix}
+    </me>
+    which makes 
+    <m>\vec x=\begin{bmatrix}4\\0\\1\end{bmatrix}</m> 
+    an eigenvector with corresponding eigenvalue
+    <m>\lambda=3</m>
+    
+    Finally
+    <me>
+    \begin{bmatrix} 2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5\end{bmatrix}
+    \begin{bmatrix}-1\\0\\2\end{bmatrix}= 
+    \begin{bmatrix}6\\0\\-12\end{bmatrix}=-6 \begin{bmatrix}-1\\0\\2\end{bmatrix}
+    </me>
+    which makes 
+    <m>\vec x=\begin{bmatrix}-1\\0\\2\end{bmatrix}</m> 
+    an eigenvector with corresponding eigenvalue
+    <m>\lambda=-6</m>
+    
+    Hence the demonstrated eigenvalues are <m>\lambda=3</m> and <m>\lambda=-6</m>.
+    We will soon see that there are no more.
+    </p>
+    </example>
+    
+    <example><title>Eigenvalues of
+    <m>\begin{bmatrix} 0\amp -1\\ 1\amp 0\end{bmatrix}</m> 
+    </title>
+    <p>
+    Let <m>A=\begin{bmatrix} 0\amp -1\\ 1\amp 0\end{bmatrix}</m> and consider the equation
+    <m>A\vec x=\lambda\vec x</m>. 
+    Setting <m>\vec x=\begin{bmatrix} x_1\\x_2\end{bmatrix}</m>, 
+    <me>
+    \begin{bmatrix} 0\amp -1\\ 1\amp 0\end{bmatrix}\begin{bmatrix} x_1\\x_2\end{bmatrix}
+    =\lambda\begin{bmatrix} x_1\\x_2\end{bmatrix}
+    </me>
+    This is equivalent to the system of equations
+    <me>
+    \begin{array}{rl}
+    \lambda x_1 \amp = -x_2\\
+    \lambda x_2 \amp = x_1.
+    \end{array}
+    </me>
+    
+    This implies that 
+    <m>(\lambda^2+1)x_1 = \lambda^2 x_1 + x_1 = -\lambda x_2 +\lambda x_2=0 </m>
+    and 
+    <m>(\lambda^2+1)x_2 = \lambda^2 x_2 + x_2 = \lambda x_1 -\lambda x_21=0.</m>
+    Since <m>\vec x \not=\vec 0</m>, either <m>x_1\not=0</m> or <m>x_2\not=0</m>, and 
+    consequently <m>\lambda^2=-1</m>. Since no real number satisfies this equation,
+    we conclude that there are no eigenvalues or eigenvectors for <m>A</m>.
+    
+    An aside: if we consider complex numbers, then <m>i</m> and <m>-i</m> are both
+    eigenvalues of <m>A</m> with 
+    <m>\begin{bmatrix} 1\\-i\end{bmatrix}</m>
+    and <m>\begin{bmatrix} 1\\i\end{bmatrix}</m> as corresponding eigenvectors.
+    </p>
+    </example>
+    
+    <example xml:id="EigenvalueExample4"><title>Eigenvalues of
+    <m>\begin{bmatrix}
+    1 \amp  1 \amp  1 \amp  1\\
+    0 \amp  2 \amp  2 \amp  2\\
+    0 \amp  0 \amp  3 \amp  3\\
+    0 \amp  0 \amp  0 \amp  4
+    \end{bmatrix}</m>
+    </title>
+    
+    <p>
+    Consider the matrix
+    <me>
+    A=
+    \begin{bmatrix}
+    1 \amp  1 \amp  1 \amp  1\\
+    0 \amp  2 \amp  2 \amp  2\\
+    0 \amp  0 \amp  3 \amp  3\\
+    0 \amp  0 \amp  0 \amp  4
+    \end{bmatrix}
+    </me>
+    
+    Then it's easy to verify that
+    
+    <me>
+    \begin{bmatrix}
+    1 \amp  1 \amp  1 \amp  1\\
+    0 \amp  2 \amp  2 \amp  2\\
+    0 \amp  0 \amp  3 \amp  3\\
+    0 \amp  0 \amp  0 \amp  4
+    \end{bmatrix}
+    \begin{bmatrix} 1\\0\\0\\0\end{bmatrix}
+    =
+    \begin{bmatrix} 1\\0\\0\\0\end{bmatrix}
+    =
+    1\begin{bmatrix} 1\\0\\0\\0\end{bmatrix}
+    </me>
+    <me>
+    \begin{bmatrix}
+    1 \amp  1 \amp  1 \amp  1\\
+    0 \amp  2 \amp  2 \amp  2\\
+    0 \amp  0 \amp  3 \amp  3\\
+    0 \amp  0 \amp  0 \amp  4
+    \end{bmatrix}
+    \begin{bmatrix} 1\\1\\0\\0\end{bmatrix}
+    =
+    \begin{bmatrix} 2\\2\\0\\0\end{bmatrix}
+    =2\begin{bmatrix} 1\\1\\0\\0\end{bmatrix}
+    </me>
+    <me>
+    \begin{bmatrix}
+    1 \amp  1 \amp  1 \amp  1\\
+    0 \amp  2 \amp  2 \amp  2\\
+    0 \amp  0 \amp  3 \amp  3\\
+    0 \amp  0 \amp  0 \amp  4
+    \end{bmatrix}
+    \begin{bmatrix} 3\\4\\2\\0\end{bmatrix}
+    =
+    \begin{bmatrix} 9\\12\\6\\0\end{bmatrix}
+    =
+    3\begin{bmatrix} 3\\4\\2\\0\end{bmatrix}
+    </me>
+    <me>
+    \begin{bmatrix}
+    1 \amp  1 \amp  1 \amp  1\\
+    0 \amp  2 \amp  2 \amp  2\\
+    0 \amp  0 \amp  3 \amp  3\\
+    0 \amp  0 \amp  0 \amp  4
+    \end{bmatrix}
+    \begin{bmatrix} 8\\12\\9\\3\end{bmatrix}
+    =
+    \begin{bmatrix} 32\\48\\36\\12\end{bmatrix}
+    =4\begin{bmatrix} 8\\12\\9\\3\end{bmatrix}
+    </me>
+    and so we have <m>1</m>, <m>2</m>, <m>3</m> and <m>4</m> as eigenvalues. 
+    Notice that in 
+    this case the eigenvalues are just the diagonal elements and that 
+    the matrix is upper triangular. We shall see 
+    <!-- in <xref ref="EigenvaluesTriangularMatrix" /> -->
+    that for every
+    upper (or lower) triangular matrix, the eigenvalues are the
+    diagonal entries.
+    </p>
+    </example>
+    
+    <definition xml:id="EigenspaceDef"><title>Eigenspaces</title>
+    <statement>
+    <p>
+    Suppose that <m>A</m> is a square matrix of order <m>n</m>. Then for
+    any real number <m>\lambda</m>, we define the <term>eigenspace</term>
+    <m>E_\lambda</m> by
+    <me>E_\lambda=\{\vec x\in \R^n\mid A\vec x=\lambda \vec x\}.</me>
+    </p>
+    </statement>
+    </definition>
+
+    <p>
+    Clearly <m>\vec0</m> is in <m>E_\lambda</m> for any value of <m>\lambda</m>,
+    and <m>\lambda</m> is an eigenvalue if and only if there is some
+    <m>\vec x\not=\vec0</m> in <m>E_\lambda</m>.
+    </p>
+
+    <proposition>
+    <title>An eigenspace is a subspace</title>
+    <statement>
+    <p>
+        Let <m>A</m> be an <m>n\times n</m> matrix and let <m>\lambda</m> be a real number.
+        Then the set of vectors
+        <m>E_\lambda=\{\vec x \mid A\vec x=\lambda \vec x\}</m> is a subspace
+        of <m>\mathbb{R}^n</m>.
+    </p>
+    </statement>
+    <proof>
+    <p>
+        From <xref ref="SubspaceDefinition" /> it is sufficient
+        to show that two properties of closure under addition and 
+        of closure under scalar multiplication are satisfied: 
+        <ul>
+        <li><p>
+            Closure under addition:
+            <md>
+            <mrow>A(\vec x+\vec y)\amp=A(\vec x)+A(\vec y)</mrow>
+            <mrow>\amp=\lambda \vec x + \lambda \vec y </mrow>
+            <mrow>\amp= \lambda (\vec x + \vec y)   </mrow>
+            </md>
+        </p></li>
+        <li><p>
+            Closure under scalar multiplication:
+            <md>
+            <mrow>A(r\vec x)\amp=rA(\vec x)</mrow>
+            <mrow>\amp=r(\lambda \vec x)</mrow>
+            <mrow>\amp= \lambda (r\vec x)</mrow>
+            </md>
+        </p></li>
+        </ul>
+    </p>
+    </proof>
+    </proposition>
+
+    </section>
+    
+    <section><title>Computing eigenvalues</title>
+    <p>
+    An easy but important fact is used to compute eigenvalues.
+    </p>
+    <proposition> <title>Eigenvalues <m>x</m> satisfy 
+        <m>(A-\lambda I)\vec x=\vec0</m> </title>
+    <statement>
+    <p>
+    <me>
+    A\vec x=\lambda \vec x \textrm{ if and only if } (A-\lambda I)\vec x=\vec0
+    </me>
+    </p>
+    </statement>
+    <proof>
+    <p>
+    If <m>A\vec x=\lambda\vec x</m>, then
+    <me>
+    \vec0=A\vec x -\lambda\vec x=A\vec x -\lambda I\vec x 
+        = (A - \lambda I)\vec x.
+    </me>
+    </p>
+    </proof>
+    </proposition>
+    
+    <corollary>
+    <statement>
+    <p>
+    <m>\lambda</m> is an eigenvalue of <m>A</m> if and only if <m>A-\lambda I</m> is singular.
+    </p>
+    </statement>
+    <proof>
+    <p>
+    One of the equivalent conditions of singularity given in
+    <xref ref="InvertibilityEquivalence2" />
+    is that <m>B</m> is singular if <m>B\vec x=\vec 0</m> for some
+    <m>\vec x\not=\vec 0</m>. The matrix <m>A-\lambda I</m> plays the
+    role of <m>B</m>.
+    </p>
+    </proof>
+    </corollary>
+    
+    <corollary>
+    <statement>
+    <p>
+    <m>\lambda</m> is an eigenvalue of <m>A</m> if and only if 
+    <m>\det (A-\lambda I)=0</m>
+    </p>
+    </statement>
+    <proof>
+    <p>
+    <m>B</m> is singular if and only if <m>\det B=0</m>.
+    </p>
+    </proof>
+    </corollary>
+    
+    <p>
+    We now can see how these corollaries allow us to compute eigenvalues. 
+    We look at the matrix from <xref ref="EigenvalueExample1" />.
+    </p>
+    <example>
+    <statement>
+    <p>
+    We use
+    <me>
+    A-\lambda I=
+    \begin{bmatrix}
+        5-\lambda\amp -1\amp -2\\ 
+        1\amp 3-\lambda\amp -2\\ 
+        -1\amp -1\amp 4-\lambda 
+    \end{bmatrix}
+    </me>
+    and 
+    <me>
+    \det(A-\lambda I)=0.
+    </me>
+    Evaluating the determinant gives
+    <md>
+    <mrow>
+       \det\amp \begin{bmatrix}
+        5-\lambda\amp -1\amp -2\\ 
+        1\amp 3-\lambda\amp -2\\ 
+        -1\amp -1\amp 4-\lambda 
+        \end{bmatrix}
+   </mrow>
+    <mrow>
+        \amp=(5-\lambda)(3-\lambda)(4-\lambda)-2+2
+        -2(5-\lambda) -2(3-\lambda)+(4-\lambda)
+    </mrow>
+    <mrow>\amp = -\lambda^3 +12\lambda^2 -44\lambda +48</mrow>
+    <mrow>\amp = -(\lambda-2)(\lambda-4)(\lambda-6)</mrow>
+    </md>
+    So we see that <m>\det(A-\lambda I)=0</m> only if 
+    <m>\lambda=2</m>, <m>\lambda=4</m> or <m>\lambda=6</m>.
+    The evaluation of <m>\det(A-\lambda I)=0</m> gave us a
+    polynomial <m>p(\lambda)=-(\lambda-2)(\lambda-4)(\lambda-6)</m>
+    whose roots are the eigenvalues.
+    </p>
+    </statement>
+    </example>
+    
+    <definition><title>The characteristic polynomial</title>
+    <statement>
+    <p>
+    The <term>characteristic polynomial</term> of a square matrix <m>A</m>
+    is the polynomial
+    <me>p(\lambda)=\det(\lambda I-A).</me>
+    </p>
+    </statement>
+    </definition>
+    
+    <note>
+    <p>
+    Some sources define the characteristic polynomial as <m>\det(A-\lambda I)</m>.
+    Since <m>\lambda I-A=-(A-\lambda I)</m>, it follows that for any
+    square matrix <m>A</m> of size <m>n</m>,
+    <me>
+    \det(\lambda I-A)=(-1)^n\det(A-\lambda I)
+    </me>
+    and so both polynomials have the same roots.
+    </p>
+    </note>
+    
+    <p>
+    We look at the matrix from <xref ref="EigenvalueExample2" />.
+    </p>
+    
+    <example>
+    <statement>
+    <p>
+    <m>A=\begin{bmatrix}2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5 \end{bmatrix}</m>.
+    <me>
+    \begin{array}{rl}
+    \det(A-\lambda I)
+    \amp =\det\begin{bmatrix}2-\lambda\amp 1\amp 4\\ 
+    0\amp 3-\lambda\amp 0\\ 
+    2\amp -2\amp -5-\lambda \end{bmatrix}\\
+    \amp =(2-\lambda)(3-\lambda)(-5-\lambda)-8(3-\lambda)\\
+    \amp = (\lambda+6)(\lambda-3)^2
+    \end{array}
+    </me>
+    and so the eigenvalues are <m>\lambda=-6</m> and <m>\lambda=3</m>
+    </p>
+    </statement>
+    </example>
+
+    <example>
+    <title>Eigenvalues and powers of a matrix</title>
+    <p>
+    Let 
+    <m> A= \begin{bmatrix} 1 \amp 2 \\ 2 \amp 1 \end{bmatrix}</m>.
+    <ol>
+        <li>
+        <m>\vec x_1= \begin{bmatrix} 1 \\ 1 \end{bmatrix}</m> 
+        and 
+        <m>\vec x_2 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}</m> 
+        are eigenvectors since
+        <md>
+            <mrow>A\vec x_1\amp=3\vec x_1</mrow>
+            <mrow>A\vec x_2\amp=(-1)\vec x_2</mrow>
+        </md>.
+        </li>
+        <li>
+        Let <m>P=[\vec x_1\ \vec x_2]= 
+            \begin{bmatrix} 1\amp 1\\ 1\amp -1 \end{bmatrix}</m>.
+            Then <m>P^{-1}=
+            \frac12\begin{bmatrix} 1\amp 1\\ 1\amp -1 \end{bmatrix}</m>.
+        </li>
+        <li>
+        Let <m>D=P^{-1}AP</m>.
+        By direct computation we have
+        <me>
+            D=P^{-1}AP=\frac12 
+            \begin{bmatrix} 1\amp 1\\ 1\amp -1 \end{bmatrix}
+            \begin{bmatrix} 1 \amp 2 \\ 2 \amp 1 \end{bmatrix}
+            \begin{bmatrix} 1\amp 1\\ 1\amp -1 \end{bmatrix}
+            =\begin{bmatrix} 3\amp 0\\ 0\amp -1 \end{bmatrix}
+        </me>.
+        </li>
+        <li> We compute the powers of <m>D</m> as the  
+        <xref ref="MultiplyDiagonalMatrices" text="custom">product of diagonal matrices</xref>:
+        <m>D^n=\begin{bmatrix} 3^n\amp 0\\ 0\amp (-1)^n \end{bmatrix}</m>.
+        </li>
+        <li> By rebracketing the matrix product,
+        <md>
+            <mrow>A^n \amp =(PDP^{-1})^n</mrow>
+            <mrow>\amp =(PDP^{-1})(PDP^{-1})\cdots (PDP^{-1})(PDP^{-1})</mrow>
+            <mrow>\amp =PD(P^{-1}P)D(P^{-1}P)\cdots D(P^{-1}P)DP^{-1}</mrow>
+            <mrow>\amp =PD^nP^{-1}</mrow>
+        </md>
+        </li>
+        <li> By an easy computation,
+        <md>
+            <mrow>P D^n P^{-1} \amp =
+            \frac12 \begin{bmatrix} 1\amp 1\\ 1\amp -1 \end{bmatrix}
+            \begin{bmatrix} 3^n\amp 0\\ 0\amp (-1)^n \end{bmatrix}
+            \begin{bmatrix} 1\amp 1\\ 1\amp -1 \end{bmatrix}</mrow>
+            <mrow>\amp =\frac12 \begin{bmatrix} 
+            3^n+(-1)^n \amp 3^n+(-1)^{n+1}\\ 
+            3^n+(-1)^{n+1}\amp 3^n+(-1)^n 
+            \end{bmatrix}
+            </mrow>
+        </md>.
+        </li>
+       <li>And so
+       <me>
+           A^n=
+          \begin{bmatrix} 
+          \frac{3^n+(-1)^n}2 \amp \frac{3^n+(-1)^{n+1}}2\\ 
+          \frac{3^n+(-1)^{n+1}}2\amp \frac{3^n+(-1)^n}2 
+          \end{bmatrix}
+       </me>.
+       </li>
+    </ol>
+
+    Observe that for small values of <m>n</m> we may easily compute the
+    entries of <m>A^n</m>:
+    </p>
+    <table>
+        <title/>
+        <tabular halign="center">
+        <row bottom="minor"> 
+            <cell><m>n</m></cell> 
+            <cell><m>\frac{3^n+(-1)^n}2</m>
+            </cell>
+            <cell><m>\frac{3^n+(-1)^{n+1}}2</m></cell>
+        </row>
+        <row> <cell><m>1</m></cell> <cell><m>1</m></cell> <cell><m>2</m></cell></row>
+        <row> <cell><m>2</m></cell> <cell><m>5</m></cell> <cell><m>4</m></cell></row>
+        <row> <cell><m>3</m></cell> <cell><m>13</m></cell> <cell><m>14</m></cell></row>
+        <row> <cell><m>4</m></cell> <cell><m>40</m></cell> <cell><m>41</m></cell></row>
+        <row> <cell><m>5</m></cell> <cell><m>122</m></cell> <cell><m>121</m></cell></row>
+        </tabular>
+    </table>
+    <p>
+    Compare this result with 
+    <xref ref="MatrixPowerExample" text="custom">these earlier computations</xref>.
+    </p>
+    </example>
+
+
+    </section>   
+
+    <section><title>Computing eigenspaces</title>
+    <p>
+    We have already defined eigenspaces in <xref ref="EigenspaceDef" /> 
+    </p>
+
+    <p>
+    Suppose we are given a square matrix <m>A</m> of order <m>n</m>, a real number <m>\lambda</m>, 
+    and we want to find all vectors in
+    <me>
+    E_\lambda=\{\vec x\in \R^n\mid A\vec x=\lambda\vec x\}
+    </me>
+    If <m>A\vec x=\lambda\vec x</m>, then <m>A\vec x-\lambda\vec x=\vec 0</m>
+    and <m>(A-\lambda I)\vec x=\vec 0</m>. Hence we need only solve a system
+    of homogeneous equations. 
+    </p>
+
+    <p>
+    From   <xref ref="EigenvalueExample1" />, 
+    <me>
+    A=\begin{bmatrix}5\amp -1\amp -2\\ 1\amp 3\amp -2\\ -1\amp -1\amp 4 \end{bmatrix}
+    </me>
+    and <m>\lambda=2,4,6</m>.
+    </p>
+
+    <example><title><m>\lambda=2</m></title>
+    <p>
+    <me>
+    A-2I=
+        \begin{bmatrix}5\amp -1\amp -2\\ 1\amp 3\amp -2\\ -1\amp -1\amp 4 \end{bmatrix}
+        - 2\begin{bmatrix}1\amp 0\amp 0\\0\amp 1\amp 0\\0\amp 0\amp 1\end{bmatrix}
+        =\begin{bmatrix}3\amp -1\amp -2\\ 1\amp 1\amp -2\\ -1\amp -1\amp 2 \end{bmatrix}
+    </me>
+    As usual, we put the augmented matrix into reduced row echelon form:
+    <me>
+    \left[\begin{array}{ccc|c}
+    3\amp -1\amp -2\amp 0\\ 1\amp 1\amp -2\amp 0\\ -1\amp -1\amp 2\amp 0
+    \end{array}\right]
+    \textrm{ reduces to }
+    \left[\begin{array}{ccc|c}
+    1\amp 0\amp -1\amp 0\\ 0\amp 1\amp -1\amp 0\\ 0\amp 0\amp 0\amp 0
+    \end{array}\right]
+    </me>
+    and so all solutions are of the form <m>(x,y,z)=(t,t,t)=t(1,1,1)</m>.
+    </p>
+    </example>
+    <example><title><m>\lambda=4</m></title>
+    <p>
+    <me>
+    \left[\begin{array}{ccc|c}
+        1\amp -1\amp -2\amp 0\\ 
+        1\amp -1\amp -2\amp 0\\ 
+        -1\amp -1\amp 0\amp 0
+    \end{array}\right]
+    \textrm{ reduces to }
+    \left[\begin{array}{ccc|c}
+        1\amp 0\amp -1\amp 0\\ 
+        0\amp 1\amp 1\amp 0\\ 
+        0\amp 0\amp 0\amp 0
+    \end{array}\right]
+    </me>
+    and so all solutions are of the form <m>(x,y,z)=(t,-t,t)=t(1,-1,1)</m>.
+    </p>
+    </example>
+    <example><title><m>\lambda=6</m></title>
+    <p>
+    <me>
+    \left[\begin{array}{ccc|c}
+        -1\amp -1\amp -2\amp 0\\ 
+        1\amp -3\amp -2\amp 0\\ 
+        -1\amp -1\amp -2\amp 0
+    \end{array}\right]
+    \textrm{ reduces to }
+    \left[\begin{array}{ccc|c}
+        1\amp 0\amp 1\amp 0\\ 
+        0\amp 1\amp 1\amp 0\\ 
+        0\amp 0\amp 0\amp 0
+    \end{array}\right]
+    </me>
+    and so all solutions are of the form <m>(x,y,z)=(-t,-t,t)=t(-1,-1,1)</m>.
+    </p>
+    </example>
+
+    <p>
+    Notice that setting <m>t=1</m> in each case gives us the the original 
+    eigenvectors of the example.
+    </p>
+
+    <p>
+    We can use similar arguments for 
+     <xref ref="EigenvalueExample2" />.
+    </p>
+
+    <p>
+    In this case 
+    <m>A=\begin{bmatrix}2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5 \end{bmatrix}</m> and
+    <m>\lambda=-6,3</m>, 
+    </p>
+
+    <example><title><m>\lambda=-6</m></title>
+    <p>
+    <me>
+    A-\lambda I=
+    \begin{bmatrix}8\amp 1\amp 4\\ 0\amp 9\amp 0\\ 2\amp -2\amp 1 \end{bmatrix}
+    \text{ reduces to }
+    \begin{bmatrix}1\amp 0\amp \frac12\\ 0\amp 1\amp 0\\ 0\amp 0\amp 0 \end{bmatrix}
+    </me>
+    and so all eigenvectors are of the form <m>(x,y,z)=t(1,0,-2)</m>.
+    </p>
+    </example>
+    <example><title><m>\lambda=3</m></title>
+    <p>
+    <me>
+    A-\lambda I=
+    \begin{bmatrix}-1\amp 1\amp 4\\ 0\amp 0\amp 0\\ 2\amp -2\amp -8 \end{bmatrix}
+    \text{ reduces to }
+    \begin{bmatrix}1\amp -1\amp -4\\ 0\amp 0\amp 0\\ 0\amp 0\amp 0 \end{bmatrix}
+    </me>
+    and so all eigenvectors are of the form <m>(x,y,z)=t(1,1,0)+u(4,0,1)</m>.
+    </p>
+    </example>
+
+
+<!--    <subsection> -->
+    <proposition>
+    <title>Eigenvalues and the powers of a matrix</title>
+    <statement>
+    <p>
+    If <m>A\vec x=\lambda \vec x</m> then <m>A^n\vec x=\lambda^n \vec x</m>
+    for <m>n=1,2,\ldots</m>.
+    </p>
+    </statement>
+    <proof>
+    <p>
+    <md>
+    <mrow>
+        A^2\vec x=A(A\vec x)=A(\lambda \vec x)
+        =\lambda A\vec x=\lambda^2\vec x
+    </mrow>
+    <mrow>
+        A^3\vec x=A(A^2\vec x)=A(\lambda^2 \vec x)
+        =\lambda^2 A\vec x=\lambda^3\vec x
+    </mrow>
+    </md>
+    Repeating this process yields the desired result.
+    </p>
+    </proof>
+    </proposition>
+
+    <proposition>
+    <title>Eigenspaces and the powers of a matrix</title>
+    <statement>
+    <p>
+        Let <m>A</m> be an <m>n\times n</m> matrix  having <m>\vec x_1,\ldots,\vec x_m</m>
+        as eigenvectors with <m>\lambda_1,\ldots,\lambda_m</m> as corresponding
+        eigenvalues. Further, let 
+        <m>\vec x\in \Span\{\vec x_1,\ldots,\vec x_m\}</m>.
+        Then, for some <m>r_1,\ldots,r_n</m>, 
+    <ul>
+    <li><p>
+        <m>A\vec x=\sum_{i=1}^m r_i\lambda_i\vec x_i</m>, and
+    </p></li>
+    <li><p>
+        <m>A^n\vec x=\sum_{i=1}^m r_i\lambda_i^n\vec x_i</m>
+        for <m>n\ge1</m>.
+    </p></li>
+    </ul>
+    </p>
+    </statement>
+    <proof>
+    <p>
+    By definition of the span of a set, 
+    <me>
+    \vec x=\sum_{i=1}^m r_i\vec x_i
+    </me>
+    and so 
+    <me>
+    A(\vec x)=A(\sum_{i=1}^m r_i\vec x_i)=\sum_{i=1}^m r_iA(\vec x_i)
+    =\sum_{i=1}^mr_i\lambda_i\vec x_i
+    </me>.
+    </p>
+    <p>
+    Similarly,
+    <me>
+    A^n(\vec x)=A^n(\sum_{i=1}^m r_i\vec x_i)=\sum_{i=1}^m r_iA^n(\vec x_i)
+    =\sum_{i=1}^mr_i\lambda_i^n\vec x_i
+    </me>.
+    </p>
+    </proof>
+    </proposition>
+
+    <example>
+    <title>Eigenspaces and the powers of a matrix</title>
+    <p>
+    Let 
+    <m>A=\begin{bmatrix}0\amp1\amp1\\1\amp0\amp1\\1\amp1\amp0 \end{bmatrix}</m>,
+    <m>\vec x_1=\begin{bmatrix}1\\1\\1\end{bmatrix}</m>, 
+    <m>\vec x_2=\begin{bmatrix}-1\\1\\0\end{bmatrix}</m>, and 
+    <m>\vec x_3=\begin{bmatrix}-1\\0\\1\end{bmatrix}</m>. 
+   Then <m>\vec x_1</m>, <m>\vec x_2</m>, and <m>\vec x_3</m>, are eigenvectors
+   of <m>A</m> with corresponding eigenvalues <m>2</m>, <m>-1</m>, and <m>-1</m>.
+   In fact <m>\{\vec x_1, \vec x_2, \vec x_3\}</m> is a basis for <m>\mathbb{R}^3</m>.
+   From the definition of a basis, for any given <m>\vec x\in\mathbb{R}^3</m>, there is
+   a unique choice of <m>r_1,r_2,r_3</m> so that 
+    <m>\vec x=r_1\vec x_1 + r_2\vec x_2 + r_3\vec x_3</m>.
+    From the previous proposition, 
+    <me>
+    A^n\vec x=2^nr_1\vec x_1+ (-1)^n r_2\vec x_2 +(-1)^n r_3 \vec x_3
+    </me>
+    As <m>n</m> gets large, clearly the coefficient of <m>x_1</m> becomes huge and the
+    value of <m>A^n\vec x</m> is very close to a scalar multiple of <m>\vec x_1</m>,
+    that is, it approaches the eigenspace <m>E_2</m>.
+
+    </p>
+    </example>
+    </section>
+    
+    <section><title>Eigenvalues of triangular matrices</title>
+    <p>
+    The eigenvalues of a triangular matrix are particularly easy to compute.
+    </p>
+    <theorem xml:id="EigenvaluesTriangularMatrix"><title>Eigenvalues of a triangular matrix </title>
+    <statement>
+    <p>
+    Let <m>A=[a_{i,j}]</m> be a triangular matrix. Then the eigenvalues of
+    <m>A</m> are the diagonal entries <m>a_{1,1},a_{2,2},\ldots,a_{n,n}.</m>
+    </p>
+    </statement>
+    <proof>
+    <p>
+    The matrix <m>A-\lambda I</m> is also triangular and, by
+    <xref ref="DeterminantTriangularMatrix" />,
+    its determinant is just the product of the diagonal elements, that is,
+    <me>
+        p(\lambda)=(a_{1,1}-\lambda)(a_{2,2}-\lambda)\cdots(a_{n,n}-\lambda).
+    </me>
+    The roots of this polynomial are the diagonal elements of <m>A</m>.
+    </p>
+    </proof>
+    </theorem>
+    </section>
+    
+    <section><title>The number of eigenvalues of a matrix of order <m>n</m></title>
+    <p>
+    If <m>A</m> is a matrix of order <m>n</m>, then 
+    <m>p(\lambda)=\det(A-\lambda I)</m> is a polynomial
+    of degree <m>n</m>. Since a polynomial of degree <m>n</m> has at most 
+    <m>n</m> roots, the matrix has as most <m>n</m> eigenvalues.
+    </p>
+    
+    <theorem xml:id="NumberOfEigenvalues"><title>The number of eigenvalues of <m>A</m></title>
+    <statement>
+    <p>
+    A square matrix of order <m>n</m> has at most <m>n</m> eigenvalues.
+    </p>
+    </statement>
+    <proof>
+    <p>
+    The characteristic polynomial <m>p(\lambda)</m> is of degree <m>n</m>,
+    and such a polynomial has at most <m>n</m> real roots.
+    </p>
+    </proof>
+    </theorem>
+    <p>
+    If we once again look at the matrix from <xref ref="EigenvalueExample4" />.
+    we see that it is a matrix of order <m>4</m> with <m>4</m> eigenvalues given. 
+    <xref ref="NumberOfEigenvalues" /> tells us that there are no others.
+    </p>
+    </section>
+
+</chapter>
+

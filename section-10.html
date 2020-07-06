@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-05T13:50:46-05:00    *-->
+<!--*    on 2020-07-05T18:40:18-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -94,7 +94,9 @@ MathJax.Hub.Config({
 <li class="link"><a href="SysLinEq.html" data-scroll="SysLinEq"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations</span></a></li>
 <li class="link"><a href="MatrixTheoryIntro.html" data-scroll="MatrixTheoryIntro"><span class="codenumber">2</span> <span class="title">Matrix Theory</span></a></li>
 <li class="link"><a href="Determinants.html" data-scroll="Determinants"><span class="codenumber">3</span> <span class="title">The Determinant</span></a></li>
-<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">4</span> <span class="title">Additional Topics</span></a></li>
+<li class="link"><a href="EuclideanSpace.html" data-scroll="EuclideanSpace"><span class="codenumber">4</span> <span class="title">Vectors in Euclidean \(n\) space</span></a></li>
+<li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
+<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">6</span> <span class="title">Additional Topics</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-10"><h2 class="heading hide-type">
@@ -138,10 +140,10 @@ rA=2A=
 \end{equation*}
 </div></article></div>
 <p id="p-267">In short, the product \(rA\) is computed by multiplying every entry of \(A\) by \(r\text{.}\)</p>
-<article class="theorem theorem-like" id="ScalarMultiplicationProperties"><a data-knowl="" class="id-ref original" data-refid="hk-ScalarMultiplicationProperties"><h6 class="heading">
+<article class="theorem theorem-like" id="ScalarMultiplicationProperties"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of scalar multiplication.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ScalarMultiplicationProperties">
-<article class="theorem theorem-like"><p id="p-268">Suppose that \(A\) and \(B\) are matrices of the same size, and \(r\) and \(s\) are scalars, then</p>
+</h6>
+<p id="p-268">Suppose that \(A\) and \(B\) are matrices of the same size, and \(r\) and \(s\) are scalars, then</p>
 <ul class="disc">
 <li id="li-115"><p id="p-269">If \(A\) is an \(m\times n\) matrix, then \(rA\) is also \(m\times n\text{.}\)</p></li>
 <li id="li-116"><p id="p-270">\(\displaystyle r(A+B)=rA+rB\)</p></li>
@@ -150,12 +152,11 @@ rA=2A=
 <li id="li-119"><p id="p-273">\(\displaystyle 1A=A\)</p></li>
 </ul></article><article class="hiddenproof" id="proof-4"><a data-knowl="" class="id-ref original" data-refid="hk-proof-4"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-4"><article class="hiddenproof"><ul id="p-274" class="disc">
 <li id="li-120"><p id="p-275">By the definition of scalar multiplication, if \(A\) is an \(m\times n\) matrix, then \(rA\) is an \(m\times n\) matrix also.</p></li>
-<li id="li-121"><p id="p-276">We use \(A=[a_{i,j}]\) and \(B=[b_{i,j}]\text{.}\) Then the \(i\)-\(j\) entry of \(r(A+B)\) is \(r(a_{i,j}+b_{i,j})\) while he \(i\)-\(j\) entry of \(rA+rB\) is \(ra_{i,j}+rb_{i,j}\text{.}\) Hence the for the equality to be valid, we need \(r(a_{i,j}+b_{i,j})=ra_{i,j}+rb_{i,j}\text{,}\) which is the distributive law for real numbers. (see properties of real numbers in <a href="section-24.html#RealNumberProperties" class="internal" title="Subsection 4.1.2: Named properties of real numbers">Subsection 4.1.2</a>.)</p></li>
+<li id="li-121"><p id="p-276">We use \(A=[a_{i,j}]\) and \(B=[b_{i,j}]\text{.}\) Then the \(i\)-\(j\) entry of \(r(A+B)\) is \(r(a_{i,j}+b_{i,j})\) while he \(i\)-\(j\) entry of \(rA+rB\) is \(ra_{i,j}+rb_{i,j}\text{.}\) Hence the for the equality to be valid, we need \(r(a_{i,j}+b_{i,j})=ra_{i,j}+rb_{i,j}\text{,}\) which is the distributive law for real numbers. (see properties of real numbers in <a href="section-38.html#RealNumberProperties" class="internal" title="Subsection 6.1.2: Named properties of real numbers">Subsection 6.1.2</a>.)</p></li>
 <li id="li-122"><p id="p-277">We use \(A=[a_{i,j}].\) The \(i\)-\(j\) entry of \((r+s)A\) is \((r+s)a_{i,j}\) while the \(i\)-\(j\) entry of \(rA+sA\) is \(ra_{i,j}+sa_{i,j}\text{.}\) Hence the matrix equation is valid if \((r+s)a_{i,j}=ra_{i,j}+sa_{i,j}\text{.}\) Since this equation is the distributive law for real numbers, the validity is clear.</p></li>
 <li id="li-123"><p id="p-278">We use \(A=[a_{i,j}].\) The \(i\)-\(j\) entry of \((rs)A\) is  \((rs)a_{i,j}\) while the \(i\)-\(j\) entry of \(r(sA)\) is \(r(sa_{i,j}).\) Hence the matrix equation is valid if \((rs)a_{i,j}=r(sa_{i,j}).\) Since this is the associative law for real numbers, the result is clear.</p></li>
 <li id="li-124"><p id="p-279">We use \(A=[a_{i,j}].\) The \(i\)-\(j\) entry of \(1A\) is \(1a_{i,j}=a_{i,j}\text{,}\) and so \(1A=A.\)</p></li>
 </ul></article></div>
-</div>
 <article class="paragraphs" id="paragraphs-1"><h5 class="heading"><span class="title">Linear combinations.</span></h5>
 <p id="p-280">Matrix addition and scalar multiplication are both used to compute linear combinations.</p></article><article class="example example-like" id="example-15"><a data-knowl="" class="id-ref original" data-refid="hk-example-15"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">A linear combination.</span>

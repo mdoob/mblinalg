@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-05T13:50:58-05:00    *-->
+<!--*    on 2020-07-05T18:40:35-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,9 +13,29 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>(6) \(\Rightarrow\) (1): Use the vectors \(\vec b_1,
-\vec b_2,\dots,\vec b_n\) given just above. In each case there is exactly one vector \(\vec c_k\) which is a solution to the equation \(A\vec x=\vec b_k\text{.}\) Let \(C\) be the matrix with \(\vec c_1,\dots,\vec
-c_n\) as columns. This matrix satisfies \(AC=I\) which makes \(C=A^{-1}\) and so \(A\) is invertible.</p>
+<p>(4) \(\Rightarrow\) (5): Suppose we want to solve \(A\vec x=\vec b\) where \(\vec b\) is any vector and \(A=F_1F_2\cdots F_{k-1}F_k.\) Then we have</p>
+<div class="displaymath">
+\begin{equation*}
+F_1F_2\cdots F_{k-1}F_k \vec x=\vec b,
+\end{equation*}
+</div>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+\vec x=F_k^{-1}F_{k-1}^{-1}\cdots
+F_2^{-1}F_1^{-1} \vec b 
+\end{equation*}
+</div>
+<p data-braille="continuation">which then satisfies</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{split} A\vec x \amp =(F_1F_2\cdots
+F_{k-1}F_k)(F_k^{-1}F_{k-1}^{-1}\cdots F_2^{-1}F_1^{-1}\vec
+b)\\ \amp=(F_1F_2\cdots F_{k-1}F_k)(F_k^{-1}F_{k-1}^{-1}\cdots
+F_2^{-1}F_1^{-1})\vec b \\ \amp=\vec b \end{split} 
+\end{equation*}
+</div>
+<p data-braille="continuation">and so gives a solution to \(A\vec x=\vec b.\) Hence \(A\vec x=\vec b\) is consistent.</p>
 <span class="incontext"><a href="section-18.html#p-530">in-context</a></span>
 </body>
 </html>

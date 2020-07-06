@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-06-05T13:50:57-05:00    *-->
+<!--*    on 2020-07-05T18:40:33-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,21 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose all diagonal entries of \(A\) are nonzero, and \(A\) is of size \(n\text{.}\)  If we carry out the	elementary operations \(R_i\gets\frac1{a_{i,i}}R_i\) for \(i=1,\dots,n\text{,}\) then the diagonal elements are all \(1\text{.}\) Suppose \(a_{i,j}\) is some entry above the diagonal (so \(i \lt j\)). Then we use the elementary row operation \(R_j\gets R_j-a_{ij}R_i\) to change that entry to \(0\text{.}\) We may proceed by columns from left to right deleting every \(a_{i,j}\neq0\) By this process we reduce \(A\) to the matrix \(I\text{,}\) and so \(A\) is invertible.</p>
+<p>We compute the \((i,j)\) entry of \(AB\) by considering row \(i\) of \(A\) and column \(j\) of \(B\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+(AB)_{i,j} =a_{i,1}b_{1,j}+ a_{i,2}b_{2,j}+\cdots+ a_{i,n}b_{n,j} 
+\end{equation*}
+</div>
+<p data-braille="continuation">Now \(A\) and \(B\) being upper triangular implies \(a_{i,1}=a_{i,2}=\cdots=a_{i,i-1}=0\) and \(b_{j,j+1}=b_{j,j+2}=\cdots=b_{j,n}=0\text{.}\) This means that</p>
+<div class="displaymath">
+\begin{equation*}
+(AB)_{i,j}=a_{i,i}b_{i,j}+ a_{i,i+1}b_{i+1,j}
++\cdots+ a_{i,j-1}b_{j,j-1}+a_{i,j}b_{j,j} 
+\end{equation*}
+</div>
+<p data-braille="continuation">Hence we see that \((AB)_{i,j}\not=0\) only if \(i\leq
+j\text{,}\) or, \((AB)_{i,j}=0\) whenever \(i \gt j\text{.}\) This, by definition, makes \(AB\) upper triangular. The argument for lower triangular matrices \(A\) and \(B\) is essentially identical.</p>
 <span class="incontext"><a href="section-15.html#p-449">in-context</a></span>
 </body>
 </html>
