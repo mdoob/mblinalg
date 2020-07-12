@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:37-05:00    *-->
+<!--*    on 2020-07-10T15:32:03-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,42 +13,6 @@
 </head>
 <body>
 <article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
-<p>If \(B\) is the reduced row echelon form of \(A\text{,}\) then</p>
-<div class="displaymath">
-\begin{equation*}
-B=E_k E_{k-1}\cdots E_2 E_1 A
-\end{equation*}
-</div>
-<p data-braille="continuation">and</p>
-<div class="displaymath">
-\begin{equation*}
-B^T=A^T E_1^T E_2^T\cdots E_{k-1}^T  E_k^T.
-\end{equation*}
-</div>
-<p data-braille="continuation">Hence</p>
-<div class="displaymath">
-\begin{equation*}
-\det B=\det E_k \det E_{k-1}\cdots \det E_2 \det E_1 \det A
-\end{equation*}
-</div>
-<p data-braille="continuation">and</p>
-<div class="displaymath">
-\begin{equation*}
-\det B^T=\det A^T \det E_1^T \det E_2^T\cdots \det E_{k-1}^T \det E_k^T.
-\end{equation*}
-</div>
-<p data-braille="continuation">There are two possibilities for \(B\text{:}\)</p>
-<ul class="disc">
-<li><p>When \(A\) is invertible, \(B=B^T=I\) and so \(\det B= \det B^T=1\text{.}\)</p></li>
-<li><p>When \(A\) is singular, \(B\) has an all zero last row and \(B^T\) has an all zero last column. This implies \(\det B=\det B^T=0\)</p></li>
-</ul>
-<p data-braille="continuation">In either case we have \(\det B=\det B^T\text{,}\) and so we can equate the values given above to get</p>
-<div class="displaymath">
-\begin{equation*}
-\det E_k \cdots  \det E_1 \det A=
-\det A^T \det E_1^T \cdots \det E_k^T.
-\end{equation*}
-</div>
-<p data-braille="continuation">Using <a class="xref" data-knowl="./knowl/DeterminantElelmentaryTronspose.html" title="Lemma 3.4.24: The determinant of the transpose of an elementary matrix">Lemma 3.4.24</a>, we have \(\det E_j=\det E_j^T\) for \(j=1,2,\ldots,k.\) Hence \(\det A=\det A^T.\)</p></article><span class="incontext"><a href="section-22.html#proof-50">in-context</a></span>
+<p>Since \(A A^{-1}=I\text{,}\) we have \(\det A\;\det A^{-1}=\det I=1\text{.}\)</p></article><span class="incontext"><a href="section-22.html#proof-50">in-context</a></span>
 </body>
 </html>

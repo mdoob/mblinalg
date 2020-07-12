@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:45-05:00    *-->
+<!--*    on 2020-07-10T15:32:10-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,8 +13,34 @@
 </head>
 <body>
 <article class="li"><h6 class="heading">
-<span class="type">Item</span><span class="period">.</span>
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">7</span><span class="period">.</span>
 </h6>
-<p>\(\displaystyle 1+2+4+8+16=31\)</p></article><span class="incontext"><a href="section-39.html#li-374">in-context</a></span>
+<p>\(L((x_1,x_2,x_3))=(x_1+x_2,x_2+x_3)\) since</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+L(\vec x)+L(\vec y)
+\amp =L((x_1,x_2,x_3))+L((y_1,y_2,y_3))\\
+\amp = (x_1+x_2,x_2+x_3)+(y_1+y_2,y_2+y_3)\\
+\amp =(x_1+x_2+y_1+y_2, x_2+x_3+y_2+y_3)\\
+\amp =(x_1+y_1+x_2+y_2, x_2+y_2+x_3+y_3)\\
+\amp =L((x_1+y_1,x_2+y_2,x_3+y_3))\\
+\amp =L( (x_1,x_2,x_3)+ (y_1,y_2,y_3))\\
+\amp =L(\vec x+\vec y) \text{ and}
+\end{array}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+rL(\vec x)
+\amp =rL((x_1,x_2,x_3))\\
+\amp =r(x_1+x_2,x_2+x_3)\\
+\amp =(rx_1+rx_2,rx_2+rx_3)\\
+\amp =L((rx_1,rx_2,rx_3))\\
+\amp =L(r\vec x)
+\end{array}
+\end{equation*}
+</div></article><span class="incontext"><a href="LinearTransformationIntroduction.html#li-374">in-context</a></span>
 </body>
 </html>

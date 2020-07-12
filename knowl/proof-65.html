@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:40-05:00    *-->
+<!--*    on 2020-07-10T15:32:06-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,13 +13,25 @@
 </head>
 <body>
 <article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
-<p>The collinearity of \(\vec x\) and \(\vec y\) means that \(\vec x=r\vec y\) for some real number \(r\text{,}\) and so \(x_1=ry_1\text{,}\) \(x_2=ry_2\text{,}\) and \(x_3=ry_3\text{.}\) This means</p>
+<p>The desired result is shown if \(\vec x\cdot(\vec x\times\vec y)=0\) and \(\vec y\cdot(\vec x\times\vec y)=0\text{.}\) By direct computation</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
-\vec x\times\vec y \amp= (ry_1,ry_2,ry_3)\times(y_1,y_2,y_3)\\
-\amp= (ry_2y_3-ry_3y_2, ry_3y_1-ry_1y_3,ry_1y_2-ry_2y_1)\\
-\amp=(0,0,0)=\vec 0
+(x_1,x_2,x_3) \cdot  \amp(x_2y_3-x_3y_2, x_3y_1-x_1y_3,x_1y_2-x_2y_1)\\
+\amp=x_1 (x_2y_3-x_3y_2) +x_2 (x_3y_1-x_1y_3) + x_3 (x_1y_2-x_2y_1)\\
+\amp= x_1x_2y_3-x_1x_3y_2 +x_2 x_3y_1-x_2x_1y_3+ x_3x_1y_2-x_3x_2y_1\\
+\amp=0
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+(y_1,y_2,y_3) \amp\cdot  (x_2y_3-x_3y_2, x_3y_1-x_1y_3,x_1y_2-x_2y_1)\\
+\amp=y_1 (x_2y_3-x_3y_2) +y_2 (x_3y_1-x_1y_3) + y_3 (x_1y_2-x_2y_1)\\
+\amp= y_1x_2y_3-y_1x_3y_2 +y_2 x_3y_1-y_2x_1y_3+ y_3x_1y_2-y_3x_2y_1\\
+\amp=0
 \end{array}
 \end{equation*}
 </div></article><span class="incontext"><a href="CrossProduct.html#proof-65">in-context</a></span>

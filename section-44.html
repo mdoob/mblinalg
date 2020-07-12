@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-07-10T15:31:52-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Matrix representation of a transformation</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_brown_gold.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
+\def\C{{\mathbb C}}
+\def\Q{{\mathbb Q}}
+\def\Z{{\mathbb Z}}
+\def\N{{\mathbb N}}
+
+\def\vec#1{\mathbf #1}
+
+\newcommand{\adj}{\mathop{\textrm{adj}}}
+\newcommand{\proj}{\mathop{\textrm{proj}}}
+\newcommand{\Span}{\mathop{\textrm{span}}} 
+
+\newcommand{\rowint}[2]{R_{#1} \leftrightarrow R_{#2}}
+\newcommand{\rowmul}[2]{R_{#1}\gets {#2}R_{#1}}
+\newcommand{\rowadd}[3]{R_{#1}\gets R_{#1}+#2R_{#3}}
+\newcommand{\rowsub}[3]{R_{#1}\gets R_{#1}-#2R_{#3}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.umanitoba.ca" target="_blank"><img src="images/umlogo.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="mblinalg.html"><span class="title">Manitoba linear algebra</span></a></h1>
+<p class="byline">Michael Doob (editor)</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-43.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="LinearTransformations.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-45.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-43.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="LinearTransformations.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-45.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="Frontmatter.html" data-scroll="Frontmatter"><span class="title">Title Page</span></a></li>
+<li class="link"><a href="SysLinEq.html" data-scroll="SysLinEq"><span class="codenumber">1</span> <span class="title">Systems of Linear Equations</span></a></li>
+<li class="link"><a href="MatrixTheoryIntro.html" data-scroll="MatrixTheoryIntro"><span class="codenumber">2</span> <span class="title">Matrix Theory</span></a></li>
+<li class="link"><a href="Determinants.html" data-scroll="Determinants"><span class="codenumber">3</span> <span class="title">The Determinant</span></a></li>
+<li class="link"><a href="EuclideanSpace.html" data-scroll="EuclideanSpace"><span class="codenumber">4</span> <span class="title">Vectors in Euclidean \(n\) space</span></a></li>
+<li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
+<li class="link"><a href="LinearTransformations.html" data-scroll="LinearTransformations"><span class="codenumber">6</span> <span class="title">Linear transformations</span></a></li>
+<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">7</span> <span class="title">Additional Topics</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="section-44"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">6.6</span> <span class="title">Matrix representation of a transformation</span>
+</h2>
+<p id="p-1128">Suppose we have a linear transformation \(L\colon \R^m\to\R^n\text{.}\) As usual, let \(\{\vec e_1,\vec e_2,\ldots,\vec e_m\}\) be the standard basis for \(\R^m\text{.}\) Consider the vectors \(\{L(\vec e_1) ,L(\vec e_2), \ldots, L(\vec e_m)\}\) in \(\R^n\text{.}\) We form a matrix \(A\) by using the entries of \(L(\vec e_k)\) for the \(k\)-th column. We can think of the construction in the following way:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{cccc}
+A = \amp [L(\vec e_1) \amp L(\vec e_2) \amp \cdots \amp L(\vec e_m)]\\
+\amp \uparrow \amp \uparrow  \amp \amp \uparrow\\
+\amp \text{column } 1\amp \text{column } 2\amp\amp \text{column } m
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">Notice that \(A\) is an \(n\times m\) matrix, and hence we have \(L_A\colon\R^m\to\R^n\text{.}\) We evaluate this transformation at \(\vec e_1\text{:}\)</p>
+<div class="displaymath">
+\begin{equation}
+L_A(\vec e_1)=
+A\begin{bmatrix}
+1\\0\\\vdots\\0
+\end{bmatrix}
+=L(\vec e_1)\label{MatrixRep}\tag{6.6.1}
+\end{equation}
+</div>
+<p data-braille="continuation">Similarly</p>
+<div class="displaymath">
+\begin{equation*}
+L_A(\vec e_k)=L(\vec e_k) \text{ for } 1\leq k\leq n
+\end{equation*}
+</div>
+<p data-braille="continuation">As we have seen in <a class="xref" data-knowl="./knowl/LinearTransformationOnStandardBasis.html" title="Theorem 6.3.2: (The value of \(L\) on the standard basis determines \(L\) everywhere)">Theorem 6.3.2</a> a linear transformation is determined by its values on the standard basis. This implies \(L=L_A\text{.}\) We call the constructed matrix \(A\) the <em class="emphasis">matrix representation</em> of \(L\text{.}\)</p>
+<article class="theorem theorem-like" id="theorem-79"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.6.1</span><span class="period">.</span><span class="space"> </span><span class="title">(Matrix representation of a linear transformation).</span>
+</h6>
+<p id="p-1129">Let \(L\colon \R^m\to\R^n\) be a linear transformation, and let \(A\) be the matrix formed by letting the \(k\)-th column be the entries of \(L(\vec e_k)\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+L=L_A
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-91"><a data-knowl="" class="id-ref original" data-refid="hk-proof-91"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-91"><article class="hiddenproof"><p id="p-1130">We can compute this in a different way: The equation <a class="xref" data-knowl="./knowl/MatrixRep.html" title="Equation 6.6.1">(6.6.1)</a> says</p>
+<div class="displaymath">
+\begin{align*}
+L(\vec e_1)
+\amp=A\begin{bmatrix}1\\0\\\vdots\\0\end{bmatrix}\\
+\amp=\begin{bmatrix}a_{1,1}\\a_{2,1}\\\vdots\\a_{n,1}\end{bmatrix}\\
+\amp=a_{1,1}\vec e_1+a_{2,1}\vec e_2+\cdots+a_{n,1}\vec e_n
+\end{align*}
+</div>
+<p data-braille="continuation">and, similarly,</p>
+<div class="displaymath">
+\begin{equation*}
+L(\vec e_i)=a_{1,i}\vec e_1+a_{2,i}\vec e_2+\cdots+a_{n,i}\vec e_n
+\end{equation*}
+</div></article></div></section></div></main>
+</div>
+</body>
+</html>

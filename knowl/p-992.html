@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:42-05:00    *-->
+<!--*    on 2020-07-10T15:32:08-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,20 +13,44 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let \(\vec y_1\) and \(\vec y_2\) be in \(S\text{,}\) that is</p>
-<div class="displaymath">
-\begin{gather*}
-\vec y_1=r_1\vec x_1 + r_2\vec x_2+\cdots+ r_m\vec x_m\\
-\vec y_2=s_1\vec x_1 + s_2\vec x_2+\cdots+ s_m\vec x_m.
-\end{gather*}
-</div>
-<p data-braille="continuation">Then</p>
+<p>Let \(H\) be hyperplane in \(\mathbb{R}^n\) containing \(\vec0\text{,}\) that is, a set of vectors \(\vec x=(x_1,\ldots,x_n)\) satisfying an equation</p>
 <div class="displaymath">
 \begin{equation*}
-\vec y_1+\vec y_2=
-(r_1+s_1)\vec x_1 + (r_2+s_2)\vec x_2+\cdots+ (r_m+s_m)\vec x_m \in S. 
+a_1x_1+a_2x_2+\cdots+a_nx_n=0
 \end{equation*}
 </div>
-<span class="incontext"><a href="section-32.html#p-992">in-context</a></span>
+<p data-braille="continuation">where at least one \(a_i\not=0\text{.}\)</p>
+<ol class="decimal">
+<li>
+<p>If \(\vec x=(x_1,\ldots,x_n)\) and \(\vec y=(y_1,\ldots,y_n)\) are in \(H\text{,}\) then from the equations</p>
+<div class="displaymath">
+\begin{gather*}
+a_1x_1+a_2x_2+\cdots+a_nx_n=0,\\
+a_1y_1+a_2y_2+\cdots+a_ny_n=0, \text{ and}\\
+\vec x+\vec y=(x_1+y_1,\ldots,x_n+y_n)
+\end{gather*}
+</div>
+<p data-braille="continuation">it follows that</p>
+<div class="displaymath">
+\begin{align*}
+a_1(x_1+y_1)+\cdots+a_n(x_n+y_n)\amp =
+(a_1x_1+\cdots+a_nx_n) + (a_1y_1+\cdots+a_ny_n)\\
+\amp=0+0\\
+\amp=0,
+\end{align*}
+</div>
+<p data-braille="continuation">and \(\vec x+\vec y\in H\text{.}\)</p>
+</li>
+<li>
+<p>\(r\vec x=(rx_1,\ldots,rx_n)\text{,}\) and</p>
+<div class="displaymath">
+\begin{equation*}
+a_1(rx_1)+\cdots+a_n(rx_n)=r(a_1x_1+\cdots+a_nx_n)=r0=0
+\end{equation*}
+</div>
+<p data-braille="continuation">and so \(r\vec x\in H\text{.}\)</p>
+</li>
+</ol>
+<span class="incontext"><a href="section-33.html#p-992">in-context</a></span>
 </body>
 </html>

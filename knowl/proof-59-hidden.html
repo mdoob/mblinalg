@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:39-05:00    *-->
+<!--*    on 2020-07-10T15:32:04-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,58 +11,63 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><ol class="decimal">
-<li><p>Since \(\|\vec x\|= \vec x\cdot\vec x\text{,}\) this result is contained in <a class="xref" data-knowl="./knowl/DotProductFirstProperties.html" title="Proposition 4.2.3: First properties of the dot product">Proposition 4.2.3</a>.</p></li>
-<li>
-<p>From direct evaluation:</p>
+<body><article class="hiddenproof"><article class="case"><h6 class="heading">First case: \(\vec x=\vec0\) or \(\vec y=\vec0\).</h6>
+<p>In this case \(\vec x\cdot\vec y=0\) and \(\|\vec x\| \|\vec y\|=0\text{,}\) and so the inequality reduces to \(0\leq 0\text{.}\)</p></article><article class="case"><h6 class="heading">Second case: \(\|\vec x\|=\|\vec y\|=1\).</h6>
+<p>Using <a class="xref" data-knowl="./knowl/DotProductFirstProperties.html" title="Proposition 4.2.3: First properties of the dot product">Proposition 4.2.3</a>,</p>
+<div class="displaymath">
+\begin{align*}
+0\amp \leq \|(\vec x+\vec y)\|^2 \\
+\amp = (\vec x+\vec y)\cdot(\vec x+\vec y) \\
+\amp =(\vec x+\vec y)\cdot\vec x+ (\vec x+\vec y)\cdot\vec y\\
+\amp =\vec x \cdot \vec x+ \vec y\cdot \vec x i
++ \vec x\cdot \vec y +\vec y\cdot\vec y\\
+\amp =\|\vec x\|^2 +2(\vec x\cdot \vec y) + \|\vec y\|^2\\
+\amp =2(\vec x\cdot \vec y) +2
+\end{align*}
+</div>
+<p data-braille="continuation">and so</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{rl}
-\|r\vec x\|^2
-\amp=\|r(x_1,x_2,\ldots,x_n)\|^2\\
-\amp=\|(rx_1,rx_2,\ldots,rx_n)\|^2\\
-\amp=r^2x_1^2+r^2x_2^2+\cdots+r^2x_n^2\\
-\amp=r^2(x_1^2+x_2^2+\cdots+x_n^2)
-\end{array}
+-1\leq \vec x\cdot \vec y\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">and so by taking square roots, \(\|r\vec x\|=|r| \|\vec x\|\text{.}\)</p>
-</li>
-<li><p>This is just <a class="xref" data-knowl="./knowl/CauchySchwarz.html" title="Theorem 4.2.17: Cauchy-Schwarz">Theorem 4.2.17</a></p></li>
-<li>
-<p>Again, a direct evaluation:</p>
+<p data-braille="continuation">Similarly</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{rl}
-\|\vec x+\vec y\|^2 + \|\vec x-\vec y\|^2 
-\amp= (\vec x+\vec y) \cdot (\vec x+\vec y) 
-+(\vec x-\vec y) \cdot (\vec x-\vec y)\\
-\amp=  (\vec x\cdot\vec x + \vec x\cdot\vec y 
-+\vec y\cdot\vec x +\vec y\cdot\vec y)\\
-\amp \phantom{=} +  (\vec x\cdot\vec x - \vec x\cdot\vec y 
--\vec y\cdot\vec x +\vec y\cdot\vec y)\\
-\amp=2(\|\vec x\|^2 +\|\vec y\|^2)
-\end{array}
+0\leq(\vec x-\vec y)\cdot(\vec x-\vec y) =-2(\vec x\cdot \vec y) +2
 \end{equation*}
 </div>
-</li>
-<li>
-<p>The triangle inequality is a consequence of the Cauchy-Schwarz inequality:</p>
+<p data-braille="continuation">and</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{rll}
-\|\vec x+\vec y\|^2
-\amp= (\vec x+\vec y)\cdot(\vec x+\vec y)\\
-\amp= \vec x\cdot\vec x+2(\vec x\cdot\vec y)+\vec y\cdot\vec y\\
-\amp= \|\vec x\|^2 +2(\vec x\cdot\vec y)+\|\vec y\|^2\\
-\amp\le \|\vec x\|^2 +2|\vec x\cdot\vec y|+\|\vec y\|^2
-\amp\amp\gets r\le|r|\text{ used here.}\\
-\amp\le \|\vec x\|^2 +2\|\vec x\|\|\vec y\|+\|\vec y\|^2
-\amp\amp\gets \text{ Cauchy-Schwarz used here.}\\
-\amp= (\|\vec x\|+\|\vec y\|)^2
-\end{array}
+\vec x\cdot \vec y \leq 1\text{.}
 \end{equation*}
 </div>
-</li>
-</ol></article></body>
+<p data-braille="continuation">These inequalities imply</p>
+<div class="displaymath">
+\begin{equation*}
+|\vec x\cdot \vec y| \leq 1=\|\vec x\|\, \|\vec y\|\text{.}
+\end{equation*}
+</div></article><article class="case"><h6 class="heading">Third case: \(\|\vec x\|\neq 0\) and  \(\|\vec y\|\neq0\).</h6>
+<p>As seen in <a class="xref" data-knowl="./knowl/UnitVectorConstruction.html" title="Proposition 4.2.12: Unit vector construction">Proposition 4.2.12</a>, if \(\vec u=\frac{\vec x}{\|\vec x\|}\) and \(\vec v=\frac{\vec y}{\|\vec y\|}\text{,}\) then both \(\vec u\) and \(\vec v\) are unit vectors, and, as such, the second case is applicable. This means</p>
+<div class="displaymath">
+\begin{equation*}
+|\vec u\cdot \vec v| \leq \|\vec u\| \|\vec v\|
+\end{equation*}
+</div>
+<p data-braille="continuation">and so</p>
+<div class="displaymath">
+\begin{equation*}
+|\vec u\cdot\vec v|=
+\left|\frac{\vec x}{\|\vec x\|} \cdot \frac{\vec y}{\|\vec y\|}\right|
+= \frac1{\|\vec x\|}\,\frac1{\|\vec y\|} |\vec x\cdot\vec y|
+\leq 1
+\end{equation*}
+</div>
+<p data-braille="continuation">which implies</p>
+<div class="displaymath">
+\begin{equation*}
+|\vec x \cdot \vec y| \leq \|\vec x\| \|\vec y\|\text{.}
+\end{equation*}
+</div></article></article></body>
 </html>

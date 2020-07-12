@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:20-05:00    *-->
+<!--*    on 2020-07-10T15:31:46-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -96,7 +96,8 @@ MathJax.Hub.Config({
 <li class="link"><a href="Determinants.html" data-scroll="Determinants"><span class="codenumber">3</span> <span class="title">The Determinant</span></a></li>
 <li class="link"><a href="EuclideanSpace.html" data-scroll="EuclideanSpace"><span class="codenumber">4</span> <span class="title">Vectors in Euclidean \(n\) space</span></a></li>
 <li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
-<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">6</span> <span class="title">Additional Topics</span></a></li>
+<li class="link"><a href="LinearTransformations.html" data-scroll="LinearTransformations"><span class="codenumber">6</span> <span class="title">Linear transformations</span></a></li>
+<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">7</span> <span class="title">Additional Topics</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-17"><h2 class="heading hide-type">
@@ -187,9 +188,10 @@ E_3=
 <li id="li-205"><p id="p-487">Add a multiple of one row to another (\(R_i\leftarrow
 R_i + \lambda R_j\)) \[B=E_3A\]</p></li>
 </ol></article><article class="hiddenproof" id="proof-29"><a data-knowl="" class="id-ref original" data-refid="hk-proof-29"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-29"><article class="hiddenproof"><p id="p-488">We use the elementary matrices given in <a class="xref" data-knowl="./knowl/ElementaryMatrices.html" title="Definition 2.10.1: Elementary matrices">Definition 2.10.1</a>. The proof is is then a careful observation of the effect of the nonzero entries in each case.</p></article></div>
-<article class="example example-like" id="example-20"><a data-knowl="" class="id-ref original" data-refid="hk-example-20"><h6 class="heading">
+<article class="example example-like" id="example-20"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.10.3</span><span class="period">.</span><span class="space"> </span><span class="title">Multiplying by an elementary matrix.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-20"><article class="example example-like"><p id="p-489">Let</p>
+</h6>
+<p id="p-489">Let</p>
 <div class="displaymath">
 \begin{equation*}
 A=
@@ -277,11 +279,11 @@ EA=
 \end{equation*}
 </div>
 </li>
-</ol></article></div>
-<p id="p-493">Notice that <a class="xref" data-knowl="./knowl/ElementaryMatrixRowMultiplication.html" title="Theorem 2.10.2: Carrying out row operations using matrix multiplication">Theorem 2.10.2</a> can be applied to a sequence of elementary row operations.  If, for example, we have three elementary row operations whose corresponding elementary matrices are \(E_1\text{,}\) \(E_2\) and \(E_3\text{,}\) and we apply them in sequence to \(A\text{,}\) then the resulting matrix is the product \(E_3(E_2(E_1(A)))\text{,}\) or, more simply, \(E_3E_2E_1A\text{.}\)	Note that we are applying \(E_1\) first followed by \(E_2\) and finally \(E_3\text{.}\)</p>
-<article class="example example-like" id="example-21"><a data-knowl="" class="id-ref original" data-refid="hk-example-21"><h6 class="heading">
+</ol></article><p id="p-493">Notice that <a class="xref" data-knowl="./knowl/ElementaryMatrixRowMultiplication.html" title="Theorem 2.10.2: Carrying out row operations using matrix multiplication">Theorem 2.10.2</a> can be applied to a sequence of elementary row operations.  If, for example, we have three elementary row operations whose corresponding elementary matrices are \(E_1\text{,}\) \(E_2\) and \(E_3\text{,}\) and we apply them in sequence to \(A\text{,}\) then the resulting matrix is the product \(E_3(E_2(E_1(A)))\text{,}\) or, more simply, \(E_3E_2E_1A\text{.}\)	Note that we are applying \(E_1\) first followed by \(E_2\) and finally \(E_3\text{.}\)</p>
+<article class="example example-like" id="example-21"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.10.4</span><span class="period">.</span><span class="space"> </span><span class="title">Reduction to reduced row echelon form by matrix multiplication.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-21"><article class="example example-like"><p id="p-494">Let \(A= \begin{bmatrix}
+</h6>
+<p id="p-494">Let \(A= \begin{bmatrix}
 1\amp2\amp2 \\
 2\amp4\amp5 \\
 0\amp1\amp1 
@@ -389,7 +391,7 @@ EA=
 \amp = A^{-1}
 \end{align*}
 </div>
-<p data-braille="continuation">We shall see shortly that every elementary matrix has an inverse which itself is elementary, and so \(A=E_1^{-1}E_2^{-1}E_3^{-1}E_4^{-1}\text{.}\) Thus \(A\) is a product of elementary matrices.</p></article></div></section><section class="subsection" id="subsection-37"><h3 class="heading hide-type">
+<p data-braille="continuation">We shall see shortly that every elementary matrix has an inverse which itself is elementary, and so \(A=E_1^{-1}E_2^{-1}E_3^{-1}E_4^{-1}\text{.}\) Thus \(A\) is a product of elementary matrices.</p></article></section><section class="subsection" id="subsection-37"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.10.3</span> <span class="title">Inverses of Elementary Row Operation Matrices</span>
 </h3>
 <p id="p-496">Each matrix associated with the three elementary row operations has an inverse.  While it is easy to define and verify the matrix in each case, it is useful to think of the effect of the inverse. If \(E\) is the matrix associated with an elementary row operation, then \(EA\) carries out that operation on \(A.\) Since \(E^{-1}EA=A,\) the effect of \(E^{-1}\) is to undo the operation and return \(A\) to its original form.</p>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:17-05:00    *-->
+<!--*    on 2020-07-10T15:31:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -96,7 +96,8 @@ MathJax.Hub.Config({
 <li class="link"><a href="Determinants.html" data-scroll="Determinants"><span class="codenumber">3</span> <span class="title">The Determinant</span></a></li>
 <li class="link"><a href="EuclideanSpace.html" data-scroll="EuclideanSpace"><span class="codenumber">4</span> <span class="title">Vectors in Euclidean \(n\) space</span></a></li>
 <li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
-<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">6</span> <span class="title">Additional Topics</span></a></li>
+<li class="link"><a href="LinearTransformations.html" data-scroll="LinearTransformations"><span class="codenumber">6</span> <span class="title">Linear transformations</span></a></li>
+<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">7</span> <span class="title">Additional Topics</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-4"><h2 class="heading hide-type">
@@ -106,9 +107,10 @@ MathJax.Hub.Config({
 <span class="type">Subsection</span> <span class="codenumber">1.4.1</span> <span class="title">First operation: interchanging two rows</span>
 </h3>
 <p id="p-84">Exchanging two rows in the augmented matrix is the same as writing the the equations in a different order. The equations themselves are unchanged, as is the set of all solutions. When we interchange row \(i\) and row \(j\text{,}\) we denote it by \(R_i\leftrightarrow R_j\text{.}\)</p>
-<article class="example example-like" id="example-1"><a data-knowl="" class="id-ref original" data-refid="hk-example-1"><h6 class="heading">
+<article class="example example-like" id="example-1"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Augmented matrix change (interchange rows).</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-1"><article class="example example-like"><p id="p-85">The system of equations</p>
+</h6>
+<p id="p-85">The system of equations</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
@@ -147,7 +149,7 @@ MathJax.Hub.Config({
 2x+3y-z \amp = 2
 \end{array}
 \end{equation*}
-</div></article></div></section><section class="subsection" id="subsection-9"><h3 class="heading hide-type">
+</div></article></section><section class="subsection" id="subsection-9"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.4.2</span> <span class="title">Second operation: multiplying a row by a nonzero constant</span>
 </h3>
 <p id="p-86">If we have a linear equation and multiply both sides of the equation by a nonzero constant \(\lambda\text{,}\) (The symbol \(\lambda\) is the Greek letter lambda; it is the traditional name for this constant.) then the linear equation</p>
@@ -169,9 +171,10 @@ a_1x_1 + a_2x_2 +a_3x_3 + \cdots + a_nx_n =b
 \end{equation*}
 </div>
 <p data-braille="continuation">This would apply to any equation in a system, of course, and so when we apply this operation to row \(i\) we denote it by \(R_i \gets \lambda R_i\) (The symbol \(\gets\) means <em class="emphasis">is replaced by</em>). <em class="emphasis">As long as \(\lambda\) is nonzero</em>, this operation leaves the set of solutions unchanged.</p>
-<article class="example example-like" id="example-2"><a data-knowl="" class="id-ref original" data-refid="hk-example-2"><h6 class="heading">
+<article class="example example-like" id="example-2"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">Augmented matrix change (multiply row by \(\lambda\)).</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-2"><article class="example example-like"><p id="p-87">The system of equations</p>
+</h6>
+<p id="p-87">The system of equations</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
@@ -210,13 +213,14 @@ a_1x_1 + a_2x_2 +a_3x_3 + \cdots + a_nx_n =b
 3x-y-z \amp = 3
 \end{array}
 \end{equation*}
-</div></article></div></section><section class="subsection" id="subsection-10"><h3 class="heading hide-type">
+</div></article></section><section class="subsection" id="subsection-10"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.4.3</span> <span class="title">Third operation: adding a multiple of one row to another</span>
 </h3>
 <p id="p-88">Recall that one of our basic techniques for solving a system of equations is to pick a variable, make the coefficients of that variable equal in two equations and then take the difference of the equations to create a new one with that variable eliminated. In terms of the associated augmented matrix, this means we get a new row formed by subtracting the corresponding entries in the rows of the two equations.  In other words, we replace one row by the difference of two rows. We use the notation \(R_i\gets R_i-R_j\) to indicate that row \(i\) is replaced by the difference of row \(i\) and row \(j\text{.}\)  The set of solutions is unchanged. We have already seen that multiplying a row by a nonzero constants leaves the set of solutions unchanged; it is often convenient to combine these two steps as one: \(R_i\gets R_i+\lambda R_j.\) Note that \(\lambda=-1\) is the case of subtracting one row from another.</p>
-<article class="example example-like" id="example-3"><a data-knowl="" class="id-ref original" data-refid="hk-example-3"><h6 class="heading">
+<article class="example example-like" id="example-3"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Augmented matrix change (add multiple of one row to another).</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-3"><article class="example example-like"><p id="p-89">Eliminating \(x\) from the second equation:</p>
+</h6>
+<p id="p-89">Eliminating \(x\) from the second equation:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
@@ -256,7 +260,7 @@ x+y+z
 3x-y-z \amp = 3 
 \end{array} 
 \end{equation*}
-</div></article></div></section><section class="subsection" id="subsection-11"><h3 class="heading hide-type">
+</div></article></section><section class="subsection" id="subsection-11"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.4.4</span> <span class="title">Summary of the three elementary row operations</span>
 </h3>
 <p id="p-90">In summary, here is a table of the three elementary row operations:</p>

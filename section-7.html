@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:18-05:00    *-->
+<!--*    on 2020-07-10T15:31:43-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -96,7 +96,8 @@ MathJax.Hub.Config({
 <li class="link"><a href="Determinants.html" data-scroll="Determinants"><span class="codenumber">3</span> <span class="title">The Determinant</span></a></li>
 <li class="link"><a href="EuclideanSpace.html" data-scroll="EuclideanSpace"><span class="codenumber">4</span> <span class="title">Vectors in Euclidean \(n\) space</span></a></li>
 <li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
-<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">6</span> <span class="title">Additional Topics</span></a></li>
+<li class="link"><a href="LinearTransformations.html" data-scroll="LinearTransformations"><span class="codenumber">6</span> <span class="title">Linear transformations</span></a></li>
+<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">7</span> <span class="title">Additional Topics</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-7"><h2 class="heading hide-type">
@@ -109,9 +110,10 @@ Ax+By+Cz=D
 \end{equation*}
 </div>
 <p data-braille="continuation">has solutions that form a plane as long as at least one of \(A, B, C\) is nonzero. If we look at a system of such linear equations, the solution set is the set of all points lying in all of the corresponding planes.</p>
-<article class="example example-like" id="example-8"><a data-knowl="" class="id-ref original" data-refid="hk-example-8"><h6 class="heading">
+<article class="example example-like" id="example-8"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.1</span><span class="period">.</span><span class="space"> </span><span class="title">Three planes intersecting at a point.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-8"><article class="example example-like"><p id="p-229">Consider the system of linear equations</p>
+</h6>
+<p id="p-229">Consider the system of linear equations</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
@@ -143,10 +145,10 @@ x+2y-3z \amp=2
 </div>
 <p data-braille="continuation">This means that there is a single solution: \((x,y,z)=(\frac34,1,\frac14)\text{.}\) Here are the three planes corresponding to the three equations:</p>
 <figure class="figure figure-like" id="figure-6"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><object data="images/ThreePlanesPoint.html" id="ThreePlanesPoint" width="600" height="600"><embed src="images/ThreePlanesPoint.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.2<span class="period">.</span></span><span class="space"> </span>Three planes intersecting at a single point</figcaption></figure></article></div>
-<article class="example example-like" id="example-9"><a data-knowl="" class="id-ref original" data-refid="hk-example-9"><h6 class="heading">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.2<span class="period">.</span></span><span class="space"> </span>Three planes intersecting at a single point</figcaption></figure></article><article class="example example-like" id="example-9"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.3</span><span class="period">.</span><span class="space"> </span><span class="title">Three planes intersecting in a single line.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-9"><article class="example example-like"><p id="p-230">Consider the system of linear equations</p>
+</h6>
+<p id="p-230">Consider the system of linear equations</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
@@ -178,10 +180,10 @@ x+y+z\amp=1\\
 </div>
 <p data-braille="continuation">This means \(y=t\text{,}\) \(x=2-t\) and \(z=-1\) so that \((x,y,z)=(2-t,t,-1)\) is a solution for any real number \(t\text{.}\)</p>
 <figure class="figure figure-like" id="figure-7"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><object data="images/ThreePlanesLine.html" id="ThreePlanesLine" width="600" height="600"><embed src="images/ThreePlanesLine.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.4<span class="period">.</span></span><span class="space"> </span>Three planes intersecting in a line</figcaption></figure></article></div>
-<article class="example example-like" id="example-10"><a data-knowl="" class="id-ref original" data-refid="hk-example-10"><h6 class="heading">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.4<span class="period">.</span></span><span class="space"> </span>Three planes intersecting in a line</figcaption></figure></article><article class="example example-like" id="example-10"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.5</span><span class="period">.</span><span class="space"> </span><span class="title">Three intersecting planes with no solutions.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-10"><article class="example example-like"><p id="p-231">Consider the system of linear equations</p>
+</h6>
+<p id="p-231">Consider the system of linear equations</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
@@ -213,10 +215,10 @@ x+y+z\amp=2\\
 </div>
 <p data-braille="continuation">The last row indicates that there is no solution.</p>
 <figure class="figure figure-like" id="figure-8"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><object data="images/ThreePlanesNoSolution.html" id="ThreePlanesNoSolution" width="540" height="540"><embed src="images/ThreePlanesNoSolution.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.6<span class="period">.</span></span><span class="space"> </span>Three pairwise intersecting planes with no common point</figcaption></figure></article></div>
-<article class="example example-like" id="example-11"><a data-knowl="" class="id-ref original" data-refid="hk-example-11"><h6 class="heading">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.6<span class="period">.</span></span><span class="space"> </span>Three pairwise intersecting planes with no common point</figcaption></figure></article><article class="example example-like" id="example-11"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.7</span><span class="period">.</span><span class="space"> </span><span class="title">Three nonintersecting planes with no solutions.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-11"><article class="example example-like"><p id="p-232">Consider the system of linear equations</p>
+</h6>
+<p id="p-232">Consider the system of linear equations</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl} 2x-y+z \amp= 1\\ 2x-y+z \amp= 2\\ 2x-y+z \amp=3
@@ -239,7 +241,7 @@ x+y+z\amp=2\\
 </div>
 <p data-braille="continuation">The middle row indicates that there is no solution.</p>
 <figure class="figure figure-like" id="figure-9"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><object data="images/ThreeParallelPlanes.html" id="ThreeParallelPlanes" width="600" height="600"><embed src="images/ThreeParallelPlanes.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.8<span class="period">.</span></span><span class="space"> </span>Three parallel planes</figcaption></figure></article></div></section></div></main>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.8<span class="period">.</span></span><span class="space"> </span>Three parallel planes</figcaption></figure></article></section></div></main>
 </div>
 </body>
 </html>

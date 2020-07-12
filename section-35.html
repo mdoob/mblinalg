@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:26-05:00    *-->
+<!--*    on 2020-07-10T15:31:51-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -9,7 +9,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Computing eigenspaces</title>
+<title>Computing eigenvalues</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
@@ -96,163 +96,201 @@ MathJax.Hub.Config({
 <li class="link"><a href="Determinants.html" data-scroll="Determinants"><span class="codenumber">3</span> <span class="title">The Determinant</span></a></li>
 <li class="link"><a href="EuclideanSpace.html" data-scroll="EuclideanSpace"><span class="codenumber">4</span> <span class="title">Vectors in Euclidean \(n\) space</span></a></li>
 <li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
-<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">6</span> <span class="title">Additional Topics</span></a></li>
+<li class="link"><a href="LinearTransformations.html" data-scroll="LinearTransformations"><span class="codenumber">6</span> <span class="title">Linear transformations</span></a></li>
+<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">7</span> <span class="title">Additional Topics</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-35"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">5.3</span> <span class="title">Computing eigenspaces</span>
+<span class="type">Section</span> <span class="codenumber">5.2</span> <span class="title">Computing eigenvalues</span>
 </h2>
-<p id="p-1043">We have already defined eigenspaces in <a class="xref" data-knowl="./knowl/EigenspaceDef.html" title="Definition 5.1.7: Eigenspaces">Definition 5.1.7</a></p>
-<p id="p-1044">Suppose we are given a square matrix \(A\) of order \(n\text{,}\) a real number \(\lambda\text{,}\) and we want to find all vectors in</p>
+<p id="p-1032">An easy but important fact is used to compute eigenvalues.</p>
+<article class="proposition theorem-like" id="proposition-9"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenvalues \(x\) satisfy \((A-\lambda I)\vec x=\vec0\).</span>
+</h6>
+<div class="displaymath" id="p-1033">
+\begin{equation*}
+A\vec x=\lambda \vec x \textrm{ if and only if } (A-\lambda I)\vec x=\vec0
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-79"><a data-knowl="" class="id-ref original" data-refid="hk-proof-79"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-79"><article class="hiddenproof"><p id="p-1034">If \(A\vec x=\lambda\vec x\text{,}\) then</p>
 <div class="displaymath">
 \begin{equation*}
-E_\lambda=\{\vec x\in \R^n\mid A\vec x=\lambda\vec x\}
+\vec0=A\vec x -\lambda\vec x=A\vec x -\lambda I\vec x 
+= (A - \lambda I)\vec x.
 \end{equation*}
-</div>
-<p data-braille="continuation">If \(A\vec x=\lambda\vec x\text{,}\) then \(A\vec x-\lambda\vec x=\vec 0\) and \((A-\lambda I)\vec x=\vec 0\text{.}\) Hence we need only solve a system of homogeneous equations.</p>
-<p id="p-1045">From   <a class="xref" data-knowl="./knowl/EigenvalueExample1.html" title="Example 5.1.3: Eigenvalues of \(\begin{bmatrix} 
+</div></article></div>
+<article class="corollary theorem-like" id="corollary-6"><h6 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="period">.</span>
+</h6>
+<p id="p-1035">\(\lambda\) is an eigenvalue of \(A\) if and only if \(A-\lambda I\) is singular.</p></article><article class="hiddenproof" id="proof-80"><a data-knowl="" class="id-ref original" data-refid="hk-proof-80"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-80"><article class="hiddenproof"><p id="p-1036">One of the equivalent conditions of singularity given in <a class="xref" data-knowl="./knowl/InvertibilityEquivalence2.html" title="Theorem 3.4.21: Equivalent forms of invertibility">Theorem 3.4.21</a> is that \(B\) is singular if \(B\vec x=\vec 0\) for some \(\vec x\not=\vec 0\text{.}\) The matrix \(A-\lambda I\) plays the role of \(B\text{.}\)</p></article></div>
+<article class="corollary theorem-like" id="corollary-7"><h6 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="period">.</span>
+</h6>
+<p id="p-1037">\(\lambda\) is an eigenvalue of \(A\) if and only if \(\det (A-\lambda I)=0\)</p></article><article class="hiddenproof" id="proof-81"><a data-knowl="" class="id-ref original" data-refid="hk-proof-81"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-81"><article class="hiddenproof"><p id="p-1038">\(B\) is singular if and only if \(\det B=0\text{.}\)</p></article></div>
+<p id="p-1039">We now can see how these corollaries allow us to compute eigenvalues. We look at the matrix from <a class="xref" data-knowl="./knowl/EigenvalueExample1.html" title="Example 5.1.3: Eigenvalues of \(\begin{bmatrix} 
 5\amp -1\amp -2\\ 
 1\amp 3\amp -2\\ 
 -1\amp -1\amp 4 
-\end{bmatrix} \)">Example 5.1.3</a>,</p>
+\end{bmatrix} \)">Example 5.1.3</a>.</p>
+<article class="example example-like" id="example-46"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="period">.</span>
+</h6>
+<p id="p-1040">We use</p>
 <div class="displaymath">
-\begin{equation*}
-A=\begin{bmatrix}5\amp -1\amp -2\\ 1\amp 3\amp -2\\ -1\amp -1\amp 4 \end{bmatrix}
-\end{equation*}
-</div>
-<p data-braille="continuation">and \(\lambda=2,4,6\text{.}\)</p>
-<article class="example example-like" id="example-49"><a data-knowl="" class="id-ref original" data-refid="hk-example-49"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">\(\lambda=2\).</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-49"><article class="example example-like"><div class="displaymath" id="p-1046">
-\begin{equation*}
-A-2I=
-\begin{bmatrix}5\amp -1\amp -2\\ 1\amp 3\amp -2\\ -1\amp -1\amp 4 \end{bmatrix}
-- 2\begin{bmatrix}1\amp 0\amp 0\\0\amp 1\amp 0\\0\amp 0\amp 1\end{bmatrix}
-=\begin{bmatrix}3\amp -1\amp -2\\ 1\amp 1\amp -2\\ -1\amp -1\amp 2 \end{bmatrix}
-\end{equation*}
-</div>
-<p data-braille="continuation">As usual, we put the augmented matrix into reduced row echelon form:</p>
-<div class="displaymath">
-\begin{equation*}
-\left[\begin{array}{ccc|c}
-3\amp -1\amp -2\amp 0\\ 1\amp 1\amp -2\amp 0\\ -1\amp -1\amp 2\amp 0
-\end{array}\right]
-\textrm{ reduces to }
-\left[\begin{array}{ccc|c}
-1\amp 0\amp -1\amp 0\\ 0\amp 1\amp -1\amp 0\\ 0\amp 0\amp 0\amp 0
-\end{array}\right]
-\end{equation*}
-</div>
-<p data-braille="continuation">and so all solutions are of the form \((x,y,z)=(t,t,t)=t(1,1,1)\text{.}\)</p></article></div>
-<article class="example example-like" id="example-50"><a data-knowl="" class="id-ref original" data-refid="hk-example-50"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">\(\lambda=4\).</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-50"><article class="example example-like"><div class="displaymath" id="p-1047">
-\begin{equation*}
-\left[\begin{array}{ccc|c}
-1\amp -1\amp -2\amp 0\\ 
-1\amp -1\amp -2\amp 0\\ 
--1\amp -1\amp 0\amp 0
-\end{array}\right]
-\textrm{ reduces to }
-\left[\begin{array}{ccc|c}
-1\amp 0\amp -1\amp 0\\ 
-0\amp 1\amp 1\amp 0\\ 
-0\amp 0\amp 0\amp 0
-\end{array}\right]
-\end{equation*}
-</div>
-<p data-braille="continuation">and so all solutions are of the form \((x,y,z)=(t,-t,t)=t(1,-1,1)\text{.}\)</p></article></div>
-<article class="example example-like" id="example-51"><a data-knowl="" class="id-ref original" data-refid="hk-example-51"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">\(\lambda=6\).</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-51"><article class="example example-like"><div class="displaymath" id="p-1048">
-\begin{equation*}
-\left[\begin{array}{ccc|c}
--1\amp -1\amp -2\amp 0\\ 
-1\amp -3\amp -2\amp 0\\ 
--1\amp -1\amp -2\amp 0
-\end{array}\right]
-\textrm{ reduces to }
-\left[\begin{array}{ccc|c}
-1\amp 0\amp 1\amp 0\\ 
-0\amp 1\amp 1\amp 0\\ 
-0\amp 0\amp 0\amp 0
-\end{array}\right]
-\end{equation*}
-</div>
-<p data-braille="continuation">and so all solutions are of the form \((x,y,z)=(-t,-t,t)=t(-1,-1,1)\text{.}\)</p></article></div>
-<p id="p-1049">Notice that setting \(t=1\) in each case gives us the the original eigenvectors of the example.</p>
-<p id="p-1050">We can use similar arguments for <a class="xref" data-knowl="./knowl/EigenvalueExample2.html" title="Example 5.1.4: Eigenvalues of \(\begin{bmatrix}2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5 \end{bmatrix}\)">Example 5.1.4</a>.</p>
-<p id="p-1051">In this case \(A=\begin{bmatrix}2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5 \end{bmatrix}\) and \(\lambda=-6,3\text{,}\)</p>
-<article class="example example-like" id="example-52"><a data-knowl="" class="id-ref original" data-refid="hk-example-52"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">\(\lambda=-6\).</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-52"><article class="example example-like"><div class="displaymath" id="p-1052">
 \begin{equation*}
 A-\lambda I=
-\begin{bmatrix}8\amp 1\amp 4\\ 0\amp 9\amp 0\\ 2\amp -2\amp 1 \end{bmatrix}
-\text{ reduces to }
-\begin{bmatrix}1\amp 0\amp \frac12\\ 0\amp 1\amp 0\\ 0\amp 0\amp 0 \end{bmatrix}
+\begin{bmatrix}
+5-\lambda\amp -1\amp -2\\ 
+1\amp 3-\lambda\amp -2\\ 
+-1\amp -1\amp 4-\lambda 
+\end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">and so all eigenvectors are of the form \((x,y,z)=t(1,0,-2)\text{.}\)</p></article></div>
-<article class="example example-like" id="example-53"><a data-knowl="" class="id-ref original" data-refid="hk-example-53"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">\(\lambda=3\).</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-53"><article class="example example-like"><div class="displaymath" id="p-1053">
+<p data-braille="continuation">and</p>
+<div class="displaymath">
 \begin{equation*}
-A-\lambda I=
-\begin{bmatrix}-1\amp 1\amp 4\\ 0\amp 0\amp 0\\ 2\amp -2\amp -8 \end{bmatrix}
-\text{ reduces to }
-\begin{bmatrix}1\amp -1\amp -4\\ 0\amp 0\amp 0\\ 0\amp 0\amp 0 \end{bmatrix}
+\det(A-\lambda I)=0.
 \end{equation*}
 </div>
-<p data-braille="continuation">and so all eigenvectors are of the form \((x,y,z)=t(1,1,0)+u(4,0,1)\text{.}\)</p></article></div>
-<article class="proposition theorem-like" id="proposition-10"><h6 class="heading">
-<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">5.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenvalues and the powers of a matrix.</span>
+<p data-braille="continuation">Evaluating the determinant gives</p>
+<div class="displaymath">
+\begin{align*}
+\det\amp \begin{bmatrix}
+5-\lambda\amp -1\amp -2\\ 
+1\amp 3-\lambda\amp -2\\ 
+-1\amp -1\amp 4-\lambda 
+\end{bmatrix}\\
+\amp=(5-\lambda)(3-\lambda)(4-\lambda)-2+2
+-2(5-\lambda) -2(3-\lambda)+(4-\lambda)\\
+\amp = -\lambda^3 +12\lambda^2 -44\lambda +48\\
+\amp = -(\lambda-2)(\lambda-4)(\lambda-6)
+\end{align*}
+</div>
+<p data-braille="continuation">So we see that \(\det(A-\lambda I)=0\) only if \(\lambda=2\text{,}\) \(\lambda=4\) or \(\lambda=6\text{.}\) The evaluation of \(\det(A-\lambda I)=0\) gave us a polynomial \(p(\lambda)=-(\lambda-2)(\lambda-4)(\lambda-6)\) whose roots are the eigenvalues.</p></article><article class="definition definition-like" id="definition-61"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">The characteristic polynomial.</span>
 </h6>
-<p id="p-1054">If \(A\vec x=\lambda \vec x\) then \(A^n\vec x=\lambda^n \vec x\) for \(n=1,2,\ldots\text{.}\)</p></article><article class="hiddenproof" id="proof-81"><a data-knowl="" class="id-ref original" data-refid="hk-proof-81"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-81"><article class="hiddenproof"><div class="displaymath" id="p-1055">
-\begin{gather*}
-A^2\vec x=A(A\vec x)=A(\lambda \vec x)
-=\lambda A\vec x=\lambda^2\vec x\\
-A^3\vec x=A(A^2\vec x)=A(\lambda^2 \vec x)
-=\lambda^2 A\vec x=\lambda^3\vec x
-\end{gather*}
-</div>
-<p data-braille="continuation">Repeating this process yields the desired result.</p></article></div>
-<article class="proposition theorem-like" id="proposition-11"><h6 class="heading">
-<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">5.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenspaces and the powers of a matrix.</span>
+<p id="p-1041">The <dfn class="terminology">characteristic polynomial</dfn> of a square matrix \(A\) is the polynomial</p>
+<div class="displaymath">
+\begin{equation*}
+p(\lambda)=\det(\lambda I-A).
+\end{equation*}
+</div></article><article class="note remark-like" id="note-1"><h6 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">5.2.6</span><span class="period">.</span>
 </h6>
-<p id="p-1056">Let \(A\) be an \(n\times n\) matrix  having \(\vec x_1,\ldots,\vec x_m\) as eigenvectors with \(\lambda_1,\ldots,\lambda_m\) as corresponding eigenvalues. Further, let \(\vec x\in \Span\{\vec x_1,\ldots,\vec x_m\}\text{.}\) Then, for some \(r_1,\ldots,r_n\text{,}\)</p>
-<ul class="disc">
-<li id="li-361"><p id="p-1057">\(A\vec x=\sum_{i=1}^m r_i\lambda_i\vec x_i\text{,}\) and</p></li>
-<li id="li-362"><p id="p-1058">\(A^n\vec x=\sum_{i=1}^m r_i\lambda_i^n\vec x_i\) for \(n\ge1\text{.}\)</p></li>
-</ul></article><article class="hiddenproof" id="proof-82"><a data-knowl="" class="id-ref original" data-refid="hk-proof-82"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-82"><article class="hiddenproof"><p id="p-1059">By definition of the span of a set,</p>
+<p id="p-1042">Some sources define the characteristic polynomial as \(\det(A-\lambda I)\text{.}\) Since \(\lambda I-A=-(A-\lambda I)\text{,}\) it follows that for any square matrix \(A\) of size \(n\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
-\vec x=\sum_{i=1}^m r_i\vec x_i
+\det(\lambda I-A)=(-1)^n\det(A-\lambda I)
 \end{equation*}
 </div>
-<p data-braille="continuation">and so</p>
+<p data-braille="continuation">and so both polynomials have the same roots.</p></article><p id="p-1043">We look at the matrix from <a class="xref" data-knowl="./knowl/EigenvalueExample2.html" title="Example 5.1.4: Eigenvalues of \(\begin{bmatrix}2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5 \end{bmatrix}\)">Example 5.1.4</a>.</p>
+<article class="example example-like" id="example-47"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.7</span><span class="period">.</span>
+</h6>
+<p id="p-1044">\(A=\begin{bmatrix}2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5 \end{bmatrix}\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
-A(\vec x)=A(\sum_{i=1}^m r_i\vec x_i)=\sum_{i=1}^m r_iA(\vec x_i)
-=\sum_{i=1}^mr_i\lambda_i\vec x_i\text{.}
+\begin{array}{rl}
+\det(A-\lambda I)
+\amp =\det\begin{bmatrix}2-\lambda\amp 1\amp 4\\ 
+0\amp 3-\lambda\amp 0\\ 
+2\amp -2\amp -5-\lambda \end{bmatrix}\\
+\amp =(2-\lambda)(3-\lambda)(-5-\lambda)-8(3-\lambda)\\
+\amp = (\lambda+6)(\lambda-3)^2
+\end{array}
 \end{equation*}
 </div>
-<p id="p-1060">Similarly,</p>
-<div class="displaymath">
+<p data-braille="continuation">and so the eigenvalues are \(\lambda=-6\) and \(\lambda=3\)</p></article><article class="example example-like" id="example-48"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenvalues and powers of a matrix.</span>
+</h6>
+<p id="p-1045">Let \(A= \begin{bmatrix} 1 \amp 2 \\ 2 \amp 1 \end{bmatrix}\text{.}\)</p>
+<ol class="decimal">
+<li id="li-354">\(\vec x_1= \begin{bmatrix} 1 \\ 1 \end{bmatrix}\) and \(\vec x_2 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}\) are eigenvectors since<div class="displaymath">
+\begin{align*}
+A\vec x_1\amp=3\vec x_1\\
+A\vec x_2\amp=(-1)\vec x_2\text{.}
+\end{align*}
+</div>
+</li>
+<li id="li-355">Let \(P=[\vec x_1\ \vec x_2]= 
+\begin{bmatrix} 1\amp 1\\ 1\amp -1 \end{bmatrix}\text{.}\) Then \(P^{-1}=
+\frac12\begin{bmatrix} 1\amp 1\\ 1\amp -1 \end{bmatrix}\text{.}\)</li>
+<li id="li-356">Let \(D=P^{-1}AP\text{.}\) By direct computation we have<div class="displaymath">
 \begin{equation*}
-A^n(\vec x)=A^n(\sum_{i=1}^m r_i\vec x_i)=\sum_{i=1}^m r_iA^n(\vec x_i)
-=\sum_{i=1}^mr_i\lambda_i^n\vec x_i\text{.}
-\end{equation*}
-</div></article></div>
-<article class="example example-like" id="example-54"><a data-knowl="" class="id-ref original" data-refid="hk-example-54"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenspaces and the powers of a matrix.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-54"><article class="example example-like"><p id="p-1061">Let \(A=\begin{bmatrix}0\amp1\amp1\\1\amp0\amp1\\1\amp1\amp0 \end{bmatrix}\text{,}\) \(\vec x_1=\begin{bmatrix}1\\1\\1\end{bmatrix}\text{,}\) \(\vec x_2=\begin{bmatrix}-1\\1\\0\end{bmatrix}\text{,}\) and \(\vec x_3=\begin{bmatrix}-1\\0\\1\end{bmatrix}\text{.}\) Then \(\vec x_1\text{,}\) \(\vec x_2\text{,}\) and \(\vec x_3\text{,}\) are eigenvectors of \(A\) with corresponding eigenvalues \(2\text{,}\) \(-1\text{,}\) and \(-1\text{.}\) In fact \(\{\vec x_1, \vec x_2, \vec x_3\}\) is a basis for \(\mathbb{R}^3\text{.}\) From the definition of a basis, for any given \(\vec x\in\mathbb{R}^3\text{,}\) there is a unique choice of \(r_1,r_2,r_3\) so that \(\vec x=r_1\vec x_1 + r_2\vec x_2 + r_3\vec x_3\text{.}\) From the previous proposition,</p>
-<div class="displaymath">
-\begin{equation*}
-A^n\vec x=2^nr_1\vec x_1+ (-1)^n r_2\vec x_2 +(-1)^n r_3 \vec x_3
+D=P^{-1}AP=\frac12 
+\begin{bmatrix} 1\amp 1\\ 1\amp -1 \end{bmatrix}
+\begin{bmatrix} 1 \amp 2 \\ 2 \amp 1 \end{bmatrix}
+\begin{bmatrix} 1\amp 1\\ 1\amp -1 \end{bmatrix}
+=\begin{bmatrix} 3\amp 0\\ 0\amp -1 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">As \(n\) gets large, clearly the coefficient of \(x_1\) becomes huge and the value of \(A^n\vec x\) is very close to a scalar multiple of \(\vec x_1\text{,}\) that is, it approaches the eigenspace \(E_2\text{.}\)</p></article></div></section></div></main>
+</li>
+<li id="li-357">We compute the powers of \(D\) as the <a class="xref" data-knowl="./knowl/MultiplyDiagonalMatrices.html" title="Proposition 2.8.5: Multiplication of diagonal matrices">product of diagonal matrices</a>: \(D^n=\begin{bmatrix} 3^n\amp 0\\ 0\amp (-1)^n \end{bmatrix}\text{.}\)</li>
+<li id="li-358">By rebracketing the matrix product,<div class="displaymath">
+\begin{align*}
+A^n \amp =(PDP^{-1})^n\\
+\amp =(PDP^{-1})(PDP^{-1})\cdots (PDP^{-1})(PDP^{-1})\\
+\amp =PD(P^{-1}P)D(P^{-1}P)\cdots D(P^{-1}P)DP^{-1}\\
+\amp =PD^nP^{-1}
+\end{align*}
+</div>
+</li>
+<li id="li-359">By an easy computation,<div class="displaymath">
+\begin{align*}
+P D^n P^{-1} \amp =
+\frac12 \begin{bmatrix} 1\amp 1\\ 1\amp -1 \end{bmatrix}
+\begin{bmatrix} 3^n\amp 0\\ 0\amp (-1)^n \end{bmatrix}
+\begin{bmatrix} 1\amp 1\\ 1\amp -1 \end{bmatrix}\\
+\amp =\frac12 \begin{bmatrix} 
+3^n+(-1)^n \amp 3^n+(-1)^{n+1}\\ 
+3^n+(-1)^{n+1}\amp 3^n+(-1)^n 
+\end{bmatrix}\text{.}
+\end{align*}
+</div>
+</li>
+<li id="li-360">And so<div class="displaymath">
+\begin{equation*}
+A^n=
+\begin{bmatrix} 
+\frac{3^n+(-1)^n}2 \amp \frac{3^n+(-1)^{n+1}}2\\ 
+\frac{3^n+(-1)^{n+1}}2\amp \frac{3^n+(-1)^n}2 
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</li>
+</ol>
+<p data-braille="continuation">Observe that for small values of \(n\) we may easily compute the entries of \(A^n\text{:}\)</p>
+<figure class="table table-like" id="table-6"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.2.9<span class="period">.</span></span><span class="space"> </span></figcaption><table>
+<tr>
+<td class="c m b1 r0 l0 t0 lines">\(n\)</td>
+<td class="c m b1 r0 l0 t0 lines">\(\frac{3^n+(-1)^n}2\)</td>
+<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">\(\frac{3^n+(-1)^{n+1}}2\)</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">\(1\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(1\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(2\)</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">\(2\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(5\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(4\)</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">\(3\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(13\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(14\)</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">\(4\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(40\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(41\)</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">\(5\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(122\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(121\)</td>
+</tr>
+</table></figure><p id="p-1046">Compare this result with <a class="xref" data-knowl="./knowl/MatrixPowerExample.html" title="Table 2.6.1: Powers of \(A=\bigl[\begin{smallmatrix}1\amp2\\2\amp1\end{smallmatrix}\bigr]\)">these earlier computations</a>.</p></article></section></div></main>
 </div>
 </body>
 </html>

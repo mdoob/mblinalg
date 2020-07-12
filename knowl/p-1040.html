@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:44-05:00    *-->
+<!--*    on 2020-07-10T15:32:09-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,20 +13,38 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>\(A=\begin{bmatrix}2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5 \end{bmatrix}\text{.}\)</p>
+<p>We use</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{rl}
-\det(A-\lambda I)
-\amp =\det\begin{bmatrix}2-\lambda\amp 1\amp 4\\ 
-0\amp 3-\lambda\amp 0\\ 
-2\amp -2\amp -5-\lambda \end{bmatrix}\\
-\amp =(2-\lambda)(3-\lambda)(-5-\lambda)-8(3-\lambda)\\
-\amp = (\lambda+6)(\lambda-3)^2
-\end{array}
+A-\lambda I=
+\begin{bmatrix}
+5-\lambda\amp -1\amp -2\\ 
+1\amp 3-\lambda\amp -2\\ 
+-1\amp -1\amp 4-\lambda 
+\end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">and so the eigenvalues are \(\lambda=-6\) and \(\lambda=3\)</p>
-<span class="incontext"><a href="section-34.html#p-1040">in-context</a></span>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+\det(A-\lambda I)=0.
+\end{equation*}
+</div>
+<p data-braille="continuation">Evaluating the determinant gives</p>
+<div class="displaymath">
+\begin{align*}
+\det\amp \begin{bmatrix}
+5-\lambda\amp -1\amp -2\\ 
+1\amp 3-\lambda\amp -2\\ 
+-1\amp -1\amp 4-\lambda 
+\end{bmatrix}\\
+\amp=(5-\lambda)(3-\lambda)(4-\lambda)-2+2
+-2(5-\lambda) -2(3-\lambda)+(4-\lambda)\\
+\amp = -\lambda^3 +12\lambda^2 -44\lambda +48\\
+\amp = -(\lambda-2)(\lambda-4)(\lambda-6)
+\end{align*}
+</div>
+<p data-braille="continuation">So we see that \(\det(A-\lambda I)=0\) only if \(\lambda=2\text{,}\) \(\lambda=4\) or \(\lambda=6\text{.}\) The evaluation of \(\det(A-\lambda I)=0\) gave us a polynomial \(p(\lambda)=-(\lambda-2)(\lambda-4)(\lambda-6)\) whose roots are the eigenvalues.</p>
+<span class="incontext"><a href="section-35.html#p-1040">in-context</a></span>
 </body>
 </html>

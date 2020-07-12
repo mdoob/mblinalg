@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:46-05:00    *-->
+<!--*    on 2020-07-10T15:32:11-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,14 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Notice that the function \(\cos(x)\) is decreasing for \(0\le x\le\pi\text{.}\) By decreasing we mean that if \(x_1 \lt x_2\text{,}\) then \(\cos(x_1) \gt \cos(x_2)\) (or, more intuitively, the function goes downhill as we go from left to right). There is an important implication from this: if \(y=\cos(x)\) for some \(x\) with \(0\le x\le\pi\text{,}\) then for any for any other \(x'\) in the same range, we have \(\cos(x') \gt y\) (when \(x'\lt x\)) or \(\cos(x') \lt y\) (when \(x'\gt x\)). In particular this means that for any given \(y_0\text{,}\) there is at most one \(x_0\) with \(0\le x_0\le\pi\) so that \(y_0=\cos(x_0)\text{.}\) In fact, the intermediate value theorem from the Calculus implies that for any \(y_0\) satisfying \(-1\leq y_0 \leq 1\) there is some \(x_0\) satisfying \(0\le x_0\le\pi\) so that \(y_0=\cos(x_0)\text{.}\)</p>
-<span class="incontext"><a href="section-40.html#p-1126">in-context</a></span>
+<p>First note that \(L_A\colon\R^m\to\R^n\) and \(L_B:\R^n\to\R^s\text{,}\) and so \(L_B\circ L_A\colon\R^m\to\R^s\text{.}\) In addition, note that \(BA\) is an \(s\times m\) matrix, and so \(L_{BA}\colon\R^m\to\R^s\) also. Finally note that for any \(\vec x\) in \(\R^m\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+(L_B\circ L_A)\vec x=L_B(L_A(\vec x))=L_B(A\vec x)
+=BA\vec x=L_{BA}(\vec x)
+\end{equation*}
+</div>
+<p data-braille="continuation">Hence \(L_{BA}=L_B\circ L_A\text{.}\)</p>
+<span class="incontext"><a href="section-42.html#p-1126">in-context</a></span>
 </body>
 </html>

@@ -14,7 +14,9 @@
        
         <p>
         We wish to consider some transformations that are geometrically inspired.
-        In particular we consider some interesting examples in the plane:
+        The following examples will be  useful when we define 
+        <em>linear transformations</em> in 
+        <xref ref="LinearTransformationIntroduction"/>
         </p>
        
         <example xml:id="PlaneRotation"><title>A rotation in the plane</title>
@@ -107,7 +109,7 @@
       </subsection>
     </section>
     
-    <section><title>Definition of a linear transformation</title>
+    <section xml:id="LinearTransformationIntroduction"><title>Definition of a linear transformation</title>
       
         <subsection><title>Definition of a linear transformation <m>L\colon \R^m\to\R^n</m></title> 
         <p>
@@ -211,7 +213,7 @@
             </p>
 
             <figure>
-            <caption>Rotations are linear</caption>
+            <caption>Scalar multiplication is linear</caption>
             <image width="50%">
             <asymptote>
             unitsize(24);
@@ -424,14 +426,15 @@
          implies <m>L=0</m></title>
          <statement>
          <p>
-         If <m>L(\vec e_1)=L(\vec e_2)=\cdots=L(\vec e_m)=i\vec 0</m>,
+         If <m>L(\vec e_1)=L(\vec e_2)=\cdots=L(\vec e_m)=\vec 0</m>,
          then <m>L</m> is the zero transformation.
          </p>
          </statement>
          </corollary>
         <p>There is an easy consequence:</p>
          
-        <theorem><title>Two linear transformations equal on the standard basis are equal everywhere</title>
+        <theorem>
+        <title>Two linear transformations equal on the standard basis are equal everywhere</title>
         <statement>
         <p>
             Suppose <m>L_1\colon \R^m\to\R^n</m>,  <m>L_2\colon \R^m\to\R^n</m> 

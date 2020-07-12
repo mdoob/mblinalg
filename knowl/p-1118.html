@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:46-05:00    *-->
+<!--*    on 2020-07-10T15:32:11-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,25 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Now we have</p>
-<ul class="disc">
-<li><p>\(\displaystyle a^2=b_1^2+h^2\)</p></li>
-<li><p>\(\displaystyle c^2=(b+b_1)^2+h^2\)</p></li>
-<li><p>\(b_1=-a\cos(\theta)\) (remember that \(\cos(\theta)\lt0\) when \(\frac\pi 2\lt\theta\lt\pi\))</p></li>
-</ul>
-<p data-braille="continuation">which gives</p>
+<p>Now suppose we have two linear transformations \(L_1\colon\R^m\to\R^n\) and \(L_2\colon\R^n\to\R^s\text{.}\) We then define a new linear transformation called the <dfn class="terminology">composition of \(L_1\) and \(L_2\)</dfn> (and denoted \(L_2\circ L_1\)) in the following way: \(L_2\circ L_1\colon\R^m\to\R^s\) and</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{rl}
-c^2
-\amp= (b+b_1)^2+h^2\\
-\amp= (b+b_1)^2+(a^2-b_1^2)\\
-\amp= b^2+2bb_1+a^2\\
-\amp= a^2+b^2-2ab\cos(\theta)
-\end{array}
+(L_2\circ L_1)(\vec x)=L_2(L_1(\vec x))
 \end{equation*}
 </div>
-<p data-braille="continuation">In principle there is another possibility:</p>
-<span class="incontext"><a href="section-40.html#p-1118">in-context</a></span>
+<p data-braille="continuation">This means that we start with a vector \(\vec x\) in \(\R^m\) and compute \(L_1(\vec x)\text{.}\) This vector is in \(\R^n\text{,}\) which is exactly right if we want to evaluate \(L_2\text{.}\) Hence \(L_2(L_1(\vec x))\) not only makes sense, but upon evaluation we have a vector in \(\R^s\text{.}\)</p>
+<span class="incontext"><a href="section-42.html#p-1118">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:40-05:00    *-->
+<!--*    on 2020-07-10T15:32:06-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,41 +13,52 @@
 </head>
 <body>
 <article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
-<p>First, if \((a_2,b_2,c_2,d_2)=r (a_1,b_1,c_1,d_1)\text{,}\) and \((x_0,y_0,z_0)\) is in the first plane, then</p>
-<div class="displaymath">
-\begin{equation*}
-a_1x_0+b_1y_0+c_1z_0+d_1=0.
-\end{equation*}
-</div>
-<p data-braille="continuation">Multiplying both sides of the equation by \(r\) gives</p>
-<div class="displaymath">
-\begin{align*}
-0 \amp= r(a_1x_0+b_1y_0+c_1z_0+d_1)\\
-\amp =ra_1x_0+rb_1y_0+rc_1z_0+rd_1\\
-\amp =a_2x_0+b_2y_0+c_2z_0+d_2
-\end{align*}
-</div>
-<p data-braille="continuation">and so \((x_0,y_0,z_0)\) is in the second plane. A similar argument shows that any vector in the second plane is also in the first plane.</p>
-<p>Next, suppose that the two equations are equations of the same plane. We consider this as a system of linear equations with augmented matrix</p>
-<div class="displaymath">
-\begin{equation*}
+<p>All of the parts may be verified by direct computation. But more easily:</p>
+<ul class="disc">
+<li>\(\displaystyle \det
 \begin{bmatrix}
-a_1\amp b_1\amp c_1\amp -d_1\\
-a_2\amp b_2\amp c_2\amp -d_2
+\vec i \amp \vec j\amp \vec j\\
+u_1 \amp u_2 \amp u_3\\
+v_1 \amp v_2 \amp v_3
 \end{bmatrix}
-\end{equation*}
-</div>
-<p data-braille="continuation">which we put into reduced row echelon form to find all points in both planes. It takes just two elementary row operations. The first nonzero entry in the first row is changed to a one using \(R_1\gets \lambda_1R_1\) and the entry below this leading one is changed to a zero using \(R_2=R_2-\lambda_2R_1\text{.}\) This means that the second row in the reduced row echelon form is</p>
-<div class="displaymath">
-\begin{equation*}
-(a_2,b_2,c_2,d_2)-\lambda_2\lambda_1(a_1,b_1,c_1,d_1)\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">However, the first and second equations together have the same solutions as the first equation alone, that is, the second equation is actually superfluous. This makes the second row all zero, and so, setting \(r=\lambda_1\lambda_2\text{,}\) we have</p>
-<div class="displaymath">
-\begin{equation*}
-(a_2,b_2,c_2,d_2)=r(a_1,b_1,c_1,d_1)\text{.}
-\end{equation*}
-</div></article><span class="incontext"><a href="section-29.html#proof-68">in-context</a></span>
+=-
+\det
+\begin{bmatrix}
+\vec i \amp \vec j\amp \vec j\\
+v_1 \amp v_2 \amp v_3\\
+u_1 \amp u_2 \amp u_3
+\end{bmatrix}\)</li>
+<li>\(\displaystyle \det
+\begin{bmatrix}
+\vec i \amp \vec j\amp \vec j\\
+ru_1 \amp ru_2 \amp ru_3\\
+v_1 \amp v_2 \amp v_3
+\end{bmatrix}
+=r
+\det
+\begin{bmatrix}
+\vec i \amp \vec j\amp \vec j\\
+u_1 \amp u_2 \amp u_3\\
+v_1 \amp v_2 \amp v_3
+\end{bmatrix}\)</li>
+<li>\(\displaystyle \det
+\begin{bmatrix}
+\vec i \amp \vec j\amp \vec j\\
+u_1 \amp u_2 \amp u_3\\
+(v_1+w_1) \amp (v_2+w_2) \amp (v_3+w_3)
+\end{bmatrix}
+=
+\begin{bmatrix}
+\vec i \amp \vec j\amp \vec j\\
+u_1 \amp u_2 \amp u_3\\
+v_1 \amp v_2 \amp v_3
+\end{bmatrix}
++
+\begin{bmatrix}
+\vec i \amp \vec j\amp \vec j\\
+u_1 \amp u_2 \amp u_3\\
+w_1 \amp w_2 \amp w_3
+\end{bmatrix}\)</li>
+</ul></article><span class="incontext"><a href="CrossProduct.html#proof-68">in-context</a></span>
 </body>
 </html>

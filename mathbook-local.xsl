@@ -7,6 +7,7 @@
 <xsl:param name="toc.level" select="1" />
 
 <xsl:param name="html.knowl.theorem" select="'no'" />
+<xsl:param name="html.knowl.example" select="'no'" />
 
 
 </xsl:stylesheet>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:43-05:00    *-->
+<!--*    on 2020-07-10T15:32:09-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,12 +13,28 @@
 </head>
 <body>
 <article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
-<p>If \(A\vec x=\lambda\vec x\text{,}\) then</p>
+<p>From <a class="xref" data-knowl="./knowl/SubspaceDefinition.html" title="Definition 4.9.12: Subspace of \(\mathbb{R}^n\)">Definition 4.9.12</a> it is sufficient to show that two properties of closure under addition and of closure under scalar multiplication are satisfied:</p>
+<ul class="disc">
+<li>
+<p>Closure under addition:</p>
 <div class="displaymath">
-\begin{equation*}
-\vec0=A\vec x -\lambda\vec x=A\vec x -\lambda I\vec x 
-= (A - \lambda I)\vec x.
-\end{equation*}
-</div></article><span class="incontext"><a href="section-34.html#proof-78">in-context</a></span>
+\begin{align*}
+A(\vec x+\vec y)\amp=A(\vec x)+A(\vec y)\\
+\amp=\lambda \vec x + \lambda \vec y \\
+\amp= \lambda (\vec x + \vec y)   
+\end{align*}
+</div>
+</li>
+<li>
+<p>Closure under scalar multiplication:</p>
+<div class="displaymath">
+\begin{align*}
+A(r\vec x)\amp=rA(\vec x)\\
+\amp=r(\lambda \vec x)\\
+\amp= \lambda (r\vec x)
+\end{align*}
+</div>
+</li>
+</ul></article><span class="incontext"><a href="section-34.html#proof-78">in-context</a></span>
 </body>
 </html>

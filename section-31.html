@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:24-05:00    *-->
+<!--*    on 2020-07-10T15:31:50-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -9,7 +9,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Geometric applications</title>
+<title>Projections in \(\R^2\) and \(\R^n\)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
@@ -96,177 +96,180 @@ MathJax.Hub.Config({
 <li class="link"><a href="Determinants.html" data-scroll="Determinants"><span class="codenumber">3</span> <span class="title">The Determinant</span></a></li>
 <li class="link"><a href="EuclideanSpace.html" data-scroll="EuclideanSpace"><span class="codenumber">4</span> <span class="title">Vectors in Euclidean \(n\) space</span></a></li>
 <li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
-<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">6</span> <span class="title">Additional Topics</span></a></li>
+<li class="link"><a href="LinearTransformations.html" data-scroll="LinearTransformations"><span class="codenumber">6</span> <span class="title">Linear transformations</span></a></li>
+<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">7</span> <span class="title">Additional Topics</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-31"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">4.8</span> <span class="title">Geometric applications</span>
+<span class="type">Section</span> <span class="codenumber">4.7</span> <span class="title">Projections in \(\R^2\) and \(\R^n\)</span>
 </h2>
-<section class="introduction" id="introduction-12"><p id="p-925">The dot product and cross product in \(\R^3\) allow us to compute many different geometric properties of lines and planes.</p></section><section class="subsection" id="subsection-74"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.8.1</span> <span class="title">The equation of the line of intersection of two planes</span>
+<section class="subsection" id="subsection-70"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.7.1</span> <span class="title">Projections in \(\R^2\)</span>
 </h3>
-<p id="p-926">Suppose we are given the equation of two planes and want the equation of the line of intersection. If the two equations are</p>
+<p id="p-908">Start with two nonzero vectors \(\vec u\) and \(\vec v\text{.}\) Drop a perpendicular from \(\vec u\) to the line through \(\vec v\text{,}\) and use the point where this perpendicular hits the line to be the end of a new vector. Suppose that \(\theta\) is the angle between the vectors \(\vec u\) and \(\vec v\text{.}\) The picture of the construction is slightly different for \(\theta\) obtuse and \(\theta\) acute (the new vector is shown in red):</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><object data="images/image-46.html" id="image-46" width="300" height="300"><embed src="images/image-46.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><object data="images/image-47.html" id="image-47" width="300" height="300"><embed src="images/image-47.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+</div></div>
+<p id="p-909">In each case the new vector is called <dfn class="terminology">the projection of \(\vec u\) along \(\vec v\)</dfn> and is denoted \(\textrm{proj}_{\vec v} \vec u\text{.}\)</p>
+<p id="p-910">Since \(\textrm{proj}_{\vec v} \vec u\) and \(\vec v\) are collinear, we may write \(\textrm{proj}_{\vec v} \vec u=k\vec v\) for some real number \(k\text{.}\) We next determine the value of \(k\text{.}\)</p>
+<p id="p-911">In the left picture, we have</p>
+<div class="displaymath">
+\begin{align*}
+\|\textrm{proj}_{\vec v} \vec u\|
+\amp=\|\vec u\| \cos(\theta)\qquad 
+\text{(Note that }\cos(\theta)\geq 0\text{)}\\\\
+\|\textrm{proj}_{\vec v} \vec u\| 
+\amp= |k|\|\vec v\|
+\end{align*}
+</div>
+<p data-braille="continuation">and so</p>
 <div class="displaymath">
 \begin{equation*}
-a_1x+b_1y+c_1z+d_1=0 \rlap{\text{ and}}\\
-a_2x+b_2y+c_2z+d_2=0
+k = \frac{\|\vec u\|}{\|\vec v\|}\cos(\theta) 
+\qquad \textrm{(Note that }k\geq 0\text{)}.
 \end{equation*}
 </div>
-<p data-braille="continuation">then the line of intersection will be the set of all points that satisfy “both” equations. We can rewrite the two equations as</p>
+<p data-braille="continuation">In the right picture, \(\theta&gt;\frac\pi2\text{,}\) and so \(\cos(\theta)\lt0\text{.}\) In addition, the direction of  \(\textrm{proj}_{\vec v} \vec u\) implies that \(k\lt0\text{,}\) and \(|k|=-k\text{.}\) As a result, the equation is still valid:</p>
 <div class="displaymath">
 \begin{equation*}
-a_1x+b_1y+c_1z=-d_1 \rlap{\text{ and}}\\
-a_2x+b_2y+c_2z=-d_2
+k = \frac{\|\vec u\|}{\|\vec v\|}\cos(\theta)
 \end{equation*}
 </div>
-<p data-braille="continuation">and use the augmented matrix</p>
+<p data-braille="continuation">We have seen in <a class="xref" data-knowl="./knowl/DotProductRn.html" title="Theorem 4.2.20">Theorem 4.2.20</a> that \(\vec u\cdot\vec v = \|\vec u\|\,\|\vec v\|\cos(\theta)\text{,}\) and so</p>
 <div class="displaymath">
 \begin{equation*}
-\left[
-\begin{array}{ccc|c}
-a_1\amp b_1\amp c_1\amp -d_1\\
-a_2\amp b_2\amp c_2\amp -d_2
-\end{array}
-\right]
+k
+=\frac{\vec u\cdot\vec v}{\|\vec v\|^2}
+=\frac{\vec u\cdot\vec v}{\vec v\cdot\vec v}
 \end{equation*}
 </div>
-<p id="p-927">When this matrix is put in reduced row echelon form, there will be one free variable, which we may call \(t\text{.}\) Writing the solution as a vector and rearranging give the equation of a line.</p>
-<p id="p-928">Here is an example to show how this technique works: the equations of the planes are</p>
+<article class="theorem theorem-like" id="theorem-61"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.7.1</span><span class="period">.</span><span class="space"> </span><span class="title">Projection of \(\vec u\) onto \(\vec v\) in \(\R^2\).</span>
+</h6>
+<p id="p-912">If \(\vec u\) and \(\vec v\) are vectors in \(\R^2\) with \(\vec v\not= \vec0\text{,}\) then</p>
 <div class="displaymath">
 \begin{equation*}
-x+y+z=-2\\
-2x+y-z=2
+\textrm{proj}_{\vec v} \vec u 
+=\frac{\vec u\cdot\vec v}{\|\vec v\|^2}
+\vec v
+=\frac{\vec u\cdot\vec v}{\vec v\cdot\vec v}
+\vec v
 \end{equation*}
-</div>
-<p data-braille="continuation">Here is the picture of the two planes and the line of intersection:</p>
-<figure class="figure figure-like" id="figure-48"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><object data="images/image-51.html" id="image-51" width="420" height="420"><embed src="images/image-51.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.1<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-929">The augmented matrix for the system is</p>
+</div></article><article class="theorem theorem-like" id="theorem-62"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.7.2</span><span class="period">.</span><span class="space"> </span><span class="title">\(\vec u-\textrm{proj}_{\vec v} \vec u \) is orthogonal to \(\vec v\).</span>
+</h6>
+<p id="p-913">The vectors \(\vec v\) and \(\vec u-\textrm{proj}_{\vec v} \vec u \) are orthogonal.</p></article><article class="hiddenproof" id="proof-70"><a data-knowl="" class="id-ref original" data-refid="hk-proof-70"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-70"><article class="hiddenproof"><p id="p-914">We compute the dot product:</p>
 <div class="displaymath">
-\begin{equation*}
-\left[
-\begin{array}{ccc|c}
-2\amp1\amp-1\amp2\\
-1\amp1\amp1\amp-2
-\end{array}
-\right]
-\end{equation*}
-</div>
-<p data-braille="continuation">which has a reduced row echelon form of</p>
-<div class="displaymath">
-\begin{equation*}
-\left[
-\begin{array}{ccc|c}
-1\amp0\amp-2\amp-4\\
-0\amp1\amp3\amp6
-\end{array}
-\right]
-\end{equation*}
-</div>
-<p data-braille="continuation">Hence \(z\) is a free variable and can be assigned the value \(t\text{.}\) This gives \(z=t\text{,}\) \(y=6-3t\) and \(x=-4+2t\text{,}\) which may be written as</p>
-<div class="displaymath">
-\begin{equation*}
-(x,y,z)=(-4+2t,6-3t,t)=(-4,6,0) + t(2,-3,1)
-\end{equation*}
-</div>
-<p id="p-930">As another example, consider the two planes with equations written as</p>
-<div class="displaymath">
-\begin{equation*}
-x+y=2\\
-x+y-z=3
-\end{equation*}
-</div>
-<figure class="figure figure-like" id="figure-49"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><object data="images/image-52.html" id="image-52" width="420" height="420"><embed src="images/image-52.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.2<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-931">Then the augmented matrix is</p>
-<div class="displaymath">
-\begin{equation*}
-\left[
-\begin{array}{ccc|c}
-1\amp1\amp0\amp2\\
-1\amp1\amp-1\amp3
-\end{array}
-\right]
-\end{equation*}
-</div>
-<p data-braille="continuation">with reduced row echelon form</p>
-<div class="displaymath">
-\begin{equation*}
-\left[
-\begin{array}{ccc|c}
-1\amp1\amp0\amp2\\
-0\amp0\amp1\amp-1
-\end{array}
-\right].
-\end{equation*}
-</div>
-<p data-braille="continuation">This means that \(y\) is a free variable and may be assigned the value \(t\text{,}\) from which follows \(z=-1\text{,}\) \(y=t\) and \(x=2-t\text{.}\) In other words,</p>
-<div class="displaymath">
-\begin{equation*}
-(x,y,z)=(2-t,t,-1)= (2,0,-1)+t(-1,1,0)
-\end{equation*}
-</div>
-<p data-braille="continuation">which is the equation of the line \(L\text{.}\)</p></section><section class="subsection" id="IntersectionLinePlane"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.8.2</span> <span class="title">Intersection of a Line and a Plane</span>
+\begin{align*}
+(\vec u - \textrm{proj}_{\vec v} \vec u)\cdot\vec v 
+\amp= \vec u\cdot\vec v - \textrm{proj}_{\vec v} \vec u\cdot\vec v\\
+\amp=\vec u \cdot \vec v 
+- \left(\frac{\vec u\cdot\vec v}{\vec v\cdot\vec v} 
+\vec v\right) \cdot\vec v\\
+\amp=\vec u \cdot \vec v 
+- \left(\frac{\vec u\cdot\vec v}{\vec v\cdot\vec v}\right) 
+(\vec v \cdot\vec v)\\
+\amp=\vec u \cdot \vec v -\vec u \cdot \vec v \\
+\amp=0
+\end{align*}
+</div></article></div></section><section class="subsection" id="subsection-71"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.7.2</span> <span class="title">Examples of projections in \(\R^2\)</span>
 </h3>
-<p id="p-932">Suppose we have a line \(L\) with equation \((x_0,y_0,z_0)+t\vec {n_0}\) and a plane with equations \(ax+by+cz=0\text{.}\) Is there a point in both the line and the plane, and, if so, what is it? As usual when discussing planes, let \(\vec n=(a,b,c)\text{.}\) Then a point \(\vec x=(x,y,z)\) is in the plane if and only if \(\vec x\cdot \vec n=0\text{.}\) If \(\vec x\) is also on the line, then \(\vec x=(x_0,y_0,z_0)=t\vec{n_0}\) for some \(t\text{.}\) Then</p>
-<div class="displaymath">
-\begin{equation*}
-((x_0,y_0,z_0)+t\vec{n_0})\cdot\vec n=0\\
-(x_0,y_0,z_0)\cdot \vec n= -t( \vec{n_0}\cdot\vec n)
-\end{equation*}
-</div>
-<p data-braille="continuation">and, if \(\vec{n_0}\cdot\vec n\not=0\text{,}\)</p>
-<div class="displaymath">
-\begin{equation*}
-t=-\frac{(x_0,y_0,z_0)\cdot \vec n}{\vec{n_0}\cdot\vec n}
-\end{equation*}
-</div>
-<p id="p-933">Here is the picture of the situation. The points on the line are determined by using all the different values of \(t\text{.}\) The point of intersection is the particular \(t\) where \(t=-\frac{(x_0,y_0,z_0)\cdot \vec n}{\vec{n_0}\cdot\vec n}\text{.}\)</p>
-<figure class="figure figure-like" id="figure-50"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-53.html" id="image-53" width="450" height="450"><embed src="images/image-53.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-934">What if \(\vec{n_0}\cdot\vec n=0\text{?}\) Then a line with direction vector \(n\) (that is, orthogonal to the plane) itself is orthogonal to \(L\text{.}\) If \((x_0,y_0,z_0)\) is not in the plane, the line is then parallel to the plane and never intersects it. On the other hand, if \((x_0,y_0,z_0)\) is in the plane, the line is then actually contained in the plane, so every point on the line intersects it.</p>
-<p id="p-935">In the following picture, the red line had direction vector \(\vec n=(a,b,c)\) and hence is orthogonal to the plane. Since the line \(L\) has direction vector \(\vec{n_0}\text{,}\) and \(\vec{n_0}\cdot\vec{n}=0\text{,}\) \(L\) is also orthogonal to the red line. That makes the plane and the line \(L\) parallel.</p>
-<figure class="figure figure-like" id="figure-51"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-54.html" id="image-54" width="450" height="450"><embed src="images/image-54.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure></section><section class="subsection" id="subsection-76"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.8.3</span> <span class="title">Distance Between Two Lines</span>
+<ul id="p-915" class="disc">
+<li id="li-311"><p id="p-916">Suppose that \(\vec v=(1,0)\) and \(\vec u=(u_1,u_2)\text{.}\) Then the line through \(\vec v\) is simply the \(x\)-axis, and \(\|\vec v\|=1\text{,}\) and so \(\textrm{proj}_{\vec v} \vec u =\left((u_1,u_2)\cdot(1,0) \right) \vec v 
+= (u_1,0)\text{.}\) This means that the projection of \((x_1,x_2)\) onto the \(x\)-axis is \((x_1,0)\text{,}\) just as would be expected.</p></li>
+<li id="li-312"><p id="p-917">Suppose \(\vec v=(1,1)\) and \(\vec u=(u_1,u_2)\text{.}\) Then the line through \(\vec v\) has equation \(y=x\text{,}\) and \(\|\vec v\|=\sqrt2\text{.}\) We then have \(\textrm{proj}_{\vec v} \vec u=\frac{(u_1,u_2)\cdot(1,1)}2 \vec v
+=\left(\frac{(u_1+u_2)}2,\frac{(u_1+u_2)}2\right)\)</p></li>
+<li id="li-313"><p id="p-918">Suppose we want to drop a perpendicular from the point \(\vec u=(m,-1)\) to the line \(y=mx\text{.}\) The vector \(\vec v=(1,m)\) is on that line. It then follows that \(\textrm{proj}_{\vec v} \vec u
+=\frac{(m,-1)\cdot(1,m)}{\|\vec v\|^2} \vec v=0\vec v=\vec 0\text{.}\) This implies that the line joining 	\((m,-1)\) and \((0,0)\text{,}\) which has slope \(-\frac1m\text{,}\) is perpendicular to the line with equation \(y=mx\text{.}\) This implies that the product of the slopes of two orthogonal lines is \(-1\text{.}\)</p></li>
+<li id="li-314"><p id="p-919">Suppose we want to drop a perpendicular from the point \(\vec u=(u_1,u_2)\) to the line \(y=mx\text{.}\)  The vector \(\vec v=(1,m)\) is on that line, and \(\|\vec v\|=\sqrt{1+m^2}\text{.}\)  It then follows that \(\textrm{proj}_{\vec v} \vec u =\frac{(u_1,u_2)\cdot(1,m)}{1+m^2} \vec v
+=\frac1{1+m^2}(u_1+mu_2, m(u_1+mu_2))
+=\left(\frac{u_1+mu_2}{1+m^2},\frac{mu_1+m^2u_2}{1+m^2}\right)\)</p></li>
+</ul>
+<p data-braille="continuation">The following figure illustrates these examples (note that the first examples are just the special cases of the last one).</p>
+<figure class="figure figure-like" id="figure-45"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-48.html" id="image-48" width="450" height="450"><embed src="images/image-48.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.7.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure></section><section class="subsection" id="subsection-72"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.7.3</span> <span class="title">Application: distance from a point to a line</span>
 </h3>
-<p id="p-936">If two lines intersect, the distance between them is obviously \(0\text{.}\) Otherwise, there are two cases:</p>
-<ul class="disc">
-<li id="li-315"><p id="p-937">The lines lie in a plane, in which case the lines are <em class="emphasis">parallel</em>.</p></li>
-<li id="li-316"><p id="p-938">The lines do not lie in a plane, in which case the lines are <em class="emphasis">skew</em>.</p></li>
-</ul>
-<article class="paragraphs" id="paragraphs-17"><h5 class="heading"><span class="title">Parallel lines.</span></h5>
-<p id="p-939">We start with two parallel lines with equations</p>
-<ul class="disc">
-<li id="li-317"><p id="p-940">\(L_1\) with equation \((x,y,z)=\vec{X_1} + t_1\vec{n_1}\)</p></li>
-<li id="li-318"><p id="p-941">\(L_2\) with equation \((x,y,z)=\vec{X_2} + t_2\vec{n_2}\)</p></li>
-</ul>
-<figure class="figure figure-like" id="figure-52"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-55.html" id="image-55" width="450" height="450"><embed src="images/image-55.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><article class="paragraphs" id="paragraphs-18"><h5 class="heading"><span class="title">Skew lines.</span></h5>
-<p id="p-942">We start with the eqations of two skew lines:</p>
-<ul class="disc">
-<li id="li-319"><p id="p-943">\(L_1\) has equation \((x,y,z)=\vec{X_1}+t_1\vec{n_1}\text{,}\) \(-\infty \lt t \lt\infty\)</p></li>
-<li id="li-320"><p id="p-944">\(L_2\) has equation \((x,y,z)=\vec{X_2}+t_2\vec{n_2}\) \(-\infty \lt t \lt\infty\)</p></li>
-</ul>
-<p data-braille="continuation">We want the (shortest) distance \(d\) between the lines.</p>
-<figure class="figure figure-like" id="figure-53"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-56.html" id="image-56" width="450" height="450"><embed src="images/image-56.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-945">The direction vector for \(L_1\) is \(\vec{n_1}\) while that of \(L_2\) is \(\vec{n_2}\text{.}\) Let us say that the shortest line segment joining \(L_1\) to \(L_2\) is on the line \(L\text{.}\) The length of the line segment, \(d\text{,}\) is the distance we wish to compute. In addition, let \(t_1\) and \(t_2\) be the particular values so both \(\vec{X_1}+t_1\vec{n_1}\) and \(\vec{X_2}+t_2\vec{n_2}\) lie on \(L\text{.}\)</p>
-<p id="p-946">Now \(L\) is perpendicular to both \(L_1\) and \(L_2\) , so the direction vector of \(L\) is orthogonal to both \(\vec{n_1}\) and \(\vec{n_2}\text{.}\) How can such a direction vector be produced? With the cross product, of course! And so we let \(\vec{n_1}\times\vec{n_2}\) be the direction vector of \(L\text{.}\) We then have, for some \(t_3\text{,}\)</p>
-<div class="displaymath" id="p-947">
-\begin{equation*}
-\vec{X_1}+t_1\vec{n_1} + t_3(\vec{n_1}\times\vec{n_2})
-=\vec{X_2}+t_2\vec{n_2}\\
-t_1\vec{n_1} - t_2\vec{n_2} + t_3(\vec{n_1}\times\vec{n_2})
-=\vec{X_2}-\vec{X_1}\tag{$*$}
-\end{equation*}
-</div>
-<p id="p-948">In principle the problem is solved. We have three unknowns \(t_1\text{,}\) \(t_2\) and \(t_3\text{,}\) and each of the three coordinates gives an equation, so we have three equations in three unknowns. There is a quicker way: take the dot product of both sides of (\(*\)) above with \(\vec{n_1}\) and then with \(\vec{n_2}\text{.}\) This gives</p>
+<p id="p-920">We want to compute the distance from a point \(\vec u\) to a line \(L\text{.}\) Let \(\vec u=(x_0,y_0)\text{,}\) the general equation of \(L\) be \(ax+by+c=0\) and \(D\) the desired distance. In addition, let \((x_1,y_1)\) and \((x_2,y_2)\) be two points on \(L\text{,}\) and \(\vec n=(x_1+a,y_1+b)\text{.}\) These are all included in the following figure:</p>
+<figure class="figure figure-like" id="figure-46"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-49.html" id="image-49" width="450" height="450"><embed src="images/image-49.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.7.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-921">Since \((x_1,y_1)\) and \((x_2,y_2)\) are both on \(L\text{,}\) we know that \(ax_1+by_1+c=ax_2+by_2+c=0\text{.}\) In addition, if we consider the two displacement vectors \(\vec v\) from \((x_1,y_1)\) to \((x_2,y_2)\) and \(\vec n\) from \((x_1,y_1)\) to \((x_1+a,y_1+b)\text{,}\) then the dot product</p>
 <div class="displaymath">
 \begin{equation*}
-\|\vec{n_1}\|^2 t_1 -(\vec{n_1}\cdot\vec{n_2})t_2
-=(\vec{X_2}-\vec{X_1})\cdot \vec{n_1}\\
-(\vec{n_1}\cdot\vec{n_2}) t_1 -\|\vec{n_2}\|^2t_2
-=(\vec{X_2}-\vec{X_1})\cdot \vec{n_2}
+\vec v\cdot\vec n =(x_2-x_1,y_2-y_1)\cdot (a,b)
+=ax_2+by_2-(ax_1+by_1)=-c+c=0
 \end{equation*}
-</div></article></section></section></div></main>
+</div>
+<p data-braille="continuation">This implies that the quadrilateral with vertices \((x_1,y_1)\text{,}\) \(\mathrm{proj}_{\vec v}\vec u\text{,}\) \(\vec u\) and \(\mathrm{proj}_{\vec n}\vec u\) is in fact a rectangle, and so \(\|\mathrm{proj}_{\vec n}\vec u\|=D\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\mathrm{proj}_{\vec n}\vec u
+\amp= \frac{\vec u\cdot\vec n}{\vec n\cdot\vec n} \vec n\\
+\amp=\frac{\left((x_0,y_0)-(x_1,y_1)\right)\cdot(a,b)}{\vec n\cdot\vec n} \vec n\\
+\amp= \frac{ax_0+by_0 -(ax_1+by_1)}{\vec n\cdot\vec n} \vec n\\
+\amp= \frac{ax_0+by_0 +c}{\vec n\cdot\vec n} \vec n
+\end{align*}
+</div>
+<p data-braille="continuation">and so</p>
+<div class="displaymath">
+\begin{equation*}
+D=\|\mathrm{proj}_{\vec n}\vec u\|=\frac{|ax_0+by_0 +c|}{\sqrt{a^2+b^2}}
+\end{equation*}
+</div>
+<article class="theorem theorem-like" id="DistancePtToLine"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.7.5</span><span class="period">.</span><span class="space"> </span><span class="title">Theorem (distance from point to a line).</span>
+</h6>
+<p id="p-922">The distance \(D\) from a point \((x_0,y_0)\) to the line \(ax+by+c=0\) is</p>
+<div class="displaymath">
+\begin{equation*}
+D=\frac{|ax_0+by_0+c|}{\|\vec n\|}=\frac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}
+\end{equation*}
+</div></article></section><section class="subsection" id="subsection-73"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.7.4</span> <span class="title">Projections in \(\R^3\) and \(\R^n\)</span>
+</h3>
+<p id="p-923">Projections in \(\R^3\) to a plane and in \(\R^n\) to a hyperplane are remarkably similar to those in \(\R^2\text{.}\)</p>
+<figure class="figure figure-like" id="figure-47"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-50.html" id="image-50" width="450" height="450"><embed src="images/image-50.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.7.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-924">In \(\R^3\) the projection from the point \((x_0,y_0,z_0)\) to the plane \(ax+by+cz+d=0\) can be obtained by taking the line through \((x_0,y_0,z_0)\) orthogonal to the plane. Since the vector \(\vec n=(a,b,c)\) is orthogonal to the plane, the line consists of all points of the form \((x_0,y_0,z_))+t(a,b,c)\text{.}\) The value of \(t\) that give the point in the plane satisfies</p>
+<div class="displaymath">
+\begin{align*}
+a(x_0+ta)+b(y_0+tb)+c(z_0+tc)+d
+\amp =ax_0+by_0+cz_0+d+t(a^2+b^2+c^2)\\
+\amp =0
+\end{align*}
+</div>
+<p data-braille="continuation">and so</p>
+<div class="displaymath">
+\begin{equation*}
+t=-\frac{ax_0+by_0+cz_0+d}{a^2+b^2+c^2}.
+\end{equation*}
+</div>
+<p id="p-925">The distance to the plane is now easy to compute. If \(\vec x=(x_0,y_0,z_0)\) and \(\vec n=(a,b,c)\) then the distance from \(\vec x\) to \(\vec x+ t\vec n\) satisfies</p>
+<div class="displaymath">
+\begin{equation*}
+d(\vec x,\vec x+ t\vec n)
+=\|\vec x+ t\vec n-\vec x\|
+=|t|\|\vec n\|
+=\frac{|ax_0+by_0+cz_0+d|}{\|\vec n\|^2} \|\vec n\|
+\end{equation*}
+</div>
+<p data-braille="continuation">and so the distance \(D\) from the point to the plane satisfies</p>
+<div class="displaymath">
+\begin{equation*}
+D=\frac{|ax_0+by_0+cz_0+d|}{\|\vec n\|}.
+\end{equation*}
+</div>
+<article class="theorem theorem-like" id="DistancePtToPlane"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.7.7</span><span class="period">.</span><span class="space"> </span><span class="title">Distance from a point to a plane.</span>
+</h6>
+<p id="p-926">If \(D\) is the distance from a point \((x_0,y_0,z_0)\) to the plane with equation \(ax+by+cz+d=0\text{,}\) and \(\vec n=(a,b,c)\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+D=\frac{|ax_0+by_0+cz_0+d|}{\|\vec n\|} 
+=\frac{|ax_0+by_0+cz_0+d|}{\sqrt{a^2+b^2+c^2}} 
+\end{equation*}
+</div></article><p id="p-927">Compare this result with the one in \(\R^2\text{:}\) <a class="xref" data-knowl="./knowl/DistancePtToLine.html" title="Theorem 4.7.5: Theorem (distance from point to a line)">Theorem 4.7.5</a></p>
+<p id="p-928">The distance from a point to a hyperplane in \(\R^n\) is computed analoguously.</p></section></section></div></main>
 </div>
 </body>
 </html>

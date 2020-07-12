@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:23-05:00    *-->
+<!--*    on 2020-07-10T15:31:48-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -9,7 +9,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Lines, planes, and generalizations</title>
+<title>The dot product of vectors in \(\R^n\)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
@@ -96,241 +96,491 @@ MathJax.Hub.Config({
 <li class="link"><a href="Determinants.html" data-scroll="Determinants"><span class="codenumber">3</span> <span class="title">The Determinant</span></a></li>
 <li class="link"><a href="EuclideanSpace.html" data-scroll="EuclideanSpace"><span class="codenumber">4</span> <span class="title">Vectors in Euclidean \(n\) space</span></a></li>
 <li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
-<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">6</span> <span class="title">Additional Topics</span></a></li>
+<li class="link"><a href="LinearTransformations.html" data-scroll="LinearTransformations"><span class="codenumber">6</span> <span class="title">Linear transformations</span></a></li>
+<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">7</span> <span class="title">Additional Topics</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-26"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">4.3</span> <span class="title">Lines, planes, and generalizations</span>
+<span class="type">Section</span> <span class="codenumber">4.2</span> <span class="title">The dot product of vectors in \(\R^n\)</span>
 </h2>
-<section class="subsection" id="subsection-59"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.3.1</span> <span class="title">Review: scalar multiplication in \(\R^2\)</span>
+<section class="introduction" id="introduction-11"><p id="p-696">We now look at something different: a product of two vectors in \(\R^n\text{.}\)</p></section><section class="subsection" id="subsection-53"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.2.1</span> <span class="title">Definition of the dot product</span>
 </h3>
-<p id="p-775">One of the most attractive features of scalar multiplication is that it may be interpreted geometrically in \(\R^2\text{.}\) Take the vector \(\vec v=(1,2)\text{,}\) and consider the following points in \(\R^2\text{:}\)</p>
+<article class="definition definition-like" id="definition-41"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">The dot product.</span>
+</h6>
+<p id="p-697">If \(\vec x=(x_1,x_2,\ldots,x_n)\) and \(\vec y=(y_1,y_2,\ldots,y_n)\text{,}\) then the <dfn class="terminology">dot product</dfn> (or <dfn class="terminology">inner product</dfn>) of \(\vec x\) and \(\vec y\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\vec x\cdot \vec y= x_1y_1+x_2y_2+\cdots+x_n y_n
+=\sum_{i=1}^n x_iy_i
+\end{equation*}
+</div></article><p id="p-698">Notice that if \(\vec x\) and \(\vec y\) are viewed as column vectors \(x\) and \(y\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+\vec x\cdot \vec y=x^T y
+\end{equation*}
+</div>
+<p data-braille="continuation">and so we see that the dot product may be viewed as a special case of matrix multiplication.</p>
+<article class="remark remark-like" id="remark-1"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span>
+</h6>
+<p id="p-699">Since \(\vec x\cdot\vec y\) is a real number and \(x^Ty\) is a \(1\times 1\) matrix, to be completely precise we would say \(x^Ty=[\vec x\cdot\vec y]\text{.}\) We will be this precise only when not being so might create confusion.</p></article><article class="proposition theorem-like" id="DotProductFirstProperties"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">First properties of the dot product.</span>
+</h6>
+<p id="p-700">Let \(\vec x\text{,}\) \(\vec y\) and \(\vec u\) be vectors in \(\R^n\text{,}\) and let \(r\) be a scalar. Then</p>
 <ol class="decimal">
-<li id="li-286"><p id="p-776">\(\displaystyle \vec v=(1,2)\)</p></li>
-<li id="li-287"><p id="p-777">\(\displaystyle 2\vec v=(2,4)\)</p></li>
-<li id="li-288"><p id="p-778">\(\displaystyle 3\vec v=(3,6)\)</p></li>
-<li id="li-289"><p id="p-779">\(\displaystyle \frac12\vec v=(\frac12,1)\)</p></li>
-<li id="li-290"><p id="p-780">\(\displaystyle -1\vec v=(-1,-2)\)</p></li>
-<li id="li-291"><p id="p-781">\(\displaystyle -2\vec v=(-2,-4)\)</p></li>
-<li id="li-292"><p id="p-782">\(\displaystyle -3\vec v=(-3,-6)\)</p></li>
-</ol>
-<p data-braille="continuation">These are all scalar multiples of \(\vec v\text{,}\) that is, each one is of the form \(t\vec v\) for some number \(t\text{.}\) Here is an accurate plot of these points in \(\R^2\text{:}\)</p>
-<figure class="figure figure-like" id="figure-22"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><object data="images/image-23.html" id="image-23" width="360" height="360"><embed src="images/image-23.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.1<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-783">Notice that all of the points lie on a straight line that passes through \(\vec 0=(0,0)\text{.}\) In addition, if we start from \((0,0)\) and follow the line through the first quadrant, we pass through \(\vec 0\text{,}\)  \(\frac12\vec v\text{,}\) \(\vec v\text{,}\) \(2\vec v\) and \(3\vec v\) in that order. It would seem that as \(t\) starts at \(0\) and increases through positive values, the points \(t\vec v\) starts at \(\vec0\) and moves along the line in the first quadrant. Similarly, as  \(t\) starts at \(0\) and decreases through negative values, the points \(t\vec v\) starts at \(\vec0\) and moves along the line in the third quadrant.</p>
-<article class="paragraphs" id="paragraphs-9"><h5 class="heading"><span class="title">A linearity test.</span></h5>
-<p id="p-784">Suppose we wish to determine whether or not two vectors \(\vec v\) and \(\vec w\) are collinear with \(\vec 0\text{.}\) There are two cases, depending on whether or not \(\vec 0\) lies between \(\vec v\) and \(\vec w\text{:}\)</p>
-<figure class="figure figure-like" id="figure-23"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><object data="images/image-24.html" id="image-24" width="360" height="360"><embed src="images/image-24.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.2<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-785">In the right-hand figure, the angle \(\theta\) between \(\vec v\) and \(\vec w\) (at \(\vec0\)) is \(0\) and so \(\cos\theta=1\text{,}\) while in the left-hand figure, the angle \(\theta\) between \(\vec v\) and \(\vec w\)  is \(\pi\) and so \(\cos\theta=-1.\) Hence \(\vec v\) and \(\vec w\) are collinear with \(\vec 0\) if and only if \(|\cos\theta|=1\text{.}\)</p>
-<p id="p-786">However, we know from <a class="xref" data-knowl="./knowl/DotProductR2.html" title="Proposition 4.2.14">Proposition 4.2.14</a> that</p>
+<li id="li-256"><p id="p-701">\(\displaystyle \vec x \cdot \vec y = \vec y\cdot \vec x\)</p></li>
+<li id="li-257"><p id="p-702">\(\displaystyle \vec u\cdot(\vec x+\vec y) =  \vec u\cdot \vec x+\vec u\cdot \vec y\)</p></li>
+<li id="li-258"><p id="p-703">\(\displaystyle (\vec x+\vec y)\cdot\vec u =  \vec x\cdot \vec u + \vec y\cdot \vec u\)</p></li>
+<li id="li-259"><p id="p-704">\(\displaystyle r(\vec x\cdot\vec y)= (r\vec x)\cdot \vec y = \vec x\cdot (r\vec y)\)</p></li>
+<li id="li-260"><p id="p-705">\(\vec x\cdot \vec x\ge 0\) with equality if and only if \(\vec x=\vec 0\)</p></li>
+</ol></article><article class="hiddenproof" id="proof-56"><a data-knowl="" class="id-ref original" data-refid="hk-proof-56"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-56"><article class="hiddenproof"><ol id="p-706" class="decimal">
+<li id="li-261"><p id="p-707">\(\displaystyle \vec x\cdot \vec y=\sum_{i=1}^n x_iy_i=\sum_{i=1}^n y_ix_i=\vec y\cdot\vec x\)</p></li>
+<li id="li-262">
+<p id="p-708">By direct evaluation</p>
+<div class="displaymath">
+\begin{align*}
+\vec u\cdot(\vec x+\vec y)   
+\amp = \sum_{i=1}^n u_i(x_i+y_i)\\
+\amp = \sum_{i=1}^n (u_ix_i+u_iy_i)\\
+\amp = \sum_{i=1}^n u_ix_i+\sum_{i=1}^nu_iy_i\\
+\amp =\vec u\cdot \vec x+\vec u\cdot \vec y
+\end{align*}
+</div>
+</li>
+<li id="li-263">
+<p id="p-709">Using (1) and (2),</p>
 <div class="displaymath">
 \begin{equation*}
-|\vec x\cdot\vec y|= \|\vec x\| \|\vec y\|\, |\cos \theta|
+(\vec x+\vec y)\cdot\vec u 
+=  \vec u\cdot(\vec x+\vec y) =  \vec u\cdot \vec x+\vec u\cdot \vec y
+= \vec x\cdot \vec u + \vec y\cdot \vec u
 \end{equation*}
 </div>
-<p data-braille="continuation">and so we now have another equivalent condition for for linearity:</p>
+</li>
+<li id="li-264">
+<p id="p-710">Evaluating each term:</p>
 <div class="displaymath">
 \begin{equation*}
-|\vec x\cdot\vec y|= \|\vec x\| \|\vec y\| 
+r(\vec x\cdot\vec y)= r\sum_{i=1}^n x_iy_i      \\
+(r\vec x)\cdot \vec y = \sum_{i=1}^n (rx_i)y_i
+= \sum_{i=1}^n r(x_iy_i)= r\sum_{i=1}^n x_iy_i        \\
+\vec x\cdot (r\vec y)= \sum_{i=1}^n x_i(ry_i)
+= \sum_{i=1}^n r(x_iy_i)= r\sum_{i=1}^n x_iy_i
 \end{equation*}
 </div>
-<p data-braille="continuation">Notice that this condition says that the Cauchy-Schwarz inequality given in <a class="xref" data-knowl="./knowl/CauchySchwarz.html" title="Theorem 4.2.17: Cauchy-Schwarz">Theorem 4.2.17</a>).  is actually equality.</p></article><article class="theorem theorem-like" id="theorem-47"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Geometry of scalar multiplication in \(\R^2\).</span>
+</li>
+<li id="li-265"><p id="p-711">\(\vec x\cdot \vec x=\sum_{i=1}^n x_i^2\text{,}\) and since \(x_i^2\ge0\) for any real number, we have \(\vec x\cdot \vec x\ge0\text{.}\) For the value to actually be \(0\text{,}\) we must have each \(x_i^2=0\) and hence \(x_i=0\) for \(i=1,\ldots,n\text{.}\) In this case \(\vec x=\vec0\text{.}\)</p></li>
+</ol></article></div>
+<article class="exercise exercise-like" id="exercise-36"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-36"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-36"><article class="exercise exercise-like"><p id="p-712">Show that \(\vec x\cdot \vec0=0\) for any vector \(\vec x\text{.}\)</p></article></div></section><section class="subsection" id="subsection-54"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.2.2</span> <span class="title">The dot product and the length of a vector</span>
+</h3>
+<p id="p-713">In \(\R^2\) the length of a vector is its distance to the origin and so for the vector \(\vec x=(x,y)\text{,}\) the Pythagorean theorem is used to compute the distance \(d=\sqrt{x^2+y^2}\text{.}\)</p>
+<figure class="figure figure-like" id="figure-16"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><object data="images/image-17.html" id="image-17" width="300" height="300"><embed src="images/image-17.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-714">This gives us the following definition.</p>
+<article class="definition definition-like" id="definition-42"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Length of a vector in \(\R^2\).</span>
 </h6>
-<p id="p-787">For any vector \(\vec v\not=\vec0\) in \(\R^2\text{,}\) the scalar multiples of \(\vec v\) are the points on the line joining \(\vec v\) and \(\vec 0\text{.}\)</p></article><article class="hiddenproof" id="proof-63"><a data-knowl="" class="id-ref original" data-refid="hk-proof-63"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-63"><article class="hiddenproof"><p id="p-788">First, suppose that \(\vec w\) is on the line joining \(\vec v\) and \(\vec 0\text{.}\) Here is the picture:</p>
-<figure class="figure figure-like" id="figure-24"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><object data="images/image-25.html" id="image-25" width="360" height="360"><embed src="images/image-25.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-789">Notice that the red lines indicate that \(\tan(\theta)=\frac ba\) and the green lines indicate that \(\tan(\theta)=\frac yx\text{.}\)This implies that \(\frac ba=\frac yx\text{.}\) Now let \(t=\frac xa\text{.}\) We then have \(x=ta\) and \(y=\frac{bx}a=\frac{bta}{a}=bt\text{,}\) and so \(\vec w=(x,y)=(ta,tb)=t(a,b)=t\vec v\text{.}\)</p>
-<p id="p-790">Next we start with \(\vec v\) and consider \(\vec w=t\vec v\text{.}\) We want to show that \(\vec w\) is on the line joining \(\vec0\) and \(\vec v\text{.}\) To verify this with the linearity test, we evaluate:</p>
+<p id="p-715">If \(\vec x=(x,y)\) is a vector in \(\R^2\text{,}\) then the <dfn class="terminology">length</dfn> of \(\vec x\) is</p>
 <div class="displaymath">
 \begin{equation*}
-|\vec v\cdot \vec w|=|\vec v\cdot t\vec v|=|t| |\vec v\cdot \vec v|=|t|\|\vec v\|^2\\
-\|\vec v\| \|\vec w\|=\|\vec v\| \|t\vec v\|=|t| \|\vec v\| \|\vec v\|=|t|\|\vec v\|^2
+\|\vec x\|=\sqrt{x^2+y^2}
+\end{equation*}
+</div></article><p id="p-716">The situation is similar in \(\R^3\text{.}\) As in \(\R^2\text{,}\) we get \(d'=\sqrt{x^2+y^2}\text{.}\) Applying the Pythagorean theorem again, we get \(d^2={d'}^2+|z|^2\text{,}\) which gives us length in \(\R^3\)</p>
+<figure class="figure figure-like" id="figure-17"><div class="image-box" style="width: 85%; margin-left: 7.5%; margin-right: 7.5%;"><object data="images/image-18.html" id="image-18" width="510" height="510"><embed src="images/image-18.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.7<span class="period">.</span></span><span class="space"> </span></figcaption></figure><article class="definition definition-like" id="definition-43"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Length of a vector in \(\R^3\).</span>
+</h6>
+<p id="p-717">If \(\vec x=(x,y,z)\) is a vector in \(\R^3\text{,}\) then the <dfn class="terminology">length</dfn> of \(\vec x\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\|\vec x\|=\sqrt{x^2+y^2+z^2}
+\end{equation*}
+</div></article><article class="proposition theorem-like" id="proposition-5"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">4.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">For any vector \(\vec x\text{,}\) we have \(\|\vec x\|^2=\vec x\cdot \vec x\).</span>
+</h6>
+<p id="p-718">If \(\vec x\) is a vector in \(\R^2\) or \(\R^3\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+\vec x\cdot \vec x=\|\vec x\|^2
+\end{equation*}
+</div></article><p id="p-719">We generalize the idea of length to \(\R^n\) in the most straightforward way:</p>
+<article class="definition definition-like" id="definition-44"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">The length of a vector in \(\R^n\).</span>
+</h6>
+<p id="p-720">Let \(\vec x\) be a vector in \(\R^n\text{.}\) Then the <dfn class="terminology">length</dfn> of \(\vec x\) is defined by</p>
+<div class="displaymath">
+\begin{equation*}
+\|\vec x\|^2=\vec x\cdot\vec x
 \end{equation*}
 </div>
-<p data-braille="continuation">Hence \(\vec w\) is on the line joining \(\vec0\) and \(\vec v\text{,}\) as desired.</p></article></div></section><section class="subsection" id="subsection-60"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.3.2</span> <span class="title">Review: addition in \(\R^2\)</span>
-</h3>
-<article class="paragraphs" id="paragraphs-10"><h5 class="heading"><span class="title">A construction: completing the parallelogram.</span></h5>
-<p id="p-791">Start with two points \((a,b)\) and \((c,d)\text{,}\) both not \(\vec0\text{.}\) Further, assume that the three points \((a,b)\text{,}\) \((c,d)\) and \(\vec0\) do not line on a single line.</p>
-<figure class="figure figure-like" id="figure-25"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><object data="images/image-26.html" id="image-26" width="360" height="360"><embed src="images/image-26.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-792">Draw the line through \(\vec0\) and \((a,b)\) (red in the figure) and a line through \(\vec0\) and \((c,d)\) (green in the figure). At \((a,b)\) draw a line parallel to the one through \(\vec0\) and \((c,d)\) (green in the figure) and, similarly, one through \((c,d)\) parallel to the line through \(\vec0\) and \((a,b)\text{.}\) Call the point where these two new lines meet \((x,y)\text{.}\) The four points \(\vec0\text{,}\) \((a,b)\text{,}\) \((c,d)\) and \((x,y)\) are the four vertices of a parallelogram. Starting with three points \(\vec0\text{,}\) \((a,b)\) and \((c,d)\text{,}\) the construction or the fourth point \((x,y)\) is called <dfn class="terminology">completing the parallelogram.</dfn></p>
-<p id="p-793">Next, we want to find the values of \(x\) and \(y\text{.}\) We drop perpendiculars from \((a,b)\text{,}\) \((c,d)\) and \((x,y)\) to the \(x\)-axis.</p>
-<figure class="figure figure-like" id="figure-26"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><object data="images/image-27.html" id="image-27" width="360" height="360"><embed src="images/image-27.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-794">Notice that the two yellow triangles are the same size (that is, congruent). This means that the distance from \(x\) to \(c\) on the \(x\)-axis is the same as that from \(a\) to \(0\text{.}\) In other words, \(x-c=a-0\text{,}\) or \(x=a+c\text{.}\) Using similar perpendiculars to the \(y\)-axis, we get \(y=b+d\text{.}\) We conclude that</p>
+<p data-braille="continuation">or, equivalently,</p>
 <div class="displaymath">
 \begin{equation*}
-(x,y)=(a+c,b+d)=(a,b)+(c,d)
+\|\vec x\|=\sqrt{\sum_{i=1}^n x_i^2}.
+\end{equation*}
+</div></article><p id="p-721">Note that <a class="xref" data-knowl="./knowl/DotProductFirstProperties.html" title="Proposition 4.2.3: First properties of the dot product">Proposition 4.2.3</a> ensures that there will indeed be a nonnegative real square root of \(\vec x\cdot\vec x\text{.}\)</p>
+<p id="p-722">Vectors with length one are often important and are given a special name.</p>
+<article class="definition definition-like" id="definition-45"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.2.11</span><span class="period">.</span><span class="space"> </span><span class="title">Unit vectors in \(\R^n\).</span>
+</h6>
+<p id="p-723">A <dfn class="terminology">unit vector</dfn> is one with length one.</p></article><p id="p-724">It is clear the \(\vec x\) is a unit vector if and only if \(\|\vec x\|^2=\vec x\cdot\vec x=1\text{.}\)</p>
+<article class="proposition theorem-like" id="UnitVectorConstruction"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">4.2.12</span><span class="period">.</span><span class="space"> </span><span class="title">Unit vector construction.</span>
+</h6>
+<p id="p-725">Let \(\vec x\) be any nonzero vector in \(\R^n\text{.}\) Then \(\frac{\vec x}{\|\vec x\|}\) is a unit vector.</p></article><article class="hiddenproof" id="proof-57"><a data-knowl="" class="id-ref original" data-refid="hk-proof-57"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-57"><article class="hiddenproof"><div class="displaymath" id="p-726">
+\begin{equation*}
+\frac{\vec x}{\|\vec x\|} \cdot \frac{\vec x}{\|\vec x\|}
+= \frac{\vec x \cdot \vec x}{\|\vec x\|^2}
+= \frac{\|\vec x\|^2}{\|\vec x\|^2}
+=1
+\end{equation*}
+</div></article></div></section><section class="subsection" id="subsection-55"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.2.3</span> <span class="title">The dot product and the angle between vectors in \(\R^n\)</span>
+</h3>
+<p id="p-727">We start the discussion of angles by considering \(\R^2\text{.}\) We take two nonzero vectors \(\vec x\) and \(\vec y\) and connect them by a line with \(\vec0\text{.}\) The angle between these vectors is the angle \(\theta\) between these lines.</p>
+<figure class="figure figure-like" id="figure-18"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><object data="images/image-19.html" id="image-19" width="300" height="300"><embed src="images/image-19.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.13<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-728">We use the law of cosines (<a class="xref" data-knowl="./knowl/LawOfCosines.html" title="Theorem 7.3.2: The law of cosines">Theorem 7.3.2</a>) with \(a=\|\vec x\|\text{,}\) \(b=\|\vec y\|\) and \(c\) equal to the distance from \(\vec x\) to \(\vec y\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+(x_1-y_1)^2+(x_2-y_2)^2 =(x_1^2+x_2^2) +(y_1^2+y_2^2) 
+- 2 \|\vec x\| \|\vec y\| \cos\theta \\
+x_1y_1+x_2y_2 = \|\vec x\| \|\vec y\| \cos\theta \\
+\vec x\cdot\vec y = \|\vec x\| \|\vec y\| \cos\theta 
 \end{equation*}
 </div>
-<p id="p-795">This gives a geometric method for constructing the sum of two vectors. The figure constructed above has both points in the first quadrant, and using points in other quadrants changes the figure. If there are points in the first and second quadrant, the figure becomes</p>
-<figure class="figure figure-like" id="figure-27"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><object data="images/image-28.html" id="image-28" width="360" height="360"><embed src="images/image-28.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.7<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-796">In this case, \(a=x-c\) and once again</p>
+<p data-braille="continuation">which gives us the following:</p>
+<article class="proposition theorem-like" id="DotProductR2"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">4.2.14</span><span class="period">.</span>
+</h6>
+<p id="p-729">If \(\vec x\) and \(\vec y\) are nonzero vectors in \(\R^2\text{,}\) then</p>
 <div class="displaymath">
 \begin{equation*}
-(x,y)=(a+c,b+d)=(a,b)+(c,d)
+\vec x\cdot\vec y = \|\vec x\| \|\vec y\| \cos\theta.
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-37"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-37"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.2.15</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-37"><article class="exercise exercise-like"><p id="p-730">If \(\vec x\) and \(\vec y\) are nonzero vectors in \(\R^3\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+\vec x\cdot\vec y = \|\vec x\| \|\vec y\| \cos\theta.
 \end{equation*}
 </div>
-<p data-braille="continuation">Variations of the same argument work when the points are in other quadrants.</p></article><article class="theorem theorem-like" id="ParallelogramRule"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Parallelogram rule.</span>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-34" id="solution-34"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-34"><div class="solution solution-like"><p id="p-731">Use the triangle in \(\R^3\) with vertices \(\vec x\text{,}\) \(\vec y\) and \(\vec 0\) and apply the law of cosines.</p></div></div>
+</div></article></div>
+<article class="observation remark-like" id="observation-2"><h6 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">4.2.16</span><span class="period">.</span>
 </h6>
-<p id="p-797">If \((a,b)\) and \((c,d)\) are two points in the plane not collinear with \(\vec0\text{,}\) and  \((x,y)\) is obtained by completing the parallelogram, then</p>
+<ul id="p-732" class="disc">
+<li id="li-266"><p id="p-733">We have assumed the vectors \(\vec x\) and \(\vec y\) to be nonzero. If \(\vec x=\vec0\text{,}\) then \(\vec x\cdot\vec y=0\) and \(\|\vec x\|=0\text{,}\) and so \(\vec x\cdot\vec y = \|\vec x\| \|\vec y\| \cos\theta\) is still the valid (but perhaps uninteresting) equation \(0=0\text{.}\)</p></li>
+<li id="li-267">
+<p id="p-734">If \(\vec x\) and \(\vec y\) are both nonzero, then</p>
 <div class="displaymath">
 \begin{equation*}
-(x,y)=(a,b)+(c,d)\text{.}
+\frac{\vec x\cdot\vec y}{\|\vec x\| \|\vec y\|}=\cos\theta
 \end{equation*}
-</div></article></section><section class="subsection" id="subsection-61"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.3.3</span> <span class="title">Directed vectors in \(\R^2\) and \(\R^n\)</span>
-</h3>
-<p id="p-798">We have looked at vectors as \(n\)-tuples, that is, \(\vec x=(x_1,x_2,\ldots,x_n)\text{.}\) There is another way to look at vectors, namely, as objects having both length and direction. We visualize this as an arrow joining two points with the length being the length of the arrow and the direction that where the arrow points. Here are two such vectors in \(\R^2\text{.}\)</p>
-<figure class="figure figure-like" id="figure-28"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><object data="images/image-29.html" id="image-29" width="360" height="360"><embed src="images/image-29.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.9<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-799">The point \(P_1\) is the <em class="emphasis">tail</em> of \(\overrightarrow{P_1Q_1}\) while \(Q_1\) is the <em class="emphasis">head</em>. Apparently the vectors \(\overrightarrow{P_1Q_1}\) and \(\overrightarrow{P_2Q_2}\) have the same direction and length, and so they should be the same vector. We next give the criterion that determines whether or not \(\overrightarrow{P_1Q_1}=\overrightarrow{P_2Q_2}\) in general.</p>
-<figure class="figure figure-like" id="figure-29"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><object data="images/image-30.html" id="image-30" width="480" height="480"><embed src="images/image-30.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.10<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-800">Starting with \(\overrightarrow{P_1Q_1}\text{,}\) construct \(\overrightarrow{\vec0 X}\) that is parallel to it and has the same length. This constructs the yellow parallelogram in the figure above. The parallelogram rule then implies \(P_1+X=Q_1\text{,}\) or \(X=Q_1-P_1\text{.}\) Repeating the construction with \(\overrightarrow{P_2Q_2}\text{,}\) we get the same vector \(\overrightarrow{\vec0 }\) if and only if  \(\overrightarrow{P_1Q_1}\) and  \(\overrightarrow{P_2Q_2}\) have the same length and direction, which means \(X=Q_2-P_2\text{.}\) While the picture is in \(\R^2\text{,}\) but the idea is easily extended to the same pictue in \(\R^3\) by considering the plane containing \(\vec0\text{,}\) \(\vec x\) and \(\vec y\text{.}\) Indeed, the definition in \(\R^n\) follows the same pattern: A vector \(\overrightarrow{PQ}\) is visualized as an arrow with tail and head at \(P\) and \(Q\) in \(\R^n\text{.}\)</p>
-<article class="definition definition-like" id="definition-48"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3.11</span><span class="period">.</span><span class="space"> </span><span class="title">Equality of directed vectors.</span>
-</h6>
-<div class="displaymath" id="p-801">
+</div>
+<p data-braille="continuation">and so</p>
+<div class="displaymath">
 \begin{equation*}
-\overrightarrow{P_1Q_1}=\overrightarrow{P_2Q_2} 
-\textrm{ if and only if } 
-Q_1-P_1=Q_2-P_2.
+-1 \leq \frac{\vec x\cdot\vec y}{\|\vec x\| \|\vec y\|} \leq 1.
 \end{equation*}
-</div></article><p id="p-802">This says, roughly speaking, that head minus tail of the first vector equals head minus tail of the second vector. We can call this the <dfn class="terminology">head minus tail rule</dfn>.</p>
-<article class="definition definition-like" id="definition-49"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3.12</span><span class="period">.</span><span class="space"> </span><span class="title">Direction number of a vector.</span>
+</div>
+<p data-braille="continuation">Taking absolute values,</p>
+<div class="displaymath">
+\begin{equation*}
+| \vec x\cdot\vec y| \leq \|\vec x\| \|\vec y\|.
+\end{equation*}
+</div>
+<p data-braille="continuation">This inequality is called the <dfn class="terminology">Cauchy-Schwarz inequality</dfn>.</p>
+</li>
+</ul></article></section><section class="subsection" id="subsection-56"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.2.4</span> <span class="title">The Cauchy-Schwarz inequality</span>
+</h3>
+<p id="p-735">The following theorem is the key that allows many geometric concepts from \(\R^2\) and \(\R^3\) to be extended to \(\R^m\text{.}\)</p>
+<article class="theorem theorem-like" id="CauchySchwarz"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.2.17</span><span class="period">.</span><span class="space"> </span><span class="title">Cauchy-Schwarz.</span>
 </h6>
-<p id="p-803">The <dfn class="terminology">direction number</dfn> of the vector \(\overrightarrow{PQ}\) is \(Q-P\)</p></article></section><section class="subsection" id="subsection-62"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.3.4</span> <span class="title">Scalar multiplication of directed vectors</span>
+<p id="p-736">If \(\vec x\) and \(\vec y\) are vectors in \(\R^n\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+| \vec x\cdot\vec y| \leq \|\vec x\| \|\vec y\|.
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-58"><a data-knowl="" class="id-ref original" data-refid="hk-proof-58"><h6 class="heading"><span class="title">Proof using elementary algebra.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-58"><article class="hiddenproof"><p id="p-737">This proof makes clever use of the quadratic formula for the solution of quadratic equations. We take a real number \(x\) and let it act as a variable in an equation.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+0 
+\amp \le (x\vec u+\vec v)\cdot(x\vec u+\vec v)\\
+\amp = (x\vec u+\vec v)\cdot x\vec u + (x\vec u+\vec v)\cdot \vec v\\
+\amp = x\vec u\cdot x\vec u 
++ \vec v \cdot x\vec u +x\vec u\cdot \vec v+ \vec v\cdot \vec v\\
+\amp = (\vec u\cdot\vec u) x^2 +2(\vec u\cdot \vec v) x+\vec v\cdot \vec v\\
+\amp = \|\vec u\|^2 x^2 +2(\vec u\cdot \vec v) x+\|\vec v\|^2\\
+\amp= ax^2+bx+c
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(a=\|\vec u\|^2\text{,}\) \(b=2(\vec u\cdot\vec v)\) and \(c=\|\vec v\|^2\text{.}\) This means that the graph of \(ax^2+bx+c\) is a parabola that is never below the \(x\)-axis.  In particular, this means that there can not be two real roots. Now the two roots of a quadratic equation are</p>
+<div class="displaymath">
+\begin{equation*}
+x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
+\end{equation*}
+</div>
+<p data-braille="continuation">and so the polynomial will have two real roots if \(b^2-4ac&gt;0\text{.}\) <em class="emphasis">This is exactly what can not happen</em>, and so \(b^2-4ac\le0\text{,}\) or \(b^2\le4ac\text{.}\) Using our known values of \(a\text{,}\) \(b\) and \(c\text{,}\) we get</p>
+<div class="displaymath">
+\begin{equation*}
+4(\vec u\cdot\vec v)^2\le 4\|\vec u\|^2\|\vec v\|^2\\
+(\vec u\cdot\vec v)^2\le\|\vec u\|^2\|\vec v\|^2\\
+|\vec u\cdot\vec v|\le\|\vec u\|\,\|\vec v\|\\
+\end{equation*}
+</div></article></div>
+<article class="hiddenproof" id="proof-59"><a data-knowl="" class="id-ref original" data-refid="hk-proof-59"><h6 class="heading"><span class="title">Proof using Proposition 4.2.3.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-59"><article class="hiddenproof"><article class="case" id="case-1"><h6 class="heading">First case: \(\vec x=\vec0\) or \(\vec y=\vec0\).</h6>
+<p id="p-738">In this case \(\vec x\cdot\vec y=0\) and \(\|\vec x\| \|\vec y\|=0\text{,}\) and so the inequality reduces to \(0\leq 0\text{.}\)</p></article><article class="case" id="case-2"><h6 class="heading">Second case: \(\|\vec x\|=\|\vec y\|=1\).</h6>
+<p id="p-739">Using <a class="xref" data-knowl="./knowl/DotProductFirstProperties.html" title="Proposition 4.2.3: First properties of the dot product">Proposition 4.2.3</a>,</p>
+<div class="displaymath">
+\begin{align*}
+0\amp \leq \|(\vec x+\vec y)\|^2 \\
+\amp = (\vec x+\vec y)\cdot(\vec x+\vec y) \\
+\amp =(\vec x+\vec y)\cdot\vec x+ (\vec x+\vec y)\cdot\vec y\\
+\amp =\vec x \cdot \vec x+ \vec y\cdot \vec x i
++ \vec x\cdot \vec y +\vec y\cdot\vec y\\
+\amp =\|\vec x\|^2 +2(\vec x\cdot \vec y) + \|\vec y\|^2\\
+\amp =2(\vec x\cdot \vec y) +2
+\end{align*}
+</div>
+<p data-braille="continuation">and so</p>
+<div class="displaymath">
+\begin{equation*}
+-1\leq \vec x\cdot \vec y\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Similarly</p>
+<div class="displaymath">
+\begin{equation*}
+0\leq(\vec x-\vec y)\cdot(\vec x-\vec y) =-2(\vec x\cdot \vec y) +2
+\end{equation*}
+</div>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+\vec x\cdot \vec y \leq 1\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">These inequalities imply</p>
+<div class="displaymath">
+\begin{equation*}
+|\vec x\cdot \vec y| \leq 1=\|\vec x\|\, \|\vec y\|\text{.}
+\end{equation*}
+</div></article><article class="case" id="case-3"><h6 class="heading">Third case: \(\|\vec x\|\neq 0\) and  \(\|\vec y\|\neq0\).</h6>
+<p id="p-740">As seen in <a class="xref" data-knowl="./knowl/UnitVectorConstruction.html" title="Proposition 4.2.12: Unit vector construction">Proposition 4.2.12</a>, if \(\vec u=\frac{\vec x}{\|\vec x\|}\) and \(\vec v=\frac{\vec y}{\|\vec y\|}\text{,}\) then both \(\vec u\) and \(\vec v\) are unit vectors, and, as such, the second case is applicable. This means</p>
+<div class="displaymath">
+\begin{equation*}
+|\vec u\cdot \vec v| \leq \|\vec u\| \|\vec v\|
+\end{equation*}
+</div>
+<p data-braille="continuation">and so</p>
+<div class="displaymath">
+\begin{equation*}
+|\vec u\cdot\vec v|=
+\left|\frac{\vec x}{\|\vec x\|} \cdot \frac{\vec y}{\|\vec y\|}\right|
+= \frac1{\|\vec x\|}\,\frac1{\|\vec y\|} |\vec x\cdot\vec y|
+\leq 1
+\end{equation*}
+</div>
+<p data-braille="continuation">which implies</p>
+<div class="displaymath">
+\begin{equation*}
+|\vec x \cdot \vec y| \leq \|\vec x\| \|\vec y\|\text{.}
+\end{equation*}
+</div></article></article></div>
+<p id="p-741">The Cauchy-Schwarz theorem gives us further results about the length of vectors in \(\R^n\text{.}\)</p>
+<article class="theorem theorem-like" id="VectorLengths"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.2.18</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of lengths of vectors in \(\R^n\).</span>
+</h6>
+<p id="p-742">Suppose that \(\vec x=(x_1,x_2,\ldots,x_n)\) and \(\vec y=(y_1,y_2,\ldots,y_n)\) are vectors in \(\R^n\text{,}\) and that \(r\) is any real number. Then</p>
+<ol class="decimal">
+<li id="li-268"><p id="p-743">\(\|\vec x\| \ge 0\) with equality if and only if \(\vec x=\vec0.\)</p></li>
+<li id="li-269"><p id="p-744">\(\displaystyle \|r\vec x\|=|r| \|\vec x\|\)</p></li>
+<li id="li-270"><p id="p-745">\(|\vec x\cdot\vec y|\le\|\vec x\|\,\|\vec y\|\) (Cauchy-Schwarz inequality)</p></li>
+<li id="li-271"><p id="p-746">\(\|\vec x+\vec y\|^2 + \|\vec x-\vec y\|^2 =
+2(\|\vec x\|^2 +\|\vec y\|^2)\) (Parallelogram equality)</p></li>
+<li id="li-272"><p id="p-747">\(\|\vec x+\vec y\| \le \|\vec x\|+\|\vec y\|\) (Triangle inequality)</p></li>
+</ol></article><article class="hiddenproof" id="proof-60"><a data-knowl="" class="id-ref original" data-refid="hk-proof-60"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-60"><article class="hiddenproof"><ol id="p-748" class="decimal">
+<li id="li-273"><p id="p-749">Since \(\|\vec x\|= \vec x\cdot\vec x\text{,}\) this result is contained in <a class="xref" data-knowl="./knowl/DotProductFirstProperties.html" title="Proposition 4.2.3: First properties of the dot product">Proposition 4.2.3</a>.</p></li>
+<li id="li-274">
+<p id="p-750">From direct evaluation:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+\|r\vec x\|^2
+\amp=\|r(x_1,x_2,\ldots,x_n)\|^2\\
+\amp=\|(rx_1,rx_2,\ldots,rx_n)\|^2\\
+\amp=r^2x_1^2+r^2x_2^2+\cdots+r^2x_n^2\\
+\amp=r^2(x_1^2+x_2^2+\cdots+x_n^2)
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">and so by taking square roots, \(\|r\vec x\|=|r| \|\vec x\|\text{.}\)</p>
+</li>
+<li id="li-275"><p id="p-751">This is just <a class="xref" data-knowl="./knowl/CauchySchwarz.html" title="Theorem 4.2.17: Cauchy-Schwarz">Theorem 4.2.17</a></p></li>
+<li id="li-276">
+<p id="p-752">Again, a direct evaluation:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+\|\vec x+\vec y\|^2 + \|\vec x-\vec y\|^2 
+\amp= (\vec x+\vec y) \cdot (\vec x+\vec y) 
++(\vec x-\vec y) \cdot (\vec x-\vec y)\\
+\amp=  (\vec x\cdot\vec x + \vec x\cdot\vec y 
++\vec y\cdot\vec x +\vec y\cdot\vec y)\\
+\amp \phantom{=} +  (\vec x\cdot\vec x - \vec x\cdot\vec y 
+-\vec y\cdot\vec x +\vec y\cdot\vec y)\\
+\amp=2(\|\vec x\|^2 +\|\vec y\|^2)
+\end{array}
+\end{equation*}
+</div>
+</li>
+<li id="li-277">
+<p id="p-753">The triangle inequality is a consequence of the Cauchy-Schwarz inequality:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rll}
+\|\vec x+\vec y\|^2
+\amp= (\vec x+\vec y)\cdot(\vec x+\vec y)\\
+\amp= \vec x\cdot\vec x+2(\vec x\cdot\vec y)+\vec y\cdot\vec y\\
+\amp= \|\vec x\|^2 +2(\vec x\cdot\vec y)+\|\vec y\|^2\\
+\amp\le \|\vec x\|^2 +2|\vec x\cdot\vec y|+\|\vec y\|^2
+\amp\amp\gets r\le|r|\text{ used here.}\\
+\amp\le \|\vec x\|^2 +2\|\vec x\|\|\vec y\|+\|\vec y\|^2
+\amp\amp\gets \text{ Cauchy-Schwarz used here.}\\
+\amp= (\|\vec x\|+\|\vec y\|)^2
+\end{array}
+\end{equation*}
+</div>
+</li>
+</ol></article></div>
+<p id="p-754">The parallelogram equality has a nice geometric interpretation in \(\R^2\text{.}\) Consider the four sides and two diagonals of a parallelogram.</p>
+<figure class="figure figure-like" id="figure-19"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><object data="images/image-20.html" id="image-20" width="300" height="300"><embed src="images/image-20.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.19<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-755">The parallelogram equality says \(\|\vec x+\vec y\|^2 + \|\vec x-\vec y\|^2 =
+2(\|\vec x\|^2 +\|\vec y\|^2)\text{.}\) This implies that the sum of the squares of the lengths of the diagonals is equal to the sum of the squares of the length of the four sides.</p></section><section class="subsection" id="subsection-57"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.2.5</span> <span class="title">Computing angles between vectors in \(\R^n\)</span>
 </h3>
-<p id="p-804">By definition, for any directed vector \(\overrightarrow{PQ}\text{,}\) we have \(\overrightarrow{PQ}=\overrightarrow{\vec0(Q-P)}\text{.}\) Scalar multiples of  \(\overrightarrow{PQ}\) are defined so that it matches our usual definition for \(n\)-tuples and also satisfies the parallelogram rule:</p>
-<figure class="figure figure-like" id="figure-30"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><object data="images/image-31.html" id="image-31" width="480" height="480"><embed src="images/image-31.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.13<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-805">The geometric interpretation of scalar multiplication is now clear. Multiplying a vector \(\overrightarrow{PQ}\) by a positive scalar \(r\) keeps the tail and direction fixed and stretches the arrow by a factor of \(r\text{.}\) When \(r\) is negative, the arrow is stretched by a factor of \(-r\) and the direction is reversed.</p></section><section class="subsection" id="subsection-63"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.3.5</span> <span class="title">Addition of directed vectors</span>
-</h3>
-<p id="p-806">We next give a geometric intepretation for the addition of directed vectors. We wish to use the same pattern as we did with scalar multiplication: be consistent with the geometric interpretation of the parallelogram rule for \(n\)-tuples.</p>
-<p id="p-807">We start with two vectors \(\overrightarrow{PQ}\) and \(\overrightarrow{RS}\text{.}\) Using the tail minus head rule, these are the same as the vectors \(\vec x=\overrightarrow{\vec0(Q-P)}\) and \(\vec y=\overrightarrow{\vec0(S-R)}\text{.}\) Now \(\vec x\) and \(\vec y\) can be viewed as \(n\)-tuples, and so the sum gives \(\vec x+\vec y=Q-P+S-R\text{.}\)</p>
-<figure class="figure figure-like" id="figure-31"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><object data="images/image-32.html" id="image-32" width="480" height="480"><embed src="images/image-32.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.14<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-808">On the other hand, we can take the two vectors \(\overrightarrow{PQ}\) and \(\overrightarrow{RS}\) and find the vector equal to  \(\overrightarrow{RS}\) but with tail at \(Q\text{.}\) By the head minus tail rule, the head of this vector is at \(Q+S-R\) (since \((Q+S-R)-Q=S-R\)). Now consider the vector with tail at \(P\) and head at \(Q+S-R\text{.}\) This is the third side of the triangle. The head minus tail rule of evaluation gives \(Q+S-R-P\text{,}\) which is exactly what we computed for the sum. This gives us a wonderful geometric interpretation fo the sum of two vectors.</p>
-<figure class="figure figure-like" id="figure-32"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><object data="images/image-33.html" id="image-33" width="360" height="360"><embed src="images/image-33.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.15<span class="period">.</span></span><span class="space"> </span></figcaption></figure></section><section class="subsection" id="subsection-64"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.3.6</span> <span class="title">Lines in \(\R^2\) and \(\R^n\)</span>
-</h3>
-<p id="p-809">There are different equations whose solutions are lines in \(\R^2\text{.}\) If a line \(L\) passes through the points  \((x_0,y_0)\) and \((x_1,y_1)\text{,}\) has slope \(m\) and intersects the \(y\)-axis at \((0,b)\text{,}\) then the point \((x,y)\) is on \(L\) if and only if it satisfies equations of the following form:</p>
+<p id="p-756">The angles between vectors is pretty easy to visualize in \(\R^2\) or \(\R^3\text{,}\) but we lose our nice geometric interpretation of vectors in \(\R^n\text{.}\) Nonetheless, there is something that still makes sense.</p>
 <ul class="disc">
-<li id="li-293">
-<p id="p-810">The point-slope form:</p>
+<li id="li-278"><p id="p-757">If either \(\vec x=\vec0\) or \(\vec y=\vec0\text{,}\) then the angle \(\theta\) between them is simply \(\theta=0\text{.}\)</p></li>
+<li id="li-279">
+<p id="p-758">On the other hand, if either \(\vec x\not=\vec0\) and \(\vec y\not=\vec0\text{,}\) then the <a class="xref" data-knowl="./knowl/CauchySchwarz.html" title="Theorem 4.2.17: Cauchy-Schwarz">Cauchy-Schwarz Theorem</a> says</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{y-y_0}{x-x_0}=m
+\frac{| \vec x\cdot\vec y |}{\|\vec x\| \|\vec y\|} \leq 1
 \end{equation*}
 </div>
-</li>
-<li id="li-294">
-<p id="p-811">The slope-intercept form:</p>
+<p data-braille="continuation">which implies</p>
 <div class="displaymath">
 \begin{equation*}
-y=mx+b
+-1\leq \frac{\vec x\cdot\vec y}{\|\vec x\| \|\vec y\|} \leq 1.
 \end{equation*}
 </div>
-</li>
-<li id="li-295">
-<p id="p-812">The point-point form:</p>
+<p data-braille="continuation">The <a class="xref" data-knowl="./knowl/GraphCos.html" title="Figure 7.3.8">graph of \(\cos(x)\)</a> descends from \(1\) to \(-1\) between \(x=0\) and \(x=\pi\text{,}\) and so there is one value \(\theta\) in that range so that</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{y-y_0}{x-x_0}=\frac{y_1-y_0}{x_1-x_0}
-\textrm{ (if } x_1\not=x_0\textrm{)}
+\frac{\vec x\cdot\vec y}{\|\vec x\| \|\vec y\|} =\cos \theta.
 \end{equation*}
 </div>
-</li>
-<li id="li-296">
-<p id="p-813">The symmetric form: For this example, let \(a=x_1-x_0\not=0\) and \(b=y_1-y_0\not=0\text{.}\) Then</p>
-<div class="displaymath">
-\begin{equation*}
-\frac{x-x_0}a=\frac{y-y_0}b
-\end{equation*}
-</div>
-</li>
-<li id="li-297">
-<p id="p-814">The parametric form:</p>
-<div class="displaymath">
-\begin{equation*}
-(x,y)=(x_0,y_0) + t\bigl((x_1,y_1)-(x_0,y_0)\bigr)=(1-t)(x_0,y_0)+t(x_1,y_1)
-\end{equation*}
-</div>
-<p data-braille="continuation">which may be visualized as</p>
-<figure class="figure figure-like" id="figure-33"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><object data="images/image-34.html" id="image-34" width="480" height="480"><embed src="images/image-34.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.16<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
+<p data-braille="continuation">That is the angle between \(\vec x\) and \(\vec y\text{.}\) (If you have studied the calculus, the existence and uniqueness of \(\theta\) follows from the intermediate value theorem applied to the continuous strictly decreasing function \(\cos x\text{.}\))</p>
 </li>
 </ul>
-<article class="definition definition-like" id="definition-50"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3.17</span><span class="period">.</span><span class="space"> </span><span class="title">General equation of a line in \(\R^2\).</span>
+<p id="p-759">Defining \(\cos\theta\) in this way extends the result from \(\R^2\) to \(\R^n\text{.}\)</p>
+<article class="theorem theorem-like" id="DotProductRn"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.2.20</span><span class="period">.</span>
 </h6>
-<p id="p-815">A line \(L\) is the set of points \((x,y)\) satisfying the equation</p>
+<p id="p-760">For any vectors \(\vec x\) and \(\vec y\) in \(\R^n\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
-ax+by+c=0
+\vec x\cdot \vec y= \|\vec x\| \|\vec y\| \cos\theta
 \end{equation*}
-</div>
-<p data-braille="continuation">where \(a\) and \(b\) are not both \(0\text{.}\)</p></article><article class="example example-like" id="example-35"><a data-knowl="" class="id-ref original" data-refid="hk-example-35"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.18</span><span class="period">.</span><span class="space"> </span><span class="title">Lines in general form.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-35"><article class="example example-like"><figure class="figure figure-like" id="figure-34"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><object data="images/image-35.html" id="image-35" width="480" height="480"><embed src="images/image-35.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.19<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article></div>
-<p id="p-816">Notice that a line in \(\R^2\) is the solution of a single linear equation in two unknowns.</p>
-<p id="p-817">Lines in \(\R^n\) mirror the symmetric and parametric definitions for \(\R^2\text{.}\)</p>
-<article class="definition definition-like" id="definition-51"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3.20</span><span class="period">.</span><span class="space"> </span><span class="title">Lines in \(\R^n\).</span>
+</div></article><article class="example example-like" id="example-34"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.21</span><span class="period">.</span>
 </h6>
-<p id="p-818">If \(\vec x\) and \(\vec y\) are two vectors in \(\R^n\text{,}\) then the line \(L\) containing \(\vec x\) and \(\vec y\) consists of all vectors \(\vec z\) such that</p>
+<p id="p-761">Let \(\vec x=(1,2,3,2,1)\) and \(\vec y= (1,-1,1,-1,1)\) be vectors in \(\R^5\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
-\vec z=(1-t)\vec x+t\vec y
+\frac{\vec x\cdot\vec y}{\|\vec x\| \|\vec y\|} 
+= \frac 1{\sqrt{19}\sqrt5} \approx 0.102597835
+=\cos \theta.
 \end{equation*}
 </div>
-<p data-braille="continuation">for some real number \(t\text{.}\)</p></article><p id="p-819">The following figure gives the geometric interpretation on the number \(t\text{.}\) Obviously \(t=0\) gives \(\vec x\) and \(t=1\) gives \(\vec y\text{.}\) As \(t\) goes from \(0\) to \(1\text{,}\) the  vector \(\vec z\) moves from \(\vec x\) to \(\vec y\text{.}\) In fact, when \(t=\frac12\text{,}\) the point \(\vec z\) is halfway between \(\vec x\) and \(\vec y\text{.}\) As \(t\) becomes larger than \(1\text{,}\) the vector \(\vec z\) passes \(\vec y\) and moves further down the line.</p>
-<figure class="figure figure-like" id="figure-35"><div class="image-box" style="width: 95%; margin-left: 2.5%; margin-right: 2.5%;"><object data="images/image-36.html" id="image-36" width="570" height="570"><embed src="images/image-36.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.21<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-820">There is a symmetric form for lines in \(\R^n\text{.}\) If \(\vec x=(x_1,x_2,\ldots,x_n)\text{,}\) \(\vec y=(y_1,y_2,\ldots,y_n)\) and \(\vec z=(z_1,z_2,\ldots,z_n)\text{,}\) then \(\vec z\) is on the line  joining \(\vec x\) and \(\vec y\) if and only if</p>
+<p data-braille="continuation">and so \(\theta=1.4680\) radians (or \(84.1112^\circ\)).</p></article><article class="theorem theorem-like" id="theorem-46"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.2.22</span><span class="period">.</span>
+</h6>
+<p id="p-762">If \(\theta\) is the angle between \(\vec x\) and \(\vec y\text{,}\) then</p>
+<ul class="disc">
+<li id="li-280"><p id="p-763">\(0\lt\theta\lt\frac\pi2\) if and only if \(\vec x\cdot\vec y \gt 0\) (so \(\theta\) is an acute angle)</p></li>
+<li id="li-281"><p id="p-764">\(\theta=\frac\pi2\) if and only if \(\vec x\cdot\vec y = 0\)</p></li>
+<li id="li-282"><p id="p-765">\(\frac\pi2\lt\theta\lt\pi\) if and only if \(\vec x\cdot\vec y \lt 0\) (so \(\theta\) is an obtuse angle)</p></li>
+</ul></article><article class="hiddenproof" id="proof-61"><a data-knowl="" class="id-ref original" data-refid="hk-proof-61"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-61"><article class="hiddenproof"><p id="p-766">This is clear from the <a class="xref" data-knowl="./knowl/GraphCos.html" title="Figure 7.3.8">graph of \(\cos(x)\)</a>.</p></article></div>
+<article class="definition definition-like" id="definition-46"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.2.23</span><span class="period">.</span><span class="space"> </span><span class="title">Orthogonal vectors in \(\R^n\).</span>
+</h6>
+<p id="p-767">Two vectors \(\vec x\) and \(\vec y\) are <dfn class="terminology">orthogonal</dfn> (or <em class="emphasis">perpendicular</em>) if and only if \(\vec x\cdot\vec y=0\text{.}\)</p></article></section><section class="subsection" id="subsection-58"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.2.6</span> <span class="title">Distance between vectors in \(\R^n\)</span>
+</h3>
+<p id="p-768">The Cauchy-Schwartz theorem allowed us to define the angle between vectors in \(\R^n\text{.}\) This leads to the definition of the distance between vectors in a natural way. Consider the following figure, drawn in \(\R^2\) as the pattern for our discussion.</p>
+<figure class="figure figure-like" id="figure-20"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><object data="images/image-21.html" id="image-21" width="300" height="300"><embed src="images/image-21.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.24<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-769">The law of cosines then implies</p>
+<div class="displaymath">
+\begin{align*}
+d^2 \amp= \|\vec x\|^2 + \|\vec y\|^2 -2 \|\vec x\| \|\vec y\| \cos\theta\\
+\amp= \|\vec x\|^2 + \|\vec y\|^2 -2 (\vec x\cdot \vec y) \\
+\amp= \vec x\cdot \vec x +\vec y\cdot \vec y  -2 (\vec x\cdot \vec y) \\
+\amp= \vec x\cdot \vec x  -2 (\vec x\cdot \vec y) +\vec y\cdot \vec y \\
+\amp= (\vec x - \vec y)\cdot (\vec x - \vec y)\\
+\amp= \|\vec x - \vec y\|^2
+\end{align*}
+</div>
+<p data-braille="continuation">and so, if we denote the distance from \(\vec x\) to \(\vec y\) by \(d(\vec x,\vec y)\text{,}\) we have</p>
 <div class="displaymath">
 \begin{equation*}
-z_i=(1-t)x_i+ty_i
+d(\vec x,\vec y)= \sqrt{\|\vec x-\vec y\|^2}= \|\vec x-\vec y\|
 \end{equation*}
 </div>
-<p data-braille="continuation">for \(i=1,2,\ldots,n\text{,}\) and in this case</p>
+<p data-braille="continuation">The figure is certainly valid for \(\R^2\) (and \(\R^3\)), and it motivates our general definition in \(\R^n\text{:}\)</p>
+<article class="definition definition-like" id="definition-47"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.2.25</span><span class="period">.</span><span class="space"> </span><span class="title">Distance in \(\R^n\).</span>
+</h6>
+<p id="p-770">If \(\vec x\) and \(\vec y\) are in \(\R^n\text{,}\) then the <dfn class="terminology">distance</dfn>  between them is</p>
 <div class="displaymath">
-\begin{align*}
-t \amp=\frac{z_1-x_1}{y_1-x_1}
-= \frac{z_2-x_2}{y_2-x_2}
-=\cdots
-= \frac{z_n-x_n}{y_n-x_n}\\
-\amp=\frac{z_1-x_1}{a_1}
-= \frac{z_2-x_2}{a_2}
-=\cdots
-= \frac{z_n-x_n}{a_n}
-\end{align*}
-</div>
-<p data-braille="continuation">The vector \((a_1,a_2,\ldots,a_n)\) is the direction number of the line.</p>
-<article class="paragraphs" id="paragraphs-11"><h5 class="heading"><span class="title">Determining if a point is on a line.</span></h5>
-<p id="p-821">From our last result, this is easy. The equation \(\vec z=(1-t)\vec x+t\vec y\) gives us \(n\) linear equations in the single variable \(t\text{.}\) If this system of linear equations is consistent, then the point is on the line.</p></article><article class="example example-like" id="example-36"><a data-knowl="" class="id-ref original" data-refid="hk-example-36"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.22</span><span class="period">.</span><span class="space"> </span><span class="title">Test to see if a point is on a line.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-36"><article class="example example-like"><p id="p-822">Let \(\vec x=(1,2,-1,3)\) and \(\vec y=(1,-2,1,3)\text{.}\) Is \(\vec z=(1,-2,-1,3)\) on the line joining \(\vec x\) and \(\vec y\text{?}\) The equation \(\vec z=(1-t)\vec x+t\vec y\) gives four equations, one for each coordinate:</p>
+\begin{equation*}
+d(\vec x,\vec y)= \|\vec x-\vec y\|
+\end{equation*}
+</div></article><article class="theorem theorem-like" id="theorem-47"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.2.26</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of distance in \(\R^n\).</span>
+</h6>
+<p id="p-771">Let \(\vec x\text{,}\) \(\vec y\) and \(\vec z\) be vectors in \(\R^n\text{.}\) Then</p>
+<ol class="decimal">
+<li id="li-283"><p id="p-772">\(d(\vec x,\vec y) \ge 0\) with equality if and only if \(\vec x=\vec y\)</p></li>
+<li id="li-284"><p id="p-773">\(\displaystyle d(\vec x,\vec y) =d(\vec y,\vec x)\)</p></li>
+<li id="li-285"><p id="p-774">\(d(\vec x,\vec z) \leq d(\vec x,\vec y)+d(\vec y,\vec z)\) (the triangle inequality)</p></li>
+</ol></article><article class="hiddenproof" id="proof-62"><a data-knowl="" class="id-ref original" data-refid="hk-proof-62"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-62"><article class="hiddenproof"><p id="p-775">These results are easy adaptations from <a class="xref" data-knowl="./knowl/VectorLengths.html" title="Theorem 4.2.18: Properties of lengths of vectors in \(\R^n\)">Theorem 4.2.18</a> using \(d(\vec x,\vec y)=\|\vec x-\vec y\|\text{.}\)</p></article></div>
+<p id="p-776">The triangle inequality is so named because the length of one side of a triangle is less than or equal to the sum of the lengths of the other two sides:</p>
+<figure class="figure figure-like" id="figure-21"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><object data="images/image-22.html" id="image-22" width="360" height="360"><embed src="images/image-22.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.27<span class="period">.</span></span><span class="space"> </span></figcaption></figure><article class="corollary theorem-like" id="corollary-4"><h6 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">4.2.28</span><span class="period">.</span><span class="space"> </span><span class="title">Equality in triangle inequality.</span>
+</h6>
+<p id="p-777">Suppose vectors \(\vec x\text{,}\) \(\vec y\) and \(\vec z\) satisfy \(d(\vec x,\vec z) = d(\vec x,\vec y)+d(\vec y,\vec z) \) and \(\theta \)  is the angle between \(\vec x\) and \(\vec y \text{.}\) Then \(\theta=0\) or \(\theta=\pi.\)</p></article><article class="hiddenproof" id="proof-63"><a data-knowl="" class="id-ref original" data-refid="hk-proof-63"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-63"><article class="hiddenproof"><p id="p-778">To get equality in the triangle inequality, we must have equality in the Cauchy-Schwarz inequality (see the proof of <a class="xref" data-knowl="./knowl/CauchySchwarz.html" title="Theorem 4.2.17: Cauchy-Schwarz">Theorem 4.2.17</a>).</p>
 <div class="displaymath">
-\begin{align*}
-1(1-t)+1t\amp=1 \\
-2(1-t)+(-2)t\amp=-2  \amp\amp\to t=1\\
-(-1)(1-t)+1t\amp=-1 \amp\amp\to t=0\\
-3(1-t)+3t\amp=3 
-\end{align*}
-</div>
-<p data-braille="continuation">Now we have a contradiction. The second equation implies \(t=1\) while the third implies \(t=0\text{,}\) and so the point is <em class="emphasis">not</em> on the line.</p>
-<p id="p-823">On the other hand, is \(\vec z=(1,-6,3,3)\text{.}\) then \(\vec z=(1-t)\vec x+t\vec y\) gives four equations,</p>
-<div class="displaymath">
-\begin{align*}
-1(1-t)+1t\amp=1 \amp\amp\to 1=1\\
-2(1-t)+(-2)t\amp=-6  \amp\amp\to t=2\\
-(-1)(1-t)+1t\amp=3 \amp\amp\to t=2\\
-3(1-t)+3t\amp=3 \amp\amp\to 3=3
-\end{align*}
-</div>
-<p data-braille="continuation">Since all four equation are valid when \(t=2\) the vector \(\vec z\) is on the line. It is easy to verify that \(\vec z=-\vec x+2\vec y\text{.}\)</p></article></div></section></section></div></main>
+\begin{equation*}
+|\vec x\cdot \vec y|= \|\vec x\|  \|\vec y\| \\
+\|\vec x\| \|\vec y\|\, |\cos\theta| = \|\vec x\|  \|\vec y\| \\
+\cos\theta=\pm1\\
+\theta = 0\textrm{ or } \pi
+\end{equation*}
+</div></article></div></section></section></div></main>
 </div>
 </body>
 </html>

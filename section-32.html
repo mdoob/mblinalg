@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:25-05:00    *-->
+<!--*    on 2020-07-10T15:31:50-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -9,7 +9,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Linear indepencence, spanning and bases in \(\mathbb{R}^n\)</title>
+<title>Geometric applications</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
@@ -82,10 +82,10 @@ MathJax.Hub.Config({
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-31.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="EuclideanSpace.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chapter-5.html" title="Next">Next</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-31.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="EuclideanSpace.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-33.html" title="Next">Next</a></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-31.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="EuclideanSpace.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chapter-5.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-31.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="EuclideanSpace.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-33.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -96,473 +96,178 @@ MathJax.Hub.Config({
 <li class="link"><a href="Determinants.html" data-scroll="Determinants"><span class="codenumber">3</span> <span class="title">The Determinant</span></a></li>
 <li class="link"><a href="EuclideanSpace.html" data-scroll="EuclideanSpace"><span class="codenumber">4</span> <span class="title">Vectors in Euclidean \(n\) space</span></a></li>
 <li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
-<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">6</span> <span class="title">Additional Topics</span></a></li>
+<li class="link"><a href="LinearTransformations.html" data-scroll="LinearTransformations"><span class="codenumber">6</span> <span class="title">Linear transformations</span></a></li>
+<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">7</span> <span class="title">Additional Topics</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-32"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">4.9</span> <span class="title">Linear indepencence, spanning and bases in \(\mathbb{R}^n\)</span>
+<span class="type">Section</span> <span class="codenumber">4.8</span> <span class="title">Geometric applications</span>
 </h2>
-<section class="introduction" id="introduction-13"><p id="p-949">Recall the definition of linear combinations: \(\vec w\) is a linear combination of \(\vec x_1,\vec x_2,\ldots,\vec x_m\) if</p>
-<div class="displaymath">
-\begin{equation*}
-\vec w=r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_m 
-\end{equation*}
-</div>
-<p data-braille="continuation">for some real numbers \(r_1, r_2,\ldots,r_n\text{.}\)</p></section><section class="subsection" id="subsection-77"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.9.1</span> <span class="title">Linear independence</span>
+<section class="introduction" id="introduction-12"><p id="p-929">The dot product and cross product in \(\R^3\) allow us to compute many different geometric properties of lines and planes.</p></section><section class="subsection" id="subsection-74"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.8.1</span> <span class="title">The equation of the line of intersection of two planes</span>
 </h3>
-<p id="p-950">Suppose that \(\vec x_1,\vec x_2,\ldots,\vec x_m\) are vectors in \(\mathbb{R}^n\text{.}\) Is it possible that \(\vec 0\) is a linear combination of \(\vec x_1,\vec x_2,\ldots,\vec x_m\text{?}\) The answer is certainly yes: just set \(r_1=r_2=\cdots=r_n=0\text{.}\) Is this the only way of doing this? If so, the vectors are called <em class="emphasis">linearly independent.</em></p>
-<article class="definition definition-like" id="definition-52"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.9.1</span><span class="period">.</span><span class="space"> </span><span class="title">Linearly independent vectors.</span>
-</h6>
-<p id="p-951">The set of vectors \(\{\vec x_1,\vec x_2,\ldots,\vec x_m\}\) is linearly independent if</p>
+<p id="p-930">Suppose we are given the equation of two planes and want the equation of the line of intersection. If the two equations are</p>
 <div class="displaymath">
 \begin{equation*}
-r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_m=\vec0
+a_1x+b_1y+c_1z+d_1=0 \rlap{\text{ and}}\\
+a_2x+b_2y+c_2z+d_2=0
 \end{equation*}
 </div>
-<p data-braille="continuation">implies  \(r_1=r_2=\cdots=r_n=0\text{.}\)</p></article><article class="example example-like" id="example-38"><a data-knowl="" class="id-ref original" data-refid="hk-example-38"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.9.2</span><span class="period">.</span><span class="space"> </span><span class="title">Three vectors in \(\mathbb{R}^4\).</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-38"><article class="example example-like"><p id="p-952">Let \(\vec x_1=(1,2,1,1)\text{,}\) \(\vec x_2=(0,1,2,1)\) and \(\vec x_3=(-1,1,-1,1)\text{.}\) Then the equation</p>
+<p data-braille="continuation">then the line of intersection will be the set of all points that satisfy “both” equations. We can rewrite the two equations as</p>
 <div class="displaymath">
 \begin{equation*}
-r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_m=\vec0
+a_1x+b_1y+c_1z=-d_1 \rlap{\text{ and}}\\
+a_2x+b_2y+c_2z=-d_2
 \end{equation*}
 </div>
-<p data-braille="continuation">says</p>
-<div class="displaymath">
-\begin{align*}
-r_1 + 0r_2 -  r_3\amp=0 \amp\amp \textrm{from the first coordinate}\\
-2r_1 +  r_2 +  r_3\amp=0 \amp\amp \textrm{from the second coordinate}\\
-r_1 + 2r_2 -  r_3\amp=0 \amp\amp \textrm{from the third coordinate}\\
-r_1 +  r_2 +  r_3\amp=0 \amp\amp \textrm{from the fourth coordinate}
-\end{align*}
-</div>
-<p data-braille="continuation">This system of linear equations is easy to solve: the only solution is \(r_1=r_2=r_3=0\) and so the set of vectors \(\{\vec x_1,\vec x_2,\vec x_3\}\) is linearly independent. Notice that the reduced row echelon form for this system of equations is</p>
+<p data-braille="continuation">and use the augmented matrix</p>
 <div class="displaymath">
 \begin{equation*}
-\left[\begin{array}{ccc|c}
-1 \amp 0 \amp 0 \amp 0\\
-0 \amp 1 \amp 0 \amp 0\\
-0 \amp 0 \amp 1 \amp 0\\
-0 \amp 0 \amp 0 \amp 0
-\end{array}\right]
-\end{equation*}
-</div></article></div>
-<p id="p-953">Now suppose we form a matrix \(X\) using \(\vec x_1,\vec x_2,\ldots,\vec x_m\) as columns:</p>
-<div class="displaymath">
-\begin{equation*}
-X=
-\begin{bmatrix}
-\vec x_1 \amp \vec x_2 \amp \cdots \amp \vec x_m
-\end{bmatrix}
+\left[
+\begin{array}{ccc|c}
+a_1\amp b_1\amp c_1\amp -d_1\\
+a_2\amp b_2\amp c_2\amp -d_2
+\end{array}
+\right]
 \end{equation*}
 </div>
-<p data-braille="continuation">Then the set \(\{\vec x_1,\vec x_2,\ldots,\vec x_m\}\) is linearly independent if and only if</p>
+<p id="p-931">When this matrix is put in reduced row echelon form, there will be one free variable, which we may call \(t\text{.}\) Writing the solution as a vector and rearranging give the equation of a line.</p>
+<p id="p-932">Here is an example to show how this technique works: the equations of the planes are</p>
 <div class="displaymath">
 \begin{equation*}
-X \begin{bmatrix} r_1\\r_2\\ \vdots\\ r_m \end{bmatrix}=\vec0
-\textrm{ implies } r_1=r_2=\cdots=r_n=0.
+x+y+z=-2\\
+2x+y-z=2
 \end{equation*}
 </div>
-<p data-braille="continuation">Viewing this as a system of linear equations, this says that the reduced row echelon form of \(X\) yields no free variables when determining the solutions. This, in turn, means the nonzero rows of the reduced row echelon form of \(X\) is the identity matrix (see the previous example).</p>
-<article class="theorem theorem-like" id="IndependentSize"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.9.3</span><span class="period">.</span><span class="space"> </span><span class="title">A linearly independent set in \(\mathbb{R}^n\) has as most \(n\) elements.</span>
-</h6>
-<p id="p-954">If \(\{\vec x_1,\vec x_2,\ldots,\vec x_m\}\) is a linearly independent set in \(\mathbb{R}^n\text{,}\) then \(m\leq n\text{.}\)</p></article><article class="hiddenproof" id="proof-70"><a data-knowl="" class="id-ref original" data-refid="hk-proof-70"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-70"><article class="hiddenproof"><p id="p-955">The matrix</p>
+<p data-braille="continuation">Here is the picture of the two planes and the line of intersection:</p>
+<figure class="figure figure-like" id="figure-48"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><object data="images/image-51.html" id="image-51" width="420" height="420"><embed src="images/image-51.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.1<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-933">The augmented matrix for the system is</p>
 <div class="displaymath">
 \begin{equation*}
-X=
-\begin{bmatrix}
-\vec x_1 \amp \vec x_2 \amp \cdots \amp \vec x_m
-\end{bmatrix}
+\left[
+\begin{array}{ccc|c}
+2\amp1\amp-1\amp2\\
+1\amp1\amp1\amp-2
+\end{array}
+\right]
 \end{equation*}
 </div>
-<p data-braille="continuation">has \(n\) rows and \(m\) columns. Since the reduced row echelon form of \(X\) has the identity matrix for its nonzero rows, the number of rows is at least as large as the number of columns. This says \(m\leq n\text{.}\)</p></article></div></section><section class="subsection" id="subsection-78"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.9.2</span> <span class="title">Spanning sets</span>
+<p data-braille="continuation">which has a reduced row echelon form of</p>
+<div class="displaymath">
+\begin{equation*}
+\left[
+\begin{array}{ccc|c}
+1\amp0\amp-2\amp-4\\
+0\amp1\amp3\amp6
+\end{array}
+\right]
+\end{equation*}
+</div>
+<p data-braille="continuation">Hence \(z\) is a free variable and can be assigned the value \(t\text{.}\) This gives \(z=t\text{,}\) \(y=6-3t\) and \(x=-4+2t\text{,}\) which may be written as</p>
+<div class="displaymath">
+\begin{equation*}
+(x,y,z)=(-4+2t,6-3t,t)=(-4,6,0) + t(2,-3,1)
+\end{equation*}
+</div>
+<p id="p-934">As another example, consider the two planes with equations written as</p>
+<div class="displaymath">
+\begin{equation*}
+x+y=2\\
+x+y-z=3
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="figure-49"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><object data="images/image-52.html" id="image-52" width="420" height="420"><embed src="images/image-52.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.2<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-935">Then the augmented matrix is</p>
+<div class="displaymath">
+\begin{equation*}
+\left[
+\begin{array}{ccc|c}
+1\amp1\amp0\amp2\\
+1\amp1\amp-1\amp3
+\end{array}
+\right]
+\end{equation*}
+</div>
+<p data-braille="continuation">with reduced row echelon form</p>
+<div class="displaymath">
+\begin{equation*}
+\left[
+\begin{array}{ccc|c}
+1\amp1\amp0\amp2\\
+0\amp0\amp1\amp-1
+\end{array}
+\right].
+\end{equation*}
+</div>
+<p data-braille="continuation">This means that \(y\) is a free variable and may be assigned the value \(t\text{,}\) from which follows \(z=-1\text{,}\) \(y=t\) and \(x=2-t\text{.}\) In other words,</p>
+<div class="displaymath">
+\begin{equation*}
+(x,y,z)=(2-t,t,-1)= (2,0,-1)+t(-1,1,0)
+\end{equation*}
+</div>
+<p data-braille="continuation">which is the equation of the line \(L\text{.}\)</p></section><section class="subsection" id="IntersectionLinePlane"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.8.2</span> <span class="title">Intersection of a Line and a Plane</span>
 </h3>
-<article class="definition definition-like" id="definition-53"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.9.4</span><span class="period">.</span><span class="space"> </span><span class="title">Spanning vectors.</span>
-</h6>
-<p id="p-956">A set of vectors \(\{\vec x_1,\vec x_2,\ldots,\vec x_m\}\) <em class="emphasis">spans</em> \(\mathbb{R}^n\) if, for any \(\vec w\) in \(\mathbb{R}^n\text{,}\) there exist \(r_1, r_2,\ldots,r_m\) so that</p>
+<p id="p-936">Suppose we have a line \(L\) with equation \((x_0,y_0,z_0)+t\vec {n_0}\) and a plane with equations \(ax+by+cz=0\text{.}\) Is there a point in both the line and the plane, and, if so, what is it? As usual when discussing planes, let \(\vec n=(a,b,c)\text{.}\) Then a point \(\vec x=(x,y,z)\) is in the plane if and only if \(\vec x\cdot \vec n=0\text{.}\) If \(\vec x\) is also on the line, then \(\vec x=(x_0,y_0,z_0)=t\vec{n_0}\) for some \(t\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
-r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_m=\vec w.
+((x_0,y_0,z_0)+t\vec{n_0})\cdot\vec n=0\\
+(x_0,y_0,z_0)\cdot \vec n= -t( \vec{n_0}\cdot\vec n)
 \end{equation*}
-</div></article><p id="p-957">In other words, for any \(\vec w\text{,}\) we can find solutions to</p>
+</div>
+<p data-braille="continuation">and, if \(\vec{n_0}\cdot\vec n\not=0\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
-r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_m=\vec w.
+t=-\frac{(x_0,y_0,z_0)\cdot \vec n}{\vec{n_0}\cdot\vec n}
 \end{equation*}
 </div>
-<p data-braille="continuation">viewed as an equation with variables \(r_1,r_2,\ldots,r_m\text{.}\)</p>
-<article class="example example-like" id="example-39"><a data-knowl="" class="id-ref original" data-refid="hk-example-39"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.9.5</span><span class="period">.</span><span class="space"> </span><span class="title">Four vectors in \(\mathbb{R}^3\).</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-39"><article class="example example-like"><p id="p-958">Let \(\vec x_1=(1,2,3)\text{,}\) \(\vec x_2=(3,1,1)\text{,}\) \(\vec x_3=(1,0,1)\text{,}\) and \(\vec x_4=(3,2,4)\text{.}\) Also, let \(\vec{w}=(1,3,1)\text{.}\) Now the equation</p>
-<div class="displaymath">
-\begin{equation*}
-r_1\vec{x_1} +
-r_2\vec{x_2} +
-r_3\vec{x_3} +
-r_4\vec{x_4} = \vec{w}.
-\end{equation*}
-</div>
-<p data-braille="continuation">becomes</p>
-<div class="displaymath">
-\begin{align*}
-r_1 + 3r_2 + r_3 + 3r_4 \amp=1 \amp\amp \textrm{from the first coordinate}\\
-2r_1 +  r_2 +0r_3 + 2r_4 \amp=3 \amp\amp \textrm{from the second coordinate}\\
-3r_1 +  r_2 + r_3 + 4r_4 \amp=1 \amp\amp \textrm{from the third coordinate}
-\end{align*}
-</div>
-<p data-braille="continuation">The reduced row echelon form of</p>
-<div class="displaymath">
-\begin{equation*}
-\left[\begin{array}{cccc|c}
-1 \amp 3 \amp 1 \amp 3 \amp 1\\
-2 \amp 1 \amp 0 \amp 2 \amp 3\\
-3 \amp 1 \amp 1 \amp 4 \amp 1\\
-\end{array}\right]
-\end{equation*}
-</div>
-<p data-braille="continuation">is</p>
-<div class="displaymath">
-\begin{equation*}
-\left[\begin{array}{cccc|c}
-1 \amp 0 \amp 0 \amp \frac56 \amp 1\\
-0 \amp 1 \amp 0 \amp \frac13 \amp 1\\
-0 \amp 0 \amp 1 \amp \frac76 \amp -3\\
-\end{array}\right]
-\end{equation*}
-</div>
-<p data-braille="continuation">and so \(r_1=1\text{,}\) \(r_2=1\) and \(r_3=-3\) gives \(r_1\vec x_1+r_2\vec x_2+r_3\vec x_3=\vec w\text{.}\) Notice that if we replace \(\vec w\) by \(\vec w'\text{,}\) the only thing that changes is the last column, and so the reduced row echelon form will be the same in the first three columns, and hence there will be a solution for \(\vec{w}'\) too.</p></article></div>
-<article class="theorem theorem-like" id="SpanningSize"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.9.6</span><span class="period">.</span><span class="space"> </span><span class="title">A spanning set in \(\mathbb{R}^n\) has as least \(n\) elements.</span>
-</h6>
-<p id="p-959">If \(\{\vec x_1,\vec x_2,\ldots,\vec x_m\}\) is a spanning set in \(\mathbb{R}^n\text{,}\) then \(n\leq m\text{.}\)</p></article><article class="hiddenproof" id="proof-71"><a data-knowl="" class="id-ref original" data-refid="hk-proof-71"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-71"><article class="hiddenproof"><p id="p-960">Define the matrix \(X\) by</p>
-<div class="displaymath">
-\begin{equation*}
-X=
-\begin{bmatrix}
-\vec x_1 \amp \vec x_2 \amp \cdots \amp \vec x_m
-\end{bmatrix}.
-\end{equation*}
-</div>
-<p data-braille="continuation">and let \(X'\) be the reduced row echelon form of \(X\text{.}\) This means there are elementary matrices \(E_1,E_2,\ldots,E_k\) so that \(X'=E_kE_{k-1}\cdots E_2E_1X\text{.}\) Let \(\vec e_n=(0,0,\ldots,0,1)\text{,}\) and</p>
-<div class="displaymath">
-\begin{equation*}
-\vec w= E_1^{-1}E_2^{-1}\cdots E_k^{-1} \vec e_n.
-\end{equation*}
-</div>
-<p data-braille="continuation">so that</p>
-<div class="displaymath">
-\begin{equation*}
-E_kE_{k-1}\cdots E_2E_1\vec w= \vec e_n.
-\end{equation*}
-</div>
-<p data-braille="continuation">Now consider</p>
-<div class="displaymath">
-\begin{equation*}
-r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_m=\vec w.
-\end{equation*}
-</div>
-<p data-braille="continuation">which is the same as</p>
-<div class="displaymath">
-\begin{equation*}
-X \begin{bmatrix} r_1\\r_2\\ \vdots\\ r_m \end{bmatrix}=\vec w.
-\end{equation*}
-</div>
-<p data-braille="continuation">To solve this we compute the reduced row echelon form of</p>
-<div class="displaymath">
-\begin{equation*}
-\left[\begin{array}{cccc|c}
-\vec x_1 \amp \vec x_2 \amp \cdots \amp \vec x_m \amp \vec w
-\end{array}\right]
-\end{equation*}
-</div>
-<p data-braille="continuation">We multiply this matrix on the left by \(E_kE_{k-1}\cdots E_2E_1\) to get the matrix</p>
-<div class="displaymath">
-\begin{equation*}
-\left[\begin{array}{c|c}
-X' \amp \vec e_n
-\end{array}\right]
-\end{equation*}
-</div>
-<p data-braille="continuation">Suppose that the last row of \(X'\) is all-zero row. Then the last row of the reduced row echelon form is \([0 \cdots 0 \mid 1]\text{,}\) which is the criterion for the system of equations having no solution. This can't happen because by assumption \(\{\vec x_1,\vec x_2,\ldots,\vec x_m\}\) is a spanning set.</p>
-<p id="p-961">Since \(X'\) has no all-zero row at the bottom, every row must contain a leading one. This means the number of columns of \(X'\) is at least as large as the number of rows, that is to say, \(n\leq m\text{.}\)</p></article></div></section><section class="subsection" id="subsection-79"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.9.3</span> <span class="title">Bases of \(\mathbb{R}^n\)</span>
+<p id="p-937">Here is the picture of the situation. The points on the line are determined by using all the different values of \(t\text{.}\) The point of intersection is the particular \(t\) where \(t=-\frac{(x_0,y_0,z_0)\cdot \vec n}{\vec{n_0}\cdot\vec n}\text{.}\)</p>
+<figure class="figure figure-like" id="figure-50"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-53.html" id="image-53" width="450" height="450"><embed src="images/image-53.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-938">What if \(\vec{n_0}\cdot\vec n=0\text{?}\) Then a line with direction vector \(n\) (that is, orthogonal to the plane) itself is orthogonal to \(L\text{.}\) If \((x_0,y_0,z_0)\) is not in the plane, the line is then parallel to the plane and never intersects it. On the other hand, if \((x_0,y_0,z_0)\) is in the plane, the line is then actually contained in the plane, so every point on the line intersects it.</p>
+<p id="p-939">In the following picture, the red line had direction vector \(\vec n=(a,b,c)\) and hence is orthogonal to the plane. Since the line \(L\) has direction vector \(\vec{n_0}\text{,}\) and \(\vec{n_0}\cdot\vec{n}=0\text{,}\) \(L\) is also orthogonal to the red line. That makes the plane and the line \(L\) parallel.</p>
+<figure class="figure figure-like" id="figure-51"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-54.html" id="image-54" width="450" height="450"><embed src="images/image-54.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure></section><section class="subsection" id="subsection-76"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.8.3</span> <span class="title">Distance Between Two Lines</span>
 </h3>
-<article class="definition definition-like" id="definition-54"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.9.7</span><span class="period">.</span><span class="space"> </span><span class="title">Basis of \(\mathbb{R}^n\).</span>
-</h6>
-<p id="p-962">A set of vectors \(\{\vec x_1,\vec x_2,\ldots,\vec x_m\}\) is a <em class="emphasis">basis</em> (plural <em class="emphasis">bases</em>) if it is both linearly independent and spans \(\mathbb{R}^n\text{.}\)</p></article><article class="theorem theorem-like" id="theorem-66"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.9.8</span><span class="period">.</span><span class="space"> </span><span class="title">A basis of \(\mathbb{R}^n\) is of size \(n\).</span>
-</h6>
-<p id="p-963">If \(\{\vec x_1,\vec x_2,\ldots,\vec x_m\}\) is a basis of \(\mathbb{R}^n\text{,}\) then \(m=n\text{.}\)</p></article><article class="hiddenproof" id="proof-72"><a data-knowl="" class="id-ref original" data-refid="hk-proof-72"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-72"><article class="hiddenproof"><p id="p-964">From <a class="xref" data-knowl="./knowl/IndependentSize.html" title="Theorem 4.9.3: A linearly independent set in \(\mathbb{R}^n\) has as most \(n\) elements">Theorem 4.9.3</a> we have \(m\leq n\text{.}\) From <a class="xref" data-knowl="./knowl/SpanningSize.html" title="Theorem 4.9.6: A spanning set in \(\mathbb{R}^n\) has as least \(n\) elements">Theorem 4.9.6</a> we have \(n\leq m\text{.}\) Hence \(m=n\text{.}\)</p></article></div>
-<article class="theorem theorem-like" id="theorem-67"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.9.9</span><span class="period">.</span><span class="space"> </span><span class="title">Determining if \(\{\vec x_1,\ldots,\vec x_n\}\) is a basis for \(\mathbb{R}^n\).</span>
-</h6>
-<p id="p-965">Let \(\mathcal{X}=\{\vec x_1,\vec x_2,\ldots,\vec x_n\}\) be a set of vectors in \(\mathbb{R}^n\text{,}\) and let \(X\) be the matrix with \(\vec x_1,\vec x_2,\ldots,\vec x_n\) as columns:</p>
-<div class="displaymath">
-\begin{equation*}
-X=
-\begin{bmatrix}
-\vec x_1 \amp \vec x_2 \amp \cdots \amp \vec x_n
-\end{bmatrix}.
-\end{equation*}
-</div>
-<p data-braille="continuation">Then \(\mathcal{X}\) is a basis of \(\mathbb{R}^n\) if and only if \(X\) is nonsingular.</p></article><article class="hiddenproof" id="proof-73"><a data-knowl="" class="id-ref original" data-refid="hk-proof-73"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-73"><article class="hiddenproof"><p id="p-966">The equation \(r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_n=\vec w\) is the same as the matrix equation</p>
-<div class="displaymath">
-\begin{equation*}
-X \begin{bmatrix} r_1\\r_2\\ \vdots\\r_n \end{bmatrix} = \vec w
-\end{equation*}
-</div>
-<p data-braille="continuation">and so, setting \(\vec w=\vec0\text{,}\) we see that \(\mathcal{X}\) is linearly independent if and only if \(X \begin{bmatrix} r_1\\ \vdots\\r_n \end{bmatrix} =\vec 0\) implies \(\begin{bmatrix} r_1\\ \vdots\\r_n \end{bmatrix} =\vec0\text{.}\) By <a class="xref" data-knowl="./knowl/InvertibilityEquivalence.html" title="Theorem 2.11.2: Equivalent Forms of Invertibility">Theorem 2.11.2</a>, this is equivalent to \(X\) being nonsingular.</p>
-<p id="p-967">Also, if \(\mathcal{X}\) spans \(\mathbb{R}^n\text{,}\) then, for any \(\vec w\) in \(\mathbb{R}^n\text{,}\) \(X \begin{bmatrix} r_1\\ \vdots\\r_n \end{bmatrix} =\vec w\) always has a solution. Again, by <a class="xref" data-knowl="./knowl/InvertibilityEquivalence.html" title="Theorem 2.11.2: Equivalent Forms of Invertibility">Theorem 2.11.2</a>, this is equivalent to \(X\) being nonsingular.</p></article></div>
-<p id="p-968">Notice that something interesting happened in the proof of the previous theorem.  When \(m=n\text{,}\) \(\mathcal{X}\) need be only linearly independent <em class="emphasis">or</em> spanning to show that it is a basis.</p>
-<article class="corollary theorem-like" id="corollary-5"><h6 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">4.9.10</span><span class="period">.</span><span class="space"> </span><span class="title">Determining if \(\{\vec x_1,\ldots,\vec x_n\}\) is a basis for \(\mathbb{R}^n\).</span>
-</h6>
-<p id="p-969">\(\mathcal{X}=\{\vec x_1,\vec x_2,\ldots,\vec x_m\}\) is a basis for \(\mathbb{R}^n\) if any two of the following three properties hold:</p>
+<p id="p-940">If two lines intersect, the distance between them is obviously \(0\text{.}\) Otherwise, there are two cases:</p>
 <ul class="disc">
-<li id="li-321"><p id="p-970">\(\mathcal{X}\) is linearly independent.</p></li>
-<li id="li-322"><p id="p-971">\(\mathcal{X}\) is a spanning set for \(\mathbb{R}^n\text{.}\)</p></li>
-<li id="li-323"><p id="p-972">\(m=n\text{.}\)</p></li>
-</ul></article><article class="example example-like" id="example-40"><a data-knowl="" class="id-ref original" data-refid="hk-example-40"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.9.11</span><span class="period">.</span><span class="space"> </span><span class="title">Examples of bases of \(\mathbb{R}^n\).</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-40"><article class="example example-like"><ul id="p-973" class="disc">
-<li id="li-324">
-<p id="p-974">Let</p>
-<div class="displaymath">
-\begin{gather*}
-\vec e_1=(1,0,0,\ldots,0)\\
-\vec e_2=(0,1,0,\ldots,0)\\
-\vec e_3=(0,0,1,\ldots,0)\\
-\vdots\\
-\vec e_n=(0,0,0,\ldots,1)
-\end{gather*}
-</div>
-<p data-braille="continuation">The set \(\{\vec e_1,\ldots,\vec e_n\}\) is called the <em class="emphasis">standard basis</em> of \(\mathbb{R}^n\text{.}\)</p>
-</li>
-<li id="li-325">
-<p id="p-975">Let</p>
-<div class="displaymath">
-\begin{gather*}
-\vec u_1=(1,1,1,\ldots,1)\\
-\vec u_2=(0,1,1,\ldots,1)\\
-\vec u_3=(0,0,1,\ldots,1)\\
-\vdots\\
-\vec u_n=(0,0,0,\ldots,1)
-\end{gather*}
-</div>
-<p data-braille="continuation">The set \(\{\vec u_1,\ldots,\vec u_n\}\) a basis of \(\mathbb{R}^n\text{.}\)</p>
-</li>
-</ul></article></div></section><section class="subsection" id="subsection-80"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.9.4</span> <span class="title">Subspaces of \(\mathbb{R}^n\)</span>
-</h3>
-<section class="introduction" id="introduction-14"><article class="definition definition-like" id="SubspaceDefinition"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.9.12</span><span class="period">.</span><span class="space"> </span><span class="title">Subspace of \(\mathbb{R}^n\).</span>
-</h6>
-<p id="p-976">A nonempty subset \(S\) of \(\mathbb{R}^n\) is a <em class="emphasis">subspace</em> if it satisfies the following two conditions:</p>
-<ol class="decimal">
-<li id="li-326"><p id="p-977">If \(\vec x\in S\) and \(\vec y\in S\text{,}\) then \(\vec x+\vec y\in S\) (this is called closure under addition).</p></li>
-<li id="li-327"><p id="p-978">If \(\vec x\in S\) and \(r\in \mathbb{R}\text{,}\) then \(r\vec x\in S\) (this is called closure under scalar multiplication).</p></li>
-</ol></article><article class="observation remark-like" id="observation-3"><h6 class="heading">
-<span class="type">Observation</span><span class="space"> </span><span class="codenumber">4.9.13</span><span class="period">.</span>
-</h6>
-<p id="p-979">Since \(S\) is nonempty, there is some \(\vec x\in S\text{,}\) and for any \(r\in\mathbb{R}\text{,}\) the definition says that \(r\vec x\in S\text{.}\) Using \(r=0\text{,}\) it follows that \(0\vec x=\vec0\in S\text{.}\)</p></article></section><section class="subsubsection" id="subsubsection-1"><h4 class="heading hide-type">
-<span class="type">Subsubsection</span> <span class="codenumber">4.9.4.1</span> <span class="title">Subspace examples</span>
-</h4>
-<ul id="p-980" class="disc">
-<li id="li-328">
-<p id="p-981">Let \(\vec x\in\mathbb{R}^n\) and \(S=\{\vec y\mid \vec y=r\vec x, r\in\mathbb{R}\}\)</p>
-<ol class="decimal">
-<li id="li-329"><p id="p-982">If \(\vec y_1\) and \(\vec y_2\) are in \(S\text{,}\) then \(\vec y_1=r_1\vec x\) and \(\vec y_2=r_2\vec x\text{,}\) and so \(\vec y_1 + \vec y_2=r_1\vec x + r_2\vec x
-= (r_1+r_2)\vec x\in S\text{.}\)</p></li>
-<li id="li-330"><p id="p-983">If \(\vec y\in S\) and \(r\in \mathbb{R}\text{,}\) then \(\vec y=s\vec x\) for some \(s\in\mathbb{R}\text{,}\) and \(r\vec y=r(s\vec x) = (rs)\vec x\in S\text{.}\)</p></li>
-</ol>
-</li>
-<li id="li-331"><p id="p-984">\(S=\{\vec0\}\text{.}\) This follows since \(\vec0+\vec0 = \vec0\) and \(r\vec0 = \vec0\text{.}\)</p></li>
-<li id="li-332">
-<p id="p-985">Let \(A\) be an \(m\times n\) matrix and let \(S=\{\vec x\in\mathbb{R}^n \mid A\vec x=\vec0\}\text{.}\)</p>
-<ol class="decimal">
-<li id="li-333"><p id="p-986">If \(\vec x_1\) and \(\vec x_2\) are in \(S\text{,}\) then \(A\vec x_1=\vec0\) and \(A\vec x_2=\vec 0\text{,}\) and so \(A(\vec x_1+ \vec x_2)=A\vec x_1 + A\vec x_2
-=\vec0+\vec0 = \vec0\text{.}\) Thus \(\vec x_1+\vec x_2\in S\text{.}\)</p></li>
-<li id="li-334"><p id="p-987">If \(\vec x\in S\) and \(r\in \mathbb{R}\text{,}\) then \(A\vec x=\vec 0\text{,}\) and \(A(r\vec x)=r(A\vec x) = r\vec0=\vec0\text{.}\) Hence \(r\vec x\in S\text{.}\)</p></li>
-</ol>
-<p data-braille="continuation">This subspace is called the <em class="emphasis">null space</em> of \(A\text{.}\)</p>
-</li>
-<li id="li-335">
-<p id="p-988">Let \(H\) be hyperplane in \(\mathbb{R}^n\) containing \(\vec0\text{,}\) that is, a set of vectors \(\vec x=(x_1,\ldots,x_n)\) satisfying an equation</p>
-<div class="displaymath">
-\begin{equation*}
-a_1x_1+a_2x_2+\cdots+a_nx_n=0
-\end{equation*}
-</div>
-<p data-braille="continuation">where at least one \(a_i\not=0\text{.}\)</p>
-<ol class="decimal">
-<li id="li-336">
-<p id="p-989">If \(\vec x=(x_1,\ldots,x_n)\) and \(\vec y=(y_1,\ldots,y_n)\) are in \(H\text{,}\) then from the equations</p>
-<div class="displaymath">
-\begin{gather*}
-a_1x_1+a_2x_2+\cdots+a_nx_n=0,\\
-a_1y_1+a_2y_2+\cdots+a_ny_n=0, \text{ and}\\
-\vec x+\vec y=(x_1+y_1,\ldots,x_n+y_n)
-\end{gather*}
-</div>
-<p data-braille="continuation">it follows that</p>
-<div class="displaymath">
-\begin{align*}
-a_1(x_1+y_1)+\cdots+a_n(x_n+y_n)\amp =
-(a_1x_1+\cdots+a_nx_n) + (a_1y_1+\cdots+a_ny_n)\\
-\amp=0+0\\
-\amp=0,
-\end{align*}
-</div>
-<p data-braille="continuation">and \(\vec x+\vec y\in H\text{.}\)</p>
-</li>
-<li id="li-337">
-<p id="p-990">\(r\vec x=(rx_1,\ldots,rx_n)\text{,}\) and</p>
-<div class="displaymath">
-\begin{equation*}
-a_1(rx_1)+\cdots+a_n(rx_n)=r(a_1x_1+\cdots+a_nx_n)=r0=0
-\end{equation*}
-</div>
-<p data-braille="continuation">and so \(r\vec x\in H\text{.}\)</p>
-</li>
-</ol>
-</li>
-<li id="li-338">
-<p id="p-991">Let \(\mathcal{X}=\{\vec x_1, \vec x_2,\ldots, \vec x_m\}\) be a set of vectors in \(\mathbb{R}^n\text{,}\) and let</p>
-<div class="displaymath">
-\begin{equation*}
-S=\Span\mathcal{X}=
-\{r_1\vec x_1 + r_2\vec x_2+\cdots+ r_m\vec x_m
-\mid r_i\in\mathbb{R}\}.
-\end{equation*}
-</div>
-<ol class="decimal">
-<li id="li-339">
-<p id="p-992">Let \(\vec y_1\) and \(\vec y_2\) be in \(S\text{,}\) that is</p>
-<div class="displaymath">
-\begin{gather*}
-\vec y_1=r_1\vec x_1 + r_2\vec x_2+\cdots+ r_m\vec x_m\\
-\vec y_2=s_1\vec x_1 + s_2\vec x_2+\cdots+ s_m\vec x_m.
-\end{gather*}
-</div>
-<p data-braille="continuation">Then</p>
-<div class="displaymath">
-\begin{equation*}
-\vec y_1+\vec y_2=
-(r_1+s_1)\vec x_1 + (r_2+s_2)\vec x_2+\cdots+ (r_m+s_m)\vec x_m \in S. 
-\end{equation*}
-</div>
-</li>
-<li id="li-340">
-<p id="p-993">If \(\vec y=r_1\vec x_1 + r_2\vec x_2+\cdots+ r_m\vec x_m\text{,}\) then</p>
-<div class="displaymath">
-\begin{align*}
-r\vec y\amp=r(r_1\vec x_1 + r_2\vec x_2+\cdots+ r_m\vec x_m)\\
-\amp=(rr_1)\vec x_1 + (rr_2)\vec x_2+\cdots+ (rr_m)\vec x_m \in S.
-\end{align*}
-</div>
-</li>
-</ol>
-</li>
-<li id="li-341">
-<p id="p-994">If \(A\) is an \(m\times n\) matrix with rows \(R_1, R_2,\ldots,R_m\) and columns \(C_1,C_2,\ldots,C_n\text{.}\) Then</p>
-<ul class="circle">
-<li id="li-342"><p id="p-995">The <em class="emphasis">row space</em> of \(A\) is \(\Span \{R_1,R_2,\ldots R_m\}\subseteq\mathbb{R}^n\text{.}\)</p></li>
-<li id="li-343"><p id="p-996">The <em class="emphasis">column space</em> of \(A\) is \(\Span \{C_1,C_2,\ldots C_n\}\subseteq\mathbb{R}^m\text{.}\)</p></li>
+<li id="li-315"><p id="p-941">The lines lie in a plane, in which case the lines are <em class="emphasis">parallel</em>.</p></li>
+<li id="li-316"><p id="p-942">The lines do not lie in a plane, in which case the lines are <em class="emphasis">skew</em>.</p></li>
 </ul>
-</li>
-<li id="li-344">
-<p id="p-997">If \(S_1\) and \(S_2\) are subspaces of \(\mathbb{R}^n\text{,}\) then so is \(S_1\cap S_2\text{.}\)</p>
-<ol class="decimal">
-<li id="li-345"><p id="p-998">Let \(\vec x\in S_1\cap S_2\) and \(\vec y\in S_1\cap S_2\text{.}\) Then \(\vec x\in S_1\) and \(\vec y\in S_1\text{.}\) Since \(S_1\) is a subspace, \(\vec x+\vec y\in S_1\text{.}\) Similarly \(\vec x+\vec y\in S_2\text{,}\) and so \(\vec x+\vec y\in S_1\cap S_2\text{.}\)</p></li>
-<li id="li-346"><p id="p-999">Let \(\vec x\in S_1\cap S_2\) and \(r\in\mathbb{R}\text{.}\) Then \(\vec x\in S_1\) and \(S_1\) a subspace implies \(r\vec x\in S_1\text{.}\) Similarly, \(r\vec x\in S_2\text{,}\) and so \(r\vec x\in S_1\cap S_2\text{.}\)</p></li>
-</ol>
-</li>
-</ul></section><section class="subsubsection" id="subsubsection-2"><h4 class="heading hide-type">
-<span class="type">Subsubsection</span> <span class="codenumber">4.9.4.2</span> <span class="title">Bases for a subspaces</span>
-</h4>
-<article class="definition definition-like" id="definition-56"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.9.14</span><span class="period">.</span><span class="space"> </span><span class="title">Basis for a subspace.</span>
-</h6>
-<p id="p-1000">Let \(S\) be a subspace of \(\mathbb{R}^n\text{,}\) and let \(\mathcal{X}=\{\vec x_1, \vec x_2,\ldots,\vec x_r\}\) be a set of vectors in \(S\text{.}\) Then \(\mathcal{X}\) is a <em class="emphasis">basis for \(S\)</em> if</p>
+<article class="paragraphs" id="paragraphs-17"><h5 class="heading"><span class="title">Parallel lines.</span></h5>
+<p id="p-943">We start with two parallel lines with equations</p>
 <ul class="disc">
-<li id="li-347"><p id="p-1001">\(\mathcal{X}\) is linearly independent, and</p></li>
-<li id="li-348"><p id="p-1002">\(\Span\mathcal{X}=S\text{.}\)</p></li>
-</ul></article><article class="theorem theorem-like" id="theorem-68"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.9.15</span><span class="period">.</span><span class="space"> </span><span class="title">Linearly independent sets are smaller than spanning sets.</span>
-</h6>
-<p id="p-1003">Suppose that \(S\) is a subspace of \(\mathbb{R}^n\text{,}\) \(\mathcal{X}=\{\vec x_1, \vec x_2,\ldots,\vec x_s\}\) is a linearly independent set in \(S\) and \(\mathcal{Y}=\{\vec y_1, \vec y_2,\ldots,\vec y_t\}\) spans \(S\text{.}\) Then \(s\leq t\text{.}\)</p></article><article class="hiddenproof" id="proof-74"><a data-knowl="" class="id-ref original" data-refid="hk-proof-74"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-74"><article class="hiddenproof"><p id="p-1004">Since \(\{\vec y_1, \vec y_2,\ldots,\vec y_t\}\) is a spanning set, we may write</p>
-<div class="displaymath">
-\begin{align*}
-\vec x_1 \amp= r_{11}\vec y_1+r_{12}\vec y_2+\cdots+r_{1t}\vec y_t\\
-\vec x_2 \amp= r_{21}\vec y_1+r_{22}\vec y_2+\cdots+r_{2t}\vec y_t\\
-\vdots\\
-\vec x_i \amp= r_{i1}\vec y_1+r_{i2}\vec y_2+\cdots+r_{it}\vec y_t
-=\sum_{j=1}^t r_{ij}\vec y_j\\
-\vdots\\
-\vec x_s \amp= r_{s1}\vec y_1+r_{s2}\vec y_2+\cdots+r_{st}\vec y_t\text{.}
-\end{align*}
-</div>
-<p data-braille="continuation">Now we take a linear combination of \(\{\vec x_1, \vec x_2,\ldots,\vec x_s\}\) and set it equal to \(\vec0\text{.}\)</p>
-<div class="displaymath">
-\begin{align*}
-\vec0=
-\sum_{i=1}^s u_i \vec x_i \amp= \sum_{i=1}^s u_i\sum_{j=1}^t
-r_{ij}\vec y_j\\
-\amp= \sum_{j=1}^t (\sum_{i=1}^s u_i r_{ij})\vec y_j\\
-\amp= \sum_{j=1}^t (\sum_{i=1}^s r_{ji}^T u_i)\vec y_j\\
-\amp= \sum_{j=1}^t (R^T \vec u)_j \vec y_j
-\end{align*}
-</div>
-<p data-braille="continuation">where \(R=[r_{ij}]\) and \(\vec u=(u_1,\ldots,u_s)\text{.}\) Now if \(R^T\vec u=\vec 0\) for some \(\vec u\not=\vec0\text{,}\) then \(\sum_{i=1}^s u_i \vec x_i =\vec 0\) with \(\vec u\not=\vec0\text{.}\) This contradicts the linear independence of \(\{\vec y_1, \vec y_2,\ldots,\vec y_t\}\text{.}\) Hence the reduced row echelon form of \(R^T\) can have no free variables, and so \(R^T\) can not have more columns than rows. Since \(R^T\) is an \(t\times s\) matrix, we have \(s\leq t\text{.}\)</p></article></div>
-<article class="theorem theorem-like" id="theorem-69"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.9.16</span><span class="period">.</span><span class="space"> </span><span class="title">All bases of a subspace have the same size.</span>
-</h6>
-<p id="p-1005">Let \(S\) be a subspace of \(\mathbb{R}^n\text{,}\) and let \(B_1\) and \(B_2\) be two bases of \(S\text{.}\) Then \(B_1\) and \(B_2\) have the same numer of elements.</p></article><article class="hiddenproof" id="proof-75"><a data-knowl="" class="id-ref original" data-refid="hk-proof-75"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-75"><article class="hiddenproof"><p id="p-1006">Since \(B_1\) is linearly independent and  \(B_2\) spans \(S\text{,}\) \(B_1\) can not have more elements than \(B_2\text{.}\) Interchanging \(B_1\) and \(B_2\) and using the same argument, \(B_2\) can not have more elements than \(B_1\text{.}\) Hence \(B_1\) and \(B_2\) have the same size.</p></article></div>
-<article class="definition definition-like" id="definition-57"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.9.17</span><span class="period">.</span><span class="space"> </span><span class="title">The dimension of a subspace.</span>
-</h6>
-<p id="p-1007">The <em class="emphasis">dimension</em> of a subspace \(S\) is the size of any basis.</p></article><article class="theorem theorem-like" id="theorem-70"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.9.18</span><span class="period">.</span><span class="space"> </span><span class="title">Dimension of the row space of \(A\).</span>
-</h6>
-<p id="p-1008">The dimension of the row space of \(A\) is the number of nonzero rows in the reduced row echelon form of \(A\text{.}\)</p></article><article class="hiddenproof" id="proof-76"><a data-knowl="" class="id-ref original" data-refid="hk-proof-76"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-76"><article class="hiddenproof"><p id="p-1009">We first show that the row space is unchanged by an elementary row operation:</p>
-<ul class="disc">
-<li id="li-349"><p id="p-1010">\(R_i\leftrightarrow R_j\text{:}\) the set of rows is unchanged, and so the span is also unchanged.</p></li>
-<li id="li-350">
-<p id="p-1011">\(R_i\gets \lambda R_i, \lambda\not=0\text{:}\)</p>
-<div class="displaymath">
-\begin{align*}
-r_1R_1\amp+\cdots+ r_i(\lambda R_i)+\cdots+r_nR_n\\
-\amp=r_1R_1+\cdots+ (r_i\lambda) R_i+\cdots+r_nR_n
-\end{align*}
-</div>
-</li>
-<li id="li-351">
-<p id="p-1012">\(R_i\gets R_i+\lambda R_j\text{:}\)</p>
-<div class="displaymath">
-\begin{align*}
-r_1R_1\amp+\cdots+ r_i(R_i+\lambda R_j)+\cdots+r_jR_j+\cdots+r_nR_n\\
-\amp=r_1R_1+\cdots+ r_i R_i+\cdots+(r_j+r_i\lambda)R_j+\cdots+r_nR_n
-\end{align*}
-</div>
-</li>
+<li id="li-317"><p id="p-944">\(L_1\) with equation \((x,y,z)=\vec{X_1} + t_1\vec{n_1}\)</p></li>
+<li id="li-318"><p id="p-945">\(L_2\) with equation \((x,y,z)=\vec{X_2} + t_2\vec{n_2}\)</p></li>
 </ul>
-<p data-braille="continuation">Next, we observe that the set of nonzero rows \(\{R_1,\ldots,R_k\}\) of the reduced row echelon forms is a linearly independent set: If \(r_1R_1+\cdots+r_kR_k=\vec 0\text{,}\) then the reduced row echelon form has a leading one in the first row and zeros below it. This in  turn means \(1r_1+0r_2+\cdots 0r_k= r_1=0\text{.}\) An analogous argument shows \(r_2=r_3=\cdots=r_k=0\) and so the set of nonzero rows is linearly independent. This makes \(\{R_1,R_2,\ldots,R_k\}\) a basis for the row space and the dimension of the row space of both \(A\) and the reduced row echelon form of \(A\) is \(k\text{.}\) This is the number of nonzero rows in the reduced row echelon form of \(A\text{.}\)</p></article></div>
-<article class="example example-like" id="example-41"><a data-knowl="" class="id-ref original" data-refid="hk-example-41"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.9.19</span><span class="period">.</span><span class="space"> </span><span class="title">Finding the dimension of the span of a set of vectors.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-41"><article class="example example-like"><p id="p-1013">Let \(\vec x_1,\vec x_,\ldots,\vec x_m\) be vectors in \(\mathbb{R}^n\text{.}\) Construct the matrix \(A\) using these vectors as the rows:</p>
-<div class="displaymath">
+<figure class="figure figure-like" id="figure-52"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-55.html" id="image-55" width="450" height="450"><embed src="images/image-55.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><article class="paragraphs" id="paragraphs-18"><h5 class="heading"><span class="title">Skew lines.</span></h5>
+<p id="p-946">We start with the eqations of two skew lines:</p>
+<ul class="disc">
+<li id="li-319"><p id="p-947">\(L_1\) has equation \((x,y,z)=\vec{X_1}+t_1\vec{n_1}\text{,}\) \(-\infty \lt t \lt\infty\)</p></li>
+<li id="li-320"><p id="p-948">\(L_2\) has equation \((x,y,z)=\vec{X_2}+t_2\vec{n_2}\) \(-\infty \lt t \lt\infty\)</p></li>
+</ul>
+<p data-braille="continuation">We want the (shortest) distance \(d\) between the lines.</p>
+<figure class="figure figure-like" id="figure-53"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-56.html" id="image-56" width="450" height="450"><embed src="images/image-56.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-949">The direction vector for \(L_1\) is \(\vec{n_1}\) while that of \(L_2\) is \(\vec{n_2}\text{.}\) Let us say that the shortest line segment joining \(L_1\) to \(L_2\) is on the line \(L\text{.}\) The length of the line segment, \(d\text{,}\) is the distance we wish to compute. In addition, let \(t_1\) and \(t_2\) be the particular values so both \(\vec{X_1}+t_1\vec{n_1}\) and \(\vec{X_2}+t_2\vec{n_2}\) lie on \(L\text{.}\)</p>
+<p id="p-950">Now \(L\) is perpendicular to both \(L_1\) and \(L_2\) , so the direction vector of \(L\) is orthogonal to both \(\vec{n_1}\) and \(\vec{n_2}\text{.}\) How can such a direction vector be produced? With the cross product, of course! And so we let \(\vec{n_1}\times\vec{n_2}\) be the direction vector of \(L\text{.}\) We then have, for some \(t_3\text{,}\)</p>
+<div class="displaymath" id="p-951">
 \begin{equation*}
-A=
-\begin{bmatrix} \vec x_1\\ \vec x_2\\ \vdots\\ \vec x_m \end{bmatrix}
+\vec{X_1}+t_1\vec{n_1} + t_3(\vec{n_1}\times\vec{n_2})
+=\vec{X_2}+t_2\vec{n_2}\\
+t_1\vec{n_1} - t_2\vec{n_2} + t_3(\vec{n_1}\times\vec{n_2})
+=\vec{X_2}-\vec{X_1}\tag{$*$}
 \end{equation*}
 </div>
-<p data-braille="continuation">Then the dimension of \(\Span\{\vec x_1,\vec x_2,\ldots,\vec x_m\}\) is the number of nonzero rows in the reduced row echelon form of \(A\text{.}\)</p></article></div></section></section></section></div></main>
+<p id="p-952">In principle the problem is solved. We have three unknowns \(t_1\text{,}\) \(t_2\) and \(t_3\text{,}\) and each of the three coordinates gives an equation, so we have three equations in three unknowns. There is a quicker way: take the dot product of both sides of (\(*\)) above with \(\vec{n_1}\) and then with \(\vec{n_2}\text{.}\) This gives</p>
+<div class="displaymath">
+\begin{equation*}
+\|\vec{n_1}\|^2 t_1 -(\vec{n_1}\cdot\vec{n_2})t_2
+=(\vec{X_2}-\vec{X_1})\cdot \vec{n_1}\\
+(\vec{n_1}\cdot\vec{n_2}) t_1 -\|\vec{n_2}\|^2t_2
+=(\vec{X_2}-\vec{X_1})\cdot \vec{n_2}
+\end{equation*}
+</div></article></section></section></div></main>
 </div>
 </body>
 </html>

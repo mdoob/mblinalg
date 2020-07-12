@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:41-05:00    *-->
+<!--*    on 2020-07-10T15:32:07-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,12 +13,32 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>A set of vectors \(\{\vec x_1,\vec x_2,\ldots,\vec x_m\}\) <em class="emphasis">spans</em> \(\mathbb{R}^n\) if, for any \(\vec w\) in \(\mathbb{R}^n\text{,}\) there exist \(r_1, r_2,\ldots,r_m\) so that</p>
+<p>Let \(\vec x_1=(1,2,1,1)\text{,}\) \(\vec x_2=(0,1,2,1)\) and \(\vec x_3=(-1,1,-1,1)\text{.}\) Then the equation</p>
 <div class="displaymath">
 \begin{equation*}
-r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_m=\vec w.
+r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_m=\vec0
 \end{equation*}
 </div>
-<span class="incontext"><a href="section-32.html#p-956">in-context</a></span>
+<p data-braille="continuation">says</p>
+<div class="displaymath">
+\begin{align*}
+r_1 + 0r_2 -  r_3\amp=0 \amp\amp \textrm{from the first coordinate}\\
+2r_1 +  r_2 +  r_3\amp=0 \amp\amp \textrm{from the second coordinate}\\
+r_1 + 2r_2 -  r_3\amp=0 \amp\amp \textrm{from the third coordinate}\\
+r_1 +  r_2 +  r_3\amp=0 \amp\amp \textrm{from the fourth coordinate}
+\end{align*}
+</div>
+<p data-braille="continuation">This system of linear equations is easy to solve: the only solution is \(r_1=r_2=r_3=0\) and so the set of vectors \(\{\vec x_1,\vec x_2,\vec x_3\}\) is linearly independent. Notice that the reduced row echelon form for this system of equations is</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{ccc|c}
+1 \amp 0 \amp 0 \amp 0\\
+0 \amp 1 \amp 0 \amp 0\\
+0 \amp 0 \amp 1 \amp 0\\
+0 \amp 0 \amp 0 \amp 0
+\end{array}\right]
+\end{equation*}
+</div>
+<span class="incontext"><a href="section-33.html#p-956">in-context</a></span>
 </body>
 </html>

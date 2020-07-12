@@ -622,8 +622,8 @@
         </statement>
         <proof>
         <p>
-        We defer the proof to here.
-        <!-- added emoji frown -->
+        The equivalent  <xref ref="LaplaceExpansion"/> will be proven later.
+
         </p>
         <sidebyside>
         <image width="5%" source="images/sademoji.jpeg"/>
@@ -699,14 +699,35 @@
         </definition>
     
         <p>
-        We now restate the definition of the determinant using different
-        notation.
+        We now restate <xref ref="HadamardRowSums"/>.
         </p>
-        <definition><title>The determinant of a square matrix</title> 
+
+        <theorem xml:id="LaplaceExpansion">
+        <title>Laplace expansion theorem</title>
+        <statement>
+        <p>
+        For any square matrix <m>A</m>, the <m>i</m>-th row
+        and <m>j</m>-th column expansions are all equal.
+        </p>
+        </statement>
+        <proof>
+        <p>
+        The proof is difficult and needs further mathematical tools.
+        To maintain the flow of our presentation, we put it off until
+        <xref ref="DeterminantDeeperTopics"/>.
+        </p>
+        </proof>
+        </theorem>
+
+        <p>
+        The Laplace expansion theorem allow an alternative (and more usual)
+        definition of the determinant.</p>
+
+        <definition><title>The determinant of a matrix</title> 
         <statement>
         <p>
         For any square matrix <m>A</m>, the determinant of <m>A</m> is
-        the common value of the <m>i</m>-th row expansions
+        the common value of the <m>i</m>-th row expansions and
         <m>j</m>-th column expansions of <m>A</m>.
         </p>
         </statement>
@@ -836,7 +857,8 @@
     
     <introduction>
     <p>
-    The cofactor expansion theorem turns out to be a powerful tool, both for
+    The <xref ref="LaplaceExpansion" text="custom">Laplace expansion theorem</xref>
+    turns out to be a powerful tool, both for
     computation and for the derivation of theoretical results. In this section
     we derive several of these results.
     </p>
@@ -1385,7 +1407,7 @@
                 1\amp-2\amp1\\
                 1\amp-1\amp3
             \end{bmatrix}
-        </me>
+        </me>.
         
         Now we use 
         <m>R_2\gets R_2+R_1</m>
@@ -1463,7 +1485,7 @@
                   \amp = \det (E_k E_{k-1}E_{k-2}\cdots E_2 E_1 A)</mrow>
             <mrow>\amp = \det E_k \det( E_{k-1}E_{k-2}\cdots E_2 E_1 A)</mrow>
             <mrow>\amp = \det E_k \det E_{k-1}\det(E_{k-2}\cdots E_2 E_1 A)</mrow>
-            <mrow>\amp \vdots</mrow>
+            <mrow>\amp \,\vdots</mrow>
             <mrow>\amp = \det E_k \det E_{k-1}\det E_{k-2}\cdots \det E_2 \det E_1 \det A</mrow>
         </md>
         We further note that for any elementary matrix <m>E</m>, we have
@@ -2015,6 +2037,15 @@
     </me>
     </p>
     </example>
+
+    </section>
+
+    <section xml:id="DeterminantDeeperTopics">
+    <title>A deeper investigation of the properties of determinants</title>
+    <p>
+    In this section we consider further properties of the determinant.
+    We will then have the tools to complete the proof of <xref ref="LaplaceExpansion"/>.
+    </p>
 
     </section>
 </chapter>

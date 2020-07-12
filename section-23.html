@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:22-05:00    *-->
+<!--*    on 2020-07-10T15:31:47-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -82,10 +82,10 @@ MathJax.Hub.Config({
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-22.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Determinants.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="EuclideanSpace.html" title="Next">Next</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-22.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Determinants.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="DeterminantDeeperTopics.html" title="Next">Next</a></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-22.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="Determinants.html" title="Up">Up</a><a class="next-button button toolbar-item" href="EuclideanSpace.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-22.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="Determinants.html" title="Up">Up</a><a class="next-button button toolbar-item" href="DeterminantDeeperTopics.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -96,19 +96,21 @@ MathJax.Hub.Config({
 <li class="link"><a href="Determinants.html" data-scroll="Determinants"><span class="codenumber">3</span> <span class="title">The Determinant</span></a></li>
 <li class="link"><a href="EuclideanSpace.html" data-scroll="EuclideanSpace"><span class="codenumber">4</span> <span class="title">Vectors in Euclidean \(n\) space</span></a></li>
 <li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
-<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">6</span> <span class="title">Additional Topics</span></a></li>
+<li class="link"><a href="LinearTransformations.html" data-scroll="LinearTransformations"><span class="codenumber">6</span> <span class="title">Linear transformations</span></a></li>
+<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">7</span> <span class="title">Additional Topics</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-23"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.5</span> <span class="title">The adjoint of a matrix and Cramer's rule</span>
 </h2>
-<p id="p-656">We have already used <a class="xref" data-knowl="./knowl/MatrixCofactorDefinition.html" title="Definition 3.2.2: The \(i,j\) cofactor of a matrix \(A\)">Definition 3.2.2</a> to define the cofactor matrix \(C\) of a matrix \(A\text{.}\) We use this to define the adjoint of a square matrix.</p>
+<p id="p-659">We have already used <a class="xref" data-knowl="./knowl/MatrixCofactorDefinition.html" title="Definition 3.2.2: The \(i,j\) cofactor of a matrix \(A\)">Definition 3.2.2</a> to define the cofactor matrix \(C\) of a matrix \(A\text{.}\) We use this to define the adjoint of a square matrix.</p>
 <article class="definition definition-like" id="definition-40"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">The adjoint of a matrix.</span>
 </h6>
-<p id="p-657">If a matrix \(A\) has \(C\) as a cofactor matrix then the <dfn class="terminology">adjoint of \(A\)</dfn> is \(C^T\text{.}\) We write this as \(\adj(A)=C^T\text{.}\)</p></article><article class="example example-like" id="example-30"><a data-knowl="" class="id-ref original" data-refid="hk-example-30"><h6 class="heading">
+<p id="p-660">If a matrix \(A\) has \(C\) as a cofactor matrix then the <dfn class="terminology">adjoint of \(A\)</dfn> is \(C^T\text{.}\) We write this as \(\adj(A)=C^T\text{.}\)</p></article><article class="example example-like" id="example-30"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">The adjoint of a matrix.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-30"><article class="example example-like"><p id="p-658">Let</p>
+</h6>
+<p id="p-661">Let</p>
 <div class="displaymath">
 \begin{equation*}
 A=
@@ -149,16 +151,15 @@ A^{-1}=-\frac 15
 0\amp\frac25\amp-\frac15 \\ 1\amp-\frac15\amp -\frac25\\ -1\amp0\amp1
 \end{bmatrix}
 \end{equation*}
-</div></article></div>
-<article class="theorem theorem-like" id="theorem-39"><h6 class="heading">
+</div></article><article class="theorem theorem-like" id="theorem-40"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">The inverse and the adjoint of a matrix.</span>
 </h6>
-<p id="p-659">Let \(A\) be an invertible matrix. Then</p>
+<p id="p-662">Let \(A\) be an invertible matrix. Then</p>
 <div class="displaymath">
 \begin{equation*}
 A^{-1}=\frac1{\det A} \adj A
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-51"><a data-knowl="" class="id-ref original" data-refid="hk-proof-51"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-51"><article class="hiddenproof"><div class="displaymath" id="p-660">
+</div></article><article class="hiddenproof" id="proof-52"><a data-knowl="" class="id-ref original" data-refid="hk-proof-52"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-52"><article class="hiddenproof"><div class="displaymath" id="p-663">
 \begin{equation*}
 A \adj A=
 \begin{bmatrix}
@@ -185,7 +186,7 @@ C_{1,n} \amp C_{2,n} \amp \cdots \amp C_{n,n} \\
 <p data-braille="continuation">There are two cases:</p>
 <ul class="disc">
 <li id="li-244">
-<p id="p-661">\(i=j\text{:}\) In this case, from the \(i\)-th row expansion of \(A\text{,}\)</p>
+<p id="p-664">\(i=j\text{:}\) In this case, from the \(i\)-th row expansion of \(A\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
 (A \adj A)_{i,i}=\sum_{k=1}^n a_{i,k} C_{i,k}=\det A
@@ -193,7 +194,7 @@ C_{1,n} \amp C_{2,n} \amp \cdots \amp C_{n,n} \\
 </div>
 </li>
 <li id="li-245">
-<p id="p-662">\(i\not=j\text{:}\) For this case we use a new matrix \(B\) constructed from \(A\) by replacing \(R_j\) with \(R_i\text{,}\) that is \(R_j\gets R_i\) (this is not an elementary row operation). This means \(B_{j,k}=A_{i,k}=a_{i,k}\) for \(k=1,2,\ldots n\text{.}\) Since \(B\) has two identical rows, <a class="xref" data-knowl="./knowl/DeterminantIdenticalRows.html" title="Theorem 3.4.12: A matrix \(A\) with two identical rows has \(\det A=0\)">Theorem 3.4.12</a> tells us that \(\det B=0\text{.}\) On the other hand, by expanding on \(R_j\) of \(B\text{,}\) we have</p>
+<p id="p-665">\(i\not=j\text{:}\) For this case we use a new matrix \(B\) constructed from \(A\) by replacing \(R_j\) with \(R_i\text{,}\) that is \(R_j\gets R_i\) (this is not an elementary row operation). This means \(B_{j,k}=A_{i,k}=a_{i,k}\) for \(k=1,2,\ldots n\text{.}\) Since \(B\) has two identical rows, <a class="xref" data-knowl="./knowl/DeterminantIdenticalRows.html" title="Theorem 3.4.12: A matrix \(A\) with two identical rows has \(\det A=0\)">Theorem 3.4.12</a> tells us that \(\det B=0\text{.}\) On the other hand, by expanding on \(R_j\) of \(B\text{,}\) we have</p>
 <div class="displaymath">
 \begin{equation*}
 0
@@ -228,9 +229,10 @@ A\frac1{\det A} \adj A=I
 </div>
 </li>
 </ul></article></div>
-<article class="example example-like" id="example-31"><a data-knowl="" class="id-ref original" data-refid="hk-example-31"><h6 class="heading">
+<article class="example example-like" id="example-31"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">The inverse computed using the adjoint of \(A\).</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-31"><article class="example example-like"><p id="p-663">Let</p>
+</h6>
+<p id="p-666">Let</p>
 <div class="displaymath">
 \begin{equation*}
 A=
@@ -240,7 +242,7 @@ A=
 \end{equation*}
 </div>
 <p data-braille="continuation">First we compute \(\det A=1\)</p>
-<p id="p-664">Next we compute the minors:</p>
+<p id="p-667">Next we compute the minors:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{lll}
@@ -279,25 +281,24 @@ A^{-1}=\frac1{\det A} \adj A=\frac 11 C^T
 1\amp 0 \amp -1 
 \end{bmatrix}
 \end{equation*}
-</div></article></div>
-<article class="proposition theorem-like" id="proposition-3"><h6 class="heading">
+</div></article><article class="proposition theorem-like" id="proposition-3"><h6 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Intergral matrices with integral inverses.</span>
 </h6>
-<p id="p-665">If \(A\) is a square matrix with integer entries, then \(A^{-1}\) has all integer entries  if and only if \(\det A=\pm 1\text{.}\)</p></article><article class="hiddenproof" id="proof-52"><a data-knowl="" class="id-ref original" data-refid="hk-proof-52"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-52"><article class="hiddenproof"><p id="p-666">If \(\det A=\pm1\) then</p>
+<p id="p-668">If \(A\) is a square matrix with integer entries, then \(A^{-1}\) has all integer entries  if and only if \(\det A=\pm 1\text{.}\)</p></article><article class="hiddenproof" id="proof-53"><a data-knowl="" class="id-ref original" data-refid="hk-proof-53"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-53"><article class="hiddenproof"><p id="p-669">If \(\det A=\pm1\) then</p>
 <div class="displaymath">
 \begin{equation*}
 A^{-1}=\frac1{\det A} \adj A = \pm C^T.
 \end{equation*}
 </div>
 <p data-braille="continuation">where \(C\) is the cofactor matrix. But the entries of \(C\) are computed by taking the determinant of matrices with integer entries. Since this determinant is computed using products and sums of integers, \(C\) must have all integer entries, and hence so does \(A^{-1}\text{.}\)</p>
-<p id="p-667">Conversely, if both \(A\) and \(A^{-1}\) have all integer entries, the \(\det A\) and \(\det A^{-1}\) are both integers. But then</p>
+<p id="p-670">Conversely, if both \(A\) and \(A^{-1}\) have all integer entries, the \(\det A\) and \(\det A^{-1}\) are both integers. But then</p>
 <div class="displaymath">
 \begin{equation*}
 \det A\,\det A^{-1}= \det(AA^{-1})=\det I=1
 \end{equation*}
 </div>
 <p data-braille="continuation">Hence either \(\det A=\det A^{-1}=1\) or \(\det A=\det A^{-1}=-1\text{.}\)</p></article></div>
-<p id="p-668">There is a nice application of the adjoint to the solution of \(n\) equations in \(n\) unknowns. We can write such a system of linear equations as</p>
+<p id="p-671">There is a nice application of the adjoint to the solution of \(n\) equations in \(n\) unknowns. We can write such a system of linear equations as</p>
 <div class="displaymath">
 \begin{equation*}
 Ax=b.
@@ -312,10 +313,10 @@ C_1  \cdots  C_{k-1}\amp b\amp C_{k+1} \cdots C_n
 \end{bmatrix}
 \end{equation*}
 </div>
-<article class="theorem theorem-like" id="theorem-40"><h6 class="heading">
+<article class="theorem theorem-like" id="theorem-41"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Cramer's rule.</span>
 </h6>
-<p id="p-669">Let</p>
+<p id="p-672">Let</p>
 <div class="displaymath">
 \begin{equation*}
 Ax=b
@@ -326,7 +327,7 @@ Ax=b
 \begin{equation*}
 x_i=\frac{\det A_i}{\det A}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-53"><a data-knowl="" class="id-ref original" data-refid="hk-proof-53"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-53"><article class="hiddenproof"><p id="p-670">Since \(A\) is invertible, we may use the cofactor matrix \(C\) to get</p>
+</div></article><article class="hiddenproof" id="proof-54"><a data-knowl="" class="id-ref original" data-refid="hk-proof-54"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-54"><article class="hiddenproof"><p id="p-673">Since \(A\) is invertible, we may use the cofactor matrix \(C\) to get</p>
 <div class="displaymath">
 \begin{equation*}
 x=A^{-1}b=\frac1{\det A} (\adj A) b=\frac1{\det A} C^T b.
@@ -345,9 +346,10 @@ x=A^{-1}b=\frac1{\det A} (\adj A) b=\frac1{\det A} C^T b.
 x_i=\frac1{\det A} \det A_i=\frac{\det A_i}{\det A}.
 \end{equation*}
 </div></article></div>
-<article class="example example-like" id="example-32"><a data-knowl="" class="id-ref original" data-refid="hk-example-32"><h6 class="heading">
+<article class="example example-like" id="example-32"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.7</span><span class="period">.</span><span class="space"> </span><span class="title">Application of Cramer's rule.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-32"><article class="example example-like"><p id="p-671">Consider the system of linear equations</p>
+</h6>
+<p id="p-674">Consider the system of linear equations</p>
 <div class="displaymath">
 \begin{equation*}
 x_1+x_2+x_3=2\\
@@ -399,7 +401,7 @@ x_1=\frac42=2\\
 x_2=\frac22=1\\
 x_3=\frac{-2}2=-1
 \end{equation*}
-</div></article></div></section></div></main>
+</div></article></section></div></main>
 </div>
 </body>
 </html>

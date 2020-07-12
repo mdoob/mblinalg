@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:44-05:00    *-->
+<!--*    on 2020-07-10T15:32:11-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,12 +13,16 @@
 </head>
 <body>
 <div class="displaymath">
-\begin{gather*}
-\sum_{k=1}^n a_k=a_1+a_2+\cdots+a_{n-1}+a_n\\
-\sum_{k=0}^n a_kb_k=a_0b_0+a_1b_1+a_2b_2+\cdots+a_{n-1}b_{n-1}+a_nb_n\\
-\sum_{k=1}^n (2k-1) = 1+3+5+7+\cdots+(2n-1)
-\end{gather*}
+\begin{align*}
+L_3(\vec x + \vec y)
+\amp =L_2(L_1(\vec x+ \vec y))\\
+\amp = L_2(L_1(\vec x) + L_1(\vec y)) 
+\amp \gets \text{ since }L_1 \text{ is linear}\\
+\amp = L_2(L_1(\vec x)) + L_2(L_1(\vec y))
+\amp \gets \text{ since }L_2\text{ is linear}\\
+\amp = L_3(\vec x) + L_3(\vec y)
+\end{align*}
 </div>
-<span class="incontext"><a href="section-39.html#mjx-eqn-mrow-331">in-context</a></span>
+<span class="incontext"><a href="section-42.html#mjx-eqn-mrow-331">in-context</a></span>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:27-05:00    *-->
+<!--*    on 2020-07-10T12:39:29-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -9,7 +9,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Trigonometry review</title>
+<title>First properties of linear transformations</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
@@ -82,10 +82,10 @@ MathJax.Hub.Config({
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-39.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ExtraTopics.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="RREF_calculator.html" title="Next">Next</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="LinearTransformationIntroduction.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="LinearTransformations.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-41.html" title="Next">Next</a></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-39.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ExtraTopics.html" title="Up">Up</a><a class="next-button button toolbar-item" href="RREF_calculator.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="LinearTransformationIntroduction.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="LinearTransformations.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-41.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -96,208 +96,123 @@ MathJax.Hub.Config({
 <li class="link"><a href="Determinants.html" data-scroll="Determinants"><span class="codenumber">3</span> <span class="title">The Determinant</span></a></li>
 <li class="link"><a href="EuclideanSpace.html" data-scroll="EuclideanSpace"><span class="codenumber">4</span> <span class="title">Vectors in Euclidean \(n\) space</span></a></li>
 <li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
-<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">6</span> <span class="title">Additional Topics</span></a></li>
+<li class="link"><a href="LinearTransformations.html" data-scroll="LinearTransformations"><span class="codenumber">6</span> <span class="title">Linear transformations</span></a></li>
+<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">7</span> <span class="title">Additional Topics</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-40"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">6.3</span> <span class="title">Trigonometry review</span>
+<span class="type">Section</span> <span class="codenumber">6.3</span> <span class="title">First properties of linear transformations</span>
 </h2>
-<section class="introduction" id="introduction-15"><p id="p-1100">There are certain trigonometric facts that should be in your mathematical toolkit. We review several here.</p>
+<p id="p-1089">A linear transformation \(L\colon\R^m\to\R^n\text{,}\) by definition, satisfies</p>
 <ul class="disc">
-<li id="li-377"><p id="p-1101">The law of cosines (<a class="xref" data-knowl="./knowl/LawOfCosines.html" title="Theorem 6.3.2: The law of cosines">Theorem 6.3.2</a>)</p></li>
-<li id="li-378"><p id="p-1102">The graphs of <a class="xref" data-knowl="./knowl/GraphSin.html" title="Figure 6.3.7">\(\sin(x)\)</a> and <a class="xref" data-knowl="./knowl/GraphCos.html" title="Figure 6.3.8">\(\cos(x)\)</a></p></li>
-<li id="li-379"><p id="p-1103">The parallelogram law (<a class="xref" data-knowl="./knowl/ParallelogramLaw.html" title="Theorem 6.3.13: The parallelogram law">Theorem 6.3.13</a>)</p></li>
-<li id="li-380"><p id="p-1104">The addition laws for \(\sin(x)\) and \(\cos(x)\) (<a class="xref" data-knowl="./knowl/SinCosSums.html" title="Theorem 6.3.18: Addition formulas for \(\sin(x)\) and \(\cos(x)\)">Theorem 6.3.18</a>)</p></li>
-<li id="li-381"><p id="p-1105">The law of sines (<a class="xref" data-knowl="./knowl/LawOfSines.html" title="Theorem 6.3.20: The law of sines">Theorem 6.3.20</a>)</p></li>
-</ul></section><section class="subsection" id="subsection-87"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">6.3.1</span> <span class="title">Basic Definitions</span>
-</h3>
-<p id="p-1106">Trigonometry was originally used for measuring triangles. Given a right triangle with hypoteneuse \(c\text{,}\) legs \(a\) and \(b\) and angle \(\theta\) (as in the left illustration in <a class="xref" data-knowl="./knowl/TrigFunctions.html" title="Figure 6.3.1">Figure 6.3.1</a>), the six trigonometric functions are defined by</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{lll}
-\sin(\theta)=\frac bc \amp
-\cos(\theta)=\frac ac \amp
-\tan(\theta)=\frac {\sin(\theta)}{\cos(\theta)}=\frac ba \\
-\cot(\theta)=\frac {\cos(\theta)}{\sin(\theta)}=\frac ab \amp
-\csc(\theta)=\frac 1{\sin(\theta)}=\frac cb \amp
-\sec(\theta)=\frac 1{\cos(\theta)}=\frac ca
-\end{array}
-\end{equation*}
-</div>
-<p data-braille="continuation">The first three, the sine, the cosine and the tangent are by far the most important, even though the cotangent, cosecant and secant appear in many applications.</p>
-<figure class="figure figure-like" id="TrigFunctions"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><object data="images/image-57.html" id="image-57" width="540" height="540"><embed src="images/image-57.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.1<span class="period">.</span></span><span class="space"> </span>Triginometric functions of angles</figcaption></figure><p id="p-1107">In any such right triangle, the angle \(\theta\) is necessarily acute. We extend the definition of the trigonometric functions to other angles by using the unit circle (centre at \(\vec 0=(0,0)\) and radius \(r=1\)). For any angle \(\theta\text{,}\) draw the radius of the unit circle that makes an angle \(\theta\) with the positive \(x\)-axis. The coordinates of the point where this radius meets the circle are \((\cos(\theta),\sin(\theta))\text{.}\) Note that when \(\theta\) is acute, the two definitions coincide.</p>
-<p id="p-1108">Since the point \((\cos(\theta),\sin(\theta))\) is on the unit circle, its distance to the origin \((0,0)\) is \(1\text{.}\) This means \[ \cos^2(\theta) + \sin^2(\theta) =1 \textrm{ for any angle } \theta \]</p></section><section class="subsection" id="subsection-88"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">6.3.2</span> <span class="title">The law of cosines</span>
-</h3>
-<p id="p-1109">In the right triangle above, the angle opposite the side labeled \(c\) is an right angle, and the Pythagorean theorem says \(c^2=a^2+b^2\text{.}\) The law of cosines extends this theorem to triangles with any angle opposite the side labeled \(c\text{.}\)</p>
-<article class="theorem theorem-like" id="LawOfCosines"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">The law of cosines.</span>
+<li id="li-376"><p id="p-1090">\(L(\vec x+\vec y)=L(\vec x)+L(\vec y)\) and</p></li>
+<li id="li-377"><p id="p-1091">\(\displaystyle L(r\vec x)=rL(\vec x)\)</p></li>
+</ul>
+<article class="theorem theorem-like" id="theorem-73"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">(First properties).</span>
 </h6>
-<p id="p-1110">If a triangle (as in the figure below) has sides of lengths \(a\text{,}\) \(b\) and \(c\text{,}\) and the angle at the vertex opposite \(c\) is \(\theta\text{,}\) then \[ c^2=a^2+b^2-2ab\,\cos\theta \]</p>
-<figure class="figure figure-like" id="figure-55"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><object data="images/image-58.html" id="image-58" width="300" height="300"><embed src="images/image-58.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><article class="hiddenproof" id="proof-85"><a data-knowl="" class="id-ref original" data-refid="hk-proof-85"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-85"><article class="hiddenproof"><p id="p-1111">Note that since \(a\) and \(b\) are interchangable in the picture, there is no loss of generality to assume \(a \le b\text{.}\) We prove the law of cosines by dropping a perpendicular to the side \(b\text{:}\)</p>
-<figure class="figure figure-like" id="figure-56"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><object data="images/image-59.html" id="image-59" width="300" height="300"><embed src="images/image-59.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.4<span class="period">.</span></span><span class="space"> </span>\(\theta\) acute</figcaption></figure><p id="p-1112">The perpendicular has length \(h\) and splits side \(b\) into two pieces of lengths \(b_1\) and \(b_2\text{.}\)</p>
-<p id="p-1113">Now we have the following identities:</p>
+<p id="p-1092">Any such transformation satisfies</p>
 <ul class="disc">
-<li id="li-382"><p id="p-1114">\(\displaystyle b=b_1+b_2\)</p></li>
-<li id="li-383"><p id="p-1115">\(\displaystyle a^2=b_1^2 + h^2\)</p></li>
-<li id="li-384"><p id="p-1116">\(\displaystyle c^2 = b_2^2 + h^2\)</p></li>
-<li id="li-385"><p id="p-1117">\(\displaystyle b_1=a\cos(\theta)\)</p></li>
-</ul>
-<p data-braille="continuation">which gives the equations</p>
+<li id="li-378"><p id="p-1093">\(\displaystyle L(\vec0)=\vec0\)</p></li>
+<li id="li-379"><p id="p-1094">\(\displaystyle L(\vec x-\vec y)=L(\vec x)-L(\vec y)\)</p></li>
+<li id="li-380"><p id="p-1095">\(L(\vec x-\vec y)=\vec0\) if and only if \(L(\vec x) =L(\vec y)\)</p></li>
+<li id="li-381"><p id="p-1096">\(\displaystyle L(r_1\vec x_1+r_2\vec x_2)=r_1L(\vec x_1)+r_2L(\vec x_2)\)</p></li>
+<li id="li-382">
+<p id="p-1097">For any vectors \(\vec x_1, \vec x_2,\ldots,\vec x_n\) and real numbers \(r_1, r_2,\ldots,r_n\)</p>
 <div class="displaymath">
 \begin{equation*}
-\begin{array}{rl}
-c^2
-\amp=b_2^2+h^2\\
-\amp=(b-b_1)^2+(a^2-b_1^2)\\
-\amp=b^2 -2bb_1 + b_1^2 +a^2-b_1^2\\
-\amp=a^2+b^2-2bb_1\\
-\amp=a^2+b^2-2ab\cos(\theta)
-\end{array}
+L(r_1\vec x_1+r_2 \vec x_2+\cdots+r_n\vec x_n)=
+r_1L(\vec x_1)+r_2 L(\vec x_2)+\cdots+r_nL(\vec x_n)
 \end{equation*}
 </div>
-<p data-braille="continuation">We have cheated a little by assuming that the perpendicular divides \(b\) into two pieces. In fact if \(\theta\gt\frac\pi2\) then the picture looks like</p>
-<figure class="figure figure-like" id="figure-57"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><object data="images/image-60.html" id="image-60" width="480" height="480"><embed src="images/image-60.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.5<span class="period">.</span></span><span class="space"> </span>\(\theta\) obtuse</figcaption></figure><p id="p-1118">Now we have</p>
-<ul class="disc">
-<li id="li-386"><p id="p-1119">\(\displaystyle a^2=b_1^2+h^2\)</p></li>
-<li id="li-387"><p id="p-1120">\(\displaystyle c^2=(b+b_1)^2+h^2\)</p></li>
-<li id="li-388"><p id="p-1121">\(b_1=-a\cos(\theta)\) (remember that \(\cos(\theta)\lt0\) when \(\frac\pi 2\lt\theta\lt\pi\))</p></li>
-</ul>
-<p data-braille="continuation">which gives</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{rl}
-c^2
-\amp= (b+b_1)^2+h^2\\
-\amp= (b+b_1)^2+(a^2-b_1^2)\\
-\amp= b^2+2bb_1+a^2\\
-\amp= a^2+b^2-2ab\cos(\theta)
-\end{array}
-\end{equation*}
-</div>
-<p data-braille="continuation">In principle there is another possibility:</p>
-<figure class="figure figure-like" id="figure-58"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><object data="images/image-61.html" id="image-61" width="300" height="300"><embed src="images/image-61.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1122">In this case we \(a \gt b\text{,}\) contrary to our assumption that \(a\leq b\text{.}\) Nonetheless we could use the argument:</p>
-<ul class="disc">
-<li id="li-389">\(\displaystyle a^2=(b+b_1)^2 + h^2\)</li>
-<li id="li-390">\(\displaystyle c^2 = b_1^2 + h^2\)</li>
-<li id="li-391">\(\displaystyle b+b_1=a\cos(\theta)\)</li>
-</ul>
-<p data-braille="continuation">and can deduce \(c^2=a^2+b^2-2ab\cos(\theta)\) in a manner similar that used in the previous cases.</p></article></div></section><section class="subsection" id="subsection-89"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">6.3.3</span> <span class="title">The graphs of \(\sin(x)\) and \(\cos(x)\)</span>
-</h3>
-<p id="p-1123">The graphs of the trigonometric functions are revealing. First, here is the graph of the function \(\sin(x)\text{:}\)</p>
-<figure class="figure figure-like" id="GraphSin"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-62.html" id="image-62" width="450" height="450"><embed src="images/image-62.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.7<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1124">Notice that \(\sin(x)\) is positive in this range precisely when \(0\lt x\lt\pi\text{.}\)</p>
-<p id="p-1125">Here is the graph of \(\cos(x)\text{:}\)</p>
-<figure class="figure figure-like" id="GraphCos"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-63.html" id="image-63" width="450" height="450"><embed src="images/image-63.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.8<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1126">Notice that the function \(\cos(x)\) is decreasing for \(0\le x\le\pi\text{.}\) By decreasing we mean that if \(x_1 \lt x_2\text{,}\) then \(\cos(x_1) \gt \cos(x_2)\) (or, more intuitively, the function goes downhill as we go from left to right). There is an important implication from this: if \(y=\cos(x)\) for some \(x\) with \(0\le x\le\pi\text{,}\) then for any for any other \(x'\) in the same range, we have \(\cos(x') \gt y\) (when \(x'\lt x\)) or \(\cos(x') \lt y\) (when \(x'\gt x\)). In particular this means that for any given \(y_0\text{,}\) there is at most one \(x_0\) with \(0\le x_0\le\pi\) so that \(y_0=\cos(x_0)\text{.}\) In fact, the intermediate value theorem from the Calculus implies that for any \(y_0\) satisfying \(-1\leq y_0 \leq 1\) there is some \(x_0\) satisfying \(0\le x_0\le\pi\) so that \(y_0=\cos(x_0)\text{.}\)</p>
-<p id="p-1127">This may be visualized as follows: pick any \(y_0\) between \(-1\) and \(1\text{.}\) From that value on the \(y\)-axis, go horizontally until you hit the graph of the function \(y=\cos(x)\) and then drop down to the \(x\)-axis at the point \(x_0\text{.}\) This value \(x_0\) is the unique one for which \(\cos(x_0)=y_0\text{.}\)</p>
-<figure class="figure figure-like" id="figure-61"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-64.html" id="image-64" width="450" height="450"><embed src="images/image-64.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.9<span class="period">.</span></span><span class="space"> </span></figcaption></figure></section><section class="subsection" id="subsection-90"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">6.3.4</span> <span class="title">Parallelograms</span>
-</h3>
-<p id="p-1128">A parallelogram is a quadrilateral with opposite sides parallel. Here is an example of one filled in yellow:</p>
-<figure class="figure figure-like" id="figure-62"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><object data="images/image-65.html" id="image-65" width="300" height="300"><embed src="images/image-65.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.10<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1129">Here are some important properties of parallelograms:</p>
-<ol class="decimal">
-<li id="li-392">The angles on consecutive vertices are supplementary (sum to \(\pi\)).</li>
-<li id="li-393">Opposite angles are equal.</li>
-<li id="li-394">Opposite sides have the same length.</li>
-</ol>
-<p data-braille="continuation">Here is why these properties hold:</p>
-<ol class="decimal">
-<li id="li-395">
-<p id="p-1130">Let one vertex have an angle of \(\theta\text{.}\) Extend one of the sides as in the figure. The lines being parallel implies that the angle outside the parallelogram is also \(\theta\text{,}\) which in turn makes the next angle within the parallelogram equal to \(\pi-\theta\text{.}\)</p>
-<figure class="figure figure-like" id="figure-63"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><object data="images/image-66.html" id="image-66" width="540" height="540"><embed src="images/image-66.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.11<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
 </li>
-<li id="li-396"><p id="p-1131">If one vertex has an angle \(\theta\text{,}\) then next has angle \(\pi-\theta\text{.}\) The next vertex after that has angle \(\pi-(\pi-\theta)=\theta\text{,}\) and the final vertex has angle \(\pi-\theta\text{.}\) Hence two opposite vertices have an angle \(\theta\) while the other two opposite vertices have angle \(\pi-\theta\text{.}\)</p></li>
-<li id="li-397"><p id="p-1132">Let \(b\) and \(b'\) be opposite sides of the parallelogram.  Drop perpendiculars from two vertices to the opposite line as shown in the following figure. Then the length of both of the new lines is the distance, \(d\text{,}\) between the parallel lines, and so \(d=b\sin(\theta)=b'\sin(\theta)\) from which follows \(b=b'\text{.}\)</p></li>
+</ul></article><article class="hiddenproof" id="proof-85"><a data-knowl="" class="id-ref original" data-refid="hk-proof-85"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-85"><article class="hiddenproof"><ol id="p-1098" class="decimal">
+<li id="li-383">
+<p id="p-1099">We evaluate \(L(\vec 0+\vec 0)\) in two ways:</p>
+<ol class="lower-alpha">
+<li id="li-384"><p id="p-1100">Since \(\vec 0+\vec 0=\vec0\text{,}\) we have \(L(\vec 0+\vec 0)=L(\vec 0)\)</p></li>
+<li id="li-385">
+<p id="p-1101">Since \(\vec 0+\vec 0=2\vec0\text{,}\) we have \(L(\vec 0+\vec 0)= L(2\vec 0)=2L(\vec 0)\text{,}\) and so</p>
+<div class="displaymath">
+\begin{equation*}
+2L(\vec 0)=L(\vec 0)\\L(\vec 0)=\vec0
+\end{equation*}
+</div>
+</li>
 </ol>
-<figure class="figure figure-like" id="figure-64"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-67.html" id="image-67" width="450" height="450"><embed src="images/image-67.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.12<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1133">The parallelogram law relates the lengths of sides of a parallelogram to the lengths of the diagonals.</p>
-<article class="theorem theorem-like" id="ParallelogramLaw"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.13</span><span class="period">.</span><span class="space"> </span><span class="title">The parallelogram law.</span>
-</h6>
-<p id="p-1134">If a parallelogram has sides of length \(a\) and \(b\text{,}\) and \(c\) and \(d\) are the lengths of the two diagonals, then \[ c^2+d^2=2a^2+2b^2 \] In other words, the sum of the squares of the sides is the sum of the squares of the diagonals.</p>
-<figure class="figure figure-like" id="figure-65"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><object data="images/image-68.html" id="image-68" width="420" height="420"><embed src="images/image-68.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.14<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><article class="hiddenproof" id="proof-86"><a data-knowl="" class="id-ref original" data-refid="hk-proof-86"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-86"><article class="hiddenproof"><p id="p-1135">The proof can be seen from the following two figures. Applying the law of cosines to the first figure gives \[ c^2=a^2+b^2-2ab\cos(\theta)\tag1 \] while applying it to the second figure gives \[ d^2=a^2+b^2-2ab\cos(\pi-\theta)= a^2+b^2+2ab\cos(\theta)\tag2 \]</p>
-<figure class="figure figure-like" id="figure-66"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><object data="images/image-69.html" id="image-69" width="420" height="420"><embed src="images/image-69.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.15<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1136">and</p>
-<figure class="figure figure-like" id="figure-67"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><object data="images/image-70.html" id="image-70" width="420" height="420"><embed src="images/image-70.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.16<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1137">Adding (1) and (2) gives \[ c^2+d^2=2a^2+2b^2 \]</p></article></div></section><section class="subsection" id="subsection-91"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">6.3.5</span> <span class="title">The addition formulas for \(\sin(x)\) and \(\cos(x)\)</span>
-</h3>
-<p id="p-1138">Suppose we know \(\sin(\alpha)\text{,}\) \(\cos(\alpha)\text{,}\) \(\sin(\beta)\text{,}\) and \(\cos(\beta)\text{.}\) We wish to find formulas to compute \(\sin(\alpha+\beta)\text{,}\) and \(\cos(\alpha+\beta)\text{.}\) The following figure shows us how to do the computation.</p>
-<p id="p-1139">The points \(A=(\cos(\alpha),\sin(\alpha))\text{,}\) \(B=\cos(\alpha+\beta),\sin(\alpha+\beta))\) and \((0,1)\) all lie on a circle with centre at the origin and radius \(1\text{.}\) These three points are joined by a line to the origin \(\vec 0\text{.}\)  Drop perpediculars from B to the line joining \(\vec0\) and \((1,0)\) and also to the line joining  and \(\vec0\) and \(A\text{.}\) The points \(F\) and \(E\) are where the perpendiculars meet the respective lines.  The line joining \(B\) and \(E\) is extended until it meets the line joining \(\vec 0\) and \((1,0)\) at \(D=(d,0)\text{.}\)</p>
-<figure class="figure figure-like" id="figure-68"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><object data="images/image-71.html" id="image-71" width="600" height="600"><embed src="images/image-71.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.17<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1140">Now we compute the area of the yellow triangle in two different ways and equate the results.</p>
-<p id="p-1141">Consider the lengths of these lines:</p>
-<ul class="disc">
-<li id="li-398"><p id="p-1142">\(\|BF\|=\sin(\alpha+\beta)\) (from triangle \(\vec0 B F\))</p></li>
-<li id="li-399"><p id="p-1143">\(\displaystyle \|\vec 0 D\|=d\)</p></li>
-<li id="li-400"><p id="p-1144">\(\|\vec 0 E\|=d\cos(\alpha)=\cos(\beta)\) (from triangles \(\vec0DE\) and \(\vec0BE\text{,}\) which implies that \(d=\frac{\cos(\beta)}{\cos(\alpha)}\))</p></li>
-<li id="li-401"><p id="p-1145">\(\|BD\|=\|BE\|+\|ED\|=\sin(\beta)+d\sin(\alpha)\) (from triangles \(\vec0BE\) and \(\vec0DE\))</p></li>
-</ul>
-<p id="p-1146">On the one hand, twice the area of the yellow triangle is \[ \|BF\|\,\|\vec0 D\| = d\sin(\alpha+\beta) \] On the other hand, twice the triangle area is also \[ \|\vec0 E\|\, \|BD\|=d\cos(\alpha)\left(\sin(\beta)+d\sin(\alpha)\right) \] Equating the two values we get \[ \sin(\alpha+\beta)=\cos(\alpha)\sin(\beta)+d\cos(\alpha)\sin(\alpha) =\cos(\alpha)\sin(\beta)+\cos(\beta)\sin(\alpha) \]</p>
-<p id="p-1147">Note that, from the right triangle \(\vec0 E D\text{,}\) the angle at \(D\) is \(\frac\pi2-\alpha\text{,}\) and then from the right triangle \(B F D\) the angle at \(B\) is \(\alpha\text{.}\) We use this to compute some more lengths:</p>
-<ul class="disc">
-<li id="li-402"><p id="p-1148">\(\displaystyle \|DF\| = \|BD\|\sin(\alpha)=(\sin(\beta)+d\sin(\alpha))\sin(\alpha)\)</p></li>
-<li id="li-403"><p id="p-1149">\(\displaystyle \|\vec0 F\|=\cos(\alpha+\beta)\)</p></li>
-</ul>
-<p data-braille="continuation">Now we have</p>
+</li>
+<li id="li-386"><p id="p-1102">\(\displaystyle L(\vec x-\vec y)
+=L(\vec x+(-1)\vec y)
+=L(\vec x)+L((-1)\vec y)
+L(\vec x)-L(\vec y)\)</p></li>
+<li id="li-387"><p id="p-1103">\(L(\vec x-\vec y)=\vec0\) if and only if \(L(\vec x)-L(\vec y)=\vec0\) which in turn implies \(L(\vec x) =L(\vec y)\text{.}\)</p></li>
+<li id="li-388"><p id="p-1104">\(\displaystyle L(r_1\vec x_1+r_2\vec x_2)
+=L(r_1\vec x_1)+L(r_2\vec x_2)
+=r_1L(\vec x_1)+r_2L(\vec x_2) \)</p></li>
+<li id="li-389">
+<p id="p-1105">We apply the addition property repeatedly:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
-\|\vec0 F\|
-\amp= \|\vec0 D\|- \|DF\|\\
-\cos(\alpha+\beta)
-\amp=d-(\sin(\beta)+d\sin(\alpha))\sin(\alpha)\\
-\amp=d-\sin(\beta)\sin(\alpha)-d\, \sin^2(\alpha)\\
-\amp= d(1-\sin^2(\alpha))-\sin(\beta)\sin(\alpha)\\
-\amp=d\,\cos^2(\alpha)-\sin(\beta)\sin(\alpha)\\
-\amp= \cos(\beta)\cos(\alpha)-\sin(\beta)\sin(\alpha)
+L(r_1\vec x_1\amp+r_2 \vec x_2+\cdots+r_n\vec x_n)\\
+\amp = L(r_1\vec x_1)+L(r_2 \vec x_2+\cdots+r_n\vec x_n)\\
+\amp = r_1L(\vec x_1)+ L(r_2\vec x_2+\cdots+r_n\vec x_n)\\
+\amp = r_1L(\vec x_1)+ L(r_2\vec x_2)+L(r_3\vec x_3+\cdots+r_n\vec x_n)\\
+\amp = r_1L(\vec x_1)+ r_2L(\vec x_2)+L(r_3\vec x_3+\cdots+r_n\vec x_n)\\
+\amp \,\,\vdots\\
+\amp = r_1L(\vec x_1)+r_2 L(\vec x_2)+\cdots+r_nL(\vec x_n)
 \end{array}
 \end{equation*}
 </div>
-<p id="p-1150">and so we have \[ \sin(\alpha+\beta)=\sin(\alpha)\cos(\beta)+\cos(\alpha)\sin(\beta)\\ \cos(\alpha+\beta)=\cos(\alpha)\cos(\beta)-\sin(\alpha)\sin(\beta) \]</p>
-<article class="theorem theorem-like" id="SinCosSums"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.18</span><span class="period">.</span><span class="space"> </span><span class="title">Addition formulas for \(\sin(x)\) and \(\cos(x)\).</span>
-</h6>
-<div class="displaymath" id="p-1151">
+</li>
+</ol></article></div>
+<p id="p-1106">The <dfn class="terminology">standard basis</dfn> of \(\R^m\) is the set of vectors \(\{\vec e_1, \vec e_2,\ldots,\vec e_m\}\) where</p>
+<div class="displaymath">
 \begin{equation*}
-\sin(\alpha+\beta)=\sin(\alpha)\cos(\beta)+\cos(\alpha)\sin(\beta)\\
-\cos(\alpha+\beta)=\cos(\alpha)\cos(\beta)-\sin(\alpha)\sin(\beta)
+\vec e_1=(1,0,\ldots,0)\\
+\vec e_2=(0,1,\ldots,0)\\
+\vdots\\
+\vec e_m=(0,0,\ldots,1)
 \end{equation*}
-</div></article></section><section class="subsection" id="subsection-92"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">6.3.6</span> <span class="title">The law of sines</span>
-</h3>
-<p id="p-1152">Suppose a triangle has sides of lengths \(a\text{,}\) \(b\) and \(c\text{.}\) Let \(\alpha\text{,}\) \(\beta\text{,}\) and \(\gamma\) be the angles opposite \(a\text{,}\) \(b\) and \(c\) respectively. In addition, let the vertices of the triangle be labeled \(A\text{,}\) \(B\) and \(C\) at the angles \(\alpha\text{,}\) \(\beta\text{,}\) and \(\gamma\) respectively. Our picture looks like this:</p>
-<figure class="figure figure-like" id="figure-69"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><object data="images/image-72.html" id="image-72" width="480" height="480"><embed src="images/image-72.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.19<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1153">It is pretty obvious that the sides with longer length will have larger angles opposite. The law of sines makes this realtionship precise.</p>
-<article class="theorem theorem-like" id="LawOfSines"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.20</span><span class="period">.</span><span class="space"> </span><span class="title">The law of sines.</span>
+</div>
+<article class="theorem theorem-like" id="LinearTransformationOnStandardBasis"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">(The value of \(L\) on the standard basis determines \(L\) everywhere).</span>
 </h6>
-<p id="p-1154">Suppose a triangle has sides of lengths \(a\text{,}\) \(b\) and \(c\text{,}\) and \(\alpha\text{,}\) \(\beta\text{,}\) and \(\gamma\) are the angles opposite \(a\text{,}\) \(b\) and \(c\) respectively. Then \[ \frac{\sin(\alpha)}{a} =\frac{\sin(\beta)}{b} =\frac{\sin(\gamma)}{c} \]</p></article><article class="hiddenproof" id="proof-87"><a data-knowl="" class="id-ref original" data-refid="hk-proof-87"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-87"><article class="hiddenproof"><p id="p-1155">With no loss of generality, we may assume that \(\alpha\) is the largest angle. It may be acute or obtuse, but \(\beta\) and \(\gamma\) are definitely acute. That implies that we may drop a perpendicular from \(A\) that will divide the angle \(\alpha\) into \(\alpha_1\) and  \(\alpha_2\) the side opposite into segements with lengths \(a_1\) and \(a_2\text{.}\)</p>
-<figure class="figure figure-like" id="figure-70"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><object data="images/image-73.html" id="image-73" width="600" height="600"><embed src="images/image-73.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.21<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1156">Then we have</p>
+<p id="p-1107">If the values \(L(\vec e_1), L(\vec e_2),\ldots L(\vec e_m)\) are known, then value of \(L(\vec x)\) is known for all \(\vec x\) in \(\R^m\text{.}\)</p></article><article class="hiddenproof" id="proof-86"><a data-knowl="" class="id-ref original" data-refid="hk-proof-86"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-86"><article class="hiddenproof"><p id="p-1108">Suppose \(L(\vec e_1)=\vec f_1,  L(\vec e_2)=\vec f_2,\ldots,L(\vec e_m)=\vec f_m\text{,}\) and \(\vec x=(x_1,x_2,\ldots,x_m)\text{.}\) Then \((x_1,x_2,\ldots,x_m)=x_1\vec e_1 + x_2\vec e_2+\cdots+x_m\vec e_m\) and</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
-\sin(\alpha) \amp = \sin(\alpha_1+\alpha_2)\\
-\amp =\sin(\alpha_1)\cos(\alpha_2)+\cos(\alpha_1)\sin(\alpha_2)\\
-\amp =\frac{a_1}c \frac hb + \frac hc \frac {a_2}b\\
-\amp =\frac{ha}{bc}
+L(\vec x)
+\amp =L(x_1\vec e_1 + x_2\vec e_2+\cdots+x_m\vec e_m)\\
+\amp =x_1L(\vec e_1) + x_2L(\vec e_2)+\cdots+x_mL(\vec e_m)\\
+\amp =x_1\vec f_1 + x_2\vec f_2+\cdots+x_n\vec f_m
 \end{array}
 \end{equation*}
+</div></article></div>
+<article class="corollary theorem-like" id="corollary-8"><h6 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">6.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">\(L(\vec e_i)=\vec 0, i=1\cdots m\text{,}\) implies \(L=0\).</span>
+</h6>
+<p id="p-1109">If \(L(\vec e_1)=L(\vec e_2)=\cdots=L(\vec e_m)=\vec 0\text{,}\) then \(L\) is the zero transformation.</p></article><p id="p-1110">There is an easy consequence:</p>
+<article class="theorem theorem-like" id="theorem-75"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Two linear transformations equal on the standard basis are equal everywhere.</span>
+</h6>
+<p id="p-1111">Suppose \(L_1\colon \R^m\to\R^n\text{,}\)  \(L_2\colon \R^m\to\R^n\) and \(L_1(\vec e_i) = L_2(\vec e_i)\) for \(i=1,2,\dots m\text{.}\) Then \(L_1(\vec x)=L_2(\vec x)\) for all \(\vec x\) in \(\R^m\text{,}\) and \(L_1=L_2\text{.}\)</p></article><article class="hiddenproof" id="proof-87"><a data-knowl="" class="id-ref original" data-refid="hk-proof-87"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-87"><article class="hiddenproof"><p id="p-1112">\(L_1(\vec e_i)-L_2(\vec e_i)=\vec 0\) by assumption. If \(\vec x=(x_1,\dots,x_m)\text{,}\) we may write \(\vec x = x_1\vec e_1+x_2\vec e_2+\cdots +x_m\vec e_m.\) Then</p>
+<div class="displaymath">
+\begin{align*}
+L_1(\vec x)
+\amp =L_1(x_1\vec e_1+x_2\vec e_2+\cdots +x_m\vec e_m)\\
+\amp =x_1L_1(\vec e_1)+x_2L_1(\vec e_2)+\cdots +x_mL_1(\vec e_m)\\
+\amp =x_1L_2(\vec e_1)+x_2L_2(\vec e_2)+\cdots +x_mL_2(\vec e_m)\\
+\amp =L_2(x_1\vec e_1+x_2\vec e_2+\cdots +x_m\vec e_m)\\
+\amp= L_2(\vec x)
+\end{align*}
 </div>
-<p data-braille="continuation">and so \[ \frac{\sin(\alpha)}a = \frac h{bc} \] Using \(\sin(\beta)=\frac hc\) and \(\sin(\gamma)=\frac hb\text{,}\) it follows that \[ \frac{\sin(\beta)}b = \frac h{bc} \textrm{ and } \frac{\sin(\gamma)}c = \frac h{bc} \] and so \[ \frac h{bc}=\frac{\sin(\alpha)}a =\frac{\sin(\beta)}b =\frac{\sin(\gamma)}c \]</p></article></div></section></section></div></main>
+<p data-braille="continuation">From this we see that</p>
+<div class="displaymath">
+\begin{equation*}
+L_1(\vec x)-L_2(\vec x) = \vec 0.
+\end{equation*}
+</div></article></div></section></div></main>
 </div>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:39-05:00    *-->
+<!--*    on 2020-07-10T15:32:05-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,14 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Next we start with \(\vec v\) and consider \(\vec w=t\vec v\text{.}\) We want to show that \(\vec w\) is on the line joining \(\vec0\) and \(\vec v\text{.}\) To verify this with the linearity test, we evaluate:</p>
+<p>However, we know from <a class="xref" data-knowl="./knowl/DotProductR2.html" title="Proposition 4.2.14">Proposition 4.2.14</a> that</p>
 <div class="displaymath">
 \begin{equation*}
-|\vec v\cdot \vec w|=|\vec v\cdot t\vec v|=|t| |\vec v\cdot \vec v|=|t|\|\vec v\|^2\\
-\|\vec v\| \|\vec w\|=\|\vec v\| \|t\vec v\|=|t| \|\vec v\| \|\vec v\|=|t|\|\vec v\|^2
+|\vec x\cdot\vec y|= \|\vec x\| \|\vec y\|\, |\cos \theta|
 \end{equation*}
 </div>
-<p data-braille="continuation">Hence \(\vec w\) is on the line joining \(\vec0\) and \(\vec v\text{,}\) as desired.</p>
-<span class="incontext"><a href="section-26.html#p-790">in-context</a></span>
+<p data-braille="continuation">and so we now have another equivalent condition for for linearity:</p>
+<div class="displaymath">
+\begin{equation*}
+|\vec x\cdot\vec y|= \|\vec x\| \|\vec y\| 
+\end{equation*}
+</div>
+<p data-braille="continuation">Notice that this condition says that the Cauchy-Schwarz inequality given in <a class="xref" data-knowl="./knowl/CauchySchwarz.html" title="Theorem 4.2.17: Cauchy-Schwarz">Theorem 4.2.17</a>).  is actually equality.</p>
+<span class="incontext"><a href="section-27.html#p-790">in-context</a></span>
 </body>
 </html>

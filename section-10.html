@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:18-05:00    *-->
+<!--*    on 2020-07-10T15:31:43-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -96,7 +96,8 @@ MathJax.Hub.Config({
 <li class="link"><a href="Determinants.html" data-scroll="Determinants"><span class="codenumber">3</span> <span class="title">The Determinant</span></a></li>
 <li class="link"><a href="EuclideanSpace.html" data-scroll="EuclideanSpace"><span class="codenumber">4</span> <span class="title">Vectors in Euclidean \(n\) space</span></a></li>
 <li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
-<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">6</span> <span class="title">Additional Topics</span></a></li>
+<li class="link"><a href="LinearTransformations.html" data-scroll="LinearTransformations"><span class="codenumber">6</span> <span class="title">Linear transformations</span></a></li>
+<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">7</span> <span class="title">Additional Topics</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-10"><h2 class="heading hide-type">
@@ -115,9 +116,10 @@ MathJax.Hub.Config({
 c_{i,j}=ra_{i,j}
 \end{equation*}
 </div>
-<p data-braille="continuation">In other words, every entry of the matrix \(C\) is multiplied by \(r\text{.}\)</p></article><article class="example example-like" id="example-14"><a data-knowl="" class="id-ref original" data-refid="hk-example-14"><h6 class="heading">
+<p data-braille="continuation">In other words, every entry of the matrix \(C\) is multiplied by \(r\text{.}\)</p></article><article class="example example-like" id="example-14"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Scalar multiplication of a matrix.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-14"><article class="example example-like"><p id="p-266">If</p>
+</h6>
+<p id="p-266">If</p>
 <div class="displaymath">
 \begin{equation*}
 A=
@@ -138,8 +140,7 @@ rA=2A=
 8 \amp 10 \amp 12
 \end{bmatrix}.
 \end{equation*}
-</div></article></div>
-<p id="p-267">In short, the product \(rA\) is computed by multiplying every entry of \(A\) by \(r\text{.}\)</p>
+</div></article><p id="p-267">In short, the product \(rA\) is computed by multiplying every entry of \(A\) by \(r\text{.}\)</p>
 <article class="theorem theorem-like" id="ScalarMultiplicationProperties"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of scalar multiplication.</span>
 </h6>
@@ -152,15 +153,16 @@ rA=2A=
 <li id="li-119"><p id="p-273">\(\displaystyle 1A=A\)</p></li>
 </ul></article><article class="hiddenproof" id="proof-4"><a data-knowl="" class="id-ref original" data-refid="hk-proof-4"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-4"><article class="hiddenproof"><ul id="p-274" class="disc">
 <li id="li-120"><p id="p-275">By the definition of scalar multiplication, if \(A\) is an \(m\times n\) matrix, then \(rA\) is an \(m\times n\) matrix also.</p></li>
-<li id="li-121"><p id="p-276">We use \(A=[a_{i,j}]\) and \(B=[b_{i,j}]\text{.}\) Then the \(i\)-\(j\) entry of \(r(A+B)\) is \(r(a_{i,j}+b_{i,j})\) while he \(i\)-\(j\) entry of \(rA+rB\) is \(ra_{i,j}+rb_{i,j}\text{.}\) Hence the for the equality to be valid, we need \(r(a_{i,j}+b_{i,j})=ra_{i,j}+rb_{i,j}\text{,}\) which is the distributive law for real numbers. (see properties of real numbers in <a href="section-38.html#RealNumberProperties" class="internal" title="Subsection 6.1.2: Named properties of real numbers">Subsection 6.1.2</a>.)</p></li>
+<li id="li-121"><p id="p-276">We use \(A=[a_{i,j}]\) and \(B=[b_{i,j}]\text{.}\) Then the \(i\)-\(j\) entry of \(r(A+B)\) is \(r(a_{i,j}+b_{i,j})\) while he \(i\)-\(j\) entry of \(rA+rB\) is \(ra_{i,j}+rb_{i,j}\text{.}\) Hence the for the equality to be valid, we need \(r(a_{i,j}+b_{i,j})=ra_{i,j}+rb_{i,j}\text{,}\) which is the distributive law for real numbers. (see properties of real numbers in <a href="section-47.html#RealNumberProperties" class="internal" title="Subsection 7.1.2: Named properties of real numbers">Subsection 7.1.2</a>.)</p></li>
 <li id="li-122"><p id="p-277">We use \(A=[a_{i,j}].\) The \(i\)-\(j\) entry of \((r+s)A\) is \((r+s)a_{i,j}\) while the \(i\)-\(j\) entry of \(rA+sA\) is \(ra_{i,j}+sa_{i,j}\text{.}\) Hence the matrix equation is valid if \((r+s)a_{i,j}=ra_{i,j}+sa_{i,j}\text{.}\) Since this equation is the distributive law for real numbers, the validity is clear.</p></li>
 <li id="li-123"><p id="p-278">We use \(A=[a_{i,j}].\) The \(i\)-\(j\) entry of \((rs)A\) is  \((rs)a_{i,j}\) while the \(i\)-\(j\) entry of \(r(sA)\) is \(r(sa_{i,j}).\) Hence the matrix equation is valid if \((rs)a_{i,j}=r(sa_{i,j}).\) Since this is the associative law for real numbers, the result is clear.</p></li>
 <li id="li-124"><p id="p-279">We use \(A=[a_{i,j}].\) The \(i\)-\(j\) entry of \(1A\) is \(1a_{i,j}=a_{i,j}\text{,}\) and so \(1A=A.\)</p></li>
 </ul></article></div>
 <article class="paragraphs" id="paragraphs-1"><h5 class="heading"><span class="title">Linear combinations.</span></h5>
-<p id="p-280">Matrix addition and scalar multiplication are both used to compute linear combinations.</p></article><article class="example example-like" id="example-15"><a data-knowl="" class="id-ref original" data-refid="hk-example-15"><h6 class="heading">
+<p id="p-280">Matrix addition and scalar multiplication are both used to compute linear combinations.</p></article><article class="example example-like" id="example-15"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">A linear combination.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-15"><article class="example example-like"><p id="p-281">Suppose \(A=\begin{bmatrix} 1\amp 2\\3\amp 4 \end{bmatrix}\) and \(B=\begin{bmatrix} -1\amp 0\\2\amp 1 \end{bmatrix}\text{.}\) Then the expression \(2A+3B\) makes sense and can be evaluated as</p>
+</h6>
+<p id="p-281">Suppose \(A=\begin{bmatrix} 1\amp 2\\3\amp 4 \end{bmatrix}\) and \(B=\begin{bmatrix} -1\amp 0\\2\amp 1 \end{bmatrix}\text{.}\) Then the expression \(2A+3B\) makes sense and can be evaluated as</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
@@ -172,8 +174,7 @@ rA=2A=
 \amp =\begin{bmatrix} -1\amp 4\\ 12\amp 11 \end{bmatrix}
 \end{array}\text{.}
 \end{equation*}
-</div></article></div>
-<article class="definition definition-like" id="definition-12"><h6 class="heading">
+</div></article><article class="definition definition-like" id="definition-12"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Linear combination of two matrices.</span>
 </h6>
 <p id="p-282">If \(A\) and \(B\) are matrices conformable for addition, and \(r\) and \(s\) are scalars, then the matrix of the form \[ rA+sB \] is called a <dfn class="terminology">linear combination of \(A\) and \(B\text{.}\)</dfn></p></article><p id="p-283">The concept can be applied easily to more than two matrices.</p>

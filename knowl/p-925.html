@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:41-05:00    *-->
+<!--*    on 2020-07-10T15:32:07-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,21 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>The dot product and cross product in \(\R^3\) allow us to compute many different geometric properties of lines and planes.</p>
+<p>The distance to the plane is now easy to compute. If \(\vec x=(x_0,y_0,z_0)\) and \(\vec n=(a,b,c)\) then the distance from \(\vec x\) to \(\vec x+ t\vec n\) satisfies</p>
+<div class="displaymath">
+\begin{equation*}
+d(\vec x,\vec x+ t\vec n)
+=\|\vec x+ t\vec n-\vec x\|
+=|t|\|\vec n\|
+=\frac{|ax_0+by_0+cz_0+d|}{\|\vec n\|^2} \|\vec n\|
+\end{equation*}
+</div>
+<p data-braille="continuation">and so the distance \(D\) from the point to the plane satisfies</p>
+<div class="displaymath">
+\begin{equation*}
+D=\frac{|ax_0+by_0+cz_0+d|}{\|\vec n\|}.
+\end{equation*}
+</div>
 <span class="incontext"><a href="section-31.html#p-925">in-context</a></span>
 </body>
 </html>

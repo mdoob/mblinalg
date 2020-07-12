@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:44-05:00    *-->
+<!--*    on 2020-07-10T15:32:09-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,27 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We can use similar arguments for <a class="xref" data-knowl="./knowl/EigenvalueExample2.html" title="Example 5.1.4: Eigenvalues of \(\begin{bmatrix}2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5 \end{bmatrix}\)">Example 5.1.4</a>.</p>
-<span class="incontext"><a href="section-35.html#p-1050">in-context</a></span>
+<div class="displaymath">
+\begin{equation*}
+A-2I=
+\begin{bmatrix}5\amp -1\amp -2\\ 1\amp 3\amp -2\\ -1\amp -1\amp 4 \end{bmatrix}
+- 2\begin{bmatrix}1\amp 0\amp 0\\0\amp 1\amp 0\\0\amp 0\amp 1\end{bmatrix}
+=\begin{bmatrix}3\amp -1\amp -2\\ 1\amp 1\amp -2\\ -1\amp -1\amp 2 \end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">As usual, we put the augmented matrix into reduced row echelon form:</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{array}{ccc|c}
+3\amp -1\amp -2\amp 0\\ 1\amp 1\amp -2\amp 0\\ -1\amp -1\amp 2\amp 0
+\end{array}\right]
+\textrm{ reduces to }
+\left[\begin{array}{ccc|c}
+1\amp 0\amp -1\amp 0\\ 0\amp 1\amp -1\amp 0\\ 0\amp 0\amp 0\amp 0
+\end{array}\right]
+\end{equation*}
+</div>
+<p data-braille="continuation">and so all solutions are of the form \((x,y,z)=(t,t,t)=t(1,1,1)\text{.}\)</p>
+<span class="incontext"><a href="section-36.html#p-1050">in-context</a></span>
 </body>
 </html>

@@ -12,9 +12,7 @@
 <xi:include href="./EuclideanSpace.xml" />
 <xi:include href="./Eigenvalues.xml" />
 
-<!--
 <xi:include href="./LinearTransformations.xml" />
--->
 
 <xi:include href="./ExtraTopics.xml" />
 

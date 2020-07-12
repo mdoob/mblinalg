@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:36-05:00    *-->
+<!--*    on 2020-07-10T15:32:02-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,14 +13,11 @@
 </head>
 <body>
 <article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
-<p>Expanding on the \(i\)-th row:</p>
+<p>With no loss of generality, we assume that \(i\lt j\text{.}\) Interchange \(R_i\) with the one below it so that it has moved one row lower. Repeat the process until it is just below \(R_j\text{.}\) This take \(j-i\) interchanges. Now interchange \(R_j\) with the one above it repeatedly until it is in the \(i\)-th row. This takes \(j-i-1\) interchanges. The net effect is to interchange \(R_i\) and \(R_j\text{.}\) Each interchange multiplies the determinant by \(-1\text{.}\) Since there are \(2(j-i)-1\) (an odd number) interchanges in total, we have</p>
 <div class="displaymath">
-\begin{align*}
-\det B \amp = \sum_{j=1}^n b_{i,j}M_{i,j} \\
-\amp = \sum_{j=1}^n \lambda a_{i,j}M_{i,j} \\
-\amp = \lambda \sum_{j=1}^n a_{i,j}M_{i,j} \\
-\amp = \lambda\det A 
-\end{align*}
+\begin{equation*}
+\det B = (-1)^{2(j-i)-1} \det A = -\det A.
+\end{equation*}
 </div></article><span class="incontext"><a href="section-22.html#proof-41">in-context</a></span>
 </body>
 </html>

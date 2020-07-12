@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:38-05:00    *-->
+<!--*    on 2020-07-10T15:32:03-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,5 +11,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p>If we view each vector as a column vector, then each of the statements have been proven already in our study of matrix theory. (see <a class="xref" data-knowl="./knowl/MatrixAdditionProperties.html" title="Theorem 2.2.2: Addition properties of Matrices">Theorem 2.2.2</a> and <a class="xref" data-knowl="./knowl/ScalarMultiplicationProperties.html" title="Theorem 2.3.4: Properties of scalar multiplication">Theorem 2.3.4</a>). There is no need to do it again!</p></article></body>
+<body><article class="hiddenproof"><p>Since \(A\) is invertible, we may use the cofactor matrix \(C\) to get</p>
+<div class="displaymath">
+\begin{equation*}
+x=A^{-1}b=\frac1{\det A} (\adj A) b=\frac1{\det A} C^T b.
+\end{equation*}
+</div>
+<p data-braille="continuation">Then</p>
+<div class="displaymath">
+\begin{equation*}
+(C^Tb)_i=\sum_{k=1}^n C_{k,i}b_k =\sum_{k=1}^n b_kC_{k,i}
+=\det A_i
+\end{equation*}
+</div>
+<p data-braille="continuation">since \(\sum_{k=1}^n b_kC_{k,i}\) is the \(i\)-th column expansion for the evaluation of \(\det A_i\text{.}\) Hence</p>
+<div class="displaymath">
+\begin{equation*}
+x_i=\frac1{\det A} \det A_i=\frac{\det A_i}{\det A}.
+\end{equation*}
+</div></article></body>
 </html>

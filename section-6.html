@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:17-05:00    *-->
+<!--*    on 2020-07-10T15:31:43-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -96,7 +96,8 @@ MathJax.Hub.Config({
 <li class="link"><a href="Determinants.html" data-scroll="Determinants"><span class="codenumber">3</span> <span class="title">The Determinant</span></a></li>
 <li class="link"><a href="EuclideanSpace.html" data-scroll="EuclideanSpace"><span class="codenumber">4</span> <span class="title">Vectors in Euclidean \(n\) space</span></a></li>
 <li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
-<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">6</span> <span class="title">Additional Topics</span></a></li>
+<li class="link"><a href="LinearTransformations.html" data-scroll="LinearTransformations"><span class="codenumber">6</span> <span class="title">Linear transformations</span></a></li>
+<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">7</span> <span class="title">Additional Topics</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-6"><h2 class="heading hide-type">
@@ -122,9 +123,10 @@ MathJax.Hub.Config({
 <li id="li-99"><p id="p-168">If there are nonzero entries above or below this (leading) one, use an elementary row operation on each one to change it to a zero.</p></li>
 <li id="li-100"><p id="p-169">Now consider the part of the matrix below the top row and to the right of the column under consideration: if there are no such rows or columns, stop and the algorithm is finished. Otherwise, carry out the same procedure on the new matrix.</p></li>
 </ol>
-<article class="example example-like" id="example-5"><a data-knowl="" class="id-ref original" data-refid="hk-example-5"><h6 class="heading">
+<article class="example example-like" id="example-5"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.3</span><span class="period">.</span><span class="space"> </span><span class="title">Putting a matrix in reduced row echelon form.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-5"><article class="example example-like"><p id="p-170">\(\begin{align}
+</h6>
+<p id="p-170">\(\begin{align}
 \amp \begin{bmatrix}
 1 \amp  2 \amp  3 \\
 4 \amp  5 \amp  6 \\
@@ -181,10 +183,10 @@ R_2\gets R_2-2R_3
 0 \amp  0 \amp  1 \\
 0 \amp  0 \amp  0
 \end{bmatrix}
-\end{align} \)</p></article></div>
-<article class="example example-like" id="example-6"><a data-knowl="" class="id-ref original" data-refid="hk-example-6"><h6 class="heading">
+\end{align} \)</p></article><article class="example example-like" id="example-6"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.4</span><span class="period">.</span><span class="space"> </span><span class="title">Putting another matrix in reduced row echelon form.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-6"><article class="example example-like"><p id="p-171">\(\begin{align}
+</h6>
+<p id="p-171">\(\begin{align}
 \amp \begin{bmatrix}
 1 \amp  2 \amp  6 \amp  1 \amp  4 \amp  6 \\
 2 \amp  4 \amp  9 \amp  2 \amp  8 \amp  9 \\
@@ -224,8 +226,7 @@ R_1 \gets R_1 - R_3
 0 \amp  0 \amp  1 \amp  0 \amp  0 \amp  1 \\
 0 \amp  0 \amp  0 \amp  1 \amp  6 \amp  0
 \end{bmatrix}
-\end{align}\)</p></article></div>
-<p id="p-172">Notice the pattern of zero, 1 and nonzero entries after Gauss-Jordan reduction (with the leading ones in red):</p>
+\end{align}\)</p></article><p id="p-172">Notice the pattern of zero, 1 and nonzero entries after Gauss-Jordan reduction (with the leading ones in red):</p>
 <div class="displaymath">
 \begin{equation*}
 \left[\begin{array}{ccccccc}
@@ -360,10 +361,10 @@ x_1-x_2+2x_3-x_4 \amp =\amp  (-1+t) - (2s) + 2(s) - (t) \amp= -1\\
 -x_1+2x_2-4x_3+x_4 \amp =\amp  -(-1+t) +2(2s) -4s+t \amp= 1 \\
 3x_1-3x_4 \amp =\amp  3(-1+t) -3t \amp= -3
 \end{array}\)</p>
-<article class="example example-like" id="example-7"><a data-knowl="" class="id-ref original" data-refid="hk-example-7"><h6 class="heading">
+<article class="example example-like" id="example-7"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.5</span><span class="period">.</span><span class="space"> </span><span class="title">A matrix row-reducing itself.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-7"><article class="example example-like"><p id="p-186">The following example is a matrix row reducing itself. Notice how it proceeds left to right in columns, and each column with a leading one has zeros above and below when the algorithm completes.</p></article></div>
-<figure class="figure figure-like" id="figure-5"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/rref.gif" style="width: 100%; height: auto;" alt=""></div>
+</h6>
+<p id="p-186">The following example is a matrix row reducing itself. Notice how it proceeds left to right in columns, and each column with a leading one has zeros above and below when the algorithm completes.</p></article><figure class="figure figure-like" id="figure-5"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/rref.gif" style="width: 100%; height: auto;" alt=""></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.6<span class="period">.</span></span><span class="space"> </span>A matrix row reduces itself</figcaption></figure></section><section class="subsection" id="subsection-16"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.6.1</span> <span class="title">The rank of a matrix</span>
 </h3>

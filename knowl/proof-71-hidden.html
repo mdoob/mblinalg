@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:41-05:00    *-->
+<!--*    on 2020-07-10T15:32:07-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,55 +11,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p>Define the matrix \(X\) by</p>
+<body><article class="hiddenproof"><p>The matrix</p>
 <div class="displaymath">
 \begin{equation*}
 X=
 \begin{bmatrix}
 \vec x_1 \amp \vec x_2 \amp \cdots \amp \vec x_m
-\end{bmatrix}.
+\end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">and let \(X'\) be the reduced row echelon form of \(X\text{.}\) This means there are elementary matrices \(E_1,E_2,\ldots,E_k\) so that \(X'=E_kE_{k-1}\cdots E_2E_1X\text{.}\) Let \(\vec e_n=(0,0,\ldots,0,1)\text{,}\) and</p>
-<div class="displaymath">
-\begin{equation*}
-\vec w= E_1^{-1}E_2^{-1}\cdots E_k^{-1} \vec e_n.
-\end{equation*}
-</div>
-<p data-braille="continuation">so that</p>
-<div class="displaymath">
-\begin{equation*}
-E_kE_{k-1}\cdots E_2E_1\vec w= \vec e_n.
-\end{equation*}
-</div>
-<p data-braille="continuation">Now consider</p>
-<div class="displaymath">
-\begin{equation*}
-r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_m=\vec w.
-\end{equation*}
-</div>
-<p data-braille="continuation">which is the same as</p>
-<div class="displaymath">
-\begin{equation*}
-X \begin{bmatrix} r_1\\r_2\\ \vdots\\ r_m \end{bmatrix}=\vec w.
-\end{equation*}
-</div>
-<p data-braille="continuation">To solve this we compute the reduced row echelon form of</p>
-<div class="displaymath">
-\begin{equation*}
-\left[\begin{array}{cccc|c}
-\vec x_1 \amp \vec x_2 \amp \cdots \amp \vec x_m \amp \vec w
-\end{array}\right]
-\end{equation*}
-</div>
-<p data-braille="continuation">We multiply this matrix on the left by \(E_kE_{k-1}\cdots E_2E_1\) to get the matrix</p>
-<div class="displaymath">
-\begin{equation*}
-\left[\begin{array}{c|c}
-X' \amp \vec e_n
-\end{array}\right]
-\end{equation*}
-</div>
-<p data-braille="continuation">Suppose that the last row of \(X'\) is all-zero row. Then the last row of the reduced row echelon form is \([0 \cdots 0 \mid 1]\text{,}\) which is the criterion for the system of equations having no solution. This can't happen because by assumption \(\{\vec x_1,\vec x_2,\ldots,\vec x_m\}\) is a spanning set.</p>
-<p>Since \(X'\) has no all-zero row at the bottom, every row must contain a leading one. This means the number of columns of \(X'\) is at least as large as the number of rows, that is to say, \(n\leq m\text{.}\)</p></article></body>
+<p data-braille="continuation">has \(n\) rows and \(m\) columns. Since the reduced row echelon form of \(X\) has the identity matrix for its nonzero rows, the number of rows is at least as large as the number of columns. This says \(m\leq n\text{.}\)</p></article></body>
 </html>

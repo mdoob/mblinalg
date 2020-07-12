@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:41-05:00    *-->
+<!--*    on 2020-07-10T15:32:07-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,11 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>If two lines intersect, the distance between them is obviously \(0\text{.}\) Otherwise, there are two cases:</p>
-<ul class="disc">
-<li><p>The lines lie in a plane, in which case the lines are <em class="emphasis">parallel</em>.</p></li>
-<li><p>The lines do not lie in a plane, in which case the lines are <em class="emphasis">skew</em>.</p></li>
-</ul>
-<span class="incontext"><a href="section-31.html#p-936">in-context</a></span>
+<p>Suppose we have a line \(L\) with equation \((x_0,y_0,z_0)+t\vec {n_0}\) and a plane with equations \(ax+by+cz=0\text{.}\) Is there a point in both the line and the plane, and, if so, what is it? As usual when discussing planes, let \(\vec n=(a,b,c)\text{.}\) Then a point \(\vec x=(x,y,z)\) is in the plane if and only if \(\vec x\cdot \vec n=0\text{.}\) If \(\vec x\) is also on the line, then \(\vec x=(x_0,y_0,z_0)=t\vec{n_0}\) for some \(t\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+((x_0,y_0,z_0)+t\vec{n_0})\cdot\vec n=0\\
+(x_0,y_0,z_0)\cdot \vec n= -t( \vec{n_0}\cdot\vec n)
+\end{equation*}
+</div>
+<p data-braille="continuation">and, if \(\vec{n_0}\cdot\vec n\not=0\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+t=-\frac{(x_0,y_0,z_0)\cdot \vec n}{\vec{n_0}\cdot\vec n}
+\end{equation*}
+</div>
+<span class="incontext"><a href="section-32.html#p-936">in-context</a></span>
 </body>
 </html>

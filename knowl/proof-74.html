@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:43-05:00    *-->
+<!--*    on 2020-07-10T15:32:07-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,29 +13,13 @@
 </head>
 <body>
 <article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
-<p>Since \(\{\vec y_1, \vec y_2,\ldots,\vec y_t\}\) is a spanning set, we may write</p>
+<p>The equation \(r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_n=\vec w\) is the same as the matrix equation</p>
 <div class="displaymath">
-\begin{align*}
-\vec x_1 \amp= r_{11}\vec y_1+r_{12}\vec y_2+\cdots+r_{1t}\vec y_t\\
-\vec x_2 \amp= r_{21}\vec y_1+r_{22}\vec y_2+\cdots+r_{2t}\vec y_t\\
-\vdots\\
-\vec x_i \amp= r_{i1}\vec y_1+r_{i2}\vec y_2+\cdots+r_{it}\vec y_t
-=\sum_{j=1}^t r_{ij}\vec y_j\\
-\vdots\\
-\vec x_s \amp= r_{s1}\vec y_1+r_{s2}\vec y_2+\cdots+r_{st}\vec y_t\text{.}
-\end{align*}
+\begin{equation*}
+X \begin{bmatrix} r_1\\r_2\\ \vdots\\r_n \end{bmatrix} = \vec w
+\end{equation*}
 </div>
-<p data-braille="continuation">Now we take a linear combination of \(\{\vec x_1, \vec x_2,\ldots,\vec x_s\}\) and set it equal to \(\vec0\text{.}\)</p>
-<div class="displaymath">
-\begin{align*}
-\vec0=
-\sum_{i=1}^s u_i \vec x_i \amp= \sum_{i=1}^s u_i\sum_{j=1}^t
-r_{ij}\vec y_j\\
-\amp= \sum_{j=1}^t (\sum_{i=1}^s u_i r_{ij})\vec y_j\\
-\amp= \sum_{j=1}^t (\sum_{i=1}^s r_{ji}^T u_i)\vec y_j\\
-\amp= \sum_{j=1}^t (R^T \vec u)_j \vec y_j
-\end{align*}
-</div>
-<p data-braille="continuation">where \(R=[r_{ij}]\) and \(\vec u=(u_1,\ldots,u_s)\text{.}\) Now if \(R^T\vec u=\vec 0\) for some \(\vec u\not=\vec0\text{,}\) then \(\sum_{i=1}^s u_i \vec x_i =\vec 0\) with \(\vec u\not=\vec0\text{.}\) This contradicts the linear independence of \(\{\vec y_1, \vec y_2,\ldots,\vec y_t\}\text{.}\) Hence the reduced row echelon form of \(R^T\) can have no free variables, and so \(R^T\) can not have more columns than rows. Since \(R^T\) is an \(t\times s\) matrix, we have \(s\leq t\text{.}\)</p></article><span class="incontext"><a href="section-32.html#proof-74">in-context</a></span>
+<p data-braille="continuation">and so, setting \(\vec w=\vec0\text{,}\) we see that \(\mathcal{X}\) is linearly independent if and only if \(X \begin{bmatrix} r_1\\ \vdots\\r_n \end{bmatrix} =\vec 0\) implies \(\begin{bmatrix} r_1\\ \vdots\\r_n \end{bmatrix} =\vec0\text{.}\) By <a class="xref" data-knowl="./knowl/InvertibilityEquivalence.html" title="Theorem 2.11.2: Equivalent Forms of Invertibility">Theorem 2.11.2</a>, this is equivalent to \(X\) being nonsingular.</p>
+<p>Also, if \(\mathcal{X}\) spans \(\mathbb{R}^n\text{,}\) then, for any \(\vec w\) in \(\mathbb{R}^n\text{,}\) \(X \begin{bmatrix} r_1\\ \vdots\\r_n \end{bmatrix} =\vec w\) always has a solution. Again, by <a class="xref" data-knowl="./knowl/InvertibilityEquivalence.html" title="Theorem 2.11.2: Equivalent Forms of Invertibility">Theorem 2.11.2</a>, this is equivalent to \(X\) being nonsingular.</p></article><span class="incontext"><a href="section-33.html#proof-74">in-context</a></span>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:21-05:00    *-->
+<!--*    on 2020-07-10T15:31:46-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -96,7 +96,8 @@ MathJax.Hub.Config({
 <li class="link"><a href="Determinants.html" data-scroll="Determinants"><span class="codenumber">3</span> <span class="title">The Determinant</span></a></li>
 <li class="link"><a href="EuclideanSpace.html" data-scroll="EuclideanSpace"><span class="codenumber">4</span> <span class="title">Vectors in Euclidean \(n\) space</span></a></li>
 <li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
-<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">6</span> <span class="title">Additional Topics</span></a></li>
+<li class="link"><a href="LinearTransformations.html" data-scroll="LinearTransformations"><span class="codenumber">6</span> <span class="title">Linear transformations</span></a></li>
+<li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">7</span> <span class="title">Additional Topics</span></a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-21"><h2 class="heading hide-type">
@@ -127,9 +128,10 @@ C=P\circ M
 </div></article><article class="hiddenproof" id="proof-33"><a data-knowl="" class="id-ref original" data-refid="hk-proof-33"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-33"><article class="hiddenproof"><p id="p-565">This is just restating <a class="xref" data-knowl="./knowl/MinorsCofactorsCheckerboard.html" title="Observation 3.2.7: Minors, cofactors and the checkerboard pattern">Observation 3.2.7</a></p></article></div>
 <p id="p-566">Compare the results of <a class="xref" data-knowl="./knowl/MatrixMinorsExmaple.html" title="Example 3.2.5: Matrix of minors">Example 3.2.5</a> and <a class="xref" data-knowl="./knowl/CofactorMatrixExmaple.html" title="Example 3.2.6: Cofactor matrix">Example 3.2.6</a>.</p>
 <p id="p-567">Starting with a given square matrix \(A\text{,}\) we have defined the matrix of minors \(M\)and the cofactor matrix \(C\) using <a class="xref" data-knowl="./knowl/MatrixMinorDefinition.html" title="Definition 3.2.1: The \(i,j\) minor of a matrix \(A\)">Definition 3.2.1</a> and <a class="xref" data-knowl="./knowl/MatrixCofactorDefinition.html" title="Definition 3.2.2: The \(i,j\) cofactor of a matrix \(A\)">Definition 3.2.2</a>. We have also used Hadamard multiplication of matrices <a class="xref" data-knowl="./knowl/HadamardProductDef.html" title="Definition 3.3.1: Hadamard product of two matrices">Definition 3.3.1</a> to see that \(C=P\circ M\text{.}\) We now wish to do the further evaluation of \(A\circ P\circ M=A\circ C\text{.}\)</p>
-<article class="example example-like" id="DeterminantSizeFour"><a data-knowl="" class="id-ref original" data-refid="hk-DeterminantSizeFour"><h6 class="heading">
+<article class="example example-like" id="DeterminantSizeFour"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">\(A\circ C\) has constant row and column sums.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-DeterminantSizeFour"><article class="example example-like"><p id="p-568">Let</p>
+</h6>
+<p id="p-568">Let</p>
 <div class="displaymath">
 \begin{equation*}
 A=
@@ -225,12 +227,11 @@ A\circ C
 \end{matrix}
 \end{matrix}
 \end{equation*}
-</div></article></div>
-<p id="p-569">An astonishing result is seen in this example. Adding the entries in any given row or in any given column gives row sums and column sums that are identical.</p>
+</div></article><p id="p-569">An astonishing result is seen in this example. Adding the entries in any given row or in any given column gives row sums and column sums that are identical.</p>
 <article class="theorem theorem-like" id="HadamardRowSums"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">\(A\circ C\) has constant row and column sums.</span>
 </h6>
-<p id="p-570">Let \(A\) be any square matrix, \(M\) be its matrix of minors and \(P\) satisfy \(p_{i,j}=(-1)^{i+j}\text{.}\) Then the row sums and column sums of \(A\circ P\circ M\) are identical.</p></article><article class="hiddenproof" id="proof-34"><a data-knowl="" class="id-ref original" data-refid="hk-proof-34"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-34"><article class="hiddenproof"><p id="p-571">We defer the proof to here. </p>
+<p id="p-570">Let \(A\) be any square matrix, \(M\) be its matrix of minors and \(P\) satisfy \(p_{i,j}=(-1)^{i+j}\text{.}\) Then the row sums and column sums of \(A\circ P\circ M\) are identical.</p></article><article class="hiddenproof" id="proof-34"><a data-knowl="" class="id-ref original" data-refid="hk-proof-34"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-34"><article class="hiddenproof"><p id="p-571">The equivalent  <a class="xref" data-knowl="./knowl/LaplaceExpansion.html" title="Theorem 3.3.8: Laplace expansion theorem">Theorem 3.3.8</a> will be proven later.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/sademoji.jpeg" style="width: 100%; height: auto;" alt=""></div></div></div></article></div>
 <p id="p-572">We now use <a class="xref" data-knowl="./knowl/HadamardRowSums.html" title="Theorem 3.3.4: \(A\circ C\) has constant row and column sums">Theorem 3.3.4</a> to define the determinant for large matrices.</p>
 <article class="definition definition-like" id="definition-35"><h6 class="heading">
@@ -263,20 +264,26 @@ a_{1,1}C_{1,1}+a_{1,2}C_{1,2}+a_{1,3}C_{1,3}+\cdots+a_{1,n}C_{1,n}=\sum_{j=1}^n 
 \begin{equation*}
 \sum_{i=1}^n a_{i,j}C_{i,j}.
 \end{equation*}
-</div></article><p id="p-578">We now restate the definition of the determinant using different notation.</p>
-<article class="definition definition-like" id="definition-38"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">The determinant of a square matrix.</span>
+</div></article><p id="p-578">We now restate <a class="xref" data-knowl="./knowl/HadamardRowSums.html" title="Theorem 3.3.4: \(A\circ C\) has constant row and column sums">Theorem 3.3.4</a>.</p>
+<article class="theorem theorem-like" id="LaplaceExpansion"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Laplace expansion theorem.</span>
 </h6>
-<p id="p-579">For any square matrix \(A\text{,}\) the determinant of \(A\) is the common value of the \(i\)-th row expansions \(j\)-th column expansions of \(A\text{.}\)</p></article><article class="example example-like" id="example-27"><a data-knowl="" class="id-ref original" data-refid="hk-example-27"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">An example of cofactor expansion with \(n=4\).</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-27"><article class="example example-like"><p id="p-580">Let \(A=
+<p id="p-579">For any square matrix \(A\text{,}\) the \(i\)-th row and \(j\)-th column expansions are all equal.</p></article><article class="hiddenproof" id="proof-35"><a data-knowl="" class="id-ref original" data-refid="hk-proof-35"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-35"><article class="hiddenproof"><p id="p-580">The proof is difficult and needs further mathematical tools. To maintain the flow of our presentation, we put it off until <a href="DeterminantDeeperTopics.html" class="internal" title="Section 3.6: A deeper investigation of the properties of determinants">Section 3.6</a>.</p></article></div>
+<p id="p-581">The Laplace expansion theorem allow an alternative (and more usual) definition of the determinant.</p>
+<article class="definition definition-like" id="definition-38"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">The determinant of a matrix.</span>
+</h6>
+<p id="p-582">For any square matrix \(A\text{,}\) the determinant of \(A\) is the common value of the \(i\)-th row expansions and \(j\)-th column expansions of \(A\text{.}\)</p></article><article class="example example-like" id="example-27"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">An example of cofactor expansion with \(n=4\).</span>
+</h6>
+<p id="p-583">Let \(A=
 \begin{bmatrix}
 1\amp 2\amp 2\amp 3\\
 -1\amp 4\amp 5\amp 3\\ 3\amp
 4\amp 8\amp -1\\
 1\amp 2\amp 2\amp 1
 \end{bmatrix}\text{.}\)</p>
-<p id="p-581">We will evaluate \(\det(A)\) by expanding on the first row. The formula for the first row expansion is</p>
+<p id="p-584">We will evaluate \(\det(A)\) by expanding on the first row. The formula for the first row expansion is</p>
 <div class="displaymath">
 \begin{equation*}
 \det(A)=a_{1,1}C_{1,1} + a_{1,2}C_{1,2}+ a_{1,3}C_{1,3}+ a_{1,4}C_{1,4}.
@@ -318,7 +325,7 @@ a_{1,4}=3
 \end{array}
 \end{equation*}
 </div>
-<p id="p-582">Now we can compute</p>
+<p id="p-585">Now we can compute</p>
 <div class="displaymath">
 \begin{align*}
 a_{1,1}C_{1,1} \amp + a_{1,2}C_{1,2} + a_{1,3}C_{1,3} + a_{1,4}C_{1,4}\\
@@ -326,8 +333,8 @@ a_{1,1}C_{1,1} \amp + a_{1,2}C_{1,2} + a_{1,3}C_{1,3} + a_{1,4}C_{1,4}\\
 \amp =-52
 \end{align*}
 </div>
-<p id="p-583">The cofactor expansion on column \(C_3\) is</p>
-<div class="displaymath" id="p-584">
+<p id="p-586">The cofactor expansion on column \(C_3\) is</p>
+<div class="displaymath" id="p-587">
 \begin{align*}
 a_{1,3}C_{1,3} + \amp a_{2,3}C_{2,3} +a_{3,3}C_{3,3} + a_{4,3}C_{4,3}\\
 \amp = a_{1,3}M_{1,3} - a_{2,3}M_{2,3} +a_{3,3}M_{3,3} - a_{4,3}M_{4,3}
@@ -376,8 +383,8 @@ a_{1,3}M_{1,3} - \amp a_{2,3}M_{2,3}+a_{3,3}M_{3,3} - a_{4,3}M_{4,3}\\
 \amp= -52
 \end{align*}
 </div>
-<p id="p-585">Similarly, the cofactor expansion on column \(C_4\) evaluates to \(-3(26)+3(0)+1(0)+1(26)=-52\text{.}\)</p>
-<p id="p-586">The three cofactor expansions of \(A\) give the identical result.</p></article></div></section></section></div></main>
+<p id="p-588">Similarly, the cofactor expansion on column \(C_4\) evaluates to \(-3(26)+3(0)+1(0)+1(26)=-52\text{.}\)</p>
+<p id="p-589">The three cofactor expansions of \(A\) give the identical result.</p></article></section></section></div></main>
 </div>
 </body>
 </html>

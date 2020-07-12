@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:44-05:00    *-->
+<!--*    on 2020-07-10T15:32:10-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,27 +13,78 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose we want to evaluate the sum of the first \(n\) positive integers. In other words, we want to find</p>
+<p>Here are some examples of linear transformations:</p>
+<ol class="decimal">
+<li>
+<p>The zero transformation: \(L(\vec x)=\vec0\) for all \(\vec x\)</p>
 <div class="displaymath">
 \begin{equation*}
-s_n=1+2+\cdots+n=\sum_{k=1}^nk.
+L(\vec x)+L(\vec y)=\vec0+\vec0=\vec0=L(\vec x + \vec y)\\
+rL(\vec x)=r\vec0=\vec0=L(r\vec x)
 \end{equation*}
 </div>
-<p data-braille="continuation">If we are convinced that \(\sum_{k=1}^n(2k-1)=1+3+5+\cdots+2n-1=n^2\text{,}\) then</p>
-<div class="displaymath">
-\begin{align*}
-n^2\amp =\sum_{k=1}^n(2k-1)\\
-\amp =\sum_{k=1}^n(2k)-\sum_{k=1}^n1\\
-\amp =2\sum_{k=1}^nk-n\\
-\amp =2s_n-n
-\end{align*}
-</div>
-<p data-braille="continuation">which yields</p>
+</li>
+<li>
+<p>The identity transformation: \(L(\vec x)=\vec x\) for all \(\vec x\)</p>
 <div class="displaymath">
 \begin{equation*}
-s_n=\frac12n(n+1).
+L(\vec x)+L(\vec y)=\vec x+\vec y=L(\vec x + \vec y)\\
+rL(\vec x)=r\vec x=L(r\vec x)
 \end{equation*}
 </div>
-<span class="incontext"><a href="section-39.html#p-1082">in-context</a></span>
+</li>
+<li>
+<p>Rotations in \(\R^2\) as seen in <a class="xref" data-knowl="./knowl/PlaneRotation.html" title="Example 6.1.1: A rotation in the plane">Example 6.1.1</a>.</p>
+<p>The following figure shows why rotations have the addition property defining linear transformations:</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 55%; margin-left: 22.5%; margin-right: 22.5%;"><object data="images/image-61.html" id="image-61" width="330" height="330"><embed src="images/image-61.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.1<span class="period">.</span></span><span class="space"> </span>Rotations are linear</figcaption></figure><p>The situation is similar for the scalar multiplication property:</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><object data="images/image-62.html" id="image-62" width="300" height="300"><embed src="images/image-62.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.2<span class="period">.</span></span><span class="space"> </span>Rotations are linear</figcaption></figure>
+</li>
+<li><p>Reflections in \(\R^2\) as seen in <a class="xref" data-knowl="./knowl/PlaneReflection.html" title="Example 6.1.3: A reflection in the plane">Example 6.1.3</a>.</p></li>
+<li><p>Projections in \(\R^2\) as seen in <a class="xref" data-knowl="./knowl/PlaneProjection.html" title="Example 6.1.5: A projection in the plane">Example 6.1.5</a>.</p></li>
+<li><p>Dilations in \(\R^2\) as seen in <a class="xref" data-knowl="./knowl/PlaneDilation.html" title="Example 6.1.7: A dilation in the plane">Example 6.1.7</a>.</p></li>
+<li>
+<p>\(L((x_1,x_2,x_3))=(x_1+x_2,x_2+x_3)\) since</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+L(\vec x)+L(\vec y)
+\amp =L((x_1,x_2,x_3))+L((y_1,y_2,y_3))\\
+\amp = (x_1+x_2,x_2+x_3)+(y_1+y_2,y_2+y_3)\\
+\amp =(x_1+x_2+y_1+y_2, x_2+x_3+y_2+y_3)\\
+\amp =(x_1+y_1+x_2+y_2, x_2+y_2+x_3+y_3)\\
+\amp =L((x_1+y_1,x_2+y_2,x_3+y_3))\\
+\amp =L( (x_1,x_2,x_3)+ (y_1,y_2,y_3))\\
+\amp =L(\vec x+\vec y) \text{ and}
+\end{array}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+rL(\vec x)
+\amp =rL((x_1,x_2,x_3))\\
+\amp =r(x_1+x_2,x_2+x_3)\\
+\amp =(rx_1+rx_2,rx_2+rx_3)\\
+\amp =L((rx_1,rx_2,rx_3))\\
+\amp =L(r\vec x)
+\end{array}
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Let \(A\) be an \(n\times m\) matrix (note carefully: \(n\) rows and \(m\) columns). Define \(L\colon\R^m\to\R^n\) in the following way: If \(\vec x\) is in \(\R^m\text{,}\) let \(\vec z=A\vec x\text{.}\) Note that \(\vec z\) is in \(\R^n\text{.}\) We then let \(L(\vec x)=\vec z\text{.}\)  In other words \(L(\vec x)=A\vec x\text{.}\) It follows that</p>
+<div class="displaymath">
+\begin{equation*}
+L(\vec x+\vec y) =A(\vec x+\vec y)
+=A\vec x+A\vec y=L(\vec x)+L(\vec y)\\
+L(r\vec x)=A(r\vec x)=rA\vec x=rL(\vec x)
+\end{equation*}
+</div>
+<p data-braille="continuation">(There is actually a slight abuse of notation here: \(\vec x\) and \(\vec y\) are (vertical) column vectors for the matrix multiplication, but are written as (horizontal) vectors in \(\R^m\) and \(\R^n\text{.}\) The context of the equation will always make the proper interpretation clear.)</p>
+</li>
+</ol>
+<span class="incontext"><a href="LinearTransformationIntroduction.html#p-1082">in-context</a></span>
 </body>
 </html>

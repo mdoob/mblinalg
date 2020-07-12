@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:37-05:00    *-->
+<!--*    on 2020-07-10T15:32:03-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,23 +11,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p>Since \(A\) is invertible, we may use the cofactor matrix \(C\) to get</p>
+<body><article class="hiddenproof"><p>If \(\det A=\pm1\) then</p>
 <div class="displaymath">
 \begin{equation*}
-x=A^{-1}b=\frac1{\det A} (\adj A) b=\frac1{\det A} C^T b.
+A^{-1}=\frac1{\det A} \adj A = \pm C^T.
 \end{equation*}
 </div>
-<p data-braille="continuation">Then</p>
+<p data-braille="continuation">where \(C\) is the cofactor matrix. But the entries of \(C\) are computed by taking the determinant of matrices with integer entries. Since this determinant is computed using products and sums of integers, \(C\) must have all integer entries, and hence so does \(A^{-1}\text{.}\)</p>
+<p>Conversely, if both \(A\) and \(A^{-1}\) have all integer entries, the \(\det A\) and \(\det A^{-1}\) are both integers. But then</p>
 <div class="displaymath">
 \begin{equation*}
-(C^Tb)_i=\sum_{k=1}^n C_{k,i}b_k =\sum_{k=1}^n b_kC_{k,i}
-=\det A_i
+\det A\,\det A^{-1}= \det(AA^{-1})=\det I=1
 \end{equation*}
 </div>
-<p data-braille="continuation">since \(\sum_{k=1}^n b_kC_{k,i}\) is the \(i\)-th column expansion for the evaluation of \(\det A_i\text{.}\) Hence</p>
-<div class="displaymath">
-\begin{equation*}
-x_i=\frac1{\det A} \det A_i=\frac{\det A_i}{\det A}.
-\end{equation*}
-</div></article></body>
+<p data-braille="continuation">Hence either \(\det A=\det A^{-1}=1\) or \(\det A=\det A^{-1}=-1\text{.}\)</p></article></body>
 </html>

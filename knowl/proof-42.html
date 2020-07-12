@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:36-05:00    *-->
+<!--*    on 2020-07-10T15:32:02-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,11 +13,14 @@
 </head>
 <body>
 <article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
-<p>The matrix \(\lambda A\) is derived from \(A\) by applying \(R_i\gets \lambda R_i\) for \(i=1,2,\ldots,n\text{.}\) Each application multiplies the determinant by \(\lambda\text{,}\) and so after the \(n\) applications we have</p>
+<p>Expanding on the \(i\)-th row:</p>
 <div class="displaymath">
-\begin{equation*}
-\det \lambda A=\lambda^n A.
-\end{equation*}
+\begin{align*}
+\det B \amp = \sum_{j=1}^n b_{i,j}M_{i,j} \\
+\amp = \sum_{j=1}^n \lambda a_{i,j}M_{i,j} \\
+\amp = \lambda \sum_{j=1}^n a_{i,j}M_{i,j} \\
+\amp = \lambda\det A 
+\end{align*}
 </div></article><span class="incontext"><a href="section-22.html#proof-42">in-context</a></span>
 </body>
 </html>

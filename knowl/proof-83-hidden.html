@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:44-05:00    *-->
+<!--*    on 2020-07-10T15:32:09-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -11,11 +11,24 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p>The matrix \(A-\lambda I\) is also triangular and, by <a class="xref" data-knowl="./knowl/DeterminantTriangularMatrix.html" title="Theorem 3.4.2: The determinant of a triangular matrix">Theorem 3.4.2</a>, its determinant is just the product of the diagonal elements, that is,</p>
+<body><article class="hiddenproof"><p>By definition of the span of a set,</p>
 <div class="displaymath">
 \begin{equation*}
-p(\lambda)=(a_{1,1}-\lambda)(a_{2,2}-\lambda)\cdots(a_{n,n}-\lambda).
+\vec x=\sum_{i=1}^m r_i\vec x_i
 \end{equation*}
 </div>
-<p data-braille="continuation">The roots of this polynomial are the diagonal elements of \(A\text{.}\)</p></article></body>
+<p data-braille="continuation">and so</p>
+<div class="displaymath">
+\begin{equation*}
+A(\vec x)=A(\sum_{i=1}^m r_i\vec x_i)=\sum_{i=1}^m r_iA(\vec x_i)
+=\sum_{i=1}^mr_i\lambda_i\vec x_i\text{.}
+\end{equation*}
+</div>
+<p>Similarly,</p>
+<div class="displaymath">
+\begin{equation*}
+A^n(\vec x)=A^n(\sum_{i=1}^m r_i\vec x_i)=\sum_{i=1}^m r_iA^n(\vec x_i)
+=\sum_{i=1}^mr_i\lambda_i^n\vec x_i\text{.}
+\end{equation*}
+</div></article></body>
 </html>

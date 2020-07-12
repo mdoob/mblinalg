@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-05T18:40:42-05:00    *-->
+<!--*    on 2020-07-10T15:32:08-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,24 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>If \(\vec x=(x_1,\ldots,x_n)\) and \(\vec y=(y_1,\ldots,y_n)\) are in \(H\text{,}\) then from the equations</p>
-<div class="displaymath">
-\begin{gather*}
-a_1x_1+a_2x_2+\cdots+a_nx_n=0,\\
-a_1y_1+a_2y_2+\cdots+a_ny_n=0, \text{ and}\\
-\vec x+\vec y=(x_1+y_1,\ldots,x_n+y_n)
-\end{gather*}
-</div>
-<p data-braille="continuation">it follows that</p>
-<div class="displaymath">
-\begin{align*}
-a_1(x_1+y_1)+\cdots+a_n(x_n+y_n)\amp =
-(a_1x_1+\cdots+a_nx_n) + (a_1y_1+\cdots+a_ny_n)\\
-\amp=0+0\\
-\amp=0,
-\end{align*}
-</div>
-<p data-braille="continuation">and \(\vec x+\vec y\in H\text{.}\)</p>
-<span class="incontext"><a href="section-32.html#p-989">in-context</a></span>
+<p>Let \(A\) be an \(m\times n\) matrix and let \(S=\{\vec x\in\mathbb{R}^n \mid A\vec x=\vec0\}\text{.}\)</p>
+<ol class="decimal">
+<li><p>If \(\vec x_1\) and \(\vec x_2\) are in \(S\text{,}\) then \(A\vec x_1=\vec0\) and \(A\vec x_2=\vec 0\text{,}\) and so \(A(\vec x_1+ \vec x_2)=A\vec x_1 + A\vec x_2
+=\vec0+\vec0 = \vec0\text{.}\) Thus \(\vec x_1+\vec x_2\in S\text{.}\)</p></li>
+<li><p>If \(\vec x\in S\) and \(r\in \mathbb{R}\text{,}\) then \(A\vec x=\vec 0\text{,}\) and \(A(r\vec x)=r(A\vec x) = r\vec0=\vec0\text{.}\) Hence \(r\vec x\in S\text{.}\)</p></li>
+</ol>
+<p data-braille="continuation">This subspace is called the <em class="emphasis">null space</em> of \(A\text{.}\)</p>
+<span class="incontext"><a href="section-33.html#p-989">in-context</a></span>
 </body>
 </html>
