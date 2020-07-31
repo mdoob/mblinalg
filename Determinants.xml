@@ -27,8 +27,11 @@
             <m>A=\begin{bmatrix}a_{1,1}\amp a_{1,2}\amp a_{1,3}\\
             a_{2,1}\amp a_{2,2}\amp a_{2,3}\\
             a_{3,1}\amp a_{3,2}\amp a_{3,3}\end{bmatrix}</m>, 
-            then <m>\det(A)=a_{1,1}a_{2,2}a_{3,3}+a_{1,2}a_{2,3}a_{3,1}+a_{1,3}a_{2,1}a_{3,2}
-    	    -a_{1,1}a_{2,3}a_{3,2}  -a_{1,2}a_{2,1}a_{3,3} -a_{1,3}a_{2,2}a_{3,1} .</m>
+            then 
+            <m>\det(A)=a_{1,1}a_{2,2}a_{3,3}+a_{1,2}a_{2,3}a_{3,1}
+                 +a_{1,3}a_{2,1}a_{3,2} -a_{1,1}a_{2,3}a_{3,2}  
+                 -a_{1,2}a_{2,1}a_{3,3} -a_{1,3}a_{2,2}a_{3,1}
+            </m>.
         </p></li>
         </ul>
     </p>
@@ -125,17 +128,19 @@
     +{\color{blue}{ a_{1,2}a_{2,1}a_{3,3}}}
     +{\color{red}{a_{1,3}a_{2,2}a_{3,1}}}).
     </m>
-    
-    So it's pretty easy to compute the determinant of a matrix of order <m>n</m> when <m>n\leq 3</m>.
-    Unfortunately, there is no straightforward generalization for <m>n\gt3</m>.
+    So it's pretty easy to compute the determinant of a matrix of order <m>n</m> 
+    when <m>n\leq 3</m>.  Unfortunately, there is no straightforward generalization 
+    for <m>n\gt3</m>.
     </p>
     
     <p>
-        There is a theoretical formula for the  evaluation of the determinant for larger <m>n</m>, but
-        the number of summands grows quickly (for <m>n=4</m> there are 24 terms to add, and for <m>n=5</m>
-        there are 120). The present goal is to find better methods to evaluate the determinant. 
-        The first technique involves objects called
-        <em>cofactors</em>, and so we need to make a digression to define and to see how to use them.
+        There is a theoretical formula for the  evaluation of the determinant 
+        for larger <m>n</m>, but the number of summands grows quickly 
+        (for <m>n=4</m> there are 24 terms to add, and for <m>n=5</m>
+        there are 120). The present goal is to find better methods to evaluate 
+        the determinant.  The first technique involves objects called
+        <em>cofactors</em>, and so we need to make a digression to define 
+        and to see how to use them.
     </p>
     
     </section>
@@ -182,7 +187,8 @@
     </statement>
     </definition>
     
-    <definition xml:id="MatrixCofactorDefinition" ><title>The <m>i,j</m> cofactor of a matrix <m>A</m></title>
+    <definition xml:id="MatrixCofactorDefinition" >
+    <title>The <m>i,j</m> cofactor of a matrix <m>A</m></title>
     <statement>
     <p>
     <m>C_{i,j}</m>, the <term><m>i,j</m> cofactor of a matrix</term>  <m>A</m>, satisfies
@@ -660,12 +666,13 @@
         <m>a_{1,1},a_{1,2},a_{1,3},\ldots,a_{1,n}</m>. Hence the sum of the entries in the first row
         of <m>A\circ C</m> is
         <me>
-        a_{1,1}C_{1,1}+a_{1,2}C_{1,2}+a_{1,3}C_{1,3}+\cdots+a_{1,n}C_{1,n}=\sum_{j=1}^n a_{1,j}C_{1,j}
+            a_{1,1}C_{1,1}+a_{1,2}C_{1,2}+a_{1,3}C_{1,3}
+            +\cdots+a_{1,n}C_{1,n}=\sum_{j=1}^n a_{1,j}C_{1,j}
         </me>
         This number, by definition, is the determinant of <m>A</m>.
         It is called the 
-        <term>first row expansion</term> of <m>A</m>. There is nothing special about the
-        first row. An analogous definition exists for all rows.
+        <term>first row expansion</term> of <m>A</m>. There is nothing special 
+        about the first row. An analogous definition exists for all rows.
         </p>
     
         <definition><title>The <m>i</m>-th row expansion of <m>A</m></title>
@@ -723,7 +730,7 @@
         The Laplace expansion theorem allow an alternative (and more usual)
         definition of the determinant.</p>
 
-        <definition><title>The determinant of a matrix</title> 
+        <definition xml:id="DeterminantDefinition"><title>The determinant of a matrix</title> 
         <statement>
         <p>
         For any square matrix <m>A</m>, the determinant of <m>A</m> is
@@ -733,7 +740,8 @@
         </statement>
         </definition>
     
-        <example><title>An example of cofactor expansion with <m>n=4</m></title>
+        <example xml:id="CofactorExpansionExample">
+        <title>An example of cofactor expansion with <m>n=4</m></title>
         <p>
         Let 
         <m>A=
@@ -2042,10 +2050,1093 @@
 
     <section xml:id="DeterminantDeeperTopics">
     <title>A deeper investigation of the properties of determinants</title>
+    <introduction>
     <p>
     In this section we consider further properties of the determinant.
-    We will then have the tools to complete the proof of <xref ref="LaplaceExpansion"/>.
+    One of the main goals is to have the tools to complete the proof 
+    of <xref ref="LaplaceExpansion"/>. 
     </p>
+
+    <p>
+    Up to this point, the examples of the evaluation of the determinant, 
+    as in <xref ref="CofactorExpansionExample"/>, involve the reduction of
+    the evaluation of one matrix of order <m>n</m> to the evaluation of
+    the <m>n</m> determinants of matrices of order <m>n-1</m>. In this 
+    section we will see how, at least in principle, to evalute the
+    determinant of a large matrix directly.
+    </p>
+    </introduction>
+
+        <subsection>
+        <title>Permutations</title>
+        <p>
+        The permutations of a set consists of all possible
+        ways of ordering its elements. If, for example, the set is 
+        <m>\{a,b,c\}</m>, then the possible permutations are
+        <md>
+           <mrow> abc\amp\amp acb\amp\amp bac\amp\amp bca\amp\amp cab\amp\amp cba </mrow>
+        </md>,
+        and so there are six of them.
+        </p>
+        <p>
+        Now consider the set <m>\{a,b,c,d\}</m>. Here is how we can list all the 
+        permutations: each permutation that starts with <m>a</m> can be completed
+        with a permutation of <m>\{b,c,d\}</m>, there being six such permutations.
+        Similarly, each permutation starting with <m>b</m>, <m>c</m>, or <m>d</m>
+        can be completed using the six permutation of the remaining elements:
+        <md>
+           <mrow> \text{first element }a\colon \quad
+               abcd\quad abdc\quad acbd\quad acdb\quad adbc\quad adcb </mrow>
+           <mrow> \text{first element }b\colon \quad
+               bacd\quad badc\quad bcad\quad bcda\quad bdac\quad bdca </mrow>
+           <mrow> \text{first element }c\colon \quad
+               cabd\quad cadb\quad cbad\quad cbda\quad cdab\quad cdba </mrow>
+           <mrow> \text{first element }d\colon \quad
+               dabc\quad dacb\quad dbac\quad dbca\quad dcab\quad dcba </mrow>
+        </md>,
+        and so there are 24 permutations altogether.
+        </p>
+
+        <exercise>
+            <statement>
+            <p>
+            How many permutations are there for a set of size 1 and
+            a set of size 2?
+            </p>
+            </statement>
+            <answer>
+            <p>
+            There is one permutation for a set of size 1 and
+            two permutations for a set of size 2.
+            </p>
+            </answer>
+        </exercise>
+
+        <definition>
+        <title> <m>n</m> factorial  </title>
+        <statement>
+        <p> <m>n</m> factorial, denoted <m>n!</m>, is defined by
+        <me>n!=1\cdot2\cdot3\cdot \dots \cdot (n-1)\cdot n</me>. 
+        </p>
+        </statement>
+        </definition>
+
+        <theorem>
+        <statement>
+        <p>
+        The number of permutations of <m>n</m> elements is <m>n!</m>.
+        </p>
+        </statement>
+        <proof>
+        <p>
+        We construct all possible permutations with each one being listed
+        from left to right. We may choose any of the <m>n</m> elements for
+        the leftmost position. For each of these <m>n</m> choices, there
+        are <m>n-1</m> possible choices for the next position to the right
+        make a total of <m>n(n-1)</m> possibilities for filling out the 
+        two leftmost positions. For each of these, there are <m>n-2</m>
+        remaining elements for the next position to the right, and
+        so there <m>n(n-1)(n-2)</m> choices for listing the three
+        leftmost positions. Continuing in this manner, the number of ways
+        of filling all <m>n</m> positons is <m>n(n-1)(n-2)\cdots(1)=n!</m>.
+
+        </p>
+        </proof>
+        <proof>
+        <p>
+        For those who know induction.
+        </p>
+        <p>
+        The statement to prove is
+        <me>
+            P_k\colon \text{The number of permutations of } k \text{ objects is } k!\,.
+        </me>
+        </p>
+        <p>
+        Initial step: <m>P_1\colon</m> The number of permutations of one object is <m>1=1!</m>.
+        </p>
+        <p>
+        Inductive step: Assume <m>P_{k-1}</m> is true. We want to count the permutations of
+        <m>k</m> elements. There are <m>k</m> choices for the first element. For each of
+        these choices, the rest of the permutation is a permutation of the remaining <m>k-1</m>
+        elements. By <m>P_{k-1}</m>, there are <m>(k-1)!</m> of them, and hence the
+        total number of permutations of all <m>k</m> objects is <m>k(k-1)!=k!\,</m>.
+        Hence if <m>P_{k-1}</m> is valid then <m>P_k</m> is also valid. This completes
+        the proof by induction.
+        </p>
+        </proof>
+        </theorem>
+        </subsection>
+
+        <subsection>
+        <title>The sign of a permutation</title>
+        <p>
+        When finding the permutations from a set of size <m>n</m>,
+        the particular symbols used for the <m>n</m> elements are
+        not important: the sets <m>\{a,b,c\}</m> and <m>\{1,2,3\}</m>
+        both have six permutations; their properties are not
+        dependent on the names of the individual elements. With this in
+        mind we will now use the first <m>n</m> positive integers as our
+        set when permuting <m>n</m> elements. 
+        </p>
+
+        <p>
+        Each permutation has a <term>sign</term> which is either <m>+1</m>
+        or <m>-1</m>. It is determined using the following algorithm:
+        consider the leftmost entry of the permutation. If is is 1,
+        do nothing. If it is not 1, interchange what is there with
+        1. In either case, 1 is now in the leftmost position. Now
+        consider the secondmost entry from the left. If it is 2,
+        do nothing; otherwise interchange what is there with 2.
+        Continue interchanging terms in this matter until the
+        permutation is in its <term>natural order</term>, that is, 
+        <m>123\ldots n</m>. If the number of interchanges required
+        is even, the sign is <m>+1</m>. Otherwise the sign is <m>-1</m>.
+        </p>
+
+        <example xml:id="PermutationSignExample">
+        <title>The sign of the permutation 324165</title>
+        <p>
+        Here are the steps needed to put the permutation <m>324165</m> 
+        into natural order:
+        <ol>
+        <li> 324165: interchange 3 and 1 </li>
+        <li> 124365: no interchange (2 is in the correct position) </li>
+        <li> 124365: interchange 4 and 3 </li>
+        <li> 123465: no interchange (4 is in the correct position) </li>
+        <li> 123465: interchange 6 and 5 </li>
+        <li> 123465: finished </li>
+        </ol>
+        Since there were three interchanges, the sign of the permutation is <m>-1</m>.
+        </p>
+        </example>
+
+        <exercise>
+        <statement>
+        <p>
+        <ol>
+            <li>Show that any permutation of the set <m>\{1,\ldots,n\}</m>
+                can be put into natural order with at most <m>n-1</m> interchanges.
+            </li>
+            <li> Give a permutation of the set <m>\{1,\ldots,n\}</m> that
+                requires <m>n-1</m> interchanges to be put into natural order.
+            </li>
+        </ol>
+        </p>
+        </statement>
+        <answer>
+        <p>
+        <ol> 
+            <li>After <m>n-1</m> interchanges, the elements
+                <m>1,2,\ldots,n-1</m> are all in their natural position.
+                The only place left for the element <m>n</m> is in
+                the last position, and so all elements are in their
+                natural position. 
+            </li>
+            <li>Use the permutation <m>n123\dots n-1</m>. Each interchange moves
+                <m>n</m> one position to the right, and so it takes <m>n-1</m>
+                interchanges to get it in the final position.
+            </li>
+        </ol>
+        </p>
+        </answer>
+        </exercise>
+        <definition xml:id="PermutationSignDefinition">
+            <notation>
+                <usage>\sgn{\sigma}</usage>
+                <description>sign of a permutation</description>
+              </notation>
+            <statement>
+            <p>
+            The sign of a permutation. 
+            Suppose a permutation <m>\sigma</m> can be put into natural order with 
+            <m>t</m> interchanges. Then <m>\sgn(\sigma)=(-1)^t</m>, that is,
+            <me>
+                \sgn(\sigma)= 
+                    \begin{cases} 1 \amp \text{if } t \text{ is even}\\
+                                 -1 \amp \text{if } t \text{ is odd} 
+                    \end{cases}
+            </me>.
+            </p>
+            </statement>
+        </definition>
+
+        <table xml:id="AllPermutationsSize4">
+        <title>Signs of permutations <m>\sigma</m> of <m>\{1,2,3,4\}</m> 
+            with <m>t</m> interchanges needed to obtain natural order.</title>
+        <tabular halign="center">
+        <row bottom="medium">
+           <cell><m>\sigma</m></cell> <cell><m>t</m></cell> <cell><m>\sgn(\sigma)</m></cell>
+           <cell><m> </m></cell>
+           <cell><m>\sigma</m></cell> <cell><m>t</m></cell> <cell><m>\sgn(\sigma)</m></cell>
+           <cell><m> </m></cell>
+           <cell><m>\sigma</m></cell> <cell><m>t</m></cell> <cell><m>\sgn(\sigma)</m> </cell>
+        </row>
+        <row>
+            <cell>1234</cell> <cell>0</cell> <cell>+1</cell><cell><m>\ </m></cell>
+            <cell>1243</cell> <cell>1</cell> <cell>-1</cell><cell><m>\ </m></cell>
+            <cell>1324</cell> <cell>1</cell> <cell>-1</cell><cell><m>\ </m></cell>
+        </row><row>
+            <cell>1342</cell> <cell>2</cell> <cell>+1</cell><cell><m>\ </m></cell>
+            <cell>1423</cell> <cell>2</cell> <cell>+1</cell><cell><m>\ </m></cell>
+            <cell>1432</cell> <cell>1</cell> <cell>-1</cell>
+        </row>
+        <row><cell></cell></row>
+        <row>
+            <cell>2134</cell> <cell>1</cell> <cell>-1</cell><cell><m>\ </m></cell>
+            <cell>2143</cell> <cell>2</cell> <cell>+1</cell><cell><m>\ </m></cell>
+            <cell>2314</cell> <cell>2</cell> <cell>+1</cell>
+        </row><row>
+            <cell>2341</cell> <cell>3</cell> <cell>-1</cell><cell><m>\ </m></cell>
+            <cell>2413</cell> <cell>3</cell> <cell>-1</cell><cell><m>\ </m></cell>
+            <cell>2431</cell> <cell>2</cell> <cell>+1</cell>
+        </row>
+        <row><cell/></row>
+        <row>
+            <cell>3124</cell> <cell>2</cell> <cell>+1</cell><cell><m>\ </m></cell>
+            <cell>3142</cell> <cell>3</cell> <cell>-1</cell><cell><m>\ </m></cell>
+            <cell>3214</cell> <cell>1</cell> <cell>-1</cell>
+        </row><row>
+            <cell>3241</cell> <cell>2</cell> <cell>+1</cell><cell><m>\ </m></cell>
+            <cell>3412</cell> <cell>2</cell> <cell>+1</cell><cell><m>\ </m></cell>
+            <cell>3421</cell> <cell>3</cell> <cell>-1</cell>
+        </row>
+        <row><cell/></row>
+        <row>
+            <cell>4123</cell> <cell>3</cell> <cell>-1</cell><cell><m>\ </m></cell>
+            <cell>4132</cell> <cell>2</cell> <cell>+1</cell><cell><m>\ </m></cell>
+            <cell>4213</cell> <cell>2</cell> <cell>+1</cell>
+        </row><row>
+            <cell>4231</cell> <cell>1</cell> <cell>-1</cell><cell><m>\ </m></cell>
+            <cell>4312</cell> <cell>3</cell> <cell>-1</cell><cell><m>\ </m></cell>
+            <cell>4321</cell> <cell>2</cell> <cell>+1</cell>
+        </row>
+        </tabular>
+        </table>
+        </subsection>
+
+        <subsection>
+        <title>An alternative notation for the permutations of <m>\{1,2,\dots,n\}</m></title>
+        <p>In <xref ref="PermutationSignExample"/> the properties of the
+        permutation <m>324165</m> were examined. In our alternative notation we
+        write this permutation as
+        <me>\sigma=
+        \begin{pmatrix}
+        123456\\324165
+        \end{pmatrix}
+        </me>.
+        In general, for permutations of <m>\{1,2,\dots,n\}</m>,
+        the top row is simply <m>12\dots n</m> in natural order and the bottom
+        row is the permutation written as the reordered elements.
+        In addition, we let <m>\sigma(1)</m> denote the number below
+        1, <m>\sigma(2)</m> denote the number below 2, <etc/>
+        At first blush, this just seems like a lot of extra baggage, 
+        but, as with all good notation, it eventually allows other 
+        interesting properties to emerge.
+        </p>
+
+        <example xml:id="AllPermutationsSize3">
+        <title>Permutations of <m>\{1,2,3\}</m></title>
+        <p>
+        The permutations of <m>\{1,2,3\}</m> in this new notation are
+        <md>
+        <mrow>
+            \sigma_1=\begin{pmatrix}123\\123\end{pmatrix}\quad
+            \sigma_2=\begin{pmatrix}123\\132\end{pmatrix}\quad
+            \sigma_3=\begin{pmatrix}123\\213\end{pmatrix}
+        </mrow>
+        <mrow>
+            \sigma_4=\begin{pmatrix}123\\231\end{pmatrix}\quad
+            \sigma_5=\begin{pmatrix}123\\312\end{pmatrix}\quad
+            \sigma_6=\begin{pmatrix}123\\321\end{pmatrix}
+        </mrow>
+        </md>.
+        Note that  <m>\sgn(\sigma_1)=\sgn(\sigma_4)=\sgn(\sigma_5)=1</m> 
+        while
+        <m>\sgn(\sigma_2)=\sgn(\sigma_3)=\sgn(\sigma_6)=-1</m>.
+        In addition, for the permutation <m>\sigma_6</m>, we have
+        <m>\sigma_6(1)=3</m>, <m>\sigma_6(2)=2</m>
+        and <m>\sigma_6(3)=1</m>, and similarly for the other 
+        permutations.
+        </p>
+        </example>
+        </subsection>
+
+        <subsection>
+        <title>Permutations and determinants: the small cases</title>
+
+        <p>
+        The evaluation of the determinant of small matrices has been
+        given in <xref ref="DeterminantofSmallMatrices"/>. By looking
+        at these examples in more detail, the role of permutations
+        is revealed.
+        </p>
+
+        <p>
+        If <m>A</m> is a square matrix of order 3, the determinant is
+        a sum of six terms:
+        <md>
+            <mrow>\det(A) =\ \amp a_{1,1}a_{2,2}a_{3,3}+a_{1,2}a_{2,3}a_{3,1}
+                 +a_{1,3}a_{2,1}a_{3,2} </mrow>
+             <mrow>  \amp  -a_{1,1}a_{2,3}a_{3,2}  
+                 -a_{1,2}a_{2,1}a_{3,3} -a_{1,3}a_{2,2}a_{3,1}</mrow>
+        </md>.
+        For each term, we construct a permutation <m>\sigma</m> of <m>\{1,2,3\}</m>
+        in the following way: if <m>a_{ij}</m> is one of the factors,
+        the <m>j</m> is written under <m>i</m> in the permutation. In
+        other words, <m>\sigma(i)=j</m>. 
+        </p>
+
+        <table>
+        <title>Permutations when <m>n=3</m></title>
+        <tabular halign="center">
+        <row bottom="medium">
+            <cell>Term</cell><cell>Permutation from term</cell><cell>Sign of permutation</cell>
+        </row>
+        <row>
+            <cell><m>a_{1,1}a_{2,2}a_{3,3}</m></cell>
+            <cell><m>\sigma_1=\begin{pmatrix}123\\123\end{pmatrix}</m></cell>
+            <cell><m>\sgn(\sigma_1)=1</m></cell>
+        </row>
+        <row>
+            <cell><m>a_{1,2}a_{2,3}a_{3,1}</m></cell>
+            <cell><m>\sigma_4=\begin{pmatrix}123\\231\end{pmatrix}</m></cell>
+            <cell><m>\sgn(\sigma_4)=1</m></cell>
+        </row>
+        <row>
+            <cell><m>a_{1,3}a_{2,1}a_{3,2}</m></cell>
+            <cell><m>\sigma_5=\begin{pmatrix}123\\312\end{pmatrix}</m></cell>
+            <cell><m>\sgn(\sigma_5)=1</m></cell>
+        </row>
+        <row>
+            <cell><m>a_{1,1}a_{2,3}a_{3,2}</m></cell>
+            <cell><m>\sigma_2=\begin{pmatrix}123\\132\end{pmatrix}</m></cell>
+            <cell><m>\sgn(\sigma_2)=-1</m></cell>
+        </row>
+        <row>
+            <cell><m>a_{1,2}a_{2,1}a_{3,3}</m></cell>
+            <cell><m>\sigma_3=\begin{pmatrix}123\\213\end{pmatrix}</m></cell>
+            <cell><m>\sgn(\sigma_3)=-1</m></cell>
+        </row>
+        <row>
+            <cell><m>a_{1,3}a_{2,2}a_{3,1}</m></cell>
+            <cell><m>\sigma_6=\begin{pmatrix}123\\321\end{pmatrix}</m></cell>
+            <cell><m>\sgn(\sigma_6)=-1</m></cell>
+        </row>
+        </tabular>
+        </table>
+
+        <p>
+        Look at <xref ref="AllPermutationsSize3"/>.  We see that something beautiful has happened:
+        </p>
+
+        <proposition xml:id="PermutationDeterminantSize3">
+        <statement>
+        <p>
+        Let <m>A</m> be a square matrix of size <m>3</m>. Then
+        <me>\det(A)=\sum_{k=1}^6 \sgn(\sigma_k)a_{1,\sigma_k(1)}a_{2,\sigma_k(2)}a_{3,\sigma_k(3)}</me>.
+        </p>
+        </statement>
+        </proposition>
+
+        <exercise>
+        <statement> 
+            <p>
+            Find an analogous expression <m>\det(A)</m> when <m>A</m> is of size 2.
+            </p> 
+        </statement>
+        <answer> 
+           <p>
+           Let <m>\sigma_1=\begin{pmatrix}12\\12\end{pmatrix}</m>
+           and <m>\sigma_2=\begin{pmatrix}12\\21\end{pmatrix}</m>.
+           Then
+           <me>
+           \det(A)=\sum_{k=1}^2 \sgn(\sigma_k)a_{1,\sigma(1)}a_{2,\sigma(2)}
+           </me>
+           </p>
+
+        </answer>
+        </exercise>
+
+        <example xml:id="PermutationDeterminantSize4">
+        <title>A formula for the determinant of a matrix of size <m>4</m></title>
+        <p>
+        Let <m>A</m> be a matrix of size <m>4</m>. We evaluate the determinant using
+        the first row expansion of <m>A</m> and all of the subsequent minors.
+        <md>
+        <mrow> \det(A) \amp =  \det\left(
+             \begin{bmatrix}
+             a_{1,1} \amp a_{1,2} \amp a_{1,3} \amp a_{1,4}\\
+             a_{2,1} \amp a_{2,2} \amp a_{2,3} \amp a_{2,4}\\
+             a_{3,1} \amp a_{3,2} \amp a_{3,3} \amp a_{3,4}\\
+             a_{4,1} \amp a_{4,2} \amp a_{4,3} \amp a_{4,4}
+             \end{bmatrix}\right)
+        </mrow>
+        <mrow> \amp =
+             a_{1,1}\det\left(\begin{bmatrix}
+             a_{2,2} \amp a_{2,3} \amp a_{2,4}\\
+             a_{3,2} \amp a_{3,3} \amp a_{3,4}\\
+             a_{4,2} \amp a_{4,3} \amp a_{4,4}
+             \end{bmatrix}\right)
+             -a_{1,2}\det\left(\begin{bmatrix}
+             a_{2,1} \amp a_{2,3} \amp a_{2,4}\\
+             a_{3,1} \amp a_{3,3} \amp a_{3,4}\\
+             a_{4,1} \amp a_{4,3} \amp a_{4,4}
+             \end{bmatrix}\right)
+         </mrow>
+         <mrow>
+             \amp\qquad+a_{1,3}\det\left(\begin{bmatrix}
+             a_{2,1} \amp a_{2,2} \amp a_{2,4}\\
+             a_{3,1} \amp a_{3,2} \amp a_{3,4}\\
+             a_{4,1} \amp a_{4,2} \amp a_{4,4}
+             \end{bmatrix}\right)
+             -a_{1,4}\det\left(\begin{bmatrix}
+             a_{2,1} \amp a_{2,2} \amp a_{2,3} \\
+             a_{3,1} \amp a_{3,2} \amp a_{3,3} \\
+             a_{4,1} \amp a_{4,2} \amp a_{4,3} 
+             \end{bmatrix}\right)
+        </mrow> 
+        <mrow> \amp=
+            a_{1,1}\left(
+                a_{2,2} \det\left(
+                    \begin{bmatrix}
+                    a_{3,3}\amp a_{3,4}\\a_{4,3}\amp a_{4,4}
+                    \end{bmatrix}
+                    \right)
+                -a_{2,3}\det\left(
+                    \begin{bmatrix}
+                    a_{3,2}\amp a_{3,4}\\a_{4,2}\amp a_{4,4}
+                    \end{bmatrix}
+                    \right)
+                +a_{2,4}\det\left(
+                    \begin{bmatrix}
+                    a_{3,2}\amp a_{3,3}\\a_{4,2}\amp a_{4,3}
+                    \end{bmatrix}
+                    \right)
+                \right)
+        </mrow>
+        <mrow> \amp\qquad
+            -a_{1,2}\left(
+                a_{2,1} \det\left(
+                    \begin{bmatrix}
+                    a_{3,3}\amp a_{3,4}\\a_{4,3}\amp a_{4,4}
+                    \end{bmatrix}
+                    \right)
+                -a_{2,3}\det\left(
+                    \begin{bmatrix}
+                    a_{3,1}\amp a_{3,4}\\a_{4,1}\amp a_{4,4}
+                    \end{bmatrix}
+                    \right)
+                +a_{2,4}\det\left(
+                    \begin{bmatrix}
+                    a_{3,1}\amp a_{3,3}\\a_{4,1}\amp a_{4,3}
+                    \end{bmatrix}
+                    \right)
+                \right)
+        </mrow>
+        <mrow> \amp\qquad
+            +a_{1,3}\left(
+                a_{2,1} \det\left(
+                    \begin{bmatrix}
+                    a_{3,2}\amp a_{3,4}\\a_{4,2}\amp a_{4,4}
+                    \end{bmatrix}
+                    \right)
+                -a_{2,2}\det\left(
+                    \begin{bmatrix}
+                    a_{3,1}\amp a_{3,4}\\a_{4,1}\amp a_{4,4}
+                    \end{bmatrix}
+                    \right)
+                +a_{2,4}\det\left(
+                    \begin{bmatrix}
+                    a_{3,1}\amp a_{3,2}\\a_{4,1}\amp a_{4,2}
+                    \end{bmatrix}
+                    \right)
+                \right)
+        </mrow>
+        <mrow> \amp\qquad
+            -a_{1,4}\left(
+                a_{2,1} \det\left(
+                    \begin{bmatrix}
+                    a_{3,2}\amp a_{3,3}\\a_{4,2}\amp a_{4,3}
+                    \end{bmatrix}
+                    \right)
+                -a_{2,2}\det\left(
+                    \begin{bmatrix}
+                    a_{3,1}\amp a_{3,3}\\a_{4,1}\amp a_{4,3}
+                    \end{bmatrix}
+                    \right)
+                +a_{2,3}\det\left(
+                    \begin{bmatrix}
+                    a_{3,1}\amp a_{3,2}\\a_{4,1}\amp a_{4,2}
+                    \end{bmatrix}
+                    \right)
+                \right)
+        </mrow>
+
+        <mrow>\amp =
+             a_{1,1}a_{2,2}a_{3,3}a_{4,4} - a_{1,1}a_{2,2}a_{3,4}a_{4,3}
+            +a_{1,1}a_{2,3}a_{3,2}a_{4,4} - a_{1,1}a_{2,3}a_{3,4}a_{4,2}
+            +a_{1,1}a_{2,4}a_{3,2}a_{4,3} - a_{1,1}a_{2,4}a_{3,3}a_{4,2}
+        </mrow>
+        <mrow>\amp \qquad
+            -a_{1,2}a_{2,1}a_{3,3}a_{4,4} + a_{1,2}a_{2,1}a_{3,4}a_{4,3}
+            -a_{1,2}a_{2,3}a_{3,1}a_{4,4} + a_{1,2}a_{2,3}a_{3,4}a_{4,1}
+            +a_{1,2}a_{2,4}a_{3,1}a_{4,3} + a_{1,2}a_{2,4}a_{3,3}a_{4,1}
+        </mrow>
+        <mrow>\amp \qquad
+             a_{1,3}a_{2,1}a_{3,2}a_{4,4} - a_{1,3}a_{2,1}a_{3,4}a_{4,2}
+            +a_{1,3}a_{2,2}a_{3,1}a_{4,4} - a_{1,3}a_{2,2}a_{3,4}a_{4,1}
+            +a_{1,3}a_{2,4}a_{3,1}a_{4,2} - a_{1,3}a_{2,4}a_{3,2}a_{4,1}
+        </mrow>
+        <mrow>\amp \qquad
+            -a_{1,4}a_{2,1}a_{3,2}a_{4,3} + a_{1,4}a_{2,1}a_{3,3}a_{4,2}
+            -a_{1,4}a_{2,2}a_{3,1}a_{4,3} + a_{1,4}a_{2,2}a_{3,3}a_{4,1}
+            -a_{1,4}a_{2,3}a_{3,1}a_{4,2} + a_{1,4}a_{2,3}a_{3,2}a_{4,1}
+        </mrow>
+        </md>
+        The final line reveals a pattern: it is a sum of <m>24=4!</m>
+        terms, each of which is of the form 
+        <m>\pm a_{1,i}a_{2,j}a_{3,k}a_{4,\ell}</m> where 
+        <m> \begin{pmatrix} 1234\\ijk\ell \end{pmatrix} </m>
+        is a permutation. Each of the <m>4!</m> possible permutations appears
+        exactly once. In addition, the sign in front of the term
+        is equal to the sign of the associated permutation. 
+        </p>
+        </example>
+        </subsection>
+        
+        <subsection>
+        <title>Permutations and determinants</title>
+        <p>
+        The pattern exhibited  in <xref ref="PermutationDeterminantSize3"/>
+        and in <xref ref="PermutationDeterminantSize4"/>
+        cries for generalization. Our  goal is to do so with the proof of 
+        the following important theorem:
+        </p>
+        <theorem xml:id="PermutationDeterminantTheorem">
+        <statement>
+        <p>Let <m>A</m> be a square matrix of size <m>n</m>. Then
+        <me>
+        \det(A)=\sum_\sigma \sgn(\sigma)a_{1,\sigma(1)}a_{2,\sigma(2)}\cdots a_{n,\sigma(n)}
+        </me>.
+        The summation is taken over all <m>n!</m> permutations.
+        </p>
+        </statement>
+        </theorem>
+        <p>
+        The determinant of a matrix <m>A</m>, as given in <xref ref="DeterminantDefinition"/>, 
+        is simply the first row expansion of <m>A</m>.
+        The proof of <xref ref="PermutationDeterminantTheorem"/> may be completed by showing
+        that
+        <men xml:id="PermutationDeterminantExpression">
+        \sum_\sigma \sgn(\sigma)a_{1,\sigma(1)}a_{2,\sigma(2)}\cdots a_{n,\sigma(n)}
+        </men>
+        and the first row expansion of <m>A</m> are identical.
+        </p>
+
+        <p>
+        So here is the plan: we examine first row expansion of <m>A</m> 
+        carefully and compare it to 
+        the expression <xref ref="PermutationDeterminantExpression"/> 
+        in two steps:
+        <ol>
+        <li xml:id="EveryPermutationOnce">
+            Show that every permutation <m>\sigma</m> from 
+            <xref ref="PermutationDeterminantExpression"/> 
+            shows up exactly once as a summand in the first row expansion.
+        </li>
+        <li xml:id="SignatureCorrect">
+            Show that <m>\sgn(\sigma)</m> is correct for every permutation <m>\sigma</m>
+            in expression <xref ref="PermutationDeterminantExpression"/>.
+        </li>
+        </ol>
+        </p>
+
+        <p>Examining the case for a matrix <m>A</m> of size <m>n=4</m>
+        will clarify the ideas necessary for the general proof.</p>
+
+        <example xml:id="PermutationDeterminantProof4">
+        <title>Proof for <m>n=4</m></title>
+        <p>
+        Let <m>A</m> be a matrix of size <m>4</m>, and consider the permutation
+        <me>\sigma=\begin{pmatrix}1234\\3142\end{pmatrix}</me>.
+        Then <m>\sigma(1)=3</m>, <m>\sigma(2)=1</m>, 
+        <m>\sigma(3)=4</m>, and <m>\sigma(4)=2</m>, and we are
+        searching for a term within the expansion of <m>\det(A)</m> 
+        containing <m>a_{1,3} a_{2,1} a_{3,4} a_{4,2}</m>. The first
+        row expansion of <m>A</m> is
+        <me>\det(A)= a_{1,1}M_{1,1} -a_{1,2}M_{1,2} 
+            +a_{1,3}M_{1,3} -a_{1,4}M_{1,4} 
+        </me>,
+        and so the only hope of finding <m>a_{1,3} a_{2,1} a_{3,4} a_{4,2}</m>
+        is by examining the only term that includes <m>a_{1,3}</m>, namely,
+        <m>a_{1,3}M_{1,3}</m>. Now
+        <md>
+        <mrow>a_{1,3}M_{1,3}
+        \amp = 
+            a_{1,3}\det 
+            \begin{bmatrix}
+            a_{2,1}\amp a_{2,2} \amp a_{2,4}\\
+            a_{3,1}\amp a_{3,2} \amp a_{3,4}\\
+            a_{4,1}\amp a_{4,2} \amp a_{4,4}
+            \end{bmatrix}
+        </mrow>
+        <mrow>
+        \amp = 
+            a_{1,3}
+            \left(
+            a_{2,1}\det\begin{bmatrix} a_{3,2}\amp a_{3,4}\\a_{4,2}\amp a_{4,4}\end{bmatrix}
+            -a_{2,2}\det\begin{bmatrix} a_{3,1}\amp a_{3,4}\\a_{4,1}\amp a_{4,4}\end{bmatrix}
+            +a_{2,4}\det\begin{bmatrix} a_{3,1}\amp a_{3,2}\\a_{4,1}\amp a_{4,2}\end{bmatrix}
+            \right)
+        </mrow>
+        </md>.
+        Since we are searching for a term that contains <m>a_{2,1}</m>, we must focus
+        our attention on the first summand since it is the only one that
+        includes it. Expanding on the first row:
+        <me>
+        a_{1,3}a_{2,1}\det
+            \begin{bmatrix} 
+                 a_{3,2}\amp a_{3,4}\\a_{4,2}\amp a_{4,4}
+            \end{bmatrix}
+        = a_{1,3}a_{2,1}(a_{3,2}\det[a_{4,4}] -a_{3,4}\det[a_{4,2}])
+        </me>.
+        Since we are searching for a term that contains <m>a_{3,4}</m>, we must
+        take the second summand, which leaves us with 
+        <me>-a_{1,3} a_{2,1} a_{3,4} \det[a_{4,2}]
+            = -a_{1,3} a_{2,1} a_{3,4} a_{4,2}
+            </me>,
+        exactly what we were looking for. Note also the <m>\sgn(\sigma)=-1</m>.
+        </p>
+        <p>
+        There was nothing special about our choice of permutation <m>\sigma</m>.
+        For any  choice of permutation the same thing happens: the permutation 
+        forces a single choice of summand within each of the successive first-row expansions.
+        </p>
+        <p>
+        Notice also that the process we have described is an algorithm that 
+        determines the exact position of <m>a_{1,3} a_{2,1} a_{3,4} a_{4,2}</m> 
+        after the full expansion of the determinant. This implies that for
+        every permutation <m>\sigma</m>, the term 
+        <m>a_{1,\sigma(1)} a_{2,\sigma(2)} a_{3,\sigma(3)} a_{4,\sigma(4)}</m>
+        appears exactly once.
+        </p>
+        </example>
+
+        <p>
+        Now we consider <xref ref="EveryPermutationOnce"/> more generally.
+        </p>
+
+        <algorithm xml:id="SigmaSearchAlgorithm">
+        <title><m>\sigma</m> search</title>
+        <statement>
+        <p>
+        Let <m>A</m> be a square matrix of size <m>n</m>, and let
+        <me>
+        \sigma=
+        \begin{pmatrix}
+            1\amp 2\amp  3\amp \cdots\amp  n\\ 
+            i_1\amp i_2\amp i_3\amp \cdots\amp  i_n
+        \end{pmatrix}
+        </me>
+        be any permutation of <m>\{1,2,3,\ldots,n\}</m>. 
+        Carry out the first row expansion to evaluate the determinant of
+        <m>A</m> and any subsequent minors that arise as in
+        <xref ref="PermutationDeterminantProof4"/>.  Then
+        <m>a_{1,i_1}a_{2,i_2}a_{3,i_3} \cdots a_{n,i_n} 
+           =a_{1,\sigma(1)}a_{2,\sigma(2)}a_{3,\sigma(3)} \cdots a_{n,\sigma(n)}</m> 
+        appears exactly once in the full expansion. 
+        </p>
+        </statement>
+        <proof>
+        <p>
+        The proof follows the pattern of <xref ref="PermutationDeterminantProof4"/>.
+        </p>
+
+        <p>
+        Consider the
+        first row expansion of <m>A</m>:
+        <me>
+            a_{1,1}M_{1,1}-a_{1,2}M_{1,2}+a_{1,3}M_{1,3}- \cdots
+            + (-1)^{1+n}a_{1,n}M_{1,n}
+        </me>.
+        The given permutation <m>\sigma</m> has <m>\sigma(1)=i_1</m>,
+        and so the only hope of finding the permutation <m>\sigma</m> 
+        in the final expansion is to look for it in 
+        the only term where <m>a_{1,i_1}</m> appears:
+        <m>a_{1,i_1}M_{1,i_1}</m>. The first row of <m>M_{1,i_1}</m>
+        consists of <m>a_{2,j}</m>, with <m>j\in\{1,2,\ldots,n\}</m>,
+        <m>j\not=i_1</m>. Since <m>\sigma(2)=i_2</m>, we must continue
+        the expansion using the term of the form <m>a_{2,\sigma(i_2)}M</m>.
+        This algorithm may proceed until 
+        <m>a_{1,\sigma(1)}a_{2,\sigma(2)}\cdots a_{n,\sigma(n)}</m> 
+        is found. Note that the entries of <m>\{i_1,\ldots,i_n\}</m>
+        must be different to complete the argument.
+        </p>
+        </proof>
+        </algorithm>
+
+        <theorem>
+        <title><m>\sigma</m> encoding of determinant expansion</title>
+        <statement>
+        <p>
+        Let <m>A</m> be a square matrix of size <m>n</m>, and let
+        <me>
+        \sigma=
+        \begin{pmatrix}
+            1\amp 2\amp  3\amp \cdots\amp  n\\ 
+            i_1\amp i_2\amp i_3\amp \cdots\amp  i_n
+        \end{pmatrix}
+        </me>
+        be any permutation of <m>\{1,2,3,\ldots,n\}</m>. 
+        Then, when evaluating <xref ref="SigmaSearchAlgorithm"/>,
+        the first row is a list in order of the rows deleted
+        from <m>A</m> and the second row is the list in order
+        of the columns deleted from <m>A</m>.
+        </p>
+        </statement>
+        <proof>
+        <p>
+        Since first-row expansions are used, the order of deletion of rows from
+        <m>A</m> is clearly <m>1,2,\ldots,n</m>, which is just the first row in the 
+        notation for <m>\sigma</m>.
+        The first column deleted must be the <m>i_1</m> column, since that is
+        the only way <m>a_{1,i_1}</m> can appear in the expansion. More generally,
+        the only way for <m>a_{j,i_j}</m> to appear is if the <m>i_j</m> column of
+        <m>A</m> is deleted when the <m>j</m>-th row of <m>A</m> is deleted.
+        This means that the order of deletion of columns of <m>A</m> must be
+        <m>i_1,i_2,\ldots,i_n</m>.
+        </p>
+        </proof>
+        </theorem>
+
+        <exercise>
+        <statement>
+        <p>
+        Suppose we define the determinant of a matrix <m>A</m> 
+        as the value of the second row expansion. Modify 
+        <xref ref="SigmaSearchAlgorithm"/> to show that it is still true that
+        <m>a_{1,\sigma(1)}a_{2,\sigma(2)}a_{3,\sigma(3)} \cdots a_{n,\sigma(n)}</m> 
+        appears exactly once in the full expansion.
+        </p>
+        </statement>
+        <answer>
+        <p>
+        The order of deletion of rows is <m>2,3,\ldots,n,1</m>, and so the order of
+        deletion of columns must be <m>i_2,i_3,\ldots,i_n,i_1</m>.
+        </p>
+        </answer>
+        </exercise>
+
+        <exercise>
+        <statement>
+        <p>Suppose we define the determinant of a matrix <m>A</m> 
+        as the value of the first column expansion. Modify 
+        <xref ref="SigmaSearchAlgorithm"/> to show that it is still true that
+        <m>a_{1,\sigma(1)}a_{2,\sigma(2)}a_{3,\sigma(3)} \cdots a_{n,\sigma(n)}</m> 
+        appears exactly once in the full expansion.
+        </p>
+        </statement>
+        <answer>
+        <p> This takes a little trick. Start with the permutation
+        <me>
+        \sigma=
+        \begin{pmatrix}
+            1\amp 2\amp  3\amp \cdots\amp  n\\ 
+            i_1\amp i_2\amp i_3\amp \cdots\amp  i_n
+        \end{pmatrix}
+        </me>
+        and rearrange the columns so that the bottom row is
+        <m>123\cdots n</m>. 
+        For example, if <m>\sigma= \begin{pmatrix} 123456\\324165\end{pmatrix}</m>,
+        rearranging the colums gives the permutation
+        <m>\begin{pmatrix} 421365\\123456\end{pmatrix}</m>.
+        </p>
+        <p>
+        Since we are using a first-column expansion, the order of deletion of
+        columns from <m>A</m> is <m>1,2,\ldots,n</m>, which is exactly the
+        second row in our new notation. The first row of our new notation then gives 
+        the order of deletion of rows from <m>A</m>. Note that 
+        <m>a_{1,\sigma(1)}a_{2,\sigma(2)}\cdots a_{n,\sigma(n)}</m> is the resulting
+        expression, but the order of the terms has been changed so that the
+        second subscripts are in natural order.
+        </p>
+        </answer>
+        </exercise>
+
+        <p>
+        Next, we consider  <xref ref="SignatureCorrect"/>.
+        We need an additional property of permutations.
+        We use <xref ref="PermutationSignExample"/> for in
+        initial illustration:
+        <me>\sigma= \begin{pmatrix} 123456\\324165 \end{pmatrix}</me>.
+        Consider the <m>15</m> possible ordered pairs of entries taken
+        from the second row.  They are
+        <me>
+        \begin{array}{ccccc}
+        \color{red}{32}\amp 34 \amp \color{red}{31}\amp 36 \amp 35 \\
+           \amp 24 \amp \color{red}{21}\amp 26 \amp 25 \\
+           \amp    \amp \color{red}{41}\amp 46 \amp 45 \\
+           \amp    \amp    \amp 16 \amp 15 \\
+           \amp    \amp    \amp    \amp \color{red}{65}
+        \end{array}
+        </me>.
+        Each pair either appears in its natural order, or not.
+        A pair <em>not</em> in natural order is called an <term>inversion</term>.
+        The inversions are shown in red. In this case, the number of interchanges
+        needed to put <m>\sigma</m> into its natural order is 3 and the number of
+        inversions is 5, both of which are odd numbers. Our next result shows that 
+        this is true for any permutation: 
+        the sign of a permutation is determined by the 
+        parity<fn>The <term>parity</term>  
+        of a number is even if it is divisible by 2 and odd otherwise.</fn> 
+        of the number of inversions.
+        </p>
+
+        <theorem xml:id="SignAndIversions">
+        <title>The sign and number of inversions of a permutation</title>
+        <statement>
+        <p>
+        Let <m>\sigma</m> be a permutation of <m>\{1,2,\ldots,n\}</m>, and let
+        <m>t</m> be the number of inversions of <m>\sigma</m>. Then
+        <me>\sgn(\sigma)=(-1)^t</me>.
+        </p>
+        </statement>
+        <proof>
+        <p>
+        Let
+        <me>
+        \sigma=
+        \begin{pmatrix}
+            1\amp 2\amp  3\amp \cdots\amp  n\\ 
+            i_1\amp i_2\amp i_3\amp \cdots\amp  i_n
+        \end{pmatrix}
+        </me>
+        By <xref ref="PermutationSignDefinition"/> we need to keep
+        track of the number of interchanges needed to put
+        <m>\sigma</m> into natural order. If <m>i_1=1</m>, the first
+        position is in natural order we are finished with the that position.
+        Nothing has changed, including the number of inversions.
+        Otherwise, we need to interchange whatever is in the first
+        position with <m>1</m>, and we need to know the effect of that interchange
+        on the parity
+        of the number of inversions. Here is the situation before interchanging
+        <m>1</m> and <m>k</m>.
+        <me>
+        \sigma=
+        \begin{pmatrix}
+            1\amp       \amp \cdots\amp        \amp j\amp      \amp\cdots\amp      \amp n\\
+            k\amp \cdots\amp t     \amp \cdots \amp1 \amp\cdots\amp u    \amp\cdots\amp i_n
+        \end{pmatrix}
+        </me>.
+        If <m>u</m> is an entry to the right of <m>1</m>, then the interchange of
+        <m>1</m> and <m>k</m> causes the pairs <m>ku</m> and <m>1u</m> to be replaced
+        by <m>1u</m> and <m>ku</m> respectively, and so the number of inversions is
+        unchanged as far as <m>u</m> is concerned. 
+        </p>
+        <p>If <m>t</m> is to the left of <m>1</m>, then <m>kt</m> is replaced by
+        <m>1t</m> and <m>t1</m> is replace by <m>tk</m>. Clearly <m>t1</m> is an
+        inversion and <m>1t</m> is not, and so there is a net loss of one
+        inversion. Also <m>tk</m> is an inversion if
+        and only if <m>kt</m> is not, and so the number of inversions
+        involving <m>t</m> either stays the same or is decreased by <m>2</m>.
+        Finally the interchange itself of <m>k1</m> to <m>1k</m> reduces the
+        number of inversions by one, so the total number of inversions is
+        reduced by one or three. In either case, the parity of the number of
+        inversions changes as the interchange moves the permutation one step
+        closer to being in natural order.
+        </p>
+
+        <p>Each step (interchange) that moves the permutation closer to natural order
+        changes the parity of both the number of inversions and the number of steps needed
+        for completion, so the parities of the two numbers start the same and remain the
+        same, or they start opposite and remain opposite. 
+        When the permutation is finally in natural order, the number of steps necessary
+        to put it into natural order is zero, as is the number of inversions, so
+        the parities are the same and hence must have been identical to start with. This
+        in turn implies the desired conclusion of the theorem.
+        </p>
+        </proof>
+        </theorem>
+
+        <p>
+        To complete the verification of <xref ref="SignatureCorrect"/>, we follow
+        <xref ref="SigmaSearchAlgorithm"/> keeping track of the signs of the terms
+        that arise. As in that algorithm, we start with
+        <me>
+        \sigma=
+        \begin{pmatrix}
+            1\amp 2\amp  3\amp \cdots\amp  n\\ 
+            i_1\amp i_2\amp i_3\amp \cdots\amp  i_n
+        \end{pmatrix}
+        </me>
+        and keep track of the number of times a 
+        <m>+1</m> or <m>-1</m> appears as we construct
+        <m>a_{1,i_1}a_{2,i_2}a_{3,i_3} \cdots a_{n,i_n} 
+           =a_{1,\sigma(1)}a_{2,\sigma(2)}a_{3,\sigma(3)} \cdots a_{n,\sigma(n)}</m>. 
+        </p>
+        <p>Expanding on the first row of <m>A</m> gives us
+        <me>\det(A)=a_{1,1}M_{1,1}-a_{1,2}M_{1,2}+a_{1,3}M_{1,3}- \cdots
+            + (-1)^{1+n}a_{1,n}M_{1,n}</me>.
+        Since <m>\sigma(1)=i_1</m>, we must select the summand 
+        <m>(-1)^{1+i_1}a_{1,i_1}M_{1,i_1}</m>
+        expand it further. The first row expansion of <m>M_{1,i_1}</m> is
+        <me>
+        a_{2,1} - a_{2,2} + a_{2,3} + \cdots 
+        + \color{red}{(-1)^{i_1}a_{2,i_{1}-1}} +\color{red}{(-1)^{i_1+1} a_{2,i_1+1}} 
+        + \cdots +(-1)^{n-1} a_{2,n-1}
+        </me>.
+        The crux of the argument is shown by the two terms in red. Since the <m>i_1</m>-column
+        has been deleted, as we pass from the first to the second,
+        the second subscript goes up by two but the exponent  of <m>-1</m> increases by only one.
+        This implies that the exponent of <m>-1</m> in the coefficient of <m>a_{2,k}</m> and
+        <m>k</m> have the opposite parity if <m>k \lt i_1</m> and the same parity 
+        if <m>k \gt i_1</m>. In other words, we have <m>i=2</m> and
+        <me>
+            \text{The coefficient of } a_{i,j}=
+            \begin{cases}
+                (-1)^{i+j+1}\amp \text{if } j \lt i_1\\
+                (-1)^{i+j}\amp \text{if } i_1 \lt j. 
+            \end{cases}
+        </me>
+        Note that <m>i_2 \lt i_1</m> is the exact condition for <m>i_1 i_2</m> to be an
+        inversion, and so  <m>i_2 \lt i_1</m> being an inversion adds 
+        one extra <m>-1</m> to our count.
+        </p>
+        <p>
+        We carry out the algorithm for one more step to see the emerging pattern.
+        We have now deleted row one, row two, column <m>i_1</m> and column <m>i_2</m>
+        from <m>A</m>. We call this matrix <m>N</m> for simplicity. The first row of
+        <m>N</m> consists of <m>\{a_{3,1} \cdots a_{3,n}\}</m> with 
+        <m>a_{3,i_0}</m> and <m>a_{3,i_1}</m> deleted. We now have <m>i=3</m>
+        and
+        <me>
+            \text{The coefficient of } a_{i,j}=
+            \begin{cases}
+                (-1)^{i+j+2}\amp \text{if } j \text{ is less than } i_1 \text{ and } i_2\\
+                (-1)^{i+j+1}\amp \text{if } j \text{ is between } i_1 \text{ and } i_2\\
+                (-1)^{i+j}\amp \text{if } j \text{ is greater than } i_1 \text{ and } i_2.
+            \end{cases}
+        </me>
+        Notice that after setting <m>j=i_3</m>, this is the same as
+        <me>
+            \text{The coefficient of } a_{i,j}=
+            \begin{cases}
+                (-1)^{i+j+2}\amp \text{if } i_1 i_3 
+                    \text{ and } i_2 i_3 \text{ are both inversions}\\
+                (-1)^{i+j+1}\amp \text{if one of } i_1 i_3  
+                    \text{ and } i_2 i_3 \text{ is an inversion}\\
+                (-1)^{i+j}\amp\text{if neither of } i_1 i_3  
+                    \text{ nor } i_2 i_3 \text{ is an inversion}.
+            \end{cases}
+        </me>
+        </p>
+        <p>
+        <xref ref="SigmaSearchAlgorithm"/> proceeds step by step:
+        at each step the matrix under cosideration has its top
+        row and one column deleted. At step <m>k</m> we have
+        a matrix <m>N</m> derived from <m>A</m> by deleting
+        the first <m>k-1</m> row and columns 
+        <m>\{i_1,i_2,\ldots,i_{k-1}\}</m>, and so the remaining
+        entries in the first row of <m>N</m> are
+        <m>
+            \{a_{k,1},\ldots,a_{k,n}\} 
+            \setminus \{a_{k,i_1},\ldots,a_{k,i_{k-1}}\}
+        </m>.
+        This can be visualized in the following figure:
+        </p>
+        <figure>
+        <caption/>
+            <image>
+                <asymptote>
+                unitsize(1.5cm);
+                real eps=0.1;
+                draw((0,2)--(5,2)--(5,5)--(0,5)--cycle);
+                for (int k: sequence(1,4)) {
+                   filldraw((k,2)--(k,5)--(k+eps,5)--(k+eps,2)--cycle, gray);
+                   draw((k+eps/2,0.8)--(k+eps/2,1.8),Arrow);
+                   }
+                label("Deleted columns $\{i_1,i_2,\ldots,i_{k-1}\}$", (2.5,0.5));
+                label("$B_1$", (0.5,3.5));
+                label("$B_2$", (1.5,3.5));
+                label("$\cdots$", (2.5,3.5));
+                label("$B_{k-1}$", (3.5,3.5));
+                label("$B_k$", (4.5,3.5));
+                label("$\gets \{a_{k,1},\ldots,a_{k,n}\} 
+                     \setminus \{a_{k,i_1},\ldots,a_{k,i_{k-1}}\}$",(5,5),SE);
+                label("$N=$",(0,3.5),W);
+                </asymptote>
+            </image>
+        </figure>
+
+        <p>
+        <m>B_1,\ldots,B_k</m> are the blocks of remaining columns between
+        the deleted ones. The column corresponding to <m>i_k</m> is in one of
+        these blocks. The particular one will determine the sign that is used in
+        the first row expansion of <m>N</m>.
+        </p>
+        
+        <p>
+        As a starting point, suppose that <m>B_1</m> is nonempty. That means that
+        the upper left entry is <m>a_{k,1}</m>, and it has a sign of <m>+1</m> in the
+        first row expansion, and so as we expand along the columns in <m>B_1</m>:
+        <me>
+            \text{For columns } j \text{ in } B_1 \text{, the coefficient of } a_{k,j}=
+            \begin{cases}
+                (-1)^{k+j}  \amp \text{if } k \text{ is odd}\\  
+                (-1)^{k+j-1}\amp \text{if } k \text{ is even.}
+            \end{cases}
+        </me>
+        As we move from columns in <m>B_1</m> to those in <m>B_2</m>, an extra
+        <m>-1</m> is added to the coefficient, that is:
+        <me>
+            \text{For columns } j \text{ in } B_2 \text{, the coefficient of } a_{k,j}=
+            \begin{cases}
+                (-1)^{k+j-1}  \amp \text{if } k \text{ is odd}\\  
+                (-1)^{k+j}\amp \text{if } k \text{ is even.}
+            \end{cases}
+        </me>
+        When we get to <m>B_k</m>, something beautiful happens: the result for
+        the even case and the odd case is the same. 
+        <me>
+            \text{For columns } j \text{ in } B_k \text{, the coefficient of } a_{k,j}=
+                (-1)^{k+j}
+        </me>.
+        A couple of observations when <m>j</m> corresponds to a column in <m>B_k</m>:
+        <ul>
+        <li>The coefficient of <m>a_{k,j}</m> is the same as it would be 
+            if we were taking the <m>k</m>-th row expansion of <m>A</m>.
+        </li>
+        <li>During this step of the algorithm, the first row and the <m>j=i_k</m>
+            column will be deleted. If that column is in <m>B_k</m>, 
+            then the pairs <m>i_1i_k</m>, <m>i_2i_k,\dots, i_{k-1}i_k</m>
+            are all in their natural order, that is, there are no inversions.
+        </li>
+        </ul>
+        Now suppose that <m>j</m> corresponds to a column in <m>B_{k-1}</m>.
+        Moving from <m>B_k</m> to <m>B_{k-1}</m> passes over a deleted column.
+        Let <m>i_t</m> correspond to that deleted column. The deleted column
+        causes the coefficient of <m>a_{k,j}</m> change sign, that is, the coefficient
+        is <m>(-1)^{i+j+1}</m>. In addition, the pair <m>i_t i_k</m> is now an inversion.
+        A useful pattern now emerges: as we move one block to the left, the exponent
+        of the coefficient <m>(-1)</m> increases by one, and passing over the deleted column 
+        changes one pair from natural order to an inversion. Thus for any block, the number
+        of extra factors of <m>(-1)</m> is equal to the number of inversions among the
+        pairs <m>i_1i_k, i_2,i_k,\ldots,i_{k-1}i_k</m>.
+        </p>
+
+        <p>
+        Now consider what happens as <xref ref="SigmaSearchAlgorithm"/> proceeds step by step.
+        For any two <m>i_r</m> and <m>i_s</m>, say with <m>r\lt s</m>, the expansion on
+        row <m>s</m> will add an extra factor of <m>(-1)</m> if and only if the pair
+        <m>i_r i_s</m> is an inversion. Thus as the algorithm runs, every possible
+        inversion shows up exactly once and contributes one factor of <m>(-1)</m>. The validity
+        of <xref ref="SignatureCorrect"/> then follows from <xref ref="SignAndIversions"/>.
+        This completes the proof of <xref ref="PermutationDeterminantTheorem"/>.
+        </p>
+
+
+        </subsection>
 
     </section>
 </chapter>

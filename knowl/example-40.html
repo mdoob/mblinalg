@@ -1,47 +1,41 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:32:07-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:09:59-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
 <article class="example example-like"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.9.11</span><span class="period">.</span><span class="space"> </span><span class="title">Examples of bases of \(\mathbb{R}^n\).</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.22</span><span class="period">.</span><span class="space"> </span><span class="title">Test to see if a point is on a line.</span>
 </h6>
-<ul class="disc">
-<li>
-<p>Let</p>
+<p>Let \(\vec x=(1,2,-1,3)\) and \(\vec y=(1,-2,1,3)\text{.}\) Is \(\vec z=(1,-2,-1,3)\) on the line joining \(\vec x\) and \(\vec y\text{?}\) The equation \(\vec z=(1-t)\vec x+t\vec y\) gives four equations, one for each coordinate:</p>
 <div class="displaymath">
-\begin{gather*}
-\vec e_1=(1,0,0,\ldots,0)\\
-\vec e_2=(0,1,0,\ldots,0)\\
-\vec e_3=(0,0,1,\ldots,0)\\
-\vdots\\
-\vec e_n=(0,0,0,\ldots,1)
-\end{gather*}
+\begin{align*}
+1(1-t)+1t\amp=1 \\
+2(1-t)+(-2)t\amp=-2  \amp\amp\to t=1\\
+(-1)(1-t)+1t\amp=-1 \amp\amp\to t=0\\
+3(1-t)+3t\amp=3 
+\end{align*}
 </div>
-<p data-braille="continuation">The set \(\{\vec e_1,\ldots,\vec e_n\}\) is called the <em class="emphasis">standard basis</em> of \(\mathbb{R}^n\text{.}\)</p>
-</li>
-<li>
-<p>Let</p>
+<p data-braille="continuation">Now we have a contradiction. The second equation implies \(t=1\) while the third implies \(t=0\text{,}\) and so the point is <em class="emphasis">not</em> on the line.</p>
+<p>On the other hand, is \(\vec z=(1,-6,3,3)\text{.}\) then \(\vec z=(1-t)\vec x+t\vec y\) gives four equations,</p>
 <div class="displaymath">
-\begin{gather*}
-\vec u_1=(1,1,1,\ldots,1)\\
-\vec u_2=(0,1,1,\ldots,1)\\
-\vec u_3=(0,0,1,\ldots,1)\\
-\vdots\\
-\vec u_n=(0,0,0,\ldots,1)
-\end{gather*}
+\begin{align*}
+1(1-t)+1t\amp=1 \amp\amp\to 1=1\\
+2(1-t)+(-2)t\amp=-6  \amp\amp\to t=2\\
+(-1)(1-t)+1t\amp=3 \amp\amp\to t=2\\
+3(1-t)+3t\amp=3 \amp\amp\to 3=3
+\end{align*}
 </div>
-<p data-braille="continuation">The set \(\{\vec u_1,\ldots,\vec u_n\}\) a basis of \(\mathbb{R}^n\text{.}\)</p>
-</li>
-</ul></article><span class="incontext"><a href="section-33.html#example-40">in-context</a></span>
+<p data-braille="continuation">Since all four equation are valid when \(t=2\) the vector \(\vec z\) is on the line. It is easy to verify that \(\vec z=-\vec x+2\vec y\text{.}\)</p></article><span class="incontext"><a href="section-27.html#example-40">in-context</a></span>
 </body>
 </html>

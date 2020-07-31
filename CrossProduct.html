@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:31:49-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:09:40-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -65,6 +67,7 @@ MathJax.Hub.Config({
 \newcommand{\adj}{\mathop{\textrm{adj}}}
 \newcommand{\proj}{\mathop{\textrm{proj}}}
 \newcommand{\Span}{\mathop{\textrm{span}}} 
+\newcommand{\sgn}{\mathop{\textrm{sgn}}}
 
 \newcommand{\rowint}[2]{R_{#1} \leftrightarrow R_{#2}}
 \newcommand{\rowmul}[2]{R_{#1}\gets {#2}R_{#1}}
@@ -103,10 +106,10 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="CrossProduct"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.5</span> <span class="title">Cross Product of Vectors in \(\R^3\)</span>
 </h2>
-<section class="subsection" id="subsection-65"><h3 class="heading hide-type">
+<section class="subsection" id="subsection-70"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.5.1</span> <span class="title">Definition of the cross product</span>
 </h3>
-<p id="p-838">The cross product is only defined for vectors in \(\R^3\text{.}\) Given two such vectors \(\vec x=(x_1,x_2,x_3)\) and \(\vec y=(y_1,y_2,y_3)\text{,}\) the cross product \(\vec x\times\vec y\) is a vector in \(\R^3\) defined by</p>
+<p id="p-896">The cross product is only defined for vectors in \(\R^3\text{.}\) Given two such vectors \(\vec x=(x_1,x_2,x_3)\) and \(\vec y=(y_1,y_2,y_3)\text{,}\) the cross product \(\vec x\times\vec y\) is a vector in \(\R^3\) defined by</p>
 <div class="displaymath">
 \begin{equation*}
 \vec x\times\vec y
@@ -114,7 +117,7 @@ MathJax.Hub.Config({
 (x_2y_3-x_3y_2,\, x_3y_1-x_1y_3,\,x_1y_2-x_2y_1)
 \end{equation*}
 </div>
-<p id="p-839">This is pretty complicated and, as yet, unmotivated. Here is a neat trick to make the computation a little easier. Take the two vectors and make an array by writing the three coordinates and then repeating the first two coordinates again:</p>
+<p id="p-897">This is pretty complicated and, as yet, unmotivated. Here is a neat trick to make the computation a little easier. Take the two vectors and make an array by writing the three coordinates and then repeating the first two coordinates again:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{matrix}
@@ -123,10 +126,10 @@ y_1\amp y_2\amp y_3\amp y_1\amp y_2
 \end{matrix}
 \end{equation*}
 </div>
-<p id="p-840">We then use three “sliding windows”: the first (for the first coordinate) uses columns two and three, the next (for the second coordinate) uses columns three and four, and the last (for the third coordinate) uses columns four and five.</p>
+<p id="p-898">We then use three “sliding windows”: the first (for the first coordinate) uses columns two and three, the next (for the second coordinate) uses columns three and four, and the last (for the third coordinate) uses columns four and five.</p>
 <ul class="disc">
-<li id="li-298">
-<p id="p-841">First coordinate: \(\color{red}{x_2y_3}-\color{green}{x_3y_2}\)</p>
+<li id="li-312">
+<p id="p-899">First coordinate: \(\color{red}{x_2y_3}-\color{green}{x_3y_2}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{matrix}
@@ -145,8 +148,8 @@ y_1 \amp y_2
 \end{equation*}
 </div>
 </li>
-<li id="li-299">
-<p id="p-842">Second coordinate: \(\color{red}{x_3y_1}-\color{green}{x_1y_3}\)</p>
+<li id="li-313">
+<p id="p-900">Second coordinate: \(\color{red}{x_3y_1}-\color{green}{x_1y_3}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{matrix}
@@ -165,8 +168,8 @@ x_2\\y_2
 \end{equation*}
 </div>
 </li>
-<li id="li-300">
-<p id="p-843">Third coordinate: \(\color{red}{x_1y_2}-\color{green}{x_2y_1}\)</p>
+<li id="li-314">
+<p id="p-901">Third coordinate: \(\color{red}{x_1y_2}-\color{green}{x_2y_1}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{matrix}
@@ -191,23 +194,23 @@ y_1\amp y_2\amp y_3
 \end{equation*}
 </div>
 <p data-braille="continuation">which is actually the determinant as seen in <a class="xref" data-knowl="./knowl/DeterminantofSmallMatrices.html" title="Definition 3.1.1: Determinants of small matrices">Definition 3.1.1</a>.</p>
-<p id="p-844">Here is an animation showing two vectors (the blue vectors) and their cross product (the red vector):</p>
-<figure class="figure figure-like" id="figure-39"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/250px-Crossproduct.gif" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.1<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-845">There are (at least) four interesting relationships between the two blue vectors and their cross product.</p>
-<p id="p-846">Can you see some of them? Press to reveal:</p>
-<article class="example example-like" id="example-37"><h6 class="heading">
+<p id="p-902">Here is an animation showing two vectors (the blue vectors) and their cross product (the red vector):</p>
+<figure class="figure figure-like" id="figure-40"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/250px-Crossproduct.gif" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.1<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-903">There are (at least) four interesting relationships between the two blue vectors and their cross product.</p>
+<p id="p-904">Can you see some of them? Press to reveal:</p>
+<article class="example example-like" id="example-41"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Interesting properties of the cross product.</span>
 </h6>
-<ul id="p-847" class="disc">
-<li id="li-301"><p id="p-848">\(\vec x\times\vec y\) is perpendicular to both \(\vec x\) and \(\vec y\text{.}\)</p></li>
-<li id="li-302"><p id="p-849">\(\vec x\times\vec y\) has zero length when \(\vec x\) and \(\vec y\) are collinear.</p></li>
-<li id="li-303"><p id="p-850">\(\vec x\times\vec y\) has maximum length when \(\vec x\) and \(\vec y\) are perpendicular.</p></li>
-<li id="li-304"><p id="p-851">As \(\vec y\) goes through one cycle around \(\vec x\text{,}\) the length of \(\vec x\times\vec y\) goes up and down like the function \(\sin(x)\text{.}\)</p></li>
-</ul></article><p id="p-852">These relationships are all valid, as we now show.</p>
-<article class="theorem theorem-like" id="theorem-53"><h6 class="heading">
+<ul id="p-905" class="disc">
+<li id="li-315"><p id="p-906">\(\vec x\times\vec y\) is perpendicular to both \(\vec x\) and \(\vec y\text{.}\)</p></li>
+<li id="li-316"><p id="p-907">\(\vec x\times\vec y\) has zero length when \(\vec x\) and \(\vec y\) are collinear.</p></li>
+<li id="li-317"><p id="p-908">\(\vec x\times\vec y\) has maximum length when \(\vec x\) and \(\vec y\) are perpendicular.</p></li>
+<li id="li-318"><p id="p-909">As \(\vec y\) goes through one cycle around \(\vec x\text{,}\) the length of \(\vec x\times\vec y\) goes up and down like the function \(\sin(x)\text{.}\)</p></li>
+</ul></article><p id="p-910">These relationships are all valid, as we now show.</p>
+<article class="theorem theorem-like" id="theorem-57"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">\(x\perp\vec x\times\vec y\) and \(y\perp\vec x\times\vec y\).</span>
 </h6>
-<p id="p-853">\(\vec x\times\vec y\) is perpendicular to both \(\vec x\) and \(\vec y\text{.}\)</p></article><article class="hiddenproof" id="proof-65"><a data-knowl="" class="id-ref original" data-refid="hk-proof-65"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-65"><article class="hiddenproof"><p id="p-854">The desired result is shown if \(\vec x\cdot(\vec x\times\vec y)=0\) and \(\vec y\cdot(\vec x\times\vec y)=0\text{.}\) By direct computation</p>
+<p id="p-911">\(\vec x\times\vec y\) is perpendicular to both \(\vec x\) and \(\vec y\text{.}\)</p></article><article class="hiddenproof" id="proof-70"><a data-knowl="" class="id-ref original" data-refid="hk-proof-70"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-70"><article class="hiddenproof"><p id="p-912">The desired result is shown if \(\vec x\cdot(\vec x\times\vec y)=0\) and \(\vec y\cdot(\vec x\times\vec y)=0\text{.}\) By direct computation</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
@@ -229,10 +232,10 @@ y_1\amp y_2\amp y_3
 \end{array}
 \end{equation*}
 </div></article></div>
-<article class="theorem theorem-like" id="theorem-54"><h6 class="heading">
+<article class="theorem theorem-like" id="theorem-58"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">\(\vec x \times r\vec x=\vec0\).</span>
 </h6>
-<p id="p-855">If \(\vec x\) and \(\vec y\) are collinear, then \(\vec x\times\vec y=\vec 0\text{.}\)</p></article><article class="hiddenproof" id="proof-66"><a data-knowl="" class="id-ref original" data-refid="hk-proof-66"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-66"><article class="hiddenproof"><p id="p-856">The collinearity of \(\vec x\) and \(\vec y\) means that \(\vec x=r\vec y\) for some real number \(r\text{,}\) and so \(x_1=ry_1\text{,}\) \(x_2=ry_2\text{,}\) and \(x_3=ry_3\text{.}\) This means</p>
+<p id="p-913">If \(\vec x\) and \(\vec y\) are collinear, then \(\vec x\times\vec y=\vec 0\text{.}\)</p></article><article class="hiddenproof" id="proof-71"><a data-knowl="" class="id-ref original" data-refid="hk-proof-71"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-71"><article class="hiddenproof"><p id="p-914">The collinearity of \(\vec x\) and \(\vec y\) means that \(\vec x=r\vec y\) for some real number \(r\text{,}\) and so \(x_1=ry_1\text{,}\) \(x_2=ry_2\text{,}\) and \(x_3=ry_3\text{.}\) This means</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
@@ -242,7 +245,7 @@ y_1\amp y_2\amp y_3
 \end{array}
 \end{equation*}
 </div></article></div>
-<p id="p-857">Now we carry out some computations:</p>
+<p id="p-915">Now we carry out some computations:</p>
 <div class="displaymath">
 \begin{align*}
 \|\vec x\times\vec y\|^2
@@ -267,10 +270,10 @@ y_1\amp y_2\amp y_3
 = \|\vec x\|^2 \|\vec y\|^2
 \end{equation*}
 </div>
-<article class="theorem theorem-like" id="theorem-55"><h6 class="heading">
+<article class="theorem theorem-like" id="theorem-59"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">\(\|\vec x\times\vec y\|=\|\vec x\|\,\|\vec y\|\sin\theta\).</span>
 </h6>
-<p id="p-858">For any vectors \(\vec x\) and \(\vec y\) in \(\R^3\text{,}\) \(\|\vec x\times\vec y\|=\|\vec x\|\,\|\vec y\|\sin\theta\text{.}\)</p></article><article class="hiddenproof" id="proof-67"><a data-knowl="" class="id-ref original" data-refid="hk-proof-67"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-67"><article class="hiddenproof"><div class="displaymath" id="p-859">
+<p id="p-916">For any vectors \(\vec x\) and \(\vec y\) in \(\R^3\text{,}\) \(\|\vec x\times\vec y\|=\|\vec x\|\,\|\vec y\|\sin\theta\text{.}\)</p></article><article class="hiddenproof" id="proof-72"><a data-knowl="" class="id-ref original" data-refid="hk-proof-72"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-72"><article class="hiddenproof"><div class="displaymath" id="p-917">
 \begin{equation*}
 \begin{array}{rl}
 \|\vec x\times\vec y\|^2
@@ -293,18 +296,18 @@ y_1\amp y_2\amp y_3
 \|\vec x\times\vec y\| =\|\vec x\|\, \|\vec y\| \sin(\theta)
 \end{equation*}
 </div></article></div>
-<article class="theorem theorem-like" id="theorem-56"><h6 class="heading">
+<article class="theorem theorem-like" id="theorem-60"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Additional cross product properties.</span>
 </h6>
-<p id="p-860">Let \(\vec u\) and \(\vec v\) be vectors in \(\mathbb{R}^n\text{,}\) and let \(r\) be a real number. Then</p>
+<p id="p-918">Let \(\vec u\) and \(\vec v\) be vectors in \(\mathbb{R}^n\text{,}\) and let \(r\) be a real number. Then</p>
 <ul class="disc">
-<li id="li-305">\(\displaystyle \vec u\times\vec v=-(\vec v\times\vec u)\)</li>
-<li id="li-306">\(\displaystyle (r\vec u)\times\vec v=r(\vec u\times\vec v)\)</li>
-<li id="li-307">\(\displaystyle \vec u \times (\vec v+\vec w)
+<li id="li-319">\(\displaystyle \vec u\times\vec v=-(\vec v\times\vec u)\)</li>
+<li id="li-320">\(\displaystyle (r\vec u)\times\vec v=r(\vec u\times\vec v)\)</li>
+<li id="li-321">\(\displaystyle \vec u \times (\vec v+\vec w)
 =(\vec u \times \vec v)+(\vec u\times\vec w)\)</li>
-</ul></article><article class="hiddenproof" id="proof-68"><a data-knowl="" class="id-ref original" data-refid="hk-proof-68"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-68"><article class="hiddenproof"><p id="p-861">All of the parts may be verified by direct computation. But more easily:</p>
+</ul></article><article class="hiddenproof" id="proof-73"><a data-knowl="" class="id-ref original" data-refid="hk-proof-73"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-73"><article class="hiddenproof"><p id="p-919">All of the parts may be verified by direct computation. But more easily:</p>
 <ul class="disc">
-<li id="li-308">\(\displaystyle \det
+<li id="li-322">\(\displaystyle \det
 \begin{bmatrix}
 \vec i \amp \vec j\amp \vec j\\
 u_1 \amp u_2 \amp u_3\\
@@ -317,7 +320,7 @@ v_1 \amp v_2 \amp v_3
 v_1 \amp v_2 \amp v_3\\
 u_1 \amp u_2 \amp u_3
 \end{bmatrix}\)</li>
-<li id="li-309">\(\displaystyle \det
+<li id="li-323">\(\displaystyle \det
 \begin{bmatrix}
 \vec i \amp \vec j\amp \vec j\\
 ru_1 \amp ru_2 \amp ru_3\\
@@ -330,7 +333,7 @@ v_1 \amp v_2 \amp v_3
 u_1 \amp u_2 \amp u_3\\
 v_1 \amp v_2 \amp v_3
 \end{bmatrix}\)</li>
-<li id="li-310">\(\displaystyle \det
+<li id="li-324">\(\displaystyle \det
 \begin{bmatrix}
 \vec i \amp \vec j\amp \vec j\\
 u_1 \amp u_2 \amp u_3\\
@@ -350,36 +353,36 @@ w_1 \amp w_2 \amp w_3
 \end{bmatrix}\)</li>
 </ul></article></div>
 <article class="paragraphs" id="paragraphs-12"><h5 class="heading"><span class="title">Justification of the definition of the cross product.</span></h5>
-<p id="p-862">Now suppose we have two vectors \(\vec x=(x_1,x_2,x_3)\) and \(\vec y=(y_1,y_2,y_3)\text{.}\) We are looking for a third vector which (like the cross product) is perpendicular to both \(\vec x\) and \(\vec y\text{.}\) Let's call such a vector \((a,b,c)\text{.}\) The perpendicularity assumptions mean \((a,b,c)\cdot(x_1,x_2,x_3)=0\) and \((a,b,c)\cdot(y_1,y_2,y_3)=0\text{.}\) This means \(\begin{align*}
+<p id="p-920">Now suppose we have two vectors \(\vec x=(x_1,x_2,x_3)\) and \(\vec y=(y_1,y_2,y_3)\text{.}\) We are looking for a third vector which (like the cross product) is perpendicular to both \(\vec x\) and \(\vec y\text{.}\) Let's call such a vector \((a,b,c)\text{.}\) The perpendicularity assumptions mean \((a,b,c)\cdot(x_1,x_2,x_3)=0\) and \((a,b,c)\cdot(y_1,y_2,y_3)=0\text{.}\) This means \(\begin{align*}
 ax_1+bx_2+cx_3\amp =0\tag{1}\\
 ay_1+by_2+cy_3\amp =0.\tag{2}
 \end{align*}\)</p>
-<p id="p-863">Multiply equation \((1)\) by \(y_1\text{,}\) equation \((2)\) by \(x_1\) and subtract. This gives</p>
+<p id="p-921">Multiply equation \((1)\) by \(y_1\text{,}\) equation \((2)\) by \(x_1\) and subtract. This gives</p>
 <div class="displaymath">
 \begin{equation*}
 b(x_2y_1-x_1y_2)+c(x_3y_1-x_1y_3)=0
 \end{equation*}
 </div>
-<p id="p-864">and so</p>
+<p id="p-922">and so</p>
 <div class="displaymath">
 \begin{equation*}
 b=\frac{x_3y_1-x_1y_3}{x_1y_2-x_2y_1}c
 \end{equation*}
 </div>
-<p id="p-865">Now multiply equation \((1)\) by \(y_2\text{,}\) equation \((2)\) by \(x_2\) and subtract.</p>
-<p id="p-866">This gives</p>
+<p id="p-923">Now multiply equation \((1)\) by \(y_2\text{,}\) equation \((2)\) by \(x_2\) and subtract.</p>
+<p id="p-924">This gives</p>
 <div class="displaymath">
 \begin{equation*}
 a(x_1y_2-x_2y_1)+c(x_3y_2-x_2y_3)=0
 \end{equation*}
 </div>
-<p id="p-867">and so</p>
+<p id="p-925">and so</p>
 <div class="displaymath">
 \begin{equation*}
 a=\frac{x_2y_3-x_3y_2}{x_1y_2-x_2y_1}c
 \end{equation*}
 </div>
-<p id="p-868">This implies that our vector</p>
+<p id="p-926">This implies that our vector</p>
 <div class="displaymath">
 \begin{equation*}
 (a,b,c)=\left(\frac{x_2y_3-x_3y_2}{x_1y_2-x_2y_1}c,

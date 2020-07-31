@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:31:50-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:09:41-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -65,6 +67,7 @@ MathJax.Hub.Config({
 \newcommand{\adj}{\mathop{\textrm{adj}}}
 \newcommand{\proj}{\mathop{\textrm{proj}}}
 \newcommand{\Span}{\mathop{\textrm{span}}} 
+\newcommand{\sgn}{\mathop{\textrm{sgn}}}
 
 \newcommand{\rowint}[2]{R_{#1} \leftrightarrow R_{#2}}
 \newcommand{\rowmul}[2]{R_{#1}\gets {#2}R_{#1}}
@@ -103,17 +106,17 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-31"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.7</span> <span class="title">Projections in \(\R^2\) and \(\R^n\)</span>
 </h2>
-<section class="subsection" id="subsection-70"><h3 class="heading hide-type">
+<section class="subsection" id="subsection-75"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.7.1</span> <span class="title">Projections in \(\R^2\)</span>
 </h3>
-<p id="p-908">Start with two nonzero vectors \(\vec u\) and \(\vec v\text{.}\) Drop a perpendicular from \(\vec u\) to the line through \(\vec v\text{,}\) and use the point where this perpendicular hits the line to be the end of a new vector. Suppose that \(\theta\) is the angle between the vectors \(\vec u\) and \(\vec v\text{.}\) The picture of the construction is slightly different for \(\theta\) obtuse and \(\theta\) acute (the new vector is shown in red):</p>
+<p id="p-966">Start with two nonzero vectors \(\vec u\) and \(\vec v\text{.}\) Drop a perpendicular from \(\vec u\) to the line through \(\vec v\text{,}\) and use the point where this perpendicular hits the line to be the end of a new vector. Suppose that \(\theta\) is the angle between the vectors \(\vec u\) and \(\vec v\text{.}\) The picture of the construction is slightly different for \(\theta\) obtuse and \(\theta\) acute (the new vector is shown in red):</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><object data="images/image-46.html" id="image-46" width="300" height="300"><embed src="images/image-46.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
 <div class="sbspanel" style="width:50%;justify-content:flex-start;"><object data="images/image-47.html" id="image-47" width="300" height="300"><embed src="images/image-47.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><object data="images/image-48.html" id="image-48" width="300" height="300"><embed src="images/image-48.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
 </div></div>
-<p id="p-909">In each case the new vector is called <dfn class="terminology">the projection of \(\vec u\) along \(\vec v\)</dfn> and is denoted \(\textrm{proj}_{\vec v} \vec u\text{.}\)</p>
-<p id="p-910">Since \(\textrm{proj}_{\vec v} \vec u\) and \(\vec v\) are collinear, we may write \(\textrm{proj}_{\vec v} \vec u=k\vec v\) for some real number \(k\text{.}\) We next determine the value of \(k\text{.}\)</p>
-<p id="p-911">In the left picture, we have</p>
+<p id="p-967">In each case the new vector is called <dfn class="terminology">the projection of \(\vec u\) along \(\vec v\)</dfn> and is denoted \(\textrm{proj}_{\vec v} \vec u\text{.}\)</p>
+<p id="p-968">Since \(\textrm{proj}_{\vec v} \vec u\) and \(\vec v\) are collinear, we may write \(\textrm{proj}_{\vec v} \vec u=k\vec v\) for some real number \(k\text{.}\) We next determine the value of \(k\text{.}\)</p>
+<p id="p-969">In the left picture, we have</p>
 <div class="displaymath">
 \begin{align*}
 \|\textrm{proj}_{\vec v} \vec u\|
@@ -144,10 +147,10 @@ k
 =\frac{\vec u\cdot\vec v}{\vec v\cdot\vec v}
 \end{equation*}
 </div>
-<article class="theorem theorem-like" id="theorem-61"><h6 class="heading">
+<article class="theorem theorem-like" id="theorem-65"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.7.1</span><span class="period">.</span><span class="space"> </span><span class="title">Projection of \(\vec u\) onto \(\vec v\) in \(\R^2\).</span>
 </h6>
-<p id="p-912">If \(\vec u\) and \(\vec v\) are vectors in \(\R^2\) with \(\vec v\not= \vec0\text{,}\) then</p>
+<p id="p-970">If \(\vec u\) and \(\vec v\) are vectors in \(\R^2\) with \(\vec v\not= \vec0\text{,}\) then</p>
 <div class="displaymath">
 \begin{equation*}
 \textrm{proj}_{\vec v} \vec u 
@@ -156,10 +159,10 @@ k
 =\frac{\vec u\cdot\vec v}{\vec v\cdot\vec v}
 \vec v
 \end{equation*}
-</div></article><article class="theorem theorem-like" id="theorem-62"><h6 class="heading">
+</div></article><article class="theorem theorem-like" id="theorem-66"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.7.2</span><span class="period">.</span><span class="space"> </span><span class="title">\(\vec u-\textrm{proj}_{\vec v} \vec u \) is orthogonal to \(\vec v\).</span>
 </h6>
-<p id="p-913">The vectors \(\vec v\) and \(\vec u-\textrm{proj}_{\vec v} \vec u \) are orthogonal.</p></article><article class="hiddenproof" id="proof-70"><a data-knowl="" class="id-ref original" data-refid="hk-proof-70"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-70"><article class="hiddenproof"><p id="p-914">We compute the dot product:</p>
+<p id="p-971">The vectors \(\vec v\) and \(\vec u-\textrm{proj}_{\vec v} \vec u \) are orthogonal.</p></article><article class="hiddenproof" id="proof-75"><a data-knowl="" class="id-ref original" data-refid="hk-proof-75"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-75"><article class="hiddenproof"><p id="p-972">We compute the dot product:</p>
 <div class="displaymath">
 \begin{align*}
 (\vec u - \textrm{proj}_{\vec v} \vec u)\cdot\vec v 
@@ -173,28 +176,28 @@ k
 \amp=\vec u \cdot \vec v -\vec u \cdot \vec v \\
 \amp=0
 \end{align*}
-</div></article></div></section><section class="subsection" id="subsection-71"><h3 class="heading hide-type">
+</div></article></div></section><section class="subsection" id="subsection-76"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.7.2</span> <span class="title">Examples of projections in \(\R^2\)</span>
 </h3>
-<ul id="p-915" class="disc">
-<li id="li-311"><p id="p-916">Suppose that \(\vec v=(1,0)\) and \(\vec u=(u_1,u_2)\text{.}\) Then the line through \(\vec v\) is simply the \(x\)-axis, and \(\|\vec v\|=1\text{,}\) and so \(\textrm{proj}_{\vec v} \vec u =\left((u_1,u_2)\cdot(1,0) \right) \vec v 
+<ul id="p-973" class="disc">
+<li id="li-325"><p id="p-974">Suppose that \(\vec v=(1,0)\) and \(\vec u=(u_1,u_2)\text{.}\) Then the line through \(\vec v\) is simply the \(x\)-axis, and \(\|\vec v\|=1\text{,}\) and so \(\textrm{proj}_{\vec v} \vec u =\left((u_1,u_2)\cdot(1,0) \right) \vec v 
 = (u_1,0)\text{.}\) This means that the projection of \((x_1,x_2)\) onto the \(x\)-axis is \((x_1,0)\text{,}\) just as would be expected.</p></li>
-<li id="li-312"><p id="p-917">Suppose \(\vec v=(1,1)\) and \(\vec u=(u_1,u_2)\text{.}\) Then the line through \(\vec v\) has equation \(y=x\text{,}\) and \(\|\vec v\|=\sqrt2\text{.}\) We then have \(\textrm{proj}_{\vec v} \vec u=\frac{(u_1,u_2)\cdot(1,1)}2 \vec v
+<li id="li-326"><p id="p-975">Suppose \(\vec v=(1,1)\) and \(\vec u=(u_1,u_2)\text{.}\) Then the line through \(\vec v\) has equation \(y=x\text{,}\) and \(\|\vec v\|=\sqrt2\text{.}\) We then have \(\textrm{proj}_{\vec v} \vec u=\frac{(u_1,u_2)\cdot(1,1)}2 \vec v
 =\left(\frac{(u_1+u_2)}2,\frac{(u_1+u_2)}2\right)\)</p></li>
-<li id="li-313"><p id="p-918">Suppose we want to drop a perpendicular from the point \(\vec u=(m,-1)\) to the line \(y=mx\text{.}\) The vector \(\vec v=(1,m)\) is on that line. It then follows that \(\textrm{proj}_{\vec v} \vec u
+<li id="li-327"><p id="p-976">Suppose we want to drop a perpendicular from the point \(\vec u=(m,-1)\) to the line \(y=mx\text{.}\) The vector \(\vec v=(1,m)\) is on that line. It then follows that \(\textrm{proj}_{\vec v} \vec u
 =\frac{(m,-1)\cdot(1,m)}{\|\vec v\|^2} \vec v=0\vec v=\vec 0\text{.}\) This implies that the line joining 	\((m,-1)\) and \((0,0)\text{,}\) which has slope \(-\frac1m\text{,}\) is perpendicular to the line with equation \(y=mx\text{.}\) This implies that the product of the slopes of two orthogonal lines is \(-1\text{.}\)</p></li>
-<li id="li-314"><p id="p-919">Suppose we want to drop a perpendicular from the point \(\vec u=(u_1,u_2)\) to the line \(y=mx\text{.}\)  The vector \(\vec v=(1,m)\) is on that line, and \(\|\vec v\|=\sqrt{1+m^2}\text{.}\)  It then follows that \(\textrm{proj}_{\vec v} \vec u =\frac{(u_1,u_2)\cdot(1,m)}{1+m^2} \vec v
+<li id="li-328"><p id="p-977">Suppose we want to drop a perpendicular from the point \(\vec u=(u_1,u_2)\) to the line \(y=mx\text{.}\)  The vector \(\vec v=(1,m)\) is on that line, and \(\|\vec v\|=\sqrt{1+m^2}\text{.}\)  It then follows that \(\textrm{proj}_{\vec v} \vec u =\frac{(u_1,u_2)\cdot(1,m)}{1+m^2} \vec v
 =\frac1{1+m^2}(u_1+mu_2, m(u_1+mu_2))
 =\left(\frac{u_1+mu_2}{1+m^2},\frac{mu_1+m^2u_2}{1+m^2}\right)\)</p></li>
 </ul>
 <p data-braille="continuation">The following figure illustrates these examples (note that the first examples are just the special cases of the last one).</p>
-<figure class="figure figure-like" id="figure-45"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-48.html" id="image-48" width="450" height="450"><embed src="images/image-48.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.7.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure></section><section class="subsection" id="subsection-72"><h3 class="heading hide-type">
+<figure class="figure figure-like" id="figure-46"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-49.html" id="image-49" width="450" height="450"><embed src="images/image-49.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.7.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure></section><section class="subsection" id="subsection-77"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.7.3</span> <span class="title">Application: distance from a point to a line</span>
 </h3>
-<p id="p-920">We want to compute the distance from a point \(\vec u\) to a line \(L\text{.}\) Let \(\vec u=(x_0,y_0)\text{,}\) the general equation of \(L\) be \(ax+by+c=0\) and \(D\) the desired distance. In addition, let \((x_1,y_1)\) and \((x_2,y_2)\) be two points on \(L\text{,}\) and \(\vec n=(x_1+a,y_1+b)\text{.}\) These are all included in the following figure:</p>
-<figure class="figure figure-like" id="figure-46"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-49.html" id="image-49" width="450" height="450"><embed src="images/image-49.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.7.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-921">Since \((x_1,y_1)\) and \((x_2,y_2)\) are both on \(L\text{,}\) we know that \(ax_1+by_1+c=ax_2+by_2+c=0\text{.}\) In addition, if we consider the two displacement vectors \(\vec v\) from \((x_1,y_1)\) to \((x_2,y_2)\) and \(\vec n\) from \((x_1,y_1)\) to \((x_1+a,y_1+b)\text{,}\) then the dot product</p>
+<p id="p-978">We want to compute the distance from a point \(\vec u\) to a line \(L\text{.}\) Let \(\vec u=(x_0,y_0)\text{,}\) the general equation of \(L\) be \(ax+by+c=0\) and \(D\) the desired distance. In addition, let \((x_1,y_1)\) and \((x_2,y_2)\) be two points on \(L\text{,}\) and \(\vec n=(x_1+a,y_1+b)\text{.}\) These are all included in the following figure:</p>
+<figure class="figure figure-like" id="figure-47"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-50.html" id="image-50" width="450" height="450"><embed src="images/image-50.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.7.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-979">Since \((x_1,y_1)\) and \((x_2,y_2)\) are both on \(L\text{,}\) we know that \(ax_1+by_1+c=ax_2+by_2+c=0\text{.}\) In addition, if we consider the two displacement vectors \(\vec v\) from \((x_1,y_1)\) to \((x_2,y_2)\) and \(\vec n\) from \((x_1,y_1)\) to \((x_1+a,y_1+b)\text{,}\) then the dot product</p>
 <div class="displaymath">
 \begin{equation*}
 \vec v\cdot\vec n =(x_2-x_1,y_2-y_1)\cdot (a,b)
@@ -220,17 +223,17 @@ D=\|\mathrm{proj}_{\vec n}\vec u\|=\frac{|ax_0+by_0 +c|}{\sqrt{a^2+b^2}}
 <article class="theorem theorem-like" id="DistancePtToLine"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.7.5</span><span class="period">.</span><span class="space"> </span><span class="title">Theorem (distance from point to a line).</span>
 </h6>
-<p id="p-922">The distance \(D\) from a point \((x_0,y_0)\) to the line \(ax+by+c=0\) is</p>
+<p id="p-980">The distance \(D\) from a point \((x_0,y_0)\) to the line \(ax+by+c=0\) is</p>
 <div class="displaymath">
 \begin{equation*}
 D=\frac{|ax_0+by_0+c|}{\|\vec n\|}=\frac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}
 \end{equation*}
-</div></article></section><section class="subsection" id="subsection-73"><h3 class="heading hide-type">
+</div></article></section><section class="subsection" id="subsection-78"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.7.4</span> <span class="title">Projections in \(\R^3\) and \(\R^n\)</span>
 </h3>
-<p id="p-923">Projections in \(\R^3\) to a plane and in \(\R^n\) to a hyperplane are remarkably similar to those in \(\R^2\text{.}\)</p>
-<figure class="figure figure-like" id="figure-47"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-50.html" id="image-50" width="450" height="450"><embed src="images/image-50.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.7.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-924">In \(\R^3\) the projection from the point \((x_0,y_0,z_0)\) to the plane \(ax+by+cz+d=0\) can be obtained by taking the line through \((x_0,y_0,z_0)\) orthogonal to the plane. Since the vector \(\vec n=(a,b,c)\) is orthogonal to the plane, the line consists of all points of the form \((x_0,y_0,z_))+t(a,b,c)\text{.}\) The value of \(t\) that give the point in the plane satisfies</p>
+<p id="p-981">Projections in \(\R^3\) to a plane and in \(\R^n\) to a hyperplane are remarkably similar to those in \(\R^2\text{.}\)</p>
+<figure class="figure figure-like" id="figure-48"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-51.html" id="image-51" width="450" height="450"><embed src="images/image-51.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.7.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-982">In \(\R^3\) the projection from the point \((x_0,y_0,z_0)\) to the plane \(ax+by+cz+d=0\) can be obtained by taking the line through \((x_0,y_0,z_0)\) orthogonal to the plane. Since the vector \(\vec n=(a,b,c)\) is orthogonal to the plane, the line consists of all points of the form \((x_0,y_0,z_))+t(a,b,c)\text{.}\) The value of \(t\) that give the point in the plane satisfies</p>
 <div class="displaymath">
 \begin{align*}
 a(x_0+ta)+b(y_0+tb)+c(z_0+tc)+d
@@ -244,7 +247,7 @@ a(x_0+ta)+b(y_0+tb)+c(z_0+tc)+d
 t=-\frac{ax_0+by_0+cz_0+d}{a^2+b^2+c^2}.
 \end{equation*}
 </div>
-<p id="p-925">The distance to the plane is now easy to compute. If \(\vec x=(x_0,y_0,z_0)\) and \(\vec n=(a,b,c)\) then the distance from \(\vec x\) to \(\vec x+ t\vec n\) satisfies</p>
+<p id="p-983">The distance to the plane is now easy to compute. If \(\vec x=(x_0,y_0,z_0)\) and \(\vec n=(a,b,c)\) then the distance from \(\vec x\) to \(\vec x+ t\vec n\) satisfies</p>
 <div class="displaymath">
 \begin{equation*}
 d(\vec x,\vec x+ t\vec n)
@@ -262,14 +265,14 @@ D=\frac{|ax_0+by_0+cz_0+d|}{\|\vec n\|}.
 <article class="theorem theorem-like" id="DistancePtToPlane"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.7.7</span><span class="period">.</span><span class="space"> </span><span class="title">Distance from a point to a plane.</span>
 </h6>
-<p id="p-926">If \(D\) is the distance from a point \((x_0,y_0,z_0)\) to the plane with equation \(ax+by+cz+d=0\text{,}\) and \(\vec n=(a,b,c)\text{,}\) then</p>
+<p id="p-984">If \(D\) is the distance from a point \((x_0,y_0,z_0)\) to the plane with equation \(ax+by+cz+d=0\text{,}\) and \(\vec n=(a,b,c)\text{,}\) then</p>
 <div class="displaymath">
 \begin{equation*}
 D=\frac{|ax_0+by_0+cz_0+d|}{\|\vec n\|} 
 =\frac{|ax_0+by_0+cz_0+d|}{\sqrt{a^2+b^2+c^2}} 
 \end{equation*}
-</div></article><p id="p-927">Compare this result with the one in \(\R^2\text{:}\) <a class="xref" data-knowl="./knowl/DistancePtToLine.html" title="Theorem 4.7.5: Theorem (distance from point to a line)">Theorem 4.7.5</a></p>
-<p id="p-928">The distance from a point to a hyperplane in \(\R^n\) is computed analoguously.</p></section></section></div></main>
+</div></article><p id="p-985">Compare this result with the one in \(\R^2\text{:}\) <a class="xref" data-knowl="./knowl/DistancePtToLine.html" title="Theorem 4.7.5: Theorem (distance from point to a line)">Theorem 4.7.5</a></p>
+<p id="p-986">The distance from a point to a hyperplane in \(\R^n\) is computed analoguously.</p></section></section></div></main>
 </div>
 </body>
 </html>

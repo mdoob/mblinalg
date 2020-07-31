@@ -1,26 +1,60 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:32:11-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:10:05-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>There are certain trigonometric facts that should be in your mathematical toolkit. We review several here.</p>
-<ul class="disc">
-<li><p>The law of cosines (<a class="xref" data-knowl="./knowl/LawOfCosines.html" title="Theorem 7.3.2: The law of cosines">Theorem 7.3.2</a>)</p></li>
-<li><p>The graphs of <a class="xref" data-knowl="./knowl/GraphSin.html" title="Figure 7.3.7">\(\sin(x)\)</a> and <a class="xref" data-knowl="./knowl/GraphCos.html" title="Figure 7.3.8">\(\cos(x)\)</a></p></li>
-<li><p>The parallelogram law (<a class="xref" data-knowl="./knowl/ParallelogramLaw.html" title="Theorem 7.3.13: The parallelogram law">Theorem 7.3.13</a>)</p></li>
-<li><p>The addition laws for \(\sin(x)\) and \(\cos(x)\) (<a class="xref" data-knowl="./knowl/SinCosSums.html" title="Theorem 7.3.18: Addition formulas for \(\sin(x)\) and \(\cos(x)\)">Theorem 7.3.18</a>)</p></li>
-<li><p>The law of sines (<a class="xref" data-knowl="./knowl/LawOfSines.html" title="Theorem 7.3.20: The law of sines">Theorem 7.3.20</a>)</p></li>
-</ul>
-<span class="incontext"><a href="section-49.html#p-1164">in-context</a></span>
+<ol class="decimal">
+<li>
+<p>We evaluate \(L(\vec 0+\vec 0)\) in two ways:</p>
+<ol class="lower-alpha">
+<li><p>Since \(\vec 0+\vec 0=\vec0\text{,}\) we have \(L(\vec 0+\vec 0)=L(\vec 0)\)</p></li>
+<li>
+<p>Since \(\vec 0+\vec 0=2\vec0\text{,}\) we have \(L(\vec 0+\vec 0)= L(2\vec 0)=2L(\vec 0)\text{,}\) and so</p>
+<div class="displaymath">
+\begin{equation*}
+2L(\vec 0)=L(\vec 0)\\L(\vec 0)=\vec0
+\end{equation*}
+</div>
+</li>
+</ol>
+</li>
+<li><p>\(\displaystyle L(\vec x-\vec y)
+=L(\vec x+(-1)\vec y)
+=L(\vec x)+L((-1)\vec y)
+L(\vec x)-L(\vec y)\)</p></li>
+<li><p>\(L(\vec x-\vec y)=\vec0\) if and only if \(L(\vec x)-L(\vec y)=\vec0\) which in turn implies \(L(\vec x) =L(\vec y)\text{.}\)</p></li>
+<li><p>\(\displaystyle L(r_1\vec x_1+r_2\vec x_2)
+=L(r_1\vec x_1)+L(r_2\vec x_2)
+=r_1L(\vec x_1)+r_2L(\vec x_2) \)</p></li>
+<li>
+<p>We apply the addition property repeatedly:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+L(r_1\vec x_1\amp+r_2 \vec x_2+\cdots+r_n\vec x_n)\\
+\amp = L(r_1\vec x_1)+L(r_2 \vec x_2+\cdots+r_n\vec x_n)\\
+\amp = r_1L(\vec x_1)+ L(r_2\vec x_2+\cdots+r_n\vec x_n)\\
+\amp = r_1L(\vec x_1)+ L(r_2\vec x_2)+L(r_3\vec x_3+\cdots+r_n\vec x_n)\\
+\amp = r_1L(\vec x_1)+ r_2L(\vec x_2)+L(r_3\vec x_3+\cdots+r_n\vec x_n)\\
+\amp \,\,\vdots\\
+\amp = r_1L(\vec x_1)+r_2 L(\vec x_2)+\cdots+r_nL(\vec x_n)
+\end{array}
+\end{equation*}
+</div>
+</li>
+</ol>
+<span class="incontext"><a href="section-41.html#p-1164">in-context</a></span>
 </body>
 </html>

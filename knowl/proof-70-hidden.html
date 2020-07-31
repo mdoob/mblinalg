@@ -1,29 +1,38 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:32:06-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:10:00-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p>We compute the dot product:</p>
+<body><article class="hiddenproof"><p>The desired result is shown if \(\vec x\cdot(\vec x\times\vec y)=0\) and \(\vec y\cdot(\vec x\times\vec y)=0\text{.}\) By direct computation</p>
 <div class="displaymath">
-\begin{align*}
-(\vec u - \textrm{proj}_{\vec v} \vec u)\cdot\vec v 
-\amp= \vec u\cdot\vec v - \textrm{proj}_{\vec v} \vec u\cdot\vec v\\
-\amp=\vec u \cdot \vec v 
-- \left(\frac{\vec u\cdot\vec v}{\vec v\cdot\vec v} 
-\vec v\right) \cdot\vec v\\
-\amp=\vec u \cdot \vec v 
-- \left(\frac{\vec u\cdot\vec v}{\vec v\cdot\vec v}\right) 
-(\vec v \cdot\vec v)\\
-\amp=\vec u \cdot \vec v -\vec u \cdot \vec v \\
+\begin{equation*}
+\begin{array}{rl}
+(x_1,x_2,x_3) \cdot  \amp(x_2y_3-x_3y_2, x_3y_1-x_1y_3,x_1y_2-x_2y_1)\\
+\amp=x_1 (x_2y_3-x_3y_2) +x_2 (x_3y_1-x_1y_3) + x_3 (x_1y_2-x_2y_1)\\
+\amp= x_1x_2y_3-x_1x_3y_2 +x_2 x_3y_1-x_2x_1y_3+ x_3x_1y_2-x_3x_2y_1\\
 \amp=0
-\end{align*}
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+(y_1,y_2,y_3) \amp\cdot  (x_2y_3-x_3y_2, x_3y_1-x_1y_3,x_1y_2-x_2y_1)\\
+\amp=y_1 (x_2y_3-x_3y_2) +y_2 (x_3y_1-x_1y_3) + y_3 (x_1y_2-x_2y_1)\\
+\amp= y_1x_2y_3-y_1x_3y_2 +y_2 x_3y_1-y_2x_1y_3+ y_3x_1y_2-y_3x_2y_1\\
+\amp=0
+\end{array}
+\end{equation*}
 </div></article></body>
 </html>

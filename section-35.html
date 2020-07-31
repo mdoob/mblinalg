@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:31:51-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:09:42-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -65,6 +67,7 @@ MathJax.Hub.Config({
 \newcommand{\adj}{\mathop{\textrm{adj}}}
 \newcommand{\proj}{\mathop{\textrm{proj}}}
 \newcommand{\Span}{\mathop{\textrm{span}}} 
+\newcommand{\sgn}{\mathop{\textrm{sgn}}}
 
 \newcommand{\rowint}[2]{R_{#1} \leftrightarrow R_{#2}}
 \newcommand{\rowmul}[2]{R_{#1}\gets {#2}R_{#1}}
@@ -103,15 +106,15 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-35"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.2</span> <span class="title">Computing eigenvalues</span>
 </h2>
-<p id="p-1032">An easy but important fact is used to compute eigenvalues.</p>
-<article class="proposition theorem-like" id="proposition-9"><h6 class="heading">
+<p id="p-1090">An easy but important fact is used to compute eigenvalues.</p>
+<article class="proposition theorem-like" id="proposition-10"><h6 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenvalues \(x\) satisfy \((A-\lambda I)\vec x=\vec0\).</span>
 </h6>
-<div class="displaymath" id="p-1033">
+<div class="displaymath" id="p-1091">
 \begin{equation*}
 A\vec x=\lambda \vec x \textrm{ if and only if } (A-\lambda I)\vec x=\vec0
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-79"><a data-knowl="" class="id-ref original" data-refid="hk-proof-79"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-79"><article class="hiddenproof"><p id="p-1034">If \(A\vec x=\lambda\vec x\text{,}\) then</p>
+</div></article><article class="hiddenproof" id="proof-84"><a data-knowl="" class="id-ref original" data-refid="hk-proof-84"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-84"><article class="hiddenproof"><p id="p-1092">If \(A\vec x=\lambda\vec x\text{,}\) then</p>
 <div class="displaymath">
 \begin{equation*}
 \vec0=A\vec x -\lambda\vec x=A\vec x -\lambda I\vec x 
@@ -121,20 +124,20 @@ A\vec x=\lambda \vec x \textrm{ if and only if } (A-\lambda I)\vec x=\vec0
 <article class="corollary theorem-like" id="corollary-6"><h6 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="period">.</span>
 </h6>
-<p id="p-1035">\(\lambda\) is an eigenvalue of \(A\) if and only if \(A-\lambda I\) is singular.</p></article><article class="hiddenproof" id="proof-80"><a data-knowl="" class="id-ref original" data-refid="hk-proof-80"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-80"><article class="hiddenproof"><p id="p-1036">One of the equivalent conditions of singularity given in <a class="xref" data-knowl="./knowl/InvertibilityEquivalence2.html" title="Theorem 3.4.21: Equivalent forms of invertibility">Theorem 3.4.21</a> is that \(B\) is singular if \(B\vec x=\vec 0\) for some \(\vec x\not=\vec 0\text{.}\) The matrix \(A-\lambda I\) plays the role of \(B\text{.}\)</p></article></div>
+<p id="p-1093">\(\lambda\) is an eigenvalue of \(A\) if and only if \(A-\lambda I\) is singular.</p></article><article class="hiddenproof" id="proof-85"><a data-knowl="" class="id-ref original" data-refid="hk-proof-85"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-85"><article class="hiddenproof"><p id="p-1094">One of the equivalent conditions of singularity given in <a class="xref" data-knowl="./knowl/InvertibilityEquivalence2.html" title="Theorem 3.4.21: Equivalent forms of invertibility">Theorem 3.4.21</a> is that \(B\) is singular if \(B\vec x=\vec 0\) for some \(\vec x\not=\vec 0\text{.}\) The matrix \(A-\lambda I\) plays the role of \(B\text{.}\)</p></article></div>
 <article class="corollary theorem-like" id="corollary-7"><h6 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="period">.</span>
 </h6>
-<p id="p-1037">\(\lambda\) is an eigenvalue of \(A\) if and only if \(\det (A-\lambda I)=0\)</p></article><article class="hiddenproof" id="proof-81"><a data-knowl="" class="id-ref original" data-refid="hk-proof-81"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-81"><article class="hiddenproof"><p id="p-1038">\(B\) is singular if and only if \(\det B=0\text{.}\)</p></article></div>
-<p id="p-1039">We now can see how these corollaries allow us to compute eigenvalues. We look at the matrix from <a class="xref" data-knowl="./knowl/EigenvalueExample1.html" title="Example 5.1.3: Eigenvalues of \(\begin{bmatrix} 
+<p id="p-1095">\(\lambda\) is an eigenvalue of \(A\) if and only if \(\det (A-\lambda I)=0\)</p></article><article class="hiddenproof" id="proof-86"><a data-knowl="" class="id-ref original" data-refid="hk-proof-86"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-86"><article class="hiddenproof"><p id="p-1096">\(B\) is singular if and only if \(\det B=0\text{.}\)</p></article></div>
+<p id="p-1097">We now can see how these corollaries allow us to compute eigenvalues. We look at the matrix from <a class="xref" data-knowl="./knowl/EigenvalueExample1.html" title="Example 5.1.3: Eigenvalues of \(\begin{bmatrix} 
 5\amp -1\amp -2\\ 
 1\amp 3\amp -2\\ 
 -1\amp -1\amp 4 
 \end{bmatrix} \)">Example 5.1.3</a>.</p>
-<article class="example example-like" id="example-46"><h6 class="heading">
+<article class="example example-like" id="example-50"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="period">.</span>
 </h6>
-<p id="p-1040">We use</p>
+<p id="p-1098">We use</p>
 <div class="displaymath">
 \begin{equation*}
 A-\lambda I=
@@ -165,10 +168,10 @@ A-\lambda I=
 \amp = -(\lambda-2)(\lambda-4)(\lambda-6)
 \end{align*}
 </div>
-<p data-braille="continuation">So we see that \(\det(A-\lambda I)=0\) only if \(\lambda=2\text{,}\) \(\lambda=4\) or \(\lambda=6\text{.}\) The evaluation of \(\det(A-\lambda I)=0\) gave us a polynomial \(p(\lambda)=-(\lambda-2)(\lambda-4)(\lambda-6)\) whose roots are the eigenvalues.</p></article><article class="definition definition-like" id="definition-61"><h6 class="heading">
+<p data-braille="continuation">So we see that \(\det(A-\lambda I)=0\) only if \(\lambda=2\text{,}\) \(\lambda=4\) or \(\lambda=6\text{.}\) The evaluation of \(\det(A-\lambda I)=0\) gave us a polynomial \(p(\lambda)=-(\lambda-2)(\lambda-4)(\lambda-6)\) whose roots are the eigenvalues.</p></article><article class="definition definition-like" id="definition-63"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">The characteristic polynomial.</span>
 </h6>
-<p id="p-1041">The <dfn class="terminology">characteristic polynomial</dfn> of a square matrix \(A\) is the polynomial</p>
+<p id="p-1099">The <dfn class="terminology">characteristic polynomial</dfn> of a square matrix \(A\) is the polynomial</p>
 <div class="displaymath">
 \begin{equation*}
 p(\lambda)=\det(\lambda I-A).
@@ -176,17 +179,17 @@ p(\lambda)=\det(\lambda I-A).
 </div></article><article class="note remark-like" id="note-1"><h6 class="heading">
 <span class="type">Note</span><span class="space"> </span><span class="codenumber">5.2.6</span><span class="period">.</span>
 </h6>
-<p id="p-1042">Some sources define the characteristic polynomial as \(\det(A-\lambda I)\text{.}\) Since \(\lambda I-A=-(A-\lambda I)\text{,}\) it follows that for any square matrix \(A\) of size \(n\text{,}\)</p>
+<p id="p-1100">Some sources define the characteristic polynomial as \(\det(A-\lambda I)\text{.}\) Since \(\lambda I-A=-(A-\lambda I)\text{,}\) it follows that for any square matrix \(A\) of size \(n\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \det(\lambda I-A)=(-1)^n\det(A-\lambda I)
 \end{equation*}
 </div>
-<p data-braille="continuation">and so both polynomials have the same roots.</p></article><p id="p-1043">We look at the matrix from <a class="xref" data-knowl="./knowl/EigenvalueExample2.html" title="Example 5.1.4: Eigenvalues of \(\begin{bmatrix}2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5 \end{bmatrix}\)">Example 5.1.4</a>.</p>
-<article class="example example-like" id="example-47"><h6 class="heading">
+<p data-braille="continuation">and so both polynomials have the same roots.</p></article><p id="p-1101">We look at the matrix from <a class="xref" data-knowl="./knowl/EigenvalueExample2.html" title="Example 5.1.4: Eigenvalues of \(\begin{bmatrix}2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5 \end{bmatrix}\)">Example 5.1.4</a>.</p>
+<article class="example example-like" id="example-51"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.7</span><span class="period">.</span>
 </h6>
-<p id="p-1044">\(A=\begin{bmatrix}2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5 \end{bmatrix}\text{.}\)</p>
+<p id="p-1102">\(A=\begin{bmatrix}2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5 \end{bmatrix}\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
@@ -199,22 +202,22 @@ p(\lambda)=\det(\lambda I-A).
 \end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">and so the eigenvalues are \(\lambda=-6\) and \(\lambda=3\)</p></article><article class="example example-like" id="example-48"><h6 class="heading">
+<p data-braille="continuation">and so the eigenvalues are \(\lambda=-6\) and \(\lambda=3\)</p></article><article class="example example-like" id="example-52"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenvalues and powers of a matrix.</span>
 </h6>
-<p id="p-1045">Let \(A= \begin{bmatrix} 1 \amp 2 \\ 2 \amp 1 \end{bmatrix}\text{.}\)</p>
+<p id="p-1103">Let \(A= \begin{bmatrix} 1 \amp 2 \\ 2 \amp 1 \end{bmatrix}\text{.}\)</p>
 <ol class="decimal">
-<li id="li-354">\(\vec x_1= \begin{bmatrix} 1 \\ 1 \end{bmatrix}\) and \(\vec x_2 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}\) are eigenvectors since<div class="displaymath">
+<li id="li-368">\(\vec x_1= \begin{bmatrix} 1 \\ 1 \end{bmatrix}\) and \(\vec x_2 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}\) are eigenvectors since<div class="displaymath">
 \begin{align*}
 A\vec x_1\amp=3\vec x_1\\
 A\vec x_2\amp=(-1)\vec x_2\text{.}
 \end{align*}
 </div>
 </li>
-<li id="li-355">Let \(P=[\vec x_1\ \vec x_2]= 
+<li id="li-369">Let \(P=[\vec x_1\ \vec x_2]= 
 \begin{bmatrix} 1\amp 1\\ 1\amp -1 \end{bmatrix}\text{.}\) Then \(P^{-1}=
 \frac12\begin{bmatrix} 1\amp 1\\ 1\amp -1 \end{bmatrix}\text{.}\)</li>
-<li id="li-356">Let \(D=P^{-1}AP\text{.}\) By direct computation we have<div class="displaymath">
+<li id="li-370">Let \(D=P^{-1}AP\text{.}\) By direct computation we have<div class="displaymath">
 \begin{equation*}
 D=P^{-1}AP=\frac12 
 \begin{bmatrix} 1\amp 1\\ 1\amp -1 \end{bmatrix}
@@ -224,8 +227,8 @@ D=P^{-1}AP=\frac12
 \end{equation*}
 </div>
 </li>
-<li id="li-357">We compute the powers of \(D\) as the <a class="xref" data-knowl="./knowl/MultiplyDiagonalMatrices.html" title="Proposition 2.8.5: Multiplication of diagonal matrices">product of diagonal matrices</a>: \(D^n=\begin{bmatrix} 3^n\amp 0\\ 0\amp (-1)^n \end{bmatrix}\text{.}\)</li>
-<li id="li-358">By rebracketing the matrix product,<div class="displaymath">
+<li id="li-371">We compute the powers of \(D\) as the <a class="xref" data-knowl="./knowl/MultiplyDiagonalMatrices.html" title="Proposition 2.8.5: Multiplication of diagonal matrices">product of diagonal matrices</a>: \(D^n=\begin{bmatrix} 3^n\amp 0\\ 0\amp (-1)^n \end{bmatrix}\text{.}\)</li>
+<li id="li-372">By rebracketing the matrix product,<div class="displaymath">
 \begin{align*}
 A^n \amp =(PDP^{-1})^n\\
 \amp =(PDP^{-1})(PDP^{-1})\cdots (PDP^{-1})(PDP^{-1})\\
@@ -234,7 +237,7 @@ A^n \amp =(PDP^{-1})^n\\
 \end{align*}
 </div>
 </li>
-<li id="li-359">By an easy computation,<div class="displaymath">
+<li id="li-373">By an easy computation,<div class="displaymath">
 \begin{align*}
 P D^n P^{-1} \amp =
 \frac12 \begin{bmatrix} 1\amp 1\\ 1\amp -1 \end{bmatrix}
@@ -247,7 +250,7 @@ P D^n P^{-1} \amp =
 \end{align*}
 </div>
 </li>
-<li id="li-360">And so<div class="displaymath">
+<li id="li-374">And so<div class="displaymath">
 \begin{equation*}
 A^n=
 \begin{bmatrix} 
@@ -259,7 +262,7 @@ A^n=
 </li>
 </ol>
 <p data-braille="continuation">Observe that for small values of \(n\) we may easily compute the entries of \(A^n\text{:}\)</p>
-<figure class="table table-like" id="table-6"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.2.9<span class="period">.</span></span><span class="space"> </span></figcaption><table>
+<figure class="table table-like" id="table-8"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.2.9<span class="period">.</span></span><span class="space"> </span></figcaption><table>
 <tr>
 <td class="c m b1 r0 l0 t0 lines">\(n\)</td>
 <td class="c m b1 r0 l0 t0 lines">\(\frac{3^n+(-1)^n}2\)</td>
@@ -290,7 +293,7 @@ A^n=
 <td class="c m b0 r0 l0 t0 lines">\(122\)</td>
 <td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(121\)</td>
 </tr>
-</table></figure><p id="p-1046">Compare this result with <a class="xref" data-knowl="./knowl/MatrixPowerExample.html" title="Table 2.6.1: Powers of \(A=\bigl[\begin{smallmatrix}1\amp2\\2\amp1\end{smallmatrix}\bigr]\)">these earlier computations</a>.</p></article></section></div></main>
+</table></figure><p id="p-1104">Compare this result with <a class="xref" data-knowl="./knowl/MatrixPowerExample.html" title="Table 2.6.1: Powers of \(A=\bigl[\begin{smallmatrix}1\amp2\\2\amp1\end{smallmatrix}\bigr]\)">these earlier computations</a>.</p></article></section></div></main>
 </div>
 </body>
 </html>

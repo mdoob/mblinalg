@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:32:10-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:10:04-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p>\(L_1(\vec e_i)-L_2(\vec e_i)=\vec 0\) by assumption. If \(\vec x=(x_1,\dots,x_m)\text{,}\) we may write \(\vec x = x_1\vec e_1+x_2\vec e_2+\cdots +x_m\vec e_m.\) Then</p>
-<div class="displaymath">
-\begin{align*}
-L_1(\vec x)
-\amp =L_1(x_1\vec e_1+x_2\vec e_2+\cdots +x_m\vec e_m)\\
-\amp =x_1L_1(\vec e_1)+x_2L_1(\vec e_2)+\cdots +x_mL_1(\vec e_m)\\
-\amp =x_1L_2(\vec e_1)+x_2L_2(\vec e_2)+\cdots +x_mL_2(\vec e_m)\\
-\amp =L_2(x_1\vec e_1+x_2\vec e_2+\cdots +x_m\vec e_m)\\
-\amp= L_2(\vec x)
-\end{align*}
-</div>
-<p data-braille="continuation">From this we see that</p>
+<body><article class="hiddenproof"><p>By definition of the span of a set,</p>
 <div class="displaymath">
 \begin{equation*}
-L_1(\vec x)-L_2(\vec x) = \vec 0.
+\vec x=\sum_{i=1}^m r_i\vec x_i
+\end{equation*}
+</div>
+<p data-braille="continuation">and so</p>
+<div class="displaymath">
+\begin{equation*}
+A(\vec x)=A(\sum_{i=1}^m r_i\vec x_i)=\sum_{i=1}^m r_iA(\vec x_i)
+=\sum_{i=1}^mr_i\lambda_i\vec x_i\text{.}
+\end{equation*}
+</div>
+<p>Similarly,</p>
+<div class="displaymath">
+\begin{equation*}
+A^n(\vec x)=A^n(\sum_{i=1}^m r_i\vec x_i)=\sum_{i=1}^m r_iA^n(\vec x_i)
+=\sum_{i=1}^mr_i\lambda_i^n\vec x_i\text{.}
 \end{equation*}
 </div></article></body>
 </html>

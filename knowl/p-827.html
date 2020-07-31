@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:32:05-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:09:58-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>On the other hand, is \(\vec z=(1,-6,3,3)\text{.}\) then \(\vec z=(1-t)\vec x+t\vec y\) gives four equations,</p>
+<p>The law of cosines then implies</p>
 <div class="displaymath">
 \begin{align*}
-1(1-t)+1t\amp=1 \amp\amp\to 1=1\\
-2(1-t)+(-2)t\amp=-6  \amp\amp\to t=2\\
-(-1)(1-t)+1t\amp=3 \amp\amp\to t=2\\
-3(1-t)+3t\amp=3 \amp\amp\to 3=3
+d^2 \amp= \|\vec x\|^2 + \|\vec y\|^2 -2 \|\vec x\| \|\vec y\| \cos\theta\\
+\amp= \|\vec x\|^2 + \|\vec y\|^2 -2 (\vec x\cdot \vec y) \\
+\amp= \vec x\cdot \vec x +\vec y\cdot \vec y  -2 (\vec x\cdot \vec y) \\
+\amp= \vec x\cdot \vec x  -2 (\vec x\cdot \vec y) +\vec y\cdot \vec y \\
+\amp= (\vec x - \vec y)\cdot (\vec x - \vec y)\\
+\amp= \|\vec x - \vec y\|^2
 \end{align*}
 </div>
-<p data-braille="continuation">Since all four equation are valid when \(t=2\) the vector \(\vec z\) is on the line. It is easy to verify that \(\vec z=-\vec x+2\vec y\text{.}\)</p>
-<span class="incontext"><a href="section-27.html#p-827">in-context</a></span>
+<p data-braille="continuation">and so, if we denote the distance from \(\vec x\) to \(\vec y\) by \(d(\vec x,\vec y)\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+d(\vec x,\vec y)= \sqrt{\|\vec x-\vec y\|^2}= \|\vec x-\vec y\|
+\end{equation*}
+</div>
+<p data-braille="continuation">The figure is certainly valid for \(\R^2\) (and \(\R^3\)), and it motivates our general definition in \(\R^n\text{:}\)</p>
+<span class="incontext"><a href="section-26.html#p-827">in-context</a></span>
 </body>
 </html>

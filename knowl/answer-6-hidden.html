@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:09:56-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="answer solution-like">
+<p>This takes a little trick. Start with the permutation</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma=
+\begin{pmatrix}
+1\amp 2\amp  3\amp \cdots\amp  n\\ 
+i_1\amp i_2\amp i_3\amp \cdots\amp  i_n
+\end{pmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">and rearrange the columns so that the bottom row is \(123\cdots n\text{.}\) For example, if \(\sigma= \begin{pmatrix} 123456\\324165\end{pmatrix}\text{,}\) rearranging the colums gives the permutation \(\begin{pmatrix} 421365\\123456\end{pmatrix}\text{.}\)</p>
+<p>Since we are using a first-column expansion, the order of deletion of columns from \(A\) is \(1,2,\ldots,n\text{,}\) which is exactly the second row in our new notation. The first row of our new notation then gives the order of deletion of rows from \(A\text{.}\) Note that \(a_{1,\sigma(1)}a_{2,\sigma(2)}\cdots a_{n,\sigma(n)}\) is the resulting expression, but the order of the terms has been changed so that the second subscripts are in natural order.</p>
+</div></body>
+</html>

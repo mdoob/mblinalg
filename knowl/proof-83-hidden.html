@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:32:09-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:10:03-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p>By definition of the span of a set,</p>
+<body><article class="hiddenproof"><p>From <a class="xref" data-knowl="./knowl/SubspaceDefinition.html" title="Definition 4.9.12: Subspace of \(\mathbb{R}^n\)">Definition 4.9.12</a> it is sufficient to show that two properties of closure under addition and of closure under scalar multiplication are satisfied:</p>
+<ul class="disc">
+<li>
+<p>Closure under addition:</p>
 <div class="displaymath">
-\begin{equation*}
-\vec x=\sum_{i=1}^m r_i\vec x_i
-\end{equation*}
+\begin{align*}
+A(\vec x+\vec y)\amp=A(\vec x)+A(\vec y)\\
+\amp=\lambda \vec x + \lambda \vec y \\
+\amp= \lambda (\vec x + \vec y)   
+\end{align*}
 </div>
-<p data-braille="continuation">and so</p>
+</li>
+<li>
+<p>Closure under scalar multiplication:</p>
 <div class="displaymath">
-\begin{equation*}
-A(\vec x)=A(\sum_{i=1}^m r_i\vec x_i)=\sum_{i=1}^m r_iA(\vec x_i)
-=\sum_{i=1}^mr_i\lambda_i\vec x_i\text{.}
-\end{equation*}
+\begin{align*}
+A(r\vec x)\amp=rA(\vec x)\\
+\amp=r(\lambda \vec x)\\
+\amp= \lambda (r\vec x)
+\end{align*}
 </div>
-<p>Similarly,</p>
-<div class="displaymath">
-\begin{equation*}
-A^n(\vec x)=A^n(\sum_{i=1}^m r_i\vec x_i)=\sum_{i=1}^m r_iA^n(\vec x_i)
-=\sum_{i=1}^mr_i\lambda_i^n\vec x_i\text{.}
-\end{equation*}
-</div></article></body>
+</li>
+</ul></article></body>
 </html>

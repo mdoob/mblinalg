@@ -1,19 +1,47 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:32:12-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:10:06-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Notice that the function \(\cos(x)\) is decreasing for \(0\le x\le\pi\text{.}\) By decreasing we mean that if \(x_1 \lt x_2\text{,}\) then \(\cos(x_1) \gt \cos(x_2)\) (or, more intuitively, the function goes downhill as we go from left to right). There is an important implication from this: if \(y=\cos(x)\) for some \(x\) with \(0\le x\le\pi\text{,}\) then for any for any other \(x'\) in the same range, we have \(\cos(x') \gt y\) (when \(x'\lt x\)) or \(\cos(x') \lt y\) (when \(x'\gt x\)). In particular this means that for any given \(y_0\text{,}\) there is at most one \(x_0\) with \(0\le x_0\le\pi\) so that \(y_0=\cos(x_0)\text{.}\) In fact, the intermediate value theorem from the Calculus implies that for any \(y_0\) satisfying \(-1\leq y_0 \leq 1\) there is some \(x_0\) satisfying \(0\le x_0\le\pi\) so that \(y_0=\cos(x_0)\text{.}\)</p>
-<span class="incontext"><a href="section-49.html#p-1190">in-context</a></span>
+<p>Suppose we have a linear transformation \(L\colon \R^m\to\R^n\text{.}\) As usual, let \(\{\vec e_1,\vec e_2,\ldots,\vec e_m\}\) be the standard basis for \(\R^m\text{.}\) Consider the vectors \(\{L(\vec e_1) ,L(\vec e_2), \ldots, L(\vec e_m)\}\) in \(\R^n\text{.}\) We form a matrix \(A\) by using the entries of \(L(\vec e_k)\) for the \(k\)-th column. We can think of the construction in the following way:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{cccc}
+A = \amp [L(\vec e_1) \amp L(\vec e_2) \amp \cdots \amp L(\vec e_m)]\\
+\amp \uparrow \amp \uparrow  \amp \amp \uparrow\\
+\amp \text{column } 1\amp \text{column } 2\amp\amp \text{column } m
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">Notice that \(A\) is an \(n\times m\) matrix, and hence we have \(L_A\colon\R^m\to\R^n\text{.}\) We evaluate this transformation at \(\vec e_1\text{:}\)</p>
+<div class="displaymath">
+\begin{equation}
+L_A(\vec e_1)=
+A\begin{bmatrix}
+1\\0\\\vdots\\0
+\end{bmatrix}
+=L(\vec e_1)\tag{6.6.1}
+\end{equation}
+</div>
+<p data-braille="continuation">Similarly</p>
+<div class="displaymath">
+\begin{equation*}
+L_A(\vec e_k)=L(\vec e_k) \text{ for } 1\leq k\leq n
+\end{equation*}
+</div>
+<p data-braille="continuation">As we have seen in <a class="xref" data-knowl="./knowl/LinearTransformationOnStandardBasis.html" title="Theorem 6.3.2: (The value of \(L\) on the standard basis determines \(L\) everywhere)">Theorem 6.3.2</a> a linear transformation is determined by its values on the standard basis. This implies \(L=L_A\text{.}\) We call the constructed matrix \(A\) the <em class="emphasis">matrix representation</em> of \(L\text{.}\)</p>
+<span class="incontext"><a href="section-44.html#p-1190">in-context</a></span>
 </body>
 </html>

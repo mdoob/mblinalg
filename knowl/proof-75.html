@@ -1,41 +1,34 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:32:08-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:10:01-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
 <article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
-<p>Since \(\{\vec y_1, \vec y_2,\ldots,\vec y_t\}\) is a spanning set, we may write</p>
+<p>We compute the dot product:</p>
 <div class="displaymath">
 \begin{align*}
-\vec x_1 \amp= r_{11}\vec y_1+r_{12}\vec y_2+\cdots+r_{1t}\vec y_t\\
-\vec x_2 \amp= r_{21}\vec y_1+r_{22}\vec y_2+\cdots+r_{2t}\vec y_t\\
-\vdots\\
-\vec x_i \amp= r_{i1}\vec y_1+r_{i2}\vec y_2+\cdots+r_{it}\vec y_t
-=\sum_{j=1}^t r_{ij}\vec y_j\\
-\vdots\\
-\vec x_s \amp= r_{s1}\vec y_1+r_{s2}\vec y_2+\cdots+r_{st}\vec y_t\text{.}
+(\vec u - \textrm{proj}_{\vec v} \vec u)\cdot\vec v 
+\amp= \vec u\cdot\vec v - \textrm{proj}_{\vec v} \vec u\cdot\vec v\\
+\amp=\vec u \cdot \vec v 
+- \left(\frac{\vec u\cdot\vec v}{\vec v\cdot\vec v} 
+\vec v\right) \cdot\vec v\\
+\amp=\vec u \cdot \vec v 
+- \left(\frac{\vec u\cdot\vec v}{\vec v\cdot\vec v}\right) 
+(\vec v \cdot\vec v)\\
+\amp=\vec u \cdot \vec v -\vec u \cdot \vec v \\
+\amp=0
 \end{align*}
-</div>
-<p data-braille="continuation">Now we take a linear combination of \(\{\vec x_1, \vec x_2,\ldots,\vec x_s\}\) and set it equal to \(\vec0\text{.}\)</p>
-<div class="displaymath">
-\begin{align*}
-\vec0=
-\sum_{i=1}^s u_i \vec x_i \amp= \sum_{i=1}^s u_i\sum_{j=1}^t
-r_{ij}\vec y_j\\
-\amp= \sum_{j=1}^t (\sum_{i=1}^s u_i r_{ij})\vec y_j\\
-\amp= \sum_{j=1}^t (\sum_{i=1}^s r_{ji}^T u_i)\vec y_j\\
-\amp= \sum_{j=1}^t (R^T \vec u)_j \vec y_j
-\end{align*}
-</div>
-<p data-braille="continuation">where \(R=[r_{ij}]\) and \(\vec u=(u_1,\ldots,u_s)\text{.}\) Now if \(R^T\vec u=\vec 0\) for some \(\vec u\not=\vec0\text{,}\) then \(\sum_{i=1}^s u_i \vec x_i =\vec 0\) with \(\vec u\not=\vec0\text{.}\) This contradicts the linear independence of \(\{\vec y_1, \vec y_2,\ldots,\vec y_t\}\text{.}\) Hence the reduced row echelon form of \(R^T\) can have no free variables, and so \(R^T\) can not have more columns than rows. Since \(R^T\) is an \(t\times s\) matrix, we have \(s\leq t\text{.}\)</p></article><span class="incontext"><a href="section-33.html#proof-75">in-context</a></span>
+</div></article><span class="incontext"><a href="section-31.html#proof-75">in-context</a></span>
 </body>
 </html>

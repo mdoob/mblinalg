@@ -20,6 +20,11 @@
         </p>
        
         <example xml:id="PlaneRotation"><title>A rotation in the plane</title>
+            <p>
+            We start with a point <m>\vec x</m> in the plane and
+            rotate in through an angle <m>\theta</m> counterclockwise around
+            the origin. This new point is <m>L(\vec x)</m>.
+            </p>
             <figure>
             <caption> The vector <m>\vec x</m> rotated to <m>L(\vec x)</m>
             though an angle <m>\theta</m></caption>
@@ -43,6 +48,11 @@
        </example>
        
        <example xml:id="PlaneReflection"><title> A reflection in the plane</title>
+            <p>
+            We start with a point <m>\vec x</m> in the plane and
+            reflect in across the line with equation <m>y=x</m>.
+            This new point is <m>L(\vec x)</m>.
+            </p>
             <figure>
             <caption>The reflection of the vector <m>\vec x</m> by the line
                 <m>y=x</m></caption>
@@ -64,6 +74,11 @@
        </example>
        
        <example xml:id="PlaneProjection"><title> A projection in the plane</title>
+            <p>
+            We start with a point <m>\vec x</m> in the plane and
+            drop a perpendicular to the line with equation <m>y=x</m>.
+            This new point is <m>L(\vec x)</m>.
+            </p>
             <figure>
             <caption/>
             <image width="50%">
@@ -86,6 +101,12 @@
        </example>
        
        <example xml:id="PlaneDilation"><title>A dilation in the plane</title>
+            <p>
+            We start with a real number <m>s</m>. For a point <m>\vec x \not=\vec0</m>,
+            let <m>L(\vec x)=s\vec x</m>. Then <m>L(\vec x)</m>
+            is on joining <m>\vex x</m> and <m>\vec 0</m>. The distance from 
+            <m>L(\vec x)</m> to <m>\vec 0</m> has been stretched by a factor of <m>s</m>.
+            </p>
             <figure>
             <caption/>
             <image width="50%">

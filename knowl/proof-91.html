@@ -1,32 +1,59 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:32:11-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:10:05-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
 <article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
-<p>We can compute this in a different way: The equation <a class="xref" data-knowl="./knowl/MatrixRep.html" title="Equation 6.6.1">(6.6.1)</a> says</p>
-<div class="displaymath">
-\begin{align*}
-L(\vec e_1)
-\amp=A\begin{bmatrix}1\\0\\\vdots\\0\end{bmatrix}\\
-\amp=\begin{bmatrix}a_{1,1}\\a_{2,1}\\\vdots\\a_{n,1}\end{bmatrix}\\
-\amp=a_{1,1}\vec e_1+a_{2,1}\vec e_2+\cdots+a_{n,1}\vec e_n
-\end{align*}
-</div>
-<p data-braille="continuation">and, similarly,</p>
+<ol class="decimal">
+<li>
+<p>We evaluate \(L(\vec 0+\vec 0)\) in two ways:</p>
+<ol class="lower-alpha">
+<li><p>Since \(\vec 0+\vec 0=\vec0\text{,}\) we have \(L(\vec 0+\vec 0)=L(\vec 0)\)</p></li>
+<li>
+<p>Since \(\vec 0+\vec 0=2\vec0\text{,}\) we have \(L(\vec 0+\vec 0)= L(2\vec 0)=2L(\vec 0)\text{,}\) and so</p>
 <div class="displaymath">
 \begin{equation*}
-L(\vec e_i)=a_{1,i}\vec e_1+a_{2,i}\vec e_2+\cdots+a_{n,i}\vec e_n
+2L(\vec 0)=L(\vec 0)\\L(\vec 0)=\vec0
 \end{equation*}
-</div></article><span class="incontext"><a href="section-44.html#proof-91">in-context</a></span>
+</div>
+</li>
+</ol>
+</li>
+<li><p>\(\displaystyle L(\vec x-\vec y)
+=L(\vec x+(-1)\vec y)
+=L(\vec x)+L((-1)\vec y)
+L(\vec x)-L(\vec y)\)</p></li>
+<li><p>\(L(\vec x-\vec y)=\vec0\) if and only if \(L(\vec x)-L(\vec y)=\vec0\) which in turn implies \(L(\vec x) =L(\vec y)\text{.}\)</p></li>
+<li><p>\(\displaystyle L(r_1\vec x_1+r_2\vec x_2)
+=L(r_1\vec x_1)+L(r_2\vec x_2)
+=r_1L(\vec x_1)+r_2L(\vec x_2) \)</p></li>
+<li>
+<p>We apply the addition property repeatedly:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+L(r_1\vec x_1\amp+r_2 \vec x_2+\cdots+r_n\vec x_n)\\
+\amp = L(r_1\vec x_1)+L(r_2 \vec x_2+\cdots+r_n\vec x_n)\\
+\amp = r_1L(\vec x_1)+ L(r_2\vec x_2+\cdots+r_n\vec x_n)\\
+\amp = r_1L(\vec x_1)+ L(r_2\vec x_2)+L(r_3\vec x_3+\cdots+r_n\vec x_n)\\
+\amp = r_1L(\vec x_1)+ r_2L(\vec x_2)+L(r_3\vec x_3+\cdots+r_n\vec x_n)\\
+\amp \,\,\vdots\\
+\amp = r_1L(\vec x_1)+r_2 L(\vec x_2)+\cdots+r_nL(\vec x_n)
+\end{array}
+\end{equation*}
+</div>
+</li>
+</ol></article><span class="incontext"><a href="section-41.html#proof-91">in-context</a></span>
 </body>
 </html>

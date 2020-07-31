@@ -1,30 +1,45 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:32:06-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:10:00-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<ul class="disc">
-<li><p>Suppose that \(\vec v=(1,0)\) and \(\vec u=(u_1,u_2)\text{.}\) Then the line through \(\vec v\) is simply the \(x\)-axis, and \(\|\vec v\|=1\text{,}\) and so \(\textrm{proj}_{\vec v} \vec u =\left((u_1,u_2)\cdot(1,0) \right) \vec v 
-= (u_1,0)\text{.}\) This means that the projection of \((x_1,x_2)\) onto the \(x\)-axis is \((x_1,0)\text{,}\) just as would be expected.</p></li>
-<li><p>Suppose \(\vec v=(1,1)\) and \(\vec u=(u_1,u_2)\text{.}\) Then the line through \(\vec v\) has equation \(y=x\text{,}\) and \(\|\vec v\|=\sqrt2\text{.}\) We then have \(\textrm{proj}_{\vec v} \vec u=\frac{(u_1,u_2)\cdot(1,1)}2 \vec v
-=\left(\frac{(u_1+u_2)}2,\frac{(u_1+u_2)}2\right)\)</p></li>
-<li><p>Suppose we want to drop a perpendicular from the point \(\vec u=(m,-1)\) to the line \(y=mx\text{.}\) The vector \(\vec v=(1,m)\) is on that line. It then follows that \(\textrm{proj}_{\vec v} \vec u
-=\frac{(m,-1)\cdot(1,m)}{\|\vec v\|^2} \vec v=0\vec v=\vec 0\text{.}\) This implies that the line joining 	\((m,-1)\) and \((0,0)\text{,}\) which has slope \(-\frac1m\text{,}\) is perpendicular to the line with equation \(y=mx\text{.}\) This implies that the product of the slopes of two orthogonal lines is \(-1\text{.}\)</p></li>
-<li><p>Suppose we want to drop a perpendicular from the point \(\vec u=(u_1,u_2)\) to the line \(y=mx\text{.}\)  The vector \(\vec v=(1,m)\) is on that line, and \(\|\vec v\|=\sqrt{1+m^2}\text{.}\)  It then follows that \(\textrm{proj}_{\vec v} \vec u =\frac{(u_1,u_2)\cdot(1,m)}{1+m^2} \vec v
-=\frac1{1+m^2}(u_1+mu_2, m(u_1+mu_2))
-=\left(\frac{u_1+mu_2}{1+m^2},\frac{mu_1+m^2u_2}{1+m^2}\right)\)</p></li>
-</ul>
-<p data-braille="continuation">The following figure illustrates these examples (note that the first examples are just the special cases of the last one).</p>
-<span class="incontext"><a href="section-31.html#p-915">in-context</a></span>
+<p>Now we carry out some computations:</p>
+<div class="displaymath">
+\begin{align*}
+\|\vec x\times\vec y\|^2
+\amp=\|(x_2y_3-x_3y_2, x_3y_1-x_1y_3, x_1y_2-x_2y_1)\|^2\\
+\amp= x_2^2y_3^2 - 2x_2x_3y_2y_3 + x_3^2y_2^2\\
+\amp\quad+x_3^2y_1^2 - 2x_1x_3y_1y_3 + x_1^2y_3^2\\
+\amp\quad+x_1^2y_2^2 - 2x_1x_2y_1y_2 + x_1^2y_2^2\\
+\|\vec x\|^2 \|\vec y\|^2
+\amp=x_1^2y_1^2 + x_1^2y_2^2 + x_1^2y_3^2\\
+\amp=+ x_2^2y_1^2 +x_2^2y_2^2 + x_2^2y_3^2\\
+\amp\quad+x_3^2y_1^2 +x_3^2y_2^2 + x_3^2y_3^2\\
+(\vec x\cdot\vec y)^2
+\amp=(x_1y_1+x_2y_2+x_3y_3)^2\\
+\amp= x_1^2y_1^2+x_2^2y_2^2+x_3^2y_3^2
++2 x_1x_2y_1y_2 +2x_1x_3y_1y_3 +2 x_2x_3y_2y_3
+\end{align*}
+</div>
+<p data-braille="continuation">Upon careful examination we conclude</p>
+<div class="displaymath">
+\begin{equation*}
+\|\vec x\times\vec y\|^2 + (\vec x\cdot\vec y)^2 
+= \|\vec x\|^2 \|\vec y\|^2
+\end{equation*}
+</div>
+<span class="incontext"><a href="CrossProduct.html#p-915">in-context</a></span>
 </body>
 </html>

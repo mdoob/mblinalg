@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:31:50-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:09:41-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -65,6 +67,7 @@ MathJax.Hub.Config({
 \newcommand{\adj}{\mathop{\textrm{adj}}}
 \newcommand{\proj}{\mathop{\textrm{proj}}}
 \newcommand{\Span}{\mathop{\textrm{span}}} 
+\newcommand{\sgn}{\mathop{\textrm{sgn}}}
 
 \newcommand{\rowint}[2]{R_{#1} \leftrightarrow R_{#2}}
 \newcommand{\rowmul}[2]{R_{#1}\gets {#2}R_{#1}}
@@ -103,10 +106,10 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-32"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.8</span> <span class="title">Geometric applications</span>
 </h2>
-<section class="introduction" id="introduction-12"><p id="p-929">The dot product and cross product in \(\R^3\) allow us to compute many different geometric properties of lines and planes.</p></section><section class="subsection" id="subsection-74"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-13"><p id="p-987">The dot product and cross product in \(\R^3\) allow us to compute many different geometric properties of lines and planes.</p></section><section class="subsection" id="subsection-79"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.8.1</span> <span class="title">The equation of the line of intersection of two planes</span>
 </h3>
-<p id="p-930">Suppose we are given the equation of two planes and want the equation of the line of intersection. If the two equations are</p>
+<p id="p-988">Suppose we are given the equation of two planes and want the equation of the line of intersection. If the two equations are</p>
 <div class="displaymath">
 \begin{equation*}
 a_1x+b_1y+c_1z+d_1=0 \rlap{\text{ and}}\\
@@ -131,8 +134,8 @@ a_2\amp b_2\amp c_2\amp -d_2
 \right]
 \end{equation*}
 </div>
-<p id="p-931">When this matrix is put in reduced row echelon form, there will be one free variable, which we may call \(t\text{.}\) Writing the solution as a vector and rearranging give the equation of a line.</p>
-<p id="p-932">Here is an example to show how this technique works: the equations of the planes are</p>
+<p id="p-989">When this matrix is put in reduced row echelon form, there will be one free variable, which we may call \(t\text{.}\) Writing the solution as a vector and rearranging give the equation of a line.</p>
+<p id="p-990">Here is an example to show how this technique works: the equations of the planes are</p>
 <div class="displaymath">
 \begin{equation*}
 x+y+z=-2\\
@@ -140,8 +143,8 @@ x+y+z=-2\\
 \end{equation*}
 </div>
 <p data-braille="continuation">Here is the picture of the two planes and the line of intersection:</p>
-<figure class="figure figure-like" id="figure-48"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><object data="images/image-51.html" id="image-51" width="420" height="420"><embed src="images/image-51.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.1<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-933">The augmented matrix for the system is</p>
+<figure class="figure figure-like" id="figure-49"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><object data="images/image-52.html" id="image-52" width="420" height="420"><embed src="images/image-52.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.1<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-991">The augmented matrix for the system is</p>
 <div class="displaymath">
 \begin{equation*}
 \left[
@@ -169,15 +172,15 @@ x+y+z=-2\\
 (x,y,z)=(-4+2t,6-3t,t)=(-4,6,0) + t(2,-3,1)
 \end{equation*}
 </div>
-<p id="p-934">As another example, consider the two planes with equations written as</p>
+<p id="p-992">As another example, consider the two planes with equations written as</p>
 <div class="displaymath">
 \begin{equation*}
 x+y=2\\
 x+y-z=3
 \end{equation*}
 </div>
-<figure class="figure figure-like" id="figure-49"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><object data="images/image-52.html" id="image-52" width="420" height="420"><embed src="images/image-52.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.2<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-935">Then the augmented matrix is</p>
+<figure class="figure figure-like" id="figure-50"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><object data="images/image-53.html" id="image-53" width="420" height="420"><embed src="images/image-53.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.2<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-993">Then the augmented matrix is</p>
 <div class="displaymath">
 \begin{equation*}
 \left[
@@ -208,7 +211,7 @@ x+y-z=3
 <p data-braille="continuation">which is the equation of the line \(L\text{.}\)</p></section><section class="subsection" id="IntersectionLinePlane"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.8.2</span> <span class="title">Intersection of a Line and a Plane</span>
 </h3>
-<p id="p-936">Suppose we have a line \(L\) with equation \((x_0,y_0,z_0)+t\vec {n_0}\) and a plane with equations \(ax+by+cz=0\text{.}\) Is there a point in both the line and the plane, and, if so, what is it? As usual when discussing planes, let \(\vec n=(a,b,c)\text{.}\) Then a point \(\vec x=(x,y,z)\) is in the plane if and only if \(\vec x\cdot \vec n=0\text{.}\) If \(\vec x\) is also on the line, then \(\vec x=(x_0,y_0,z_0)=t\vec{n_0}\) for some \(t\text{.}\) Then</p>
+<p id="p-994">Suppose we have a line \(L\) with equation \((x_0,y_0,z_0)+t\vec {n_0}\) and a plane with equations \(ax+by+cz=0\text{.}\) Is there a point in both the line and the plane, and, if so, what is it? As usual when discussing planes, let \(\vec n=(a,b,c)\text{.}\) Then a point \(\vec x=(x,y,z)\) is in the plane if and only if \(\vec x\cdot \vec n=0\text{.}\) If \(\vec x\) is also on the line, then \(\vec x=(x_0,y_0,z_0)=t\vec{n_0}\) for some \(t\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
 ((x_0,y_0,z_0)+t\vec{n_0})\cdot\vec n=0\\
@@ -221,37 +224,37 @@ x+y-z=3
 t=-\frac{(x_0,y_0,z_0)\cdot \vec n}{\vec{n_0}\cdot\vec n}
 \end{equation*}
 </div>
-<p id="p-937">Here is the picture of the situation. The points on the line are determined by using all the different values of \(t\text{.}\) The point of intersection is the particular \(t\) where \(t=-\frac{(x_0,y_0,z_0)\cdot \vec n}{\vec{n_0}\cdot\vec n}\text{.}\)</p>
-<figure class="figure figure-like" id="figure-50"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-53.html" id="image-53" width="450" height="450"><embed src="images/image-53.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-938">What if \(\vec{n_0}\cdot\vec n=0\text{?}\) Then a line with direction vector \(n\) (that is, orthogonal to the plane) itself is orthogonal to \(L\text{.}\) If \((x_0,y_0,z_0)\) is not in the plane, the line is then parallel to the plane and never intersects it. On the other hand, if \((x_0,y_0,z_0)\) is in the plane, the line is then actually contained in the plane, so every point on the line intersects it.</p>
-<p id="p-939">In the following picture, the red line had direction vector \(\vec n=(a,b,c)\) and hence is orthogonal to the plane. Since the line \(L\) has direction vector \(\vec{n_0}\text{,}\) and \(\vec{n_0}\cdot\vec{n}=0\text{,}\) \(L\) is also orthogonal to the red line. That makes the plane and the line \(L\) parallel.</p>
+<p id="p-995">Here is the picture of the situation. The points on the line are determined by using all the different values of \(t\text{.}\) The point of intersection is the particular \(t\) where \(t=-\frac{(x_0,y_0,z_0)\cdot \vec n}{\vec{n_0}\cdot\vec n}\text{.}\)</p>
 <figure class="figure figure-like" id="figure-51"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-54.html" id="image-54" width="450" height="450"><embed src="images/image-54.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure></section><section class="subsection" id="subsection-76"><h3 class="heading hide-type">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-996">What if \(\vec{n_0}\cdot\vec n=0\text{?}\) Then a line with direction vector \(n\) (that is, orthogonal to the plane) itself is orthogonal to \(L\text{.}\) If \((x_0,y_0,z_0)\) is not in the plane, the line is then parallel to the plane and never intersects it. On the other hand, if \((x_0,y_0,z_0)\) is in the plane, the line is then actually contained in the plane, so every point on the line intersects it.</p>
+<p id="p-997">In the following picture, the red line had direction vector \(\vec n=(a,b,c)\) and hence is orthogonal to the plane. Since the line \(L\) has direction vector \(\vec{n_0}\text{,}\) and \(\vec{n_0}\cdot\vec{n}=0\text{,}\) \(L\) is also orthogonal to the red line. That makes the plane and the line \(L\) parallel.</p>
+<figure class="figure figure-like" id="figure-52"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-55.html" id="image-55" width="450" height="450"><embed src="images/image-55.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure></section><section class="subsection" id="subsection-81"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.8.3</span> <span class="title">Distance Between Two Lines</span>
 </h3>
-<p id="p-940">If two lines intersect, the distance between them is obviously \(0\text{.}\) Otherwise, there are two cases:</p>
+<p id="p-998">If two lines intersect, the distance between them is obviously \(0\text{.}\) Otherwise, there are two cases:</p>
 <ul class="disc">
-<li id="li-315"><p id="p-941">The lines lie in a plane, in which case the lines are <em class="emphasis">parallel</em>.</p></li>
-<li id="li-316"><p id="p-942">The lines do not lie in a plane, in which case the lines are <em class="emphasis">skew</em>.</p></li>
+<li id="li-329"><p id="p-999">The lines lie in a plane, in which case the lines are <em class="emphasis">parallel</em>.</p></li>
+<li id="li-330"><p id="p-1000">The lines do not lie in a plane, in which case the lines are <em class="emphasis">skew</em>.</p></li>
 </ul>
 <article class="paragraphs" id="paragraphs-17"><h5 class="heading"><span class="title">Parallel lines.</span></h5>
-<p id="p-943">We start with two parallel lines with equations</p>
+<p id="p-1001">We start with two parallel lines with equations</p>
 <ul class="disc">
-<li id="li-317"><p id="p-944">\(L_1\) with equation \((x,y,z)=\vec{X_1} + t_1\vec{n_1}\)</p></li>
-<li id="li-318"><p id="p-945">\(L_2\) with equation \((x,y,z)=\vec{X_2} + t_2\vec{n_2}\)</p></li>
+<li id="li-331"><p id="p-1002">\(L_1\) with equation \((x,y,z)=\vec{X_1} + t_1\vec{n_1}\)</p></li>
+<li id="li-332"><p id="p-1003">\(L_2\) with equation \((x,y,z)=\vec{X_2} + t_2\vec{n_2}\)</p></li>
 </ul>
-<figure class="figure figure-like" id="figure-52"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-55.html" id="image-55" width="450" height="450"><embed src="images/image-55.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figure class="figure figure-like" id="figure-53"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-56.html" id="image-56" width="450" height="450"><embed src="images/image-56.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><article class="paragraphs" id="paragraphs-18"><h5 class="heading"><span class="title">Skew lines.</span></h5>
-<p id="p-946">We start with the eqations of two skew lines:</p>
+<p id="p-1004">We start with the eqations of two skew lines:</p>
 <ul class="disc">
-<li id="li-319"><p id="p-947">\(L_1\) has equation \((x,y,z)=\vec{X_1}+t_1\vec{n_1}\text{,}\) \(-\infty \lt t \lt\infty\)</p></li>
-<li id="li-320"><p id="p-948">\(L_2\) has equation \((x,y,z)=\vec{X_2}+t_2\vec{n_2}\) \(-\infty \lt t \lt\infty\)</p></li>
+<li id="li-333"><p id="p-1005">\(L_1\) has equation \((x,y,z)=\vec{X_1}+t_1\vec{n_1}\text{,}\) \(-\infty \lt t \lt\infty\)</p></li>
+<li id="li-334"><p id="p-1006">\(L_2\) has equation \((x,y,z)=\vec{X_2}+t_2\vec{n_2}\) \(-\infty \lt t \lt\infty\)</p></li>
 </ul>
 <p data-braille="continuation">We want the (shortest) distance \(d\) between the lines.</p>
-<figure class="figure figure-like" id="figure-53"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-56.html" id="image-56" width="450" height="450"><embed src="images/image-56.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-949">The direction vector for \(L_1\) is \(\vec{n_1}\) while that of \(L_2\) is \(\vec{n_2}\text{.}\) Let us say that the shortest line segment joining \(L_1\) to \(L_2\) is on the line \(L\text{.}\) The length of the line segment, \(d\text{,}\) is the distance we wish to compute. In addition, let \(t_1\) and \(t_2\) be the particular values so both \(\vec{X_1}+t_1\vec{n_1}\) and \(\vec{X_2}+t_2\vec{n_2}\) lie on \(L\text{.}\)</p>
-<p id="p-950">Now \(L\) is perpendicular to both \(L_1\) and \(L_2\) , so the direction vector of \(L\) is orthogonal to both \(\vec{n_1}\) and \(\vec{n_2}\text{.}\) How can such a direction vector be produced? With the cross product, of course! And so we let \(\vec{n_1}\times\vec{n_2}\) be the direction vector of \(L\text{.}\) We then have, for some \(t_3\text{,}\)</p>
-<div class="displaymath" id="p-951">
+<figure class="figure figure-like" id="figure-54"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><object data="images/image-57.html" id="image-57" width="450" height="450"><embed src="images/image-57.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1007">The direction vector for \(L_1\) is \(\vec{n_1}\) while that of \(L_2\) is \(\vec{n_2}\text{.}\) Let us say that the shortest line segment joining \(L_1\) to \(L_2\) is on the line \(L\text{.}\) The length of the line segment, \(d\text{,}\) is the distance we wish to compute. In addition, let \(t_1\) and \(t_2\) be the particular values so both \(\vec{X_1}+t_1\vec{n_1}\) and \(\vec{X_2}+t_2\vec{n_2}\) lie on \(L\text{.}\)</p>
+<p id="p-1008">Now \(L\) is perpendicular to both \(L_1\) and \(L_2\) , so the direction vector of \(L\) is orthogonal to both \(\vec{n_1}\) and \(\vec{n_2}\text{.}\) How can such a direction vector be produced? With the cross product, of course! And so we let \(\vec{n_1}\times\vec{n_2}\) be the direction vector of \(L\text{.}\) We then have, for some \(t_3\text{,}\)</p>
+<div class="displaymath" id="p-1009">
 \begin{equation*}
 \vec{X_1}+t_1\vec{n_1} + t_3(\vec{n_1}\times\vec{n_2})
 =\vec{X_2}+t_2\vec{n_2}\\
@@ -259,7 +262,7 @@ t_1\vec{n_1} - t_2\vec{n_2} + t_3(\vec{n_1}\times\vec{n_2})
 =\vec{X_2}-\vec{X_1}\tag{$*$}
 \end{equation*}
 </div>
-<p id="p-952">In principle the problem is solved. We have three unknowns \(t_1\text{,}\) \(t_2\) and \(t_3\text{,}\) and each of the three coordinates gives an equation, so we have three equations in three unknowns. There is a quicker way: take the dot product of both sides of (\(*\)) above with \(\vec{n_1}\) and then with \(\vec{n_2}\text{.}\) This gives</p>
+<p id="p-1010">In principle the problem is solved. We have three unknowns \(t_1\text{,}\) \(t_2\) and \(t_3\text{,}\) and each of the three coordinates gives an equation, so we have three equations in three unknowns. There is a quicker way: take the dot product of both sides of (\(*\)) above with \(\vec{n_1}\) and then with \(\vec{n_2}\text{.}\) This gives</p>
 <div class="displaymath">
 \begin{equation*}
 \|\vec{n_1}\|^2 t_1 -(\vec{n_1}\cdot\vec{n_2})t_2

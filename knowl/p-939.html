@@ -1,19 +1,41 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:32:07-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:10:00-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>In the following picture, the red line had direction vector \(\vec n=(a,b,c)\) and hence is orthogonal to the plane. Since the line \(L\) has direction vector \(\vec{n_0}\text{,}\) and \(\vec{n_0}\cdot\vec{n}=0\text{,}\) \(L\) is also orthogonal to the red line. That makes the plane and the line \(L\) parallel.</p>
-<span class="incontext"><a href="section-32.html#p-939">in-context</a></span>
+<p>Next, suppose that the two equations are equations of the same plane. We consider this as a system of linear equations with augmented matrix</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+a_1\amp b_1\amp c_1\amp -d_1\\
+a_2\amp b_2\amp c_2\amp -d_2
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">which we put into reduced row echelon form to find all points in both planes. It takes just two elementary row operations. The first nonzero entry in the first row is changed to a one using \(R_1\gets \lambda_1R_1\) and the entry below this leading one is changed to a zero using \(R_2=R_2-\lambda_2R_1\text{.}\) This means that the second row in the reduced row echelon form is</p>
+<div class="displaymath">
+\begin{equation*}
+(a_2,b_2,c_2,d_2)-\lambda_2\lambda_1(a_1,b_1,c_1,d_1)\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">However, the first and second equations together have the same solutions as the first equation alone, that is, the second equation is actually superfluous. This makes the second row all zero, and so, setting \(r=\lambda_1\lambda_2\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+(a_2,b_2,c_2,d_2)=r(a_1,b_1,c_1,d_1)\text{.}
+\end{equation*}
+</div>
+<span class="incontext"><a href="section-30.html#p-939">in-context</a></span>
 </body>
 </html>

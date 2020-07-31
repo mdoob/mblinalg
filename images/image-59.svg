@@ -16,7 +16,7 @@
 <circle cx='120.45' cy='-48.18' fill='#000000' r='1.50562'/>
 </g>
 <g transform='matrix(0.996264 0 0 0.996264 104.659 234.412)'>
-<circle cx='84.315' cy='-84.315' fill='#000000' r='1.50562'/>
+<circle cx='48.18' cy='-120.45' fill='#000000' r='1.50562'/>
 </g>
 <g transform='matrix(0.996264 0 0 0.996264 104.659 234.412)'>
 <circle cx='0' cy='-0' fill='#000000' r='1.50562'/>
@@ -37,18 +37,18 @@
 <use x='260.656826' y='85.491601' xlink:href='#g2-61'/>
 <use x='273.082307' y='85.491601' xlink:href='#g1-120'/>
 <g transform='matrix(0.996264 0 0 0.996264 104.659 234.412)'>
-<path d='M 89.6382 -78.9918L 120.45 -48.18' fill='none' stroke='#000000' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10.0375' stroke-width='0.501875'/>
+<path d='M 53.5032 -115.127L 120.45 -48.18' fill='none' stroke='#000000' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10.0375' stroke-width='0.501875'/>
 </g>
 <g transform='matrix(0.996264 0 0 0.996264 104.659 234.412)'>
-<path d='M 84.315 -84.315L 88.2118 -77.5655L 91.0645 -80.4182L 84.315 -84.315Z' fill='#000000'/>
+<path d='M 48.18 -120.45L 52.0768 -113.7L 54.9295 -116.553L 48.18 -120.45Z' fill='#000000'/>
 </g>
 <g transform='matrix(0.996264 0 0 0.996264 104.659 234.412)'>
-<path d='M 84.315 -84.315L 88.2118 -77.5655L 91.0645 -80.4182L 84.315 -84.315Z' fill='none' stroke='#000000' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10.0375' stroke-width='0.501875'/>
+<path d='M 48.18 -120.45L 52.0768 -113.7L 54.9295 -116.553L 48.18 -120.45Z' fill='none' stroke='#000000' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10.0375' stroke-width='0.501875'/>
 </g>
-<use x='161.959653' y='144.827426' xlink:href='#g1-76'/>
-<use x='169.924159' y='144.827426' xlink:href='#g2-40'/>
-<use x='174.476485' y='144.827426' xlink:href='#g0-120'/>
-<use x='181.574866' y='144.827426' xlink:href='#g2-41'/>
+<use x='125.959658' y='108.827417' xlink:href='#g1-76'/>
+<use x='133.924165' y='108.827417' xlink:href='#g2-40'/>
+<use x='138.47649' y='108.827417' xlink:href='#g0-120'/>
+<use x='145.574871' y='108.827417' xlink:href='#g2-41'/>
 <use x='228.249822' y='189.00899' xlink:href='#g0-120'/>
 </g>
 </svg>

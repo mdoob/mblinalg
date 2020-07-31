@@ -1,52 +1,25 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:32:04-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:09:56-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><ol class="decimal">
-<li><p>\(\displaystyle \vec x\cdot \vec y=\sum_{i=1}^n x_iy_i=\sum_{i=1}^n y_ix_i=\vec y\cdot\vec x\)</p></li>
-<li>
-<p>By direct evaluation</p>
-<div class="displaymath">
-\begin{align*}
-\vec u\cdot(\vec x+\vec y)   
-\amp = \sum_{i=1}^n u_i(x_i+y_i)\\
-\amp = \sum_{i=1}^n (u_ix_i+u_iy_i)\\
-\amp = \sum_{i=1}^n u_ix_i+\sum_{i=1}^nu_iy_i\\
-\amp =\vec u\cdot \vec x+\vec u\cdot \vec y
-\end{align*}
-</div>
-</li>
-<li>
-<p>Using (1) and (2),</p>
+<body><article class="hiddenproof"><p>For those who know induction.</p>
+<p>The statement to prove is</p>
 <div class="displaymath">
 \begin{equation*}
-(\vec x+\vec y)\cdot\vec u 
-=  \vec u\cdot(\vec x+\vec y) =  \vec u\cdot \vec x+\vec u\cdot \vec y
-= \vec x\cdot \vec u + \vec y\cdot \vec u
+P_k\colon \text{The number of permutations of } k \text{ objects is } k!\,.
 \end{equation*}
 </div>
-</li>
-<li>
-<p>Evaluating each term:</p>
-<div class="displaymath">
-\begin{equation*}
-r(\vec x\cdot\vec y)= r\sum_{i=1}^n x_iy_i      \\
-(r\vec x)\cdot \vec y = \sum_{i=1}^n (rx_i)y_i
-= \sum_{i=1}^n r(x_iy_i)= r\sum_{i=1}^n x_iy_i        \\
-\vec x\cdot (r\vec y)= \sum_{i=1}^n x_i(ry_i)
-= \sum_{i=1}^n r(x_iy_i)= r\sum_{i=1}^n x_iy_i
-\end{equation*}
-</div>
-</li>
-<li><p>\(\vec x\cdot \vec x=\sum_{i=1}^n x_i^2\text{,}\) and since \(x_i^2\ge0\) for any real number, we have \(\vec x\cdot \vec x\ge0\text{.}\) For the value to actually be \(0\text{,}\) we must have each \(x_i^2=0\) and hence \(x_i=0\) for \(i=1,\ldots,n\text{.}\) In this case \(\vec x=\vec0\text{.}\)</p></li>
-</ol></article></body>
+<p>Initial step: \(P_1\colon\) The number of permutations of one object is \(1=1!\text{.}\)</p>
+<p>Inductive step: Assume \(P_{k-1}\) is true. We want to count the permutations of \(k\) elements. There are \(k\) choices for the first element. For each of these choices, the rest of the permutation is a permutation of the remaining \(k-1\) elements. By \(P_{k-1}\text{,}\) there are \((k-1)!\) of them, and hence the total number of permutations of all \(k\) objects is \(k(k-1)!=k!\,\text{.}\) Hence if \(P_{k-1}\) is valid then \(P_k\) is also valid. This completes the proof by induction.</p></article></body>
 </html>

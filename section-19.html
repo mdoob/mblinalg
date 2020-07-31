@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:31:46-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:09:35-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -65,6 +67,7 @@ MathJax.Hub.Config({
 \newcommand{\adj}{\mathop{\textrm{adj}}}
 \newcommand{\proj}{\mathop{\textrm{proj}}}
 \newcommand{\Span}{\mathop{\textrm{span}}} 
+\newcommand{\sgn}{\mathop{\textrm{sgn}}}
 
 \newcommand{\rowint}[2]{R_{#1} \leftrightarrow R_{#2}}
 \newcommand{\rowmul}[2]{R_{#1}\gets {#2}R_{#1}}
@@ -113,8 +116,10 @@ MathJax.Hub.Config({
 <li id="li-225"><p id="p-537">If \(n=2\) and \(A=\begin{bmatrix}a_{1,1}\amp a_{1,2}\\a_{2,1}\amp a_{2,2}\end{bmatrix}\text{,}\) then \(\det(A)=a_{1,1}a_{2,2}-a_{1,2}a_{2,1}.\)</p></li>
 <li id="li-226"><p id="p-538">If \(n=3\) and \(A=\begin{bmatrix}a_{1,1}\amp a_{1,2}\amp a_{1,3}\\
 a_{2,1}\amp a_{2,2}\amp a_{2,3}\\
-a_{3,1}\amp a_{3,2}\amp a_{3,3}\end{bmatrix}\text{,}\) then \(\det(A)=a_{1,1}a_{2,2}a_{3,3}+a_{1,2}a_{2,3}a_{3,1}+a_{1,3}a_{2,1}a_{3,2}
--a_{1,1}a_{2,3}a_{3,2}  -a_{1,2}a_{2,1}a_{3,3} -a_{1,3}a_{2,2}a_{3,1} .\)</p></li>
+a_{3,1}\amp a_{3,2}\amp a_{3,3}\end{bmatrix}\text{,}\) then \(\det(A)=a_{1,1}a_{2,2}a_{3,3}+a_{1,2}a_{2,3}a_{3,1}
++a_{1,3}a_{2,1}a_{3,2} -a_{1,1}a_{2,3}a_{3,2}  
+-a_{1,2}a_{2,1}a_{3,3} -a_{1,3}a_{2,2}a_{3,1}
+\text{.}\)</p></li>
 </ul></article><article class="example example-like" id="det_example1"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Determinants of small matrices.</span>
 </h6>
@@ -178,8 +183,8 @@ a_{2,1}\amp\color{red}{a_{2,2}}\amp\color{green}{a_{2,3}}\amp\color{blue}{a_{2,1
 +{\color{blue}{a_{1,3}a_{2,1}a_{3,2}}})
 -({\color{green}{a_{1,1}a_{2,3}a_{3,2}}} 
 +{\color{blue}{ a_{1,2}a_{2,1}a_{3,3}}}
-+{\color{red}{a_{1,3}a_{2,2}a_{3,1}}}).\) So it's pretty easy to compute the determinant of a matrix of order \(n\) when \(n\leq 3\text{.}\) Unfortunately, there is no straightforward generalization for \(n\gt3\text{.}\)</p>
-<p id="p-545">There is a theoretical formula for the  evaluation of the determinant for larger \(n\text{,}\) but the number of summands grows quickly (for \(n=4\) there are 24 terms to add, and for \(n=5\) there are 120). The present goal is to find better methods to evaluate the determinant. The first technique involves objects called <em class="emphasis">cofactors</em>, and so we need to make a digression to define and to see how to use them.</p></section></div></main>
++{\color{red}{a_{1,3}a_{2,2}a_{3,1}}}).\) So it's pretty easy to compute the determinant of a matrix of order \(n\) when \(n\leq 3\text{.}\)  Unfortunately, there is no straightforward generalization for \(n\gt3\text{.}\)</p>
+<p id="p-545">There is a theoretical formula for the  evaluation of the determinant for larger \(n\text{,}\) but the number of summands grows quickly (for \(n=4\) there are 24 terms to add, and for \(n=5\) there are 120). The present goal is to find better methods to evaluate the determinant.  The first technique involves objects called <em class="emphasis">cofactors</em>, and so we need to make a digression to define and to see how to use them.</p></section></div></main>
 </div>
 </body>
 </html>

@@ -1,23 +1,45 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:32:05-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:09:58-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p>To get equality in the triangle inequality, we must have equality in the Cauchy-Schwarz inequality (see the proof of <a class="xref" data-knowl="./knowl/CauchySchwarz.html" title="Theorem 4.2.17: Cauchy-Schwarz">Theorem 4.2.17</a>).</p>
+<body><article class="hiddenproof"><p>This proof makes clever use of the quadratic formula for the solution of quadratic equations. We take a real number \(x\) and let it act as a variable in an equation.</p>
 <div class="displaymath">
 \begin{equation*}
-|\vec x\cdot \vec y|= \|\vec x\|  \|\vec y\| \\
-\|\vec x\| \|\vec y\|\, |\cos\theta| = \|\vec x\|  \|\vec y\| \\
-\cos\theta=\pm1\\
-\theta = 0\textrm{ or } \pi
+\begin{array}{rl}
+0 
+\amp \le (x\vec u+\vec v)\cdot(x\vec u+\vec v)\\
+\amp = (x\vec u+\vec v)\cdot x\vec u + (x\vec u+\vec v)\cdot \vec v\\
+\amp = x\vec u\cdot x\vec u 
++ \vec v \cdot x\vec u +x\vec u\cdot \vec v+ \vec v\cdot \vec v\\
+\amp = (\vec u\cdot\vec u) x^2 +2(\vec u\cdot \vec v) x+\vec v\cdot \vec v\\
+\amp = \|\vec u\|^2 x^2 +2(\vec u\cdot \vec v) x+\|\vec v\|^2\\
+\amp= ax^2+bx+c
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(a=\|\vec u\|^2\text{,}\) \(b=2(\vec u\cdot\vec v)\) and \(c=\|\vec v\|^2\text{.}\) This means that the graph of \(ax^2+bx+c\) is a parabola that is never below the \(x\)-axis.  In particular, this means that there can not be two real roots. Now the two roots of a quadratic equation are</p>
+<div class="displaymath">
+\begin{equation*}
+x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
+\end{equation*}
+</div>
+<p data-braille="continuation">and so the polynomial will have two real roots if \(b^2-4ac&gt;0\text{.}\) <em class="emphasis">This is exactly what can not happen</em>, and so \(b^2-4ac\le0\text{,}\) or \(b^2\le4ac\text{.}\) Using our known values of \(a\text{,}\) \(b\) and \(c\text{,}\) we get</p>
+<div class="displaymath">
+\begin{equation*}
+4(\vec u\cdot\vec v)^2\le 4\|\vec u\|^2\|\vec v\|^2\\
+(\vec u\cdot\vec v)^2\le\|\vec u\|^2\|\vec v\|^2\\
+|\vec u\cdot\vec v|\le\|\vec u\|\,\|\vec v\|\\
 \end{equation*}
 </div></article></body>
 </html>

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:31:49-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:09:40-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -65,6 +67,7 @@ MathJax.Hub.Config({
 \newcommand{\adj}{\mathop{\textrm{adj}}}
 \newcommand{\proj}{\mathop{\textrm{proj}}}
 \newcommand{\Span}{\mathop{\textrm{span}}} 
+\newcommand{\sgn}{\mathop{\textrm{sgn}}}
 
 \newcommand{\rowint}[2]{R_{#1} \leftrightarrow R_{#2}}
 \newcommand{\rowmul}[2]{R_{#1}\gets {#2}R_{#1}}
@@ -103,10 +106,10 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-28"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.4</span> <span class="title">Equations of lines in \(\R^3\)</span>
 </h2>
-<p id="p-828">We want to find the equation of a line \(L\text{,}\) that is, an equation using the vector \((x,y,z)\) so that \((x,y,z)\) is on \(L\) if and only if \((x,y,z)\) satisfies the equation.</p>
-<p id="p-829">We start with the case of a line \(L\) that passes through the origin \(\vec0=(0,0,0)\text{.}\) Let \(\vec n=(a,b,c)\) be any nonzero point on \(L\text{.}\) In this case it is easy to get the equation we want.</p>
-<figure class="figure figure-like" id="figure-36"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><object data="images/image-37.html" id="image-37" width="540" height="540"><embed src="images/image-37.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.1<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-830">Any point \((x,y,z)\) is on \(L\) if and only if \((x,y,z)=t(a,b,c)\) for some real number \(t\text{.}\) In other words, if we have a given vector \(\vec x=(x_0,y_0,z_0)\) then \(\vec x\) is on \(L\) if and only if there is a solution \(t\) to the system of equations</p>
+<p id="p-886">We want to find the equation of a line \(L\text{,}\) that is, an equation using the vector \((x,y,z)\) so that \((x,y,z)\) is on \(L\) if and only if \((x,y,z)\) satisfies the equation.</p>
+<p id="p-887">We start with the case of a line \(L\) that passes through the origin \(\vec0=(0,0,0)\text{.}\) Let \(\vec n=(a,b,c)\) be any nonzero point on \(L\text{.}\) In this case it is easy to get the equation we want.</p>
+<figure class="figure figure-like" id="figure-37"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><object data="images/image-38.html" id="image-38" width="540" height="540"><embed src="images/image-38.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.1<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-888">Any point \((x,y,z)\) is on \(L\) if and only if \((x,y,z)=t(a,b,c)\) for some real number \(t\text{.}\) In other words, if we have a given vector \(\vec x=(x_0,y_0,z_0)\) then \(\vec x\) is on \(L\) if and only if there is a solution \(t\) to the system of equations</p>
 <div class="displaymath">
 \begin{equation*}
 ta=x_0\\
@@ -114,35 +117,35 @@ tb=y_0\\
 tc=z_0
 \end{equation*}
 </div>
-<p id="p-831">The vector \(\vec n=(a,b,c)\) is an indication of the direction of the line. For this reason, it is called the <em class="emphasis">direction vector</em> of the line. The components of this vector, that is, \(a\text{,}\) \(b\) and \(c\text{,}\) are called the <em class="emphasis">direction numbers</em>. Direction vectors for lines in \(\R^3\) are analogous to the slope of a line in \(\R^2\text{.}\)</p>
-<article class="theorem theorem-like" id="theorem-50"><h6 class="heading">
+<p id="p-889">The vector \(\vec n=(a,b,c)\) is an indication of the direction of the line. For this reason, it is called the <em class="emphasis">direction vector</em> of the line. The components of this vector, that is, \(a\text{,}\) \(b\) and \(c\text{,}\) are called the <em class="emphasis">direction numbers</em>. Direction vectors for lines in \(\R^3\) are analogous to the slope of a line in \(\R^2\text{.}\)</p>
+<article class="theorem theorem-like" id="theorem-54"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">Line through \((0,0,0)\).</span>
 </h6>
-<p id="p-832">An equation of the line through \((0,0,0)\) and \(\vec n=(a,b,c)\) is</p>
+<p id="p-890">An equation of the line through \((0,0,0)\) and \(\vec n=(a,b,c)\) is</p>
 <div class="displaymath">
 \begin{equation*}
 (x,y,z)=t(a,b,c) 
 \end{equation*}
 </div>
-<p data-braille="continuation">for some real number \(t\text{.}\)</p></article><p id="p-833">We next consider lines as before, but with the more general assumption that it passes through \((x_0,y_0,z_0)\text{.}\) We wish to keep the concept of the direction vector. The parallelogram rule is the tool that leads the way:</p>
-<figure class="figure figure-like" id="figure-37"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><object data="images/image-38.html" id="image-38" width="540" height="540"><embed src="images/image-38.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-834">We start with the line \(L\) and consider the line, \(L'\) through \(\vec0\) and with the same direction vector as (that is, parallel to) \(L\text{.}\) The parallelogram rules shows us that \((x,y,z)\) is on \(L'\) if and only if \((x,y,z)+(x_0,y_0,z_0)\) is on \(L\text{.}\) Since every point on \(L'\) is of the form \(t(a,b,c)\) for some real number \(t\text{,}\) we conclude that every point on \(L\) is of the form \(t(a,b,c)+(x_0,y_0,z_0)\text{.}\)</p>
-<article class="theorem theorem-like" id="theorem-51"><h6 class="heading">
+<p data-braille="continuation">for some real number \(t\text{.}\)</p></article><p id="p-891">We next consider lines as before, but with the more general assumption that it passes through \((x_0,y_0,z_0)\text{.}\) We wish to keep the concept of the direction vector. The parallelogram rule is the tool that leads the way:</p>
+<figure class="figure figure-like" id="figure-38"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><object data="images/image-39.html" id="image-39" width="540" height="540"><embed src="images/image-39.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-892">We start with the line \(L\) and consider the line, \(L'\) through \(\vec0\) and with the same direction vector as (that is, parallel to) \(L\text{.}\) The parallelogram rules shows us that \((x,y,z)\) is on \(L'\) if and only if \((x,y,z)+(x_0,y_0,z_0)\) is on \(L\text{.}\) Since every point on \(L'\) is of the form \(t(a,b,c)\) for some real number \(t\text{,}\) we conclude that every point on \(L\) is of the form \(t(a,b,c)+(x_0,y_0,z_0)\text{.}\)</p>
+<article class="theorem theorem-like" id="theorem-55"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Line through \((x_0,y_0,z_0)\).</span>
 </h6>
-<p id="p-835">A equation of the line through \((x_0,y_0,z_0)\) with direction vector \(\vec n=(a,b,c)\) is</p>
+<p id="p-893">A equation of the line through \((x_0,y_0,z_0)\) with direction vector \(\vec n=(a,b,c)\) is</p>
 <div class="displaymath">
 \begin{equation*}
 (x,y,z)=(x_0,y_0,z_0) + t(a,b,c)
 \end{equation*}
 </div>
-<p data-braille="continuation">for some real number \(t\text{.}\)</p></article><p id="p-836">Finally, we consider a line \(L\) passing through two points \((x_0,y_0,z_0)\) and \((x_1,y_1,z_1)\text{.}\) Let \(L'\) be the line parallel to \(L\) passing through \(\vec0\text{.}\) Then \(\vec n=(x_1,y_1,z_1)-(x_0,y_0,z_0)\) is a nonzero point on \(L'\text{,}\) from which follows that every point on \(L'\) is of the form \(t\left((x_1,y_1,z_1)-(x_0,y_0,z_0)\right)
+<p data-braille="continuation">for some real number \(t\text{.}\)</p></article><p id="p-894">Finally, we consider a line \(L\) passing through two points \((x_0,y_0,z_0)\) and \((x_1,y_1,z_1)\text{.}\) Let \(L'\) be the line parallel to \(L\) passing through \(\vec0\text{.}\) Then \(\vec n=(x_1,y_1,z_1)-(x_0,y_0,z_0)\) is a nonzero point on \(L'\text{,}\) from which follows that every point on \(L'\) is of the form \(t\left((x_1,y_1,z_1)-(x_0,y_0,z_0)\right)
 =t(x_1,y_1,z_1)-t(x_0,y_0,z_0)\text{.}\) This in turn implies that every point on \(L\) is of the form \(t(x_1,y_1,z_1)-t(x_0,y_0,z_0)+(x_0,y_0,z_0)=t(x_1,y_1,z_1)+(1-t)(x_0,y_0,z_0)\text{.}\)</p>
-<figure class="figure figure-like" id="figure-38"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><object data="images/image-39.html" id="image-39" width="540" height="540"><embed src="images/image-39.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure><article class="theorem theorem-like" id="theorem-52"><h6 class="heading">
+<figure class="figure figure-like" id="figure-39"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><object data="images/image-40.html" id="image-40" width="540" height="540"><embed src="images/image-40.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure><article class="theorem theorem-like" id="theorem-56"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.4.6</span><span class="period">.</span>
 </h6>
-<p id="p-837">The point \((x,y,z)\) is on the line through \(\vec u=(x_0,y_0,z_0)\) and \(\vec v=(x_1,y_1,z_1)\) if</p>
+<p id="p-895">The point \((x,y,z)\) is on the line through \(\vec u=(x_0,y_0,z_0)\) and \(\vec v=(x_1,y_1,z_1)\) if</p>
 <div class="displaymath">
 \begin{equation*}
 (x,y,z)=(1-t)\vec u+t\vec v

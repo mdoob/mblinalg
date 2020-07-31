@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:31:48-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:09:38-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -65,6 +67,7 @@ MathJax.Hub.Config({
 \newcommand{\adj}{\mathop{\textrm{adj}}}
 \newcommand{\proj}{\mathop{\textrm{proj}}}
 \newcommand{\Span}{\mathop{\textrm{span}}} 
+\newcommand{\sgn}{\mathop{\textrm{sgn}}}
 
 \newcommand{\rowint}[2]{R_{#1} \leftrightarrow R_{#2}}
 \newcommand{\rowmul}[2]{R_{#1}\gets {#2}R_{#1}}
@@ -103,45 +106,45 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-25"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.1</span> <span class="title">Initial definitions</span>
 </h2>
-<section class="subsection" id="subsection-51"><h3 class="heading hide-type">
+<section class="subsection" id="subsection-56"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.1.1</span> <span class="title">The definitions of Euclidean \(n\)-space</span>
 </h3>
-<p id="p-676">Euclidean \(n\) space, also called \(\R^n\text{,}\) is formally written as</p>
+<p id="p-734">Euclidean \(n\) space, also called \(\R^n\text{,}\) is formally written as</p>
 <div class="displaymath">
 \begin{equation*}
 \{(x_1,x_2,\ldots,x_n)\mid x\in\R\}.
 \end{equation*}
 </div>
 <p data-braille="continuation">This means that it consists of elements called <dfn class="terminology">\(n\)-tuples</dfn>, which are written as \((x_1,x_2,\ldots,x_n)\) where each \(x_i\) is a real number. Each such element is called a <dfn class="terminology">vector</dfn>.</p>
-<article class="example example-like" id="example-33"><h6 class="heading">
+<article class="example example-like" id="example-37"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Examples of \(n\)-tuples in \(\R^n\).</span>
 </h6>
-<ul id="p-677" class="disc">
-<li id="li-246"><p id="p-678">\((2,3)\) is in \(\R^2\)</p></li>
-<li id="li-247"><p id="p-679">\((-3,0,\frac12)\) is in \(\R^3\)</p></li>
-<li id="li-248"><p id="p-680">\((-1,0,4,\sqrt2,\frac\pi2,1000)\) is in \(\R^6\)</p></li>
-</ul></article><p id="p-681">The most familiar examples, of course, are \(\R^2\text{,}\) the plane, and \(\R^3\text{,}\) ordinary 3-dimensional space. For \(\R^2\) we have an \(x\)-axis and a \(y\)-axis, and the points in the plane as \(2\)-tuples are defined by dropping perpediculars to each axis.</p>
-<figure class="figure figure-like" id="figure-13"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><object data="images/image-14.html" id="image-14" width="300" height="300"><embed src="images/image-14.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.2<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-682">Euclidean \(3\)-space is viewed analogously.</p>
-<figure class="figure figure-like" id="figure-14"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><object data="images/image-15.html" id="image-15" width="360" height="360"><embed src="images/image-15.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-683">There are, of course, many geometric concepts studied in \(\R^2\) and \(\R^3\text{.}\) One of our goals is to see how these concepts can be extended to \(\R^n\text{.}\)</p>
-<p id="p-684">While Euclidean \(n\)-space consists of \(n\)-tuples, they are sometimes viewed from different mathematical perspectives.</p>
-<ul class="disc">
-<li id="li-249"><p id="p-685">Points in \(n\)-space: the vectors are just the \(n\)-tuples \((x_1,x_2,\ldots,x_n)\text{.}\)</p></li>
-<li id="li-250"><p id="p-686">Directed vectors: the vectors may be thought of as arrows from an initial point \(P\) to a terminal point \(Q\text{.}\)</p></li>
-</ul>
+<ul id="p-735" class="disc">
+<li id="li-260"><p id="p-736">\((2,3)\) is in \(\R^2\)</p></li>
+<li id="li-261"><p id="p-737">\((-3,0,\frac12)\) is in \(\R^3\)</p></li>
+<li id="li-262"><p id="p-738">\((-1,0,4,\sqrt2,\frac\pi2,1000)\) is in \(\R^6\)</p></li>
+</ul></article><p id="p-739">The most familiar examples, of course, are \(\R^2\text{,}\) the plane, and \(\R^3\text{,}\) ordinary 3-dimensional space. For \(\R^2\) we have an \(x\)-axis and a \(y\)-axis, and the points in the plane as \(2\)-tuples are defined by dropping perpediculars to each axis.</p>
+<figure class="figure figure-like" id="figure-14"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><object data="images/image-15.html" id="image-15" width="300" height="300"><embed src="images/image-15.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.2<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-740">Euclidean \(3\)-space is viewed analogously.</p>
 <figure class="figure figure-like" id="figure-15"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><object data="images/image-16.html" id="image-16" width="360" height="360"><embed src="images/image-16.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure><ul id="p-687" class="disc">
-<li id="li-251">
-<p id="p-688">Column vectors where the vector is an \(n\times 1\) matrix:</p>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-741">There are, of course, many geometric concepts studied in \(\R^2\) and \(\R^3\text{.}\) One of our goals is to see how these concepts can be extended to \(\R^n\text{.}\)</p>
+<p id="p-742">While Euclidean \(n\)-space consists of \(n\)-tuples, they are sometimes viewed from different mathematical perspectives.</p>
+<ul class="disc">
+<li id="li-263"><p id="p-743">Points in \(n\)-space: the vectors are just the \(n\)-tuples \((x_1,x_2,\ldots,x_n)\text{.}\)</p></li>
+<li id="li-264"><p id="p-744">Directed vectors: the vectors may be thought of as arrows from an initial point \(P\) to a terminal point \(Q\text{.}\)</p></li>
+</ul>
+<figure class="figure figure-like" id="figure-16"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><object data="images/image-17.html" id="image-17" width="360" height="360"><embed src="images/image-17.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure><ul id="p-745" class="disc">
+<li id="li-265">
+<p id="p-746">Column vectors where the vector is an \(n\times 1\) matrix:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} x_1\\ x_2\\ \vdots\\ x_n \end{bmatrix}
 \end{equation*}
 </div>
 </li>
-<li id="li-252">
-<p id="p-689">Row vectors where the vector is a \(1\times n\) matrix:</p>
+<li id="li-266">
+<p id="p-747">Row vectors where the vector is a \(1\times n\) matrix:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} x_1, x_2, \ldots, x_n \end{bmatrix}
@@ -149,22 +152,22 @@ MathJax.Hub.Config({
 </div>
 </li>
 </ul>
-<p data-braille="continuation">For our initial discussion, we will concentrate on \(n\)-tuples and column vectors.</p></section><section class="subsection" id="subsection-52"><h3 class="heading hide-type">
+<p data-braille="continuation">For our initial discussion, we will concentrate on \(n\)-tuples and column vectors.</p></section><section class="subsection" id="subsection-57"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.1.2</span> <span class="title">Equality, addition and scaler multiplication of vectors</span>
 </h3>
-<p id="p-690">The equality, addition and scalar multiplication of \(n\)-tuples is very much like that of matrices:</p>
+<p id="p-748">The equality, addition and scalar multiplication of \(n\)-tuples is very much like that of matrices:</p>
 <ul class="disc">
-<li id="li-253"><p id="p-691">Equality: \((x_1,x_2,\ldots,x_n)=(y_1,y_2,\ldots,y_n)\) means \(x_i=y_i\) for \(i=1,2,\ldots,n\text{.}\)</p></li>
-<li id="li-254"><p id="p-692">Addition: \((x_1,x_2,\ldots,x_n)+(y_1,y_2,\ldots,y_n) 
+<li id="li-267"><p id="p-749">Equality: \((x_1,x_2,\ldots,x_n)=(y_1,y_2,\ldots,y_n)\) means \(x_i=y_i\) for \(i=1,2,\ldots,n\text{.}\)</p></li>
+<li id="li-268"><p id="p-750">Addition: \((x_1,x_2,\ldots,x_n)+(y_1,y_2,\ldots,y_n) 
 =(x_1+y_1,x_2+y_2,\ldots,x_n+y_n)\text{.}\)</p></li>
-<li id="li-255"><p id="p-693">Scalar multiplication: For any scalar \(r\text{,}\) \(r(x_1,x_2,\ldots,x_n) =(rx_1,rx_2,\ldots,rx_n)\text{.}\)</p></li>
+<li id="li-269"><p id="p-751">Scalar multiplication: For any scalar \(r\text{,}\) \(r(x_1,x_2,\ldots,x_n) =(rx_1,rx_2,\ldots,rx_n)\text{.}\)</p></li>
 </ul>
 <p data-braille="continuation">In fact, if we look at the \(n\)-tuples as column vectors, then equality, addition and scalar multiplication are the same as matrix equality, addition and scalar multiplication.</p>
-<article class="theorem theorem-like" id="theorem-42"><h6 class="heading">
+<article class="theorem theorem-like" id="theorem-46"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">First properties of \(n\)-tuples.</span>
 </h6>
-<p id="p-694">Let \(\vec x=(x_1,\ldots,x_n)\text{,}\) \(\vec y=(y_1,\ldots,y_n)\text{,}\) and \(\vec z=(z_1,\ldots,z_n)\) be vectors in \(\R^n\text{,}\) and let \(r\) and \(s\) be scalars. In addition, let \(\vec 0=(0,\ldots,0)\) and \(-\vec x=(-x_1,-x_2,\ldots,-x_n)\text{.}\) Then</p>
-<figure class="table table-like" id="table-5"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.1.6<span class="period">.</span></span><span class="space"> </span></figcaption><table>
+<p id="p-752">Let \(\vec x=(x_1,\ldots,x_n)\text{,}\) \(\vec y=(y_1,\ldots,y_n)\text{,}\) and \(\vec z=(z_1,\ldots,z_n)\) be vectors in \(\R^n\text{,}\) and let \(r\) and \(s\) be scalars. In addition, let \(\vec 0=(0,\ldots,0)\) and \(-\vec x=(-x_1,-x_2,\ldots,-x_n)\text{.}\) Then</p>
+<figure class="table table-like" id="table-7"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.1.6<span class="period">.</span></span><span class="space"> </span></figcaption><table>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">(A\(_1\)) \(\phantom{|}\vec x + \vec y\) is in \(\R^n\)</td>
 <td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">(M\(_1\)) \(\phantom{|}r\vec x\) is in \(\R^n\)</td>
@@ -186,7 +189,7 @@ MathJax.Hub.Config({
 <td class="l m b0 r0 l0 t0 lines">(A\(_5\)) \(\phantom{|}\vec x + \vec y = \vec y + \vec x \)</td>
 <td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">(M\(_5\)) \(\phantom{|}1\vec x =\vec x\)</td>
 </tr>
-</table></figure></article><article class="hiddenproof" id="proof-55"><a data-knowl="" class="id-ref original" data-refid="hk-proof-55"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-55"><article class="hiddenproof"><p id="p-695">If we view each vector as a column vector, then each of the statements have been proven already in our study of matrix theory. (see <a class="xref" data-knowl="./knowl/MatrixAdditionProperties.html" title="Theorem 2.2.2: Addition properties of Matrices">Theorem 2.2.2</a> and <a class="xref" data-knowl="./knowl/ScalarMultiplicationProperties.html" title="Theorem 2.3.4: Properties of scalar multiplication">Theorem 2.3.4</a>). There is no need to do it again!</p></article></div></section></section></div></main>
+</table></figure></article><article class="hiddenproof" id="proof-60"><a data-knowl="" class="id-ref original" data-refid="hk-proof-60"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-60"><article class="hiddenproof"><p id="p-753">If we view each vector as a column vector, then each of the statements have been proven already in our study of matrix theory. (see <a class="xref" data-knowl="./knowl/MatrixAdditionProperties.html" title="Theorem 2.2.2: Addition properties of Matrices">Theorem 2.2.2</a> and <a class="xref" data-knowl="./knowl/ScalarMultiplicationProperties.html" title="Theorem 2.3.4: Properties of scalar multiplication">Theorem 2.3.4</a>). There is no need to do it again!</p></article></div></section></section></div></main>
 </div>
 </body>
 </html>

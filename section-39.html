@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:31:52-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:09:43-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -65,6 +67,7 @@ MathJax.Hub.Config({
 \newcommand{\adj}{\mathop{\textrm{adj}}}
 \newcommand{\proj}{\mathop{\textrm{proj}}}
 \newcommand{\Span}{\mathop{\textrm{span}}} 
+\newcommand{\sgn}{\mathop{\textrm{sgn}}}
 
 \newcommand{\rowint}[2]{R_{#1} \leftrightarrow R_{#2}}
 \newcommand{\rowmul}[2]{R_{#1}\gets {#2}R_{#1}}
@@ -103,27 +106,31 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-39"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">6.1</span> <span class="title">Rotations, reflections and dilations</span>
 </h2>
-<section class="subsection" id="subsection-81"><h3 class="heading hide-type">
+<section class="subsection" id="subsection-86"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.1.1</span> <span class="title">First Concepts</span>
 </h3>
-<p id="p-1073">Consider points \((x,y)\) in the plane. A <dfn class="terminology">transformation</dfn> \(L\) is a rule for computing another point in the plane.  For example, we could say that \(L((x,y))=(x+y,x−y)\text{.}\) Then, if we take any point, say \((1,2)\) we can compute \(L((1,2))=(1+2,1−2)=(3,−1)\text{.}\) Similarly \(L((1,1))=(2,0)\) and \(L((0,0))=(0,0)\text{.}\)</p>
-<p id="p-1074">We wish to consider some transformations that are geometrically inspired. The following examples will be  useful when we define <em class="emphasis">linear transformations</em> in <a href="LinearTransformationIntroduction.html" class="internal" title="Section 6.2: Definition of a linear transformation">Section 6.2</a></p>
+<p id="p-1131">Consider points \((x,y)\) in the plane. A <dfn class="terminology">transformation</dfn> \(L\) is a rule for computing another point in the plane.  For example, we could say that \(L((x,y))=(x+y,x−y)\text{.}\) Then, if we take any point, say \((1,2)\) we can compute \(L((1,2))=(1+2,1−2)=(3,−1)\text{.}\) Similarly \(L((1,1))=(2,0)\) and \(L((0,0))=(0,0)\text{.}\)</p>
+<p id="p-1132">We wish to consider some transformations that are geometrically inspired. The following examples will be  useful when we define <em class="emphasis">linear transformations</em> in <a href="LinearTransformationIntroduction.html" class="internal" title="Section 6.2: Definition of a linear transformation">Section 6.2</a></p>
 <article class="example example-like" id="PlaneRotation"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">A rotation in the plane.</span>
 </h6>
-<figure class="figure figure-like" id="figure-54"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><object data="images/image-57.html" id="image-57" width="300" height="300"><embed src="images/image-57.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<p id="p-1133">We start with a point \(\vec x\) in the plane and rotate in through an angle \(\theta\) counterclockwise around the origin. This new point is \(L(\vec x)\text{.}\)</p>
+<figure class="figure figure-like" id="figure-55"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><object data="images/image-58.html" id="image-58" width="300" height="300"><embed src="images/image-58.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.2<span class="period">.</span></span><span class="space"> </span>The vector \(\vec x\) rotated to \(L(\vec x)\) though an angle \(\theta\)</figcaption></figure></article><article class="example example-like" id="PlaneReflection"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">A reflection in the plane.</span>
 </h6>
-<figure class="figure figure-like" id="figure-55"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><object data="images/image-58.html" id="image-58" width="300" height="300"><embed src="images/image-58.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<p id="p-1134">We start with a point \(\vec x\) in the plane and reflect in across the line with equation \(y=x\text{.}\) This new point is \(L(\vec x)\text{.}\)</p>
+<figure class="figure figure-like" id="figure-56"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><object data="images/image-59.html" id="image-59" width="300" height="300"><embed src="images/image-59.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.4<span class="period">.</span></span><span class="space"> </span>The reflection of the vector \(\vec x\) by the line \(y=x\)</figcaption></figure></article><article class="example example-like" id="PlaneProjection"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">A projection in the plane.</span>
 </h6>
-<figure class="figure figure-like" id="figure-56"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><object data="images/image-59.html" id="image-59" width="300" height="300"><embed src="images/image-59.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<p id="p-1135">We start with a point \(\vec x\) in the plane and drop a perpendicular to the line with equation \(y=x\text{.}\) This new point is \(L(\vec x)\text{.}\)</p>
+<figure class="figure figure-like" id="figure-57"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><object data="images/image-60.html" id="image-60" width="300" height="300"><embed src="images/image-60.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><article class="example example-like" id="PlaneDilation"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">A dilation in the plane.</span>
 </h6>
-<figure class="figure figure-like" id="figure-57"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><object data="images/image-60.html" id="image-60" width="300" height="300"><embed src="images/image-60.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<p id="p-1136">We start with a real number \(s\text{.}\) For a point \(\vec x \not=\vec0\text{,}\) let \(L(\vec x)=s\vec x\text{.}\) Then \(L(\vec x)\) is on joining \(\vex x\) and \(\vec 0\text{.}\) The distance from \(L(\vec x)\) to \(\vec 0\) has been stretched by a factor of \(s\text{.}\)</p>
+<figure class="figure figure-like" id="figure-58"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><object data="images/image-61.html" id="image-61" width="300" height="300"><embed src="images/image-61.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.8<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article></section></section></div></main>
 </div>
 </body>

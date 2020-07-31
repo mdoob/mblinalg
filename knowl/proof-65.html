@@ -1,39 +1,73 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:32:06-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:09:58-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
 <article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
-<p>The desired result is shown if \(\vec x\cdot(\vec x\times\vec y)=0\) and \(\vec y\cdot(\vec x\times\vec y)=0\text{.}\) By direct computation</p>
+<ol class="decimal">
+<li><p>Since \(\|\vec x\|= \vec x\cdot\vec x\text{,}\) this result is contained in <a class="xref" data-knowl="./knowl/DotProductFirstProperties.html" title="Proposition 4.2.3: First properties of the dot product">Proposition 4.2.3</a>.</p></li>
+<li>
+<p>From direct evaluation:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
-(x_1,x_2,x_3) \cdot  \amp(x_2y_3-x_3y_2, x_3y_1-x_1y_3,x_1y_2-x_2y_1)\\
-\amp=x_1 (x_2y_3-x_3y_2) +x_2 (x_3y_1-x_1y_3) + x_3 (x_1y_2-x_2y_1)\\
-\amp= x_1x_2y_3-x_1x_3y_2 +x_2 x_3y_1-x_2x_1y_3+ x_3x_1y_2-x_3x_2y_1\\
-\amp=0
+\|r\vec x\|^2
+\amp=\|r(x_1,x_2,\ldots,x_n)\|^2\\
+\amp=\|(rx_1,rx_2,\ldots,rx_n)\|^2\\
+\amp=r^2x_1^2+r^2x_2^2+\cdots+r^2x_n^2\\
+\amp=r^2(x_1^2+x_2^2+\cdots+x_n^2)
 \end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">and</p>
+<p data-braille="continuation">and so by taking square roots, \(\|r\vec x\|=|r| \|\vec x\|\text{.}\)</p>
+</li>
+<li><p>This is just <a class="xref" data-knowl="./knowl/CauchySchwarz.html" title="Theorem 4.2.17: Cauchy-Schwarz">Theorem 4.2.17</a></p></li>
+<li>
+<p>Again, a direct evaluation:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
-(y_1,y_2,y_3) \amp\cdot  (x_2y_3-x_3y_2, x_3y_1-x_1y_3,x_1y_2-x_2y_1)\\
-\amp=y_1 (x_2y_3-x_3y_2) +y_2 (x_3y_1-x_1y_3) + y_3 (x_1y_2-x_2y_1)\\
-\amp= y_1x_2y_3-y_1x_3y_2 +y_2 x_3y_1-y_2x_1y_3+ y_3x_1y_2-y_3x_2y_1\\
-\amp=0
+\|\vec x+\vec y\|^2 + \|\vec x-\vec y\|^2 
+\amp= (\vec x+\vec y) \cdot (\vec x+\vec y) 
++(\vec x-\vec y) \cdot (\vec x-\vec y)\\
+\amp=  (\vec x\cdot\vec x + \vec x\cdot\vec y 
++\vec y\cdot\vec x +\vec y\cdot\vec y)\\
+\amp \phantom{=} +  (\vec x\cdot\vec x - \vec x\cdot\vec y 
+-\vec y\cdot\vec x +\vec y\cdot\vec y)\\
+\amp=2(\|\vec x\|^2 +\|\vec y\|^2)
 \end{array}
 \end{equation*}
-</div></article><span class="incontext"><a href="CrossProduct.html#proof-65">in-context</a></span>
+</div>
+</li>
+<li>
+<p>The triangle inequality is a consequence of the Cauchy-Schwarz inequality:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rll}
+\|\vec x+\vec y\|^2
+\amp= (\vec x+\vec y)\cdot(\vec x+\vec y)\\
+\amp= \vec x\cdot\vec x+2(\vec x\cdot\vec y)+\vec y\cdot\vec y\\
+\amp= \|\vec x\|^2 +2(\vec x\cdot\vec y)+\|\vec y\|^2\\
+\amp\le \|\vec x\|^2 +2|\vec x\cdot\vec y|+\|\vec y\|^2
+\amp\amp\gets r\le|r|\text{ used here.}\\
+\amp\le \|\vec x\|^2 +2\|\vec x\|\|\vec y\|+\|\vec y\|^2
+\amp\amp\gets \text{ Cauchy-Schwarz used here.}\\
+\amp= (\|\vec x\|+\|\vec y\|)^2
+\end{array}
+\end{equation*}
+</div>
+</li>
+</ol></article><span class="incontext"><a href="section-26.html#proof-65">in-context</a></span>
 </body>
 </html>

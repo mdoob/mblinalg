@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:31:51-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:09:42-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -65,6 +67,7 @@ MathJax.Hub.Config({
 \newcommand{\adj}{\mathop{\textrm{adj}}}
 \newcommand{\proj}{\mathop{\textrm{proj}}}
 \newcommand{\Span}{\mathop{\textrm{span}}} 
+\newcommand{\sgn}{\mathop{\textrm{sgn}}}
 
 \newcommand{\rowint}[2]{R_{#1} \leftrightarrow R_{#2}}
 \newcommand{\rowmul}[2]{R_{#1}\gets {#2}R_{#1}}
@@ -103,26 +106,26 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-34"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.1</span> <span class="title">Defintions and examples</span>
 </h2>
-<p id="p-1018">Eigenvalues and eigenvectors are defined for a square matrix \(A.\)</p>
-<article class="definition definition-like" id="definition-58"><h6 class="heading">
+<p id="p-1076">Eigenvalues and eigenvectors are defined for a square matrix \(A.\)</p>
+<article class="definition definition-like" id="definition-60"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">The eigenvalue of a matrix.</span>
 </h6>
-<p id="p-1019">A number \(\lambda\) is an <dfn class="terminology">eigenvalue</dfn> of a square matrix \(A\) if</p>
+<p id="p-1077">A number \(\lambda\) is an <dfn class="terminology">eigenvalue</dfn> of a square matrix \(A\) if</p>
 <div class="displaymath">
 \begin{equation*}
 A\vec x=\lambda\vec x
 \end{equation*}
 </div>
-<p data-braille="continuation">for some \(\vec x\not=\vec0\text{.}\)</p></article><article class="definition definition-like" id="definition-59"><h6 class="heading">
+<p data-braille="continuation">for some \(\vec x\not=\vec0\text{.}\)</p></article><article class="definition definition-like" id="definition-61"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">The eigenvector of a matrix.</span>
 </h6>
-<p id="p-1020">If</p>
+<p id="p-1078">If</p>
 <div class="displaymath">
 \begin{equation*}
 A\vec x=\lambda\vec x
 \end{equation*}
 </div>
-<p data-braille="continuation">for some \(\vec x\not=\vec0\text{,}\) then \(\vec x\) is called an <dfn class="terminology">eigenvector</dfn> of \(A\) corresponding to the eigenvalue \(\lambda\text{.}\)</p></article><p id="p-1021">Notice that if \(\vec x=\vec 0\text{,}\) then \(A\vec x=\lambda\vec x\) is simply the equation \(\vec0=\vec0\) for any value of \(\lambda\text{.}\) This is not too interesting, and so we always have the restriction \(\vec x\not=\vec0\text{.}\)</p>
+<p data-braille="continuation">for some \(\vec x\not=\vec0\text{,}\) then \(\vec x\) is called an <dfn class="terminology">eigenvector</dfn> of \(A\) corresponding to the eigenvalue \(\lambda\text{.}\)</p></article><p id="p-1079">Notice that if \(\vec x=\vec 0\text{,}\) then \(A\vec x=\lambda\vec x\) is simply the equation \(\vec0=\vec0\) for any value of \(\lambda\text{.}\) This is not too interesting, and so we always have the restriction \(\vec x\not=\vec0\text{.}\)</p>
 <article class="example example-like" id="EigenvalueExample1"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenvalues of \(\begin{bmatrix} 
 5\amp -1\amp -2\\ 
@@ -130,7 +133,7 @@ A\vec x=\lambda\vec x
 -1\amp -1\amp 4 
 \end{bmatrix} \).</span>
 </h6>
-<p id="p-1022">Let \(A=
+<p id="p-1080">Let \(A=
 \begin{bmatrix}
 5\amp -1\amp -2\\ 
 1\amp 3\amp -2\\ 
@@ -200,7 +203,7 @@ x=\begin{bmatrix}
 <p data-braille="continuation">which makes makes \(\vec x=\begin{bmatrix}-1\\-1\\1\end{bmatrix}\) an eigenvector with corresponding eigenvalue \(\lambda=6\text{.}\) In this case we have now computed all of the eigenvalues of \(A\text{:}\) \(\lambda=2\text{,}\) \(\lambda=4\) and \(\lambda=6\text{.}\) Shortly we will be able to compute the eigenvalues of a matrix and will see that in fact \(A\) has no others.</p></article><article class="example example-like" id="EigenvalueExample2"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenvalues of \(\begin{bmatrix}2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5 \end{bmatrix}\).</span>
 </h6>
-<p id="p-1023">Let \(A=\begin{bmatrix}2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5 \end{bmatrix}\) Then we have</p>
+<p id="p-1081">Let \(A=\begin{bmatrix}2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5 \end{bmatrix}\) Then we have</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} 2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5\end{bmatrix}
@@ -224,10 +227,10 @@ x=\begin{bmatrix}
 \begin{bmatrix}6\\0\\-12\end{bmatrix}=-6 \begin{bmatrix}-1\\0\\2\end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">which makes \(\vec x=\begin{bmatrix}-1\\0\\2\end{bmatrix}\) an eigenvector with corresponding eigenvalue \(\lambda=-6\) Hence the demonstrated eigenvalues are \(\lambda=3\) and \(\lambda=-6\text{.}\) We will soon see that there are no more.</p></article><article class="example example-like" id="example-44"><h6 class="heading">
+<p data-braille="continuation">which makes \(\vec x=\begin{bmatrix}-1\\0\\2\end{bmatrix}\) an eigenvector with corresponding eigenvalue \(\lambda=-6\) Hence the demonstrated eigenvalues are \(\lambda=3\) and \(\lambda=-6\text{.}\) We will soon see that there are no more.</p></article><article class="example example-like" id="example-48"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenvalues of \(\begin{bmatrix} 0\amp -1\\ 1\amp 0\end{bmatrix}\).</span>
 </h6>
-<p id="p-1024">Let \(A=\begin{bmatrix} 0\amp -1\\ 1\amp 0\end{bmatrix}\) and consider the equation \(A\vec x=\lambda\vec x\text{.}\) Setting \(\vec x=\begin{bmatrix} x_1\\x_2\end{bmatrix}\text{,}\)</p>
+<p id="p-1082">Let \(A=\begin{bmatrix} 0\amp -1\\ 1\amp 0\end{bmatrix}\) and consider the equation \(A\vec x=\lambda\vec x\text{.}\) Setting \(\vec x=\begin{bmatrix} x_1\\x_2\end{bmatrix}\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} 0\amp -1\\ 1\amp 0\end{bmatrix}\begin{bmatrix} x_1\\x_2\end{bmatrix}
@@ -251,7 +254,7 @@ x=\begin{bmatrix}
 0 \amp  0 \amp  0 \amp  4
 \end{bmatrix}\).</span>
 </h6>
-<p id="p-1025">Consider the matrix</p>
+<p id="p-1083">Consider the matrix</p>
 <div class="displaymath">
 \begin{equation*}
 A=
@@ -325,19 +328,19 @@ A=
 <p data-braille="continuation">and so we have \(1\text{,}\) \(2\text{,}\) \(3\) and \(4\) as eigenvalues. Notice that in this case the eigenvalues are just the diagonal elements and that the matrix is upper triangular. We shall see  that for every upper (or lower) triangular matrix, the eigenvalues are the diagonal entries.</p></article><article class="definition definition-like" id="EigenspaceDef"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenspaces.</span>
 </h6>
-<p id="p-1026">Suppose that \(A\) is a square matrix of order \(n\text{.}\) Then for any real number \(\lambda\text{,}\) we define the <dfn class="terminology">eigenspace</dfn> \(E_\lambda\) by</p>
+<p id="p-1084">Suppose that \(A\) is a square matrix of order \(n\text{.}\) Then for any real number \(\lambda\text{,}\) we define the <dfn class="terminology">eigenspace</dfn> \(E_\lambda\) by</p>
 <div class="displaymath">
 \begin{equation*}
 E_\lambda=\{\vec x\in \R^n\mid A\vec x=\lambda \vec x\}.
 \end{equation*}
-</div></article><p id="p-1027">Clearly \(\vec0\) is in \(E_\lambda\) for any value of \(\lambda\text{,}\) and \(\lambda\) is an eigenvalue if and only if there is some \(\vec x\not=\vec0\) in \(E_\lambda\text{.}\)</p>
-<article class="proposition theorem-like" id="proposition-8"><h6 class="heading">
+</div></article><p id="p-1085">Clearly \(\vec0\) is in \(E_\lambda\) for any value of \(\lambda\text{,}\) and \(\lambda\) is an eigenvalue if and only if there is some \(\vec x\not=\vec0\) in \(E_\lambda\text{.}\)</p>
+<article class="proposition theorem-like" id="proposition-9"><h6 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">5.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">An eigenspace is a subspace.</span>
 </h6>
-<p id="p-1028">Let \(A\) be an \(n\times n\) matrix and let \(\lambda\) be a real number. Then the set of vectors \(E_\lambda=\{\vec x \mid A\vec x=\lambda \vec x\}\) is a subspace of \(\mathbb{R}^n\text{.}\)</p></article><article class="hiddenproof" id="proof-78"><a data-knowl="" class="id-ref original" data-refid="hk-proof-78"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-78"><article class="hiddenproof"><p id="p-1029">From <a class="xref" data-knowl="./knowl/SubspaceDefinition.html" title="Definition 4.9.12: Subspace of \(\mathbb{R}^n\)">Definition 4.9.12</a> it is sufficient to show that two properties of closure under addition and of closure under scalar multiplication are satisfied:</p>
+<p id="p-1086">Let \(A\) be an \(n\times n\) matrix and let \(\lambda\) be a real number. Then the set of vectors \(E_\lambda=\{\vec x \mid A\vec x=\lambda \vec x\}\) is a subspace of \(\mathbb{R}^n\text{.}\)</p></article><article class="hiddenproof" id="proof-83"><a data-knowl="" class="id-ref original" data-refid="hk-proof-83"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-83"><article class="hiddenproof"><p id="p-1087">From <a class="xref" data-knowl="./knowl/SubspaceDefinition.html" title="Definition 4.9.12: Subspace of \(\mathbb{R}^n\)">Definition 4.9.12</a> it is sufficient to show that two properties of closure under addition and of closure under scalar multiplication are satisfied:</p>
 <ul class="disc">
-<li id="li-352">
-<p id="p-1030">Closure under addition:</p>
+<li id="li-366">
+<p id="p-1088">Closure under addition:</p>
 <div class="displaymath">
 \begin{align*}
 A(\vec x+\vec y)\amp=A(\vec x)+A(\vec y)\\
@@ -346,8 +349,8 @@ A(\vec x+\vec y)\amp=A(\vec x)+A(\vec y)\\
 \end{align*}
 </div>
 </li>
-<li id="li-353">
-<p id="p-1031">Closure under scalar multiplication:</p>
+<li id="li-367">
+<p id="p-1089">Closure under scalar multiplication:</p>
 <div class="displaymath">
 \begin{align*}
 A(r\vec x)\amp=rA(\vec x)\\

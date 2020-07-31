@@ -1,19 +1,41 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:32:04-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:09:56-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>It is clear the \(\vec x\) is a unit vector if and only if \(\|\vec x\|^2=\vec x\cdot\vec x=1\text{.}\)</p>
-<span class="incontext"><a href="section-26.html#p-724">in-context</a></span>
+<p>Let</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma=
+\begin{pmatrix}
+1\amp 2\amp  3\amp \cdots\amp  n\\ 
+i_1\amp i_2\amp i_3\amp \cdots\amp  i_n
+\end{pmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">By <a class="xref" data-knowl="./knowl/PermutationSignDefinition.html" title="Definition 3.6.6">Definition 3.6.6</a> we need to keep track of the number of interchanges needed to put \(\sigma\) into natural order. If \(i_1=1\text{,}\) the first position is in natural order we are finished with the that position. Nothing has changed, including the number of inversions. Otherwise, we need to interchange whatever is in the first position with \(1\text{,}\) and we need to know the effect of that interchange on the parity of the number of inversions. Here is the situation before interchanging \(1\) and \(k\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma=
+\begin{pmatrix}
+1\amp       \amp \cdots\amp        \amp j\amp      \amp\cdots\amp      \amp n\\
+k\amp \cdots\amp t     \amp \cdots \amp1 \amp\cdots\amp u    \amp\cdots\amp i_n
+\end{pmatrix}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">If \(u\) is an entry to the right of \(1\text{,}\) then the interchange of \(1\) and \(k\) causes the pairs \(ku\) and \(1u\) to be replaced by \(1u\) and \(ku\) respectively, and so the number of inversions is unchanged as far as \(u\) is concerned.</p>
+<span class="incontext"><a href="DeterminantDeeperTopics.html#p-724">in-context</a></span>
 </body>
 </html>

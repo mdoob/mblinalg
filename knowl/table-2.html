@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-03T15:13:23-05:00    *-->
+<!--*    on 2020-07-15T09:11:55-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -12,76 +12,40 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<figure class="table table-like"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.10.5<span class="period">.</span></span><span class="space"> </span>Row reduction by matrix multiplication</figcaption><table>
+<figure class="table table-like"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.6.7<span class="period">.</span></span><span class="space"> </span>Signs of permutations \(\sigma\) of \(\{1,2,3,4\}\) with \(t\) interchanges.</figcaption><table>
 <tr>
-<td class="l m b0 r0 l0 t0 lines">\(\textbf{Matrix}\)</td>
-<td class="l m b0 r0 l0 t0 lines">\(\textbf{Elementary Row}\)</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\textbf{Corresponding}\)</td>
+<td class="c m b2 r0 l0 t0 lines">\(\sigma\)</td>
+<td class="c m b2 r0 l0 t0 lines">\(t\)</td>
+<td class="c m b2 r0 l0 t0 lines">\(\sgn(\sigma)\)</td>
+<td class="c m b2 r0 l0 t0 lines">\(\sigma\)</td>
+<td class="c m b2 r0 l0 t0 lines">\(t\)</td>
+<td class="c m b2 r0 l0 t0 lines">\(\sgn(\sigma)\)</td>
+<td class="c m b2 r0 l0 t0 lines">\(\sigma\)</td>
+<td class="c m b2 r0 l0 t0 lines">\(t\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(\sgn(\sigma)\)</td>
 </tr>
 <tr>
-<td class="l m b0 r0 l0 t0 lines">\(\)</td>
-<td class="l m b0 r0 l0 t0 lines">\(\textbf{Operations}\)</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\textbf{Matrix}\)</td>
+<td class="c m b0 r0 l0 t0 lines">1234</td>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">+1</td>
+<td class="c m b0 r0 l0 t0 lines">1243</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines">-1</td>
+<td class="c m b0 r0 l0 t0 lines">1324</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">-1</td>
 </tr>
 <tr>
-<td class="l m b0 r0 l0 t0 lines">\(A=
-\begin{bmatrix}
-1\amp2\amp2\\
-2\amp4\amp5\\
-0\amp1\amp1
-\end{bmatrix}\)</td>
-<td class="l m b0 r0 l0 t0 lines">\(R_2\gets R_2-2R_1\)</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(E_1=
-\begin{bmatrix}
-1\amp0\amp0\\
--2\amp1\amp0\\
-0\amp0\amp1
-\end{bmatrix}\)</td>
+<td class="c m b0 r0 l0 t0 lines">1342</td>
+<td class="c m b0 r0 l0 t0 lines">2</td>
+<td class="c m b0 r0 l0 t0 lines">+1</td>
+<td class="c m b0 r0 l0 t0 lines">1423</td>
+<td class="c m b0 r0 l0 t0 lines">2</td>
+<td class="c m b0 r0 l0 t0 lines">+1</td>
+<td class="c m b0 r0 l0 t0 lines">1432</td>
+<td class="c m b0 r0 l0 t0 lines">1</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">-1</td>
 </tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">\(E_1A=
-\begin{bmatrix}
-1\amp2\amp2\\
-0\amp0\amp1\\
-0\amp1\amp1
-\end{bmatrix}\)</td>
-<td class="l m b0 r0 l0 t0 lines">\(R_2\leftrightarrow R_3\)</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(E_2=
-\begin{bmatrix}
-1\amp0\amp0\\
-0\amp0\amp1\\
-0\amp1\amp0 
-\end{bmatrix}\)</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">\(E_2E_1A=
-\begin{bmatrix}
-1\amp2\amp2\\
-0\amp1\amp1\\
-0\amp0\amp1
-\end{bmatrix}\)</td>
-<td class="l m b0 r0 l0 t0 lines">\(R_1\gets R_1-2R_2\)</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(E_3=
-\begin{bmatrix} 
-1\amp-2\amp0\\
-0\amp1\amp0\\
-0\amp0\amp1
-\end{bmatrix}\)</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">\(E_3E_2E_1A=\begin{bmatrix}
-1\amp0\amp0\\0\amp1\amp1\\0\amp0\amp1
-\end{bmatrix}\)</td>
-<td class="l m b0 r0 l0 t0 lines">\(R_2\gets R_2-R_3\)</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(E_4=\begin{bmatrix} 1\amp0\amp0\\0\amp1\amp-1
-\\0\amp0\amp1\end{bmatrix}\)</td>
-</tr>
-<tr><td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(E_4E_3E_2E_1A=
-\begin{bmatrix}
-1\amp0\amp0\\
-0\amp1\amp0\\
-0\amp0\amp1 
-\end{bmatrix}\)</td></tr>
-</table></figure><span class="incontext"><a href="section-17.html#table-2">in-context</a></span>
+</table></figure><span class="incontext"><a href="DeterminantDeeperTopics.html#table-2">in-context</a></span>
 </body>
 </html>

@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:32:04-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:09:56-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
 <article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
+<p>The proof follows the pattern of <a class="xref" data-knowl="./knowl/PermutationDeterminantProof4.html" title="Example 3.6.14: Proof for \(n=4\)">Example 3.6.14</a>.</p>
+<p>Consider the first row expansion of \(A\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{\vec x}{\|\vec x\|} \cdot \frac{\vec x}{\|\vec x\|}
-= \frac{\vec x \cdot \vec x}{\|\vec x\|^2}
-= \frac{\|\vec x\|^2}{\|\vec x\|^2}
-=1
+a_{1,1}M_{1,1}-a_{1,2}M_{1,2}+a_{1,3}M_{1,3}- \cdots
++ (-1)^{1+n}a_{1,n}M_{1,n}\text{.}
 \end{equation*}
-</div></article><span class="incontext"><a href="section-26.html#proof-57">in-context</a></span>
+</div>
+<p data-braille="continuation">The given permutation \(\sigma\) has \(\sigma(1)=i_1\text{,}\) and so the only hope of finding the permutation \(\sigma\) in the final expansion is to look for it in the only term where \(a_{1,i_1}\) appears: \(a_{1,i_1}M_{1,i_1}\text{.}\) The first row of \(M_{1,i_1}\) consists of \(a_{2,j}\text{,}\) with \(j\in\{1,2,\ldots,n\}\text{,}\) \(j\not=i_1\text{.}\) Since \(\sigma(2)=i_2\text{,}\) we must continue the expansion using the term of the form \(a_{2,\sigma(i_2)}M\text{.}\) This algorithm may proceed until \(a_{1,\sigma(1)}a_{2,\sigma(2)}\cdots a_{n,\sigma(n)}\) is found. Note that the entries of \(\{i_1,\ldots,i_n\}\) must be different to complete the argument.</p></article><span class="incontext"><a href="DeterminantDeeperTopics.html#proof-57">in-context</a></span>
 </body>
 </html>

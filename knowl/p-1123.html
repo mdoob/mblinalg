@@ -1,42 +1,27 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:32:11-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:10:04-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>For any \(\vec x\) in \(\R^m\text{,}\) we have \(L_3(\vec x)=(L_2\circ L_1)(\vec x)=L_2(L_1(\vec x))\text{,}\) and so we have \(L_3\colon\R^m\to\R^s\text{.}\)</p>
+<p>Let \(A=\begin{bmatrix}0\amp1\amp1\\1\amp0\amp1\\1\amp1\amp0 \end{bmatrix}\text{,}\) \(\vec x_1=\begin{bmatrix}1\\1\\1\end{bmatrix}\text{,}\) \(\vec x_2=\begin{bmatrix}-1\\1\\0\end{bmatrix}\text{,}\) and \(\vec x_3=\begin{bmatrix}-1\\0\\1\end{bmatrix}\text{.}\) Then \(\vec x_1\text{,}\) \(\vec x_2\text{,}\) and \(\vec x_3\text{,}\) are eigenvectors of \(A\) with corresponding eigenvalues \(2\text{,}\) \(-1\text{,}\) and \(-1\text{.}\) In fact \(\{\vec x_1, \vec x_2, \vec x_3\}\) is a basis for \(\mathbb{R}^3\text{.}\) From the definition of a basis, for any given \(\vec x\in\mathbb{R}^3\text{,}\) there is a unique choice of \(r_1,r_2,r_3\) so that \(\vec x=r_1\vec x_1 + r_2\vec x_2 + r_3\vec x_3\text{.}\) From the previous proposition,</p>
 <div class="displaymath">
-\begin{align*}
-L_3(\vec x + \vec y)
-\amp =L_2(L_1(\vec x+ \vec y))\\
-\amp = L_2(L_1(\vec x) + L_1(\vec y)) 
-\amp \gets \text{ since }L_1 \text{ is linear}\\
-\amp = L_2(L_1(\vec x)) + L_2(L_1(\vec y))
-\amp \gets \text{ since }L_2\text{ is linear}\\
-\amp = L_3(\vec x) + L_3(\vec y)\text{.}
-\end{align*}
+\begin{equation*}
+A^n\vec x=2^nr_1\vec x_1+ (-1)^n r_2\vec x_2 +(-1)^n r_3 \vec x_3
+\end{equation*}
 </div>
-<div class="displaymath">
-\begin{align*}
-L_3(r\vec x)
-\amp =L_2(L_1(r\vec x))\\
-\amp =L_2(rL_1(\vec x))
-\amp \gets\text{ since }L_1\text{ is linear}\\
-\amp =rL_2(L_1(\vec x)
-\amp \gets\text{ since }L_2\text{ is linear}\\
-\amp =rL_3(\vec x)\text{.}
-\end{align*}
-</div>
-<p data-braille="continuation">Hence \(L_3=L_2\circ L_1\) is linear.</p>
-<span class="incontext"><a href="section-42.html#p-1123">in-context</a></span>
+<p data-braille="continuation">As \(n\) gets large, clearly the coefficient of \(x_1\) becomes huge and the value of \(A^n\vec x\) is very close to a scalar multiple of \(\vec x_1\text{,}\) that is, it approaches the eigenspace \(E_2\text{.}\)</p>
+<span class="incontext"><a href="section-36.html#p-1123">in-context</a></span>
 </body>
 </html>

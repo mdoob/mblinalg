@@ -15,6 +15,7 @@
    \newcommand{\adj}{\mathop{\textrm{adj}}}
    \newcommand{\proj}{\mathop{\textrm{proj}}}
    \newcommand{\Span}{\mathop{\textrm{span}}} <!-- \span is a TeX primitive  -->
+   \newcommand{\sgn}{\mathop{\textrm{sgn}}}
    <!-- Shortcuts for typesetting elementary row operations-->
    \newcommand{\rowint}[2]{R_{#1} \leftrightarrow R_{#2}}
    \newcommand{\rowmul}[2]{R_{#1}\gets {#2}R_{#1}}

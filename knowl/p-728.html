@@ -1,28 +1,46 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:32:04-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:09:57-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We use the law of cosines (<a class="xref" data-knowl="./knowl/LawOfCosines.html" title="Theorem 7.3.2: The law of cosines">Theorem 7.3.2</a>) with \(a=\|\vec x\|\text{,}\) \(b=\|\vec y\|\) and \(c\) equal to the distance from \(\vec x\) to \(\vec y\text{:}\)</p>
+<p>Expanding on the first row of \(A\) gives us</p>
 <div class="displaymath">
 \begin{equation*}
-(x_1-y_1)^2+(x_2-y_2)^2 =(x_1^2+x_2^2) +(y_1^2+y_2^2) 
-- 2 \|\vec x\| \|\vec y\| \cos\theta \\
-x_1y_1+x_2y_2 = \|\vec x\| \|\vec y\| \cos\theta \\
-\vec x\cdot\vec y = \|\vec x\| \|\vec y\| \cos\theta 
+\det(A)=a_{1,1}M_{1,1}-a_{1,2}M_{1,2}+a_{1,3}M_{1,3}- \cdots
++ (-1)^{1+n}a_{1,n}M_{1,n}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">which gives us the following:</p>
-<span class="incontext"><a href="section-26.html#p-728">in-context</a></span>
+<p data-braille="continuation">Since \(\sigma(1)=i_1\text{,}\) we must select the summand \((-1)^{1+i_1}a_{1,i_1}M_{1,i_1}\) expand it further. The first row expansion of \(M_{1,i_1}\) is</p>
+<div class="displaymath">
+\begin{equation*}
+a_{2,1} - a_{2,2} + a_{2,3} + \cdots 
++ \color{red}{(-1)^{i_1}a_{2,i_{1}-1}} +\color{red}{(-1)^{i_1+1} a_{2,i_1+1}} 
++ \cdots +(-1)^{n-1} a_{2,n-1}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">The crux of the argument is shown by the two terms in red. Since the \(i_1\)-column has been deleted, as we pass from the first to the second, the second subscript goes up by two but the exponent  of \(-1\) increases by only one. This implies that the exponent of \(-1\) in the coefficient of \(a_{2,k}\) and \(k\) have the opposite parity if \(k \lt i_1\) and the same parity if \(k \gt i_1\text{.}\) In other words, we have \(i=2\) and</p>
+<div class="displaymath">
+\begin{equation*}
+\text{The coefficient of } a_{i,j}=
+\begin{cases}
+(-1)^{i+j+1}\amp \text{if } j \lt i_1\\
+(-1)^{i+j}\amp \text{if } i_1 \lt j. 
+\end{cases}
+\end{equation*}
+</div>
+<p data-braille="continuation">Note that \(i_2 \lt i_1\) is the exact condition for \(i_1 i_2\) to be an inversion, and so  \(i_2 \lt i_1\) being an inversion adds one extra \(-1\) to our count.</p>
+<span class="incontext"><a href="DeterminantDeeperTopics.html#p-728">in-context</a></span>
 </body>
 </html>

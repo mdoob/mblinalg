@@ -1,24 +1,45 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:32:04-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:09:57-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>If \(\vec x\) and \(\vec y\) are nonzero vectors in \(\R^2\text{,}\) then</p>
+<p>We carry out the algorithm for one more step to see the emerging pattern. We have now deleted row one, row two, column \(i_1\) and column \(i_2\) from \(A\text{.}\) We call this matrix \(N\) for simplicity. The first row of \(N\) consists of \(\{a_{3,1} \cdots a_{3,n}\}\) with \(a_{3,i_0}\) and \(a_{3,i_1}\) deleted. We now have \(i=3\) and</p>
 <div class="displaymath">
 \begin{equation*}
-\vec x\cdot\vec y = \|\vec x\| \|\vec y\| \cos\theta.
+\text{The coefficient of } a_{i,j}=
+\begin{cases}
+(-1)^{i+j+2}\amp \text{if } j \text{ is less than } i_1 \text{ and } i_2\\
+(-1)^{i+j+1}\amp \text{if } j \text{ is between } i_1 \text{ and } i_2\\
+(-1)^{i+j}\amp \text{if } j \text{ is greater than } i_1 \text{ and } i_2.
+\end{cases}
 \end{equation*}
 </div>
-<span class="incontext"><a href="section-26.html#p-729">in-context</a></span>
+<p data-braille="continuation">Notice that after setting \(j=i_3\text{,}\) this is the same as</p>
+<div class="displaymath">
+\begin{equation*}
+\text{The coefficient of } a_{i,j}=
+\begin{cases}
+(-1)^{i+j+2}\amp \text{if } i_1 i_3 
+\text{ and } i_2 i_3 \text{ are both inversions}\\
+(-1)^{i+j+1}\amp \text{if one of } i_1 i_3  
+\text{ and } i_2 i_3 \text{ is an inversion}\\
+(-1)^{i+j}\amp\text{if neither of } i_1 i_3  
+\text{ nor } i_2 i_3 \text{ is an inversion}.
+\end{cases}
+\end{equation*}
+</div>
+<span class="incontext"><a href="DeterminantDeeperTopics.html#p-729">in-context</a></span>
 </body>
 </html>

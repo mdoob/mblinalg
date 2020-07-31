@@ -1,72 +1,28 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-07-10T15:32:04-05:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-07-31T12:09:57-05:00       *-->
+<!--*   A recent stable commit (2020-07-07):   *-->
+<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<ol class="decimal">
-<li><p>Since \(\|\vec x\|= \vec x\cdot\vec x\text{,}\) this result is contained in <a class="xref" data-knowl="./knowl/DotProductFirstProperties.html" title="Proposition 4.2.3: First properties of the dot product">Proposition 4.2.3</a>.</p></li>
-<li>
-<p>From direct evaluation:</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{rl}
-\|r\vec x\|^2
-\amp=\|r(x_1,x_2,\ldots,x_n)\|^2\\
-\amp=\|(rx_1,rx_2,\ldots,rx_n)\|^2\\
-\amp=r^2x_1^2+r^2x_2^2+\cdots+r^2x_n^2\\
-\amp=r^2(x_1^2+x_2^2+\cdots+x_n^2)
-\end{array}
-\end{equation*}
-</div>
-<p data-braille="continuation">and so by taking square roots, \(\|r\vec x\|=|r| \|\vec x\|\text{.}\)</p>
-</li>
-<li><p>This is just <a class="xref" data-knowl="./knowl/CauchySchwarz.html" title="Theorem 4.2.17: Cauchy-Schwarz">Theorem 4.2.17</a></p></li>
-<li>
-<p>Again, a direct evaluation:</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{rl}
-\|\vec x+\vec y\|^2 + \|\vec x-\vec y\|^2 
-\amp= (\vec x+\vec y) \cdot (\vec x+\vec y) 
-+(\vec x-\vec y) \cdot (\vec x-\vec y)\\
-\amp=  (\vec x\cdot\vec x + \vec x\cdot\vec y 
-+\vec y\cdot\vec x +\vec y\cdot\vec y)\\
-\amp \phantom{=} +  (\vec x\cdot\vec x - \vec x\cdot\vec y 
--\vec y\cdot\vec x +\vec y\cdot\vec y)\\
-\amp=2(\|\vec x\|^2 +\|\vec y\|^2)
-\end{array}
-\end{equation*}
-</div>
-</li>
-<li>
-<p>The triangle inequality is a consequence of the Cauchy-Schwarz inequality:</p>
-<div class="displaymath">
-\begin{equation*}
-\begin{array}{rll}
-\|\vec x+\vec y\|^2
-\amp= (\vec x+\vec y)\cdot(\vec x+\vec y)\\
-\amp= \vec x\cdot\vec x+2(\vec x\cdot\vec y)+\vec y\cdot\vec y\\
-\amp= \|\vec x\|^2 +2(\vec x\cdot\vec y)+\|\vec y\|^2\\
-\amp\le \|\vec x\|^2 +2|\vec x\cdot\vec y|+\|\vec y\|^2
-\amp\amp\gets r\le|r|\text{ used here.}\\
-\amp\le \|\vec x\|^2 +2\|\vec x\|\|\vec y\|+\|\vec y\|^2
-\amp\amp\gets \text{ Cauchy-Schwarz used here.}\\
-\amp= (\|\vec x\|+\|\vec y\|)^2
-\end{array}
-\end{equation*}
-</div>
-</li>
-</ol>
-<span class="incontext"><a href="section-26.html#p-748">in-context</a></span>
+<p>The equality, addition and scalar multiplication of \(n\)-tuples is very much like that of matrices:</p>
+<ul class="disc">
+<li><p>Equality: \((x_1,x_2,\ldots,x_n)=(y_1,y_2,\ldots,y_n)\) means \(x_i=y_i\) for \(i=1,2,\ldots,n\text{.}\)</p></li>
+<li><p>Addition: \((x_1,x_2,\ldots,x_n)+(y_1,y_2,\ldots,y_n) 
+=(x_1+y_1,x_2+y_2,\ldots,x_n+y_n)\text{.}\)</p></li>
+<li><p>Scalar multiplication: For any scalar \(r\text{,}\) \(r(x_1,x_2,\ldots,x_n) =(rx_1,rx_2,\ldots,rx_n)\text{.}\)</p></li>
+</ul>
+<p data-braille="continuation">In fact, if we look at the \(n\)-tuples as column vectors, then equality, addition and scalar multiplication are the same as matrix equality, addition and scalar multiplication.</p>
+<span class="incontext"><a href="section-25.html#p-748">in-context</a></span>
 </body>
 </html>
