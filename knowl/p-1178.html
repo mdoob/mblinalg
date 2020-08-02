@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-07-31T12:10:05-05:00       *-->
+<!--*       on 2020-08-01T19:08:12-05:00       *-->
 <!--*   A recent stable commit (2020-07-07):   *-->
 <!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
 <!--*                                          *-->
@@ -15,23 +15,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>\(L_1(\vec e_i)-L_2(\vec e_i)=\vec 0\) by assumption. If \(\vec x=(x_1,\dots,x_m)\text{,}\) we may write \(\vec x = x_1\vec e_1+x_2\vec e_2+\cdots +x_m\vec e_m.\) Then</p>
-<div class="displaymath">
-\begin{align*}
-L_1(\vec x)
-\amp =L_1(x_1\vec e_1+x_2\vec e_2+\cdots +x_m\vec e_m)\\
-\amp =x_1L_1(\vec e_1)+x_2L_1(\vec e_2)+\cdots +x_mL_1(\vec e_m)\\
-\amp =x_1L_2(\vec e_1)+x_2L_2(\vec e_2)+\cdots +x_mL_2(\vec e_m)\\
-\amp =L_2(x_1\vec e_1+x_2\vec e_2+\cdots +x_m\vec e_m)\\
-\amp= L_2(\vec x)
-\end{align*}
-</div>
-<p data-braille="continuation">From this we see that</p>
+<p>Now suppose we have two linear transformations \(L_1\colon\R^m\to\R^n\) and \(L_2\colon\R^n\to\R^s\text{.}\) We then define a new linear transformation called the <dfn class="terminology">composition of \(L_1\) and \(L_2\)</dfn> (and denoted \(L_2\circ L_1\)) in the following way: \(L_2\circ L_1\colon\R^m\to\R^s\) and</p>
 <div class="displaymath">
 \begin{equation*}
-L_1(\vec x)-L_2(\vec x) = \vec 0.
+(L_2\circ L_1)(\vec x)=L_2(L_1(\vec x))
 \end{equation*}
 </div>
-<span class="incontext"><a href="section-41.html#p-1178">in-context</a></span>
+<p data-braille="continuation">This means that we start with a vector \(\vec x\) in \(\R^m\) and compute \(L_1(\vec x)\text{.}\) This vector is in \(\R^n\text{,}\) which is exactly right if we want to evaluate \(L_2\text{.}\) Hence \(L_2(L_1(\vec x))\) not only makes sense, but upon evaluation we have a vector in \(\R^s\text{.}\)</p>
+<span class="incontext"><a href="section-42.html#p-1178">in-context</a></span>
 </body>
 </html>

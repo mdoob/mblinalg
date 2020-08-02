@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-07-31T12:09:43-05:00       *-->
+<!--*       on 2020-08-01T19:07:53-05:00       *-->
 <!--*   A recent stable commit (2020-07-07):   *-->
 <!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
 <!--*                                          *-->
@@ -109,7 +109,7 @@ MathJax.Hub.Config({
 <section class="subsection" id="subsection-87"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.2.1</span> <span class="title">Definition of a linear transformation \(L\colon \R^m\to\R^n\)</span>
 </h3>
-<p id="p-1137">A <dfn class="terminology">transformation</dfn> is a map (or a rule) that takes any vector in \(\R^m\) and computes a vector in \(\R^n\text{.}\) We write \(L\colon \R^m\to\R^n\) to keep track of the size of the vector we start with and the vector we end up with. So, for example, if we want the rule to start with the vector \((x_1,x_2,x_3)\) and compute \((x_1+x_2,x_2+x_3)\) we would write \(L\colon \R^3\to\R^2\) and \(L((x_1,x_2,x_3))=(x_1+x_2,x_2+x_3)\text{.}\) We can apply this rule for specific values</p>
+<p id="p-1137">A <dfn class="terminology">transformation</dfn> is a map (or a rule) that takes any vector in \(\R^m\) and computes a vector in \(\R^n\text{.}\) We write \(L\colon \R^m\to\R^n\) so that the notation tracks the size of the vector we start with and the vector we end up with. For example, if we want the rule to start with the vector \((x_1,x_2,x_3)\) and compute \((x_1+x_2,x_2+x_3)\) we would write \(L\colon \R^3\to\R^2\) and \(L((x_1,x_2,x_3))=(x_1+x_2,x_2+x_3)\text{.}\) We can apply this rule for specific values:</p>
 <ul class="disc">
 <li id="li-377"><p id="p-1138">\(\displaystyle L((1,2,3))=(1+2,2+3)=(3,5)\)</p></li>
 <li id="li-378"><p id="p-1139">\(\displaystyle L((0,-3,4))=(0-3,-3+4)=(-3,1)\)</p></li>
@@ -117,16 +117,16 @@ MathJax.Hub.Config({
 </ul>
 <p id="p-1141">A transformation is <dfn class="terminology">linear</dfn> if it satisfies the following two properties:</p>
 <ul class="disc">
-<li id="li-380"><p id="p-1142">\(\displaystyle L(\vec u+\vec v)=L(\vec u)+L(\vec v)\)</p></li>
-<li id="li-381"><p id="p-1143">\(\displaystyle L(r\vec u)=rL(\vec u)\)</p></li>
+<li id="li-380">Addition property: \(L(\vec u+\vec v)=L(\vec u)+L(\vec v)\)</li>
+<li id="li-381">Scalar multiplication property: \(L(r\vec u)=rL(\vec u)\)</li>
 </ul>
 <p data-braille="continuation">Notice that \(\vec u\) and \(\vec v\) are in \(\R^m\) while \(L(\vec u)\) and \(L(\vec v)\) are in \(\R^n\text{.}\)</p></section><section class="subsection" id="LinearTransformationExamples"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.2.2</span> <span class="title">Examples of linear transformations</span>
 </h3>
-<p id="p-1144">Here are some examples of linear transformations:</p>
+<p id="p-1142">Here are some examples of linear transformations:</p>
 <ol class="decimal">
 <li id="li-382">
-<p id="p-1145">The zero transformation: \(L(\vec x)=\vec0\) for all \(\vec x\)</p>
+<p id="p-1143">The zero transformation: \(L(\vec x)=\vec0\) for all \(\vec x\)</p>
 <div class="displaymath">
 \begin{equation*}
 L(\vec x)+L(\vec y)=\vec0+\vec0=\vec0=L(\vec x + \vec y)\\
@@ -135,7 +135,7 @@ rL(\vec x)=r\vec0=\vec0=L(r\vec x)
 </div>
 </li>
 <li id="li-383">
-<p id="p-1146">The identity transformation: \(L(\vec x)=\vec x\) for all \(\vec x\)</p>
+<p id="p-1144">The identity transformation: \(L(\vec x)=\vec x\) for all \(\vec x\)</p>
 <div class="displaymath">
 \begin{equation*}
 L(\vec x)+L(\vec y)=\vec x+\vec y=L(\vec x + \vec y)\\
@@ -144,18 +144,18 @@ rL(\vec x)=r\vec x=L(r\vec x)
 </div>
 </li>
 <li id="li-384">
-<p id="p-1147">Rotations in \(\R^2\) as seen in <a class="xref" data-knowl="./knowl/PlaneRotation.html" title="Example 6.1.1: A rotation in the plane">Example 6.1.1</a>.</p>
-<p id="p-1148">The following figure shows why rotations have the addition property defining linear transformations:</p>
-<figure class="figure figure-like" id="figure-59"><div class="image-box" style="width: 55%; margin-left: 22.5%; margin-right: 22.5%;"><object data="images/image-62.html" id="image-62" width="330" height="330"><embed src="images/image-62.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.1<span class="period">.</span></span><span class="space"> </span>Rotations are linear</figcaption></figure><p id="p-1149">The situation is similar for the scalar multiplication property:</p>
+<p id="p-1145">Rotations in \(\R^2\) as seen in <a class="xref" data-knowl="./knowl/PlaneRotation.html" title="Example 6.1.1: A rotation in the plane">Example 6.1.1</a>.</p>
+<p id="p-1146">The following figure uses the parallelogram rule to show why rotations have the addition property from the definition of a linear transformation:</p>
+<figure class="figure figure-like" id="figure-59"><div class="image-box" style="width: 65%; margin-left: 17.5%; margin-right: 17.5%;"><object data="images/image-62.html" id="image-62" width="390" height="390"><embed src="images/image-62.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.1<span class="period">.</span></span><span class="space"> </span>Rotations are linear</figcaption></figure><p id="p-1147">The situation is similar for the scalar multiplication property:</p>
 <figure class="figure figure-like" id="figure-60"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><object data="images/image-63.html" id="image-63" width="300" height="300"><embed src="images/image-63.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.2<span class="period">.</span></span><span class="space"> </span>Scalar multiplication is linear</figcaption></figure>
 </li>
-<li id="li-385"><p id="p-1150">Reflections in \(\R^2\) as seen in <a class="xref" data-knowl="./knowl/PlaneReflection.html" title="Example 6.1.3: A reflection in the plane">Example 6.1.3</a>.</p></li>
-<li id="li-386"><p id="p-1151">Projections in \(\R^2\) as seen in <a class="xref" data-knowl="./knowl/PlaneProjection.html" title="Example 6.1.5: A projection in the plane">Example 6.1.5</a>.</p></li>
-<li id="li-387"><p id="p-1152">Dilations in \(\R^2\) as seen in <a class="xref" data-knowl="./knowl/PlaneDilation.html" title="Example 6.1.7: A dilation in the plane">Example 6.1.7</a>.</p></li>
+<li id="li-385"><p id="p-1148">Reflections in \(\R^2\) as seen in <a class="xref" data-knowl="./knowl/PlaneReflection.html" title="Example 6.1.3: A reflection in the plane">Example 6.1.3</a>.</p></li>
+<li id="li-386"><p id="p-1149">Projections in \(\R^2\) as seen in <a class="xref" data-knowl="./knowl/PlaneProjection.html" title="Example 6.1.5: A projection in the plane">Example 6.1.5</a>.</p></li>
+<li id="li-387"><p id="p-1150">Dilations in \(\R^2\) as seen in <a class="xref" data-knowl="./knowl/PlaneDilation.html" title="Example 6.1.7: A dilation in the plane">Example 6.1.7</a>.</p></li>
 <li id="li-388">
-<p id="p-1153">\(L((x_1,x_2,x_3))=(x_1+x_2,x_2+x_3)\) since</p>
+<p id="p-1151">\(L((x_1,x_2,x_3))=(x_1+x_2,x_2+x_3)\) since</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
@@ -184,7 +184,7 @@ rL(\vec x)
 </div>
 </li>
 <li id="li-389">
-<p id="p-1154">Let \(A\) be an \(n\times m\) matrix (note carefully: \(n\) rows and \(m\) columns). Define \(L\colon\R^m\to\R^n\) in the following way: If \(\vec x\) is in \(\R^m\text{,}\) let \(\vec z=A\vec x\text{.}\) Note that \(\vec z\) is in \(\R^n\text{.}\) We then let \(L(\vec x)=\vec z\text{.}\)  In other words \(L(\vec x)=A\vec x\text{.}\) It follows that</p>
+<p id="p-1152">Let \(A\) be an \(n\times m\) matrix (note carefully: \(n\) rows and \(m\) columns). Define \(L\colon\R^m\to\R^n\) in the following way: If \(\vec x\) is in \(\R^m\text{,}\) let \(\vec z=A\vec x\text{.}\) Note that \(\vec z\) is in \(\R^n\text{.}\) We then let \(L(\vec x)=\vec z\text{.}\)  In other words \(L(\vec x)=A\vec x\text{.}\) It follows that</p>
 <div class="displaymath">
 \begin{equation*}
 L(\vec x+\vec y) =A(\vec x+\vec y)

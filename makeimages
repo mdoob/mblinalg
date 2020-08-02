@@ -8,6 +8,7 @@ echo "xml file is " $XMLFILE
 
 # -vv option gives more details
 # /home/mdoob/mathbook/pretext/pretext -vv -c asy -f html -d $IMAGEDIR $XMLFILE
+echo "/home/mdoob/mathbook/pretext/pretext -v -c asy -f html -d $IMAGEDIR $XMLFILE"
 /home/mdoob/mathbook/pretext/pretext -v -c asy -f html -d $IMAGEDIR $XMLFILE
 
 

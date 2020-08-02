@@ -22,7 +22,7 @@
         <example xml:id="PlaneRotation"><title>A rotation in the plane</title>
             <p>
             We start with a point <m>\vec x</m> in the plane and
-            rotate in through an angle <m>\theta</m> counterclockwise around
+            rotate it through an angle <m>\theta</m> counterclockwise around
             the origin. This new point is <m>L(\vec x)</m>.
             </p>
             <figure>
@@ -102,10 +102,12 @@
        
        <example xml:id="PlaneDilation"><title>A dilation in the plane</title>
             <p>
-            We start with a real number <m>s</m>. For a point <m>\vec x \not=\vec0</m>,
-            let <m>L(\vec x)=s\vec x</m>. Then <m>L(\vec x)</m>
-            is on joining <m>\vex x</m> and <m>\vec 0</m>. The distance from 
-            <m>L(\vec x)</m> to <m>\vec 0</m> has been stretched by a factor of <m>s</m>.
+            We start with a real number <m>s\gt 0</m>. For a point <m>\vec x</m>,
+            let <m>L(\vec x)=s\vec x</m>. If
+            <m>\vec x\not=\vec0</m>, then <m>L(\vec x)</m>
+            is on joining <m>\vec x</m> and <m>\vec 0</m>. The distance from 
+            <m>\vec x</m> to <m>\vec 0</m> has been stretched by a factor of <m>s</m>
+            to get the distance from <m>L(\vec x)</m> to <m>\vec 0</m>.
             </p>
             <figure>
             <caption/>
@@ -130,17 +132,20 @@
       </subsection>
     </section>
     
-    <section xml:id="LinearTransformationIntroduction"><title>Definition of a linear transformation</title>
+    <section xml:id="LinearTransformationIntroduction">
+    <title>Definition of a linear transformation</title>
       
-        <subsection><title>Definition of a linear transformation <m>L\colon \R^m\to\R^n</m></title> 
+        <subsection>
+        <title>Definition of a linear transformation <m>L\colon \R^m\to\R^n</m></title> 
         <p>
         A <term>transformation</term> is a map (or a rule) that takes any vector
-        in <m>\R^m</m> and computes a vector in <m>\R^n</m>. We write <m>L\colon \R^m\to\R^n</m>
-        to keep track of the size of the vector we start with and the vector
-        we end up with. So, for example, if we want the rule to start with the
+        in <m>\R^m</m> and computes a vector in <m>\R^n</m>. We write 
+        <m>L\colon \R^m\to\R^n</m>
+        so that the notation tracks the size of the vector we start with and the vector
+        we end up with. For example, if we want the rule to start with the
         vector <m>(x_1,x_2,x_3)</m> and compute <m>(x_1+x_2,x_2+x_3)</m> we would write
         <m>L\colon \R^3\to\R^2</m> and <m>L((x_1,x_2,x_3))=(x_1+x_2,x_2+x_3)</m>. We can apply 
-        this rule for specific values
+        this rule for specific values:
             <ul>
              <li><p><m>L((1,2,3))=(1+2,2+3)=(3,5)</m></p></li>
              <li><p><m>L((0,-3,4))=(0-3,-3+4)=(-3,1)</m></p></li>
@@ -151,15 +156,16 @@
         <p>
         A transformation is <term>linear</term> if it satisfies the following two properties:
             <ul>
-            <li><p><m>L(\vec u+\vec v)=L(\vec u)+L(\vec v)</m></p></li>
-            <li><p><m>L(r\vec u)=rL(\vec u)</m></p></li>
+            <li>Addition property: <m>L(\vec u+\vec v)=L(\vec u)+L(\vec v)</m></li>
+            <li>Scalar multiplication property: <m>L(r\vec u)=rL(\vec u)</m></li>
             </ul>
         Notice that <m>\vec u</m> and <m>\vec v</m> are in <m>\R^m</m> while
         <m>L(\vec u)</m> and <m>L(\vec v)</m> are in <m>\R^n</m>.
         </p>
         </subsection>
       
-        <subsection xml:id="LinearTransformationExamples"><title>Examples of linear transformations</title> 
+        <subsection xml:id="LinearTransformationExamples">
+        <title>Examples of linear transformations</title> 
         <p>
         Here are some examples of linear transformations:
             <ol>
@@ -183,13 +189,14 @@
             </p>
             
             <p>
-            The following figure shows why rotations have the addition property
-            defining linear transformations:
+            The following figure uses the parallelogram rule to show
+            why rotations have the addition property
+            from the definition of a linear transformation:
             </p>
 
             <figure>
             <caption>Rotations are linear</caption>
-            <image width="55%">
+            <image width="65%">
             <asymptote>
             unitsize(24);
             pair z=(1/sqrt(2),1/sqrt(2)); //rotation
@@ -335,7 +342,7 @@
         <theorem><title> (First properties)</title>
         <statement>
         <p>
-            Any such transformation satisfies
+            Any linear transformation <m>L</m> satisfies
             <ul>
             <li><p><m>L(\vec0)=\vec0</m></p></li>
             <li><p><m>L(\vec x-\vec y)=L(\vec x)-L(\vec y)</m></p></li>
@@ -415,7 +422,8 @@
         </me> 
         </p>
          
-        <theorem xml:id="LinearTransformationOnStandardBasis"><title>(The value of <m>L</m> on 
+        <theorem xml:id="LinearTransformationOnStandardBasis">
+        <title>(The value of <m>L</m> on 
             the standard basis determines <m>L</m> everywhere)</title>
         <statement>
         <p>
@@ -515,6 +523,7 @@
         <caption/>
         <image width="90%">
         <asymptote>
+            usepackage("amsfonts");
             unitsize(50);
             draw(scale(1,2)*unitcircle);
             draw(shift(3,0)*scale(1,2)*unitcircle);
@@ -526,9 +535,9 @@
             label("$\vec x$", (-3,1), S);
             label("$L_1(\vec x)$", (0,1), S);
             label("$L_2(L_1(\vec x))$", (3,1), S);
-            label("$R^m$", (-3,-2), S);
-            label("$R^n$", (0,-2), S);
-            label("$R^s$", (3,-2), S);
+            label("${\mathbb R}^m$", (-3,-2), S);
+            label("${\mathbb R}^n$", (0,-2), S);
+            label("${\mathbb R}^s$", (3,-2), S);
             label("$L_1$", (-1.5,1.5), N);
             label("$L_2$", (1.5,1.5), N);
             label("$L_2\circ L_1$", (0,2.5), N);

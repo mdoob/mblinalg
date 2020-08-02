@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-07-31T12:09:43-05:00       *-->
+<!--*       on 2020-08-01T19:07:53-05:00       *-->
 <!--*   A recent stable commit (2020-07-07):   *-->
 <!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
 <!--*                                          *-->
@@ -106,22 +106,22 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-42"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">6.4</span> <span class="title">Matrix multiplication as a linear transformation</span>
 </h2>
-<p id="p-1179">If we are given an \(n\times m\) matrix \(A\text{,}\) we may define \(L(\vec x)=A\vec x\) and, as we saw in <a href="LinearTransformationIntroduction.html#LinearTransformationExamples" class="internal" title="Subsection 6.2.2: Examples of linear transformations">Subsection 6.2.2</a>, \(L\colon\R^m\to\R^n\) is then a linear transformation. We will denote this transformation \(L_A\text{.}\)</p>
-<p id="p-1180">Now suppose we have two linear transformations \(L_1\colon\R^m\to\R^n\) and \(L_2\colon\R^n\to\R^s\text{.}\) We then define a new linear transformation called the <dfn class="terminology">composition of \(L_1\) and \(L_2\)</dfn> (and denoted \(L_2\circ L_1\)) in the following way: \(L_2\circ L_1\colon\R^m\to\R^s\) and</p>
+<p id="p-1177">If we are given an \(n\times m\) matrix \(A\text{,}\) we may define \(L(\vec x)=A\vec x\) and, as we saw in <a href="LinearTransformationIntroduction.html#LinearTransformationExamples" class="internal" title="Subsection 6.2.2: Examples of linear transformations">Subsection 6.2.2</a>, \(L\colon\R^m\to\R^n\) is then a linear transformation. We will denote this transformation \(L_A\text{.}\)</p>
+<p id="p-1178">Now suppose we have two linear transformations \(L_1\colon\R^m\to\R^n\) and \(L_2\colon\R^n\to\R^s\text{.}\) We then define a new linear transformation called the <dfn class="terminology">composition of \(L_1\) and \(L_2\)</dfn> (and denoted \(L_2\circ L_1\)) in the following way: \(L_2\circ L_1\colon\R^m\to\R^s\) and</p>
 <div class="displaymath">
 \begin{equation*}
 (L_2\circ L_1)(\vec x)=L_2(L_1(\vec x))
 \end{equation*}
 </div>
 <p data-braille="continuation">This means that we start with a vector \(\vec x\) in \(\R^m\) and compute \(L_1(\vec x)\text{.}\) This vector is in \(\R^n\text{,}\) which is exactly right if we want to evaluate \(L_2\text{.}\) Hence \(L_2(L_1(\vec x))\) not only makes sense, but upon evaluation we have a vector in \(\R^s\text{.}\)</p>
-<p id="p-1181">We can visualize the composition of two functions as:</p>
+<p id="p-1179">We can visualize the composition of two functions as:</p>
 <figure class="figure figure-like" id="figure-61"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><object data="images/image-64.html" id="image-64" width="540" height="540"><embed src="images/image-64.svg" style="width: 100%; height: auto;" alt=""></embed></object></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.4.1<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1182">The vector \(\vec x\) is in \(\R^m\text{;}\) following the arrow labelled with \(L_1\) gets us to \(L_1(\vec x)\) in \(\R^m\text{;}\) following the next arrow labelled with \(L_2\) gets us to gets us to \(L_2(L_1(\vec x))\) in \(\R^s\text{.}\) The long arrow corresponds to \(L_2\circ L_1\text{:}\) it goes directly to the same vector in \(\R^s.\)</p>
-<p id="p-1183">Next, we wish to see that this composition is itself linear.</p>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.4.1<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1180">The vector \(\vec x\) is in \(\R^m\text{;}\) following the arrow labelled with \(L_1\) gets us to \(L_1(\vec x)\) in \(\R^m\text{;}\) following the next arrow labelled with \(L_2\) gets us to gets us to \(L_2(L_1(\vec x))\) in \(\R^s\text{.}\) The long arrow corresponds to \(L_2\circ L_1\text{:}\) it goes directly to the same vector in \(\R^s.\)</p>
+<p id="p-1181">Next, we wish to see that this composition is itself linear.</p>
 <article class="theorem theorem-like" id="theorem-81"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">The composition of two linear transformations is linear.</span>
 </h6>
-<p id="p-1184">Let \(L_1\colon\R^m\to\R^n\) and \(L_2\colon\R^n\to\R^s\) be two linear transformations, and let \(L_3=L_2\circ L_1\text{.}\) Then \(L_3\colon\R^m\to\R^s\) is itself linear.</p></article><article class="hiddenproof" id="proof-94"><a data-knowl="" class="id-ref original" data-refid="hk-proof-94"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-94"><article class="hiddenproof"><p id="p-1185">For any \(\vec x\) in \(\R^m\text{,}\) we have \(L_3(\vec x)=(L_2\circ L_1)(\vec x)=L_2(L_1(\vec x))\text{,}\) and so we have \(L_3\colon\R^m\to\R^s\text{.}\)</p>
+<p id="p-1182">Let \(L_1\colon\R^m\to\R^n\) and \(L_2\colon\R^n\to\R^s\) be two linear transformations, and let \(L_3=L_2\circ L_1\text{.}\) Then \(L_3\colon\R^m\to\R^s\) is itself linear.</p></article><article class="hiddenproof" id="proof-94"><a data-knowl="" class="id-ref original" data-refid="hk-proof-94"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-94"><article class="hiddenproof"><p id="p-1183">For any \(\vec x\) in \(\R^m\text{,}\) we have \(L_3(\vec x)=(L_2\circ L_1)(\vec x)=L_2(L_1(\vec x))\text{,}\) and so we have \(L_3\colon\R^m\to\R^s\text{.}\)</p>
 <div class="displaymath">
 \begin{align*}
 L_3(\vec x + \vec y)
@@ -145,16 +145,16 @@ L_3(r\vec x)
 \end{align*}
 </div>
 <p data-braille="continuation">Hence \(L_3=L_2\circ L_1\) is linear.</p></article></div>
-<p id="p-1186">Next we note that composition of linear transformations and matrix multiplication are closely related:</p>
+<p id="p-1184">Next we note that composition of linear transformations and matrix multiplication are closely related:</p>
 <article class="theorem theorem-like" id="theorem-82"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Composition and matrix multiplication.</span>
 </h6>
-<p id="p-1187">Let \(A\) be an \(n\times m\) matrix and \(B\) an \(s\times n\) matrix. Also let \(L_A\) and \(L_B\) be the linear transformations defined by \(L_A(\vec x)=A\vec x\) and \(L_B(\vec x)=B\vec x\text{.}\) Then</p>
+<p id="p-1185">Let \(A\) be an \(n\times m\) matrix and \(B\) an \(s\times n\) matrix. Also let \(L_A\) and \(L_B\) be the linear transformations defined by \(L_A(\vec x)=A\vec x\) and \(L_B(\vec x)=B\vec x\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
 L_{BA}=L_B\circ L_A
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-95"><a data-knowl="" class="id-ref original" data-refid="hk-proof-95"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-95"><article class="hiddenproof"><p id="p-1188">First note that \(L_A\colon\R^m\to\R^n\) and \(L_B:\R^n\to\R^s\text{,}\) and so \(L_B\circ L_A\colon\R^m\to\R^s\text{.}\) In addition, note that \(BA\) is an \(s\times m\) matrix, and so \(L_{BA}\colon\R^m\to\R^s\) also. Finally note that for any \(\vec x\) in \(\R^m\text{,}\) we have</p>
+</div></article><article class="hiddenproof" id="proof-95"><a data-knowl="" class="id-ref original" data-refid="hk-proof-95"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-95"><article class="hiddenproof"><p id="p-1186">First note that \(L_A\colon\R^m\to\R^n\) and \(L_B:\R^n\to\R^s\text{,}\) and so \(L_B\circ L_A\colon\R^m\to\R^s\text{.}\) In addition, note that \(BA\) is an \(s\times m\) matrix, and so \(L_{BA}\colon\R^m\to\R^s\) also. Finally note that for any \(\vec x\) in \(\R^m\text{,}\) we have</p>
 <div class="displaymath">
 \begin{equation*}
 (L_B\circ L_A)\vec x=L_B(L_A(\vec x))=L_B(A\vec x)
