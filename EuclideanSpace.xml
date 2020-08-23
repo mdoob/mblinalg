@@ -3945,23 +3945,41 @@
 
 
     <section>
-        <title>Linear indepencence, spanning and bases in <m>\mathbb{R}^n</m></title>
+        <title>Linear independence, spanning and bases in <m>\mathbb{R}^n</m></title>
         <introduction>
             <p>
-            Recall the definition of linear combinations: <m>\vec w</m> is a linear
-            combination of <m>\vec x_1,\vec x_2,\ldots,\vec x_m</m> if
-            <me>\vec w=r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_m </me>
-            for some real numbers <m>r_1, r_2,\ldots,r_n</m>.
+            Recall the 
+            <xref ref="LinearCombinationMatrixDefinition" text="custom">
+                definition of linear combinations of matrices
+            </xref>.
+            We may think of vectors in as being column 
+            vectors in <m>\mathbb{R}^n</m>. 
+            With this in mind, we make the definition for vectors 
+            in <m>\mathbb{R}^n</m> explicit.
             </p>
+            <definition xml:id="LinearCombinationDefinition">
+            <title>Linear combination of vectors</title>
+            <statement>
+            <p>
+              If <m>\vec x_2, \vec x_2,\ldots,\vec x_m</m>
+              are vectors in <m>\mathbb{R}^n</m>, then, for any choice
+              of scalars <m>r_1,r_2,\dots,r_m</m> the vector
+              <me>r_1\vec x_1+r_2\vec x_2+\cdots+r_m\vec x_m</me>
+              is called a <term>linear combination of 
+              <m>\vec x_2, \vec x_2,\ldots,\vec x_m</m></term>.
+            </p>
+            </statement>
+            </definition>
         </introduction>
     
     	<subsection>
     	    <title>Linear independence</title>
     	    <p>
     	        Suppose that <m>\vec x_1,\vec x_2,\ldots,\vec x_m</m> are vectors
-    	        in <m>\mathbb{R}^n</m>. Is it possible that <m>\vec 0</m> is a linear combination
+    	        in <m>\mathbb{R}^n</m>. Is it possible that <m>\vec 0</m> 
+                is a linear combination
     	        of <m>\vec x_1,\vec x_2,\ldots,\vec x_m</m>? The answer is certainly yes:
-    	        just set <m>r_1=r_2=\cdots=r_n=0</m>. Is this the only way of doing this? 
+    	        just set <m>r_1=r_2=\cdots=r_m=0</m>. Is this the only way of doing this? 
     	        If so, the vectors are called <em>linearly independent.</em>
     	    </p>
     	
@@ -3972,27 +3990,27 @@
     	        The set of vectors <m>\{\vec x_1,\vec x_2,\ldots,\vec x_m\}</m> is
     	        linearly independent if
     	        <me>
-    	            r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_m=\vec0
+    	            r_1\vec x_1+r_2\vec x_2+\cdots+r_m\vec x_m=\vec0
     	        </me>
-    	        implies  <m>r_1=r_2=\cdots=r_n=0</m>.
+    	        implies  <m>r_1=r_2=\cdots=r_m=0</m>.
     	    </p>
             </statement>
     	    </definition>
     	
-    	    <example>
+    	    <example xml:id="ThreeIndependentVectors">
     	        <title>Three vectors in <m>\mathbb{R}^4</m></title>
     	        <p>
     	            Let <m>\vec x_1=(1,2,1,1)</m>, <m>\vec x_2=(0,1,2,1)</m> and <m>\vec x_3=(-1,1,-1,1)</m>.
     	            Then the equation
     	            <me>
-    	            r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_m=\vec0
+    	            r_1\vec x_1+r_2\vec x_2+r_3\vec x_3=\vec0
     	            </me>
     	        says
     	            <md>
     	             <mrow>  r_1 + 0r_2 -  r_3\amp=0 \amp\amp \textrm{from the first coordinate}</mrow>
     	             <mrow> 2r_1 +  r_2 +  r_3\amp=0 \amp\amp \textrm{from the second coordinate}</mrow>
     	             <mrow>  r_1 + 2r_2 -  r_3\amp=0 \amp\amp \textrm{from the third coordinate}</mrow>
-    	             <mrow>  r_1 +  r_2 +  r_3\amp=0 \amp\amp \textrm{from the fourth coordinate}</mrow>
+    	             <mrow>  r_1 +  r_2 +  r_3\amp=0 \amp\amp \textrm{from the fourth coordinate.}</mrow>
     	            </md>
     	            This system of linear equations is easy to solve: the only solution is
     	            <m>r_1=r_2=r_3=0</m> and so the set of vectors 
@@ -4022,15 +4040,54 @@
     	        independent if and only if
     	        <me>
     	         X \begin{bmatrix} r_1\\r_2\\ \vdots\\ r_m \end{bmatrix}=\vec0
-    	         \textrm{ implies } r_1=r_2=\cdots=r_n=0.
+    	         \textrm{ implies } r_1=r_2=\cdots=r_m=0.
     	        </me>
     	        Viewing this as a system of linear equations, this says that the reduced
     	        row echelon form of <m>X</m> yields no free variables when determining the 
     	        solutions. 
     	        This, in turn, means the nonzero rows of the reduced row echelon form of <m>X</m>
-    	        is the identity matrix (see the previous example). 
+    	        is the identity matrix (as in <xref ref="ThreeIndependentVectors"/>). 
     	    </p>
     	    
+            <proposition>
+                <title>Uniqueness of linear combinations</title>
+                <statement>
+                <p>
+    	        If the set <m>\mathcal{X}=\{\vec x_1,\vec x_2,\ldots,\vec x_m\}</m> 
+                is a linearly independent
+                and <m>\vec w</m> is a linear combination of vectors in <m>\mathcal{X}</m>,
+                then
+                <men xml:id="eq-unique-independent">
+    	            \vec w=r_1\vec x_1+r_2\vec x_2+\cdots+r_m\vec x_m \text{ uniquely}
+                </men>. By <term>uniquely</term> we mean that there is exactly one choice
+                of <m>r_1,r_2,\ldots,r_m</m> so that <xref ref="eq-unique-independent"/>
+                is valid.
+                </p>
+                </statement>
+                <proof>
+                <p>
+                The <xref ref="LinearCombinationDefinition" text="custom"> 
+                definition of a linear combination </xref>
+                implies that there exists at least one instance of 
+                <m>r_1,r_2,\ldots,r_m</m> satisfying <xref ref="eq-unique-independent"/>.
+                Now suppose that there were more than one such instance, that is to say,
+                <md>
+                  <mrow>\vec w=r_1\vec x_1+r_2\vec x_2+\cdots+r_m\vec x_m</mrow>
+                  <mrow>\vec w=s_1\vec x_1+s_2\vec x_2+\cdots+s_m\vec x_m</mrow>
+                </md>.
+                Then
+                <me>
+                (r_1-s_1)\vec x_1+(r_2-s_2)\vec x_2+\cdots+(r_m-s_m)\vec x_m=\vec w-\vec w=\vec 0
+                </me>.
+                By <xref ref="LinearCombinationDefinition"/>,
+                this implies that <m>r_1-s_1=r_2-s_2=\cdots=r_m-s_m=\vec 0</m>
+                and so
+                <m>r_1=s_1, r_2=s_2,\ldots, r_m=s_m</m>. Hence the two choices turn out to be
+                the same one, that is, then is at most one choice of <m>r_1,r_2,\ldots,r_m</m>
+                satisfying <xref ref="eq-unique-independent"/>.
+                </p>
+                </proof>
+            </proposition>
     	    <theorem xml:id="IndependentSize">
     	        <title>A linearly independent set in <m>\mathbb{R}^n</m> has as most <m>n</m> elements</title>
     	        <statement>
@@ -4067,20 +4124,23 @@
     	        <em>spans</em> <m>\mathbb{R}^n</m> if, for any <m>\vec w</m> in <m>\mathbb{R}^n</m>,
     	        there exist <m>r_1, r_2,\ldots,r_m</m> so that
     	        <me>
-    	        r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_m=\vec w.
+    	        r_1\vec x_1+r_2\vec x_2+\cdots+r_m\vec x_m=\vec w.
     	        </me>
     	        </p>
                 </statement>
     	    </definition>
     	    <p>
-            In other words, for any <m>\vec w</m>, we can find solutions to
+            In other words, any <m>\vec w</m> is a linear comibination of 
+            <m>\{\vec x_1,\vec x_2,\ldots,\vec x_m\}</m>,
+            and  we can always find solutions to
     	        <me>
-    	        r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_m=\vec w.
+    	        r_1\vec x_1+r_2\vec x_2+\cdots+r_m\vec x_m=\vec w.
     	        </me>
-    	    viewed as an equation with variables <m>r_1,r_2,\ldots,r_m</m>.
+    	    viewed as a system of <m>n</m> linear equations with <m>m</m> unknowns 
+            <m>r_1,r_2,\ldots,r_m</m>.
             </p>
         	
-    	    <example>
+    	    <example xml:id="eq-SpanFourVectors">
     	    <title>Four vectors in <m>\mathbb{R}^3</m></title>
     	    <p>
     	    Let 
@@ -4126,8 +4186,54 @@
     	    columns, and hence there will be a solution for <m>\vec{w}'</m>
     	    too.
     	    </p>
+            <p>
+            Notice the role of <m>\vec x_4</m> in this example. It corresponds
+            to a free variable <m>t</m> for which, to make things as simple as
+            possible, we set <m>t=0</m>. 
+            This means that if we have a linear combination of 
+            <m>\{\vec x_1,\vec x_2,\vec x_3,\vec x_4\}</m> equal to <m>\vec w</m> 
+            we can delete <m>\vec x_4</m> and still find a linear combination of
+            the remaining vectors equal to <m>\vec w</m>.
+            </p>
     	    </example>
         	
+            <lemma>
+            <title>Deleting superfluous vectors from a spanning set</title>
+            <statement>
+            <p>
+            Suppose
+            <ul>
+            <li><m>\{\vec x_1,\ldots,\vec x_m\}</m> is a spanning set of <m>\mathbb{R}^n</m></li>
+            <li><m>A</m> is defined to have <m>\{\vec x_1,\ldots,\vec x_m\}</m> as columns</li>
+            <li><m>\vec x_{i_1}, \vec x_{i_2},\ldots,\vec x_{i_r}</m> are the free
+                variables in the reduced row echelon form of <m>A</m>.</li>
+            </ul>
+            Then the set of vectors <m>\cal{X}</m> obtained by deleting 
+            <m>\{\vec x_{i_1}, \vec x_{i_2},\ldots,\vec x_{i_r} \}</m>
+            from <m>\{\vec x_1,\ldots,\vec x_m\}</m> is still  a spanning set.
+            </p>
+            </statement>
+            <proof>
+            <p>
+            Suppose <m>\vec w</m> in in <m>\mathbb{R}^n</m>. Finding <m>r_1,r_2,\ldots,r_m</m>
+            so that 
+            <me>
+            r_1\vec x_1+r_2\vec x_2+\cdots+r_mx_m=\vec w 
+            </me>
+            is the same as letting <m>\vec r</m> be the column vector with <m>r_1,r_2,\ldots,r_m</m>
+            as entries and solving
+            <me>
+            A\vec r=\vec w
+            </me>.
+            By the definition of spanning sets, such a solution exists; we can set all the
+            free variables equal to 0. This gives a solution excluding the variables
+            <m>\{\vec x_{i_1}, \vec x_{i_2},\ldots,\vec x_{i_r} \}</m>,
+            and so a solution exists using only the vectors in <m>\cal{X}</m>. This makes
+            <m>\cal{X}</m> a spanning set.
+            </p>
+            </proof>
+            </lemma>
+
     	    <theorem xml:id="SpanningSize">
     	        <title>A spanning set in <m>\mathbb{R}^n</m> has as least <m>n</m> elements</title>
     	        <statement>
@@ -4294,6 +4400,23 @@
         </statement>
         </corollary>
 
+        <definition xml:id="def-StandardBasis">
+        <title>The standard basis</title>
+        <statement>
+        <p>
+        The <term>standard basis</term> of <m>\mathbb{R}^n</m>
+        is <m>\{\vec e_1,\vec e_2,\ldots,\vec e_n\}</m> where
+        <md>
+            <mrow>\vec e_1=(1,0,0,\ldots,0)</mrow>
+            <mrow>\vec e_2=(0,1,0,\ldots,0)</mrow>
+            <mrow>\vec e_3=(0,0,1,\ldots,0)</mrow>
+            <mrow>\vdots</mrow>
+            <mrow>\vec e_n=(0,0,0,\ldots,1)</mrow>
+        </md>
+        </p></statement>
+
+        </definition>
+
         <example>
         <title>Examples of bases of <m>\mathbb{R}^n</m></title>
         <p>
@@ -4302,14 +4425,14 @@
         <p>
         Let
         <md>
-            <mrow>\vec e_1=(1,0,0,\ldots,0)</mrow>
-            <mrow>\vec e_2=(0,1,0,\ldots,0)</mrow>
-            <mrow>\vec e_3=(0,0,1,\ldots,0)</mrow>
+            <mrow>\vec v_1=(1,0,0,\ldots,0)</mrow>
+            <mrow>\vec v_2=(0,2,0,\ldots,0)</mrow>
+            <mrow>\vec v_3=(0,0,3,\ldots,0)</mrow>
             <mrow>\vdots</mrow>
-            <mrow>\vec e_n=(0,0,0,\ldots,1)</mrow>
+            <mrow>\vec v_n=(0,0,0,\ldots,n)</mrow>
         </md>
-        The set <m>\{\vec e_1,\ldots,\vec e_n\}</m> is called the 
-        <em>standard basis</em> of <m>\mathbb{R}^n</m>.
+        The set <m>\{\vec v_1,\ldots,\vec v_n\}</m> a basis
+        of <m>\mathbb{R}^n</m>.
         </p>
         </li>
         <li>

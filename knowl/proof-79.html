@@ -2,9 +2,9 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-08-01T19:08:09-05:00       *-->
-<!--*   A recent stable commit (2020-07-07):   *-->
-<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*       on 2020-08-23T11:33:26-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -14,14 +14,57 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
-<p>The equation \(r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_n=\vec w\) is the same as the matrix equation</p>
-<div class="displaymath">
+<article class="hiddenproof"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Proof</span></h6>
+<p>Define the matrix \(X\) by</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-X \begin{bmatrix} r_1\\r_2\\ \vdots\\r_n \end{bmatrix} = \vec w
+X=
+\begin{bmatrix}
+\vec x_1 \amp \vec x_2 \amp \cdots \amp \vec x_m
+\end{bmatrix}.
 \end{equation*}
 </div>
-<p data-braille="continuation">and so, setting \(\vec w=\vec0\text{,}\) we see that \(\mathcal{X}\) is linearly independent if and only if \(X \begin{bmatrix} r_1\\ \vdots\\r_n \end{bmatrix} =\vec 0\) implies \(\begin{bmatrix} r_1\\ \vdots\\r_n \end{bmatrix} =\vec0\text{.}\) By <a class="xref" data-knowl="./knowl/InvertibilityEquivalence.html" title="Theorem 2.11.2: Equivalent Forms of Invertibility">Theorem 2.11.2</a>, this is equivalent to \(X\) being nonsingular.</p>
-<p>Also, if \(\mathcal{X}\) spans \(\mathbb{R}^n\text{,}\) then, for any \(\vec w\) in \(\mathbb{R}^n\text{,}\) \(X \begin{bmatrix} r_1\\ \vdots\\r_n \end{bmatrix} =\vec w\) always has a solution. Again, by <a class="xref" data-knowl="./knowl/InvertibilityEquivalence.html" title="Theorem 2.11.2: Equivalent Forms of Invertibility">Theorem 2.11.2</a>, this is equivalent to \(X\) being nonsingular.</p></article><span class="incontext"><a href="section-33.html#proof-79">in-context</a></span>
+<p data-braille="continuation">and let \(X'\) be the reduced row echelon form of \(X\text{.}\) This means there are elementary matrices \(E_1,E_2,\ldots,E_k\) so that \(X'=E_kE_{k-1}\cdots E_2E_1X\text{.}\) Let \(\vec e_n=(0,0,\ldots,0,1)\text{,}\) and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vec w= E_1^{-1}E_2^{-1}\cdots E_k^{-1} \vec e_n.
+\end{equation*}
+</div>
+<p data-braille="continuation">so that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+E_kE_{k-1}\cdots E_2E_1\vec w= \vec e_n.
+\end{equation*}
+</div>
+<p data-braille="continuation">Now consider</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_m=\vec w.
+\end{equation*}
+</div>
+<p data-braille="continuation">which is the same as</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+X \begin{bmatrix} r_1\\r_2\\ \vdots\\ r_m \end{bmatrix}=\vec w.
+\end{equation*}
+</div>
+<p data-braille="continuation">To solve this we compute the reduced row echelon form of</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\left[\begin{array}{cccc|c}
+\vec x_1 \amp \vec x_2 \amp \cdots \amp \vec x_m \amp \vec w
+\end{array}\right]
+\end{equation*}
+</div>
+<p data-braille="continuation">We multiply this matrix on the left by \(E_kE_{k-1}\cdots E_2E_1\) to get the matrix</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\left[\begin{array}{c|c}
+X' \amp \vec e_n
+\end{array}\right]
+\end{equation*}
+</div>
+<p data-braille="continuation">Suppose that the last row of \(X'\) is all-zero row. Then the last row of the reduced row echelon form is \([0 \cdots 0 \mid 1]\text{,}\) which is the criterion for the system of equations having no solution. This can't happen because by assumption \(\{\vec x_1,\vec x_2,\ldots,\vec x_m\}\) is a spanning set.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Since \(X'\) has no all-zero row at the bottom, every row must contain a leading one. This means the number of columns of \(X'\) is at least as large as the number of rows, that is to say, \(n\leq m\text{.}\)</p></article><span class="incontext"><a href="section-33.html#proof-79">in-context</a></span>
 </body>
 </html>

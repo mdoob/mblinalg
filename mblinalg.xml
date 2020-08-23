@@ -5,15 +5,15 @@
     
 <book xml:id="mblinalg">
 <title> Manitoba linear algebra </title>
-
 <xi:include href="./Frontmatter.xml" />
+
+<!--
+-->
 <xi:include href="./SysLinEq.xml" />
 <xi:include href="./MatrixTheoryIntro.xml" />
 <xi:include href="./Determinants.xml" />
 <xi:include href="./EuclideanSpace.xml" />
 <xi:include href="./Eigenvalues.xml" />
-<!--
--->
 
 <xi:include href="./LinearTransformations.xml" />
 

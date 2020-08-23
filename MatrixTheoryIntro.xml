@@ -467,7 +467,7 @@
     The concept can be applied easily to more than two matrices.
     </p>
     
-    <definition xml:id="LinearCombinationDefinition"><title>Linear combination of matrices</title>
+    <definition xml:id="LinearCombinationMatrixDefinition"><title>Linear combination of matrices</title>
     <statement>
         <p>
         If <m>A_1,A_2,\ldots,A_n</m> are matrices conformable for addition,
@@ -780,12 +780,12 @@
         Suppose we start with an <m>m\times n</m> matrix <m>A</m> whose columns are
         <m>C_1,C_2,\ldots,C_n</m>.
         Recall from
-        <xref ref="LinearCombinationDefinition" /> 
+        <xref ref="LinearCombinationMatrixDefinition" /> 
         that a linear combination of these columns has the form
         \[r_1C_1+r_2C_2+\cdots+r_nC_n.\]
         Consider the equation
         <mdn>
-        <mrow xml:id="LinearCombinationEquation">
+        <mrow xml:id="LinearCombinationMatrixEquation">
         B=r_1C_1+r_2C_2+\cdots+r_nC_n.
         </mrow>
         </mdn>
@@ -802,7 +802,7 @@
         \end{bmatrix}
         </me>
         
-        Then then <xref ref="LinearCombinationEquation" />
+        Then then <xref ref="LinearCombinationMatrixEquation" />
         is identical to the equation
         \[
         AR=B.

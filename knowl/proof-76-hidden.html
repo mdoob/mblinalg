@@ -2,9 +2,9 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-08-01T19:08:08-05:00       *-->
-<!--*   A recent stable commit (2020-07-07):   *-->
-<!--* 1771dacf84bfb1789139598d8379414b560b8f17 *-->
+<!--*       on 2020-08-23T11:33:25-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -13,14 +13,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p>The matrix</p>
-<div class="displaymath">
+<body><article class="hiddenproof"><p>The <a class="xref" data-knowl="./knowl/LinearCombinationDefinition.html" title="Definition 4.9.1: Linear combination of vectors">definition of a linear combination</a> implies that there exists at least one instance of \(r_1,r_2,\ldots,r_m\) satisfying <a class="xref" data-knowl="./knowl/eq-unique-independent.html" title="Equation 4.9.1">(4.9.1)</a>. Now suppose that there were more than one such instance, that is to say,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\vec w=r_1\vec x_1+r_2\vec x_2+\cdots+r_m\vec x_m\\
+\vec w=s_1\vec x_1+s_2\vec x_2+\cdots+s_m\vec x_m\text{.}
+\end{gather*}
+</div>
+<p data-braille="continuation">Then</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-X=
-\begin{bmatrix}
-\vec x_1 \amp \vec x_2 \amp \cdots \amp \vec x_m
-\end{bmatrix}
+(r_1-s_1)\vec x_1+(r_2-s_2)\vec x_2+\cdots+(r_m-s_m)\vec x_m=\vec w-\vec w=\vec 0\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">has \(n\) rows and \(m\) columns. Since the reduced row echelon form of \(X\) has the identity matrix for its nonzero rows, the number of rows is at least as large as the number of columns. This says \(m\leq n\text{.}\)</p></article></body>
+<p data-braille="continuation">By <a class="xref" data-knowl="./knowl/LinearCombinationDefinition.html" title="Definition 4.9.1: Linear combination of vectors">Definition 4.9.1</a>, this implies that \(r_1-s_1=r_2-s_2=\cdots=r_m-s_m=\vec 0\) and so \(r_1=s_1, r_2=s_2,\ldots, r_m=s_m\text{.}\) Hence the two choices turn out to be the same one, that is, then is at most one choice of \(r_1,r_2,\ldots,r_m\) satisfying <a class="xref" data-knowl="./knowl/eq-unique-independent.html" title="Equation 4.9.1">(4.9.1)</a>.</p></article></body>
 </html>
