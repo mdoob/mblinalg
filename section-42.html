@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-08-23T11:33:07-05:00       *-->
+<!--*       on 2020-09-01T13:32:18-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -11,7 +11,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Matrix multiplication as a linear transformation</title>
+<title>First properties of linear transformations</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
@@ -86,10 +86,10 @@ MathJax.Hub.Config({
 </div></div>
 <nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-41.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="LinearTransformations.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-43.html" title="Next">Next</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="LinearTransformationIntroduction.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="LinearTransformations.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-43.html" title="Next">Next</a></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-41.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="LinearTransformations.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-43.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="LinearTransformationIntroduction.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="LinearTransformations.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-43.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -105,64 +105,118 @@ MathJax.Hub.Config({
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-42"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">6.4</span> <span class="title">Matrix multiplication as a linear transformation</span>
+<span class="type">Section</span> <span class="codenumber">6.3</span> <span class="title">First properties of linear transformations</span>
 </h2>
-<p id="p-1187">If we are given an \(n\times m\) matrix \(A\text{,}\) we may define \(L(\vec x)=A\vec x\) and, as we saw in <a href="LinearTransformationIntroduction.html#LinearTransformationExamples" class="internal" title="Subsection 6.2.2: Examples of linear transformations">Subsection 6.2.2</a>, \(L\colon\R^m\to\R^n\) is then a linear transformation. We will denote this transformation \(L_A\text{.}\)</p>
-<p id="p-1188">Now suppose we have two linear transformations \(L_1\colon\R^m\to\R^n\) and \(L_2\colon\R^n\to\R^s\text{.}\) We then define a new linear transformation called the <dfn class="terminology">composition of \(L_1\) and \(L_2\)</dfn> (and denoted \(L_2\circ L_1\)) in the following way: \(L_2\circ L_1\colon\R^m\to\R^s\) and</p>
+<p id="p-1169">A linear transformation \(L\colon\R^m\to\R^n\text{,}\) by definition, satisfies</p>
+<ul class="disc">
+<li id="li-393"><p id="p-1170">\(L(\vec x+\vec y)=L(\vec x)+L(\vec y)\) and</p></li>
+<li id="li-394"><p id="p-1171">\(\displaystyle L(r\vec x)=rL(\vec x)\)</p></li>
+</ul>
+<article class="theorem theorem-like" id="theorem-79"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">(First properties).</span>
+</h6>
+<p id="p-1172">Any linear transformation \(L\) satisfies</p>
+<ul class="disc">
+<li id="li-395"><p id="p-1173">\(\displaystyle L(\vec0)=\vec0\)</p></li>
+<li id="li-396"><p id="p-1174">\(\displaystyle L(\vec x-\vec y)=L(\vec x)-L(\vec y)\)</p></li>
+<li id="li-397"><p id="p-1175">\(L(\vec x-\vec y)=\vec0\) if and only if \(L(\vec x) =L(\vec y)\)</p></li>
+<li id="li-398"><p id="p-1176">\(\displaystyle L(r_1\vec x_1+r_2\vec x_2)=r_1L(\vec x_1)+r_2L(\vec x_2)\)</p></li>
+<li id="li-399">
+<p id="p-1177">For any vectors \(\vec x_1, \vec x_2,\ldots,\vec x_n\) and real numbers \(r_1, r_2,\ldots,r_n\)</p>
 <div class="displaymath">
 \begin{equation*}
-(L_2\circ L_1)(\vec x)=L_2(L_1(\vec x))
+L(r_1\vec x_1+r_2 \vec x_2+\cdots+r_n\vec x_n)=
+r_1L(\vec x_1)+r_2 L(\vec x_2)+\cdots+r_nL(\vec x_n)
 \end{equation*}
 </div>
-<p data-braille="continuation">This means that we start with a vector \(\vec x\) in \(\R^m\) and compute \(L_1(\vec x)\text{.}\) This vector is in \(\R^n\text{,}\) which is exactly right if we want to evaluate \(L_2\text{.}\) Hence \(L_2(L_1(\vec x))\) not only makes sense, but upon evaluation we have a vector in \(\R^s\text{.}\)</p>
-<p id="p-1189">We can visualize the composition of two functions as:</p>
-<figure class="figure figure-like" id="figure-63"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><div class="asymptote-box" style="padding-top: 63.2616729088639%"><iframe src="images/image-66.html" class="asymptote"></iframe></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.4.1<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1190">The vector \(\vec x\) is in \(\R^m\text{;}\) following the arrow labelled with \(L_1\) gets us to \(L_1(\vec x)\) in \(\R^m\text{;}\) following the next arrow labelled with \(L_2\) gets us to gets us to \(L_2(L_1(\vec x))\) in \(\R^s\text{.}\) The long arrow corresponds to \(L_2\circ L_1\text{:}\) it goes directly to the same vector in \(\R^s.\)</p>
-<p id="p-1191">Next, we wish to see that this composition is itself linear.</p>
+</li>
+</ul></article><article class="hiddenproof" id="proof-94"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-94"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-94"><article class="hiddenproof"><ol id="p-1178" class="decimal">
+<li id="li-400">
+<p id="p-1179">We evaluate \(L(\vec 0+\vec 0)\) in two ways:</p>
+<ol class="lower-alpha">
+<li id="li-401"><p id="p-1180">Since \(\vec 0+\vec 0=\vec0\text{,}\) we have \(L(\vec 0+\vec 0)=L(\vec 0)\)</p></li>
+<li id="li-402">
+<p id="p-1181">Since \(\vec 0+\vec 0=2\vec0\text{,}\) we have \(L(\vec 0+\vec 0)= L(2\vec 0)=2L(\vec 0)\text{,}\) and so</p>
+<div class="displaymath">
+\begin{equation*}
+2L(\vec 0)=L(\vec 0)\\L(\vec 0)=\vec0
+\end{equation*}
+</div>
+</li>
+</ol>
+</li>
+<li id="li-403"><p id="p-1182">\(\displaystyle L(\vec x-\vec y)
+=L(\vec x+(-1)\vec y)
+=L(\vec x)+L((-1)\vec y)
+L(\vec x)-L(\vec y)\)</p></li>
+<li id="li-404"><p id="p-1183">\(L(\vec x-\vec y)=\vec0\) if and only if \(L(\vec x)-L(\vec y)=\vec0\) which in turn implies \(L(\vec x) =L(\vec y)\text{.}\)</p></li>
+<li id="li-405"><p id="p-1184">\(\displaystyle L(r_1\vec x_1+r_2\vec x_2)
+=L(r_1\vec x_1)+L(r_2\vec x_2)
+=r_1L(\vec x_1)+r_2L(\vec x_2) \)</p></li>
+<li id="li-406">
+<p id="p-1185">We apply the addition property repeatedly:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+L(r_1\vec x_1\amp+r_2 \vec x_2+\cdots+r_n\vec x_n)\\
+\amp = L(r_1\vec x_1)+L(r_2 \vec x_2+\cdots+r_n\vec x_n)\\
+\amp = r_1L(\vec x_1)+ L(r_2\vec x_2+\cdots+r_n\vec x_n)\\
+\amp = r_1L(\vec x_1)+ L(r_2\vec x_2)+L(r_3\vec x_3+\cdots+r_n\vec x_n)\\
+\amp = r_1L(\vec x_1)+ r_2L(\vec x_2)+L(r_3\vec x_3+\cdots+r_n\vec x_n)\\
+\amp \,\,\vdots\\
+\amp = r_1L(\vec x_1)+r_2 L(\vec x_2)+\cdots+r_nL(\vec x_n)
+\end{array}
+\end{equation*}
+</div>
+</li>
+</ol></article></div>
+<p id="p-1186">The <dfn class="terminology">standard basis</dfn> of \(\R^m\) is the set of vectors \(\{\vec e_1, \vec e_2,\ldots,\vec e_m\}\) where</p>
+<div class="displaymath">
+\begin{equation*}
+\vec e_1=(1,0,\ldots,0)\\
+\vec e_2=(0,1,\ldots,0)\\
+\vdots\\
+\vec e_m=(0,0,\ldots,1)
+\end{equation*}
+</div>
+<article class="theorem theorem-like" id="LinearTransformationOnStandardBasis"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">(The value of \(L\) on the standard basis determines \(L\) everywhere).</span>
+</h6>
+<p id="p-1187">If the values \(L(\vec e_1), L(\vec e_2),\ldots L(\vec e_m)\) are known, then value of \(L(\vec x)\) is known for all \(\vec x\) in \(\R^m\text{.}\)</p></article><article class="hiddenproof" id="proof-95"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-95"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-95"><article class="hiddenproof"><p id="p-1188">Suppose \(L(\vec e_1)=\vec f_1,  L(\vec e_2)=\vec f_2,\ldots,L(\vec e_m)=\vec f_m\text{,}\) and \(\vec x=(x_1,x_2,\ldots,x_m)\text{.}\) Then \((x_1,x_2,\ldots,x_m)=x_1\vec e_1 + x_2\vec e_2+\cdots+x_m\vec e_m\) and</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+L(\vec x)
+\amp =L(x_1\vec e_1 + x_2\vec e_2+\cdots+x_m\vec e_m)\\
+\amp =x_1L(\vec e_1) + x_2L(\vec e_2)+\cdots+x_mL(\vec e_m)\\
+\amp =x_1\vec f_1 + x_2\vec f_2+\cdots+x_n\vec f_m
+\end{array}
+\end{equation*}
+</div></article></div>
+<article class="corollary theorem-like" id="corollary-8"><h6 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">6.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">\(L(\vec e_i)=\vec 0, i=1\cdots m\text{,}\) implies \(L=0\).</span>
+</h6>
+<p id="p-1189">If \(L(\vec e_1)=L(\vec e_2)=\cdots=L(\vec e_m)=\vec 0\text{,}\) then \(L\) is the zero transformation.</p></article><p id="p-1190">There is an easy consequence:</p>
 <article class="theorem theorem-like" id="theorem-81"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">The composition of two linear transformations is linear.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Two linear transformations equal on the standard basis are equal everywhere.</span>
 </h6>
-<p id="p-1192">Let \(L_1\colon\R^m\to\R^n\) and \(L_2\colon\R^n\to\R^s\) be two linear transformations, and let \(L_3=L_2\circ L_1\text{.}\) Then \(L_3\colon\R^m\to\R^s\) is itself linear.</p></article><article class="hiddenproof" id="proof-96"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-96"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-96"><article class="hiddenproof"><p id="p-1193">For any \(\vec x\) in \(\R^m\text{,}\) we have \(L_3(\vec x)=(L_2\circ L_1)(\vec x)=L_2(L_1(\vec x))\text{,}\) and so we have \(L_3\colon\R^m\to\R^s\text{.}\)</p>
+<p id="p-1191">Suppose \(L_1\colon \R^m\to\R^n\text{,}\)  \(L_2\colon \R^m\to\R^n\) and \(L_1(\vec e_i) = L_2(\vec e_i)\) for \(i=1,2,\dots m\text{.}\) Then \(L_1(\vec x)=L_2(\vec x)\) for all \(\vec x\) in \(\R^m\text{,}\) and \(L_1=L_2\text{.}\)</p></article><article class="hiddenproof" id="proof-96"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-96"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-96"><article class="hiddenproof"><p id="p-1192">\(L_1(\vec e_i)-L_2(\vec e_i)=\vec 0\) by assumption. If \(\vec x=(x_1,\dots,x_m)\text{,}\) we may write \(\vec x = x_1\vec e_1+x_2\vec e_2+\cdots +x_m\vec e_m.\) Then</p>
 <div class="displaymath">
 \begin{align*}
-L_3(\vec x + \vec y)
-\amp =L_2(L_1(\vec x+ \vec y))\\
-\amp = L_2(L_1(\vec x) + L_1(\vec y)) 
-\amp \gets \text{ since }L_1 \text{ is linear}\\
-\amp = L_2(L_1(\vec x)) + L_2(L_1(\vec y))
-\amp \gets \text{ since }L_2\text{ is linear}\\
-\amp = L_3(\vec x) + L_3(\vec y)\text{.}
+L_1(\vec x)
+\amp =L_1(x_1\vec e_1+x_2\vec e_2+\cdots +x_m\vec e_m)\\
+\amp =x_1L_1(\vec e_1)+x_2L_1(\vec e_2)+\cdots +x_mL_1(\vec e_m)\\
+\amp =x_1L_2(\vec e_1)+x_2L_2(\vec e_2)+\cdots +x_mL_2(\vec e_m)\\
+\amp =L_2(x_1\vec e_1+x_2\vec e_2+\cdots +x_m\vec e_m)\\
+\amp= L_2(\vec x)
 \end{align*}
 </div>
-<div class="displaymath">
-\begin{align*}
-L_3(r\vec x)
-\amp =L_2(L_1(r\vec x))\\
-\amp =L_2(rL_1(\vec x))
-\amp \gets\text{ since }L_1\text{ is linear}\\
-\amp =rL_2(L_1(\vec x)
-\amp \gets\text{ since }L_2\text{ is linear}\\
-\amp =rL_3(\vec x)\text{.}
-\end{align*}
-</div>
-<p data-braille="continuation">Hence \(L_3=L_2\circ L_1\) is linear.</p></article></div>
-<p id="p-1194">Next we note that composition of linear transformations and matrix multiplication are closely related:</p>
-<article class="theorem theorem-like" id="theorem-82"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Composition and matrix multiplication.</span>
-</h6>
-<p id="p-1195">Let \(A\) be an \(n\times m\) matrix and \(B\) an \(s\times n\) matrix. Also let \(L_A\) and \(L_B\) be the linear transformations defined by \(L_A(\vec x)=A\vec x\) and \(L_B(\vec x)=B\vec x\text{.}\) Then</p>
+<p data-braille="continuation">From this we see that</p>
 <div class="displaymath">
 \begin{equation*}
-L_{BA}=L_B\circ L_A
+L_1(\vec x)-L_2(\vec x) = \vec 0.
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-97"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-97"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-97"><article class="hiddenproof"><p id="p-1196">First note that \(L_A\colon\R^m\to\R^n\) and \(L_B:\R^n\to\R^s\text{,}\) and so \(L_B\circ L_A\colon\R^m\to\R^s\text{.}\) In addition, note that \(BA\) is an \(s\times m\) matrix, and so \(L_{BA}\colon\R^m\to\R^s\) also. Finally note that for any \(\vec x\) in \(\R^m\text{,}\) we have</p>
-<div class="displaymath">
-\begin{equation*}
-(L_B\circ L_A)\vec x=L_B(L_A(\vec x))=L_B(A\vec x)
-=BA\vec x=L_{BA}(\vec x)
-\end{equation*}
-</div>
-<p data-braille="continuation">Hence \(L_{BA}=L_B\circ L_A\text{.}\)</p></article></div></section></div></main>
+</div></article></div></section></div></main>
 </div>
 </body>
 </html>

@@ -2365,7 +2365,7 @@
         <title>Additional cross product properties</title>
         <statement>
         <p>
-        Let <m>\vec u</m> and <m>\vec v</m> be vectors in <m>\mathbb{R}^n</m>, and
+        Let <m>\vec u</m> and <m>\vec v</m> be vectors in <m>\R^n</m>, and
         let <m>r</m> be a real number. Then
         <ul>
             <li><m>\vec u\times\vec v=-(\vec v\times\vec u)</m></li>
@@ -3374,7 +3374,7 @@
         </p>
     
     
-        <theorem xml:id="DistancePtToLine"><title> Theorem (distance from point to a line) </title>
+        <theorem xml:id="DistancePtToLine"><title> Distance from point to a line</title>
         <statement>
         <p>
         The distance <m>D</m> from a point <m>(x_0,y_0)</m> to the line
@@ -3945,7 +3945,7 @@
 
 
     <section>
-        <title>Linear independence, spanning and bases in <m>\mathbb{R}^n</m></title>
+        <title>Linear independence, spanning and bases in <m>\R^n</m></title>
         <introduction>
             <p>
             Recall the 
@@ -3953,16 +3953,16 @@
                 definition of linear combinations of matrices
             </xref>.
             We may think of vectors in as being column 
-            vectors in <m>\mathbb{R}^n</m>. 
+            vectors in <m>\R^n</m>. 
             With this in mind, we make the definition for vectors 
-            in <m>\mathbb{R}^n</m> explicit.
+            in <m>\R^n</m> explicit.
             </p>
             <definition xml:id="LinearCombinationDefinition">
             <title>Linear combination of vectors</title>
             <statement>
             <p>
               If <m>\vec x_2, \vec x_2,\ldots,\vec x_m</m>
-              are vectors in <m>\mathbb{R}^n</m>, then, for any choice
+              are vectors in <m>\R^n</m>, then, for any choice
               of scalars <m>r_1,r_2,\dots,r_m</m> the vector
               <me>r_1\vec x_1+r_2\vec x_2+\cdots+r_m\vec x_m</me>
               is called a <term>linear combination of 
@@ -3976,7 +3976,7 @@
     	    <title>Linear independence</title>
     	    <p>
     	        Suppose that <m>\vec x_1,\vec x_2,\ldots,\vec x_m</m> are vectors
-    	        in <m>\mathbb{R}^n</m>. Is it possible that <m>\vec 0</m> 
+    	        in <m>\R^n</m>. Is it possible that <m>\vec 0</m> 
                 is a linear combination
     	        of <m>\vec x_1,\vec x_2,\ldots,\vec x_m</m>? The answer is certainly yes:
     	        just set <m>r_1=r_2=\cdots=r_m=0</m>. Is this the only way of doing this? 
@@ -3998,7 +3998,7 @@
     	    </definition>
     	
     	    <example xml:id="ThreeIndependentVectors">
-    	        <title>Three vectors in <m>\mathbb{R}^4</m></title>
+    	        <title>Three vectors in <m>\R^4</m></title>
     	        <p>
     	            Let <m>\vec x_1=(1,2,1,1)</m>, <m>\vec x_2=(0,1,2,1)</m> and <m>\vec x_3=(-1,1,-1,1)</m>.
     	            Then the equation
@@ -4049,7 +4049,7 @@
     	        is the identity matrix (as in <xref ref="ThreeIndependentVectors"/>). 
     	    </p>
     	    
-            <proposition>
+            <proposition xml:id="prop-unique-indepentent">
                 <title>Uniqueness of linear combinations</title>
                 <statement>
                 <p>
@@ -4089,11 +4089,11 @@
                 </proof>
             </proposition>
     	    <theorem xml:id="IndependentSize">
-    	        <title>A linearly independent set in <m>\mathbb{R}^n</m> has as most <m>n</m> elements</title>
+    	        <title>A linearly independent set in <m>\R^n</m> has as most <m>n</m> elements</title>
     	        <statement>
     	            <p>
     	            If <m>\{\vec x_1,\vec x_2,\ldots,\vec x_m\}</m> is a linearly independent
-    	            set in <m>\mathbb{R}^n</m>, then <m>m\leq n</m>.
+    	            set in <m>\R^n</m>, then <m>m\leq n</m>.
     	            </p>
     	        </statement>
     	        <proof>
@@ -4121,7 +4121,7 @@
                 <statement>
     	        <p>
     	        A set of vectors <m>\{\vec x_1,\vec x_2,\ldots,\vec x_m\}</m>
-    	        <em>spans</em> <m>\mathbb{R}^n</m> if, for any <m>\vec w</m> in <m>\mathbb{R}^n</m>,
+    	        <em>spans</em> <m>\R^n</m> if, for any <m>\vec w</m> in <m>\R^n</m>,
     	        there exist <m>r_1, r_2,\ldots,r_m</m> so that
     	        <me>
     	        r_1\vec x_1+r_2\vec x_2+\cdots+r_m\vec x_m=\vec w.
@@ -4141,7 +4141,7 @@
             </p>
         	
     	    <example xml:id="eq-SpanFourVectors">
-    	    <title>Four vectors in <m>\mathbb{R}^3</m></title>
+    	    <title>Four vectors in <m>\R^3</m></title>
     	    <p>
     	    Let 
     	    <m>\vec x_1=(1,2,3)</m>,
@@ -4203,7 +4203,7 @@
             <p>
             Suppose
             <ul>
-            <li><m>\{\vec x_1,\ldots,\vec x_m\}</m> is a spanning set of <m>\mathbb{R}^n</m></li>
+            <li><m>\{\vec x_1,\ldots,\vec x_m\}</m> is a spanning set of <m>\R^n</m></li>
             <li><m>A</m> is defined to have <m>\{\vec x_1,\ldots,\vec x_m\}</m> as columns</li>
             <li><m>\vec x_{i_1}, \vec x_{i_2},\ldots,\vec x_{i_r}</m> are the free
                 variables in the reduced row echelon form of <m>A</m>.</li>
@@ -4215,7 +4215,7 @@
             </statement>
             <proof>
             <p>
-            Suppose <m>\vec w</m> in in <m>\mathbb{R}^n</m>. Finding <m>r_1,r_2,\ldots,r_m</m>
+            Suppose <m>\vec w</m> in in <m>\R^n</m>. Finding <m>r_1,r_2,\ldots,r_m</m>
             so that 
             <me>
             r_1\vec x_1+r_2\vec x_2+\cdots+r_mx_m=\vec w 
@@ -4235,11 +4235,11 @@
             </lemma>
 
     	    <theorem xml:id="SpanningSize">
-    	        <title>A spanning set in <m>\mathbb{R}^n</m> has as least <m>n</m> elements</title>
+    	        <title>A spanning set in <m>\R^n</m> has as least <m>n</m> elements</title>
     	        <statement>
     	        <p>
     	        If <m>\{\vec x_1,\vec x_2,\ldots,\vec x_m\}</m> is a spanning
-    	        set in <m>\mathbb{R}^n</m>, then <m>n\leq m</m>.
+    	        set in <m>\R^n</m>, then <m>n\leq m</m>.
     	        </p>
     	        </statement>
     	        <proof>
@@ -4298,25 +4298,25 @@
     	</subsection>
     
     	<subsection>
-    		<title>Bases of <m>\mathbb{R}^n</m></title>
+    		<title>Bases of <m>\R^n</m></title>
     		<definition>
-    			<title>Basis of <m>\mathbb{R}^n</m></title>
+    			<title>Basis of <m>\R^n</m></title>
                 <statement>
     			<p>
     			A set of vectors <m>\{\vec x_1,\vec x_2,\ldots,\vec x_m\}</m>
     			is a <em>basis</em> (plural <em>bases</em>) if it is both linearly independent 
-                and spans <m>\mathbb{R}^n</m>.
+                and spans <m>\R^n</m>.
     			</p>
                 </statement>
     		</definition>
     		
     		
     		<theorem>
-    		<title>A basis of <m>\mathbb{R}^n</m> is of size <m>n</m> </title>
+    		<title>A basis of <m>\R^n</m> is of size <m>n</m> </title>
     		<statement>
     			<p>
     			If <m>\{\vec x_1,\vec x_2,\ldots,\vec x_m\}</m> is a basis
-    			of <m>\mathbb{R}^n</m>, then <m>m=n</m>.
+    			of <m>\R^n</m>, then <m>m=n</m>.
     			</p>
     		</statement>
     		<proof>
@@ -4330,11 +4330,11 @@
 
         <theorem>
         <title>Determining if <m>\{\vec x_1,\ldots,\vec x_n\}</m> is a basis for
-        <m>\mathbb{R}^n</m></title>
+        <m>\R^n</m></title>
         <statement>
         <p>
         Let <m>\mathcal{X}=\{\vec x_1,\vec x_2,\ldots,\vec x_n\}</m> be
-        a set of vectors in <m>\mathbb{R}^n</m>, and let <m>X</m> be
+        a set of vectors in <m>\R^n</m>, and let <m>X</m> be
         the matrix with
         <m>\vec x_1,\vec x_2,\ldots,\vec x_n</m>
         as columns:
@@ -4345,7 +4345,7 @@
 	         \end{bmatrix}.
 	    </me>
         Then <m>\mathcal{X}</m> is a basis
-        of <m>\mathbb{R}^n</m> if and only if <m>X</m> is nonsingular.
+        of <m>\R^n</m> if and only if <m>X</m> is nonsingular.
         </p>
         </statement>
         <proof>
@@ -4363,8 +4363,8 @@
         this is equivalent to <m>X</m> being nonsingular.
         </p>
         <p>
-        Also, if <m>\mathcal{X}</m> spans <m>\mathbb{R}^n</m>, then,
-        for any <m>\vec w</m> in <m>\mathbb{R}^n</m>,
+        Also, if <m>\mathcal{X}</m> spans <m>\R^n</m>, then,
+        for any <m>\vec w</m> in <m>\R^n</m>,
         <m>X \begin{bmatrix} r_1\\ \vdots\\r_n \end{bmatrix} =\vec w</m>
         always has a solution. Again, by 
         <xref ref="InvertibilityEquivalence" />, this is equivalent
@@ -4379,18 +4379,18 @@
         </p>
         <corollary>
         <title>Determining if <m>\{\vec x_1,\ldots,\vec x_n\}</m> is a basis for
-        <m>\mathbb{R}^n</m></title>
+        <m>\R^n</m></title>
         <statement>
         <p>
         <m>\mathcal{X}=\{\vec x_1,\vec x_2,\ldots,\vec x_m\}</m> is
-        a basis for <m>\mathbb{R}^n</m> if any two of the following three
+        a basis for <m>\R^n</m> if any two of the following three
         properties hold:
         <ul>
         <li><p>
         <m>\mathcal{X}</m> is linearly independent.
         </p></li>
         <li><p>
-        <m>\mathcal{X}</m> is a spanning set for <m>\mathbb{R}^n</m>.
+        <m>\mathcal{X}</m> is a spanning set for <m>\R^n</m>.
         </p></li>
         <li><p>
         <m>m=n</m>.
@@ -4404,7 +4404,7 @@
         <title>The standard basis</title>
         <statement>
         <p>
-        The <term>standard basis</term> of <m>\mathbb{R}^n</m>
+        The <term>standard basis</term> of <m>\R^n</m>
         is <m>\{\vec e_1,\vec e_2,\ldots,\vec e_n\}</m> where
         <md>
             <mrow>\vec e_1=(1,0,0,\ldots,0)</mrow>
@@ -4418,7 +4418,7 @@
         </definition>
 
         <example>
-        <title>Examples of bases of <m>\mathbb{R}^n</m></title>
+        <title>Examples of bases of <m>\R^n</m></title>
         <p>
         <ul>
         <li>
@@ -4432,7 +4432,7 @@
             <mrow>\vec v_n=(0,0,0,\ldots,n)</mrow>
         </md>
         The set <m>\{\vec v_1,\ldots,\vec v_n\}</m> a basis
-        of <m>\mathbb{R}^n</m>.
+        of <m>\R^n</m>.
         </p>
         </li>
         <li>
@@ -4446,24 +4446,54 @@
             <mrow>\vec u_n=(0,0,0,\ldots,1)</mrow>
         </md>
         The set <m>\{\vec u_1,\ldots,\vec u_n\}</m> a basis
-        of <m>\mathbb{R}^n</m>.
+        of <m>\R^n</m>.
         </p>
         </li>
         </ul>
         </p>
-
         </example>
+
+        <theorem xml:id="BasisUniqueLinearCombination">
+        <title>Bases and the uniqueness of linear combinations</title>
+        <statement>
+        <p>
+        Suppose that <m>B=\{\vec u_1, \vec u_2,\ldots, \vec u_n\}</m> is a basis and
+        <m>\vec v</m> is any vector in <m>\R^n</m>. Then there is exactly
+        one choice of <m>r_1,r_2,\ldots,r_n</m> so that
+        <me>
+        r_1\vec u_1+ r_2\vec u_2+\cdots+ r_n\vec u_n=\vec v
+        </me>.
+        </p> 
+        </statement>
+        <proof>
+        <p>
+        Since <m>B</m> is a spanning set, there is <em>at least one</em>
+        choice of <m>r_1,r_2,\ldots,r_n</m> so that
+        <m>r_1\vec u_1+ r_2\vec u_2+\cdots+ r_n\vec u_n=\vec v</m>.
+        </p>
+        <p>
+        Since <m>B</m> is linearly independent, <xref ref="prop-unique-indepentent"/>
+        tells us that there is <em>at most one</em>
+        choice of <m>r_1,r_2,\ldots,r_n</m> so that
+        <m>r_1\vec u_1+ r_2\vec u_2+\cdots+ r_n\vec u_n=\vec v</m>.
+        </p>
+        <p>Hence there is exactly one choice of 
+        <m>r_1,r_2,\ldots,r_n</m> so that
+        <m>r_1\vec u_1+ r_2\vec u_2+\cdots+ r_n\vec u_n=\vec v</m>.
+        </p> 
+        </proof>
+        </theorem>
 
     	</subsection>
     
         <subsection>
-            <title>Subspaces of <m>\mathbb{R}^n</m></title>
+            <title>Subspaces of <m>\R^n</m></title>
             <introduction>
                 <definition xml:id="SubspaceDefinition">
-                <title>Subspace of <m>\mathbb{R}^n</m></title>
+                <title>Subspace of <m>\R^n</m></title>
                 <statement>
                 <p>
-                A nonempty subset <m>S</m> of <m>\mathbb{R}^n</m> is a <em>subspace</em>
+                A nonempty subset <m>S</m> of <m>\R^n</m> is a <em>subspace</em>
                 if it satisfies the following two conditions:
                     <ol>
                     <li> <p>
@@ -4471,7 +4501,7 @@
                     (this is called closure under addition).
                     </p> </li>
                     <li> <p>
-                    If <m>\vec x\in S</m> and <m>r\in \mathbb{R}</m>, then <m>r\vec x\in S</m>
+                    If <m>\vec x\in S</m> and <m>r\in \R</m>, then <m>r\vec x\in S</m>
                     (this is called closure under scalar multiplication).
                     </p> </li>
                     </ol>
@@ -4481,7 +4511,7 @@
                 <observation>
                 <p>
                 Since <m>S</m> is nonempty, there is some <m>\vec x\in S</m>, and
-                for any <m>r\in\mathbb{R}</m>, the definition says that <m>r\vec x\in S</m>.
+                for any <m>r\in\R</m>, the definition says that <m>r\vec x\in S</m>.
                 Using <m>r=0</m>, it follows that <m>0\vec x=\vec0\in S</m>.
                 </p>
                 </observation>
@@ -4491,8 +4521,8 @@
         	    <title>Subspace examples</title>
                 <p>
                 <ul>
-                <li> <p>        Let <m>\vec x\in\mathbb{R}^n</m> and
-                    <m>S=\{\vec y\mid \vec y=r\vec x, r\in\mathbb{R}\}</m> 
+                <li> <p>        Let <m>\vec x\in\R^n</m> and
+                    <m>S=\{\vec y\mid \vec y=r\vec x, r\in\R\}</m> 
                     <ol>
                     <li> <p>
                         If <m>\vec y_1</m> and <m>\vec y_2</m> are in <m>S</m>, then
@@ -4502,8 +4532,8 @@
                         = (r_1+r_2)\vec x\in S</m>.
                     </p> </li>
                     <li> <p>
-                        If <m>\vec y\in S</m> and <m>r\in \mathbb{R}</m>, then
-                        <m>\vec y=s\vec x</m> for some <m>s\in\mathbb{R}</m>, and
+                        If <m>\vec y\in S</m> and <m>r\in \R</m>, then
+                        <m>\vec y=s\vec x</m> for some <m>s\in\R</m>, and
                         <m>r\vec y=r(s\vec x) = (rs)\vec x\in S</m>.
                     </p> </li>
                     </ol>
@@ -4514,7 +4544,7 @@
                 </p></li> 
                 <li><p> 
                     Let <m>A</m> be an <m>m\times n</m> matrix and let 
-                    <m>S=\{\vec x\in\mathbb{R}^n \mid A\vec x=\vec0\}</m>.
+                    <m>S=\{\vec x\in\R^n \mid A\vec x=\vec0\}</m>.
                     <ol>
                     <li> <p>
                         If <m>\vec x_1</m> and <m>\vec x_2</m> are in <m>S</m>, then
@@ -4525,7 +4555,7 @@
                         Thus <m>\vec x_1+\vec x_2\in S</m>.
                     </p> </li>
                     <li> <p>
-                        If <m>\vec x\in S</m> and <m>r\in \mathbb{R}</m>, then
+                        If <m>\vec x\in S</m> and <m>r\in \R</m>, then
                         <m>A\vec x=\vec 0</m>, and
                         <m>A(r\vec x)=r(A\vec x) = r\vec0=\vec0</m>.
                         Hence <m>r\vec x\in S</m>.
@@ -4534,7 +4564,7 @@
                 This subspace is called the <em>null space</em> of <m>A</m>.
                 </p></li> 
                 <li><p>
-                    Let <m>H</m> be hyperplane in <m>\mathbb{R}^n</m> containing <m>\vec0</m>,
+                    Let <m>H</m> be hyperplane in <m>\R^n</m> containing <m>\vec0</m>,
                     that is, a set of vectors <m>\vec x=(x_1,\ldots,x_n)</m> satisfying an equation
                     <me>
                     a_1x_1+a_2x_2+\cdots+a_nx_n=0
@@ -4572,11 +4602,11 @@
                 <li><p>
                 Let <m>
                 \mathcal{X}=\{\vec x_1, \vec x_2,\ldots, \vec x_m\}</m> 
-                be a set of vectors in <m>\mathbb{R}^n</m>, and let
+                be a set of vectors in <m>\R^n</m>, and let
                 <me>
                 S=\Span\mathcal{X}=
                 \{r_1\vec x_1 + r_2\vec x_2+\cdots+ r_m\vec x_m
-                \mid r_i\in\mathbb{R}\}.
+                \mid r_i\in\R\}.
                 </me>
                     <ol>
                     <li><p>
@@ -4609,11 +4639,11 @@
                     <ul>
                     <li><p>
                     The <em>row space</em> of <m>A</m> is 
-                    <m>\Span \{R_1,R_2,\ldots R_m\}\subseteq\mathbb{R}^n</m>.
+                    <m>\Span \{R_1,R_2,\ldots R_m\}\subseteq\R^n</m>.
                     </p></li>
                     <li><p>
                     The <em>column space</em> of <m>A</m> is 
-                    <m>\Span \{C_1,C_2,\ldots C_n\}\subseteq\mathbb{R}^m</m>.
+                    <m>\Span \{C_1,C_2,\ldots C_n\}\subseteq\R^m</m>.
                     </p></li>
                     </ul>
                 </p>
@@ -4621,7 +4651,7 @@
         
                 <li>
                 <p>
-                If <m>S_1</m> and <m>S_2</m> are subspaces of <m>\mathbb{R}^n</m>, then so is <m>S_1\cap S_2</m>.
+                If <m>S_1</m> and <m>S_2</m> are subspaces of <m>\R^n</m>, then so is <m>S_1\cap S_2</m>.
                     <ol>
                     <li><p>
                         Let <m>\vec x\in S_1\cap S_2</m> and <m>\vec y\in S_1\cap S_2</m>. Then
@@ -4631,7 +4661,7 @@
                         and so <m>\vec x+\vec y\in S_1\cap S_2</m>.
                     </p></li>
                     <li><p>
-                        Let <m>\vec x\in S_1\cap S_2</m> and <m>r\in\mathbb{R}</m>. 
+                        Let <m>\vec x\in S_1\cap S_2</m> and <m>r\in\R</m>. 
                         Then <m>\vec x\in S_1</m>
                         and <m>S_1</m> a subspace implies <m>r\vec x\in S_1</m>. Similarly,
                         <m>r\vec x\in S_2</m>, and so <m>r\vec x\in S_1\cap S_2</m>.
@@ -4649,7 +4679,7 @@
             <title>Basis for a subspace</title>
             <statement>
             <p>
-            Let <m>S</m> be a subspace of <m>\mathbb{R}^n</m>, and let 
+            Let <m>S</m> be a subspace of <m>\R^n</m>, and let 
             <m>\mathcal{X}=\{\vec x_1, \vec x_2,\ldots,\vec x_r\}</m> 
             be a set of vectors in <m>S</m>.
             Then <m>\mathcal{X}</m> is a <em>basis for <m>S</m></em> if
@@ -4671,7 +4701,7 @@
             </title>
             <statement>
             <p>
-            Suppose that <m>S</m> is a subspace of <m>\mathbb{R}^n</m>,
+            Suppose that <m>S</m> is a subspace of <m>\R^n</m>,
             <m>\mathcal{X}=\{\vec x_1, \vec x_2,\ldots,\vec x_s\}</m>
             is a linearly independent set in <m>S</m> and
             <m>\mathcal{Y}=\{\vec y_1, \vec y_2,\ldots,\vec y_t\}</m>
@@ -4721,7 +4751,7 @@
             <title>All bases of a subspace have the same size</title>
             <statement>
             <p>
-            Let <m>S</m> be a subspace of <m>\mathbb{R}^n</m>, and let <m>B_1</m> and
+            Let <m>S</m> be a subspace of <m>\R^n</m>, and let <m>B_1</m> and
             <m>B_2</m> be two bases of <m>S</m>. Then <m>B_1</m> and <m>B_2</m> have the same
             numer of elements.
             </p>
@@ -4794,7 +4824,7 @@
             <example>
             <title>Finding the dimension of the span of a set of vectors</title>
             <p>
-            Let <m>\vec x_1,\vec x_,\ldots,\vec x_m</m> be vectors in <m>\mathbb{R}^n</m>.
+            Let <m>\vec x_1,\vec x_,\ldots,\vec x_m</m> be vectors in <m>\R^n</m>.
             Construct the matrix <m>A</m> using these vectors as the rows:
             <me>A=
             \begin{bmatrix} \vec x_1\\ \vec x_2\\ \vdots\\ \vec x_m \end{bmatrix}
@@ -4804,10 +4834,48 @@
             is the number of nonzero rows in the reduced row echelon form of <m>A</m>.
             </p>
             </example>
-        
             </subsubsection>
-        
         </subsection>
+    </section>
+
+    <section>
+    <title>Bases and coordinates</title>
+        <introduction>
+        <p>
+        In this section we generalize our understanding of the coordinates of a vector. We start with
+        a little observation: consider the vector <m>\vec v=(1,2,3)</m> in <m>\R^3</m>, and
+        the standard basis <m>\{\vec e_1, \vec e_2, \vec e_3\}=\{(1,0,0),(0,1,0), (0,0,1)\}</m>.
+        then
+        <me>
+        \vec v=(1,2,3)=1(1,0,0)+2(0,1,0)+3(0,0,1)=1\vec e_1+2\vec e_2+3\vec e_3     
+        </me>.
+        Now suppose we take a different basis for <m>\R^3</m>:
+        <m> B=\{(0,1,1),(1,0,1),(1,1,0)\}</m>. Then, using <xref ref="BasisUniqueLinearCombination"/>
+        there is a unique choice of <m>r_1, r_2, r_3</m> so that 
+        <m>\vec v= (1,2,3)=r_1(0,1,1)+r_2(1,0,1)+r_3(1,1,0)</m>. The values are determined by the
+        three equations in three unknowns:
+            <md>
+            <mrow>1=r_2+r_3</mrow>
+            <mrow>2=r_1+r_3</mrow>
+            <mrow>3=r_1+r_2</mrow>
+            </md>
+         The unique solution is <m>(r_1,r_2,r_3)=(2,1,0)</m>. We then call this triple 
+         the 
+         <term>coordinates of <m>\vec v</m> with respect to the basis <m>B</m></term>.
+        </p>
+        <definition>
+        <title>Coordinates with respect ot a basis</title>
+        <statement>
+            <p>
+            Let <m>\vec v</m> be a vector in <m>\R^n</m>, and let <m>B=\{x_1,x_2,\ldots,x_n\}</m> be a basis.
+            From <xref ref="BasisUniqueLinearCombination"/>, there is exactly one choice of
+            <m>r_1,r_2,\ldots,r_n</m> so that 
+            <m>\vec v=r_1x_1+r_2x_2+\cdots+r_nx_n</m>; <m>(r_1,r_2,\ldots,r_n)</m> is then the
+            coordinate vector of <m>\vec v</m> with respect to the basis <m>B</m>.
+            </p>
+        </statement>
+        </definition>
+        </introduction>
     </section>
 </chapter>
 

@@ -316,7 +316,7 @@
         Let <m>A</m> be an <m>n\times n</m> matrix and let <m>\lambda</m> be a real number.
         Then the set of vectors
         <m>E_\lambda=\{\vec x \mid A\vec x=\lambda \vec x\}</m> is a subspace
-        of <m>\mathbb{R}^n</m>.
+        of <m>\R^n</m>.
     </p>
     </statement>
     <proof>
@@ -790,8 +790,8 @@
     <m>\vec x_3=\begin{bmatrix}-1\\0\\1\end{bmatrix}</m>. 
    Then <m>\vec x_1</m>, <m>\vec x_2</m>, and <m>\vec x_3</m>, are eigenvectors
    of <m>A</m> with corresponding eigenvalues <m>2</m>, <m>-1</m>, and <m>-1</m>.
-   In fact <m>\{\vec x_1, \vec x_2, \vec x_3\}</m> is a basis for <m>\mathbb{R}^3</m>.
-   From the definition of a basis, for any given <m>\vec x\in\mathbb{R}^3</m>, there is
+   In fact <m>\{\vec x_1, \vec x_2, \vec x_3\}</m> is a basis for <m>\R^3</m>.
+   From the definition of a basis, for any given <m>\vec x\in\R^3</m>, there is
    a unique choice of <m>r_1,r_2,r_3</m> so that 
     <m>\vec x=r_1\vec x_1 + r_2\vec x_2 + r_3\vec x_3</m>.
     From the previous proposition, 

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-08-23T11:33:27-05:00       *-->
+<!--*       on 2020-09-01T13:32:40-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,74 +15,21 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Let \(A=
-\begin{bmatrix}
-5\amp -1\amp -2\\ 
-1\amp 3\amp -2\\ 
--1\amp -1\amp 4 
-\end{bmatrix}
-\text{.}\) Then we have</p>
+<p>In this section we generalize our understanding of the coordinates of a vector. We start with a little observation: consider the vector \(\vec v=(1,2,3)\) in \(\R^3\text{,}\) and the standard basis \(\{\vec e_1, \vec e_2, \vec e_3\}=\{(1,0,0),(0,1,0), (0,0,1)\}\text{.}\) then</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\begin{bmatrix}
-5\amp -1\amp -2\\ 
-1\amp 3\amp -2\\ 
--1\amp -1\amp 4 
-\end{bmatrix}
-\begin{bmatrix}
-1\\1\\1
-\end{bmatrix}
-= 
-\begin{bmatrix}
-2\\2\\2
-\end{bmatrix}=2 
-\begin{bmatrix}
-1\\1\\1
-\end{bmatrix}
+\vec v=(1,2,3)=1(1,0,0)+2(0,1,0)+3(0,0,1)=1\vec e_1+2\vec e_2+3\vec e_3     \text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">which makes \(\vec x=\begin{bmatrix}1\\1\\1\end{bmatrix}\) an eigenvector with corresponding eigenvalue \(\lambda=2\text{.}\) In addition we have</p>
+<p data-braille="continuation">Now suppose we take a different basis for \(\R^3\text{:}\) \(B=\{(0,1,1),(1,0,1),(1,1,0)\}\text{.}\) Then, using <a class="xref" data-knowl="./knowl/BasisUniqueLinearCombination.html" title="Theorem 4.9.16: Bases and the uniqueness of linear combinations">Theorem 4.9.16</a> there is a unique choice of \(r_1, r_2, r_3\) so that \(\vec v= (1,2,3)=r_1(0,1,1)+r_2(1,0,1)+r_3(1,1,0)\text{.}\) The values are determined by the three equations in three unknowns:</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\begin{bmatrix}
-5\amp -1\amp -2\\ 
-1\amp 3\amp -2\\ 
--1\amp -1\amp 4 
-\end{bmatrix}
-\begin{bmatrix}
-1\\-1\\1
-\end{bmatrix}
-= \begin{bmatrix}
-4\\-4\\4
-\end{bmatrix}=4 
-\begin{bmatrix}
-1\\-1\\1
-\end{bmatrix}
-\end{equation*}
+\begin{gather*}
+1=r_2+r_3\\
+2=r_1+r_3\\
+3=r_1+r_2
+\end{gather*}
 </div>
-<p data-braille="continuation">which makes makes \(\vec 
-x=\begin{bmatrix}
-1\\-1\\1
-\end{bmatrix}\) an eigenvector with corresponding eigenvalue \(\lambda=4\text{.}\) Finally we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\begin{bmatrix}
-5\amp -1\amp -2\\ 
-1\amp 3\amp -2\\ 
--1\amp -1\amp 4 
-\end{bmatrix}
-\begin{bmatrix}
--1\\-1\\1
-\end{bmatrix}= 
-\begin{bmatrix}
--6\\-6\\6
-\end{bmatrix}=6 
-\begin{bmatrix}
--1\\-1\\1
-\end{bmatrix}
-\end{equation*}
-</div>
-<p data-braille="continuation">which makes makes \(\vec x=\begin{bmatrix}-1\\-1\\1\end{bmatrix}\) an eigenvector with corresponding eigenvalue \(\lambda=6\text{.}\) In this case we have now computed all of the eigenvalues of \(A\text{:}\) \(\lambda=2\text{,}\) \(\lambda=4\) and \(\lambda=6\text{.}\) Shortly we will be able to compute the eigenvalues of a matrix and will see that in fact \(A\) has no others.</p>
+<p data-braille="continuation">The unique solution is \((r_1,r_2,r_3)=(2,1,0)\text{.}\) We then call this triple the <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">coordinates of \(\vec v\) with respect to the basis \(B\)</dfn>.</p>
 <span class="incontext"><a href="section-34.html#p-1087">in-context</a></span>
 </body>
 </html>

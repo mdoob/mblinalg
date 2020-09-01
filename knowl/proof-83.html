@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-08-23T11:33:27-05:00       *-->
+<!--*       on 2020-09-01T13:32:40-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,6 +15,29 @@
 </head>
 <body>
 <article class="hiddenproof"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Proof</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Since \(B_1\) is linearly independent and  \(B_2\) spans \(S\text{,}\) \(B_1\) can not have more elements than \(B_2\text{.}\) Interchanging \(B_1\) and \(B_2\) and using the same argument, \(B_2\) can not have more elements than \(B_1\text{.}\) Hence \(B_1\) and \(B_2\) have the same size.</p></article><span class="incontext"><a href="section-33.html#proof-83">in-context</a></span>
+<p>Since \(\{\vec y_1, \vec y_2,\ldots,\vec y_t\}\) is a spanning set, we may write</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vec x_1 \amp= r_{11}\vec y_1+r_{12}\vec y_2+\cdots+r_{1t}\vec y_t\\
+\vec x_2 \amp= r_{21}\vec y_1+r_{22}\vec y_2+\cdots+r_{2t}\vec y_t\\
+\vdots\\
+\vec x_i \amp= r_{i1}\vec y_1+r_{i2}\vec y_2+\cdots+r_{it}\vec y_t
+=\sum_{j=1}^t r_{ij}\vec y_j\\
+\vdots\\
+\vec x_s \amp= r_{s1}\vec y_1+r_{s2}\vec y_2+\cdots+r_{st}\vec y_t\text{.}
+\end{align*}
+</div>
+<p data-braille="continuation">Now we take a linear combination of \(\{\vec x_1, \vec x_2,\ldots,\vec x_s\}\) and set it equal to \(\vec0\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vec0=
+\sum_{i=1}^s u_i \vec x_i \amp= \sum_{i=1}^s u_i\sum_{j=1}^t
+r_{ij}\vec y_j\\
+\amp= \sum_{j=1}^t (\sum_{i=1}^s u_i r_{ij})\vec y_j\\
+\amp= \sum_{j=1}^t (\sum_{i=1}^s r_{ji}^T u_i)\vec y_j\\
+\amp= \sum_{j=1}^t (R^T \vec u)_j \vec y_j
+\end{align*}
+</div>
+<p data-braille="continuation">where \(R=[r_{ij}]\) and \(\vec u=(u_1,\ldots,u_s)\text{.}\) Now if \(R^T\vec u=\vec 0\) for some \(\vec u\not=\vec0\text{,}\) then \(\sum_{i=1}^s u_i \vec x_i =\vec 0\) with \(\vec u\not=\vec0\text{.}\) This contradicts the linear independence of \(\{\vec y_1, \vec y_2,\ldots,\vec y_t\}\text{.}\) Hence the reduced row echelon form of \(R^T\) can have no free variables, and so \(R^T\) can not have more columns than rows. Since \(R^T\) is an \(t\times s\) matrix, we have \(s\leq t\text{.}\)</p></article><span class="incontext"><a href="section-33.html#proof-83">in-context</a></span>
 </body>
 </html>
