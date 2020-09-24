@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-09-01T13:32:41-04:00       *-->
+<!--*       on 2020-09-23T20:41:27-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,5 +13,53 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p xmlns:svg="http://www.w3.org/2000/svg">One of the equivalent conditions of singularity given in <a class="xref" data-knowl="./knowl/InvertibilityEquivalence2.html" title="Theorem 3.4.21: Equivalent forms of invertibility">Theorem 3.4.21</a> is that \(B\) is singular if \(B\vec x=\vec 0\) for some \(\vec x\not=\vec 0\text{.}\) The matrix \(A-\lambda I\) plays the role of \(B\text{.}\)</p></article></body>
+<body><article class="hiddenproof"><p>Using</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\vec x_1 = c_{1,1}\vec y_1+c_{2,1}\vec y_2 +\cdots+ c_{n,1}\vec y_n\\
+\vec x_2 = c_{1,2}\vec y_1+c_{2,2}\vec y_2 +\cdots+ c_{n,2}\vec y_n\\
+\vdots\\
+\vec x_n = c_{1,n}\vec y_1+c_{2,n}\vec y_2 +\cdots+ c_{n,n}\vec y_n
+\end{gather*}
+</div>
+<p data-braille="continuation">and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vec w
+= r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_n
+= s_1\vec y_1+s_2\vec y_2+\cdots+s_n\vec y_n\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">we see that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+s_1\vec y_1+s_2\vec y_2+\cdots+s_n\vec y_n
+\amp = r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_n \\
+\amp = r_1(c_{1,1}\vec y_1+c_{2,1}\vec y_2 +\cdots+ c_{n,1}\vec y_n) \\
+\amp  \phantom{===} +r_2(c_{1,2}\vec y_1+c_{2,2}\vec y_2 +\cdots+ c_{n,2}\vec y_n) \\
+\amp\phantom{===|} \vdots\\
+\amp \phantom{===}  +r_n(c_{1,n}\vec y_1+c_{2,n}\vec y_2 +\cdots+ c_{n,n}\vec y_n) \\
+\amp = (r_1 c_{1,1}+r_2 c_{1,2}+\cdots+r_n c_{1,n})\vec y_1 \\
+\amp \phantom{===} + (r_1 c_{2,1}+r_2 c_{2,2}+\cdots+r_n c_{2,n})\vec y_2 \\
+\amp\phantom{===|} \vdots\\
+\amp \phantom{===} + (r_1 c_{n,1}+r_2 c_{n,2}+\cdots+r_n c_{n,n})\vec y_n \text{.}
+\end{align*}
+</div>
+<p data-braille="continuation">Using <a class="xref" data-knowl="./knowl/prop-unique-indepentent.html" title="Proposition 4.9.4: Uniqueness of linear combinations">Proposition 4.9.4</a>, we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+s_1=r_1 c_{1,1}+r_2 c_{1,2}+\cdots+r_n c_{1,n}\\
+s_2=r_1 c_{2,1}+r_2 c_{2,2}+\cdots+r_n c_{2,n}\\
+\vdots\\
+s_n=r_1 c_{n,1}+r_2 c_{n,2}+\cdots+r_n c_{n,n}\text{,}
+\end{gather*}
+</div>
+<p data-braille="continuation">which is identical to</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{bmatrix} s_1\\ s_2\\ \vdots \\s_n \end{bmatrix}
+=
+C \begin{bmatrix}r_1\\r_2\\ \vdots\\r_n\end{bmatrix}\text{.}
+\end{equation*}
+</div></article></body>
 </html>

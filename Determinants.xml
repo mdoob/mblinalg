@@ -1769,7 +1769,8 @@
     </p>
     </example>
 
-    <theorem><title>The inverse and the adjoint of a matrix</title>
+    <theorem xml:id="InverseAdjoint">
+    <title>The inverse and the adjoint of a matrix</title>
     <statement>
     <p>
     Let <m>A</m> be an invertible matrix. Then

@@ -129,6 +129,7 @@
             </image>
             </figure>
        </example>
+
        <example xml:id="EllipesRotation">
        <title>An ellipse in the plane</title>
        <p>
@@ -181,11 +182,8 @@
          </figure>
          <p>
          It really looks like an ellipse, but the equation is not
-         in our standard form. Is it an ellipse? We will use 
-         linear transformations to answer the question.
+         in our standard form. Is it an ellipse? 
          </p>
-
-
        </example>
       </subsection>
 

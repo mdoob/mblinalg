@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-09-01T13:32:42-04:00       *-->
+<!--*       on 2020-09-23T20:41:28-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,45 +15,25 @@
 </head>
 <body>
 <article class="hiddenproof"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Proof</span></h6>
-<ol class="decimal">
-<li>
-<p>We evaluate \(L(\vec 0+\vec 0)\) in two ways:</p>
-<ol class="lower-alpha">
-<li><p xmlns:svg="http://www.w3.org/2000/svg">Since \(\vec 0+\vec 0=\vec0\text{,}\) we have \(L(\vec 0+\vec 0)=L(\vec 0)\)</p></li>
-<li>
-<p>Since \(\vec 0+\vec 0=2\vec0\text{,}\) we have \(L(\vec 0+\vec 0)= L(2\vec 0)=2L(\vec 0)\text{,}\) and so</p>
+<p>By definition of the span of a set,</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-2L(\vec 0)=L(\vec 0)\\L(\vec 0)=\vec0
+\vec x=\sum_{i=1}^m r_i\vec x_i
 \end{equation*}
 </div>
-</li>
-</ol>
-</li>
-<li><p xmlns:svg="http://www.w3.org/2000/svg">\(\displaystyle L(\vec x-\vec y)
-=L(\vec x+(-1)\vec y)
-=L(\vec x)+L((-1)\vec y)
-L(\vec x)-L(\vec y)\)</p></li>
-<li><p xmlns:svg="http://www.w3.org/2000/svg">\(L(\vec x-\vec y)=\vec0\) if and only if \(L(\vec x)-L(\vec y)=\vec0\) which in turn implies \(L(\vec x) =L(\vec y)\text{.}\)</p></li>
-<li><p xmlns:svg="http://www.w3.org/2000/svg">\(\displaystyle L(r_1\vec x_1+r_2\vec x_2)
-=L(r_1\vec x_1)+L(r_2\vec x_2)
-=r_1L(\vec x_1)+r_2L(\vec x_2) \)</p></li>
-<li>
-<p>We apply the addition property repeatedly:</p>
+<p data-braille="continuation">and so</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\begin{array}{rl}
-L(r_1\vec x_1\amp+r_2 \vec x_2+\cdots+r_n\vec x_n)\\
-\amp = L(r_1\vec x_1)+L(r_2 \vec x_2+\cdots+r_n\vec x_n)\\
-\amp = r_1L(\vec x_1)+ L(r_2\vec x_2+\cdots+r_n\vec x_n)\\
-\amp = r_1L(\vec x_1)+ L(r_2\vec x_2)+L(r_3\vec x_3+\cdots+r_n\vec x_n)\\
-\amp = r_1L(\vec x_1)+ r_2L(\vec x_2)+L(r_3\vec x_3+\cdots+r_n\vec x_n)\\
-\amp \,\,\vdots\\
-\amp = r_1L(\vec x_1)+r_2 L(\vec x_2)+\cdots+r_nL(\vec x_n)
-\end{array}
+A(\vec x)=A(\sum_{i=1}^m r_i\vec x_i)=\sum_{i=1}^m r_iA(\vec x_i)
+=\sum_{i=1}^mr_i\lambda_i\vec x_i\text{.}
 \end{equation*}
 </div>
-</li>
-</ol></article><span class="incontext"><a href="section-42.html#proof-94">in-context</a></span>
+<p>Similarly,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A^n(\vec x)=A^n(\sum_{i=1}^m r_i\vec x_i)=\sum_{i=1}^m r_iA^n(\vec x_i)
+=\sum_{i=1}^mr_i\lambda_i^n\vec x_i\text{.}
+\end{equation*}
+</div></article><span class="incontext"><a href="section-37.html#proof-94">in-context</a></span>
 </body>
 </html>

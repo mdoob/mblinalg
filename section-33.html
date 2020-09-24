@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-09-01T13:32:17-04:00       *-->
+<!--*       on 2020-09-23T20:41:06-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -278,7 +278,7 @@ r_1 + 3r_2 + r_3 + 3r_4 \amp=1 \amp\amp \textrm{from the first coordinate}\\
 <li id="li-336">\(A\) is defined to have \(\{\vec x_1,\ldots,\vec x_m\}\) as columns</li>
 <li id="li-337">\(\vec x_{i_1}, \vec x_{i_2},\ldots,\vec x_{i_r}\) are the free variables in the reduced row echelon form of \(A\text{.}\)</li>
 </ul>
-<p data-braille="continuation">Then the set of vectors \(\cal{X}\) obtained by deleting \(\{\vec x_{i_1}, \vec x_{i_2},\ldots,\vec x_{i_r} \}\) from \(\{\vec x_1,\ldots,\vec x_m\}\) is still  a spanning set.</p></article><article class="hiddenproof" id="proof-78"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-78"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-78"><article class="hiddenproof"><p id="p-1026">Suppose \(\vec w\) in in \(\R^n\text{.}\) Finding \(r_1,r_2,\ldots,r_m\) so that</p>
+<p data-braille="continuation">Then the set of vectors \(\cal{X}\) obtained by deleting \(i_1, i_2,\ldots,i_r\) are the columns corresponding to free variables in the reduced row echelon form of \(A\text{.}\)</p></article><article class="hiddenproof" id="proof-78"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-78"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-78"><article class="hiddenproof"><p id="p-1026">Suppose \(\vec w\) in in \(\R^n\text{.}\) Finding \(r_1,r_2,\ldots,r_m\) so that</p>
 <div class="displaymath">
 \begin{equation*}
 r_1\vec x_1+r_2\vec x_2+\cdots+r_mx_m=\vec w 
@@ -354,7 +354,7 @@ X' \amp \vec e_n
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.9.11</span><span class="period">.</span><span class="space"> </span><span class="title">A basis of \(\R^n\) is of size \(n\).</span>
 </h6>
 <p id="p-1031">If \(\{\vec x_1,\vec x_2,\ldots,\vec x_m\}\) is a basis of \(\R^n\text{,}\) then \(m=n\text{.}\)</p></article><article class="hiddenproof" id="proof-80"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-80"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-80"><article class="hiddenproof"><p id="p-1032">From <a class="xref" data-knowl="./knowl/IndependentSize.html" title="Theorem 4.9.5: A linearly independent set in \(\R^n\) has as most \(n\) elements">Theorem 4.9.5</a> we have \(m\leq n\text{.}\) From <a class="xref" data-knowl="./knowl/SpanningSize.html" title="Theorem 4.9.9: A spanning set in \(\R^n\) has as least \(n\) elements">Theorem 4.9.9</a> we have \(n\leq m\text{.}\) Hence \(m=n\text{.}\)</p></article></div>
-<article class="theorem theorem-like" id="theorem-72"><h6 class="heading">
+<article class="theorem theorem-like" id="BasisMatrixNonSingular"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.9.12</span><span class="period">.</span><span class="space"> </span><span class="title">Determining if \(\{\vec x_1,\ldots,\vec x_n\}\) is a basis for \(\R^n\).</span>
 </h6>
 <p id="p-1033">Let \(\mathcal{X}=\{\vec x_1,\vec x_2,\ldots,\vec x_n\}\) be a set of vectors in \(\R^n\text{,}\) and let \(X\) be the matrix with \(\vec x_1,\vec x_2,\ldots,\vec x_n\) as columns:</p>

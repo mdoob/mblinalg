@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-09-01T13:32:18-04:00       *-->
+<!--*       on 2020-09-23T20:41:07-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -107,16 +107,16 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="LinearTransformationIntroduction"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">6.2</span> <span class="title">Definition of a linear transformation</span>
 </h2>
-<section class="subsection" id="subsection-87"><h3 class="heading hide-type">
+<section class="subsection" id="subsection-89"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.2.1</span> <span class="title">Definition of a linear transformation \(L\colon \R^m\to\R^n\)</span>
 </h3>
-<p id="p-1153">A <dfn class="terminology">transformation</dfn> is a map (or a rule) that takes any vector in \(\R^m\) and computes a vector in \(\R^n\text{.}\) We write \(L\colon \R^m\to\R^n\) so that the notation tracks the size of the vector we start with and the vector we end up with. For example, if we want the rule to start with the vector \((x_1,x_2,x_3)\) and compute \((x_1+x_2,x_2+x_3)\) we would write \(L\colon \R^3\to\R^2\) and \(L((x_1,x_2,x_3))=(x_1+x_2,x_2+x_3)\text{.}\) We can apply this rule for specific values:</p>
+<p id="p-1177">A <dfn class="terminology">transformation</dfn> is a map (or a rule) that takes any vector in \(\R^m\) and computes a vector in \(\R^n\text{.}\) We write \(L\colon \R^m\to\R^n\) so that the notation tracks the size of the vector we start with and the vector we end up with. For example, if we want the rule to start with the vector \((x_1,x_2,x_3)\) and compute \((x_1+x_2,x_2+x_3)\) we would write \(L\colon \R^3\to\R^2\) and \(L((x_1,x_2,x_3))=(x_1+x_2,x_2+x_3)\text{.}\) We can apply this rule for specific values:</p>
 <ul class="disc">
-<li id="li-380"><p id="p-1154">\(\displaystyle L((1,2,3))=(1+2,2+3)=(3,5)\)</p></li>
-<li id="li-381"><p id="p-1155">\(\displaystyle L((0,-3,4))=(0-3,-3+4)=(-3,1)\)</p></li>
-<li id="li-382"><p id="p-1156">\(\displaystyle L((0,0,0))=(0+0,0+0)=(0,0)\)</p></li>
+<li id="li-380"><p id="p-1178">\(\displaystyle L((1,2,3))=(1+2,2+3)=(3,5)\)</p></li>
+<li id="li-381"><p id="p-1179">\(\displaystyle L((0,-3,4))=(0-3,-3+4)=(-3,1)\)</p></li>
+<li id="li-382"><p id="p-1180">\(\displaystyle L((0,0,0))=(0+0,0+0)=(0,0)\)</p></li>
 </ul>
-<p id="p-1157">A transformation is <dfn class="terminology">linear</dfn> if it satisfies the following two properties:</p>
+<p id="p-1181">A transformation is <dfn class="terminology">linear</dfn> if it satisfies the following two properties:</p>
 <ul class="disc">
 <li id="li-383">Addition property: \(L(\vec u+\vec v)=L(\vec u)+L(\vec v)\)</li>
 <li id="li-384">Scalar multiplication property: \(L(r\vec u)=rL(\vec u)\)</li>
@@ -124,10 +124,10 @@ MathJax.Hub.Config({
 <p data-braille="continuation">Notice that \(\vec u\) and \(\vec v\) are in \(\R^m\) while \(L(\vec u)\) and \(L(\vec v)\) are in \(\R^n\text{.}\)</p></section><section class="subsection" id="LinearTransformationExamples"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.2.2</span> <span class="title">Examples of linear transformations</span>
 </h3>
-<p id="p-1158">Here are some examples of linear transformations:</p>
+<p id="p-1182">Here are some examples of linear transformations:</p>
 <ol class="decimal">
 <li id="li-385">
-<p id="p-1159">The zero transformation: \(L(\vec x)=\vec0\) for all \(\vec x\)</p>
+<p id="p-1183">The zero transformation: \(L(\vec x)=\vec0\) for all \(\vec x\)</p>
 <div class="displaymath">
 \begin{equation*}
 L(\vec x)+L(\vec y)=\vec0+\vec0=\vec0=L(\vec x + \vec y)\\
@@ -136,7 +136,7 @@ rL(\vec x)=r\vec0=\vec0=L(r\vec x)
 </div>
 </li>
 <li id="li-386">
-<p id="p-1160">The identity transformation: \(L(\vec x)=\vec x\) for all \(\vec x\)</p>
+<p id="p-1184">The identity transformation: \(L(\vec x)=\vec x\) for all \(\vec x\)</p>
 <div class="displaymath">
 \begin{equation*}
 L(\vec x)+L(\vec y)=\vec x+\vec y=L(\vec x + \vec y)\\
@@ -145,18 +145,18 @@ rL(\vec x)=r\vec x=L(r\vec x)
 </div>
 </li>
 <li id="li-387">
-<p id="p-1161">Rotations in \(\R^2\) as seen in <a class="xref" data-knowl="./knowl/PlaneRotation.html" title="Example 6.1.1: A rotation in the plane">Example 6.1.1</a>.</p>
-<p id="p-1162">The following figure uses the parallelogram rule to show why rotations have the addition property from the definition of a linear transformation:</p>
-<figure class="figure figure-like" id="figure-61"><div class="image-box" style="width: 65%; margin-left: 17.5%; margin-right: 17.5%;"><div class="asymptote-box" style="padding-top: 75.7309329820256%"><iframe src="images/image-64.html" class="asymptote"></iframe></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.1<span class="period">.</span></span><span class="space"> </span>Rotations are linear</figcaption></figure><p id="p-1163">The situation is similar for the scalar multiplication property:</p>
-<figure class="figure figure-like" id="figure-62"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><div class="asymptote-box" style="padding-top: 104.47464823486%"><iframe src="images/image-65.html" class="asymptote"></iframe></div></div>
+<p id="p-1185">Rotations in \(\R^2\) as seen in <a class="xref" data-knowl="./knowl/PlaneRotation.html" title="Example 6.1.1: A rotation in the plane">Example 6.1.1</a>.</p>
+<p id="p-1186">The following figure uses the parallelogram rule to show why rotations have the addition property from the definition of a linear transformation:</p>
+<figure class="figure figure-like" id="figure-66"><div class="image-box" style="width: 65%; margin-left: 17.5%; margin-right: 17.5%;"><div class="asymptote-box" style="padding-top: 75.7309329820256%"><iframe src="images/image-69.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.1<span class="period">.</span></span><span class="space"> </span>Rotations are linear</figcaption></figure><p id="p-1187">The situation is similar for the scalar multiplication property:</p>
+<figure class="figure figure-like" id="figure-67"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><div class="asymptote-box" style="padding-top: 104.47464823486%"><iframe src="images/image-70.html" class="asymptote"></iframe></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.2<span class="period">.</span></span><span class="space"> </span>Scalar multiplication is linear</figcaption></figure>
 </li>
-<li id="li-388"><p id="p-1164">Reflections in \(\R^2\) as seen in <a class="xref" data-knowl="./knowl/PlaneReflection.html" title="Example 6.1.3: A reflection in the plane">Example 6.1.3</a>.</p></li>
-<li id="li-389"><p id="p-1165">Projections in \(\R^2\) as seen in <a class="xref" data-knowl="./knowl/PlaneProjection.html" title="Example 6.1.5: A projection in the plane">Example 6.1.5</a>.</p></li>
-<li id="li-390"><p id="p-1166">Dilations in \(\R^2\) as seen in <a class="xref" data-knowl="./knowl/PlaneDilation.html" title="Example 6.1.7: A dilation in the plane">Example 6.1.7</a>.</p></li>
+<li id="li-388"><p id="p-1188">Reflections in \(\R^2\) as seen in <a class="xref" data-knowl="./knowl/PlaneReflection.html" title="Example 6.1.3: A reflection in the plane">Example 6.1.3</a>.</p></li>
+<li id="li-389"><p id="p-1189">Projections in \(\R^2\) as seen in <a class="xref" data-knowl="./knowl/PlaneProjection.html" title="Example 6.1.5: A projection in the plane">Example 6.1.5</a>.</p></li>
+<li id="li-390"><p id="p-1190">Dilations in \(\R^2\) as seen in <a class="xref" data-knowl="./knowl/PlaneDilation.html" title="Example 6.1.7: A dilation in the plane">Example 6.1.7</a>.</p></li>
 <li id="li-391">
-<p id="p-1167">\(L((x_1,x_2,x_3))=(x_1+x_2,x_2+x_3)\) since</p>
+<p id="p-1191">\(L((x_1,x_2,x_3))=(x_1+x_2,x_2+x_3)\) since</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
@@ -185,7 +185,7 @@ rL(\vec x)
 </div>
 </li>
 <li id="li-392">
-<p id="p-1168">Let \(A\) be an \(n\times m\) matrix (note carefully: \(n\) rows and \(m\) columns). Define \(L\colon\R^m\to\R^n\) in the following way: If \(\vec x\) is in \(\R^m\text{,}\) let \(\vec z=A\vec x\text{.}\) Note that \(\vec z\) is in \(\R^n\text{.}\) We then let \(L(\vec x)=\vec z\text{.}\)  In other words \(L(\vec x)=A\vec x\text{.}\) It follows that</p>
+<p id="p-1192">Let \(A\) be an \(n\times m\) matrix (note carefully: \(n\) rows and \(m\) columns). Define \(L\colon\R^m\to\R^n\) in the following way: If \(\vec x\) is in \(\R^m\text{,}\) let \(\vec z=A\vec x\text{.}\) Note that \(\vec z\) is in \(\R^n\text{.}\) We then let \(L(\vec x)=\vec z\text{.}\)  In other words \(L(\vec x)=A\vec x\text{.}\) It follows that</p>
 <div class="displaymath">
 \begin{equation*}
 L(\vec x+\vec y) =A(\vec x+\vec y)

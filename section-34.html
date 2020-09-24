@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-09-01T13:32:17-04:00       *-->
+<!--*       on 2020-09-23T20:41:06-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -121,11 +121,249 @@ MathJax.Hub.Config({
 3=r_1+r_2
 \end{gather*}
 </div>
-<p data-braille="continuation">The unique solution is \((r_1,r_2,r_3)=(2,1,0)\text{.}\) We then call this triple the <dfn class="terminology">coordinates of \(\vec v\) with respect to the basis \(B\)</dfn>.</p>
+<p data-braille="continuation">The unique solution is \((r_1,r_2,r_3)=(2,1,0)\text{.}\) We then call this triple <dfn class="terminology">the coordinates of \(\vec v\) with respect to the basis \(B\)</dfn>.</p>
 <article class="definition definition-like" id="definition-62"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.10.1</span><span class="period">.</span><span class="space"> </span><span class="title">Coordinates with respect ot a basis.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.10.1</span><span class="period">.</span><span class="space"> </span><span class="title">Coordinates with respect to a basis.</span>
 </h6>
-<p id="p-1088">Let \(\vec v\) be a vector in \(\R^n\text{,}\) and let \(B=\{x_1,x_2,\ldots,x_n\}\) be a basis. From <a class="xref" data-knowl="./knowl/BasisUniqueLinearCombination.html" title="Theorem 4.9.16: Bases and the uniqueness of linear combinations">Theorem 4.9.16</a>, there is exactly one choice of \(r_1,r_2,\ldots,r_n\) so that \(\vec v=r_1x_1+r_2x_2+\cdots+r_nx_n\text{;}\) \((r_1,r_2,\ldots,r_n)\) is then the coordinate vector of \(\vec v\) with respect to the basis \(B\text{.}\)</p></article></section></section></div></main>
+<p id="p-1088">Let \(\vec v\) be a vector in \(\R^n\text{,}\) and let \(B=\{\vec x_1,\vec x_2,\ldots,\vec x_n\}\) be a basis. From <a class="xref" data-knowl="./knowl/BasisUniqueLinearCombination.html" title="Theorem 4.9.16: Bases and the uniqueness of linear combinations">Theorem 4.9.16</a>, there is exactly one choice of \(r_1,r_2,\ldots,r_n\) so that \(\vec v=r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_n\text{.}\) The <dfn class="terminology">coordinates of \(\vec v\) with respect to the basis \(B\)</dfn> is then \((r_1,r_2,\ldots,r_n)\text{.}\) When necessary to emphasize the basis, the notation \((r_1,r_2,\ldots,r_n)_B\) is used.</p></article><article class="observation remark-like" id="observation-4"><h6 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">4.10.2</span><span class="period">.</span><span class="space"> </span><span class="title">Order makes a difference.</span>
+</h6>
+<p id="p-1089">If the vectors of a basis are reordered, then the coordinates of any vector with respect to that basis get reordered too. Sometimes the term <dfn class="terminology">ordered basis</dfn> is used to emphasize the importance of order, but usually it is just tacitly understood and causes no problems.</p></article><article class="example example-like" id="example-46"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.10.3</span><span class="period">.</span><span class="space"> </span><span class="title">Coordinates with respect to a basis in \(\R^2\).</span>
+</h6>
+<p id="p-1090">Consider the basis \(B=\{\vec u_1,\vec u_2\}\) in \(\R^2\) where \(\vec u_1=(2,1)\) and \(\vec u_2=(-1,1)\text{.}\) In addition, consider \(\vec w=(1,5)\text{.}\) We want the coordinates of \(\vec w\) with respect to the basis \(B\text{.}\) It follows easily from the equation \(\vec w=r_1\vec u_1+r_2\vec u_2\) that \(r_1=2\) and \(r_2=3\text{.}\) Hence \(\vec w=(2,3)_B\text{.}\) The figure below shows the geometric interpretation of this equation.</p>
+<figure class="figure figure-like" id="figure-55"><div class="image-box" style="width: 95%; margin-left: 2.5%; margin-right: 2.5%;"><div class="asymptote-box" style="padding-top: 69.0766431212946%"><iframe src="images/image-58.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.10.4<span class="period">.</span></span><span class="space"> </span>\(\vec w=2\vec u_1+3\vec u_2\)</figcaption></figure><p id="p-1091">The line joining \(\vec u_1\) with the origin contains all scalar multiples of \(\vec u_1\text{.}\) Similarly, the line joining \(\vec u_2\) with the origin contains all scalar multiples of \(\vec u_2\text{.}\) The parallelogram rule is used to add these two scalar multiples together.</p>
+<p id="p-1092">The nice part is that this reasoning is reversible. Given any basis \(B=\{\vec u_1,\vec u_2\}\text{,}\) the lines through \(\vec u_1\) and \(\vec u_2\) are considered axes and, for any other vector \(\vec w\text{,}\) lines parallel to these axes through \(\vec w\) can be used to make a parallelogram that determines \(r_1\) and \(r_2\text{.}\)</p>
+<p id="p-1093">With the standard basis \(\{\vec e_1,\vec e_2\}\text{,}\) the coordinates of a vector \(\vec w\) are determented by dropping perpendiculars to the \(x\)-axis and to the \(y\)-axis.  The parallelogram is actually a rectangle since the basis vectors are orthogonal.</p></article><p id="p-1094">It is reasonable to ask is why the consideration different bases is worthwhile. One answer is that it can make some computations much easier. The evaluation of projections from a point to a line in \(\R^2\) is given in <a href="section-31.html#ExamplesR2Projections" class="internal" title="Subsection 4.7.2: Examples of projections in \(\R^2\)">Subsection 4.7.2</a>. The following example gives a different quicker evaluation using bases.</p>
+<article class="example example-like" id="ExampleBasisProjection"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.10.5</span><span class="period">.</span><span class="space"> </span><span class="title">The projection of a point to a line in \(\R^2\) revisited.</span>
+</h6>
+<p id="p-1095">Consider the computation of the projection of a point \((x,y)\) onto the line \(y=mx\text{.}\) The strategy is to first use the line as one axis for a basis. To that end we take a nonzero point on the line as the first basis element: \(\vec u_1=(1,m)\) . Next, we want a second basis element orthogonal to \(\vec u_1\) so that the parallelogram rule will be applied as a rectangle. An easy choice is \(\vec u_2=(-m,1)\) (why?), so the basis is \(B=\{(1,m),(-m,1)\}\text{.}\) The coordinates \((r_1,r_2)\) of \((x,y)\) with respect to \(B\) are found by solving</p>
+<div class="displaymath">
+\begin{equation*}
+r_1(1,m)+r_2(-m,1)=(x,y)\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">This is routine and, in particular, gives us \(r_1=\frac1{m^2+1}(x+my)\text{.}\) Note that \(r_1\vec u_1=\frac1{m^2+1}(x+my)(1,m)=\frac1{m^2+1}(x+my,mx+m^2y)\) is our desired point. Note also that we could evaluate \(r_2\text{,}\) but we don't need to because of our choice of basis (we only have to work half as hard!).</p>
+<figure class="figure figure-like" id="figure-56"><div class="image-box" style="width: 85%; margin-left: 7.5%; margin-right: 7.5%;"><div class="asymptote-box" style="padding-top: 61.7888475944158%"><iframe src="images/image-59.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.10.6<span class="period">.</span></span><span class="space"> </span>Projection of \((x,y)\) to the line \(y=mx\)</figcaption></figure></article></section><section class="subsection" id="subsection-86"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.10.1</span> <span class="title">Bases, coordinates and matrices.</span>
+</h3>
+<p id="p-1096">Matrix multiplication has a nice role to play for the computation of coordinates. It rests on a straightforward relationship.</p>
+<article class="observation remark-like" id="ObsLinCombMatrix"><h6 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">4.10.7</span><span class="period">.</span><span class="space"> </span><span class="title">Linear combinations and matrices.</span>
+</h6>
+<p id="p-1097">Let \(\vec x_1, \vec x_2,\ldots,\vec x_n\) be vectors in \(\R^n\text{,}\) and let \(A=
+\begin{bmatrix}
+\vec x_1 \amp\vec x_2 \amp\cdots \amp\vec x_n
+\end{bmatrix}\) be the matrix with \(\vec x_1, \vec x_2,\ldots,\vec x_n\) as columns. Then</p>
+<div class="displaymath">
+\begin{equation*}
+r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_n=\vec w
+\end{equation*}
+</div>
+<p data-braille="continuation">if and only if</p>
+<div class="displaymath">
+\begin{equation*}
+A \begin{bmatrix} r_1\\r_2\\ \vdots \\r_n \end{bmatrix}
+=\vec w\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">This is easily verfied by evaluating \(\vec w_k\) in each case, for \(k=1,2,\ldots,n\text{.}\)</p></article><p id="p-1098">Now suppose that \(B=\{\vec x_1,\ldots,\vec x_n\}\) is a basis for \(\R^n\text{,}\) and \(A\) is the matrix with \(\vec x_1,\ldots,\vec x_n\) as columns. By <a class="xref" data-knowl="./knowl/BasisMatrixNonSingular.html" title="Theorem 4.9.12: Determining if \(\{\vec x_1,\ldots,\vec x_n\}\) is a basis for \(\R^n\)">Theorem 4.9.12</a> the matrix \(A\) is nonsingular, and this implies that \(A^{-1}\) exists.</p>
+<article class="proposition theorem-like" id="PropComputingCoordinates"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">4.10.8</span><span class="period">.</span>
+</h6>
+<p id="p-1099">Let \(\vec x_1, \vec x_2,\ldots,\vec x_n\) be vectors in \(\R^n\text{,}\) and let \(A=
+\begin{bmatrix}
+\vec x_1 \amp\vec x_2 \amp\cdots \amp\vec x_n
+\end{bmatrix}\) be the matrix with \(\vec x_1, \vec x_2,\ldots,\vec x_n\) as columns. Then the coordinates \((r_1,\ldots,r_n)\) of \(\vec w\) with respect to the basis \(B\) are given by</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix} r_1\\r_2\\ \vdots \\r_n \end{bmatrix}
+=
+A^{-1}\vec w\text{.}
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-86"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-86"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-86"><article class="hiddenproof"><p id="p-1100">Multiply both sides of the result in <a class="xref" data-knowl="./knowl/ObsLinCombMatrix.html" title="Observation 4.10.7: Linear combinations and matrices">Observation 4.10.7</a> by \(A^{-1}\text{.}\)</p></article></div>
+<article class="example example-like" id="example-48"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.10.9</span><span class="period">.</span><span class="space"> </span><span class="title">The projection of a point to a line in \(\R^2\) revisited again.</span>
+</h6>
+<p id="p-1101">We can use this result to revisit <a class="xref" data-knowl="./knowl/ExampleBasisProjection.html" title="Example 4.10.5: The projection of a point to a line in \(\R^2\) revisited">Example 4.10.5</a>. The matrix \(A\) of basis column vectors would then satisfy</p>
+<div class="displaymath">
+\begin{equation*}
+A= \begin{bmatrix} 1\amp -m\\ m \amp 1 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Since \(\det(A)=m^2+1\text{,}\) by <a class="xref" data-knowl="./knowl/InverseAdjoint.html" title="Theorem 3.5.3: The inverse and the adjoint of a matrix">Theorem 3.5.3</a>,</p>
+<div class="displaymath">
+\begin{equation*}
+A^{-1}= \frac1{m^2+1}\begin{bmatrix} 1\amp m\\ -m \amp 1 \end{bmatrix}\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix} r_1\\r_2 \end{bmatrix}
+=A^{-1}
+\begin{bmatrix} x\\y \end{bmatrix}
+= \frac1{m^2+1}
+\begin{bmatrix} x+my\\-mx+y \end{bmatrix}\text{.}
+\end{equation*}
+</div></article><article class="example example-like" id="EllipesRotation1"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.10.10</span><span class="period">.</span><span class="space"> </span><span class="title">An ellipse in the plane.</span>
+</h6>
+<p id="p-1102">The standard equation for an ellipse in the plane is</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Clearly the points \((\pm a,0)\) and \((0,\pm b)\) satisfy the equation and are on the ellipse. A typical instance is symmetric about the \(x\)-axis and \(y\)-axis:</p>
+<figure class="figure figure-like" id="figure-57"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><div class="asymptote-box" style="padding-top: 54.6010081609295%"><iframe src="images/image-60.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.10.11<span class="period">.</span></span><span class="space"> </span>Graph of \(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\) with \(a=2\) and \(b=1\)</figcaption></figure><p id="p-1103">Next we consider the points in the plane satisfying \(x^2-xy+y^2=1\text{.}\) Here is the graph:</p>
+<figure class="figure figure-like" id="figure-58"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><div class="asymptote-box" style="padding-top: 86.6928244968995%"><iframe src="images/image-61.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.10.12<span class="period">.</span></span><span class="space"> </span>Graph of \(x^2-xy+y^2=1\)</figcaption></figure><p id="p-1104">It really looks like an ellipse, but the equation is not in our standard form, because the curve is not appropriately aligned with the \(x\)-axis and \(y\)-axis. What to do? We can change the axes by using a new basis: \(B=\{\vec u_1, \vec u_2\}\) where \(\vec u_1=(1,1)\) and \(\vec u_2=(-1,1)\text{.}\)</p>
+<figure class="figure figure-like" id="figure-59"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><div class="asymptote-box" style="padding-top: 88.4390752514523%"><iframe src="images/image-62.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.10.13<span class="period">.</span></span><span class="space"> </span>Graph of \(x^2-xy+y^2=1\) with new axes</figcaption></figure><p id="p-1105">Now suppose \(\vec w=(u,v)\) is on the curve. Let \((x,y)\) be the coordinates of \(\vec w\) with respect to the basis \(B\text{.}\) Using <a class="xref" data-knowl="./knowl/PropComputingCoordinates.html" title="Proposition 4.10.8">Proposition 4.10.8</a>,</p>
+<div class="displaymath">
+\begin{equation*}
+\vec w = \begin{bmatrix} u\\v \end{bmatrix} 
+= A \begin{bmatrix} x\\y \end{bmatrix}
+=  \begin{bmatrix} 1\amp-1\\ 1\amp 1 \end{bmatrix}
+\begin{bmatrix} x\\y \end{bmatrix}
+=  \begin{bmatrix} x-y\\x+y \end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">and, since \((u,v)\) is on the curve,</p>
+<div class="displaymath">
+\begin{equation*}
+1=u^2-uv+v^2=(x-y)^2 -(x-y)(x+y) + (x+y)^2=x^2+3y^2\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Hence \(\frac{x^2}{a^2} + \frac{y^2}{b^2}=1\) where \(a=1\) and \(b=\frac1{\sqrt3}\text{,}\) and the curve is indeed an ellipse.</p></article></section><section class="subsection" id="subsection-87"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.10.2</span> <span class="title">Change of basis</span>
+</h3>
+<p id="p-1106">Suppose we have two bases \(B_1=\{\vec x_1,\ldots,\vec x_n\}\) and \(B_2=\{\vec y_1,\ldots,\vec y_n\}\) and also \(\vec w \text{,}\) all in \(\R^n\text{.}\) If we know the coordinates of \(\vec w\) with respect to \(B_1\text{,}\) can we find the  coordinates of \(\vec w\) with respect to \(B_2\) easily? If we use the right matrices, the answer is yes.</p>
+<article class="proposition theorem-like" id="proposition-11"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">4.10.14</span><span class="period">.</span><span class="space"> </span><span class="title">Change of basis and matrix multiplication.</span>
+</h6>
+<p id="p-1107">Suppose that \(B_1\) and \(B_2\) are bases of \(\R^n\text{.}\) Then there is a matrix \(C\) with the following property: If \(\vec w\) is any vector in \(\R^n\text{,}\) and \((r_1,r_2,\ldots,r_n)\) and \((s_1,s_2,\ldots,s_n)\) are the are the coordinates of \(\vec w\) with respect to the bases \(B_1\) and \(B_2\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+s_1\\ s_2\\ \vdots \\s_n
+\end{bmatrix}
+= C 
+\begin{bmatrix}
+r_1\\ r_2\\ \vdots \\r_n
+\end{bmatrix}\text{.}
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-87"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-87"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-87"><article class="hiddenproof"><p id="p-1108">From <a class="xref" data-knowl="./knowl/ObsLinCombMatrix.html" title="Observation 4.10.7: Linear combinations and matrices">Observation 4.10.7</a>, there exist matrices \(A_1\) and \(A_2\) satisfying</p>
+<div class="displaymath">
+\begin{equation*}
+A_1 \begin{bmatrix} r_1\\r_2\\ \vdots \\r_n \end{bmatrix} 
+= \vec w
+= A_2 \begin{bmatrix} s_1\\s_2\\ \vdots \\s_n \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Setting \(C=A_2^{-1}A_1\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+C
+\begin{bmatrix}
+r_1\\ r_2\\ \vdots \\r_n
+\end{bmatrix}
+=A_2^{-1}A_1
+\begin{bmatrix}
+r_1\\ r_2\\ \vdots \\r_n
+\end{bmatrix}
+=A_2^{-1}\vec w
+=
+\begin{bmatrix}
+s_1\\ s_2\\ \vdots \\s_n
+\end{bmatrix}\text{.}
+\end{equation*}
+</div></article></div>
+<article class="theorem theorem-like" id="ChangeOfBasis"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.10.15</span><span class="period">.</span><span class="space"> </span><span class="title">Change of basis theorem.</span>
+</h6>
+<p id="p-1109">Suppose that \(B_1=\{\vec x_1, \vec x_2, \ldots, \vec x_n\}\) and \(B_2=\{\vec y_1, \vec y_2, \ldots, \vec y_n\}\) are bases of \(\R^n\text{,}\) that \(\vec w\) is a vector in \(\R^n\text{,}\) and that \((r_1,r_2,\ldots,r_n)\) and \((s_1,s_2,\ldots,s_n)\) are the are the coordinates of \(\vec w\) with respect to the bases \(B_1\) and \(B_2\text{.}\) In addition, let \((c_{1,j}, c_{2,j},\ldots, c_{n,j})\) be the coordinates of \(\vec x_j\) with respect to \(B_2\text{,}\) that is,</p>
+<div class="displaymath">
+\begin{align*}
+\vec x_j=c_{1,j} \vec y_1+c_{2,j}\vec y_2+ \cdots + c_{n,j}\vec y_n
+\amp\amp \text{ for } 1\leq j\leq n\text{.}
+\end{align*}
+</div>
+<p data-braille="continuation">Then, for \(C= \begin{bmatrix} c_{i,j} \end{bmatrix} \text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix} s_1\\ s_2\\ \vdots \\s_n \end{bmatrix}
+=
+C \begin{bmatrix}r_1\\r_2\\ \vdots\\r_n\end{bmatrix}\text{.}
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-88"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-88"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-88"><article class="hiddenproof"><p id="p-1110">Using</p>
+<div class="displaymath">
+\begin{gather*}
+\vec x_1 = c_{1,1}\vec y_1+c_{2,1}\vec y_2 +\cdots+ c_{n,1}\vec y_n\\
+\vec x_2 = c_{1,2}\vec y_1+c_{2,2}\vec y_2 +\cdots+ c_{n,2}\vec y_n\\
+\vdots\\
+\vec x_n = c_{1,n}\vec y_1+c_{2,n}\vec y_2 +\cdots+ c_{n,n}\vec y_n
+\end{gather*}
+</div>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+\vec w
+= r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_n
+= s_1\vec y_1+s_2\vec y_2+\cdots+s_n\vec y_n\text{,}
+\end{equation*}
+</div>
+<p data-braille="continuation">we see that</p>
+<div class="displaymath">
+\begin{align*}
+s_1\vec y_1+s_2\vec y_2+\cdots+s_n\vec y_n
+\amp = r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_n \\
+\amp = r_1(c_{1,1}\vec y_1+c_{2,1}\vec y_2 +\cdots+ c_{n,1}\vec y_n) \\
+\amp  \phantom{===} +r_2(c_{1,2}\vec y_1+c_{2,2}\vec y_2 +\cdots+ c_{n,2}\vec y_n) \\
+\amp\phantom{===|} \vdots\\
+\amp \phantom{===}  +r_n(c_{1,n}\vec y_1+c_{2,n}\vec y_2 +\cdots+ c_{n,n}\vec y_n) \\
+\amp = (r_1 c_{1,1}+r_2 c_{1,2}+\cdots+r_n c_{1,n})\vec y_1 \\
+\amp \phantom{===} + (r_1 c_{2,1}+r_2 c_{2,2}+\cdots+r_n c_{2,n})\vec y_2 \\
+\amp\phantom{===|} \vdots\\
+\amp \phantom{===} + (r_1 c_{n,1}+r_2 c_{n,2}+\cdots+r_n c_{n,n})\vec y_n \text{.}
+\end{align*}
+</div>
+<p data-braille="continuation">Using <a class="xref" data-knowl="./knowl/prop-unique-indepentent.html" title="Proposition 4.9.4: Uniqueness of linear combinations">Proposition 4.9.4</a>, we have</p>
+<div class="displaymath">
+\begin{gather*}
+s_1=r_1 c_{1,1}+r_2 c_{1,2}+\cdots+r_n c_{1,n}\\
+s_2=r_1 c_{2,1}+r_2 c_{2,2}+\cdots+r_n c_{2,n}\\
+\vdots\\
+s_n=r_1 c_{n,1}+r_2 c_{n,2}+\cdots+r_n c_{n,n}\text{,}
+\end{gather*}
+</div>
+<p data-braille="continuation">which is identical to</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix} s_1\\ s_2\\ \vdots \\s_n \end{bmatrix}
+=
+C \begin{bmatrix}r_1\\r_2\\ \vdots\\r_n\end{bmatrix}\text{.}
+\end{equation*}
+</div></article></div>
+<article class="observation remark-like" id="observation-6"><h6 class="heading">
+<span class="type">Observation</span><span class="space"> </span><span class="codenumber">4.10.16</span><span class="period">.</span>
+</h6>
+<p id="p-1111">Notice that <a class="xref" data-knowl="./knowl/ChangeOfBasis.html" title="Theorem 4.10.15: Change of basis theorem">Theorem 4.10.15</a> gives an algorithm for constructing the desired matrix \(C\text{.}\) For each \(k=1,2,\ldots,n\text{,}\) let \(\vec z_k\) be the coordinates of \(\vec x_k\) with respect to \(B_2\text{.}\) Using column vectors, let \(C=
+\begin{bmatrix} \vec z_1\amp\vec z_2\amp\cdots\amp\vec z_n \end{bmatrix}
+\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix} s_1\\ s_2\\ \vdots \\s_n \end{bmatrix}
+=
+C \begin{bmatrix}r_1\\r_2\\ \vdots\\r_n\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p id="p-1112">Also, notice that <a class="xref" data-knowl="./knowl/PropComputingCoordinates.html" title="Proposition 4.10.8">Proposition 4.10.8</a> is a special case of <a class="xref" data-knowl="./knowl/ChangeOfBasis.html" title="Theorem 4.10.15: Change of basis theorem">Theorem 4.10.15</a> where \(B_1=\{\vec x_1,\ldots,\vec x_n\}\) and \(B_2\) is the standard basis.</p></article></section></section></div></main>
 </div>
 </body>
 </html>

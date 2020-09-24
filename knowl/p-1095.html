@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-09-01T13:32:40-04:00       *-->
+<!--*       on 2020-09-23T20:41:27-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,23 +15,13 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Let \(A=\begin{bmatrix} 0\amp -1\\ 1\amp 0\end{bmatrix}\) and consider the equation \(A\vec x=\lambda\vec x\text{.}\) Setting \(\vec x=\begin{bmatrix} x_1\\x_2\end{bmatrix}\text{,}\)</p>
+<p>Consider the computation of the projection of a point \((x,y)\) onto the line \(y=mx\text{.}\) The strategy is to first use the line as one axis for a basis. To that end we take a nonzero point on the line as the first basis element: \(\vec u_1=(1,m)\) . Next, we want a second basis element orthogonal to \(\vec u_1\) so that the parallelogram rule will be applied as a rectangle. An easy choice is \(\vec u_2=(-m,1)\) (why?), so the basis is \(B=\{(1,m),(-m,1)\}\text{.}\) The coordinates \((r_1,r_2)\) of \((x,y)\) with respect to \(B\) are found by solving</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\begin{bmatrix} 0\amp -1\\ 1\amp 0\end{bmatrix}\begin{bmatrix} x_1\\x_2\end{bmatrix}
-=\lambda\begin{bmatrix} x_1\\x_2\end{bmatrix}
+r_1(1,m)+r_2(-m,1)=(x,y)\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">This is equivalent to the system of equations</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\begin{array}{rl}
-\lambda x_1 \amp = -x_2\\
-\lambda x_2 \amp = x_1.
-\end{array}
-\end{equation*}
-</div>
-<p data-braille="continuation">This implies that \((\lambda^2+1)x_1 = \lambda^2 x_1 + x_1 = -\lambda x_2 +\lambda x_2=0 \) and \((\lambda^2+1)x_2 = \lambda^2 x_2 + x_2 = \lambda x_1 -\lambda x_21=0.\) Since \(\vec x \not=\vec 0\text{,}\) either \(x_1\not=0\) or \(x_2\not=0\text{,}\) and consequently \(\lambda^2=-1\text{.}\) Since no real number satisfies this equation, we conclude that there are no eigenvalues or eigenvectors for \(A\text{.}\) An aside: if we consider complex numbers, then \(i\) and \(-i\) are both eigenvalues of \(A\) with \(\begin{bmatrix} 1\\-i\end{bmatrix}\) and \(\begin{bmatrix} 1\\i\end{bmatrix}\) as corresponding eigenvectors.</p>
-<span class="incontext"><a href="section-35.html#p-1095">in-context</a></span>
+<p data-braille="continuation">This is routine and, in particular, gives us \(r_1=\frac1{m^2+1}(x+my)\text{.}\) Note that \(r_1\vec u_1=\frac1{m^2+1}(x+my)(1,m)=\frac1{m^2+1}(x+my,mx+m^2y)\) is our desired point. Note also that we could evaluate \(r_2\text{,}\) but we don't need to because of our choice of basis (we only have to work half as hard!).</p>
+<span class="incontext"><a href="section-34.html#p-1095">in-context</a></span>
 </body>
 </html>
