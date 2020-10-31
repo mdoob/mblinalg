@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-10-13T15:33:24-05:00       *-->
+<!--*       on 2020-10-31T14:44:11-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -65,10 +65,12 @@ MathJax.Hub.Config({
 
 \def\vec#1{\mathbf #1}
 
-\newcommand{\adj}{\mathop{\textrm{adj}}}
-\newcommand{\proj}{\mathop{\textrm{proj}}}
-\newcommand{\Span}{\mathop{\textrm{span}}} 
-\newcommand{\sgn}{\mathop{\textrm{sgn}}}
+\newcommand{\adj}{\mathop{\mathrm{adj}}}
+\newcommand{\diag}{\mathop{\mathrm{diag}}}
+\newcommand{\proj}{\mathop{\mathrm{proj}}}
+\newcommand{\Span}{\mathop{\mathrm{span}}} 
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\newcommand{\tr}{\mathop{\mathrm{tr}}}
 
 \newcommand{\rowint}[2]{R_{#1} \leftrightarrow R_{#2}}
 \newcommand{\rowmul}[2]{R_{#1}\gets {#2}R_{#1}}
@@ -81,7 +83,7 @@ MathJax.Hub.Config({
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href="http://www.umanitoba.ca" target="_blank"><img src="images/umlogo.png" alt="Logo image"></a><div class="title-container">
 <h1 class="heading"><a href="mblinalg.html"><span class="title">Manitoba linear algebra</span></a></h1>
-<p class="byline">Michael Doob (editor)</p>
+<p class="byline">Michael Doob</p>
 </div>
 </div></div>
 <nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
@@ -179,13 +181,13 @@ b_{1,i}a_{j,1} + b_{2,i}a_{j,2}
 <p id="p-372">The <dfn class="terminology">trace</dfn>  of a square matrix \(A\) of size \(n\) is the sum of the diagonal elements, that is,</p>
 <div class="displaymath">
 \begin{equation*}
-\mathrm{tr}A=a_{1,1}+a_{2,2}+\cdots + a_{n,n}=\sum_{i=1}^n a_{i,i}
+\tr A=a_{1,1}+a_{2,2}+\cdots + a_{n,n}=\sum_{i=1}^n a_{i,i}
 \end{equation*}
 </div></article><article class="theorem theorem-like" id="theorem-10"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Traces of \(AB\) and \(BA\) are equal.</span>
 </h6>
-<p id="p-373">If \(AB\) and \(BA\) are each square, then \(\mathrm{tr}(AB)=\mathrm{tr}(BA)\)</p></article><article class="hiddenproof" id="proof-13"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-13"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-13"><article class="hiddenproof"><p id="p-374">Suppose that \(A\) is \(m\times n\) and \(B\) is \(n\times
-m\) (remember that \(AB\) is then defined and square). To evalute both \(\mathrm{tr}(AB)\) and \(\mathrm{tr}(BA)\text{,}\) we consider the following rectangular array of numbers:</p>
+<p id="p-373">If \(AB\) and \(BA\) are each square, then \(\tr (AB)=\tr (BA)\)</p></article><article class="hiddenproof" id="proof-13"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-13"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-13"><article class="hiddenproof"><p id="p-374">Suppose that \(A\) is \(m\times n\) and \(B\) is \(n\times
+m\) (remember that \(AB\) is then defined and square). To evalute both \(\tr (AB)\) and \(\tr (BA)\text{,}\) we consider the following rectangular array of numbers:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{matrix}
@@ -205,7 +207,7 @@ a_{m,n}b_{n,m} \amp\gets (AB)_{m,m}\\
 \end{equation*}
 </div>
 <p data-braille="continuation">We are going to compute the sum of all the elements of this array in two ways. Having done this, the two answers will be equal.</p>
-<p id="p-375">First we find the sum of all the entries of the array by adding row-wise. Observe that the sum of the elements in the first row is \((AB)_{1,1}\text{,}\) the sum of those in the second row is \((AB)_{2,2}\text{,}\) and so on until the sum of the elements in the last row is \((AB)_{m,m}\text{.}\) Hence the sum of all of the elements in the array is \((AB)_{1,1}+(AB)_{2,2}+\cdots+(AB)_{m,m}=\mathrm{tr}(AB)\text{.}\)</p>
+<p id="p-375">First we find the sum of all the entries of the array by adding row-wise. Observe that the sum of the elements in the first row is \((AB)_{1,1}\text{,}\) the sum of those in the second row is \((AB)_{2,2}\text{,}\) and so on until the sum of the elements in the last row is \((AB)_{m,m}\text{.}\) Hence the sum of all of the elements in the array is \((AB)_{1,1}+(AB)_{2,2}+\cdots+(AB)_{m,m}=\tr (AB)\text{.}\)</p>
 <p id="p-376">Now we add columnwise. Notice that the first column sums to</p>
 <div class="displaymath">
 \begin{align*}
@@ -214,16 +216,16 @@ a_{1,1}b_{1,1}\amp +a_{2,1}b_{1,2}+\cdots+a_{m,1}b_{1,m}\\
 \amp =(BA)_{1,1},
 \end{align*}
 </div>
-<p data-braille="continuation">the second column sums to \((BA)_{2,2}\) and so on until the last column sums to \((BA)_{n,n}\text{.}\)Hence the sum of all of the elements in the array is \((BA)_{1,1}+(BA)_{2,2}+\cdots+(BA)_{n,n}=\mathrm{tr}(BA)\text{.}\) Equating the two evaluations gives \(\mathrm{tr}(AB)=\mathrm{tr}(BA)\text{.}\)</p></article></div>
+<p data-braille="continuation">the second column sums to \((BA)_{2,2}\) and so on until the last column sums to \((BA)_{n,n}\text{.}\)Hence the sum of all of the elements in the array is \((BA)_{1,1}+(BA)_{2,2}+\cdots+(BA)_{n,n}=\tr (BA)\text{.}\) Equating the two evaluations gives \(\tr (AB)=\tr (BA)\text{.}\)</p></article></div>
 <article class="hiddenproof" id="proof-14"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-14"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-14"><article class="hiddenproof"><p id="p-377">Suppose that \(A\) is \(m\times n\text{.}\) Then, since \(AB\) and \(BA\) are defined, the conformability ensures that \(B\) is \(n\times m\text{.}\)</p>
 <div class="displaymath">
 \begin{align*}
-\mathrm{tr}(AB) \amp = \sum_{i=1}^m(AB)_{i,i} \\
+\tr (AB) \amp = \sum_{i=1}^m(AB)_{i,i} \\
 \amp =  \sum_{i=1}^m  \sum_{j=1}^n a_{i,j}b_{j,i}\\
 \amp =  \sum_{i=1}^m  \sum_{j=1}^n b_{j,i}a_{i,j}\\
 \amp =   \sum_{j=1}^n\sum_{i=1}^m  b_{j,i}a_{i,j}\\
 \amp =   \sum_{j=1}^n (BA)_{j,j}\\
-\amp =   \mathrm{tr}(BA)
+\amp =   \tr (BA)
 \end{align*}
 </div></article></div></section></div></main>
 </div>

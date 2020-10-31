@@ -12,10 +12,12 @@
    <!-- redefine \vec from overarrow to bf -->
    \def\vec#1{\mathbf #1}
    <!-- New operators -->
-   \newcommand{\adj}{\mathop{\textrm{adj}}}
-   \newcommand{\proj}{\mathop{\textrm{proj}}}
-   \newcommand{\Span}{\mathop{\textrm{span}}} <!-- \span is a TeX primitive  -->
-   \newcommand{\sgn}{\mathop{\textrm{sgn}}}
+   \newcommand{\adj}{\mathop{\mathrm{adj}}}
+   \newcommand{\diag}{\mathop{\mathrm{diag}}}
+   \newcommand{\proj}{\mathop{\mathrm{proj}}}
+   \newcommand{\Span}{\mathop{\mathrm{span}}} <!-- \span is a TeX primitive  -->
+   \newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+   \newcommand{\tr}{\mathop{\mathrm{tr}}}
    <!-- Shortcuts for typesetting elementary row operations-->
    \newcommand{\rowint}[2]{R_{#1} \leftrightarrow R_{#2}}
    \newcommand{\rowmul}[2]{R_{#1}\gets {#2}R_{#1}}

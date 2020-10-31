@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-10-13T15:33:35-05:00       *-->
+<!--*       on 2020-10-31T14:44:22-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -65,10 +65,12 @@ MathJax.Hub.Config({
 
 \def\vec#1{\mathbf #1}
 
-\newcommand{\adj}{\mathop{\textrm{adj}}}
-\newcommand{\proj}{\mathop{\textrm{proj}}}
-\newcommand{\Span}{\mathop{\textrm{span}}} 
-\newcommand{\sgn}{\mathop{\textrm{sgn}}}
+\newcommand{\adj}{\mathop{\mathrm{adj}}}
+\newcommand{\diag}{\mathop{\mathrm{diag}}}
+\newcommand{\proj}{\mathop{\mathrm{proj}}}
+\newcommand{\Span}{\mathop{\mathrm{span}}} 
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\newcommand{\tr}{\mathop{\mathrm{tr}}}
 
 \newcommand{\rowint}[2]{R_{#1} \leftrightarrow R_{#2}}
 \newcommand{\rowmul}[2]{R_{#1}\gets {#2}R_{#1}}
@@ -81,7 +83,7 @@ MathJax.Hub.Config({
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href="http://www.umanitoba.ca" target="_blank"><img src="images/umlogo.png" alt="Logo image"></a><div class="title-container">
 <h1 class="heading"><a href="mblinalg.html"><span class="title">Manitoba linear algebra</span></a></h1>
-<p class="byline">Michael Doob (editor)</p>
+<p class="byline">Michael Doob</p>
 </div>
 </div></div>
 <nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
@@ -107,22 +109,22 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-42"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">6.3</span> <span class="title">First properties of linear transformations</span>
 </h2>
-<p id="p-1193">A linear transformation \(L\colon\R^m\to\R^n\text{,}\) by definition, satisfies</p>
+<p id="p-1223">A linear transformation \(L\colon\R^m\to\R^n\text{,}\) by definition, satisfies</p>
 <ul class="disc">
-<li id="li-393"><p id="p-1194">\(L(\vec x+\vec y)=L(\vec x)+L(\vec y)\) and</p></li>
-<li id="li-394"><p id="p-1195">\(\displaystyle L(r\vec x)=rL(\vec x)\)</p></li>
+<li id="li-386"><p id="p-1224">\(L(\vec x+\vec y)=L(\vec x)+L(\vec y)\) and</p></li>
+<li id="li-387"><p id="p-1225">\(\displaystyle L(r\vec x)=rL(\vec x)\)</p></li>
 </ul>
-<article class="theorem theorem-like" id="theorem-80"><h6 class="heading">
+<article class="theorem theorem-like" id="theorem-84"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">(First properties).</span>
 </h6>
-<p id="p-1196">Any linear transformation \(L\) satisfies</p>
+<p id="p-1226">Any linear transformation \(L\) satisfies</p>
 <ul class="disc">
-<li id="li-395"><p id="p-1197">\(\displaystyle L(\vec0)=\vec0\)</p></li>
-<li id="li-396"><p id="p-1198">\(\displaystyle L(\vec x-\vec y)=L(\vec x)-L(\vec y)\)</p></li>
-<li id="li-397"><p id="p-1199">\(L(\vec x-\vec y)=\vec0\) if and only if \(L(\vec x) =L(\vec y)\)</p></li>
-<li id="li-398"><p id="p-1200">\(\displaystyle L(r_1\vec x_1+r_2\vec x_2)=r_1L(\vec x_1)+r_2L(\vec x_2)\)</p></li>
-<li id="li-399">
-<p id="p-1201">For any vectors \(\vec x_1, \vec x_2,\ldots,\vec x_n\) and real numbers \(r_1, r_2,\ldots,r_n\)</p>
+<li id="li-388"><p id="p-1227">\(\displaystyle L(\vec0)=\vec0\)</p></li>
+<li id="li-389"><p id="p-1228">\(\displaystyle L(\vec x-\vec y)=L(\vec x)-L(\vec y)\)</p></li>
+<li id="li-390"><p id="p-1229">\(L(\vec x-\vec y)=\vec0\) if and only if \(L(\vec x) =L(\vec y)\)</p></li>
+<li id="li-391"><p id="p-1230">\(\displaystyle L(r_1\vec x_1+r_2\vec x_2)=r_1L(\vec x_1)+r_2L(\vec x_2)\)</p></li>
+<li id="li-392">
+<p id="p-1231">For any vectors \(\vec x_1, \vec x_2,\ldots,\vec x_n\) and real numbers \(r_1, r_2,\ldots,r_n\)</p>
 <div class="displaymath">
 \begin{equation*}
 L(r_1\vec x_1+r_2 \vec x_2+\cdots+r_n\vec x_n)=
@@ -130,13 +132,13 @@ r_1L(\vec x_1)+r_2 L(\vec x_2)+\cdots+r_nL(\vec x_n)
 \end{equation*}
 </div>
 </li>
-</ul></article><article class="hiddenproof" id="proof-97"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-97"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-97"><article class="hiddenproof"><ol id="p-1202" class="decimal">
-<li id="li-400">
-<p id="p-1203">We evaluate \(L(\vec 0+\vec 0)\) in two ways:</p>
+</ul></article><article class="hiddenproof" id="proof-105"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-105"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-105"><article class="hiddenproof"><ol id="p-1232" class="decimal">
+<li id="li-393">
+<p id="p-1233">We evaluate \(L(\vec 0+\vec 0)\) in two ways:</p>
 <ol class="lower-alpha">
-<li id="li-401"><p id="p-1204">Since \(\vec 0+\vec 0=\vec0\text{,}\) we have \(L(\vec 0+\vec 0)=L(\vec 0)\)</p></li>
-<li id="li-402">
-<p id="p-1205">Since \(\vec 0+\vec 0=2\vec0\text{,}\) we have \(L(\vec 0+\vec 0)= L(2\vec 0)=2L(\vec 0)\text{,}\) and so</p>
+<li id="li-394"><p id="p-1234">Since \(\vec 0+\vec 0=\vec0\text{,}\) we have \(L(\vec 0+\vec 0)=L(\vec 0)\)</p></li>
+<li id="li-395">
+<p id="p-1235">Since \(\vec 0+\vec 0=2\vec0\text{,}\) we have \(L(\vec 0+\vec 0)= L(2\vec 0)=2L(\vec 0)\text{,}\) and so</p>
 <div class="displaymath">
 \begin{equation*}
 2L(\vec 0)=L(\vec 0)\\L(\vec 0)=\vec0
@@ -145,16 +147,16 @@ r_1L(\vec x_1)+r_2 L(\vec x_2)+\cdots+r_nL(\vec x_n)
 </li>
 </ol>
 </li>
-<li id="li-403"><p id="p-1206">\(\displaystyle L(\vec x-\vec y)
+<li id="li-396"><p id="p-1236">\(\displaystyle L(\vec x-\vec y)
 =L(\vec x+(-1)\vec y)
 =L(\vec x)+L((-1)\vec y)
 L(\vec x)-L(\vec y)\)</p></li>
-<li id="li-404"><p id="p-1207">\(L(\vec x-\vec y)=\vec0\) if and only if \(L(\vec x)-L(\vec y)=\vec0\) which in turn implies \(L(\vec x) =L(\vec y)\text{.}\)</p></li>
-<li id="li-405"><p id="p-1208">\(\displaystyle L(r_1\vec x_1+r_2\vec x_2)
+<li id="li-397"><p id="p-1237">\(L(\vec x-\vec y)=\vec0\) if and only if \(L(\vec x)-L(\vec y)=\vec0\) which in turn implies \(L(\vec x) =L(\vec y)\text{.}\)</p></li>
+<li id="li-398"><p id="p-1238">\(\displaystyle L(r_1\vec x_1+r_2\vec x_2)
 =L(r_1\vec x_1)+L(r_2\vec x_2)
 =r_1L(\vec x_1)+r_2L(\vec x_2) \)</p></li>
-<li id="li-406">
-<p id="p-1209">We apply the addition property repeatedly:</p>
+<li id="li-399">
+<p id="p-1239">We apply the addition property repeatedly:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
@@ -170,7 +172,7 @@ L(r_1\vec x_1\amp+r_2 \vec x_2+\cdots+r_n\vec x_n)\\
 </div>
 </li>
 </ol></article></div>
-<p id="p-1210">The <dfn class="terminology">standard basis</dfn> of \(\R^m\) is the set of vectors \(\{\vec e_1, \vec e_2,\ldots,\vec e_m\}\) where</p>
+<p id="p-1240">The <dfn class="terminology">standard basis</dfn> of \(\R^m\) is the set of vectors \(\{\vec e_1, \vec e_2,\ldots,\vec e_m\}\) where</p>
 <div class="displaymath">
 \begin{equation*}
 \vec e_1=(1,0,\ldots,0)\\
@@ -182,7 +184,7 @@ L(r_1\vec x_1\amp+r_2 \vec x_2+\cdots+r_n\vec x_n)\\
 <article class="theorem theorem-like" id="LinearTransformationOnStandardBasis"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">(The value of \(L\) on the standard basis determines \(L\) everywhere).</span>
 </h6>
-<p id="p-1211">If the values \(L(\vec e_1), L(\vec e_2),\ldots L(\vec e_m)\) are known, then value of \(L(\vec x)\) is known for all \(\vec x\) in \(\R^m\text{.}\)</p></article><article class="hiddenproof" id="proof-98"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-98"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-98"><article class="hiddenproof"><p id="p-1212">Suppose \(L(\vec e_1)=\vec f_1,  L(\vec e_2)=\vec f_2,\ldots,L(\vec e_m)=\vec f_m\text{,}\) and \(\vec x=(x_1,x_2,\ldots,x_m)\text{.}\) Then \((x_1,x_2,\ldots,x_m)=x_1\vec e_1 + x_2\vec e_2+\cdots+x_m\vec e_m\) and</p>
+<p id="p-1241">If the values \(L(\vec e_1), L(\vec e_2),\ldots L(\vec e_m)\) are known, then value of \(L(\vec x)\) is known for all \(\vec x\) in \(\R^m\text{.}\)</p></article><article class="hiddenproof" id="proof-106"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-106"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-106"><article class="hiddenproof"><p id="p-1242">Suppose \(L(\vec e_1)=\vec f_1,  L(\vec e_2)=\vec f_2,\ldots,L(\vec e_m)=\vec f_m\text{,}\) and \(\vec x=(x_1,x_2,\ldots,x_m)\text{.}\) Then \((x_1,x_2,\ldots,x_m)=x_1\vec e_1 + x_2\vec e_2+\cdots+x_m\vec e_m\) and</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
@@ -193,14 +195,14 @@ L(\vec x)
 \end{array}
 \end{equation*}
 </div></article></div>
-<article class="corollary theorem-like" id="corollary-8"><h6 class="heading">
+<article class="corollary theorem-like" id="corollary-9"><h6 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">6.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">\(L(\vec e_i)=\vec 0, i=1\cdots m\text{,}\) implies \(L=0\).</span>
 </h6>
-<p id="p-1213">If \(L(\vec e_1)=L(\vec e_2)=\cdots=L(\vec e_m)=\vec 0\text{,}\) then \(L\) is the zero transformation.</p></article><p id="p-1214">There is an easy consequence:</p>
-<article class="theorem theorem-like" id="theorem-82"><h6 class="heading">
+<p id="p-1243">If \(L(\vec e_1)=L(\vec e_2)=\cdots=L(\vec e_m)=\vec 0\text{,}\) then \(L\) is the zero transformation.</p></article><p id="p-1244">There is an easy consequence:</p>
+<article class="theorem theorem-like" id="theorem-86"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Two linear transformations equal on the standard basis are equal everywhere.</span>
 </h6>
-<p id="p-1215">Suppose \(L_1\colon \R^m\to\R^n\text{,}\)  \(L_2\colon \R^m\to\R^n\) and \(L_1(\vec e_i) = L_2(\vec e_i)\) for \(i=1,2,\dots m\text{.}\) Then \(L_1(\vec x)=L_2(\vec x)\) for all \(\vec x\) in \(\R^m\text{,}\) and \(L_1=L_2\text{.}\)</p></article><article class="hiddenproof" id="proof-99"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-99"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-99"><article class="hiddenproof"><p id="p-1216">\(L_1(\vec e_i)-L_2(\vec e_i)=\vec 0\) by assumption. If \(\vec x=(x_1,\dots,x_m)\text{,}\) we may write \(\vec x = x_1\vec e_1+x_2\vec e_2+\cdots +x_m\vec e_m.\) Then</p>
+<p id="p-1245">Suppose \(L_1\colon \R^m\to\R^n\text{,}\)  \(L_2\colon \R^m\to\R^n\) and \(L_1(\vec e_i) = L_2(\vec e_i)\) for \(i=1,2,\dots m\text{.}\) Then \(L_1(\vec x)=L_2(\vec x)\) for all \(\vec x\) in \(\R^m\text{,}\) and \(L_1=L_2\text{.}\)</p></article><article class="hiddenproof" id="proof-107"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-107"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-107"><article class="hiddenproof"><p id="p-1246">\(L_1(\vec e_i)-L_2(\vec e_i)=\vec 0\) by assumption. If \(\vec x=(x_1,\dots,x_m)\text{,}\) we may write \(\vec x = x_1\vec e_1+x_2\vec e_2+\cdots +x_m\vec e_m.\) Then</p>
 <div class="displaymath">
 \begin{align*}
 L_1(\vec x)

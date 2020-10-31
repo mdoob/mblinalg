@@ -3336,8 +3336,8 @@
     		label("$\vec n=(x_1+a,y_1+b)$", H, NE);
     		label("$D$",(B+G)/2,SW);
     		label("$D$",(F+E)/2,NE);
-    		label("$\mathrm{proj}_{\vec v}\vec u$",F,SE);
-    		label("$\mathrm{proj}_{\vec n}\vec u$",G,SW);
+    		label("$\proj_{\vec v}\vec u$",F,SE);
+    		label("$\proj_{\vec n}\vec u$",G,SW);
     	</asymptote>
         </image>
         </figure>
@@ -3355,13 +3355,13 @@
     	</me>
     	This implies that the quadrilateral with vertices
     	<m>(x_1,y_1)</m>, 
-    	<m>\mathrm{proj}_{\vec v}\vec u</m>,
+    	<m>\proj_{\vec v}\vec u</m>,
     	<m>\vec u</m> and
-    	<m>\mathrm{proj}_{\vec n}\vec u</m>
+    	<m>\proj_{\vec n}\vec u</m>
     	is in fact a rectangle, and so  
-    	<m>\|\mathrm{proj}_{\vec n}\vec u\|=D</m>.
+    	<m>\|\proj_{\vec n}\vec u\|=D</m>.
     	<md>
-    		<mrow>\mathrm{proj}_{\vec n}\vec u
+    		<mrow>\proj_{\vec n}\vec u
     			\amp= \frac{\vec u\cdot\vec n}{\vec n\cdot\vec n} \vec n</mrow>
     		<mrow>\amp=\frac{\left((x_0,y_0)-(x_1,y_1)\right)\cdot(a,b)}{\vec n\cdot\vec n} \vec n</mrow>
     		<mrow>\amp= \frac{ax_0+by_0 -(ax_1+by_1)}{\vec n\cdot\vec n} \vec n</mrow>
@@ -3369,7 +3369,7 @@
     	</md>
     	and so
     	<me>
-    	    D=\|\mathrm{proj}_{\vec n}\vec u\|=\frac{|ax_0+by_0 +c|}{\sqrt{a^2+b^2}}
+    	    D=\|\proj_{\vec n}\vec u\|=\frac{|ax_0+by_0 +c|}{\sqrt{a^2+b^2}}
     	</me>
         </p>
     

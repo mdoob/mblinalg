@@ -1578,7 +1578,7 @@
         is the sum of the diagonal elements,
         that is,
         <me>
-        \mathrm{tr}A=a_{1,1}+a_{2,2}+\cdots + a_{n,n}=\sum_{i=1}^n a_{i,i}
+        \tr A=a_{1,1}+a_{2,2}+\cdots + a_{n,n}=\sum_{i=1}^n a_{i,i}
         </me>
     </p>
     </statement>
@@ -1587,14 +1587,14 @@
     <theorem> <title>Traces of <m>AB</m> and <m>BA</m> are equal</title>
     <statement>
         <p>If <m>AB</m> and <m>BA</m> are each square, then
-        <m>\mathrm{tr}(AB)=\mathrm{tr}(BA)</m></p>
+        <m>\tr (AB)=\tr (BA)</m></p>
     </statement>
     
     <proof>
         <p>
         Suppose that <m>A</m> is <m>m\times n</m> and <m>B</m> is <m>n\times
         m</m> (remember that <m>AB</m> is then defined and square).
-        To evalute both <m>\mathrm{tr}(AB)</m> and <m>\mathrm{tr}(BA)</m>, we
+        To evalute both <m>\tr (AB)</m> and <m>\tr (BA)</m>, we
         consider the following rectangular array of numbers:
     
         <me>
@@ -1629,7 +1629,7 @@
         the elements in the last row is <m>(AB)_{m,m}</m>. Hence the sum of all
         of the
         elements in the array is
-        <m>(AB)_{1,1}+(AB)_{2,2}+\cdots+(AB)_{m,m}=\mathrm{tr}(AB)</m>.</p>
+        <m>(AB)_{1,1}+(AB)_{2,2}+\cdots+(AB)_{m,m}=\tr (AB)</m>.</p>
         
         <p>Now we add columnwise. Notice that the first column sums to
         <md>
@@ -1641,10 +1641,10 @@
         column sums to
         <m>(BA)_{n,n}</m>.Hence the sum of all of the
         elements in the array is
-        <m>(BA)_{1,1}+(BA)_{2,2}+\cdots+(BA)_{n,n}=\mathrm{tr}(BA)</m>.
+        <m>(BA)_{1,1}+(BA)_{2,2}+\cdots+(BA)_{n,n}=\tr (BA)</m>.
         
         Equating the two evaluations gives
-        <m>\mathrm{tr}(AB)=\mathrm{tr}(BA)</m>.
+        <m>\tr (AB)=\tr (BA)</m>.
         </p>
     </proof>
     
@@ -1654,12 +1654,12 @@
         <m>BA</m> are defined, the conformability ensures that
         <m>B</m> is <m>n\times m</m>.
         <md>
-        <mrow> \mathrm{tr}(AB) \amp = \sum_{i=1}^m(AB)_{i,i} </mrow>
+        <mrow> \tr (AB) \amp = \sum_{i=1}^m(AB)_{i,i} </mrow>
         <mrow>\amp =  \sum_{i=1}^m  \sum_{j=1}^n a_{i,j}b_{j,i}</mrow>
         <mrow>\amp =  \sum_{i=1}^m  \sum_{j=1}^n b_{j,i}a_{i,j}</mrow>
         <mrow>\amp =   \sum_{j=1}^n\sum_{i=1}^m  b_{j,i}a_{i,j}</mrow>
         <mrow>\amp =   \sum_{j=1}^n (BA)_{j,j}</mrow>
-        <mrow>\amp =   \mathrm{tr}(BA)</mrow>
+        <mrow>\amp =   \tr (BA)</mrow>
         </md>
         </p>
     </proof>
@@ -2433,7 +2433,7 @@
             Once we know the diagonal entries, we know the
 		    whole matrix. Sometimes we abbreviate this as 
             <me>
-		        A=\mathrm{diag}(a_{1,1},\ldots,a_{n,n}). 
+		        A=\diag (a_{1,1},\ldots,a_{n,n}). 
             </me>
 
 		    An example of a diagonal matrix is the identity matrix <m>I</m>:
@@ -2447,7 +2447,7 @@
 		        0\amp0\amp\cdots\amp1\amp0\\ 
                 0\amp0\amp\cdots\amp0\amp1
 		    \end{bmatrix} 
-            =\mathrm{diag}(1,\ldots,1) 
+            =\diag (1,\ldots,1) 
             </me>
 
 		    An alternative way of describing a diagonal matrix 
@@ -2464,15 +2464,15 @@
 		<p>
         If 
         <me> 
-        D=\mathrm{diag}(d_1,d_2,\ldots,d_n)
+        D=\diag (d_1,d_2,\ldots,d_n)
 		</me> 
         and 
         <me> 
-        E=\mathrm{diag}(e_1,e_2,\ldots,e_n)
+        E=\diag (e_1,e_2,\ldots,e_n)
 		</me> 
         then it is easy to verify that 
         <me>
-		DE=\mathrm{diag}(d_1e_1,d_2e_2,\ldots,d_ne_n) 
+		DE=\diag (d_1e_1,d_2e_2,\ldots,d_ne_n) 
         </me>. 
         </p>
         </statement>

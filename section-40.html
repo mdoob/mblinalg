@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-10-13T15:33:34-05:00       *-->
+<!--*       on 2020-10-31T14:44:22-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -65,10 +65,12 @@ MathJax.Hub.Config({
 
 \def\vec#1{\mathbf #1}
 
-\newcommand{\adj}{\mathop{\textrm{adj}}}
-\newcommand{\proj}{\mathop{\textrm{proj}}}
-\newcommand{\Span}{\mathop{\textrm{span}}} 
-\newcommand{\sgn}{\mathop{\textrm{sgn}}}
+\newcommand{\adj}{\mathop{\mathrm{adj}}}
+\newcommand{\diag}{\mathop{\mathrm{diag}}}
+\newcommand{\proj}{\mathop{\mathrm{proj}}}
+\newcommand{\Span}{\mathop{\mathrm{span}}} 
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\newcommand{\tr}{\mathop{\mathrm{tr}}}
 
 \newcommand{\rowint}[2]{R_{#1} \leftrightarrow R_{#2}}
 \newcommand{\rowmul}[2]{R_{#1}\gets {#2}R_{#1}}
@@ -81,7 +83,7 @@ MathJax.Hub.Config({
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href="http://www.umanitoba.ca" target="_blank"><img src="images/umlogo.png" alt="Logo image"></a><div class="title-container">
 <h1 class="heading"><a href="mblinalg.html"><span class="title">Manitoba linear algebra</span></a></h1>
-<p class="byline">Michael Doob (editor)</p>
+<p class="byline">Michael Doob</p>
 </div>
 </div></div>
 <nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
@@ -107,35 +109,35 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-40"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">6.1</span> <span class="title">Rotations, reflections and dilations</span>
 </h2>
-<section class="subsection" id="subsection-88"><h3 class="heading hide-type">
+<section class="subsection" id="subsection-89"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.1.1</span> <span class="title">First Concepts</span>
 </h3>
-<p id="p-1168">Consider points \((x,y)\) in the plane. A <dfn class="terminology">transformation</dfn> \(L\) is a rule for computing another point in the plane.  For example, we could say that \(L((x,y))=(x+y,x−y)\text{.}\) Then, if we take any point, say \((1,2)\) we can compute \(L((1,2))=(1+2,1−2)=(3,−1)\text{.}\) Similarly \(L((1,1))=(2,0)\) and \(L((0,0))=(0,0)\text{.}\)</p>
-<p id="p-1169">We wish to consider some transformations that are geometrically inspired. The following examples will be  useful when we define <em class="emphasis">linear transformations</em> in <a href="LinearTransformationIntroduction.html" class="internal" title="Section 6.2: Definition of a linear transformation">Section 6.2</a></p>
+<p id="p-1198">Consider points \((x,y)\) in the plane. A <dfn class="terminology">transformation</dfn> \(L\) is a rule for computing another point in the plane.  For example, we could say that \(L((x,y))=(x+y,x−y)\text{.}\) Then, if we take any point, say \((1,2)\) we can compute \(L((1,2))=(1+2,1−2)=(3,−1)\text{.}\) Similarly \(L((1,1))=(2,0)\) and \(L((0,0))=(0,0)\text{.}\)</p>
+<p id="p-1199">We wish to consider some transformations that are geometrically inspired. The following examples will be  useful when we define <em class="emphasis">linear transformations</em> in <a href="LinearTransformationIntroduction.html" class="internal" title="Section 6.2: Definition of a linear transformation">Section 6.2</a></p>
 <article class="example example-like" id="PlaneRotation"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">A rotation in the plane.</span>
 </h6>
-<p id="p-1170">We start with a point \(\vec x\) in the plane and rotate it through an angle \(\theta\) counterclockwise around the origin. This new point is \(L(\vec x)\text{.}\)</p>
+<p id="p-1200">We start with a point \(\vec x\) in the plane and rotate it through an angle \(\theta\) counterclockwise around the origin. This new point is \(L(\vec x)\text{.}\)</p>
 <figure class="figure figure-like" id="figure-60"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><div class="asymptote-box" style="padding-top: 112.16707110817%"><iframe src="images/image-63.html" class="asymptote"></iframe></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.2<span class="period">.</span></span><span class="space"> </span>The vector \(\vec x\) rotated to \(L(\vec x)\) though an angle \(\theta\)</figcaption></figure></article><article class="example example-like" id="PlaneReflection"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">A reflection in the plane.</span>
 </h6>
-<p id="p-1171">We start with a point \(\vec x\) in the plane and reflect in across the line with equation \(y=x\text{.}\) This new point is \(L(\vec x)\text{.}\)</p>
+<p id="p-1201">We start with a point \(\vec x\) in the plane and reflect in across the line with equation \(y=x\text{.}\) This new point is \(L(\vec x)\text{.}\)</p>
 <figure class="figure figure-like" id="figure-61"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><div class="asymptote-box" style="padding-top: 101.773442399819%"><iframe src="images/image-64.html" class="asymptote"></iframe></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.4<span class="period">.</span></span><span class="space"> </span>The reflection of the vector \(\vec x\) by the line \(y=x\)</figcaption></figure></article><article class="example example-like" id="PlaneProjection"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">A projection in the plane.</span>
 </h6>
-<p id="p-1172">We start with a point \(\vec x\) in the plane and drop a perpendicular to the line with equation \(y=x\text{.}\) This new point is \(L(\vec x)\text{.}\)</p>
+<p id="p-1202">We start with a point \(\vec x\) in the plane and drop a perpendicular to the line with equation \(y=x\text{.}\) This new point is \(L(\vec x)\text{.}\)</p>
 <figure class="figure figure-like" id="figure-62"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><div class="asymptote-box" style="padding-top: 101.773442399819%"><iframe src="images/image-65.html" class="asymptote"></iframe></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><article class="example example-like" id="PlaneDilation"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">A dilation in the plane.</span>
 </h6>
-<p id="p-1173">We start with a real number \(s\gt 0\text{.}\) For a point \(\vec x\text{,}\) let \(L(\vec x)=s\vec x\text{.}\) If \(\vec x\not=\vec0\text{,}\) then \(L(\vec x)\) is on joining \(\vec x\) and \(\vec 0\text{.}\) The distance from \(\vec x\) to \(\vec 0\) has been stretched by a factor of \(s\) to get the distance from \(L(\vec x)\) to \(\vec 0\text{.}\)</p>
+<p id="p-1203">We start with a real number \(s\gt 0\text{.}\) For a point \(\vec x\text{,}\) let \(L(\vec x)=s\vec x\text{.}\) If \(\vec x\not=\vec0\text{,}\) then \(L(\vec x)\) is on joining \(\vec x\) and \(\vec 0\text{.}\) The distance from \(\vec x\) to \(\vec 0\) has been stretched by a factor of \(s\) to get the distance from \(L(\vec x)\) to \(\vec 0\text{.}\)</p>
 <figure class="figure figure-like" id="figure-63"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><div class="asymptote-box" style="padding-top: 99.5882480957563%"><iframe src="images/image-66.html" class="asymptote"></iframe></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.8<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><article class="example example-like" id="EllipesRotation"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">An ellipse in the plane.</span>
 </h6>
-<p id="p-1174">The standard equation for an ellipse in the plane is</p>
+<p id="p-1204">The standard equation for an ellipse in the plane is</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{x^2}{a^2}+\frac{y^2}{b^2}=1\text{.}
@@ -143,9 +145,9 @@ MathJax.Hub.Config({
 </div>
 <p data-braille="continuation">Clearly the points \((\pm a,0)\) and \((0,\pm b)\) satisfy the equation and are on the ellipse. A typical instance is symmetric about the \(x\)-axis and \(y\)-axis:</p>
 <figure class="figure figure-like" id="figure-64"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><div class="asymptote-box" style="padding-top: 54.6010081609295%"><iframe src="images/image-67.html" class="asymptote"></iframe></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.10<span class="period">.</span></span><span class="space"> </span>Graph of \(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\) with \(a=2\) and \(b=1\)</figcaption></figure><p id="p-1175">Next we consider the points in the plane satisfying \(x^2-xy+y^2=1\text{.}\) Here is the graph:</p>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.10<span class="period">.</span></span><span class="space"> </span>Graph of \(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\) with \(a=2\) and \(b=1\)</figcaption></figure><p id="p-1205">Next we consider the points in the plane satisfying \(x^2-xy+y^2=1\text{.}\) Here is the graph:</p>
 <figure class="figure figure-like" id="figure-65"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><div class="asymptote-box" style="padding-top: 86.6928244968995%"><iframe src="images/image-68.html" class="asymptote"></iframe></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.11<span class="period">.</span></span><span class="space"> </span>Graph of \(x^2-xy+y^2=1\)</figcaption></figure><p id="p-1176">It really looks like an ellipse, but the equation is not in our standard form. Is it an ellipse?</p></article></section></section></div></main>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.11<span class="period">.</span></span><span class="space"> </span>Graph of \(x^2-xy+y^2=1\)</figcaption></figure><p id="p-1206">It really looks like an ellipse, but the equation is not in our standard form. Is it an ellipse?</p></article></section></section></div></main>
 </div>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-10-13T15:34:00-05:00       *-->
+<!--*       on 2020-10-31T14:44:45-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,18 +13,44 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p xmlns:svg="http://www.w3.org/2000/svg">With no loss of generality, we may assume that \(\alpha\) is the largest angle. It may be acute or obtuse, but \(\beta\) and \(\gamma\) are definitely acute. That implies that we may drop a perpendicular from \(A\) that will divide the angle \(\alpha\) into \(\alpha_1\) and  \(\alpha_2\) the side opposite into segements with lengths \(a_1\) and \(a_2\text{.}\)</p>
-<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><div class="asymptote-box" style="padding-top: 37.7037509679887%"><iframe src="images/image-88.html" class="asymptote"></iframe></div></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.21<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p>Then we have</p>
+<body><article class="hiddenproof"><ol class="decimal">
+<li>
+<p>We evaluate \(L(\vec 0+\vec 0)\) in two ways:</p>
+<ol class="lower-alpha">
+<li><p xmlns:svg="http://www.w3.org/2000/svg">Since \(\vec 0+\vec 0=\vec0\text{,}\) we have \(L(\vec 0+\vec 0)=L(\vec 0)\)</p></li>
+<li>
+<p>Since \(\vec 0+\vec 0=2\vec0\text{,}\) we have \(L(\vec 0+\vec 0)= L(2\vec 0)=2L(\vec 0)\text{,}\) and so</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+2L(\vec 0)=L(\vec 0)\\L(\vec 0)=\vec0
+\end{equation*}
+</div>
+</li>
+</ol>
+</li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">\(\displaystyle L(\vec x-\vec y)
+=L(\vec x+(-1)\vec y)
+=L(\vec x)+L((-1)\vec y)
+L(\vec x)-L(\vec y)\)</p></li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">\(L(\vec x-\vec y)=\vec0\) if and only if \(L(\vec x)-L(\vec y)=\vec0\) which in turn implies \(L(\vec x) =L(\vec y)\text{.}\)</p></li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">\(\displaystyle L(r_1\vec x_1+r_2\vec x_2)
+=L(r_1\vec x_1)+L(r_2\vec x_2)
+=r_1L(\vec x_1)+r_2L(\vec x_2) \)</p></li>
+<li>
+<p>We apply the addition property repeatedly:</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
-\sin(\alpha) \amp = \sin(\alpha_1+\alpha_2)\\
-\amp =\sin(\alpha_1)\cos(\alpha_2)+\cos(\alpha_1)\sin(\alpha_2)\\
-\amp =\frac{a_1}c \frac hb + \frac hc \frac {a_2}b\\
-\amp =\frac{ha}{bc}
+L(r_1\vec x_1\amp+r_2 \vec x_2+\cdots+r_n\vec x_n)\\
+\amp = L(r_1\vec x_1)+L(r_2 \vec x_2+\cdots+r_n\vec x_n)\\
+\amp = r_1L(\vec x_1)+ L(r_2\vec x_2+\cdots+r_n\vec x_n)\\
+\amp = r_1L(\vec x_1)+ L(r_2\vec x_2)+L(r_3\vec x_3+\cdots+r_n\vec x_n)\\
+\amp = r_1L(\vec x_1)+ r_2L(\vec x_2)+L(r_3\vec x_3+\cdots+r_n\vec x_n)\\
+\amp \,\,\vdots\\
+\amp = r_1L(\vec x_1)+r_2 L(\vec x_2)+\cdots+r_nL(\vec x_n)
 \end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">and so \[ \frac{\sin(\alpha)}a = \frac h{bc} \] Using \(\sin(\beta)=\frac hc\) and \(\sin(\gamma)=\frac hb\text{,}\) it follows that \[ \frac{\sin(\beta)}b = \frac h{bc} \textrm{ and } \frac{\sin(\gamma)}c = \frac h{bc} \] and so \[ \frac h{bc}=\frac{\sin(\alpha)}a =\frac{\sin(\beta)}b =\frac{\sin(\gamma)}c \]</p></article></body>
+</li>
+</ol></article></body>
 </html>

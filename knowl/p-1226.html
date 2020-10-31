@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-10-13T15:33:58-05:00       *-->
+<!--*       on 2020-10-31T14:44:44-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,14 +15,22 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>First note that \(L_A\colon\R^m\to\R^n\) and \(L_B:\R^n\to\R^s\text{,}\) and so \(L_B\circ L_A\colon\R^m\to\R^s\text{.}\) In addition, note that \(BA\) is an \(s\times m\) matrix, and so \(L_{BA}\colon\R^m\to\R^s\) also. Finally note that for any \(\vec x\) in \(\R^m\text{,}\) we have</p>
+<p>Any linear transformation \(L\) satisfies</p>
+<ul class="disc">
+<li><p xmlns:svg="http://www.w3.org/2000/svg">\(\displaystyle L(\vec0)=\vec0\)</p></li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">\(\displaystyle L(\vec x-\vec y)=L(\vec x)-L(\vec y)\)</p></li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">\(L(\vec x-\vec y)=\vec0\) if and only if \(L(\vec x) =L(\vec y)\)</p></li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">\(\displaystyle L(r_1\vec x_1+r_2\vec x_2)=r_1L(\vec x_1)+r_2L(\vec x_2)\)</p></li>
+<li>
+<p>For any vectors \(\vec x_1, \vec x_2,\ldots,\vec x_n\) and real numbers \(r_1, r_2,\ldots,r_n\)</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-(L_B\circ L_A)\vec x=L_B(L_A(\vec x))=L_B(A\vec x)
-=BA\vec x=L_{BA}(\vec x)
+L(r_1\vec x_1+r_2 \vec x_2+\cdots+r_n\vec x_n)=
+r_1L(\vec x_1)+r_2 L(\vec x_2)+\cdots+r_nL(\vec x_n)
 \end{equation*}
 </div>
-<p data-braille="continuation">Hence \(L_{BA}=L_B\circ L_A\text{.}\)</p>
-<span class="incontext"><a href="section-43.html#p-1226">in-context</a></span>
+</li>
+</ul>
+<span class="incontext"><a href="section-42.html#p-1226">in-context</a></span>
 </body>
 </html>
