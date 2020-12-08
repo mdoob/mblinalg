@@ -985,7 +985,7 @@
     which implies
     <me> r_1(\lambda_1-\lambda_2)\vec x_1=\vec0 </me>,
     and, since <m>\lambda_1\not=\lambda_2</m>
-    and <m>\vec x\not=\vec0</m>, we have
+    and <m>\vec x_1\not=\vec0</m>, we have
     <m>r_1=0</m>. Similarly, <m>r_2=0</m> and so 
     <m>\{\vec x_1,\vec x_2\}</m> is linearly independent.
     </p>

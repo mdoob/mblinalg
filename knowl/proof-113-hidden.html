@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-10-31T14:44:48-05:00       *-->
+<!--*       on 2020-12-08T13:12:11-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,18 +13,56 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p xmlns:svg="http://www.w3.org/2000/svg">With no loss of generality, we may assume that \(\alpha\) is the largest angle. It may be acute or obtuse, but \(\beta\) and \(\gamma\) are definitely acute. That implies that we may drop a perpendicular from \(A\) that will divide the angle \(\alpha\) into \(\alpha_1\) and  \(\alpha_2\) the side opposite into segements with lengths \(a_1\) and \(a_2\text{.}\)</p>
-<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><div class="asymptote-box" style="padding-top: 37.7037509679887%"><iframe src="images/image-88.html" class="asymptote"></iframe></div></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.21<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p>Then we have</p>
+<body><article class="hiddenproof"><p xmlns:svg="http://www.w3.org/2000/svg">Note that since \(a\) and \(b\) are interchangable in the picture, there is no loss of generality to assume \(a \le b\text{.}\) We prove the law of cosines by dropping a perpendicular to the side \(b\text{:}\)</p>
+<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><div class="asymptote-box" style="padding-top: 53.4395967991729%"><iframe src="images/image-85.html" class="asymptote"></iframe></div></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.4<span class="period">.</span></span><span class="space"> </span>\(\theta\) acute</figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">The perpendicular has length \(h\) and splits side \(b\) into two pieces of lengths \(b_1\) and \(b_2\text{.}\)</p>
+<p>Now we have the following identities:</p>
+<ul class="disc">
+<li><p xmlns:svg="http://www.w3.org/2000/svg">\(\displaystyle b=b_1+b_2\)</p></li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">\(\displaystyle a^2=b_1^2 + h^2\)</p></li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">\(\displaystyle c^2 = b_2^2 + h^2\)</p></li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">\(\displaystyle b_1=a\cos(\theta)\)</p></li>
+</ul>
+<p data-braille="continuation">which gives the equations</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
-\sin(\alpha) \amp = \sin(\alpha_1+\alpha_2)\\
-\amp =\sin(\alpha_1)\cos(\alpha_2)+\cos(\alpha_1)\sin(\alpha_2)\\
-\amp =\frac{a_1}c \frac hb + \frac hc \frac {a_2}b\\
-\amp =\frac{ha}{bc}
+c^2
+\amp=b_2^2+h^2\\
+\amp=(b-b_1)^2+(a^2-b_1^2)\\
+\amp=b^2 -2bb_1 + b_1^2 +a^2-b_1^2\\
+\amp=a^2+b^2-2bb_1\\
+\amp=a^2+b^2-2ab\cos(\theta)
 \end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">and so \[ \frac{\sin(\alpha)}a = \frac h{bc} \] Using \(\sin(\beta)=\frac hc\) and \(\sin(\gamma)=\frac hb\text{,}\) it follows that \[ \frac{\sin(\beta)}b = \frac h{bc} \textrm{ and } \frac{\sin(\gamma)}c = \frac h{bc} \] and so \[ \frac h{bc}=\frac{\sin(\alpha)}a =\frac{\sin(\beta)}b =\frac{\sin(\gamma)}c \]</p></article></body>
+<p data-braille="continuation">We have cheated a little by assuming that the perpendicular divides \(b\) into two pieces. In fact if \(\theta\gt\frac\pi2\) then the picture looks like</p>
+<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><div class="asymptote-box" style="padding-top: 41.6316151202749%"><iframe src="images/image-86.html" class="asymptote"></iframe></div></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.5<span class="period">.</span></span><span class="space"> </span>\(\theta\) obtuse</figcaption></figure><p>Now we have</p>
+<ul class="disc">
+<li><p xmlns:svg="http://www.w3.org/2000/svg">\(\displaystyle a^2=b_1^2+h^2\)</p></li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">\(\displaystyle c^2=(b+b_1)^2+h^2\)</p></li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">\(b_1=-a\cos(\theta)\) (remember that \(\cos(\theta)\lt0\) when \(\frac\pi 2\lt\theta\lt\pi\))</p></li>
+</ul>
+<p data-braille="continuation">which gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+c^2
+\amp= (b+b_1)^2+h^2\\
+\amp= (b+b_1)^2+(a^2-b_1^2)\\
+\amp= b^2+2bb_1+a^2\\
+\amp= a^2+b^2-2ab\cos(\theta)
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">In principle there is another possibility:</p>
+<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><div class="asymptote-box" style="padding-top: 106.98721102536%"><iframe src="images/image-87.html" class="asymptote"></iframe></div></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p>In this case we \(a \gt b\text{,}\) contrary to our assumption that \(a\leq b\text{.}\) Nonetheless we could use the argument:</p>
+<ul class="disc">
+<li>\(\displaystyle a^2=(b+b_1)^2 + h^2\)</li>
+<li>\(\displaystyle c^2 = b_1^2 + h^2\)</li>
+<li>\(\displaystyle b+b_1=a\cos(\theta)\)</li>
+</ul>
+<p data-braille="continuation">and can deduce \(c^2=a^2+b^2-2ab\cos(\theta)\) in a manner similar that used in the previous cases.</p></article></body>
 </html>

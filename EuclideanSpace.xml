@@ -5144,7 +5144,7 @@
        <p>Next we consider the points in the plane satisfying
        <m>x^2-xy+y^2=1</m>. Here is the graph:
        </p>
-       <figure>
+       <figure xml:id="EllipseGraph">
            <caption>Graph of <m>x^2-xy+y^2=1</m></caption>
            <image width="60%">
            <asymptote>

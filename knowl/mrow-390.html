@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-10-31T14:44:45-05:00       *-->
+<!--*       on 2020-12-08T13:12:09-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,16 +15,16 @@
 </head>
 <body>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-L_3(r\vec x)
-\amp =L_2(L_1(r\vec x))\\
-\amp =L_2(rL_1(\vec x))
-\amp \gets\text{ since }L_1\text{ is linear}\\
-\amp =rL_2(L_1(\vec x)
-\amp \gets\text{ since }L_2\text{ is linear}\\
-\amp =rL_3(\vec x)
-\end{align*}
+\begin{alignat*}{1}
+L(r_1\vec x_1+r_2 \vec x_2\amp+\cdots+r_n\vec x_n)\\
+\amp = L(r_1\vec x_1)+L(r_2 \vec x_2+\cdots+r_n\vec x_n)\\
+\amp = r_1L(\vec x_1)+ L(r_2\vec x_2+\cdots+r_n\vec x_n)\\
+\amp = r_1L(\vec x_1)+ L(r_2\vec x_2)+L(r_3\vec x_3+\cdots+r_n\vec x_n)\\
+\amp = r_1L(\vec x_1)+ r_2L(\vec x_2)+L(r_3\vec x_3+\cdots+r_n\vec x_n)\\
+\amp \,\,\,\vdots\\
+\amp = r_1L(\vec x_1)+r_2 L(\vec x_2)+\cdots+r_nL(\vec x_n)
+\end{alignat*}
 </div>
-<span class="incontext"><a href="section-43.html#mjx-eqn-mrow-390">in-context</a></span>
+<span class="incontext"><a href="LinearTransformationIntroduction.html#mjx-eqn-mrow-390">in-context</a></span>
 </body>
 </html>

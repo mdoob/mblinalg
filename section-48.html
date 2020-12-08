@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-10-31T14:44:23-05:00       *-->
+<!--*       on 2020-11-29T17:22:36-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -11,7 +11,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Summation notation</title>
+<title>Trigonometry review</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
@@ -88,10 +88,10 @@ MathJax.Hub.Config({
 </div></div>
 <nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-47.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ExtraTopics.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-49.html" title="Next">Next</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-47.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ExtraTopics.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="RREF_calculator.html" title="Next">Next</a></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-47.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ExtraTopics.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-49.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-47.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ExtraTopics.html" title="Up">Up</a><a class="next-button button toolbar-item" href="RREF_calculator.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -107,226 +107,204 @@ MathJax.Hub.Config({
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-48"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">7.2</span> <span class="title">Summation notation</span>
+<span class="type">Section</span> <span class="codenumber">7.3</span> <span class="title">Trigonometry review</span>
 </h2>
-<section class="subsection" id="subsection-94"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">7.2.1</span> <span class="title">Basic definitions</span>
-</h3>
-<p id="p-1268">Summation notation is a compact form for writing sums. It is written with three pieces. \[ \sum_{\fbox{\(k=1\)}}^\fbox{\(5\)} \fbox{\(2k\)} \] The part below the greek letter sigma (\(\Sigma\)) tells us to start with \(k=1\text{.}\) We increment \(k\) by \(1\) until we get to the value above the sigma. In this case we let \(k\) take on the values \(1, 2, 3, 4, 5\text{.}\) We next substitute those values of \(k\) into the expression to the right of the sigma successively and take the sum all of the resulting terms. Here is a table of the resulting values:</p>
-<div class="displaymath">
-\begin{align*}
-k \amp\amp 2k\\
-1 \amp\amp 2\\
-2 \amp\amp 4\\
-3 \amp\amp 6\\
-4 \amp\amp 8\\
-5 \amp\amp 10
-\end{align*}
-</div>
-<p data-braille="continuation">which evaluates to</p>
-<div class="displaymath">
-\begin{equation*}
-2+4+6+8+10=30 
-\end{equation*}
-</div>
-<p data-braille="continuation">and so we write</p>
-<div class="displaymath">
-\begin{equation*}
-\sum_{k=1}^5 2k=30\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">The variable \(k\) is called <dfn class="terminology">the index of summation</dfn>. The number above the sigma is called <dfn class="terminology">the limit of summation</dfn>. The example shows us how to write a sum of even numbers. We can write the sum of odd numbers, too.</p>
-<div class="displaymath">
-\begin{equation*}
-\sum_{k=1}^8 (2k-1)=1+3+5+7+9+11+13+15=64 \text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">It is not necessary to use \(k\) as a variable or to start the summation at \(k=1\text{.}\) It is easy to verify that</p>
-<div class="displaymath">
-\begin{equation*}
-\sum_{k=1}^8(2k-1)=\sum_{l=0}^7(2l+1)=64 \text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">The number above the sigma can also be written as a variable:</p>
-<div class="displaymath">
-\begin{gather*}
-\sum_{k=1}^n a_k=a_1+a_2+\cdots+a_{n-1}+a_n\\
-\sum_{k=0}^n a_kb_k=a_0b_0+a_1b_1+a_2b_2+\cdots+a_{n-1}b_{n-1}+a_nb_n\\
-\sum_{k=1}^n (2k-1) = 1+3+5+7+\cdots+(2n-1)
-\end{gather*}
-</div>
-<p data-braille="continuation">Next we take the last expression and vary \(n\text{,}\) the limit of summation. Here is a table that includes some small vaules of \(n\text{:}\)</p>
-<figure class="table table-like" id="table-10"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">7.2.1<span class="period">.</span></span><span class="space"> </span></figcaption><table>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">\(\sum_{k=1}^1(2k-1)=1\)</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(n=1\)</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">\(\sum_{k=1}^2(2k-1)=4\)</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(n=2\)</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">\(\sum_{k=1}^3(2k-1)=9\)</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(n=3\)</td>
-</tr>
-<tr>
-<td class="l m b0 r0 l0 t0 lines">\(\sum_{k=1}^4(2k-1)=16\)</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(n=4\)</td>
-</tr>
-<tr><td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\vdots\)</td></tr>
-<tr><td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\sum_{k=1}^n(2k-1)=1+3+5+\cdots+2n-1=?\)</td></tr>
-</table></figure><article class="exercise exercise-like" id="exercise-43"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-43"><h6 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">7.2.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-43"><article class="exercise exercise-like"><p id="p-1269">What simple expression involving \(n\) can replace the question mark?</p></article></div>
-<p id="p-1270">The summands can be symbolic, too. If \(f(x)\) is any function, we may write</p>
-<div class="displaymath">
-\begin{gather*}
-\sum_{i=1}^r f(i)=f(1)+f(2)+\cdots+f(r-1)+f(r)
-\end{gather*}
-</div></section><section class="subsection" id="subsection-95"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">7.2.2</span> <span class="title">Alternating sums</span>
-</h3>
-<p id="p-1271">A sum is <dfn class="terminology">alternating</dfn> if the signs of consecutive terms are alternate between positive and negative. An example: \(1-2+3-4+5\text{.}\) These sums appear frequently enough to have this special name. They are easy to write using summation notation because of a simple fact:</p>
-<div class="displaymath">
-\begin{equation*}
-(-1)^k=
-\begin{cases}
-1 \amp  \text{if \(k\) is even}\\
--1 \amp  \text{if \(k\) is odd}
-\end{cases}
-\end{equation*}
-</div>
-<p data-braille="continuation">We can then write</p>
-<div class="displaymath">
-\begin{equation*}
-\sum_{k=1}^6 (-1)^k k^2=-1+4-9+16-25+36=21 \text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">We can interchange the order of the signs by adding (or subtracting) one to the exponent of \(-1\text{:}\)</p>
-<div class="displaymath">
-\begin{equation*}
-\sum_{k=1}^6 (-1)^{k+1} k^2=1-4+9-16+25-36=-21\text{.}
-\end{equation*}
-</div></section><section class="subsection" id="subsection-96"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">7.2.3</span> <span class="title">Manipulation with summation notation identities</span>
-</h3>
-<p id="p-1272">Summation notation is more that mere shorthand. There are rules of manipulation that are quite useful.</p>
-<p id="p-1273">For any constant \(c\text{,}\)</p>
-<div class="displaymath">
-\begin{equation*}
-\sum_{k=1}^n c=\underbrace{c+c+\cdots+c+c}_{n \textrm{ summands}}=nc 
-\end{equation*}
-</div>
-<p data-braille="continuation">and</p>
-<div class="displaymath">
-\begin{equation*}
-\sum_{k=1}^n ca_k
-=ca_1+\cdots+ca_n
-=c(a_1+\cdots+a_n)
-=c\sum_{k=1}^n a_k
-\end{equation*}
-</div>
-<p data-braille="continuation">The process of the last equation is sometimes referred to as <em class="emphasis">pulling a constant across the summation sign</em>.</p>
-<p id="p-1274">In addition,</p>
-<div class="displaymath">
-\begin{equation*}
-\sum_{k=1}^n(a_k+b_k)= \sum_{k=1}^na_k+\sum_{k=1}^nb_k,\\
-\sum_{k=1}^n(a_k-b_k)= \sum_{k=1}^na_k-\sum_{k=1}^nb_k
-\end{equation*}
-</div>
-<p data-braille="continuation">and</p>
-<div class="displaymath">
-\begin{equation*}
-\sum_{k=0}^na_k= \sum_{k=t}^{n+t}a_{k-t}
-\end{equation*}
-</div>
-<p data-braille="continuation">The last identity is sometimes called <em class="emphasis">shifting the index of summation.</em></p>
-<article class="example example-like" id="example-69"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.3</span><span class="period">.</span>
-</h6>
-<p id="p-1275">Suppose we want to evaluate the sum of the first \(n\) positive integers. In other words, we want to find</p>
-<div class="displaymath">
-\begin{equation*}
-s_n=1+2+\cdots+n=\sum_{k=1}^nk.
-\end{equation*}
-</div>
-<p data-braille="continuation">If we are convinced that \(\sum_{k=1}^n(2k-1)=1+3+5+\cdots+2n-1=n^2\text{,}\) then</p>
-<div class="displaymath">
-\begin{align*}
-n^2\amp =\sum_{k=1}^n(2k-1)\\
-\amp =\sum_{k=1}^n(2k)-\sum_{k=1}^n1\\
-\amp =2\sum_{k=1}^nk-n\\
-\amp =2s_n-n
-\end{align*}
-</div>
-<p data-braille="continuation">which yields</p>
-<div class="displaymath">
-\begin{equation*}
-s_n=\frac12n(n+1).
-\end{equation*}
-</div></article><article class="exercise exercise-like" id="exercise-44"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-44"><h6 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">7.2.4</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-44"><article class="exercise exercise-like"><p id="p-1276">Evaluate the following sums</p>
+<section class="introduction" id="introduction-20"><p id="p-1306">There are certain trigonometric facts that should be in your mathematical toolkit. We review several here.</p>
 <ul class="disc">
-<li id="li-404"><p id="p-1277">\(\displaystyle \sum_{j=1}^5 2j\)</p></li>
-<li id="li-405"><p id="p-1278">\(\displaystyle \sum_{k=1}^5 k(k-1)\)</p></li>
-<li id="li-406"><p id="p-1279">\(\displaystyle \sum_{i=0}^4 2^i\)</p></li>
-<li id="li-407"><p id="p-1280">\(\displaystyle \sum_{\ell=1}^3\ell^2+\frac1\ell\)</p></li>
-<li id="li-408"><p id="p-1281">\(\displaystyle \sum_{j=1}^5 ij\)</p></li>
-</ul>
-<div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-35" id="solution-35"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-35"><div class="solution solution-like"><ul id="p-1282" class="disc">
-<li id="li-409"><p id="p-1283">\(\displaystyle 2+4+6+8+10=30\)</p></li>
-<li id="li-410"><p id="p-1284">\(\displaystyle 2+6+12+20+30=70\)</p></li>
-<li id="li-411"><p id="p-1285">\(\displaystyle 1+2+4+8+16=31\)</p></li>
-<li id="li-412"><p id="p-1286">\(\displaystyle 1+1+4+\frac12+9+\frac13=15\frac56\)</p></li>
-<li id="li-413"><p id="p-1287">\(\displaystyle i+2i+3i+4i+5i=15i\)</p></li>
-</ul></div></div>
-</div></article></div>
-<article class="exercise exercise-like" id="exercise-45"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-45"><h6 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">7.2.5</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-45"><article class="exercise exercise-like"><p id="p-1288">Evaluate \(\sum_{k=0}^n 2^k\) for \(n=1,2,3,4\text{.}\) Find a simple expression that works for any \(n\text{.}\) Justify your answer.</p>
-<div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-36" id="solution-36"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-36"><div class="solution solution-like">
-<div class="displaymath" id="p-1289">
+<li id="li-422"><p id="p-1307">The law of cosines (<a class="xref" data-knowl="./knowl/LawOfCosines.html" title="Theorem 7.3.2: The law of cosines">Theorem 7.3.2</a>)</p></li>
+<li id="li-423"><p id="p-1308">The graphs of <a class="xref" data-knowl="./knowl/GraphSin.html" title="Figure 7.3.7">\(\sin(x)\)</a> and <a class="xref" data-knowl="./knowl/GraphCos.html" title="Figure 7.3.8">\(\cos(x)\)</a></p></li>
+<li id="li-424"><p id="p-1309">The parallelogram law (<a class="xref" data-knowl="./knowl/ParallelogramLaw.html" title="Theorem 7.3.13: The parallelogram law">Theorem 7.3.13</a>)</p></li>
+<li id="li-425"><p id="p-1310">The addition laws for \(\sin(x)\) and \(\cos(x)\) (<a class="xref" data-knowl="./knowl/SinCosSums.html" title="Theorem 7.3.18: Addition formulas for \(\sin(x)\) and \(\cos(x)\)">Theorem 7.3.18</a>)</p></li>
+<li id="li-426"><p id="p-1311">The law of sines (<a class="xref" data-knowl="./knowl/LawOfSines.html" title="Theorem 7.3.20: The law of sines">Theorem 7.3.20</a>)</p></li>
+</ul></section><section class="subsection" id="subsection-101"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">7.3.1</span> <span class="title">Basic Definitions</span>
+</h3>
+<p id="p-1312">Trigonometry was originally used for measuring triangles. Given a right triangle with hypoteneuse \(c\text{,}\) legs \(a\) and \(b\) and angle \(\theta\) (as in the left illustration in <a class="xref" data-knowl="./knowl/TrigFunctions.html" title="Figure 7.3.1">Figure 7.3.1</a>), the six trigonometric functions are defined by</p>
+<div class="displaymath">
 \begin{equation*}
-\begin{array}{cc}
-n \amp \sum_{k=0}^n 2^k\\
-\hline
-1 \amp 3\\
-2 \amp 7\\
-3\amp 15\\
-4\amp 31
+\begin{array}{lll}
+\sin(\theta)=\frac bc \amp
+\cos(\theta)=\frac ac \amp
+\tan(\theta)=\frac {\sin(\theta)}{\cos(\theta)}=\frac ba \\
+\cot(\theta)=\frac {\cos(\theta)}{\sin(\theta)}=\frac ab \amp
+\csc(\theta)=\frac 1{\sin(\theta)}=\frac cb \amp
+\sec(\theta)=\frac 1{\cos(\theta)}=\frac ca
 \end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">We note that each answer is one less than a power of \(2\text{.}\) This leads to the equation \[ \sum_{k=0}^n 2^k=2^{n+1}-1. \] To justify the equation we note that \[ 2(\sum_{k=0}^n 2^k)=\sum_{k=0}^n 2^{k+1}=\sum_{k=1}^{n+1} 2^k =\bigl(\sum_{k=0}^{n+1} 2^k\bigr) -1 \] so we get the sum for a given value on \(n\) by doubling the value for \(n-1\) and adding \(1\text{.}\)</p>
-</div></div>
-</div></article></div></section><section class="subsection" id="subsection-97"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">7.2.4</span> <span class="title">Double summations</span>
+<p data-braille="continuation">The first three, the sine, the cosine and the tangent are by far the most important, even though the cotangent, cosecant and secant appear in many applications.</p>
+<figure class="figure figure-like" id="TrigFunctions"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><div class="asymptote-box" style="padding-top: 40.1834774402085%"><iframe src="images/image-78.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.1<span class="period">.</span></span><span class="space"> </span>Triginometric functions of angles</figcaption></figure><p id="p-1313">In any such right triangle, the angle \(\theta\) is necessarily acute. We extend the definition of the trigonometric functions to other angles by using the unit circle (centre at \(\vec 0=(0,0)\) and radius \(r=1\)). For any angle \(\theta\text{,}\) draw the radius of the unit circle that makes an angle \(\theta\) with the positive \(x\)-axis. The coordinates of the point where this radius meets the circle are \((\cos(\theta),\sin(\theta))\text{.}\) Note that when \(\theta\) is acute, the two definitions coincide.</p>
+<p id="p-1314">Since the point \((\cos(\theta),\sin(\theta))\) is on the unit circle, its distance to the origin \((0,0)\) is \(1\text{.}\) This means \[ \cos^2(\theta) + \sin^2(\theta) =1 \textrm{ for any angle } \theta \]</p></section><section class="subsection" id="subsection-102"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">7.3.2</span> <span class="title">The law of cosines</span>
 </h3>
-<p id="p-1290">Sometimes it is useful to have a formula with two summations, each with its own index of summation. It is interpreted in the following way: \[ \sum_{i=1}^m \sum_{j=1}^n f(i,j)= \sum_{i=1}^m \bigl(\sum_{j=1}^n f(i,j)\bigr) \] and so, for example, \[ \sum_{i=1}^3 \sum_{j=1}^2 i^j=\sum_{i=1}^3 (i^1+i^2)=(1+1)+(2+4)+(3+9)=20 \]</p>
-<p id="p-1291">Double summations are often used with matrices. Suppose we have a matrix</p>
+<p id="p-1315">In the right triangle above, the angle opposite the side labeled \(c\) is an right angle, and the Pythagorean theorem says \(c^2=a^2+b^2\text{.}\) The law of cosines extends this theorem to triangles with any angle opposite the side labeled \(c\text{.}\)</p>
+<article class="theorem theorem-like" id="LawOfCosines"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">The law of cosines.</span>
+</h6>
+<p id="p-1316">If a triangle (as in the figure below) has sides of lengths \(a\text{,}\) \(b\) and \(c\text{,}\) and the angle at the vertex opposite \(c\) is \(\theta\text{,}\) then \[ c^2=a^2+b^2-2ab\,\cos\theta \]</p>
+<figure class="figure figure-like" id="figure-76"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><div class="asymptote-box" style="padding-top: 50.7693479292645%"><iframe src="images/image-79.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><article class="hiddenproof" id="proof-113"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-113"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-113"><article class="hiddenproof"><p id="p-1317">Note that since \(a\) and \(b\) are interchangable in the picture, there is no loss of generality to assume \(a \le b\text{.}\) We prove the law of cosines by dropping a perpendicular to the side \(b\text{:}\)</p>
+<figure class="figure figure-like" id="figure-77"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><div class="asymptote-box" style="padding-top: 53.4395967991729%"><iframe src="images/image-80.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.4<span class="period">.</span></span><span class="space"> </span>\(\theta\) acute</figcaption></figure><p id="p-1318">The perpendicular has length \(h\) and splits side \(b\) into two pieces of lengths \(b_1\) and \(b_2\text{.}\)</p>
+<p id="p-1319">Now we have the following identities:</p>
+<ul class="disc">
+<li id="li-427"><p id="p-1320">\(\displaystyle b=b_1+b_2\)</p></li>
+<li id="li-428"><p id="p-1321">\(\displaystyle a^2=b_1^2 + h^2\)</p></li>
+<li id="li-429"><p id="p-1322">\(\displaystyle c^2 = b_2^2 + h^2\)</p></li>
+<li id="li-430"><p id="p-1323">\(\displaystyle b_1=a\cos(\theta)\)</p></li>
+</ul>
+<p data-braille="continuation">which gives the equations</p>
 <div class="displaymath">
 \begin{equation*}
-A=
-\begin{bmatrix}
-a_{1,1}\amp a_{1,2}\amp \cdots \amp a_{1,n}\\
-a_{2,1}\amp a_{2,2}\amp \cdots \amp a_{2,n}\\
-\vdots\amp \vdots\amp \vdots\amp \vdots\\
-a_{m,1}\amp a_{m,2}\amp \cdots \amp a_{m,n}
-\end{bmatrix}
+\begin{array}{rl}
+c^2
+\amp=b_2^2+h^2\\
+\amp=(b-b_1)^2+(a^2-b_1^2)\\
+\amp=b^2 -2bb_1 + b_1^2 +a^2-b_1^2\\
+\amp=a^2+b^2-2bb_1\\
+\amp=a^2+b^2-2ab\cos(\theta)
+\end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">Then \[ \sum_{j=1}^n a_{i,j} = a_{i,1}+a_{i,2}+\cdots+a_{i,n} \] which is the sum of the entries in the \(i\)-th row of the matrix. Similarly \[ \sum_{i=1}^m a_{i,j} = a_{1,j}+a_{2,j}+\cdots+a_{m,j} \] which is the sum of the entries in the \(j\)-th column of the matrix. We can now see that</p>
+<p data-braille="continuation">We have cheated a little by assuming that the perpendicular divides \(b\) into two pieces. In fact if \(\theta\gt\frac\pi2\) then the picture looks like</p>
+<figure class="figure figure-like" id="figure-78"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><div class="asymptote-box" style="padding-top: 41.6316151202749%"><iframe src="images/image-81.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.5<span class="period">.</span></span><span class="space"> </span>\(\theta\) obtuse</figcaption></figure><p id="p-1324">Now we have</p>
+<ul class="disc">
+<li id="li-431"><p id="p-1325">\(\displaystyle a^2=b_1^2+h^2\)</p></li>
+<li id="li-432"><p id="p-1326">\(\displaystyle c^2=(b+b_1)^2+h^2\)</p></li>
+<li id="li-433"><p id="p-1327">\(b_1=-a\cos(\theta)\) (remember that \(\cos(\theta)\lt0\) when \(\frac\pi 2\lt\theta\lt\pi\))</p></li>
+</ul>
+<p data-braille="continuation">which gives</p>
 <div class="displaymath">
 \begin{equation*}
-\sum_{i=1}^m\sum_{j=1}^n a_{i,j}
-=\sum_{j=1}^n\sum_{i=1}^m a_{i,j}
+\begin{array}{rl}
+c^2
+\amp= (b+b_1)^2+h^2\\
+\amp= (b+b_1)^2+(a^2-b_1^2)\\
+\amp= b^2+2bb_1+a^2\\
+\amp= a^2+b^2-2ab\cos(\theta)
+\end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">since each sides of the equation is equal to the sum of all of the entries in the matrix. This is called <em class="emphasis">interchanging the order of summation.</em></p>
-<p id="p-1292">Another way of looking at these double summations \(\sum_{i=1}^m \sum_{j=1}^n f(i,j)\) is that it is the sum of \(f(i,j)\) as \(i\) takes on values from \(1\) to \(m\) and \(j\) takes on values from \(1\) to \(n\text{.}\) Clearly there are \(mn\) summands altogether.</p></section></section></div></main>
+<p data-braille="continuation">In principle there is another possibility:</p>
+<figure class="figure figure-like" id="figure-79"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><div class="asymptote-box" style="padding-top: 106.98721102536%"><iframe src="images/image-82.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1328">In this case we \(a \gt b\text{,}\) contrary to our assumption that \(a\leq b\text{.}\) Nonetheless we could use the argument:</p>
+<ul class="disc">
+<li id="li-434">\(\displaystyle a^2=(b+b_1)^2 + h^2\)</li>
+<li id="li-435">\(\displaystyle c^2 = b_1^2 + h^2\)</li>
+<li id="li-436">\(\displaystyle b+b_1=a\cos(\theta)\)</li>
+</ul>
+<p data-braille="continuation">and can deduce \(c^2=a^2+b^2-2ab\cos(\theta)\) in a manner similar that used in the previous cases.</p></article></div></section><section class="subsection" id="subsection-103"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">7.3.3</span> <span class="title">The graphs of \(\sin(x)\) and \(\cos(x)\)</span>
+</h3>
+<p id="p-1329">The graphs of the trigonometric functions are revealing. First, here is the graph of the function \(\sin(x)\text{:}\)</p>
+<figure class="figure figure-like" id="GraphSin"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><div class="asymptote-box" style="padding-top: 34.2873533418274%"><iframe src="images/image-83.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.7<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1330">Notice that \(\sin(x)\) is positive in this range precisely when \(0\lt x\lt\pi\text{.}\)</p>
+<p id="p-1331">Here is the graph of \(\cos(x)\text{:}\)</p>
+<figure class="figure figure-like" id="GraphCos"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><div class="asymptote-box" style="padding-top: 34.2873533418274%"><iframe src="images/image-84.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.8<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1332">Notice that the function \(\cos(x)\) is decreasing for \(0\le x\le\pi\text{.}\) By decreasing we mean that if \(x_1 \lt x_2\text{,}\) then \(\cos(x_1) \gt \cos(x_2)\) (or, more intuitively, the function goes downhill as we go from left to right). There is an important implication from this: if \(y=\cos(x)\) for some \(x\) with \(0\le x\le\pi\text{,}\) then for any for any other \(x'\) in the same range, we have \(\cos(x') \gt y\) (when \(x'\lt x\)) or \(\cos(x') \lt y\) (when \(x'\gt x\)). In particular this means that for any given \(y_0\text{,}\) there is at most one \(x_0\) with \(0\le x_0\le\pi\) so that \(y_0=\cos(x_0)\text{.}\) In fact, the intermediate value theorem from the Calculus implies that for any \(y_0\) satisfying \(-1\leq y_0 \leq 1\) there is some \(x_0\) satisfying \(0\le x_0\le\pi\) so that \(y_0=\cos(x_0)\text{.}\)</p>
+<p id="p-1333">This may be visualized as follows: pick any \(y_0\) between \(-1\) and \(1\text{.}\) From that value on the \(y\)-axis, go horizontally until you hit the graph of the function \(y=\cos(x)\) and then drop down to the \(x\)-axis at the point \(x_0\text{.}\) This value \(x_0\) is the unique one for which \(\cos(x_0)=y_0\text{.}\)</p>
+<figure class="figure figure-like" id="figure-82"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><div class="asymptote-box" style="padding-top: 60.1741710355972%"><iframe src="images/image-85.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.9<span class="period">.</span></span><span class="space"> </span></figcaption></figure></section><section class="subsection" id="subsection-104"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">7.3.4</span> <span class="title">Parallelograms</span>
+</h3>
+<p id="p-1334">A parallelogram is a quadrilateral with opposite sides parallel. Here is an example of one filled in yellow:</p>
+<figure class="figure figure-like" id="figure-83"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><div class="asymptote-box" style="padding-top: 75.0551322734561%"><iframe src="images/image-86.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.10<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1335">Here are some important properties of parallelograms:</p>
+<ol class="decimal">
+<li id="li-437">The angles on consecutive vertices are supplementary (sum to \(\pi\)).</li>
+<li id="li-438">Opposite angles are equal.</li>
+<li id="li-439">Opposite sides have the same length.</li>
+</ol>
+<p data-braille="continuation">Here is why these properties hold:</p>
+<ol class="decimal">
+<li id="li-440">
+<p id="p-1336">Let one vertex have an angle of \(\theta\text{.}\) Extend one of the sides as in the figure. The lines being parallel implies that the angle outside the parallelogram is also \(\theta\text{,}\) which in turn makes the next angle within the parallelogram equal to \(\pi-\theta\text{.}\)</p>
+<figure class="figure figure-like" id="figure-84"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><div class="asymptote-box" style="padding-top: 46.9567054597954%"><iframe src="images/image-87.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.11<span class="period">.</span></span><span class="space"> </span></figcaption></figure>
+</li>
+<li id="li-441"><p id="p-1337">If one vertex has an angle \(\theta\text{,}\) then next has angle \(\pi-\theta\text{.}\) The next vertex after that has angle \(\pi-(\pi-\theta)=\theta\text{,}\) and the final vertex has angle \(\pi-\theta\text{.}\) Hence two opposite vertices have an angle \(\theta\) while the other two opposite vertices have angle \(\pi-\theta\text{.}\)</p></li>
+<li id="li-442"><p id="p-1338">Let \(b\) and \(b'\) be opposite sides of the parallelogram.  Drop perpendiculars from two vertices to the opposite line as shown in the following figure. Then the length of both of the new lines is the distance, \(d\text{,}\) between the parallel lines, and so \(d=b\sin(\theta)=b'\sin(\theta)\) from which follows \(b=b'\text{.}\)</p></li>
+</ol>
+<figure class="figure figure-like" id="figure-85"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><div class="asymptote-box" style="padding-top: 62.5689590412639%"><iframe src="images/image-88.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.12<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1339">The parallelogram law relates the lengths of sides of a parallelogram to the lengths of the diagonals.</p>
+<article class="theorem theorem-like" id="ParallelogramLaw"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.3.13</span><span class="period">.</span><span class="space"> </span><span class="title">The parallelogram law.</span>
+</h6>
+<p id="p-1340">If a parallelogram has sides of length \(a\) and \(b\text{,}\) and \(c\) and \(d\) are the lengths of the two diagonals, then \[ c^2+d^2=2a^2+2b^2 \] In other words, the sum of the squares of the sides is the sum of the squares of the diagonals.</p>
+<figure class="figure figure-like" id="figure-86"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><div class="asymptote-box" style="padding-top: 75.0551322734561%"><iframe src="images/image-89.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.14<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><article class="hiddenproof" id="proof-114"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-114"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-114"><article class="hiddenproof"><p id="p-1341">The proof can be seen from the following two figures. Applying the law of cosines to the first figure gives \[ c^2=a^2+b^2-2ab\cos(\theta)\tag1 \] while applying it to the second figure gives \[ d^2=a^2+b^2-2ab\cos(\pi-\theta)= a^2+b^2+2ab\cos(\theta)\tag2 \]</p>
+<figure class="figure figure-like" id="figure-87"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><div class="asymptote-box" style="padding-top: 75.0551322734561%"><iframe src="images/image-90.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.15<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1342">and</p>
+<figure class="figure figure-like" id="figure-88"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><div class="asymptote-box" style="padding-top: 75.0551322734561%"><iframe src="images/image-91.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.16<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1343">Adding (1) and (2) gives \[ c^2+d^2=2a^2+2b^2 \]</p></article></div></section><section class="subsection" id="subsection-105"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">7.3.5</span> <span class="title">The addition formulas for \(\sin(x)\) and \(\cos(x)\)</span>
+</h3>
+<p id="p-1344">Suppose we know \(\sin(\alpha)\text{,}\) \(\cos(\alpha)\text{,}\) \(\sin(\beta)\text{,}\) and \(\cos(\beta)\text{.}\) We wish to find formulas to compute \(\sin(\alpha+\beta)\text{,}\) and \(\cos(\alpha+\beta)\text{.}\) The following figure shows us how to do the computation.</p>
+<p id="p-1345">The points \(A=(\cos(\alpha),\sin(\alpha))\text{,}\) \(B=\cos(\alpha+\beta),\sin(\alpha+\beta))\) and \((0,1)\) all lie on a circle with centre at the origin and radius \(1\text{.}\) These three points are joined by a line to the origin \(\vec 0\text{.}\)  Drop perpediculars from B to the line joining \(\vec0\) and \((1,0)\) and also to the line joining  and \(\vec0\) and \(A\text{.}\) The points \(F\) and \(E\) are where the perpendiculars meet the respective lines.  The line joining \(B\) and \(E\) is extended until it meets the line joining \(\vec 0\) and \((1,0)\) at \(D=(d,0)\text{.}\)</p>
+<figure class="figure figure-like" id="figure-89"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><div class="asymptote-box" style="padding-top: 82.013413520708%"><iframe src="images/image-92.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.17<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1346">Now we compute the area of the yellow triangle in two different ways and equate the results.</p>
+<p id="p-1347">Consider the lengths of these lines:</p>
+<ul class="disc">
+<li id="li-443"><p id="p-1348">\(\|BF\|=\sin(\alpha+\beta)\) (from triangle \(\vec0 B F\))</p></li>
+<li id="li-444"><p id="p-1349">\(\displaystyle \|\vec 0 D\|=d\)</p></li>
+<li id="li-445"><p id="p-1350">\(\|\vec 0 E\|=d\cos(\alpha)=\cos(\beta)\) (from triangles \(\vec0DE\) and \(\vec0BE\text{,}\) which implies that \(d=\frac{\cos(\beta)}{\cos(\alpha)}\))</p></li>
+<li id="li-446"><p id="p-1351">\(\|BD\|=\|BE\|+\|ED\|=\sin(\beta)+d\sin(\alpha)\) (from triangles \(\vec0BE\) and \(\vec0DE\))</p></li>
+</ul>
+<p id="p-1352">On the one hand, twice the area of the yellow triangle is \[ \|BF\|\,\|\vec0 D\| = d\sin(\alpha+\beta) \] On the other hand, twice the triangle area is also \[ \|\vec0 E\|\, \|BD\|=d\cos(\alpha)\left(\sin(\beta)+d\sin(\alpha)\right) \] Equating the two values we get \[ \sin(\alpha+\beta)=\cos(\alpha)\sin(\beta)+d\cos(\alpha)\sin(\alpha) =\cos(\alpha)\sin(\beta)+\cos(\beta)\sin(\alpha) \]</p>
+<p id="p-1353">Note that, from the right triangle \(\vec0 E D\text{,}\) the angle at \(D\) is \(\frac\pi2-\alpha\text{,}\) and then from the right triangle \(B F D\) the angle at \(B\) is \(\alpha\text{.}\) We use this to compute some more lengths:</p>
+<ul class="disc">
+<li id="li-447"><p id="p-1354">\(\displaystyle \|DF\| = \|BD\|\sin(\alpha)=(\sin(\beta)+d\sin(\alpha))\sin(\alpha)\)</p></li>
+<li id="li-448"><p id="p-1355">\(\displaystyle \|\vec0 F\|=\cos(\alpha+\beta)\)</p></li>
+</ul>
+<p data-braille="continuation">Now we have</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+\|\vec0 F\|
+\amp= \|\vec0 D\|- \|DF\|\\
+\cos(\alpha+\beta)
+\amp=d-(\sin(\beta)+d\sin(\alpha))\sin(\alpha)\\
+\amp=d-\sin(\beta)\sin(\alpha)-d\, \sin^2(\alpha)\\
+\amp= d(1-\sin^2(\alpha))-\sin(\beta)\sin(\alpha)\\
+\amp=d\,\cos^2(\alpha)-\sin(\beta)\sin(\alpha)\\
+\amp= \cos(\beta)\cos(\alpha)-\sin(\beta)\sin(\alpha)
+\end{array}
+\end{equation*}
+</div>
+<p id="p-1356">and so we have \[ \sin(\alpha+\beta)=\sin(\alpha)\cos(\beta)+\cos(\alpha)\sin(\beta)\\ \cos(\alpha+\beta)=\cos(\alpha)\cos(\beta)-\sin(\alpha)\sin(\beta) \]</p>
+<article class="theorem theorem-like" id="SinCosSums"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.3.18</span><span class="period">.</span><span class="space"> </span><span class="title">Addition formulas for \(\sin(x)\) and \(\cos(x)\).</span>
+</h6>
+<div class="displaymath" id="p-1357">
+\begin{equation*}
+\sin(\alpha+\beta)=\sin(\alpha)\cos(\beta)+\cos(\alpha)\sin(\beta)\\
+\cos(\alpha+\beta)=\cos(\alpha)\cos(\beta)-\sin(\alpha)\sin(\beta)
+\end{equation*}
+</div></article></section><section class="subsection" id="subsection-106"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">7.3.6</span> <span class="title">The law of sines</span>
+</h3>
+<p id="p-1358">Suppose a triangle has sides of lengths \(a\text{,}\) \(b\) and \(c\text{.}\) Let \(\alpha\text{,}\) \(\beta\text{,}\) and \(\gamma\) be the angles opposite \(a\text{,}\) \(b\) and \(c\) respectively. In addition, let the vertices of the triangle be labeled \(A\text{,}\) \(B\) and \(C\) at the angles \(\alpha\text{,}\) \(\beta\text{,}\) and \(\gamma\) respectively. Our picture looks like this:</p>
+<figure class="figure figure-like" id="figure-90"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><div class="asymptote-box" style="padding-top: 37.7037509679887%"><iframe src="images/image-93.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.19<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1359">It is pretty obvious that the sides with longer length will have larger angles opposite. The law of sines makes this realtionship precise.</p>
+<article class="theorem theorem-like" id="LawOfSines"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.3.20</span><span class="period">.</span><span class="space"> </span><span class="title">The law of sines.</span>
+</h6>
+<p id="p-1360">Suppose a triangle has sides of lengths \(a\text{,}\) \(b\) and \(c\text{,}\) and \(\alpha\text{,}\) \(\beta\text{,}\) and \(\gamma\) are the angles opposite \(a\text{,}\) \(b\) and \(c\) respectively. Then \[ \frac{\sin(\alpha)}{a} =\frac{\sin(\beta)}{b} =\frac{\sin(\gamma)}{c} \]</p></article><article class="hiddenproof" id="proof-115"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-115"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-115"><article class="hiddenproof"><p id="p-1361">With no loss of generality, we may assume that \(\alpha\) is the largest angle. It may be acute or obtuse, but \(\beta\) and \(\gamma\) are definitely acute. That implies that we may drop a perpendicular from \(A\) that will divide the angle \(\alpha\) into \(\alpha_1\) and  \(\alpha_2\) the side opposite into segements with lengths \(a_1\) and \(a_2\text{.}\)</p>
+<figure class="figure figure-like" id="figure-91"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><div class="asymptote-box" style="padding-top: 37.7037509679887%"><iframe src="images/image-94.html" class="asymptote"></iframe></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.21<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-1362">Then we have</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+\sin(\alpha) \amp = \sin(\alpha_1+\alpha_2)\\
+\amp =\sin(\alpha_1)\cos(\alpha_2)+\cos(\alpha_1)\sin(\alpha_2)\\
+\amp =\frac{a_1}c \frac hb + \frac hc \frac {a_2}b\\
+\amp =\frac{ha}{bc}
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">and so \[ \frac{\sin(\alpha)}a = \frac h{bc} \] Using \(\sin(\beta)=\frac hc\) and \(\sin(\gamma)=\frac hb\text{,}\) it follows that \[ \frac{\sin(\beta)}b = \frac h{bc} \textrm{ and } \frac{\sin(\gamma)}c = \frac h{bc} \] and so \[ \frac h{bc}=\frac{\sin(\alpha)}a =\frac{\sin(\beta)}b =\frac{\sin(\gamma)}c \]</p></article></div></section></section></div></main>
 </div>
 </body>
 </html>

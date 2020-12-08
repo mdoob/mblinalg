@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-09-16T11:46:49-05:00       *-->
+<!--*       on 2020-12-08T13:12:10-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -16,22 +16,27 @@
 <body>
 <div class="solution solution-like">
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">7.2.5.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.4.8.1</span><span class="period">.</span>
 </h6>
+<p>Suppose \(\frac12(A+I)\) is idempotent. Then</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\begin{array}{cc}
-n \amp \sum_{k=0}^n 2^k\\
-\hline
-1 \amp 3\\
-2 \amp 7\\
-3\amp 15\\
-4\amp 31
-\end{array}
+\frac12(A+I)=\left(\frac12(A+I)\right)^2=\frac14(A^2+2A+I)\\
+2(A+I)=A^2+2A+I\\
+A^2=I
 \end{equation*}
 </div>
-<p data-braille="continuation">We note that each answer is one less than a power of \(2\text{.}\) This leads to the equation \[ \sum_{k=0}^n 2^k=2^{n+1}-1. \] To justify the equation we note that \[ 2(\sum_{k=0}^n 2^k)=\sum_{k=0}^n 2^{k+1}=\sum_{k=1}^{n+1} 2^k =\bigl(\sum_{k=0}^{n+1} 2^k\bigr) -1 \] so we get the sum for a given value on \(n\) by doubling the value for \(n-1\) and adding \(1\text{.}\)</p>
+<p data-braille="continuation">and so \(A\) is an involution.</p>
+<p>Suppose \(A\) is an involution. Then</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\left(\frac12(A+I)\right)^2=\frac14(A^2+2A+I)
+=\frac14(I+2A+I)
+=\frac12(A+I)
+\end{equation*}
 </div>
-<span class="incontext"><a href="section-48.html#solution-38">in-context</a></span>
+<p data-braille="continuation">and so \(\frac12(A+I)\) is idempotent.</p>
+</div>
+<span class="incontext"><a href="section-43.html#solution-38">in-context</a></span>
 </body>
 </html>

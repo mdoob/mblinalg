@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-10-31T14:44:45-05:00       *-->
+<!--*       on 2020-12-08T13:12:09-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,27 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">If \(L(\vec e_1)=L(\vec e_2)=\cdots=L(\vec e_m)=\vec 0\text{,}\) then \(L\) is the zero transformation.</p>
-<span class="incontext"><a href="section-42.html#p-1243">in-context</a></span>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+T(\vec x+\vec y) 
+\amp = (r_1L_1+r_2L_2)(\vec x+\vec y)\\
+\amp = r_1L_1(\vec x+\vec y)+r_2L_2(\vec x+\vec y)\\
+\amp = r_1L_1(\vec x)+ r_1L_1(\vec y)+r_2L_2(\vec x)+ r_2L_2(\vec y)\\
+\amp = r_1L_1(\vec x)+r_2L_2(\vec x)+ r_1L_1(\vec y)+ r_2L_2(\vec y)\\
+\amp = (r_1L_1+r_2L_2)(\vec x)+ (r_1L_1+ r_2L_2)(\vec y)\\
+\amp =T(\vec x)+T(\vec y)\text{,}
+\end{align*}
+</div>
+<p data-braille="continuation">and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+T(r\vec x) \amp= (r_1L_1+r_2L_2)(r\vec x)\\
+\amp= r_1L_1(r\vec x)+r_2L_2(r\vec x)\\
+\amp= r_1rL_1(\vec x)+r_2rL_2(\vec x)\\
+\amp= r(r_1L_1+r_2L_2)(\vec x)\\
+\amp= rT(\vec x)\text{.}
+\end{align*}
+</div>
+<span class="incontext"><a href="LinearTransformationIntroduction.html#p-1243">in-context</a></span>
 </body>
 </html>

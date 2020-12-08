@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-10-31T14:44:47-05:00       *-->
+<!--*       on 2020-12-08T13:12:11-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,26 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">The proof can be seen from the following two figures. Applying the law of cosines to the first figure gives \[ c^2=a^2+b^2-2ab\cos(\theta)\tag1 \] while applying it to the second figure gives \[ d^2=a^2+b^2-2ab\cos(\pi-\theta)= a^2+b^2+2ab\cos(\theta)\tag2 \]</p>
-<span class="incontext"><a href="section-49.html#p-1328">in-context</a></span>
+<p>Double summations are often used with matrices. Suppose we have a matrix</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A=
+\begin{bmatrix}
+a_{1,1}\amp a_{1,2}\amp \cdots \amp a_{1,n}\\
+a_{2,1}\amp a_{2,2}\amp \cdots \amp a_{2,n}\\
+\vdots\amp \vdots\amp \vdots\amp \vdots\\
+a_{m,1}\amp a_{m,2}\amp \cdots \amp a_{m,n}
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">Then \[ \sum_{j=1}^n a_{i,j} = a_{i,1}+a_{i,2}+\cdots+a_{i,n} \] which is the sum of the entries in the \(i\)-th row of the matrix. Similarly \[ \sum_{i=1}^m a_{i,j} = a_{1,j}+a_{2,j}+\cdots+a_{m,j} \] which is the sum of the entries in the \(j\)-th column of the matrix. We can now see that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sum_{i=1}^m\sum_{j=1}^n a_{i,j}
+=\sum_{j=1}^n\sum_{i=1}^m a_{i,j}
+\end{equation*}
+</div>
+<p data-braille="continuation">since each sides of the equation is equal to the sum of all of the entries in the matrix. This is called <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">interchanging the order of summation.</em></p>
+<span class="incontext"><a href="section-45.html#p-1328">in-context</a></span>
 </body>
 </html>

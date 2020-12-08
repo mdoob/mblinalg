@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-10-31T14:44:15-05:00       *-->
+<!--*       on 2020-12-08T13:11:37-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -200,7 +200,7 @@ P_k\colon \text{The number of permutations of } k \text{ objects is } k!\,.
 -1 \amp \text{if } t \text{ is odd} 
 \end{cases}\text{.}
 \end{equation*}
-</div></article><figure class="table table-like" id="AllPermutationsSize4"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.6.7<span class="period">.</span></span><span class="space"> </span>Signs of permutations \(\sigma\) of \(\{1,2,3,4\}\) with \(t\) interchanges needed to obtain natural order.</figcaption><table>
+</div></article><figure class="table table-like" id="AllPermutationsSize4"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.6.7<span class="period">.</span></span><span class="space"> </span>Signs of permutations \(\sigma\) of \(\{1,2,3,4\}\) with \(t\) interchanges needed to obtain natural order.</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="c m b2 r0 l0 t0 lines">\(\sigma\)</td>
 <td class="c m b2 r0 l0 t0 lines">\(t\)</td>
@@ -322,7 +322,7 @@ P_k\colon \text{The number of permutations of } k \text{ objects is } k!\,.
 <td class="c m b0 r0 l0 t0 lines">2</td>
 <td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">+1</td>
 </tr>
-</table></figure></section><section class="subsection" id="subsection-53"><h3 class="heading hide-type">
+</table></div></figure></section><section class="subsection" id="subsection-53"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.6.3</span> <span class="title">An alternative notation for the permutations of \(\{1,2,\dots,n\}\)</span>
 </h3>
 <p id="p-694">In <a class="xref" data-knowl="./knowl/PermutationSignExample.html" title="Example 3.6.4: The sign of the permutation 324165">Example 3.6.4</a> the properties of the permutation \(324165\) were examined. In our alternative notation we write this permutation as</p>
@@ -363,7 +363,7 @@ P_k\colon \text{The number of permutations of } k \text{ objects is } k!\,.
 \end{align*}
 </div>
 <p data-braille="continuation">For each term, we construct a permutation \(\sigma\) of \(\{1,2,3\}\) in the following way: if \(a_{ij}\) is one of the factors, the \(j\) is written under \(i\) in the permutation. In other words, \(\sigma(i)=j\text{.}\)</p>
-<figure class="table table-like" id="table-6"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.6.9<span class="period">.</span></span><span class="space"> </span>Permutations when \(n=3\)</figcaption><table>
+<figure class="table table-like" id="table-6"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.6.9<span class="period">.</span></span><span class="space"> </span>Permutations when \(n=3\)</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="c m b2 r0 l0 t0 lines">Term</td>
 <td class="c m b2 r0 l0 t0 lines">Permutation from term</td>
@@ -399,7 +399,7 @@ P_k\colon \text{The number of permutations of } k \text{ objects is } k!\,.
 <td class="c m b0 r0 l0 t0 lines">\(\sigma_6=\begin{pmatrix}123\\321\end{pmatrix}\)</td>
 <td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\sgn(\sigma_6)=-1\)</td>
 </tr>
-</table></figure><p id="p-698">Look at <a class="xref" data-knowl="./knowl/AllPermutationsSize3.html" title="Example 3.6.8: Permutations of \(\{1,2,3\}\)">Example 3.6.8</a>.  We see that something beautiful has happened:</p>
+</table></div></figure><p id="p-698">Look at <a class="xref" data-knowl="./knowl/AllPermutationsSize3.html" title="Example 3.6.8: Permutations of \(\{1,2,3\}\)">Example 3.6.8</a>.  We see that something beautiful has happened:</p>
 <article class="proposition theorem-like" id="PermutationDeterminantSize3"><h6 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.6.10</span><span class="period">.</span>
 </h6>
@@ -806,7 +806,7 @@ a_{2,1} - a_{2,2} + a_{2,3} + \cdots
 <p id="p-730"><a class="xref" data-knowl="./knowl/SigmaSearchAlgorithm.html" title="Algorithm 3.6.15: \(\sigma\) search">Algorithm 3.6.15</a> proceeds step by step: at each step the matrix under cosideration has its top row and one column deleted. At step \(k\) we have a matrix \(N\) derived from \(A\) by deleting the first \(k-1\) row and columns \(\{i_1,i_2,\ldots,i_{k-1}\}\text{,}\) and so the remaining entries in the first row of \(N\) are \(\{a_{k,1},\ldots,a_{k,n}\} 
 \setminus \{a_{k,i_1},\ldots,a_{k,i_{k-1}}\}
 \text{.}\) This can be visualized in the following figure:</p>
-<figure class="figure figure-like" id="figure-13"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><div class="asymptote-box" style="padding-top: 45.7170718622092%"><iframe src="images/image-14.html" class="asymptote"></iframe></div></div>
+<figure class="figure figure-like" id="figure-13"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><div class="asymptote-box" style="padding-top: 45.7170718622092%"><iframe src="images/image-13.html" class="asymptote"></iframe></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.6.20<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-731">\(B_1,\ldots,B_k\) are the blocks of remaining columns between the deleted ones. The column corresponding to \(i_k\) is in one of these blocks. The particular one will determine the sign that is used in the first row expansion of \(N\text{.}\)</p>
 <p id="p-732">As a starting point, suppose that \(B_1\) is nonempty. That means that the upper left entry is \(a_{k,1}\text{,}\) and it has a sign of \(+1\) in the first row expansion, and so as we expand along the columns in \(B_1\text{:}\)</p>
 <div class="displaymath">

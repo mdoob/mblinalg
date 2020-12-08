@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-10-31T14:44:44-05:00       *-->
+<!--*       on 2020-12-08T13:12:08-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,8 +15,32 @@
 </head>
 <body>
 <article class="li"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Item</span><span class="space"> </span><span class="codenumber">6</span><span class="period">.</span>
-</h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Dilations in \(\R^2\) as seen in <a class="xref" data-knowl="./knowl/PlaneDilation.html" title="Example 6.1.7: A dilation in the plane">Example 6.1.7</a>.</p></article><span class="incontext"><a href="LinearTransformationIntroduction.html#li-383">in-context</a></span>
+<span class="type">Item</span><span class="period">.</span>
+</h6>\(L((x_1,x_2,x_3))=(x_1+x_2,x_2+x_3)\) since<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+L(\vec x)+L(\vec y)
+\amp =L((x_1,x_2,x_3))+L((y_1,y_2,y_3))\\
+\amp = (x_1+x_2,x_2+x_3)+(y_1+y_2,y_2+y_3)\\
+\amp =(x_1+x_2+y_1+y_2, x_2+x_3+y_2+y_3)\\
+\amp =(x_1+y_1+x_2+y_2, x_2+y_2+x_3+y_3)\\
+\amp =L((x_1+y_1,x_2+y_2,x_3+y_3))\\
+\amp =L( (x_1,x_2,x_3)+ (y_1,y_2,y_3))\\
+\amp =L(\vec x+\vec y) \text{, and}
+\end{array}
+\end{equation*}
+</div>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+rL(\vec x)
+\amp =rL((x_1,x_2,x_3))\\
+\amp =r(x_1+x_2,x_2+x_3)\\
+\amp =(rx_1+rx_2,rx_2+rx_3)\\
+\amp =L((rx_1,rx_2,rx_3))\\
+\amp =L(r\vec x).
+\end{array}
+\end{equation*}
+</div></article><span class="incontext"><a href="LinearTransformationIntroduction.html#li-383">in-context</a></span>
 </body>
 </html>
