@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-12-08T13:12:09-06:00       *-->
+<!--*       on 2020-12-11T14:59:45-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,33 +15,7 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose we have a linear transformation \(L\colon \R^n\to\R^n\text{.}\) As usual, let \(\{\vec e_1,\vec e_2,\ldots,\vec e_n\}\) be the standard basis for \(\R^n\text{.}\) Consider the vectors \(\{L(\vec e_1) ,L(\vec e_2), \ldots, L(\vec e_n)\}\) in \(\R^m\text{.}\) We form a matrix \(A\) by using the entries of \(L(\vec e_k)\) for the \(k\)-th column. We can think of the construction in the following way:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\begin{array}{cccc}
-A = \amp [L(\vec e_1) \amp L(\vec e_2) \amp \cdots \amp L(\vec e_n)]\\
-\amp \uparrow \amp \uparrow  \amp \amp \uparrow\\
-\amp \text{column } 1\amp \text{column } 2\amp\amp \text{column } n
-\end{array}
-\end{equation*}
-</div>
-<p data-braille="continuation">Notice that \(A\) is an \(m\times n\) matrix, and hence we have \(L_A\colon\R^n\to\R^m\text{.}\) We evaluate this transformation at \(\vec e_1\text{:}\)</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation}
-L_A(\vec e_1)=
-A\begin{bmatrix}
-1\\0\\\vdots\\0
-\end{bmatrix}
-=L(\vec e_1)\tag{6.3.1}
-\end{equation}
-</div>
-<p data-braille="continuation">Similarly</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-L_A(\vec e_k)=L(\vec e_k) \text{ for } 1\leq k\leq n\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">As we have seen in <a class="xref" data-knowl="./knowl/LinearTransformationOnStandardBasis.html" title="Theorem 6.3.10: The value of \(L\) on the standard basis determines \(L\) everywhere">Theorem 6.3.10</a> a linear transformation is determined by its values on the standard basis. This implies \(L=L_A\text{.}\) We call the constructed matrix \(A\) the <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">matrix representation</dfn> of \(L\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Suppose \(L_1\colon \R^n\to\R^m\text{,}\)  \(L_2\colon \R^n\to\R^m\) and \(L_1(\vec e_i) = L_2(\vec e_i)\) for \(i=1,2,\dots n\text{.}\) Then \(L_1(\vec x)=L_2(\vec x)\) for all \(\vec x\) in \(\R^n\text{,}\) and \(L_1=L_2\text{.}\)</p>
 <span class="incontext"><a href="LinearTransformationIntroduction.html#p-1251">in-context</a></span>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-12-08T13:11:44-06:00       *-->
+<!--*       on 2020-12-11T14:59:20-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -128,7 +128,7 @@ rL(\vec x)=r\vec x=L(r\vec x)\text{.}
 \end{equation*}
 </div>
 </li>
-<li id="li-383">\(L((x_1,x_2,x_3))=(x_1+x_2,x_2+x_3)\) since<div class="displaymath">
+<li id="li-383">\(L((x_1,x_2,x_3))=(x_1+x_2,x_2+x_3)\)<div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
 L(\vec x)+L(\vec y)
@@ -156,7 +156,7 @@ rL(\vec x)
 </div>
 </li>
 </ul>
-<p id="p-1218">Here are some interesting transformations (which will turn out to be linear) \(L\colon \R^2\to\R^2\text{.}\)</p>
+<p id="p-1218">Here are some interesting transformations (which are shown to be linear) \(L\colon \R^2\to\R^2\text{.}\)</p>
 <figure class="list table-like" id="LinearTransformationsExamplesList"><figcaption><span class="type">List</span><span class="space"> </span><span class="codenumber">6.3.1<span class="period">.</span></span><span class="space"> </span>Examples of linear transformations in \(\R^2\)</figcaption><div class="named-list-content"><ul class="disc">
 <li id="li-384">
 <p id="p-1219">Rotations in \(\R^2\) as seen in <a class="xref" data-knowl="./knowl/PlaneRotation.html" title="Example 6.2.1: A rotation in the plane">Example 6.2.1</a>.</p>
@@ -176,7 +176,7 @@ rL(\vec x)
 <li id="li-386">
 <p id="p-1224">Projections in \(\R^2\) as seen in <a class="xref" data-knowl="./knowl/PlaneProjection.html" title="Example 6.2.5: A projection in the plane">Example 6.2.5</a>. The geometry of projections in \(\R^2\) can show that they are linear transformations. In the following figure, \(\vec z\) is the point that completes the parallelogram through \(\vec x\text{,}\) \(\vec x + \vec y\) and \(T(\vec x)\text{.}\) The triangles \(\triangle(\vec0, \vec y, T(\vec y))\) and \(\triangle(T(\vec x), \vec z, T(\vec x+\vec y))\) are then congruent, and so \(T(\vec x+\vec y)-T(\vec x)=T(\vec y)-\vec0\text{,}\) that is, \(T(\vec x)+T(\vec y)=T(\vec x+\vec y)\text{.}\)</p>
 <figure class="figure figure-like" id="figure-68"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><div class="asymptote-box" style="padding-top: 73.7752981533971%"><iframe src="images/image-70.html" class="asymptote"></iframe></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.6<span class="period">.</span></span><span class="space"> </span>Projections are linear: addition</figcaption></figure><p id="p-1225">A different proof uses the linearity of the reflection transformation \(L\) given in <a class="xref" data-knowl="./knowl/ReflectionsAreLinear.html" title="Figure 6.3.4">Figure 6.3.4</a> and the observation that \(T(\vec x)\) is the midpoint of the line joining \(\vec x\) and \(L(\vec x)\text{.}\) In other words \(T(\vec x)=\frac12(\vec x + L(\vec x))\text{.}\) This allows an easy computation:</p>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.6<span class="period">.</span></span><span class="space"> </span>Projections are linear: addition</figcaption></figure><p id="p-1225">However, a different proof uses the linearity of the reflection transformation \(L\) given in <a class="xref" data-knowl="./knowl/ReflectionsAreLinear.html" title="Figure 6.3.4">Figure 6.3.4</a> and the observation that \(T(\vec x)\) is the midpoint of the line joining \(\vec x\) and \(L(\vec x)\text{.}\) In other words \(T(\vec x)=\frac12(\vec x + L(\vec x))\text{.}\) This allows an easy computation:</p>
 <ul class="circle">
 <li id="li-387">linearity of addition<div class="displaymath">
 \begin{align*}
@@ -217,7 +217,7 @@ T(r\vec x)
 </ul></div></figure></section><section class="subsection" id="subsection-92"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.3.2</span> <span class="title">First properties of linear transformations</span>
 </h3>
-<article class="theorem theorem-like" id="theorem-85"><h6 class="heading">
+<article class="theorem theorem-like" id="LinearTransformationFirstProperties"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">First properties.</span>
 </h6>
 <p id="p-1228">Any linear transformation \(L\) satisfies</p>
@@ -259,24 +259,33 @@ r_1L(\vec x_1)+r_2 L(\vec x_2)+\cdots+r_nL(\vec x_n)
 =L(r_1\vec x_1)+L(r_2\vec x_2)
 =r_1L(\vec x_1)+r_2L(\vec x_2) \)</p></li>
 <li id="li-403">
-<p id="p-1241">We apply the addition property repeatedly:</p>
+<p id="p-1241">We apply the the previous addition property repeatedly:</p>
 <div class="displaymath">
 \begin{alignat*}{1}
 L(r_1\vec x_1+r_2 \vec x_2\amp+\cdots+r_n\vec x_n)\\
 \amp = L(r_1\vec x_1)+L(r_2 \vec x_2+\cdots+r_n\vec x_n)\\
 \amp = r_1L(\vec x_1)+ L(r_2\vec x_2+\cdots+r_n\vec x_n)\\
-\amp = r_1L(\vec x_1)+ L(r_2\vec x_2)+L(r_3\vec x_3+\cdots+r_n\vec x_n)\\
-\amp = r_1L(\vec x_1)+ r_2L(\vec x_2)+L(r_3\vec x_3+\cdots+r_n\vec x_n)\\
+\amp = r_1L(\vec x_1)+ L(r_2\vec x_2)
++L(r_3\vec x_3+\cdots+r_n\vec x_n)\\
+\amp = r_1L(\vec x_1)+ r_2L(\vec x_2)
++L(r_3\vec x_3+\cdots+r_n\vec x_n)\\
 \amp \,\,\,\vdots\\
-\amp = r_1L(\vec x_1)+r_2 L(\vec x_2)+\cdots+r_nL(\vec x_n)
+\amp = r_1L(\vec x_1)+r_2 L(\vec x_2)
++\cdots+r_nL(\vec x_n)
 \end{alignat*}
 </div>
 </li>
 </ol></article></div>
+<article class="exercise exercise-like" id="exercise-44"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-44"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.3.9</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-44"><article class="exercise exercise-like"><p id="p-1242">Show that the reflection by by a line not passing through \(\mathbf0\) is <em class="emphasis">not</em> a linear transformation.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-36" id="solution-36"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-36"><div class="solution solution-like"><p id="p-1243">The line not passing through \(\mathbf0\) implies \(L(\mathbf0)\not=\mathbf0\text{.}\) However <a class="xref" data-knowl="./knowl/LinearTransformationFirstProperties.html" title="Theorem 6.3.8: First properties">Theorem 6.3.8</a> proves that any linear transformation satisfies \(L(\mathbf0)=\mathbf0\text{.}\)</p></div></div>
+</div></article></div>
 <article class="theorem theorem-like" id="theorem-86"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">New linear transformations from old ones.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">New linear transformations from old ones.</span>
 </h6>
-<p id="p-1242">Suppose \(L_1\colon \R^n\to\R^m\) and \(L_2\colon \R^n\to\R^m\) are linear transformations, and \(r_1\) and \(r_2\) are scalars. Then \(T\colon \R^n\to\R^m\) defined by \(T=r_1L_1+r_2L_2\) is also a linear transformation.</p></article><article class="hiddenproof" id="proof-107"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-107"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-107"><article class="hiddenproof"><div class="displaymath" id="p-1243">
+<p id="p-1244">Suppose \(L_1\colon \R^n\to\R^m\) and \(L_2\colon \R^n\to\R^m\) are linear transformations, and \(r_1\) and \(r_2\) are scalars. Then \(T\colon \R^n\to\R^m\) defined by \(T=r_1L_1+r_2L_2\) is also a linear transformation.</p></article><article class="hiddenproof" id="proof-107"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-107"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-107"><article class="hiddenproof"><div class="displaymath" id="p-1245">
 \begin{align*}
 T(\vec x+\vec y) 
 \amp = (r_1L_1+r_2L_2)(\vec x+\vec y)\\
@@ -297,7 +306,7 @@ T(r\vec x) \amp= (r_1L_1+r_2L_2)(r\vec x)\\
 \amp= rT(\vec x)\text{.}
 \end{align*}
 </div></article></div>
-<p id="p-1244">The <dfn class="terminology">standard basis</dfn> of \(\R^n\) is the set of vectors \(\{\vec e_1, \vec e_2,\ldots,\vec e_n\}\) where</p>
+<p id="p-1246">The <dfn class="terminology">standard basis</dfn> of \(\R^n\) is the set of vectors \(\{\vec e_1, \vec e_2,\ldots,\vec e_n\}\) where</p>
 <div class="displaymath">
 \begin{equation*}
 \vec e_1=(1,0,\ldots,0)\\
@@ -307,9 +316,9 @@ T(r\vec x) \amp= (r_1L_1+r_2L_2)(r\vec x)\\
 \end{equation*}
 </div>
 <article class="theorem theorem-like" id="LinearTransformationOnStandardBasis"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">The value of \(L\) on the standard basis determines \(L\) everywhere.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.11</span><span class="period">.</span><span class="space"> </span><span class="title">The value of \(L\) on the standard basis determines \(L\) everywhere.</span>
 </h6>
-<p id="p-1245">If the values \(L(\vec e_1), L(\vec e_2),\ldots L(\vec e_n)\) are known, then value of \(L(\vec x)\) is known for all \(\vec x\) in \(\R^n\text{.}\)</p></article><article class="hiddenproof" id="proof-108"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-108"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-108"><article class="hiddenproof"><p id="p-1246">Suppose \(L(\vec e_1)=\vec f_1,  L(\vec e_2)=\vec f_2,\ldots,L(\vec e_n)=\vec f_n\text{,}\) and \(\vec x=(x_1,x_2,\ldots,x_n)\text{.}\) Then \((x_1,x_2,\ldots,x_n)=x_1\vec e_1 + x_2\vec e_2+\cdots+x_n\vec e_n\) and</p>
+<p id="p-1247">If the values \(L(\vec e_1), L(\vec e_2),\ldots L(\vec e_n)\) are known, then value of \(L(\vec x)\) is known for all \(\vec x\) in \(\R^n\text{.}\)</p></article><article class="hiddenproof" id="proof-108"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-108"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-108"><article class="hiddenproof"><p id="p-1248">Suppose \(L(\vec e_1)=\vec f_1,  L(\vec e_2)=\vec f_2,\ldots,L(\vec e_n)=\vec f_n\text{,}\) and \(\vec x=(x_1,x_2,\ldots,x_n)\text{.}\) Then \((x_1,x_2,\ldots,x_n)=x_1\vec e_1 + x_2\vec e_2+\cdots+x_n\vec e_n\) and</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
@@ -321,13 +330,13 @@ L(\vec x)
 \end{equation*}
 </div></article></div>
 <article class="corollary theorem-like" id="corollary-9"><h6 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">6.3.11</span><span class="period">.</span><span class="space"> </span><span class="title">\(L(\vec e_i)=\vec 0, i=1\cdots n\text{,}\) implies \(L=0\).</span>
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">6.3.12</span><span class="period">.</span><span class="space"> </span><span class="title">\(L(\vec e_i)=\vec 0, i=1\cdots n\text{,}\) implies \(L=0\).</span>
 </h6>
-<p id="p-1247">If \(L(\vec e_1)=L(\vec e_2)=\cdots=L(\vec e_n)=\vec 0\text{,}\) then \(L\) is the zero transformation.</p></article><p id="p-1248">There is an easy consequence:</p>
+<p id="p-1249">If \(L(\vec e_1)=L(\vec e_2)=\cdots=L(\vec e_n)=\vec 0\text{,}\) then \(L\) is the zero transformation.</p></article><p id="p-1250">There is an easy consequence:</p>
 <article class="theorem theorem-like" id="theorem-88"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.12</span><span class="period">.</span><span class="space"> </span><span class="title">Two linear transformations equal on the standard basis are equal everywhere.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.13</span><span class="period">.</span><span class="space"> </span><span class="title">Two linear transformations equal on the standard basis are equal everywhere.</span>
 </h6>
-<p id="p-1249">Suppose \(L_1\colon \R^n\to\R^m\text{,}\)  \(L_2\colon \R^n\to\R^m\) and \(L_1(\vec e_i) = L_2(\vec e_i)\) for \(i=1,2,\dots n\text{.}\) Then \(L_1(\vec x)=L_2(\vec x)\) for all \(\vec x\) in \(\R^n\text{,}\) and \(L_1=L_2\text{.}\)</p></article><article class="hiddenproof" id="proof-109"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-109"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-109"><article class="hiddenproof"><p id="p-1250">\(L_1(\vec e_i)-L_2(\vec e_i)=\vec 0\) for \(i=1,2,\ldots,n\) by assumption. If \(\vec x=(x_1,\dots,x_n)\text{,}\) we may write \(\vec x = x_1\vec e_1+x_2\vec e_2+\cdots +x_n\vec e_n.\) Then</p>
+<p id="p-1251">Suppose \(L_1\colon \R^n\to\R^m\text{,}\)  \(L_2\colon \R^n\to\R^m\) and \(L_1(\vec e_i) = L_2(\vec e_i)\) for \(i=1,2,\dots n\text{.}\) Then \(L_1(\vec x)=L_2(\vec x)\) for all \(\vec x\) in \(\R^n\text{,}\) and \(L_1=L_2\text{.}\)</p></article><article class="hiddenproof" id="proof-109"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-109"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-109"><article class="hiddenproof"><p id="p-1252">\(L_1(\vec e_i)-L_2(\vec e_i)=\vec 0\) for \(i=1,2,\ldots,n\) by assumption. If \(\vec x=(x_1,\dots,x_n)\text{,}\) we may write \(\vec x = x_1\vec e_1+x_2\vec e_2+\cdots +x_n\vec e_n.\) Then</p>
 <div class="displaymath">
 \begin{align*}
 L_1(\vec x)
@@ -347,7 +356,7 @@ L_1(\vec x)-L_2(\vec x) = \vec 0
 <p data-braille="continuation">and \(L_1=L_2\text{.}\)</p></article></div></section><section class="subsection" id="subsection-93"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.3.3</span> <span class="title">Matrix representation of a linear transformation</span>
 </h3>
-<p id="p-1251">Suppose we have a linear transformation \(L\colon \R^n\to\R^n\text{.}\) As usual, let \(\{\vec e_1,\vec e_2,\ldots,\vec e_n\}\) be the standard basis for \(\R^n\text{.}\) Consider the vectors \(\{L(\vec e_1) ,L(\vec e_2), \ldots, L(\vec e_n)\}\) in \(\R^m\text{.}\) We form a matrix \(A\) by using the entries of \(L(\vec e_k)\) for the \(k\)-th column. We can think of the construction in the following way:</p>
+<p id="p-1253">Suppose we have a linear transformation \(L\colon \R^n\to\R^n\text{.}\) As usual, let \(\{\vec e_1,\vec e_2,\ldots,\vec e_n\}\) be the standard basis for \(\R^n\text{.}\) Consider the vectors \(\{L(\vec e_1) ,L(\vec e_2), \ldots, L(\vec e_n)\}\) in \(\R^m\text{.}\) We form a matrix \(A\) by using the entries of \(L(\vec e_k)\) for the \(k\)-th column. We can think of the construction in the following way:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{cccc}
@@ -373,16 +382,16 @@ A\begin{bmatrix}
 L_A(\vec e_k)=L(\vec e_k) \text{ for } 1\leq k\leq n\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">As we have seen in <a class="xref" data-knowl="./knowl/LinearTransformationOnStandardBasis.html" title="Theorem 6.3.10: The value of \(L\) on the standard basis determines \(L\) everywhere">Theorem 6.3.10</a> a linear transformation is determined by its values on the standard basis. This implies \(L=L_A\text{.}\) We call the constructed matrix \(A\) the <dfn class="terminology">matrix representation</dfn> of \(L\text{.}\)</p>
+<p data-braille="continuation">As we have seen in <a class="xref" data-knowl="./knowl/LinearTransformationOnStandardBasis.html" title="Theorem 6.3.11: The value of \(L\) on the standard basis determines \(L\) everywhere">Theorem 6.3.11</a> a linear transformation is determined by its values on the standard basis. This implies \(L=L_A\text{.}\) We call the constructed matrix \(A\) the <dfn class="terminology">matrix representation</dfn> of \(L\text{.}\)</p>
 <article class="theorem theorem-like" id="theorem-89"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.13</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix representation of a linear transformation.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.14</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix representation of a linear transformation.</span>
 </h6>
-<p id="p-1252">Let \(L\colon \R^n\to\R^m\) be a linear transformation, and let \(A\) be the matrix formed by letting the \(k\)-th column be the entries of \(L(\vec e_k)\text{.}\) Then</p>
+<p id="p-1254">Let \(L\colon \R^n\to\R^m\) be a linear transformation, and let \(A\) be the matrix formed by letting the \(k\)-th column be the entries of \(L(\vec e_k)\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
 L=L_A
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-110"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-110"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-110"><article class="hiddenproof"><p id="p-1253">We can compute this in a different way: The equation <a class="xref" data-knowl="./knowl/MatrixRep.html" title="Equation 6.3.1">(6.3.1)</a> says</p>
+</div></article><article class="hiddenproof" id="proof-110"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-110"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-110"><article class="hiddenproof"><p id="p-1255">We can compute this in a different way: The equation <a class="xref" data-knowl="./knowl/MatrixRep.html" title="Equation 6.3.1">(6.3.1)</a> says</p>
 <div class="displaymath">
 \begin{align*}
 L(\vec e_1)
@@ -399,12 +408,12 @@ L(\vec e_i)=a_{1,i}\vec e_1+a_{2,i}\vec e_2+\cdots+a_{n,i}\vec e_n
 </div></article></div></section><section class="subsection" id="subsection-94"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.3.4</span> <span class="title">Examples of matrix representations</span>
 </h3>
-<p id="p-1254">We next look at the matrix representations for the examples given in <a class="xref" data-knowl="./knowl/LinearTransformationsExamplesList.html" title="List 6.3.1: Examples of linear transformations in \(\R^2\)">List 6.3.1</a></p>
-<ul id="p-1255" class="disc">
+<p id="p-1256">We next look at the matrix representations for the examples given in <a class="xref" data-knowl="./knowl/LinearTransformationsExamplesList.html" title="List 6.3.1: Examples of linear transformations in \(\R^2\)">List 6.3.1</a></p>
+<ul id="p-1257" class="disc">
 <li id="li-404">
-<p id="p-1256">The matrix representation of a rotation linear transformation is determined by the values on the standard basis \(\{\vec e_1,\vec e_2\}.\)</p>
+<p id="p-1258">The matrix representation of a rotation linear transformation is determined by the values on the standard basis \(\{\vec e_1,\vec e_2\}.\)</p>
 <figure class="figure figure-like" id="RotationMatrix"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><div class="asymptote-box" style="padding-top: 50.2453854747361%"><iframe src="images/image-72.html" class="asymptote"></iframe></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.14<span class="period">.</span></span><span class="space"> </span>Rotation of \(\{\vec e_1,\vec e_2\}\) through an angle \(\theta\)</figcaption></figure><p id="p-1257">The matrix representation is then</p>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.15<span class="period">.</span></span><span class="space"> </span>Rotation of \(\{\vec e_1,\vec e_2\}\) through an angle \(\theta\)</figcaption></figure><p id="p-1259">The matrix representation is then</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -414,9 +423,9 @@ L(\vec e_i)=a_{1,i}\vec e_1+a_{2,i}\vec e_2+\cdots+a_{n,i}\vec e_n
 </div>
 </li>
 <li id="li-405">
-<p id="p-1258">The matrix representation of the reflection by the line \(y=x\) turns out to be particularly easy.</p>
+<p id="p-1260">The matrix representation of the reflection by the line \(y=x\) turns out to be particularly easy.</p>
 <figure class="figure figure-like" id="figure-71"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><div class="asymptote-box" style="padding-top: 88.6359291124347%"><iframe src="images/image-73.html" class="asymptote"></iframe></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.15<span class="period">.</span></span><span class="space"> </span>Reflection of \(\{\vec e_1,\vec e_2\}\) by the line \(y=x\)</figcaption></figure><p id="p-1259">Since \(L(\vec e_1)=\vec e_2\) and \(L(\vec e_2)=\vec e_1\text{,}\) the matrix representation is</p>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.16<span class="period">.</span></span><span class="space"> </span>Reflection of \(\{\vec e_1,\vec e_2\}\) by the line \(y=x\)</figcaption></figure><p id="p-1261">Since \(L(\vec e_1)=\vec e_2\) and \(L(\vec e_2)=\vec e_1\text{,}\) the matrix representation is</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -426,9 +435,9 @@ L(\vec e_i)=a_{1,i}\vec e_1+a_{2,i}\vec e_2+\cdots+a_{n,i}\vec e_n
 </div>
 </li>
 <li id="li-406">
-<p id="p-1260">The matrix representation of the projection onto the line \(y=x\) is easy to see:</p>
+<p id="p-1262">The matrix representation of the projection onto the line \(y=x\) is easy to see:</p>
 <figure class="figure figure-like" id="figure-72"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><div class="asymptote-box" style="padding-top: 82.9018680018708%"><iframe src="images/image-74.html" class="asymptote"></iframe></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.16<span class="period">.</span></span><span class="space"> </span>Projection of \(\{\vec e_1,\vec e_2\}\) onto the line \(y=x\)</figcaption></figure><p id="p-1261">In this case \(L(\vec e_1)=L(\vec e_2)=\frac12(1,1)\text{,}\) and so the matrix representation is</p>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.17<span class="period">.</span></span><span class="space"> </span>Projection of \(\{\vec e_1,\vec e_2\}\) onto the line \(y=x\)</figcaption></figure><p id="p-1263">In this case \(L(\vec e_1)=L(\vec e_2)=\frac12(1,1)\text{,}\) and so the matrix representation is</p>
 <div class="displaymath">
 \begin{equation*}
 \frac12\begin{bmatrix}
@@ -439,7 +448,7 @@ L(\vec e_i)=a_{1,i}\vec e_1+a_{2,i}\vec e_2+\cdots+a_{n,i}\vec e_n
 </li>
 <li id="li-407">
 <figure class="figure figure-like" id="figure-73"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><div class="asymptote-box" style="padding-top: 95.8913791762968%"><iframe src="images/image-75.html" class="asymptote"></iframe></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.17<span class="period">.</span></span><span class="space"> </span>Dilation of \(\{\vec e_1,\vec e_2\}\) for \(L(\vec x)=sx\)</figcaption></figure><p id="p-1262">The matrix representation of \(L(\vec x)=sx\) is</p>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.18<span class="period">.</span></span><span class="space"> </span>Dilation of \(\{\vec e_1,\vec e_2\}\) for \(L(\vec x)=sx\)</figcaption></figure><p id="p-1264">The matrix representation of \(L(\vec x)=sx\) is</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -450,11 +459,11 @@ s\amp 0\\ 0\amp s
 </li>
 </ul>
 <article class="exercise exercise-like" id="RotationMinusTheta"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-RotationMinusTheta"><h6 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.3.18</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-RotationMinusTheta"><article class="exercise exercise-like"><p id="p-1263">Give the matrix representation of the linear transformation defined as a rotation by an angle \(\theta\) <em class="emphasis">clockwise</em>.</p>
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.3.19</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-RotationMinusTheta"><article class="exercise exercise-like"><p id="p-1265">Give the matrix representation of the linear transformation defined as a rotation by an angle \(\theta\) <em class="emphasis">clockwise</em>.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-36" id="solution-36"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-36"><div class="solution solution-like">
-<p id="p-1264">A rotation clockwise by \(\theta\) is the same as a rotation counterclockwise by \(-\theta\text{,}\) and so the representation is</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-37" id="solution-37"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-37"><div class="solution solution-like">
+<p id="p-1266">A rotation clockwise by \(\theta\) is the same as a rotation counterclockwise by \(-\theta\text{,}\) and so the representation is</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}

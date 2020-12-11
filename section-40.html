@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-12-08T13:11:43-06:00       *-->
+<!--*       on 2020-12-11T14:59:19-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -109,7 +109,7 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-40"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">6.1</span> <span class="title">Transformations from \(\R^n\) to \(\R^n\)</span>
 </h2>
-<section class="introduction" id="introduction-18"><p id="p-1198">Remember how functions \(f\colon X\to Y\) work. For each \(x\in X\text{,}\) the value of \(f(x)\in Y\) is defined. Typically this is done with a formula. For example, if \(f(x)=x^2\text{,}\) then for \(x=3\) we compute \(f(x)=f(3)=3^2=9\text{.}\) What is \(X\) in this case? So far, we don't know. It might be the nonnegative integers \(\N\) or the real numbers \(\R\text{,}\) so when defining a function it is important to understand \(X\) and \(Y\) as part of the definition.</p>
+<section class="introduction" id="introduction-18"><p id="p-1198">Remember how functions \(f\colon X\to Y\) work. For each \(x\in X\text{,}\) the value of \(f(x)\in Y\) is defined. Typically this is done with a formula. For example, if \(f(x)=x^2\text{,}\) then for \(x=3\) we compute \(f(x)=f(3)=3^2=9\text{.}\) What is the set  \(X\) in this case? So far, we don't know. It might be the nonnegative integers \(\N\) or the real numbers \(\R\text{,}\) so when defining a function it is important to understand \(X\) and \(Y\) as part of the definition.</p>
 <p id="p-1199">Now consider defining \(g\colon X\to Y\) as \(g(x)=\sqrt x \text{.}\) If we try to use \(X=\R\text{,}\) there is a problem, since negative real numbers don't have (real) square roots, and we must be able to evaluate \(g(x)\) for <em class="emphasis">all</em> \(x\in X\text{.}\) If we use \(X=\N\) we don't have this problem, but we note that \(g(2)=\sqrt2\) is not in \(\N\text{.}\) If we use \(Y=\R\text{,}\) then there are no problems, so we can use \(g\colon\N\to\R\text{.}\) Every function has sets \(X\) and \(Y\) as part of its definition, and it is important to be aware of them, even if only implicitly. The set \(X\) is the <dfn class="terminology">domain</dfn> and the set \(Y\) is the <dfn class="terminology">codomain</dfn>.</p></section><section class="subsection" id="subsection-89"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.1.1</span> <span class="title">Matrix transformations</span>
 </h3>
@@ -161,7 +161,7 @@ T_A(\vec x)
 \end{equation*}
 </div>
 <p data-braille="continuation">and so \(T_A((x,y,z))=(x+y,y+z)\text{.}\)</p>
-<p id="p-1206">As can be seen from this example, when writing transformations it is customary to write vectors horizontally, while when using matrix multiplication it is customary to write them vertically. This does not cause confusion since the context makes the notation clear (compare this example with <a class="xref" data-knowl="./knowl/Transformations1.html" title="Example 6.1.1: Transformations between \(\R^2\) and \(\R^3\)">Example 6.1.1</a>).</p></article><article class="theorem theorem-like" id="MatrixTransformationsLinear"><h6 class="heading">
+<p id="p-1206">As can be seen from this example, when writing transformations in the form \(T(\mathbf x)\) it is customary to write vectors horizontally, while when using matrix multiplication it is customary to write them vertically. This slight abuse of notation normally does not cause confusion. Compare this example with <a class="xref" data-knowl="./knowl/Transformations1.html" title="Example 6.1.1: Transformations between \(\R^2\) and \(\R^3\)">Example 6.1.1</a>.</p></article><article class="theorem theorem-like" id="MatrixTransformationsLinear"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Linearity of matrix transformations.</span>
 </h6>
 <p id="p-1207">Let \(T_A\) be a matrix transformation. Then</p>

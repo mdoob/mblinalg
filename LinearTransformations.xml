@@ -8,7 +8,7 @@
        <m>x\in X</m>, the value of <m>f(x)\in Y</m> is defined.
        Typically this is done with a formula. For example, if
        <m>f(x)=x^2</m>, then for <m>x=3</m> we compute <m>f(x)=f(3)=3^2=9</m>.
-       What is <m>X</m> in this case? So far, we don't know. It might be
+       What is the set  <m>X</m> in this case? So far, we don't know. It might be
        the nonnegative integers <m>\N</m> or the real numbers <m>\R</m>,
        so when defining a function it is important to understand <m>X</m>
        and <m>Y</m> as part of the definition.
@@ -97,10 +97,11 @@
        </p>
 
        <p>
-       As can be seen from this example, when writing transformations it is
-       customary to write vectors horizontally, while when using matrix multiplication
-       it is customary to write them vertically. This does not cause confusion since the
-       context makes the notation clear (compare this example with <xref ref="Transformations1"/>).
+       As can be seen from this example, when writing transformations in the form
+       <m>T(\mathbf x)</m> it is customary to write vectors horizontally, while 
+       when using matrix multiplication it is customary to write them vertically. 
+       This slight abuse of notation normally does not cause confusion.
+       Compare this example with <xref ref="Transformations1"/>.
        </p>
        </example>
 
@@ -134,13 +135,15 @@
        <title>Linear transformations</title>
        <statement>
            <p>
-           A transformation <m>T\colon \R^n\to\R^m</m> is a <term>linear transformation</term>
+           A transformation <m>T\colon \R^n\to\R^m</m> 
+           is a <term>linear transformation</term>
            if it satisfies
            <ul>
                <li><m>T(\vec x+\vec y)=T(\vec x)+T(\vec y)</m></li>
                <li><m>T(r\vec x)=rT(\vec x)</m> </li>
            </ul>
-           for any vectors <m>\vec x</m> and <m>\vec y</m> in <m>\R^n</m> and any scalar <m>r</m>.
+           for any vectors <m>\vec x</m> and <m>\vec y</m> in <m>\R^n</m> 
+           and any scalar <m>r</m>.
            </p>
        </statement>
        </definition>
@@ -153,7 +156,7 @@
     <title>Rotations, reflections, projections and dilations</title> 
       
         <subsection><title>Transformations <m>T\colon \R^2\to\R^2</m></title> 
-        <p>
+        <p> 
         We wish to consider some transformations that are geometrically inspired.
         The following examples from <m>\R^2</m> will be  useful as we study
         linear transformations.
@@ -246,7 +249,7 @@
             We start with a real number <m>s\gt 0</m>. For a point <m>\vec x</m>,
             let <m>L(\vec x)=s\vec x</m>. If
             <m>\vec x\not=\vec0</m>, then <m>L(\vec x)</m>
-            is on joining <m>\vec x</m> and <m>\vec 0</m>. The distance from 
+            is on the line joining <m>\vec x</m> and <m>\vec 0</m>. The distance from 
             <m>\vec x</m> to <m>\vec 0</m> has been stretched by a factor of <m>s</m>
             to get the distance from <m>L(\vec x)</m> to <m>\vec 0</m>.
             </p>
@@ -366,7 +369,7 @@
             </me>.
         </li> 
         <li>
-            <m>L((x_1,x_2,x_3))=(x_1+x_2,x_2+x_3)</m> since 
+            <m>L((x_1,x_2,x_3))=(x_1+x_2,x_2+x_3)</m> 
             <me>
             \begin{array}{rl}
                 L(\vec x)+L(\vec y)
@@ -394,8 +397,8 @@
         </p>
         
         <p>
-        Here are some interesting transformations (which will 
-        turn out to be linear) <m>L\colon \R^2\to\R^2</m>.
+        Here are some interesting transformations (which are shown
+        to be linear) <m>L\colon \R^2\to\R^2</m>.
         </p>
         <list xml:id="LinearTransformationsExamplesList">
             <title>Examples of linear transformations in <m>\R^2</m></title>
@@ -614,7 +617,7 @@
                   </image>
                </figure>
                <p>
-               A different proof uses the linearity of the reflection 
+               However, a different proof uses the linearity of the reflection 
                transformation <m>L</m> given in <xref ref="ReflectionsAreLinear"/>
                and the observation that <m>T(\vec x)</m> is the midpoint
                of the line joining <m>\vec x</m> and <m>L(\vec x)</m>.
@@ -710,7 +713,7 @@
         </subsection>
     
         <subsection><title>First properties of linear transformations</title>
-            <theorem><title>First properties</title>
+            <theorem xml:id="LinearTransformationFirstProperties"><title>First properties</title>
             <statement>
             <p>
                 Any linear transformation <m>L</m> satisfies
@@ -765,21 +768,41 @@
                     =L(r_1\vec x_1)+L(r_2\vec x_2)
                     =r_1L(\vec x_1)+r_2L(\vec x_2) </m>
                 </p></li>
-                <li><p>We apply the addition property repeatedly: 
+                <li><p>We apply the the previous addition property repeatedly: 
                     <md alignment="alignat">
                     <mrow>L(r_1\vec x_1+r_2 \vec x_2\amp+\cdots+r_n\vec x_n)</mrow>
                     <mrow>\amp = L(r_1\vec x_1)+L(r_2 \vec x_2+\cdots+r_n\vec x_n)</mrow>
                     <mrow>\amp = r_1L(\vec x_1)+ L(r_2\vec x_2+\cdots+r_n\vec x_n)</mrow>
-                    <mrow>\amp = r_1L(\vec x_1)+ L(r_2\vec x_2)+L(r_3\vec x_3+\cdots+r_n\vec x_n)</mrow>
-                    <mrow>\amp = r_1L(\vec x_1)+ r_2L(\vec x_2)+L(r_3\vec x_3+\cdots+r_n\vec x_n)</mrow>
+                    <mrow>\amp = r_1L(\vec x_1)+ L(r_2\vec x_2)
+                       +L(r_3\vec x_3+\cdots+r_n\vec x_n)</mrow>
+                    <mrow>\amp = r_1L(\vec x_1)+ r_2L(\vec x_2)
+                       +L(r_3\vec x_3+\cdots+r_n\vec x_n)</mrow>
                     <mrow>\amp \,\,\,\vdots</mrow>
-                    <mrow>\amp = r_1L(\vec x_1)+r_2 L(\vec x_2)+\cdots+r_nL(\vec x_n)</mrow>
+                    <mrow>\amp = r_1L(\vec x_1)+r_2 L(\vec x_2)
+                       +\cdots+r_nL(\vec x_n)</mrow>
                     </md>
                 </p></li>
                 </ol>
             </p>
             </proof>
             </theorem>
+
+            <exercise>
+            <statement>
+            <p>
+               Show that the reflection by by a line not passing through 
+               <m>\mathbf0</m> is <em>not</em> a linear transformation.
+            </p>
+            </statement>
+            <solution>
+            <p>
+               The line not passing through <m>\mathbf0</m> implies
+               <m>L(\mathbf0)\not=\mathbf0</m>.
+               However <xref ref="LinearTransformationFirstProperties"/> proves
+               that any linear transformation satisfies <m>L(\mathbf0)=\mathbf0</m>.
+            </p>
+            </solution>
+            </exercise>
 
             <theorem>
             <title>New linear transformations from old ones</title>
@@ -1344,7 +1367,7 @@
            =\begin{bmatrix} 3\amp2\\ 3\amp3 \end{bmatrix}
            \begin{bmatrix} x\\y \end{bmatrix}
            = \begin{bmatrix} 3x+2y\\3x+3y \end{bmatrix}\\
-           (T_2\circ T_1)(x,y) 
+           (T_2\circ T_1)(x,y,z) 
            = A_{T_2}A_{T_1} \begin{bmatrix} x\\y\\z \end{bmatrix}
            = \begin{bmatrix} 1\amp2\amp1\\ 2\amp3\amp1\\1\amp3\amp2 \end{bmatrix}
               \begin{bmatrix} x\\y\\z \end{bmatrix}
@@ -1601,7 +1624,7 @@
         the origin with slope <m>m</m>, that is, lines with an equation 
         of the form <m>y=mx</m>. Note that the point <m>(1,m)</m> is on the
         line. If we let <m>\theta</m> be the angle between the line and
-        the <m>x\text{-axis}</m>, then 
+        the positive <m>x\text{-axis}</m>, then 
         <m>\cos\theta=\frac1{\sqrt{m^2+1}}</m> and
         <m>\sin\theta=\frac m{\sqrt{m^2+1}}</m>.
         </p>
