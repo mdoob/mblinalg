@@ -601,7 +601,7 @@
         <me>
         A=\begin{bmatrix} \amp\amp\vdots \\
         \color{red}{a_{i,1}} \amp \color{red}{a_{i,2}}\amp\cdots\amp \color{red}{a_{i,n}}
-        \rlap{\quad R_i}\\ \amp\amp\vdots\\ 
+        \rlap{\hbox{$\quad R_i$}}\\ \amp\amp\vdots\\ 
         \end{bmatrix}
         \qquad\quad
         \begin{matrix}
@@ -2128,22 +2128,22 @@
         </me> 
         </p>
 
+        <example>
+        <title>The inverse of a <m>3\times2</m> matrix</title> 
         <p> 
-        <m>\textbf{The inverse of a}</m> <m>2\times2</m>
-        <m>\textbf{matrix}</m> We start with the matrix 
+        We start with the matrix 
         <me> 
-            A=
-            \begin{bmatrix} a\amp b\\c\amp d \end{bmatrix} 
+            A=\begin{bmatrix} a\amp b\\c\amp d \end{bmatrix} 
         </me> 
         Now we carry out row reduction: 
         <me> 
            \left[ \begin{array}{cc|cc}
-               a\amp b\amp1\amp0\rlap{\qquad R_1\gets \frac1a R_1}\\
+               a\amp b\amp1\amp0\rlap{\hbox{$\qquad R_1\gets \frac1a R_1$}}\\
                c\amp d\amp0\amp1
            \end{array} \right]  \\ 
            \left[ \begin{array}{cc|cc}
                1\amp\frac ba\amp\frac1a\amp0\\ 
-               c\amp d\amp0\amp1 \rlap{\qquad R_2\gets R_2-cR_1}
+               c\amp d\amp0\amp1 \rlap{\hbox{$\qquad R_2\gets R_2-cR_1$}}
            \end{array} \right]\\ 
            \left[ \begin{array}{cc|cc}
                 1\amp\frac ba\amp\frac1a\amp0
@@ -2151,11 +2151,13 @@
             \end{array} \right] \rlap{\hbox{(Rewrite last row)}}   \\
             \left[\begin{array}{cc|cc}
                 1\amp\frac ba\amp\frac1a\amp0\\ 
-                0\amp\frac{ad-bc}a\amp-\frac ca\amp1 \rlap{\qquad R_2\gets \frac a{ad-bc}R_2}
+                0\amp\frac{ad-bc}a\amp-\frac ca\amp1 
+                   \rlap{\hbox{$\qquad R_2\gets \frac a{ad-bc}R_2$}}
             \end{array} \right]\\ 
             \left[ \begin{array}{cc|cc}
                 1\amp\frac ba\amp\frac1a\amp0\\ 
-                0\amp1\amp-\frac c{ad-cb}\amp \frac a{ad-cb} \rlap{\qquad R_1\gets R_1-\frac ba R_2}
+                0\amp1\amp-\frac c{ad-cb}\amp \frac a{ad-cb} \rlap{\hbox{$\qquad
+                R_1\gets R_1-\frac ba R_2$}}
             \end{array}\right]\\ \left[ \begin{array}{cc|cc}
                 1\amp0\amp \frac d{ad-cb}\amp -\frac b{ad-cb}   \\
                 0\amp1\amp-\frac c{ad-cb}\amp \frac a{ad-cb}
@@ -2206,6 +2208,7 @@
         \frac1{ad-bc}\begin{bmatrix} d\amp-b\\-c\amp a \end{bmatrix}
         </me> 
         </p> 
+        </example>
         </subsection>
 
 

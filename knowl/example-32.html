@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-12-11T14:59:33-06:00       *-->
+<!--*       on 2020-12-21T10:39:03-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,59 +15,56 @@
 </head>
 <body>
 <article class="example example-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.7</span><span class="period">.</span><span class="space"> </span><span class="title">Application of Cramer's rule.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">The inverse computed using the adjoint of \(A\).</span>
 </h6>
-<p>Consider the system of linear equations</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-x_1+x_2+x_3=2\\
-x_1-x_2+x_3=0\\
-2x_1-x_2+x_3=2
-\end{equation*}
-</div>
-<p data-braille="continuation">We have</p>
+<p>Let</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 A=
 \begin{bmatrix}
-1 \amp 1\amp 1\\
-1 \amp -1 \amp 1 \\
-2 \amp -1 \amp 1
+1\amp 2\amp 1\\ 2\amp 3\amp 5 \\1\amp 2\amp 0
 \end{bmatrix}
-\qquad
-\det A=2 \\
-A_1=
-\begin{bmatrix}
-2 \amp 1\amp 1\\
-0 \amp -1 \amp 1 \\
-2 \amp -1 \amp 1
-\end{bmatrix}
-\qquad
-\det A_1=4 \\
-A_2=
-\begin{bmatrix}
-1 \amp 2\amp 1\\
-1 \amp 0 \amp 1 \\
-2 \amp 2 \amp 1
-\end{bmatrix}
-\qquad
-\det A_2=2 \\
-A_3=
-\begin{bmatrix}
-1 \amp 1\amp 2\\
-1 \amp -1 \amp 0 \\
-2 \amp -1 \amp 2
-\end{bmatrix}
-\qquad
-\det A_3=-2 
 \end{equation*}
 </div>
-<p data-braille="continuation">and so</p>
+<p data-braille="continuation">First we compute \(\det A=1\)</p>
+<p>Next we compute the minors:</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-x_1=\frac42=2\\
-x_2=\frac22=1\\
-x_3=\frac{-2}2=-1
+\begin{array}{lll}
+M_{1,1}= -10 \amp M_{1,2}= -5 \amp M_{1,3}= 1 \\
+M_{2,1}= -2 \amp M_{2,2}= -1 \amp M_{2,3}= 0 \\
+M_{3,1}= 7 \amp M_{3,2}= 3 \amp M_{3,3}= -1 
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">from which we deduce</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+M=
+\begin{bmatrix}
+-10 \amp -5 \amp 1 \\
+-2 \amp -1 \amp 0 \\
+7 \amp 3 \amp -1 
+\end{bmatrix}
+\qquad
+C=
+\begin{bmatrix}
+-10 \amp 5 \amp 1 \\
+2 \amp -1 \amp 0 \\
+7 \amp -3 \amp -1 
+\end{bmatrix}
+\end{equation*}
+</div>
+<p data-braille="continuation">from which follows</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A^{-1}=\frac1{\det A} \adj A=\frac 11 C^T
+=
+\begin{bmatrix}
+-10 \amp 2 \amp 7\\ 
+5 \amp -1 \amp -3 \\ 
+1\amp 0 \amp -1 
+\end{bmatrix}
 \end{equation*}
 </div></article><span class="incontext"><a href="section-23.html#example-32">in-context</a></span>
 </body>
