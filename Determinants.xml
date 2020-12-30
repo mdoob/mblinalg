@@ -119,7 +119,7 @@
         \amp\text{(negative terms are in same colour)}
     \end{array}
     </me>
-    However visualized, we can evalaute
+    However visualized, we can evaluate
     <m>\det(A)=
     ({\color{red}{a_{1,1}a_{2,2}a_{3,3}}}
     +{\color{green}{a_{1,2}a_{2,3}a_{3,1}}}
@@ -159,7 +159,7 @@
     </p>
     
     <p>
-       We focus on a partcular element <m>a_{i,j}</m> of a square matrix <m>A</m>.
+       We focus on a particular element <m>a_{i,j}</m> of a square matrix <m>A</m>.
    </p>
     
     <definition xml:id="MatrixMinorDefinition"><title>The <m>i,j</m> minor of a matrix <m>A</m></title>
@@ -288,7 +288,7 @@
             1\amp 2\amp 1
         \end{bmatrix}
     </me>
-    From the defintion of the matrix of minors:
+    From the definition of the matrix of minors:
     <md>
     <mrow>
         M \amp=
@@ -343,7 +343,7 @@
         1\amp 2\amp 1
     \end{bmatrix}
     </me>
-    From the defintion of the cofactor matrix:
+    From the definition of the cofactor matrix:
     <md>
     <mrow>
         C \amp=
@@ -589,7 +589,7 @@
         \end{bmatrix}
         </mrow>
         </md>
-        Finally, we compte the sums of the entries in each row and each column.
+        Finally, we compote the sums of the entries in each row and each column.
         <me>
         \begin{matrix}
             \amp \textrm{Row sums} \\
@@ -1900,7 +1900,7 @@
     </p>
     </example>
 
-    <proposition><title>Intergral matrices with integral inverses</title>
+    <proposition><title>Integral matrices with integral inverses</title>
     <statement>
     <p>
     If <m>A</m> is a square matrix with integer entries, then
@@ -2059,7 +2059,7 @@
     as in <xref ref="CofactorExpansionExample"/>, involve the reduction of
     the evaluation of one matrix of order <m>n</m> to the evaluation of
     the <m>n</m> determinants of matrices of order <m>n-1</m>. In this 
-    section we will see how, at least in principle, to evalute the
+    section we will see how, at least in principle, to evaluate the
     determinant of a large matrix directly.
     </p>
     </introduction>
@@ -2135,7 +2135,7 @@
         remaining elements for the next position to the right, and
         so there <m>n(n-1)(n-2)</m> choices for listing the three
         leftmost positions. Continuing in this manner, the number of ways
-        of filling all <m>n</m> positons is <m>n(n-1)(n-2)\cdots(1)=n!</m>.
+        of filling all <m>n</m> positions is <m>n(n-1)(n-2)\cdots(1)=n!</m>.
 
         </p>
         </proof>
@@ -2846,7 +2846,7 @@
         and rearrange the columns so that the bottom row is
         <m>123\cdots n</m>. 
         For example, if <m>\sigma= \begin{pmatrix} 123456\\324165\end{pmatrix}</m>,
-        rearranging the colums gives the permutation
+        rearranging the columns gives the permutation
         <m>\begin{pmatrix} 421365\\123456\end{pmatrix}</m>.
         </p>
         <p>
@@ -3030,7 +3030,7 @@
         </p>
         <p>
         <xref ref="SigmaSearchAlgorithm"/> proceeds step by step:
-        at each step the matrix under cosideration has its top
+        at each step the matrix under consideration has its top
         row and one column deleted. At step <m>k</m> we have
         a matrix <m>N</m> derived from <m>A</m> by deleting
         the first <m>k-1</m> row and columns 

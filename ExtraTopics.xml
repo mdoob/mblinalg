@@ -117,7 +117,7 @@
             
             Next we take the last expression and vary <m>n</m>,
             the limit of summation. Here is a table that includes
-            some small vaules of <m>n</m>:
+            some small values of <m>n</m>:
         </p>
         <!-- Perhaps better as a side-by-side or aligned eqaution-->
         <table>
@@ -389,7 +389,7 @@
         <subsection> <title>Basic Definitions</title>
         <p>
         Trigonometry was originally used for measuring triangles. Given a right
-        triangle with hypoteneuse <m>c</m>, legs <m>a</m> and <m>b</m> 
+        triangle with hypotenuse <m>c</m>, legs <m>a</m> and <m>b</m> 
         and angle <m>\theta</m> (as in the left illustration in <xref ref="TrigFunctions"/>), 
         the six trigonometric functions are defined by
         <me>
@@ -409,7 +409,7 @@
         </p>
         
         <figure xml:id="TrigFunctions">
-        <caption>Triginometric functions of angles</caption>
+        <caption>Trigonometric functions of angles</caption>
         <image width="90%"> 
         <asymptote>
             unitsize(30);
@@ -465,10 +465,10 @@
         
         <subsection> <title>The law of cosines</title>
         <p>
-        In the right triangle above, the angle opposite the side labeled <m>c</m> is an
+        In the right triangle above, the angle opposite the side labelled <m>c</m> is an
         right angle, and the Pythagorean theorem says <m>c^2=a^2+b^2</m>. The law of 
         cosines extends this theorem to triangles with any angle opposite the
-        side labeled <m>c</m>. 
+        side labelled <m>c</m>. 
         </p>
         
         <theorem xml:id="LawOfCosines"> <title>The law of cosines</title>
@@ -499,7 +499,7 @@
         
         <proof>
            <p> 
-           Note that since <m>a</m> and <m>b</m> are interchangable in the picture,
+           Note that since <m>a</m> and <m>b</m> are interchangeable in the picture,
            there is no loss of generality to assume <m>a \le b</m>.
            We prove the law of cosines by dropping a perpendicular to the side <m>b</m>: 
            </p>
@@ -969,7 +969,7 @@
         The points <m>A=(\cos(\alpha),\sin(\alpha))</m>,
         <m>B=\cos(\alpha+\beta),\sin(\alpha+\beta))</m> and <m>(0,1)</m> all lie on a circle
         with centre at the origin and radius <m>1</m>. These three points are joined
-        by a line to the origin <m>\vec 0</m>.  Drop perpediculars from B to the
+        by a line to the origin <m>\vec 0</m>.  Drop perpendiculars from B to the
         line joining <m>\vec0</m> and <m>(1,0)</m> and also to the line joining  and
         <m>\vec0</m> and <m>A</m>. The points <m>F</m> and <m>E</m> are where the perpendiculars
         meet the respective lines.  The line joining <m>B</m> and <m>E</m> is extended
@@ -1108,7 +1108,7 @@
         Suppose a triangle has sides of lengths <m>a</m>, <m>b</m> and <m>c</m>. Let
         <m>\alpha</m>, <m>\beta</m>, and <m>\gamma</m> be the angles opposite
         <m>a</m>, <m>b</m> and <m>c</m> respectively. In addition, let the vertices
-        of the triangle be labeled <m>A</m>, <m>B</m> and <m>C</m> at the angles
+        of the triangle be labelled <m>A</m>, <m>B</m> and <m>C</m> at the angles
         <m>\alpha</m>, <m>\beta</m>, and <m>\gamma</m> respectively. Our picture
         looks like this:
         </p>
@@ -1141,7 +1141,7 @@
         <p>
         It is pretty obvious that
         the sides with longer length will have larger angles
-        opposite. The law of sines makes this realtionship
+        opposite. The law of sines makes this relationship
         precise.
         </p>
         
@@ -1164,7 +1164,7 @@
             the largest angle. It may be acute or obtuse, but <m>\beta</m> and
             <m>\gamma</m> are definitely acute. That implies that we may drop
             a perpendicular from <m>A</m> that will divide the angle <m>\alpha</m> into
-            <m>\alpha_1</m> and  <m>\alpha_2</m> the side opposite into segements with
+            <m>\alpha_1</m> and  <m>\alpha_2</m> the side opposite into segments with
             lengths <m>a_1</m> and <m>a_2</m>.
         </p>
 

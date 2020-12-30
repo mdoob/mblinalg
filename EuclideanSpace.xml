@@ -28,7 +28,7 @@
         The most familiar examples, of course, are <m>\R^2</m>, the plane, and
         <m>\R^3</m>, ordinary 3-dimensional space. For <m>\R^2</m> we
         have an <m>x</m>-axis and a <m>y</m>-axis, and the points in the plane
-        as <m>2</m>-tuples are defined by dropping perpediculars to each axis.
+        as <m>2</m>-tuples are defined by dropping perpendiculars to each axis.
         </p>
     
         <figure>
@@ -1498,7 +1498,7 @@
         if and only if  <m>\overrightarrow{P_1Q_1}</m> and  <m>\overrightarrow{P_2Q_2}</m>
         have the same length and direction, which means <m>X=Q_2-P_2</m>.
         While the picture is in <m>\R^2</m>, but the idea
-        is easily extended to the same pictue in <m>\R^3</m> by considering the plane containing
+        is easily extended to the same picture in <m>\R^3</m> by considering the plane containing
         <m>\vec0</m>, <m>\vec x</m> and <m>\vec y</m>.
         Indeed, the definition in <m>\R^n</m> follows the same pattern:
         A vector <m>\overrightarrow{PQ}</m> is visualized as an arrow with tail
@@ -1583,7 +1583,7 @@
     
         <subsection><title>Addition of directed vectors</title>
         <p>
-        We next give a geometric intepretation for the addition of directed
+        We next give a geometric interpretation for the addition of directed
         vectors. We wish to use the same pattern as we did with scalar
         multiplication: be consistent with the geometric interpretation
         of the parallelogram rule for <m>n</m>-tuples.
@@ -1636,7 +1636,7 @@
          Now consider the vector with tail at <m>P</m> and head at <m>Q+S-R</m>.
          This is the third side of the triangle. The head minus tail rule of evaluation
          gives <m>Q+S-R-P</m>, which is exactly what we computed for the sum. This gives
-         us a wonderful geometric interpretation fo the sum of two vectors.
+         us a wonderful geometric interpretation of the sum of two vectors.
         </p>
     
         <figure>
@@ -3489,7 +3489,7 @@
 
         <p>
         The distance from a point to a hyperplane in <m>\R^n</m> is computed
-        analoguously.
+        analogously.
         </p>
         </subsection>
     </section>
@@ -3842,7 +3842,7 @@
     
         <paragraphs><title>Skew lines</title>
         <p>
-        We start with the eqations of two skew lines:
+        We start with the equations of two skew lines:
             <ul>
             <li><p> <m>L_1</m> has equation 
                 <m>(x,y,z)=\vec{X_1}+t_1\vec{n_1}</m>, <m>-\infty \lt t \lt\infty</m></p></li>
@@ -4130,7 +4130,7 @@
                 </statement>
     	    </definition>
     	    <p>
-            In other words, any <m>\vec w</m> is a linear comibination of 
+            In other words, any <m>\vec w</m> is a linear combination of 
             <m>\{\vec x_1,\vec x_2,\ldots,\vec x_m\}</m>,
             and  we can always find solutions to
     	        <me>
@@ -4753,7 +4753,7 @@
             <p>
             Let <m>S</m> be a subspace of <m>\R^n</m>, and let <m>B_1</m> and
             <m>B_2</m> be two bases of <m>S</m>. Then <m>B_1</m> and <m>B_2</m> have the same
-            numer of elements.
+            number of elements.
             </p>
             </statement>
             <proof>
@@ -4950,7 +4950,7 @@
         </p>
         <p>
         With the standard basis <m>\{\vec e_1,\vec e_2\}</m>,
-        the coordinates of a vector <m>\vec w</m> are determented 
+        the coordinates of a vector <m>\vec w</m> are determined 
         by dropping perpendiculars to the <m>x</m>-axis and 
         to the <m>y</m>-axis.  The parallelogram is actually a 
         rectangle since the basis vectors are orthogonal.
@@ -5042,7 +5042,7 @@
         A \begin{bmatrix} r_1\\r_2\\ \vdots \\r_n \end{bmatrix}
         =\vec w
         </me>.
-        This is easily verfied by evaluating <m>\vec w_k</m>
+        This is easily verified by evaluating <m>\vec w_k</m>
         in each case, for <m>k=1,2,\ldots,n</m>.
         </p>
         </observation>

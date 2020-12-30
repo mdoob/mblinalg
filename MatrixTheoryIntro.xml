@@ -151,7 +151,7 @@
     
     <p>
     On the face of it, in order to show that two <m>m\times n</m> matrices are equal, we must
-    check the equaltiy of all <m>mn</m> entries. One reason we study mathematics is to make
+    check the equality of all <m>mn</m> entries. One reason we study mathematics is to make
     calculations easier. Our mathematical development will, in fact, 
     do just that.
     </p>
@@ -1188,7 +1188,7 @@
             <mrow> \amp = \sum_{k=1}^r \bigl(\sum_{\ell=1}^n a_{i,\ell}b_{\ell,k}c_{k,j}\bigr) </mrow>
             <mrow> \amp = \sum_{k=1}^r \sum_{\ell=1}^n a_{i,\ell}b_{\ell,k}c_{k,j} </mrow>
             </md>
-            On ther other hand
+            On the other hand
             <me>
             \bigl(A(BC)\bigr)_{i,j} = \sum_{\ell=1}^n a_{i,\ell} (BC)_{\ell,j}
             </me>
@@ -1317,7 +1317,7 @@
                 s\amp t
                 \end{bmatrix}</me>
                 is a solution of the matrix equation <m>AX=B</m> for any choice of <m>s</m> and <m>t</m>.
-                Notice the similarty of the two matrices to be put into reduced
+                Notice the similarity of the two matrices to be put into reduced
                 row echelon form. They differ, of course, only in the last column. In
                 fact, this means that exactly the same elementary row operations were
                 used to put both matrices into reduced row echelon form. Since both
@@ -1594,7 +1594,7 @@
         <p>
         Suppose that <m>A</m> is <m>m\times n</m> and <m>B</m> is <m>n\times
         m</m> (remember that <m>AB</m> is then defined and square).
-        To evalute both <m>\tr (AB)</m> and <m>\tr (BA)</m>, we
+        To evaluate both <m>\tr (AB)</m> and <m>\tr (BA)</m>, we
         consider the following rectangular array of numbers:
     
         <me>
@@ -2905,7 +2905,7 @@
         </p></li>
         <li><p>
             <m>(rA)(\tfrac 1r A^{-1}) = r\tfrac 1r A A^{-1}=1I=I</m> 
-            andso <m>\tfrac 1r A^{-1}</m> is the inverse of <m>rA</m>.  
+            and so <m>\tfrac 1r A^{-1}</m> is the inverse of <m>rA</m>.  
         </p></li>
 	    </ul> 
     </p>

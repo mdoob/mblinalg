@@ -1177,7 +1177,7 @@
    
     <exercise>
     <statement>
-    <p>Use two elementary rwo operations to make the first column
+    <p>Use two elementary row operations to make the first column
     of the resulting matrix
     <m>
     \begin{bmatrix}
@@ -1699,7 +1699,7 @@
       </p>
       </statement>
       <solution>
-      <p>We put the augemented matrix into row echelon form:
+      <p>We put the augmented matrix into row echelon form:
         <me>
         \begin{bmatrix}
         1 \amp 2 \amp -1 \amp 2\\
@@ -2427,7 +2427,7 @@
         </p>
       </statement>
       <solution>
-      <p>We put the augemented matrix into reduced row echelon form:
+      <p>We put the augmented matrix into reduced row echelon form:
         <m>
         \begin{bmatrix}
         1 \amp 2 \amp -1 \amp 2\\
