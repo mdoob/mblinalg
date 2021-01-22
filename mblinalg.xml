@@ -7,8 +7,6 @@
 <title> Manitoba linear algebra </title>
 <xi:include href="./Frontmatter.xml" />
 
-<!--
--->
 <xi:include href="./SysLinEq.xml" />
 <xi:include href="./MatrixTheoryIntro.xml" />
 <xi:include href="./Determinants.xml" />

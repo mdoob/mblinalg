@@ -1184,7 +1184,7 @@
         <me>
             |\vec x\cdot\vec y|= \|\vec x\| \|\vec y\|\, |\cos \theta|
         </me>
-        and so we now have another equivalent condition for for linearity:
+        and so we now have another equivalent condition for linearity:
         <me>
             |\vec x\cdot\vec y|= \|\vec x\| \|\vec y\| 
         </me>
