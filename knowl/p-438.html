@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:42-06:00       *-->
+<!--*       on 2021-08-29T14:14:37-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,24 +15,15 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>If</p>
+<p>We consider the \((i,j)\) entry of \(AB\) by considering row \(i\) of \(A\) and column \(j\) of \(B\text{:}\)</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-D=\diag (d_1,d_2,\ldots,d_n)
+(AB)_{i,j} =a_{i,1}b_{1,j}+ a_{i,2}b_{2,j}+\cdots+
+a_{i,n}b_{n,j}.  
 \end{equation*}
 </div>
-<p data-braille="continuation">and</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-E=\diag (e_1,e_2,\ldots,e_n)
-\end{equation*}
-</div>
-<p data-braille="continuation">then it is easy to verify that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-DE=\diag (d_1e_1,d_2e_2,\ldots,d_ne_n) \text{.}
-\end{equation*}
-</div>
+<p class="continuation">If \((AB)_{i,j} \not= 0\text{,}\) then there is some \(k\) so that \(a_{i,k}b_{k,j}\not=0\text{.}\) This means that \(a_{i,k}\not=0\text{,}\) and, since \(A\) is upper triangular, we have \(k \geq i \text{.}\)  Similarly \(b_{k,j}\not=0\) implies \(j \geq k \text{.}\) Hence, if  \((AB)_{i,j} \not=
+0\text{,}\) then \(j \geq k \geq i\text{,}\) which makes \(AB\) upper triangular.</p>
 <span class="incontext"><a href="section-15.html#p-438">in-context</a></span>
 </body>
 </html>

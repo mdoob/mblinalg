@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:57-06:00       *-->
+<!--*       on 2021-08-29T14:14:55-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,12 +15,28 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Let \(A\) be an \(n\times m\) matrix and \(B\) an \(s\times n\) matrix. Also let \(L_A\) and \(L_B\) be the linear transformations defined by \(L_A(\vec x)=A\vec x\) and \(L_B(\vec x)=B\vec x\text{.}\) Then</p>
+<p>Now suppose that \((x,y)\) is on the original graph, that is, \(x^2-xy+y^2=1\text{,}\) and suppose that \((x,y)\) rotates to \((u,v)\text{.}\) The matrix representation of the rotation is \(\frac1{\sqrt2}
+\left[\begin{smallmatrix} 1\amp1\\-1\amp1 \end{smallmatrix}\right]
+\text{,}\) and so</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-L_{BA}=L_B\circ L_A
+\begin{bmatrix} u\\v \end{bmatrix}
+= 
+\frac1{\sqrt2} \begin{bmatrix} 1\amp1\\-1\amp1 \end{bmatrix}
+\begin{bmatrix} x\\y \end{bmatrix}
+=
+\frac1{\sqrt2} \begin{bmatrix}x+y\\-x+y\end{bmatrix}\text{.}
 \end{equation*}
 </div>
+<p class="continuation">This implies</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+u^2+3v^2
+=\frac12(x+y)^2+\frac32(-x+y)^2
+=2(x^2-xy+y^2)=2\text{,}
+\end{equation*}
+</div>
+<p class="continuation">and so \((u,v)\) is on the ellipse with the equation \(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\text{.}\)</p>
 <span class="incontext"><a href="section-43.html#p-1276">in-context</a></span>
 </body>
 </html>

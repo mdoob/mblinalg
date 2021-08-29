@@ -205,10 +205,10 @@
         
         <p>
             In addition, 
-            <me>
-                \sum_{k=1}^n(a_k+b_k)= \sum_{k=1}^na_k+\sum_{k=1}^nb_k,\\
-                \sum_{k=1}^n(a_k-b_k)= \sum_{k=1}^na_k-\sum_{k=1}^nb_k
-            </me>
+            <md>
+                <mrow>\sum_{k=1}^n(a_k+b_k)= \sum_{k=1}^na_k+\sum_{k=1}^nb_k,</mrow>
+                <mrow>\sum_{k=1}^n(a_k-b_k)= \sum_{k=1}^na_k-\sum_{k=1}^nb_k</mrow>
+            </md>
             and
             <me>
                 \sum_{k=0}^na_k= \sum_{k=t}^{n+t}a_{k-t}
@@ -392,16 +392,18 @@
         triangle with hypotenuse <m>c</m>, legs <m>a</m> and <m>b</m> 
         and angle <m>\theta</m> (as in the left illustration in <xref ref="TrigFunctions"/>), 
         the six trigonometric functions are defined by
-        <me>
-        \begin{array}{lll}
-        \sin(\theta)=\frac bc \amp
-        \cos(\theta)=\frac ac \amp
-        \tan(\theta)=\frac {\sin(\theta)}{\cos(\theta)}=\frac ba \\
-        \cot(\theta)=\frac {\cos(\theta)}{\sin(\theta)}=\frac ab \amp
-        \csc(\theta)=\frac 1{\sin(\theta)}=\frac cb \amp
-        \sec(\theta)=\frac 1{\cos(\theta)}=\frac ca
-        \end{array}
-        </me>
+        <md>
+        <mrow>
+          \sin(\theta)\amp=\frac bc 
+          \amp\cos(\theta)\amp=\frac ac 
+          \amp\tan(\theta)\amp=\frac {\sin(\theta)}{\cos(\theta)}=\frac ba 
+        </mrow>
+        <mrow>
+          \cot(\theta)    \amp=\frac 1{\tan(\theta)}=\frac ab 
+          \amp\csc(\theta)\amp=\frac 1{\sin(\theta)}=\frac cb 
+          \amp\sec(\theta)\amp=\frac 1{\cos(\theta)}=\frac ca
+        </mrow>
+        </md>
         
         The first three, the sine, the cosine and the tangent are by far the
         most important, even though the cotangent, cosecant and secant appear
@@ -967,10 +969,10 @@
         
         <p>
         The points <m>A=(\cos(\alpha),\sin(\alpha))</m>,
-        <m>B=\cos(\alpha+\beta),\sin(\alpha+\beta))</m> and <m>(0,1)</m> all lie on a circle
+        <m>B=\cos(\alpha+\beta),\sin(\alpha+\beta))</m> and <m>(1,0)</m> all lie on a circle
         with centre at the origin and radius <m>1</m>. These three points are joined
         by a line to the origin <m>\vec 0</m>.  Drop perpendiculars from B to the
-        line joining <m>\vec0</m> and <m>(1,0)</m> and also to the line joining  and
+        line joining <m>\vec0</m> and <m>(1,0)</m> and also to the line joining
         <m>\vec0</m> and <m>A</m>. The points <m>F</m> and <m>E</m> are where the perpendiculars
         meet the respective lines.  The line joining <m>B</m> and <m>E</m> is extended
         until it meets the line joining <m>\vec 0</m> and <m>(1,0)</m> at <m>D=(d,0)</m>.
@@ -1200,14 +1202,12 @@
 
         <p>
         Then we have
-        <me>
-        \begin{array}{rl}
-        \sin(\alpha) \amp = \sin(\alpha_1+\alpha_2)\\
-        \amp =\sin(\alpha_1)\cos(\alpha_2)+\cos(\alpha_1)\sin(\alpha_2)\\
-        \amp =\frac{a_1}c \frac hb + \frac hc \frac {a_2}b\\
-        \amp =\frac{ha}{bc}
-        \end{array}
-        </me>
+        <md>
+        <mrow>\sin(\alpha) \amp = \sin(\alpha_1+\alpha_2)</mrow>
+        <mrow>\amp =\sin(\alpha_1)\cos(\alpha_2)+\cos(\alpha_1)\sin(\alpha_2)\</mrow>
+        <mrow>\amp =\frac{a_1}c \frac hb + \frac hc \frac {a_2}b\</mrow>
+        <mrow>\amp =\frac{ha}{bc}</mrow>
+        </md>
         and so
         \[
         \frac{\sin(\alpha)}a = \frac h{bc}

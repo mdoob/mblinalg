@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:41-06:00       *-->
+<!--*       on 2021-08-29T14:14:36-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,61 +15,30 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose that \(A\) is an \(m\times n\) matrix and \(B\) is an \(m\times r\) matrix. We want find a matrix \(X\) so that \(AX=B.\) To be conformable for multiplication, \(X\) must be of size \(n\times r.\) Specifically, if \(A=[a_{i,j}]\text{,}\) \(X=[x_{i,j}]\)  and \(B=[b_{i,j}]\text{,}\) then we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\begin{bmatrix}
-a_{1,1} \amp a_{1,2} \amp \cdots \amp a_{1,n}\\
-a_{2,1} \amp a_{2,2} \amp \cdots \amp a_{2,n}\\
-\amp       \amp \vdots \amp\\
-a_{m,1} \amp a_{m,2} \amp \cdots \amp a_{m,n}
-\end{bmatrix}
-\begin{bmatrix}
-x_{1,1} \amp x_{1,2} \amp \cdots \amp x_{1,r}\\
-x_{2,1} \amp x_{2,2} \amp \cdots \amp x_{2,r}\\
-\amp       \amp \vdots \amp\\
-x_{n,1} \amp x_{n,2} \amp \cdots \amp x_{n,r}
-\end{bmatrix}
-=
-\begin{bmatrix}
-b_{1,1} \amp b_{1,2} \amp \cdots \amp b_{1,r}\\ 
-b_{2,1} \amp b_{2,2} \amp \cdots \amp b_{2,r}\\
-\amp       \amp \vdots \amp\\
-b_{m,1} \amp b_{m,2} \amp \cdots \amp b_{m,r}
-\end{bmatrix}
-\end{equation*}
-</div>
-<p data-braille="continuation">If we look at the \(i\)-\(j\) entry on both sides of this equation, we get</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-a_{i,1}x_{1,j} +a_{i,2}x_{2,j}+\cdots +a_{i,n}x_{n,j} = b_{i,j}.
-\end{equation*}
-</div>
-<p data-braille="continuation">If we keep the column number \(j\) of \(X\) fixed for the moment and let \(i\) range from \(1\) to \(m\text{,}\) we get a system of linear equations:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\begin{bmatrix}
-a_{1,1} \amp a_{1,2} \amp \cdots \amp a_{1,n}\\
-a_{2,1} \amp a_{2,2} \amp \cdots \amp a_{2,n}\\
-\amp       \amp \vdots \amp\\
-a_{m,1} \amp a_{m,2} \amp \cdots \amp a_{m,n}
-\end{bmatrix}
-\begin{bmatrix}
-x_{1,j}\\
-x_{2,j}\\ 
-\vdots \\
-x_{n,j}
-\end{bmatrix}
-=
-\begin{bmatrix}
-b_{1,j} \\
-b_{2,j}\\
-\vdots\\
-b_{m,j}
-\end{bmatrix}
-\end{equation*}
-</div>
-<p data-braille="continuation">We can solve this system by finding the reduced row echelon form of the augmented matrix. Here's the beautiful part: there are \(n\) different systems of linear equations that arise as \(j\) takes on the values from \(1\) to \(n\text{,}\) and they all have the identical coefficient matrix. This means that the same sequence of elementary row operations may be used on each of the equations to find the solutions.</p>
-<span class="incontext"><a href="section-11.html#p-345">in-context</a></span>
+<ul class="disc">
+<li><p>Let \(A=\begin{bmatrix}
+1\amp2\amp3\\4\amp5\amp6\\7\amp8\amp9
+\end{bmatrix}.\) Then \(A^T=\begin{bmatrix}
+1\amp4\amp7\\2\amp5\amp8\\3\amp6\amp9
+\end{bmatrix}\)</p></li>
+<li><p>The <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">identity matrix</dfn> \(I_n\) of order n has all diagonal entries equal to one and all other entries equal to zero. \(I_n=\begin{bmatrix}
+1 \amp 0 \amp 0 \amp \cdots \amp 0\\
+0 \amp 1 \amp 0 \amp \cdots \amp 0\\
+0 \amp 0 \amp 1 \amp \cdots \amp 0\\
+\amp   \amp   \amp \ddots \amp  \\ 
+0 \amp 0 \amp 0 \amp \cdots \amp 1
+\end{bmatrix}_n\) Clearly \(I_n^T=I_n.\)</p></li>
+<li><p>The transpose is defined for nonsquare matrices, too. Let \(A=\begin{bmatrix}
+1 \amp 2 \amp 3 \amp 4 \\
+5 \amp 6 \amp 7 \amp 8 \\
+9 \amp10\amp11\amp12
+\end{bmatrix}.\) Then \(A^T=\begin{bmatrix}
+1 \amp 5 \amp9\\
+2 \amp 6 \amp 10\\
+3 \amp 7 \amp 11\\
+4 \amp 8 \amp 12
+\end{bmatrix}.\)</p></li>
+</ul>
+<span class="incontext"><a href="section-12.html#p-345">in-context</a></span>
 </body>
 </html>

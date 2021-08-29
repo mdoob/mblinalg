@@ -370,28 +370,24 @@
         </li> 
         <li>
             <m>L((x_1,x_2,x_3))=(x_1+x_2,x_2+x_3)</m> 
-            <me>
-            \begin{array}{rl}
-                L(\vec x)+L(\vec y)
-                \amp =L((x_1,x_2,x_3))+L((y_1,y_2,y_3))\\
-                \amp = (x_1+x_2,x_2+x_3)+(y_1+y_2,y_2+y_3)\\
-                \amp =(x_1+x_2+y_1+y_2, x_2+x_3+y_2+y_3)\\
-                \amp =(x_1+y_1+x_2+y_2, x_2+y_2+x_3+y_3)\\
-                \amp =L((x_1+y_1,x_2+y_2,x_3+y_3))\\
-                \amp =L( (x_1,x_2,x_3)+ (y_1,y_2,y_3))\\
-                \amp =L(\vec x+\vec y) \text{, and}
-                \end{array}
-            </me>
-            <me>
-                \begin{array}{rl}
-                rL(\vec x)
-                \amp =rL((x_1,x_2,x_3))\\
-                \amp =r(x_1+x_2,x_2+x_3)\\
-                \amp =(rx_1+rx_2,rx_2+rx_3)\\
-                \amp =L((rx_1,rx_2,rx_3))\\
-                \amp =L(r\vec x).
-                \end{array}
-            </me>
+            <md>
+                <mrow>L(\vec x)+L(\vec y)
+                \amp =L((x_1,x_2,x_3))+L((y_1,y_2,y_3))</mrow>
+                <mrow>\amp = (x_1+x_2,x_2+x_3)+(y_1+y_2,y_2+y_3)</mrow>
+                <mrow>\amp =(x_1+x_2+y_1+y_2, x_2+x_3+y_2+y_3)</mrow>
+                <mrow>\amp =(x_1+y_1+x_2+y_2, x_2+y_2+x_3+y_3)</mrow>
+                <mrow>\amp =L((x_1+y_1,x_2+y_2,x_3+y_3))</mrow>
+                <mrow>\amp =L( (x_1,x_2,x_3)+ (y_1,y_2,y_3))</mrow>
+                <mrow>\amp =L(\vec x+\vec y) \text{, and}</mrow>
+            </md>
+            <md>
+                <mrow>rL(\vec x)
+                \amp =rL((x_1,x_2,x_3))</mrow>
+                <mrow>\amp =r(x_1+x_2,x_2+x_3)</mrow>
+                <mrow>\amp =(rx_1+rx_2,rx_2+rx_3)</mrow>
+                <mrow>\amp =L((rx_1,rx_2,rx_3))</mrow>
+                <mrow>\amp =L(r\vec x).</mrow>
+            </md>
         </li> 
         </ul>
         </p>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:25-06:00       *-->
+<!--*       on 2021-08-29T14:14:19-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,36 +14,42 @@
 <title>Minors and cofactors</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -56,8 +62,8 @@ MathJax.Hub.Config({
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
 \def\C{{\mathbb C}}
 \def\Q{{\mathbb Q}}
 \def\Z{{\mathbb Z}}
@@ -104,20 +110,20 @@ MathJax.Hub.Config({
 <li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
 <li class="link"><a href="LinearTransformations.html" data-scroll="LinearTransformations"><span class="codenumber">6</span> <span class="title">Linear transformations</span></a></li>
 <li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">7</span> <span class="title">Additional Topics</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-20"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Minors and cofactors</span>
 </h2>
-<p id="p-546">The evaluation of the determinant by cofactors changes the problem of finding the determinant of a matrix of order \(n\) to that of finding the determinant several matrices of order \(n-1.\) So far, we know how to evaluate the determinant of a matrix of order \(n\) when \(n\leq 3.\) This method will, then, allow us to evaluate the determinant of a matrix of order \(n=4\) by reducing the problem to solving the determinant of several matrices of order \(n=3.\)</p>
-<p id="p-547">We focus on a particular element \(a_{i,j}\) of a square matrix \(A\text{.}\)</p>
+<p id="p-534">The evaluation of the determinant by cofactors changes the problem of finding the determinant of a matrix of order \(n\) to that of finding the determinant several matrices of order \(n-1.\) So far, we know how to evaluate the determinant of a matrix of order \(n\) when \(n\leq 3.\) This method will, then, allow us to evaluate the determinant of a matrix of order \(n=4\) by reducing the problem to solving the determinant of several matrices of order \(n=3.\)</p>
+<p id="p-535">We focus on a particular element \(a_{i,j}\) of a square matrix \(A\text{.}\)</p>
 <article class="definition definition-like" id="MatrixMinorDefinition"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">The \(i,j\) minor of a matrix \(A\).</span>
 </h6>
-<p id="p-548">\(M_{i,j}\text{,}\) the <dfn class="terminology">\(i,j\) minor</dfn> of a matrix \(A\) is computed by deleting the row and column containing \(a_{i,j}\) and evaluating the determinant of what remains.</p>
+<p id="p-536">\(M_{i,j}\text{,}\) the <dfn class="terminology">\(i,j\) minor</dfn> of a matrix \(A\) is computed by deleting the row and column containing \(a_{i,j}\) and evaluating the determinant of what remains.</p>
 <div class="displaymath">
-\begin{equation*}
-\qquad\qquad\qquad\downarrow \text{ column } C_j \text{ deleted}\\
+\begin{align*}
+\downarrow\text{ column }C_j\text{ deleted}\ \quad\qquad\qquad\\
 M_{i,j}=\det
 \left[\begin{array}{c|c|c}
 {}******\amp \amp *****\\
@@ -129,20 +135,19 @@ M_{i,j}=\det
 {}******\amp \amp *****
 \end{array}\right]
 \gets \text{ row } R_i \text{ deleted}
-\end{equation*}
+\end{align*}
 </div></article><article class="definition definition-like" id="MatrixCofactorDefinition"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">The \(i,j\) cofactor of a matrix \(A\).</span>
 </h6>
-<p id="p-549">\(C_{i,j}\text{,}\) the <dfn class="terminology">\(i,j\) cofactor of a matrix</dfn>  \(A\text{,}\) satisfies</p>
+<p id="p-537">\(C_{i,j}\text{,}\) the <dfn class="terminology">\(i,j\) cofactor of a matrix</dfn>  \(A\text{,}\) satisfies</p>
 <div class="displaymath">
 \begin{equation*}
 C_{i,j}=(-1)^{i+j}M_{i,j}
 \end{equation*}
-</div></article><p id="p-550">In other words, \(C_{i,j}=\pm M_{i,j}\text{,}\) with the sign being \(+\) if \(i+j\) is even and \(-\) if \(i+j\) is odd.</p>
-<article class="example example-like" id="example-24"><h6 class="heading">
+</div></article><p id="p-538">In other words, \(C_{i,j}=\pm M_{i,j}\text{,}\) with the sign being \(+\) if \(i+j\) is even and \(-\) if \(i+j\) is odd.</p>
+<article class="example example-like" id="example-25"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-25"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">A cofactor of a matrix.</span>
-</h6>
-<p id="p-551">We find \(M_{2,3}\) and \(C_{2,3}\) for the matrix</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-25"><article class="example example-like"><p id="p-539">We find \(M_{2,3}\) and \(C_{2,3}\) for the matrix</p>
 <div class="displaymath">
 \begin{equation*}
 A=
@@ -152,7 +157,7 @@ A=
 1\amp2\amp2\amp1 \end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">When we delete row \(R_2\) and column \(C_3\) from \(A\) we get the matrix</p>
+<p class="continuation">When we delete row \(R_2\) and column \(C_3\) from \(A\) we get the matrix</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -162,7 +167,8 @@ A=
 \end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">We have already calculated the determinant of this matrix in <a class="xref" data-knowl="./knowl/det_example1.html" title="Example 3.1.2: Determinants of small matrices">Example 3.1.2</a> to be \(4,\) so \(M_{2,3}=4\) and \(C_{2,3}=(-1)^5 4=-4.\)</p></article><p id="p-552">There is a nice way of visualizing the pattern of \((-1)^{i+j}.\) Consider the matrix \(P=[p_{i,j}]\) where \(p_{i,j}=(-1)^{i+j}\text{.}\)  The next entry to the right of \(p_{i,j}\) is \(p_{i,j+1}\text{,}\) so that the exponent of \(-1\) is increased by one. Hence if \(p_{i,j}=1\) then \(p_{i,j+1}=-1\) and \(p_{i,j}=-1\) then \(p_{i,j+1}=1\text{.}\) This means that the entries in a row alternate between \(1\) and \(-1\text{.}\) By an analogous argument, the columns also alternate between \(1\) and \(-1\text{.}\) The upper left entry is \(-1^{1+1}=1\text{,}\) and so the whole matrix is determined. It looks like</p>
+<p class="continuation">We have already calculated the determinant of this matrix in <a class="xref" data-knowl="./knowl/det_example1.html" title="Example 3.1.2: Determinants of small matrices">Example 3.1.2</a> to be \(4,\) so \(M_{2,3}=4\) and \(C_{2,3}=(-1)^5 4=-4.\)</p></article></div>
+<p id="p-540">There is a nice way of visualizing the pattern of \((-1)^{i+j}.\) Consider the matrix \(P=[p_{i,j}]\) where \(p_{i,j}=(-1)^{i+j}\text{.}\)  The next entry to the right of \(p_{i,j}\) is \(p_{i,j+1}\text{,}\) so that the exponent of \(-1\) is increased by one. Hence if \(p_{i,j}=1\) then \(p_{i,j+1}=-1\) and \(p_{i,j}=-1\) then \(p_{i,j+1}=1\text{.}\) This means that the entries in a row alternate between \(1\) and \(-1\text{.}\) By an analogous argument, the columns also alternate between \(1\) and \(-1\text{.}\) The upper left entry is \(-1^{1+1}=1\text{,}\) and so the whole matrix is determined. It looks like</p>
 <div class="displaymath">
 \begin{equation}
 P=
@@ -176,26 +182,25 @@ P=
 \end{bmatrix}\label{CheckerboardMatrix}\tag{3.2.1}
 \end{equation}
 </div>
-<p data-braille="continuation">In other words, the pattern of \(1\) and \(-1\) is like a checkerboard pattern of light squares and dark squares.</p>
-<p id="p-553">Since the minor \(M_{i,j}\) is simply a number, we may form an new matrix called the <dfn class="terminology">matrix of minors</dfn> \(M\) whose entries are minors. Similarly since the cofactor \(C_{i,j}\) is simply a number, we may form an new matrix called the <em class="emphasis">cofactor matrix</em> whose entries are cofactors.</p>
+<p class="continuation">In other words, the pattern of \(1\) and \(-1\) is like a checkerboard pattern of light squares and dark squares.</p>
+<p id="p-541">Since the minor \(M_{i,j}\) is simply a number, we may form an new matrix called the <dfn class="terminology">matrix of minors</dfn> \(M\) whose entries are minors. Similarly since the cofactor \(C_{i,j}\) is simply a number, we may form an new matrix called the <em class="emphasis">cofactor matrix</em> whose entries are cofactors.</p>
 <article class="definition definition-like" id="definition-33"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Cofactor matrix and the matrix of minors.</span>
 </h6>
-<p id="p-554">The <em class="emphasis">matrix of minors</em> \(M\) is defined by</p>
+<p id="p-542">The <em class="emphasis">matrix of minors</em> \(M\) is defined by</p>
 <div class="displaymath">
 \begin{equation*}
 M=[M_{i,j}]
 \end{equation*}
 </div>
-<p data-braille="continuation">and the <em class="emphasis">cofactor matrix</em> \(C\) is defined by</p>
+<p class="continuation">and the <em class="emphasis">cofactor matrix</em> \(C\) is defined by</p>
 <div class="displaymath">
 \begin{equation*}
 C=[C_{i,j}]
 \end{equation*}
-</div></article><article class="example example-like" id="MatrixMinorsExmaple"><h6 class="heading">
+</div></article><article class="example example-like" id="MatrixMinorsExmaple"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-MatrixMinorsExmaple"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix of minors.</span>
-</h6>
-<p id="p-555">We will compute the matrix of minors for the matrix</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-MatrixMinorsExmaple"><article class="example example-like"><p id="p-543">We will compute the matrix of minors for the matrix</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -205,7 +210,7 @@ C=[C_{i,j}]
 \end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">From the definition of the matrix of minors:</p>
+<p class="continuation">From the definition of the matrix of minors:</p>
 <div class="displaymath">
 \begin{align*}
 M \amp=
@@ -241,10 +246,10 @@ M_{3,1} \amp M_{3,2} \amp M_{3,3}
 -14 \amp -10 \amp -2
 \end{bmatrix}
 \end{align*}
-</div></article><article class="example example-like" id="CofactorMatrixExmaple"><h6 class="heading">
+</div></article></div>
+<article class="example example-like" id="CofactorMatrixExmaple"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-CofactorMatrixExmaple"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Cofactor matrix.</span>
-</h6>
-<p id="p-556">We will compute the cofactor matrix of the matrix</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-CofactorMatrixExmaple"><article class="example example-like"><p id="p-544">We will compute the cofactor matrix of the matrix</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -254,7 +259,7 @@ M_{3,1} \amp M_{3,2} \amp M_{3,3}
 \end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">From the definition of the cofactor matrix:</p>
+<p class="continuation">From the definition of the cofactor matrix:</p>
 <div class="displaymath">
 \begin{align*}
 C \amp=
@@ -290,12 +295,13 @@ C_{3,1} \amp C_{3,2} \amp C_{3,3}
 -14 \amp 10 \amp -2
 \end{bmatrix}
 \end{align*}
-</div></article><article class="observation remark-like" id="MinorsCofactorsCheckerboard"><h6 class="heading">
+</div></article></div>
+<article class="observation remark-like" id="MinorsCofactorsCheckerboard"><h6 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">3.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Minors, cofactors and the checkerboard pattern.</span>
 </h6>
-<p id="p-557">The answers from <a class="xref" data-knowl="./knowl/MatrixMinorsExmaple.html" title="Example 3.2.5: Matrix of minors">Example 3.2.5</a> and <a class="xref" data-knowl="./knowl/CofactorMatrixExmaple.html" title="Example 3.2.6: Cofactor matrix">Example 3.2.6</a> are quite similar, each matrix entry being either identical or multiplied by \(-1\text{.}\) The entries multiplied by \(-1\) are in the same positions the \(-1\) entries of the matrix \(P\) <a class="xref" data-knowl="./knowl/CheckerboardMatrix.html" title="Equation 3.2.1">(3.2.1)</a> with the checkerboard pattern. This is a general pattern: Given the matrix of minors \(M\) the matrix of cofactors \(C\) is then computed by multiplying the entries of \(M\) by \(\pm1\) according to the checkerboard pattern.</p></article><article class="exercise exercise-like" id="exercise-35"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-35"><h6 class="heading">
+<p id="p-545">The answers from <a class="xref" data-knowl="./knowl/MatrixMinorsExmaple.html" title="Example 3.2.5: Matrix of minors">Example 3.2.5</a> and <a class="xref" data-knowl="./knowl/CofactorMatrixExmaple.html" title="Example 3.2.6: Cofactor matrix">Example 3.2.6</a> are quite similar, each matrix entry being either identical or multiplied by \(-1\text{.}\) The entries multiplied by \(-1\) are in the same positions the \(-1\) entries of the matrix \(P\) <a class="xref" data-knowl="./knowl/CheckerboardMatrix.html" title="Equation 3.2.1">(3.2.1)</a> with the checkerboard pattern. This is a general pattern: Given the matrix of minors \(M\) the matrix of cofactors \(C\) is then computed by multiplying the entries of \(M\) by \(\pm1\) according to the checkerboard pattern.</p></article><article class="exercise exercise-like" id="exercise-35"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-35"><h6 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.8</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-35"><article class="exercise exercise-like"><p id="p-558">Suppose a matrix \(A\) has matrix of minors</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-35"><article class="exercise exercise-like"><p id="p-546">Suppose a matrix \(A\) has matrix of minors</p>
 <div class="displaymath">
 \begin{equation*}
 M=
@@ -306,9 +312,9 @@ M=
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">What is \(C\text{,}\) the cofactor matrix of \(A\text{?}\)</p>
+<p class="continuation">What is \(C\text{,}\) the cofactor matrix of \(A\text{?}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1" id="answer-1"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1"><div class="answer solution-like"><div class="displaymath" id="p-559">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1" id="answer-1"><span class="type">Answer.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-answer-1"><div class="answer solution-like"><div class="displaymath" id="p-547">
 \begin{equation*}
 C=
 \begin{bmatrix}

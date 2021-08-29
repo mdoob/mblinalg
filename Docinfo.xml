@@ -24,5 +24,9 @@
    \newcommand{\rowadd}[3]{R_{#1}\gets R_{#1}+#2R_{#3}}
    \newcommand{\rowsub}[3]{R_{#1}\gets R_{#1}-#2R_{#3}}
    </macros>
+
+   <latex-preamble>
+<!--     <package>blockarray</package> -->
+   </latex-preamble>
 </docinfo>
 

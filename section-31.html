@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:30-06:00       *-->
+<!--*       on 2021-08-29T14:14:24-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,36 +14,42 @@
 <title>Projections in \(\R^2\) and \(\R^n\)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -56,8 +62,8 @@ MathJax.Hub.Config({
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
 \def\C{{\mathbb C}}
 \def\Q{{\mathbb Q}}
 \def\Z{{\mathbb Z}}
@@ -104,7 +110,7 @@ MathJax.Hub.Config({
 <li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
 <li class="link"><a href="LinearTransformations.html" data-scroll="LinearTransformations"><span class="codenumber">6</span> <span class="title">Linear transformations</span></a></li>
 <li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">7</span> <span class="title">Additional Topics</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-31"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.7</span> <span class="title">Projections in \(\R^2\) and \(\R^n\)</span>
@@ -112,14 +118,14 @@ MathJax.Hub.Config({
 <section class="subsection" id="subsection-75"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.7.1</span> <span class="title">Projections in \(\R^2\)</span>
 </h3>
-<p id="p-966">Start with two nonzero vectors \(\vec u\) and \(\vec v\text{.}\) Drop a perpendicular from \(\vec u\) to the line through \(\vec v\text{,}\) and use the point where this perpendicular hits the line to be the end of a new vector. Suppose that \(\theta\) is the angle between the vectors \(\vec u\) and \(\vec v\text{.}\) The picture of the construction is slightly different for \(\theta\) obtuse and \(\theta\) acute (the new vector is shown in red):</p>
+<p id="p-949">Start with two nonzero vectors \(\vec u\) and \(\vec v\text{.}\) Drop a perpendicular from \(\vec u\) to the line through \(\vec v\text{,}\) and use the point where this perpendicular hits the line to be the end of a new vector. Suppose that \(\theta\) is the angle between the vectors \(\vec u\) and \(\vec v\text{.}\) The picture of the construction is slightly different for \(\theta\) obtuse and \(\theta\) acute (the new vector is shown in red):</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><div class="asymptote-box" style="padding-top: 76.317768779353%"><iframe src="images/image-46.html" class="asymptote"></iframe></div></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><div class="asymptote-box" style="padding-top: 64.397657298949%"><iframe src="images/image-47.html" class="asymptote"></iframe></div></div>
+<div class="sbspanel top" style="width:50%;"><div class="asymptote-box" style="padding-top: 76.317768779353%"><iframe src="images/image-46.html" class="asymptote"></iframe></div></div>
+<div class="sbspanel top" style="width:50%;"><div class="asymptote-box" style="padding-top: 64.397657298949%"><iframe src="images/image-47.html" class="asymptote"></iframe></div></div>
 </div></div>
-<p id="p-967">In each case the new vector is called <dfn class="terminology">the projection of \(\vec u\) along \(\vec v\)</dfn> and is denoted \(\textrm{proj}_{\vec v} \vec u\text{.}\)</p>
-<p id="p-968">Since \(\textrm{proj}_{\vec v} \vec u\) and \(\vec v\) are collinear, we may write \(\textrm{proj}_{\vec v} \vec u=k\vec v\) for some real number \(k\text{.}\) We next determine the value of \(k\text{.}\)</p>
-<p id="p-969">In the left picture, we have</p>
+<p id="p-950">In each case the new vector is called <dfn class="terminology">the projection of \(\vec u\) along \(\vec v\)</dfn> and is denoted \(\textrm{proj}_{\vec v} \vec u\text{.}\)</p>
+<p id="p-951">Since \(\textrm{proj}_{\vec v} \vec u\) and \(\vec v\) are collinear, we may write \(\textrm{proj}_{\vec v} \vec u=k\vec v\) for some real number \(k\text{.}\) We next determine the value of \(k\text{.}\)</p>
+<p id="p-952">In the left picture, we have</p>
 <div class="displaymath">
 \begin{align*}
 \|\textrm{proj}_{\vec v} \vec u\|
@@ -129,20 +135,20 @@ MathJax.Hub.Config({
 \amp= |k|\|\vec v\|
 \end{align*}
 </div>
-<p data-braille="continuation">and so</p>
+<p class="continuation">and so</p>
 <div class="displaymath">
 \begin{equation*}
 k = \frac{\|\vec u\|}{\|\vec v\|}\cos(\theta) 
 \qquad \textrm{(Note that }k\geq 0\text{)}.
 \end{equation*}
 </div>
-<p data-braille="continuation">In the right picture, \(\theta&gt;\frac\pi2\text{,}\) and so \(\cos(\theta)\lt0\text{.}\) In addition, the direction of  \(\textrm{proj}_{\vec v} \vec u\) implies that \(k\lt0\text{,}\) and \(|k|=-k\text{.}\) As a result, the equation is still valid:</p>
+<p class="continuation">In the right picture, \(\theta&gt;\frac\pi2\text{,}\) and so \(\cos(\theta)\lt0\text{.}\) In addition, the direction of  \(\textrm{proj}_{\vec v} \vec u\) implies that \(k\lt0\text{,}\) and \(|k|=-k\text{.}\) As a result, the equation is still valid:</p>
 <div class="displaymath">
 \begin{equation*}
 k = \frac{\|\vec u\|}{\|\vec v\|}\cos(\theta)
 \end{equation*}
 </div>
-<p data-braille="continuation">We have seen in <a class="xref" data-knowl="./knowl/DotProductRn.html" title="Theorem 4.2.20">Theorem 4.2.20</a> that \(\vec u\cdot\vec v = \|\vec u\|\,\|\vec v\|\cos(\theta)\text{,}\) and so</p>
+<p class="continuation">We have seen in <a class="xref" data-knowl="./knowl/DotProductRn.html" title="Theorem 4.2.20">Theorem 4.2.20</a> that \(\vec u\cdot\vec v = \|\vec u\|\,\|\vec v\|\cos(\theta)\text{,}\) and so</p>
 <div class="displaymath">
 \begin{equation*}
 k
@@ -153,7 +159,7 @@ k
 <article class="theorem theorem-like" id="theorem-65"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.7.1</span><span class="period">.</span><span class="space"> </span><span class="title">Projection of \(\vec u\) onto \(\vec v\) in \(\R^2\).</span>
 </h6>
-<p id="p-970">If \(\vec u\) and \(\vec v\) are vectors in \(\R^2\) with \(\vec v\not= \vec0\text{,}\) then</p>
+<p id="p-953">If \(\vec u\) and \(\vec v\) are vectors in \(\R^2\) with \(\vec v\not= \vec0\text{,}\) then</p>
 <div class="displaymath">
 \begin{equation*}
 \textrm{proj}_{\vec v} \vec u 
@@ -165,7 +171,7 @@ k
 </div></article><article class="theorem theorem-like" id="theorem-66"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.7.2</span><span class="period">.</span><span class="space"> </span><span class="title">\(\vec u-\textrm{proj}_{\vec v} \vec u \) is orthogonal to \(\vec v\).</span>
 </h6>
-<p id="p-971">The vectors \(\vec v\) and \(\vec u-\textrm{proj}_{\vec v} \vec u \) are orthogonal.</p></article><article class="hiddenproof" id="proof-75"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-75"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-75"><article class="hiddenproof"><p id="p-972">We compute the dot product:</p>
+<p id="p-954">The vectors \(\vec v\) and \(\vec u-\textrm{proj}_{\vec v} \vec u \) are orthogonal.</p></article><article class="hiddenproof" id="proof-75"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-75"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-75"><article class="hiddenproof"><p id="p-955">We compute the dot product:</p>
 <div class="displaymath">
 \begin{align*}
 (\vec u - \textrm{proj}_{\vec v} \vec u)\cdot\vec v 
@@ -182,32 +188,32 @@ k
 </div></article></div></section><section class="subsection" id="ExamplesR2Projections"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.7.2</span> <span class="title">Examples of projections in \(\R^2\)</span>
 </h3>
-<ul id="p-973" class="disc">
-<li id="li-325"><p id="p-974">Suppose that \(\vec v=(1,0)\) and \(\vec u=(u_1,u_2)\text{.}\) Then the line through \(\vec v\) is simply the \(x\)-axis, and \(\|\vec v\|=1\text{,}\) and so \(\textrm{proj}_{\vec v} \vec u =\left((u_1,u_2)\cdot(1,0) \right) \vec v 
+<ul id="p-956" class="disc">
+<li id="li-325"><p id="p-957">Suppose that \(\vec v=(1,0)\) and \(\vec u=(u_1,u_2)\text{.}\) Then the line through \(\vec v\) is simply the \(x\)-axis, and \(\|\vec v\|=1\text{,}\) and so \(\textrm{proj}_{\vec v} \vec u =\left((u_1,u_2)\cdot(1,0) \right) \vec v 
 = (u_1,0)\text{.}\) This means that the projection of \((x_1,x_2)\) onto the \(x\)-axis is \((x_1,0)\text{,}\) just as would be expected.</p></li>
-<li id="li-326"><p id="p-975">Suppose \(\vec v=(1,1)\) and \(\vec u=(u_1,u_2)\text{.}\) Then the line through \(\vec v\) has equation \(y=x\text{,}\) and \(\|\vec v\|=\sqrt2\text{.}\) We then have \(\textrm{proj}_{\vec v} \vec u=\frac{(u_1,u_2)\cdot(1,1)}2 \vec v
+<li id="li-326"><p id="p-958">Suppose \(\vec v=(1,1)\) and \(\vec u=(u_1,u_2)\text{.}\) Then the line through \(\vec v\) has equation \(y=x\text{,}\) and \(\|\vec v\|=\sqrt2\text{.}\) We then have \(\textrm{proj}_{\vec v} \vec u=\frac{(u_1,u_2)\cdot(1,1)}2 \vec v
 =\left(\frac{(u_1+u_2)}2,\frac{(u_1+u_2)}2\right)\)</p></li>
-<li id="li-327"><p id="p-976">Suppose we want to drop a perpendicular from the point \(\vec u=(m,-1)\) to the line \(y=mx\text{.}\) The vector \(\vec v=(1,m)\) is on that line. It then follows that \(\textrm{proj}_{\vec v} \vec u
+<li id="li-327"><p id="p-959">Suppose we want to drop a perpendicular from the point \(\vec u=(m,-1)\) to the line \(y=mx\text{.}\) The vector \(\vec v=(1,m)\) is on that line. It then follows that \(\textrm{proj}_{\vec v} \vec u
 =\frac{(m,-1)\cdot(1,m)}{\|\vec v\|^2} \vec v=0\vec v=\vec 0\text{.}\) This implies that the line joining 	\((m,-1)\) and \((0,0)\text{,}\) which has slope \(-\frac1m\text{,}\) is perpendicular to the line with equation \(y=mx\text{.}\) This implies that the product of the slopes of two orthogonal lines is \(-1\text{.}\)</p></li>
-<li id="li-328"><p id="p-977">Suppose we want to drop a perpendicular from the point \(\vec u=(u_1,u_2)\) to the line \(y=mx\text{.}\)  The vector \(\vec v=(1,m)\) is on that line, and \(\|\vec v\|=\sqrt{1+m^2}\text{.}\)  It then follows that \(\textrm{proj}_{\vec v} \vec u =\frac{(u_1,u_2)\cdot(1,m)}{1+m^2} \vec v
+<li id="li-328"><p id="p-960">Suppose we want to drop a perpendicular from the point \(\vec u=(u_1,u_2)\) to the line \(y=mx\text{.}\)  The vector \(\vec v=(1,m)\) is on that line, and \(\|\vec v\|=\sqrt{1+m^2}\text{.}\)  It then follows that \(\textrm{proj}_{\vec v} \vec u =\frac{(u_1,u_2)\cdot(1,m)}{1+m^2} \vec v
 =\frac1{1+m^2}(u_1+mu_2, m(u_1+mu_2))
 =\left(\frac{u_1+mu_2}{1+m^2},\frac{mu_1+m^2u_2}{1+m^2}\right)\)</p></li>
 </ul>
-<p data-braille="continuation">The following figure illustrates these examples (note that the first examples are just the special cases of the last one).</p>
+<p class="continuation">The following figure illustrates these examples (note that the first examples are just the special cases of the last one).</p>
 <figure class="figure figure-like" id="figure-46"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><div class="asymptote-box" style="padding-top: 75.3421395666894%"><iframe src="images/image-48.html" class="asymptote"></iframe></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.7.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure></section><section class="subsection" id="subsection-77"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.7.3</span> <span class="title">Application: distance from a point to a line</span>
 </h3>
-<p id="p-978">We want to compute the distance from a point \(\vec u\) to a line \(L\text{.}\) Let \(\vec u=(x_0,y_0)\text{,}\) the general equation of \(L\) be \(ax+by+c=0\) and \(D\) the desired distance. In addition, let \((x_1,y_1)\) and \((x_2,y_2)\) be two points on \(L\text{,}\) and \(\vec n=(x_1+a,y_1+b)\text{.}\) These are all included in the following figure:</p>
+<p id="p-961">We want to compute the distance from a point \(\vec u\) to a line \(L\text{.}\) Let \(\vec u=(x_0,y_0)\text{,}\) the general equation of \(L\) be \(ax+by+c=0\) and \(D\) the desired distance. In addition, let \((x_1,y_1)\) and \((x_2,y_2)\) be two points on \(L\text{,}\) and \(\vec n=(x_1+a,y_1+b)\text{.}\) These are all included in the following figure:</p>
 <figure class="figure figure-like" id="figure-47"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><div class="asymptote-box" style="padding-top: 58.2291653723332%"><iframe src="images/image-49.html" class="asymptote"></iframe></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.7.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-979">Since \((x_1,y_1)\) and \((x_2,y_2)\) are both on \(L\text{,}\) we know that \(ax_1+by_1+c=ax_2+by_2+c=0\text{.}\) In addition, if we consider the two displacement vectors \(\vec v\) from \((x_1,y_1)\) to \((x_2,y_2)\) and \(\vec n\) from \((x_1,y_1)\) to \((x_1+a,y_1+b)\text{,}\) then the dot product</p>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.7.4<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-962">Since \((x_1,y_1)\) and \((x_2,y_2)\) are both on \(L\text{,}\) we know that \(ax_1+by_1+c=ax_2+by_2+c=0\text{.}\) In addition, if we consider the two displacement vectors \(\vec v\) from \((x_1,y_1)\) to \((x_2,y_2)\) and \(\vec n\) from \((x_1,y_1)\) to \((x_1+a,y_1+b)\text{,}\) then the dot product</p>
 <div class="displaymath">
 \begin{equation*}
 \vec v\cdot\vec n =(x_2-x_1,y_2-y_1)\cdot (a,b)
 =ax_2+by_2-(ax_1+by_1)=-c+c=0
 \end{equation*}
 </div>
-<p data-braille="continuation">This implies that the quadrilateral with vertices \((x_1,y_1)\text{,}\) \(\proj_{\vec v}\vec u\text{,}\) \(\vec u\) and \(\proj_{\vec n}\vec u\) is in fact a rectangle, and so \(\|\proj_{\vec n}\vec u\|=D\text{.}\)</p>
+<p class="continuation">This implies that the quadrilateral with vertices \((x_1,y_1)\text{,}\) \(\proj_{\vec v}\vec u\text{,}\) \(\vec u\) and \(\proj_{\vec n}\vec u\) is in fact a rectangle, and so \(\|\proj_{\vec n}\vec u\|=D\text{.}\)</p>
 <div class="displaymath">
 \begin{align*}
 \proj_{\vec n}\vec u
@@ -217,7 +223,7 @@ k
 \amp= \frac{ax_0+by_0 +c}{\vec n\cdot\vec n} \vec n
 \end{align*}
 </div>
-<p data-braille="continuation">and so</p>
+<p class="continuation">and so</p>
 <div class="displaymath">
 \begin{equation*}
 D=\|\proj_{\vec n}\vec u\|=\frac{|ax_0+by_0 +c|}{\sqrt{a^2+b^2}}
@@ -226,7 +232,7 @@ D=\|\proj_{\vec n}\vec u\|=\frac{|ax_0+by_0 +c|}{\sqrt{a^2+b^2}}
 <article class="theorem theorem-like" id="DistancePtToLine"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.7.5</span><span class="period">.</span><span class="space"> </span><span class="title">Distance from point to a line.</span>
 </h6>
-<p id="p-980">The distance \(D\) from a point \((x_0,y_0)\) to the line \(ax+by+c=0\) is</p>
+<p id="p-963">The distance \(D\) from a point \((x_0,y_0)\) to the line \(ax+by+c=0\) is</p>
 <div class="displaymath">
 \begin{equation*}
 D=\frac{|ax_0+by_0+c|}{\|\vec n\|}=\frac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}
@@ -234,9 +240,9 @@ D=\frac{|ax_0+by_0+c|}{\|\vec n\|}=\frac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}
 </div></article></section><section class="subsection" id="subsection-78"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.7.4</span> <span class="title">Projections in \(\R^3\) and \(\R^n\)</span>
 </h3>
-<p id="p-981">Projections in \(\R^3\) to a plane and in \(\R^n\) to a hyperplane are remarkably similar to those in \(\R^2\text{.}\)</p>
+<p id="p-964">Projections in \(\R^3\) to a plane and in \(\R^n\) to a hyperplane are remarkably similar to those in \(\R^2\text{.}\)</p>
 <figure class="figure figure-like" id="figure-48"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><div class="asymptote-box" style="padding-top: 73.7306843267108%"><iframe src="images/image-50.html" class="asymptote"></iframe></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.7.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-982">In \(\R^3\) the projection from the point \((x_0,y_0,z_0)\) to the plane \(ax+by+cz+d=0\) can be obtained by taking the line through \((x_0,y_0,z_0)\) orthogonal to the plane. Since the vector \(\vec n=(a,b,c)\) is orthogonal to the plane, the line consists of all points of the form \((x_0,y_0,z_))+t(a,b,c)\text{.}\) The value of \(t\) that give the point in the plane satisfies</p>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.7.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-965">In \(\R^3\) the projection from the point \((x_0,y_0,z_0)\) to the plane \(ax+by+cz+d=0\) can be obtained by taking the line through \((x_0,y_0,z_0)\) orthogonal to the plane. Since the vector \(\vec n=(a,b,c)\) is orthogonal to the plane, the line consists of all points of the form \((x_0,y_0,z_))+t(a,b,c)\text{.}\) The value of \(t\) that give the point in the plane satisfies</p>
 <div class="displaymath">
 \begin{align*}
 a(x_0+ta)+b(y_0+tb)+c(z_0+tc)+d
@@ -244,13 +250,13 @@ a(x_0+ta)+b(y_0+tb)+c(z_0+tc)+d
 \amp =0
 \end{align*}
 </div>
-<p data-braille="continuation">and so</p>
+<p class="continuation">and so</p>
 <div class="displaymath">
 \begin{equation*}
 t=-\frac{ax_0+by_0+cz_0+d}{a^2+b^2+c^2}.
 \end{equation*}
 </div>
-<p id="p-983">The distance to the plane is now easy to compute. If \(\vec x=(x_0,y_0,z_0)\) and \(\vec n=(a,b,c)\) then the distance from \(\vec x\) to \(\vec x+ t\vec n\) satisfies</p>
+<p id="p-966">The distance to the plane is now easy to compute. If \(\vec x=(x_0,y_0,z_0)\) and \(\vec n=(a,b,c)\) then the distance from \(\vec x\) to \(\vec x+ t\vec n\) satisfies</p>
 <div class="displaymath">
 \begin{equation*}
 d(\vec x,\vec x+ t\vec n)
@@ -259,7 +265,7 @@ d(\vec x,\vec x+ t\vec n)
 =\frac{|ax_0+by_0+cz_0+d|}{\|\vec n\|^2} \|\vec n\|
 \end{equation*}
 </div>
-<p data-braille="continuation">and so the distance \(D\) from the point to the plane satisfies</p>
+<p class="continuation">and so the distance \(D\) from the point to the plane satisfies</p>
 <div class="displaymath">
 \begin{equation*}
 D=\frac{|ax_0+by_0+cz_0+d|}{\|\vec n\|}.
@@ -268,14 +274,14 @@ D=\frac{|ax_0+by_0+cz_0+d|}{\|\vec n\|}.
 <article class="theorem theorem-like" id="DistancePtToPlane"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.7.7</span><span class="period">.</span><span class="space"> </span><span class="title">Distance from a point to a plane.</span>
 </h6>
-<p id="p-984">If \(D\) is the distance from a point \((x_0,y_0,z_0)\) to the plane with equation \(ax+by+cz+d=0\text{,}\) and \(\vec n=(a,b,c)\text{,}\) then</p>
+<p id="p-967">If \(D\) is the distance from a point \((x_0,y_0,z_0)\) to the plane with equation \(ax+by+cz+d=0\text{,}\) and \(\vec n=(a,b,c)\text{,}\) then</p>
 <div class="displaymath">
 \begin{equation*}
 D=\frac{|ax_0+by_0+cz_0+d|}{\|\vec n\|} 
 =\frac{|ax_0+by_0+cz_0+d|}{\sqrt{a^2+b^2+c^2}} 
 \end{equation*}
-</div></article><p id="p-985">Compare this result with the one in \(\R^2\text{:}\) <a class="xref" data-knowl="./knowl/DistancePtToLine.html" title="Theorem 4.7.5: Distance from point to a line">Theorem 4.7.5</a></p>
-<p id="p-986">The distance from a point to a hyperplane in \(\R^n\) is computed analogously.</p></section></section></div></main>
+</div></article><p id="p-968">Compare this result with the one in \(\R^2\text{:}\) <a class="xref" data-knowl="./knowl/DistancePtToLine.html" title="Theorem 4.7.5: Distance from point to a line">Theorem 4.7.5</a></p>
+<p id="p-969">The distance from a point to a hyperplane in \(\R^n\) is computed analogously.</p></section></section></div></main>
 </div>
 </body>
 </html>

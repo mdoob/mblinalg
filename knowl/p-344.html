@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:41-06:00       *-->
+<!--*       on 2021-08-29T14:14:36-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,53 +15,7 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Let \(A\) be of size \(m\times n\text{,}\) and \(B\)  of size \(n\times r\) and \(C\) of size \(r\times s\text{.}\) Using summation notation:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\bigl((AB)C\bigr)_{i,j} = \sum_{k=1}^r (AB)_{i,k}c_{k,j} 
-\end{equation*}
-</div>
-<p data-braille="continuation">while</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-(AB)_{i,k}=\sum_{\ell=1}^n a_{i,\ell}b_{\ell,k} 
-\end{equation*}
-</div>
-<p data-braille="continuation">Now we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\bigl((AB)C\bigr)_{i,j} \amp = 
-\sum_{k=1}^r \bigl(\sum_{\ell=1}^n a_{i,\ell}b_{\ell,k}\bigr) c_{k,j} \\
-\amp = \sum_{k=1}^r \bigl(\sum_{\ell=1}^n a_{i,\ell}b_{\ell,k}c_{k,j}\bigr) \\
-\amp = \sum_{k=1}^r \sum_{\ell=1}^n a_{i,\ell}b_{\ell,k}c_{k,j} 
-\end{align*}
-</div>
-<p data-braille="continuation">On the other hand</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\bigl(A(BC)\bigr)_{i,j} = \sum_{\ell=1}^n a_{i,\ell} (BC)_{\ell,j}
-\end{equation*}
-</div>
-<p data-braille="continuation">while</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-(BC)_{\ell,j}=\sum_{k=1}^r b_{\ell,k}c_{k,j} 
-\end{equation*}
-</div>
-<p data-braille="continuation">and so</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\bigl(A(BC)\bigr)_{i,j} 
-\amp =  \sum_{\ell=1}^n a_{i,\ell}\bigl(\sum_{k=1}^r b_{\ell,k}c_{k,j} \bigr) \\
-\amp =  \sum_{\ell=1}^n \sum_{k=1}^r a_{i,\ell} b_{\ell,k}c_{k,j} 
-\end{align*}
-</div>
-<p data-braille="continuation">and so</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-(AB)C=A(BC)
-\end{equation*}
-</div>
-<span class="incontext"><a href="section-11.html#p-344">in-context</a></span>
+<p>The <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">transpose</dfn> of \(A\) is the matrix \(A^T\) derived by making the first row of \(A\) the first column of \(A^T\text{,}\) the second row of \(A\) the second column of \(A^T\text{,}\) etc. In other words, when taking a transpose, the rows and columns are interchanged. Another way of saying this is that the subscripts have been interchanged, that is, if \(A^T=B=[b_{i,j}].\) then \(b_{i,j}=a_{j,i}\)</p>
+<span class="incontext"><a href="section-12.html#p-344">in-context</a></span>
 </body>
 </html>

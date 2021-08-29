@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:53-06:00       *-->
+<!--*       on 2021-08-29T14:14:50-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,13 +15,16 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Consider the computation of the projection of a point \((x,y)\) onto the line \(y=mx\text{.}\) The strategy is to first use the line as one axis for a basis. To that end we take a nonzero point on the line as the first basis element: \(\vec u_1=(1,m)\) . Next, we want a second basis element orthogonal to \(\vec u_1\) so that the parallelogram rule will be applied as a rectangle. An easy choice is \(\vec u_2=(-m,1)\) (why?), so the basis is \(B=\{(1,m),(-m,1)\}\text{.}\) The coordinates \((r_1,r_2)\) of \((x,y)\) with respect to \(B\) are found by solving</p>
+<p>Notice that <a class="xref" data-knowl="./knowl/ChangeOfBasis.html" title="Theorem 4.10.15: Change of basis theorem">Theorem 4.10.15</a> gives an algorithm for constructing the desired matrix \(C\text{.}\) For each \(k=1,2,\ldots,n\text{,}\) let \(\vec z_k\) be the coordinates of \(\vec x_k\) with respect to \(B_2\text{.}\) Using column vectors, let \(C=
+\begin{bmatrix} \vec z_1\amp\vec z_2\amp\cdots\amp\vec z_n \end{bmatrix}
+\text{.}\) Then</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-r_1(1,m)+r_2(-m,1)=(x,y)\text{.}
+\begin{bmatrix} s_1\\ s_2\\ \vdots \\s_n \end{bmatrix}
+=
+C \begin{bmatrix}r_1\\r_2\\ \vdots\\r_n\end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">This is routine and, in particular, gives us \(r_1=\frac1{m^2+1}(x+my)\text{.}\) Note that \(r_1\vec u_1=\frac1{m^2+1}(x+my)(1,m)=\frac1{m^2+1}(x+my,mx+m^2y)\) is our desired point. Note also that we could evaluate \(r_2\text{,}\) but we don't need to because of our choice of basis (we only have to work half as hard!).</p>
 <span class="incontext"><a href="section-34.html#p-1095">in-context</a></span>
 </body>
 </html>

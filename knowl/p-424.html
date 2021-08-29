@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:42-06:00       *-->
+<!--*       on 2021-08-29T14:14:37-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,99 +15,41 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>We start with the matrix</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-A=\begin{bmatrix} a\amp b\\c\amp d \end{bmatrix} 
-\end{equation*}
-</div>
-<p data-braille="continuation">Now we carry out row reduction:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\left[ \begin{array}{cc|cc}
-a\amp b\amp1\amp0\rlap{\hbox{$\qquad R_1\gets \frac1a R_1$}}\\
-c\amp d\amp0\amp1
-\end{array} \right]  \\ 
-\left[ \begin{array}{cc|cc}
-1\amp\frac ba\amp\frac1a\amp0\\ 
-c\amp d\amp0\amp1 \rlap{\hbox{$\qquad R_2\gets R_2-cR_1$}}
-\end{array} \right]\\ 
-\left[ \begin{array}{cc|cc}
-1\amp\frac ba\amp\frac1a\amp0
-\\ 0\amp d-\frac{bc}a\amp-\frac ca\amp1
-\end{array} \right] \rlap{\hbox{(Rewrite last row)}}   \\
-\left[\begin{array}{cc|cc}
-1\amp\frac ba\amp\frac1a\amp0\\ 
-0\amp\frac{ad-bc}a\amp-\frac ca\amp1 
-\rlap{\hbox{$\qquad R_2\gets \frac a{ad-bc}R_2$}}
-\end{array} \right]\\ 
-\left[ \begin{array}{cc|cc}
-1\amp\frac ba\amp\frac1a\amp0\\ 
-0\amp1\amp-\frac c{ad-cb}\amp \frac a{ad-cb} \rlap{\hbox{$\qquad
-R_1\gets R_1-\frac ba R_2$}}
-\end{array}\right]\\ \left[ \begin{array}{cc|cc}
-1\amp0\amp \frac d{ad-cb}\amp -\frac b{ad-cb}   \\
-0\amp1\amp-\frac c{ad-cb}\amp \frac a{ad-cb}
-\end{array} \right] 
-\end{equation*}
-</div>
-<p data-braille="continuation">On the face of it, this seems to say</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-A^{-1} 
-=
-\begin{bmatrix}
-\frac d{ad-cb}\amp -\frac b{ad-cb} \\
--\frac c{ad-cb}\amp \frac a{ad-cb}
-\end{bmatrix} 
-= \frac1{ad-cb}
-\begin{bmatrix} d\amp-b\\ -c\amp a \end{bmatrix}
-\end{equation*}
-</div>
-<p data-braille="continuation">But notice that we have blithely ignored the possibility that \(a=0\) or that \(ad-bc=0\text{.}\) Nonetheless we may compute:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\begin{bmatrix} a\amp b\\c\amp d \end{bmatrix}
-\begin{bmatrix} d\amp-b\\-c\amp a \end{bmatrix} =
-\begin{bmatrix} ad-bc\amp0\\0\amp ad-bc \end{bmatrix}
-=(ad-bc)I 
-\end{equation*}
-</div>
-<p data-braille="continuation">Hence if</p>
+<p>This means that the matrix is of the form</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 A=
-\begin{bmatrix} a\amp b\\c\amp d \end{bmatrix} 
-\hbox{ and } 
-B=
-\frac1{ad-bc}\begin{bmatrix} d\amp-b\\-c\amp a \end{bmatrix}
+\begin{bmatrix} 
+a_{1,1} \amp 0 \amp 0 \amp 0 \amp \cdots \amp 0 \\ 
+0 \amp a_{2,2} \amp 0 \amp 0 \amp \cdots \amp 0 \\ 
+0 \amp 0 \amp a_{3,3} \amp 0 \amp \cdots \amp 0 \\ 
+0 \amp 0 \amp 0 \amp a_{4,4} \amp \cdots \amp 0 \\ 
+\amp\amp\amp\amp\ddots\\ 
+0 \amp 0 \amp 0 \amp 0 \amp \cdots \amp a_{n,n} 
+\end{bmatrix}.
 \end{equation*}
 </div>
-<p data-braille="continuation">then</p>
+<p class="continuation">Once we know the diagonal entries, we know the whole matrix. Sometimes we abbreviate this as</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-AB=I 
+A=\diag (a_{1,1},\ldots,a_{n,n}). 
 \end{equation*}
 </div>
-<p data-braille="continuation">and so</p>
+<p class="continuation">An example of a diagonal matrix is the identity matrix \(I\text{:}\)</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-B=A^{-1}
+I= 
+\begin{bmatrix} 
+1\amp0\amp\cdots\amp0\amp0\\
+0\amp1\amp\cdots\amp0\amp0\\ 
+\amp\amp\ddots\\
+0\amp0\amp\cdots\amp1\amp0\\ 
+0\amp0\amp\cdots\amp0\amp1
+\end{bmatrix} 
+=\diag (1,\ldots,1) 
 \end{equation*}
 </div>
-<p data-braille="continuation">we conclude that if</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-A= \begin{bmatrix} a\amp b\\c\amp d \end{bmatrix} 
-\end{equation*}
-</div>
-<p data-braille="continuation">where \(ad-bc\neq 0\) then</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-A^{-1}=
-\frac1{ad-bc}\begin{bmatrix} d\amp-b\\-c\amp a \end{bmatrix}
-\end{equation*}
-</div>
-<span class="incontext"><a href="section-14.html#p-424">in-context</a></span>
+<p class="continuation">An alternative way of describing a diagonal matrix \(A=[a_{i,j}]\) is by the condition that \(a_{i,j}=0\) whenever \(i\not=j\text{.}\)</p>
+<span class="incontext"><a href="section-15.html#p-424">in-context</a></span>
 </body>
 </html>

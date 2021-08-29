@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:54-06:00       *-->
+<!--*       on 2021-08-29T14:14:52-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,20 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Sometimes it is possible to find the eigenvalues of a matrix by showing that it has the same eigenvalues as some diagonal matrix. The key concept used to do this is <dfn class="terminology">similarity</dfn>.</p>
+<p>Say \(A\vec x_1=\lambda_1\vec x_1\) and \(A\vec x_2=\lambda_2\vec x_2\text{,}\) and consider the equation \(r_1\vec x_1+r_2\vec x_2=\vec0\text{.}\) Multiplying both sides of the equation by the matrix \(A\) and multiplying both sides by \(\lambda_2\) gives two new equations:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+r_1\lambda_1\vec x_1+r_2\lambda_2\vec x_2=\vec0\\
+r_1\lambda_2\vec x_1+r_2\lambda_2\vec x_2=\vec0
+\end{gather*}
+</div>
+<p class="continuation">which implies</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+r_1(\lambda_1-\lambda_2)\vec x_1=\vec0 \text{,}
+\end{equation*}
+</div>
+<p class="continuation">and, since \(\lambda_1\not=\lambda_2\) and \(\vec x_1\not=\vec0\text{,}\) we have \(r_1=0\text{.}\) Similarly, \(r_2=0\) and so \(\{\vec x_1,\vec x_2\}\) is linearly independent.</p>
 <span class="incontext"><a href="section-39.html#p-1168">in-context</a></span>
 </body>
 </html>

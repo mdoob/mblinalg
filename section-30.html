@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:30-06:00       *-->
+<!--*       on 2021-08-29T14:14:24-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,36 +14,42 @@
 <title>Equations of Planes in \(\R^3\)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -56,8 +62,8 @@ MathJax.Hub.Config({
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
 \def\C{{\mathbb C}}
 \def\Q{{\mathbb Q}}
 \def\Z{{\mathbb Z}}
@@ -104,7 +110,7 @@ MathJax.Hub.Config({
 <li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
 <li class="link"><a href="LinearTransformations.html" data-scroll="LinearTransformations"><span class="codenumber">6</span> <span class="title">Linear transformations</span></a></li>
 <li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">7</span> <span class="title">Additional Topics</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-30"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.6</span> <span class="title">Equations of Planes in \(\R^3\)</span>
@@ -112,20 +118,20 @@ MathJax.Hub.Config({
 <section class="subsection" id="subsection-71"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.6.1</span> <span class="title">Three Dimensional Point-normal Form</span>
 </h3>
-<p id="p-927">Suppose we start with a nonzero vector \(\vec n=(a,b,c)\text{.}\) We then consider the plane (through \(\vec0\)) that is perpendicular to \(\vec n\text{.}\) The picture below illustrates the situation. Any point \((x,y,z)\) on this plane must be perpendicular to \(\vec n\text{.}\) This means that \((x,y,z)\cdot\vec n= ax+by+cz=0\text{.}\)</p>
+<p id="p-915">Suppose we start with a nonzero vector \(\vec n=(a,b,c)\text{.}\) We then consider the plane (through \(\vec0\)) that is perpendicular to \(\vec n\text{.}\) The picture below illustrates the situation. Any point \((x,y,z)\) on this plane must be perpendicular to \(\vec n\text{.}\) This means that \((x,y,z)\cdot\vec n= ax+by+cz=0\text{.}\)</p>
 <figure class="figure figure-like" id="figure-41"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><div class="asymptote-box" style="padding-top: 84.4686648501362%"><iframe src="images/image-41.html" class="asymptote"></iframe></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.6.1<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-928">In addition, the converse is true, that is, if we have numbers \(a\text{,}\) \(b\) and \(c\text{,}\) not all zero, then the set of all points \((x,y,z)\) satisfying \(ax+by+cz=0\) must be perpendicular to \(\vec n=(a,b,c)\) and so is a plane through \(\vec0\text{.}\) In this case \(\vec n\) is called the <dfn class="terminology">normal vector</dfn> to the plane.</p>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.6.1<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-916">In addition, the converse is true, that is, if we have numbers \(a\text{,}\) \(b\) and \(c\text{,}\) not all zero, then the set of all points \((x,y,z)\) satisfying \(ax+by+cz=0\) must be perpendicular to \(\vec n=(a,b,c)\) and so is a plane through \(\vec0\text{.}\) In this case \(\vec n\) is called the <dfn class="terminology">normal vector</dfn> to the plane.</p>
 <article class="theorem theorem-like" id="theorem-61"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.6.2</span><span class="period">.</span><span class="space"> </span><span class="title">Point-normal form through \(\vec0\).</span>
 </h6>
-<p id="p-929">The equation of a plane orthogonal to \(\vec n=(a,b,c)\) through \(\vec0\) is</p>
+<p id="p-917">The equation of a plane orthogonal to \(\vec n=(a,b,c)\) through \(\vec0\) is</p>
 <div class="displaymath">
 \begin{equation*}
 ax+by+cz=0
 \end{equation*}
-</div></article><p id="p-930">Next we consider the equation of a plane passing through an arbitrary point \((x_0,y_0,z_0)\text{.}\) The picture in this case is pretty similar to the previous one:</p>
+</div></article><p id="p-918">Next we consider the equation of a plane passing through an arbitrary point \((x_0,y_0,z_0)\text{.}\) The picture in this case is pretty similar to the previous one:</p>
 <figure class="figure figure-like" id="figure-42"><div class="image-box" style="width: 95%; margin-left: 2.5%; margin-right: 2.5%;"><div class="asymptote-box" style="padding-top: 73.9393939393939%"><iframe src="images/image-42.html" class="asymptote"></iframe></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.6.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-931">In this case the perpendicularity means that \((x-x_0,y-y_0,z-z_0)\cdot(a,b,c)=0\text{.}\) In other words,</p>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.6.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-919">In this case the perpendicularity means that \((x-x_0,y-y_0,z-z_0)\cdot(a,b,c)=0\text{.}\) In other words,</p>
 <div class="displaymath">
 \begin{equation*}
 a(x-x_0)+b(y-y_0)+c(z-z_0)=0
@@ -134,7 +140,7 @@ a(x-x_0)+b(y-y_0)+c(z-z_0)=0
 <article class="theorem theorem-like" id="theorem-62"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.6.4</span><span class="period">.</span><span class="space"> </span><span class="title">Point-normal form.</span>
 </h6>
-<p id="p-932">The equation of the plane through \((x_0,y_0,z_0)\) perpendicular to the vector \(\vec n=(a,b,c)\) is</p>
+<p id="p-920">The equation of the plane through \((x_0,y_0,z_0)\) perpendicular to the vector \(\vec n=(a,b,c)\) is</p>
 <div class="displaymath">
 \begin{equation*}
 a(x-x_0)+b(y-y_0)+c(z-z_0)=0\text{.}
@@ -142,59 +148,59 @@ a(x-x_0)+b(y-y_0)+c(z-z_0)=0\text{.}
 </div></article></section><section class="subsection" id="subsection-72"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.6.2</span> <span class="title">General Equation of a Plane</span>
 </h3>
-<p id="p-933">The point-normal equation of a plane may be written as</p>
+<p id="p-921">The point-normal equation of a plane may be written as</p>
 <div class="displaymath">
 \begin{equation*}
 a(x-x_0)+b(y-y_0)+c(z-z_0)=ax+by+cz-(ax_0+by_0+cz_0)=0
 \end{equation*}
 </div>
-<p id="p-934">If we set \(d=-(ax_0+by_0+cz_0)\text{,}\) we get the general equation of a plane.</p>
+<p id="p-922">If we set \(d=-(ax_0+by_0+cz_0)\text{,}\) we get the general equation of a plane.</p>
 <article class="theorem theorem-like" id="theorem-63"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.6.5</span><span class="period">.</span><span class="space"> </span><span class="title">General equation of a plane.</span>
 </h6>
-<p id="p-935">The general equation of a plane is</p>
+<p id="p-923">The general equation of a plane is</p>
 <div class="displaymath">
 \begin{equation*}
 ax+by+cz+d=0
 \end{equation*}
 </div>
-<p data-braille="continuation">where \(\vec n=(a,b,c)\) is orthogonal to the plane.</p></article><p id="p-936">Different values \(a\text{,}\) \(b\text{,}\) \(c\text{,}\) and \(d\) may give the same plane. If we consider the planes with equations</p>
+<p class="continuation">where \(\vec n=(a,b,c)\) is orthogonal to the plane.</p></article><p id="p-924">Different values \(a\text{,}\) \(b\text{,}\) \(c\text{,}\) and \(d\) may give the same plane. If we consider the planes with equations</p>
 <div class="displaymath">
 \begin{gather*}
 2x+3y+4z=0\\
 4x+6y+8z=0
 \end{gather*}
 </div>
-<p data-braille="continuation">then any vector \((x,y,z)\) that satisfies the first equation clearly satisfies the second one. More generally, if \(ax+by+cz+d=0\text{,}\) then for any real number \(r\not=0\) we have \(r(ax+by+cz+d)=0\) and so \((ra)x+(rb)y+(rc)z+rd=0\text{.}\) If we let \(a'=ra\text{,}\) \(b'=rb\text{,}\) \(c'=rc\)  and \(d'=rd\text{,}\) then</p>
+<p class="continuation">then any vector \((x,y,z)\) that satisfies the first equation clearly satisfies the second one. More generally, if \(ax+by+cz+d=0\text{,}\) then for any real number \(r\not=0\) we have \(r(ax+by+cz+d)=0\) and so \((ra)x+(rb)y+(rc)z+rd=0\text{.}\) If we let \(a'=ra\text{,}\) \(b'=rb\text{,}\) \(c'=rc\)  and \(d'=rd\text{,}\) then</p>
 <div class="displaymath">
 \begin{equation*}
 ax+by+cz+d=0 \quad\textrm{ if and only if }\quad a'x+b'y+c'z+d'=0
 \end{equation*}
 </div>
-<p data-braille="continuation">and so they are the general equation of the same plane. We may write \((a',b',c',d')=r(a,b,c,d)\text{.}\) This is the exact condition we need to have two different equations of the same plane.</p>
+<p class="continuation">and so they are the general equation of the same plane. We may write \((a',b',c',d')=r(a,b,c,d)\text{.}\) This is the exact condition we need to have two different equations of the same plane.</p>
 <article class="theorem theorem-like" id="theorem-64"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.6.6</span><span class="period">.</span><span class="space"> </span><span class="title">Different equations for the same plane.</span>
 </h6>
-<p id="p-937">The two equations</p>
+<p id="p-925">The two equations</p>
 <div class="displaymath">
 \begin{equation*}
 a_1x+b_1y+c_1z+d_1=0\\
 a_2x+b_2y+c_2z+d_2=0
 \end{equation*}
 </div>
-<p data-braille="continuation">are equations of the same plane if and only if</p>
+<p class="continuation">are equations of the same plane if and only if</p>
 <div class="displaymath">
 \begin{equation*}
 (a_2,b_2,c_2,d_2)=r (a_1,b_1,c_1,d_1)
 \textrm{ for some } r\not=0.
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-74"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-74"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-74"><article class="hiddenproof"><p id="p-938">First, if \((a_2,b_2,c_2,d_2)=r (a_1,b_1,c_1,d_1)\text{,}\) and \((x_0,y_0,z_0)\) is in the first plane, then</p>
+</div></article><article class="hiddenproof" id="proof-74"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-74"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-74"><article class="hiddenproof"><p id="p-926">First, if \((a_2,b_2,c_2,d_2)=r (a_1,b_1,c_1,d_1)\text{,}\) and \((x_0,y_0,z_0)\) is in the first plane, then</p>
 <div class="displaymath">
 \begin{equation*}
 a_1x_0+b_1y_0+c_1z_0+d_1=0.
 \end{equation*}
 </div>
-<p data-braille="continuation">Multiplying both sides of the equation by \(r\) gives</p>
+<p class="continuation">Multiplying both sides of the equation by \(r\) gives</p>
 <div class="displaymath">
 \begin{align*}
 0 \amp= r(a_1x_0+b_1y_0+c_1z_0+d_1)\\
@@ -202,8 +208,8 @@ a_1x_0+b_1y_0+c_1z_0+d_1=0.
 \amp =a_2x_0+b_2y_0+c_2z_0+d_2
 \end{align*}
 </div>
-<p data-braille="continuation">and so \((x_0,y_0,z_0)\) is in the second plane. A similar argument shows that any vector in the second plane is also in the first plane.</p>
-<p id="p-939">Next, suppose that the two equations are equations of the same plane. We consider this as a system of linear equations with augmented matrix</p>
+<p class="continuation">and so \((x_0,y_0,z_0)\) is in the second plane. A similar argument shows that any vector in the second plane is also in the first plane.</p>
+<p id="p-927">Next, suppose that the two equations are equations of the same plane. We consider this as a system of linear equations with augmented matrix</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -212,13 +218,13 @@ a_2\amp b_2\amp c_2\amp -d_2
 \end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">which we put into reduced row echelon form to find all points in both planes. It takes just two elementary row operations. The first nonzero entry in the first row is changed to a one using \(R_1\gets \lambda_1R_1\) and the entry below this leading one is changed to a zero using \(R_2=R_2-\lambda_2R_1\text{.}\) This means that the second row in the reduced row echelon form is</p>
+<p class="continuation">which we put into reduced row echelon form to find all points in both planes. It takes just two elementary row operations. The first nonzero entry in the first row is changed to a one using \(R_1\gets \lambda_1R_1\) and the entry below this leading one is changed to a zero using \(R_2=R_2-\lambda_2R_1\text{.}\) This means that the second row in the reduced row echelon form is</p>
 <div class="displaymath">
 \begin{equation*}
 (a_2,b_2,c_2,d_2)-\lambda_2\lambda_1(a_1,b_1,c_1,d_1)\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">However, the first and second equations together have the same solutions as the first equation alone, that is, the second equation is actually superfluous. This makes the second row all zero, and so, setting \(r=\lambda_1\lambda_2\text{,}\) we have</p>
+<p class="continuation">However, the first and second equations together have the same solutions as the first equation alone, that is, the second equation is actually superfluous. This makes the second row all zero, and so, setting \(r=\lambda_1\lambda_2\text{,}\) we have</p>
 <div class="displaymath">
 \begin{equation*}
 (a_2,b_2,c_2,d_2)=r(a_1,b_1,c_1,d_1)\text{.}
@@ -226,21 +232,24 @@ a_2\amp b_2\amp c_2\amp -d_2
 </div></article></div></section><section class="subsection" id="subsection-73"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.6.3</span> <span class="title">The equation of a plane through three given points</span>
 </h3>
-<p id="p-940">Suppose we have three (presumably noncollinear) points \((x_0,y_0,z_0)\text{,}\) \((x_1,y_1,z_1)\) and \((x_2,y_2,z_2)\text{.}\) We want to find the equation of the plane containing the three points. We will give three different methods, and apply each method to a specific example.</p>
-<article class="paragraphs" id="paragraphs-13"><h5 class="heading"><span class="title">Finding the plane containing three points: method 1.</span></h5>
-<p id="p-941">The general equation of the plane is</p>
+<p id="p-928">Suppose we have three (presumably noncollinear) points \((x_0,y_0,z_0)\text{,}\) \((x_1,y_1,z_1)\) and \((x_2,y_2,z_2)\text{.}\) We want to find the equation of the plane containing the three points. We will give three different methods, and apply each method to a specific example.</p>
+<section class="paragraphs" id="paragraphs-13"><h5 class="heading"><span class="title">Finding the plane containing three points: method 1.</span></h5>
+<p id="p-929">The general equation of the plane is</p>
 <div class="displaymath">
 \begin{equation*}
 ax+by+cz+d=0
 \end{equation*}
 </div>
-<p data-braille="continuation">for some \(a\text{,}\) \(b\) and \(c\) not all zero. Substitute the three points in the equation to get three equations in four unknowns (the unknowns are \(a\text{,}\) \(b\text{,}\) \(c\) and \(d\)).</p>
-<p id="p-942">Example of this method: Let the three points be \((1,1,3)\text{,}\) \((1,0,2)\) and \((2,1,1)\text{.}\) Each point gives an equation: \(\begin{align}
+<p class="continuation">for some \(a\text{,}\) \(b\) and \(c\) not all zero. Substitute the three points in the equation to get three equations in four unknowns (the unknowns are \(a\text{,}\) \(b\text{,}\) \(c\) and \(d\)).</p>
+<p id="p-930">Example of this method: Let the three points be \((1,1,3)\text{,}\) \((1,0,2)\) and \((2,1,1)\text{.}\) Each point gives an equation:</p>
+<div class="displaymath">
+\begin{align*}
 a+b+3c+d\amp=0 \tag{from the point \((1,1,3)\)}\\
 a\phantom{+2b}+2c+d\amp=0\tag{from the point \((1,0,2)\)}\\
-2a+b+c+d\amp=0\tag{from the point \((2,1,1)\)}
-\end{align}
-\text{.}\) The augmented matrix for this system is</p>
+2a+b+c+d\amp=0\tag{from the point \((2,1,1)\)}\text{.}
+\end{align*}
+</div>
+<p class="continuation">The augmented matrix for this system is</p>
 <div class="displaymath">
 \begin{equation*}
 \left[\begin{array}{cccc|c}
@@ -250,7 +259,7 @@ a\phantom{+2b}+2c+d\amp=0\tag{from the point \((1,0,2)\)}\\
 \end{array}\right]
 \end{equation*}
 </div>
-<p id="p-943">which has the reduced row echelon form:</p>
+<p id="p-931">which has the reduced row echelon form:</p>
 <div class="displaymath">
 \begin{equation*}
 \left[\begin{array}{cccc|c}
@@ -260,40 +269,46 @@ a\phantom{+2b}+2c+d\amp=0\tag{from the point \((1,0,2)\)}\\
 \end{array}\right]
 \end{equation*}
 </div>
-<p id="p-944">This means that \(d\) is a free variable, \(c=-\frac14 d\text{,}\) \(b=\frac14 d\) and \(a=-\frac12 d\text{.}\) This makes the equation of the plane</p>
+<p id="p-932">This means that \(d\) is a free variable, \(c=-\frac14 d\text{,}\) \(b=\frac14 d\) and \(a=-\frac12 d\text{.}\) This makes the equation of the plane</p>
 <div class="displaymath">
 \begin{equation*}
 ax+by+cz+d=-\frac12 d x+\frac14 d y-\frac14 d z +d =0
 \end{equation*}
 </div>
-<p id="p-945">Dividing the equation by \(d\) gives the equation</p>
+<p id="p-933">Dividing the equation by \(d\) gives the equation</p>
 <div class="displaymath">
 \begin{equation*}
 -\frac12  x+\frac14 y-\frac14 z +1 =0
 \end{equation*}
 </div>
-<p id="p-946">which is an equation of the plane. Multiplying by \(-4\) can make the equation a bit cleaner:</p>
+<p id="p-934">which is an equation of the plane. Multiplying by \(-4\) can make the equation a bit cleaner:</p>
 <div class="displaymath">
 \begin{equation*}
 2x-y+z-4=0
 \end{equation*}
 </div>
-<p id="p-947">As a check, for \((1,1,3)\) we have \(2x-y+z-4=2-1+3-4=0\text{,}\) for \((1,0,2)\) we have \(2x-y+z-4=2-0+2-4=0\) and for \((2,1,1)\) we have \(2x-y+z-4=4-1+1-4=0\text{.}\)</p></article><article class="paragraphs" id="paragraphs-14"><h5 class="heading"><span class="title">Finding the plane containing three points: method  2.</span></h5>
-<p id="p-948">The point-normal equation of a plane is</p>
+<p id="p-935">As a check, for \((1,1,3)\) we have \(2x-y+z-4=2-1+3-4=0\text{,}\) for \((1,0,2)\) we have \(2x-y+z-4=2-0+2-4=0\) and for \((2,1,1)\) we have \(2x-y+z-4=4-1+1-4=0\text{.}\)</p></section><section class="paragraphs" id="paragraphs-14"><h5 class="heading"><span class="title">Finding the plane containing three points: method  2.</span></h5>
+<p id="p-936">The point-normal equation of a plane is</p>
 <div class="displaymath">
 \begin{equation*}
 a(x-x_0)+b(y-y_0)+c(z-z_0)=0
 \end{equation*}
 </div>
-<p data-braille="continuation">for some \(a\text{,}\) \(b\) and \(c\) not all zero. Use one of the points as \((x_0,y_0,z_0)\) and then substitute the other two points in the equation to get two equations in three unknowns (the unknowns are \(a\text{,}\) \(b\) and \(c\)).</p>
-<p id="p-949">Example of this method: Let the three points be \((1,1,3)\text{,}\) \((1,0,2)\) and \((2,1,1)\text{.}\) Let \((x_0,y_0,z_0)=(1,1,3)\) so that the equation of the plane is</p>
+<p class="continuation">for some \(a\text{,}\) \(b\) and \(c\) not all zero. Use one of the points as \((x_0,y_0,z_0)\) and then substitute the other two points in the equation to get two equations in three unknowns (the unknowns are \(a\text{,}\) \(b\) and \(c\)).</p>
+<p id="p-937">Example of this method: Let the three points be \((1,1,3)\text{,}\) \((1,0,2)\) and \((2,1,1)\text{.}\) Let \((x_0,y_0,z_0)=(1,1,3)\) so that the equation of the plane is</p>
 <div class="displaymath">
 \begin{equation*}
-a(x-1)+b(y-1)+c(z-3)=0
+a(x-1)+b(y-1)+c(z-3)=0\text{.}
 \end{equation*}
 </div>
-<p id="p-950">Using the other two points we get \​begin{align} -b-c \amp=0\\ a-2c \amp=0 \end{align}</p>
-<p id="p-951">The augmented matrix of these equations is</p>
+<p class="continuation">Using the other two points we get</p>
+<div class="displaymath">
+\begin{align*}
+-b-c \amp=0\\
+a-2c \amp=0
+\end{align*}
+</div>
+<p class="continuation">The augmented matrix of these equations is</p>
 <div class="displaymath">
 \begin{equation*}
 \left[
@@ -304,7 +319,7 @@ a(x-1)+b(y-1)+c(z-3)=0
 \right]
 \end{equation*}
 </div>
-<p id="p-952">whose reduced row echelon form is</p>
+<p class="continuation">whose reduced row echelon form is</p>
 <div class="displaymath">
 \begin{equation*}
 \left[
@@ -315,57 +330,57 @@ a(x-1)+b(y-1)+c(z-3)=0
 \right]
 \end{equation*}
 </div>
-<p id="p-953">which implies \(a=2c\) and \(b=-c\text{.}\) Hence</p>
+<p class="continuation">which implies \(a=2c\) and \(b=-c\text{.}\) Hence</p>
 <div class="displaymath">
 \begin{equation*}
 2c(x-1)-c(y-1)+c(z-3)=0
 \end{equation*}
 </div>
-<p id="p-954">and so</p>
+<p class="continuation">and so</p>
 <div class="displaymath">
 \begin{equation*}
 2(x-1)-(y-1)+(z-3)=0
 \end{equation*}
-</div></article><article class="paragraphs" id="paragraphs-15"><h5 class="heading"><span class="title">Finding the plane containing three points: method 3.</span></h5>
-<p id="p-955">Once again, the point-normal equation of a plane is</p>
+</div></section><section class="paragraphs" id="paragraphs-15"><h5 class="heading"><span class="title">Finding the plane containing three points: method 3.</span></h5>
+<p id="p-938">Once again, the point-normal equation of a plane is</p>
 <div class="displaymath">
 \begin{equation*}
 a(x-x_0)+b(y-y_0)+c(z-z_0)=0
 \end{equation*}
 </div>
-<p data-braille="continuation">for some \(a\text{,}\) \(b\) and \(c\) not all zero. This equation says that the vectors \((a,b,c)\cdot(x-x_0,y-y_0,z-z_0)=0\) and hence they are orthogonal for any \((x,y,z)\) in the plane.</p>
-<p id="p-956">Let \((x_0,y_0,z_0)\) be one of the three points. Using each of the other two points as \((x,y,z)\text{,}\) we have two vectors \((x-x_0,y-y_0,z-z_0)\) that need to be orthogonal to \((a,b,c)\text{.}\) Since the cross product of the two vectors is orthogonal each of them, that cross product may be used as the vector \((a,b,c)\text{.}\)</p></article><article class="paragraphs" id="paragraphs-16"><h5 class="heading"><span class="title">Example of this method.</span></h5>
-<p id="p-957">Let the three points be \((1,1,3)\text{,}\) \((1,0,2)\) and \((2,1,1)\text{.}\) Let \((x_0,y_0,z_0)=(1,1,3)\text{.}\) Then the other two points give \((x-x_0,y-y_0,z-z_0)\) as \((0,-1,-1)\) and \((1,0,-2)\text{.}\) It's easy to compute \((0,-1,-1)\times(1,0,-2)=(-2,-1,1)\text{,}\) and so we may use \((a,b,c)=(2,-1,1)\text{.}\) In other words, the equation of the plane is</p>
+<p class="continuation">for some \(a\text{,}\) \(b\) and \(c\) not all zero. This equation says that the vectors \((a,b,c)\cdot(x-x_0,y-y_0,z-z_0)=0\) and hence they are orthogonal for any \((x,y,z)\) in the plane.</p>
+<p id="p-939">Let \((x_0,y_0,z_0)\) be one of the three points. Using each of the other two points as \((x,y,z)\text{,}\) we have two vectors \((x-x_0,y-y_0,z-z_0)\) that need to be orthogonal to \((a,b,c)\text{.}\) Since the cross product of the two vectors is orthogonal each of them, that cross product may be used as the vector \((a,b,c)\text{.}\)</p></section><section class="paragraphs" id="paragraphs-16"><h5 class="heading"><span class="title">Example of this method.</span></h5>
+<p id="p-940">Let the three points be \((1,1,3)\text{,}\) \((1,0,2)\) and \((2,1,1)\text{.}\) Let \((x_0,y_0,z_0)=(1,1,3)\text{.}\) Then the other two points give \((x-x_0,y-y_0,z-z_0)\) as \((0,-1,-1)\) and \((1,0,-2)\text{.}\) It's easy to compute \((0,-1,-1)\times(1,0,-2)=(-2,-1,1)\text{,}\) and so we may use \((a,b,c)=(2,-1,1)\text{.}\) In other words, the equation of the plane is</p>
 <div class="displaymath">
 \begin{equation*}
 2(x-1)-(y-1)+(z-3)=0
 \end{equation*}
 </div>
-<p id="p-958">If we expand this final answer, we get</p>
+<p id="p-941">If we expand this final answer, we get</p>
 <div class="displaymath">
 \begin{equation*}
 2x-y+z-4=0
 \end{equation*}
 </div>
-<p id="p-959">All three methods give the right answer, but clearly the third one is the easiest to use. It's the theory behind the cross product that enables a much easier computation. This happens often in many areas of mathematics: knowing some theory can make your life much easier.</p></article><p id="p-960">Here is the graph of the plane with equation \(2x-y+z-4=0\) in \(\R^3\) including the three points \((1,1,3)\text{,}\) \((1,0,2)\) and \((2,1,1)\) used to determine it. The plane is blue, and the line joining the origin to \((a,b,c)=(2,-1,1)\) is red. As expected with the point-normal form, the line is orthogonal to the plane.</p>
+<p id="p-942">All three methods give the right answer, but clearly the third one is the easiest to use. It's the theory behind the cross product that enables a much easier computation. This happens often in many areas of mathematics: knowing some theory can make your life much easier.</p></section><p id="p-943">Here is the graph of the plane with equation \(2x-y+z-4=0\) in \(\R^3\) including the three points \((1,1,3)\text{,}\) \((1,0,2)\) and \((2,1,1)\) used to determine it. The plane is blue, and the line joining the origin to \((a,b,c)=(2,-1,1)\) is red. As expected with the point-normal form, the line is orthogonal to the plane.</p>
 <figure class="figure figure-like" id="figure-43"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><div class="asymptote-box" style="padding-top: 126.330532212885%"><iframe src="images/image-43.html" class="asymptote"></iframe></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.6.7<span class="period">.</span></span><span class="space"> </span></figcaption></figure></section><section class="subsection" id="subsection-74"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.6.4</span> <span class="title">The area of a triangle and parallelogram determined by three points</span>
 </h3>
-<p id="p-961">Suppose we have three points \(A\text{,}\) \(B\) and \(C\) in \(\R^3\text{.}\) We want to compute the area of the triangle determined by these points. If the points are collinear, then the triangle collapses to a line and the area is zero, so we may suppose that the points are noncollinear.</p>
+<p id="p-944">Suppose we have three points \(A\text{,}\) \(B\) and \(C\) in \(\R^3\text{.}\) We want to compute the area of the triangle determined by these points. If the points are collinear, then the triangle collapses to a line and the area is zero, so we may suppose that the points are noncollinear.</p>
 <figure class="figure figure-like" id="figure-44"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><div class="asymptote-box" style="padding-top: 54.1937205372232%"><iframe src="images/image-44.html" class="asymptote"></iframe></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.6.8<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-962">We define two vectors:</p>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.6.8<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-945">We define two vectors:</p>
 <div class="displaymath">
 \begin{equation*}
 \vec u= \overrightarrow{AB}\\
 \vec v=\overrightarrow{AC}
 \end{equation*}
 </div>
-<p id="p-963">The area of the triangle is \(\frac12 hb\) where \(b=\|\vec u\|\) and \(h=\|\vec v\|\sin(\theta)\text{.}\) Hence the area of the triangle is \(\frac12 \|\vec u\|\|\vec v\|\sin(\theta) 
+<p id="p-946">The area of the triangle is \(\frac12 hb\) where \(b=\|\vec u\|\) and \(h=\|\vec v\|\sin(\theta)\text{.}\) Hence the area of the triangle is \(\frac12 \|\vec u\|\|\vec v\|\sin(\theta) 
 = \frac12\|\vec u\times\vec v\|\text{.}\)</p>
-<p id="p-964">The area of parallelogram follows easily from the triangle (and vice-versa) since the area of the parallelogram is twice that of the triangle.</p>
+<p id="p-947">The area of parallelogram follows easily from the triangle (and vice-versa) since the area of the parallelogram is twice that of the triangle.</p>
 <figure class="figure figure-like" id="figure-45"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><div class="asymptote-box" style="padding-top: 83.5008668006935%"><iframe src="images/image-45.html" class="asymptote"></iframe></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.6.9<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-965">The area of the parallelogram is \(\|\vec u\times\vec v\|\text{.}\)</p></section></section></div></main>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.6.9<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-948">The area of the parallelogram is \(\|\vec u\times\vec v\|\text{.}\)</p></section></section></div></main>
 </div>
 </body>
 </html>

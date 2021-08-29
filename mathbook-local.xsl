@@ -4,11 +4,12 @@
 
 <xsl:import href="/home/mdoob/mathbook/xsl/pretext-html.xsl" />
 <xsl:param name="debug.colors" select="'brown_gold'" /> 
-<xsl:param name="toc.level" select="1" />
 
+<xsl:param name="toc.level" select="1" />
+<!--
 <xsl:param name="html.knowl.theorem" select="'no'" />
 <xsl:param name="html.knowl.example" select="'no'" />
-
+-->
 
 </xsl:stylesheet>
 

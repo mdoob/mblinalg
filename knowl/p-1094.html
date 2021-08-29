@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:53-06:00       *-->
+<!--*       on 2021-08-29T14:14:50-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,55 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">It is reasonable to ask is why the consideration different bases is worthwhile. One answer is that it can make some computations much easier. The evaluation of projections from a point to a line in \(\R^2\) is given in <a href="section-31.html#ExamplesR2Projections" class="internal" title="Subsection 4.7.2: Examples of projections in \(\R^2\)">Subsection 4.7.2</a>. The following example gives a different quicker evaluation using bases.</p>
+<p>Using</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\vec x_1 = c_{1,1}\vec y_1+c_{2,1}\vec y_2 +\cdots+ c_{n,1}\vec y_n\\
+\vec x_2 = c_{1,2}\vec y_1+c_{2,2}\vec y_2 +\cdots+ c_{n,2}\vec y_n\\
+\vdots\\
+\vec x_n = c_{1,n}\vec y_1+c_{2,n}\vec y_2 +\cdots+ c_{n,n}\vec y_n
+\end{gather*}
+</div>
+<p class="continuation">and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vec w
+= r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_n
+= s_1\vec y_1+s_2\vec y_2+\cdots+s_n\vec y_n\text{,}
+\end{equation*}
+</div>
+<p class="continuation">we see that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+s_1\vec y_1+s_2\vec y_2+\cdots+s_n\vec y_n
+\amp = r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_n \\
+\amp = r_1(c_{1,1}\vec y_1+c_{2,1}\vec y_2 +\cdots+ c_{n,1}\vec y_n) \\
+\amp  \phantom{===} +r_2(c_{1,2}\vec y_1+c_{2,2}\vec y_2 +\cdots+ c_{n,2}\vec y_n) \\
+\amp\phantom{===|} \vdots\\
+\amp \phantom{===}  +r_n(c_{1,n}\vec y_1+c_{2,n}\vec y_2 +\cdots+ c_{n,n}\vec y_n) \\
+\amp = (r_1 c_{1,1}+r_2 c_{1,2}+\cdots+r_n c_{1,n})\vec y_1 \\
+\amp \phantom{===} + (r_1 c_{2,1}+r_2 c_{2,2}+\cdots+r_n c_{2,n})\vec y_2 \\
+\amp\phantom{===|} \vdots\\
+\amp \phantom{===} + (r_1 c_{n,1}+r_2 c_{n,2}+\cdots+r_n c_{n,n})\vec y_n \text{.}
+\end{align*}
+</div>
+<p class="continuation">Using <a class="xref" data-knowl="./knowl/prop-unique-indepentent.html" title="Proposition 4.9.4: Uniqueness of linear combinations">Proposition 4.9.4</a>, we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+s_1=r_1 c_{1,1}+r_2 c_{1,2}+\cdots+r_n c_{1,n}\\
+s_2=r_1 c_{2,1}+r_2 c_{2,2}+\cdots+r_n c_{2,n}\\
+\vdots\\
+s_n=r_1 c_{n,1}+r_2 c_{n,2}+\cdots+r_n c_{n,n}\text{,}
+\end{gather*}
+</div>
+<p class="continuation">which is identical to</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{bmatrix} s_1\\ s_2\\ \vdots \\s_n \end{bmatrix}
+=
+C \begin{bmatrix}r_1\\r_2\\ \vdots\\r_n\end{bmatrix}\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="section-34.html#p-1094">in-context</a></span>
 </body>
 </html>

@@ -308,13 +308,13 @@
             </p></li>
             <li><p>
                 Evaluating each term:
-                <me>
-                    r(\vec x\cdot\vec y)= r\sum_{i=1}^n x_iy_i      \\
-                    (r\vec x)\cdot \vec y = \sum_{i=1}^n (rx_i)y_i
-                    = \sum_{i=1}^n r(x_iy_i)= r\sum_{i=1}^n x_iy_i        \\
-                    \vec x\cdot (r\vec y)= \sum_{i=1}^n x_i(ry_i)
-                    = \sum_{i=1}^n r(x_iy_i)= r\sum_{i=1}^n x_iy_i
-                </me>
+                <md>
+                    <mrow>r(\vec x\cdot\vec y)= r\sum_{i=1}^n x_iy_i </mrow>
+                    <mrow>(r\vec x)\cdot \vec y = \sum_{i=1}^n (rx_i)y_i
+                      = \sum_{i=1}^n r(x_iy_i)= r\sum_{i=1}^n x_iy_i</mrow>
+                    <mrow>\vec x\cdot (r\vec y)= \sum_{i=1}^n x_i(ry_i)
+                      = \sum_{i=1}^n r(x_iy_i)= r\sum_{i=1}^n x_iy_i</mrow>
+                </md>
             </p></li>
             <li><p>
                 <m>\vec x\cdot \vec x=\sum_{i=1}^n x_i^2</m>, and since <m>x_i^2\ge0</m> for any
@@ -627,18 +627,16 @@
         of quadratic equations.
         We take a real number <m>x</m> and let it act as a variable in an equation.
     
-        <me>
-        \begin{array}{rl}
-         0 
-        \amp \le (x\vec u+\vec v)\cdot(x\vec u+\vec v)\\
-        \amp = (x\vec u+\vec v)\cdot x\vec u + (x\vec u+\vec v)\cdot \vec v\\
-        \amp = x\vec u\cdot x\vec u 
-             + \vec v \cdot x\vec u +x\vec u\cdot \vec v+ \vec v\cdot \vec v\\
-        \amp = (\vec u\cdot\vec u) x^2 +2(\vec u\cdot \vec v) x+\vec v\cdot \vec v\\
-        \amp = \|\vec u\|^2 x^2 +2(\vec u\cdot \vec v) x+\|\vec v\|^2\\
-        \amp= ax^2+bx+c
-        \end{array}
-        </me>
+        <md>
+          <mrow>0 \amp \le (x\vec u+\vec v)\cdot(x\vec u+\vec v)</mrow>
+          <mrow>\amp = (x\vec u+\vec v)\cdot x\vec u + (x\vec u+\vec v)\cdot \vec v</mrow>
+          <mrow>\amp = x\vec u\cdot x\vec u 
+             + \vec v \cdot x\vec u +x\vec u\cdot \vec v+ \vec v\cdot \vec v</mrow>
+          <mrow>\amp = (\vec u\cdot\vec u) x^2 +2(\vec u\cdot \vec v) x
+            +\vec v\cdot \vec v</mrow>
+          <mrow>\amp = \|\vec u\|^2 x^2 +2(\vec u\cdot \vec v) x+\|\vec v\|^2</mrow>
+          <mrow>\amp= ax^2+bx+c</mrow>
+        </md>
         where <m>a=\|\vec u\|^2</m>, <m>b=2(\vec u\cdot\vec v)</m> and
         <m>c=\|\vec v\|^2</m>. This means that the graph of <m> ax^2+bx+c</m>
         is a parabola that is never below the <m>x</m>-axis.  In particular, this means that 
@@ -650,11 +648,11 @@
         <em>This is exactly what can not happen</em>,
         and so <m>b^2-4ac\le0</m>, or <m>b^2\le4ac</m>. 
         Using our known values of <m>a</m>, <m>b</m> and <m>c</m>, we get
-        <me>
-             4(\vec u\cdot\vec v)^2\le 4\|\vec u\|^2\|\vec v\|^2\\
-             (\vec u\cdot\vec v)^2\le\|\vec u\|^2\|\vec v\|^2\\
-             |\vec u\cdot\vec v|\le\|\vec u\|\,\|\vec v\|\\
-        </me>
+        <md>
+             <mrow>4(\vec u\cdot\vec v)^2\le 4\|\vec u\|^2\|\vec v\|^2\\</mrow>
+             <mrow>(\vec u\cdot\vec v)^2\le\|\vec u\|^2\|\vec v\|^2\\</mrow>
+             <mrow>|\vec u\cdot\vec v|\le\|\vec u\|\,\|\vec v\|\\</mrow>
+        </md>
         </p>
         </proof>
 
@@ -745,15 +743,12 @@
             </p></li>
             <li><p> 
                 From direct evaluation:
-                <me>
-                \begin{array}{rl}
-                \|r\vec x\|^2
-                \amp=\|r(x_1,x_2,\ldots,x_n)\|^2\\
-                \amp=\|(rx_1,rx_2,\ldots,rx_n)\|^2\\
-                \amp=r^2x_1^2+r^2x_2^2+\cdots+r^2x_n^2\\
-                \amp=r^2(x_1^2+x_2^2+\cdots+x_n^2)
-                \end{array}
-                </me>
+                <md>
+                <mrow>\|r\vec x\|^2 \amp=\|r(x_1,x_2,\ldots,x_n)\|^2</mrow>
+                <mrow>\amp=\|(rx_1,rx_2,\ldots,rx_n)\|^2</mrow>
+                <mrow>\amp=r^2x_1^2+r^2x_2^2+\cdots+r^2x_n^2</mrow>
+                <mrow>\amp=r^2(x_1^2+x_2^2+\cdots+x_n^2)</mrow>
+                </md>
                 and so by taking square roots, <m>\|r\vec x\|=|r| \|\vec x\|</m>.
             </p></li>
             <li><p> 
@@ -761,34 +756,30 @@
             </p></li>
             <li><p> 
                 Again, a direct evaluation: 
-                <me>
-                \begin{array}{rl}
-                \|\vec x+\vec y\|^2 + \|\vec x-\vec y\|^2 
-                \amp= (\vec x+\vec y) \cdot (\vec x+\vec y) 
-                    +(\vec x-\vec y) \cdot (\vec x-\vec y)\\
-                \amp=  (\vec x\cdot\vec x + \vec x\cdot\vec y 
-                    +\vec y\cdot\vec x +\vec y\cdot\vec y)\\
-                \amp \phantom{=} +  (\vec x\cdot\vec x - \vec x\cdot\vec y 
-                    -\vec y\cdot\vec x +\vec y\cdot\vec y)\\
-                \amp=2(\|\vec x\|^2 +\|\vec y\|^2)
-                \end{array}
-                </me>
+                <md>
+                <mrow>\|\vec x+\vec y\|^2 + \|\vec x-\vec y\|^2 
+                  \amp= (\vec x+\vec y) \cdot (\vec x+\vec y) 
+                    +(\vec x-\vec y) \cdot (\vec x-\vec y)</mrow>
+                <mrow>\amp=  (\vec x\cdot\vec x + \vec x\cdot\vec y
+                    +\vec y\cdot\vec x +\vec y\cdot\vec y) </mrow>
+                <mrow>\amp \phantom{= (} +  (\vec x\cdot\vec x - \vec x\cdot\vec y
+                    -\vec y\cdot\vec x +\vec y\cdot\vec y) </mrow>
+                <mrow>\amp=2(\|\vec x\|^2 +\|\vec y\|^2)</mrow>
+                </md>
             </p></li>
             <li><p> 
                 The triangle inequality is a consequence of the Cauchy-Schwarz inequality:
-                <me>
-                \begin{array}{rll}
-                \|\vec x+\vec y\|^2
-                \amp= (\vec x+\vec y)\cdot(\vec x+\vec y)\\
-                \amp= \vec x\cdot\vec x+2(\vec x\cdot\vec y)+\vec y\cdot\vec y\\
-                \amp= \|\vec x\|^2 +2(\vec x\cdot\vec y)+\|\vec y\|^2\\
-                \amp\le \|\vec x\|^2 +2|\vec x\cdot\vec y|+\|\vec y\|^2
-                \amp\amp\gets r\le|r|\text{ used here.}\\
-                \amp\le \|\vec x\|^2 +2\|\vec x\|\|\vec y\|+\|\vec y\|^2
-                \amp\amp\gets \text{ Cauchy-Schwarz used here.}\\
-                \amp= (\|\vec x\|+\|\vec y\|)^2
-                \end{array}
-                </me>
+                <md>
+                <mrow>\|\vec x+\vec y\|^2
+                  \amp= (\vec x+\vec y)\cdot(\vec x+\vec y)</mrow>
+                <mrow>\amp= \vec x\cdot\vec x+2(\vec x\cdot\vec y)+\vec y\cdot\vec y</mrow>
+                <mrow>\amp= \|\vec x\|^2 +2(\vec x\cdot\vec y)+\|\vec y\|^2</mrow>
+                <mrow>\amp\le \|\vec x\|^2 +2|\vec x\cdot\vec y|+\|\vec y\|^2
+                  \amp\amp\gets r\le|r|\text{ used here.}</mrow>
+                <mrow>\amp\le \|\vec x\|^2 +2\|\vec x\|\|\vec y\|+\|\vec y\|^2
+                  \amp\amp\gets \text{ Cauchy-Schwarz used here.}</mrow>
+                <mrow>\amp= (\|\vec x\|+\|\vec y\|)^2</mrow>
+                </md>
             </p></li>
             </ol>
         </p>
@@ -1069,12 +1060,12 @@
         To get equality in the triangle inequality, we must have
         equality in the Cauchy-Schwarz inequality (see the proof of
         <xref ref="CauchySchwarz" />).
-        <me>
-            |\vec x\cdot \vec y|= \|\vec x\|  \|\vec y\| \\
-            \|\vec x\| \|\vec y\|\, |\cos\theta| = \|\vec x\|  \|\vec y\| \\
-            \cos\theta=\pm1\\
-            \theta = 0\textrm{ or } \pi
-        </me>
+        <md>
+            <mrow>|\vec x\cdot \vec y|= \|\vec x\|  \|\vec y\|</mrow>
+            <mrow>\|\vec x\| \|\vec y\|\, |\cos\theta| = \|\vec x\|  \|\vec y\|</mrow>
+            <mrow>\cos\theta=\pm1</mrow>
+            <mrow>\theta = 0\textrm{ or } \theta=\pi</mrow>
+        </md>
         </p>
         </proof>
         </corollary>
@@ -1795,7 +1786,7 @@
             dot(C);
             label("$\vec x$",B,NW);
             label("$\vec y$",C,NW);
-            label("$L\colon z=(1-t)\vec x + t\vec y$",D,N);
+            label("$L\colon \vec z=(1-t)\vec x + t\vec y$",D,N);
  
             real t=0.5;
             pair F;
@@ -2324,7 +2315,7 @@
         </me>
         </p>
         
-        <theorem>
+        <theorem xml:id="CrossProductLength">
         <title> <m>\|\vec x\times\vec y\|=\|\vec x\|\,\|\vec y\|\sin\theta</m></title>
         <statement>
         <p>
@@ -2756,13 +2747,11 @@
         <m>(1,0,2)</m> and
         <m>(2,1,1)</m>. Each point gives an equation:
         
-        <m>
-        \begin{align}
-            a+b+3c+d\amp=0 \tag{from the point \((1,1,3)\)}\\
-            a\phantom{+2b}+2c+d\amp=0\tag{from the point \((1,0,2)\)}\\
-            2a+b+c+d\amp=0\tag{from the point \((2,1,1)\)}
-        \end{align}
-        </m>.
+        <md>
+            <mrow>a+b+3c+d\amp=0 \tag{from the point \((1,1,3)\)}</mrow>
+            <mrow>a\phantom{+2b}+2c+d\amp=0\tag{from the point \((1,0,2)\)}</mrow>
+            <mrow>2a+b+c+d\amp=0\tag{from the point \((2,1,1)\)}</mrow>
+        </md>.
         
         The augmented matrix for this system is
         <me>
@@ -2832,15 +2821,12 @@
         Let <m>(x_0,y_0,z_0)=(1,1,3)</m> so that the equation of the plane is
         <me>
             a(x-1)+b(y-1)+c(z-3)=0
-        </me></p>
-        <p>Using the other two points we get
-        \begin{align}
-            -b-c \amp=0\\
-            a-2c \amp=0
-        \end{align}
-        </p>
-
-        <p>
+        </me>.
+        Using the other two points we get
+        <md>
+          <mrow>-b-c \amp=0</mrow>
+          <mrow>a-2c \amp=0</mrow>
+        </md>
         The augmented matrix of these equations is 
         <me>
             \left[
@@ -2850,9 +2836,6 @@
             \end{array}
             \right]
         </me>
-        </p>
-        
-        <p>
         whose reduced row echelon form is
         <me>
             \left[
@@ -2862,17 +2845,11 @@
             \end{array}
             \right]
         </me>
-        </p>
-        
-        <p>
         which implies <m>a=2c</m> and <m>b=-c</m>.
         Hence
         <me>
             2c(x-1)-c(y-1)+c(z-3)=0
         </me>
-        </p>
-        
-        <p>
         and so
         <me>
         2(x-1)-(y-1)+(z-3)=0
@@ -3219,13 +3196,13 @@
             \amp=0
         </mrow>
         </md>
-
         </p>
         </proof>
         </theorem>
         </subsection>
     
-        <subsection xml:id="ExamplesR2Projections"><title>Examples of projections in <m>\R^2</m></title>
+        <subsection xml:id="ExamplesR2Projections">
+        <title>Examples of projections in <m>\R^2</m></title>
         <p>
             <ul>
             <li><p>
@@ -3361,11 +3338,11 @@
     	is in fact a rectangle, and so  
     	<m>\|\proj_{\vec n}\vec u\|=D</m>.
     	<md>
-    		<mrow>\proj_{\vec n}\vec u
-    			\amp= \frac{\vec u\cdot\vec n}{\vec n\cdot\vec n} \vec n</mrow>
-    		<mrow>\amp=\frac{\left((x_0,y_0)-(x_1,y_1)\right)\cdot(a,b)}{\vec n\cdot\vec n} \vec n</mrow>
-    		<mrow>\amp= \frac{ax_0+by_0 -(ax_1+by_1)}{\vec n\cdot\vec n} \vec n</mrow>
-    		<mrow>\amp= \frac{ax_0+by_0 +c}{\vec n\cdot\vec n} \vec n</mrow>
+    	  <mrow>\proj_{\vec n}\vec u
+    	    \amp= \frac{\vec u\cdot\vec n}{\vec n\cdot\vec n} \vec n</mrow>
+    	  <mrow>\amp=\frac{\left((x_0,y_0)-(x_1,y_1)\right)\cdot(a,b)}{\vec n\cdot\vec n} \vec n</mrow>
+    	  <mrow>\amp= \frac{ax_0+by_0 -(ax_1+by_1)}{\vec n\cdot\vec n} \vec n</mrow>
+    	  <mrow>\amp= \frac{ax_0+by_0 +c}{\vec n\cdot\vec n} \vec n</mrow>
     	</md>
     	and so
     	<me>
@@ -3505,16 +3482,16 @@
         <p>
         Suppose we are given the equation of two planes and want 
         the equation of the line of intersection. If the two equations are
-        <me>
-            a_1x+b_1y+c_1z+d_1=0 \rlap{\text{ and}}\\
-            a_2x+b_2y+c_2z+d_2=0
-        </me>
+        <md>
+            <mrow>a_1x+b_1y+c_1z+d_1\amp=0 \text{ and}</mrow>
+            <mrow>a_2x+b_2y+c_2z+d_2\amp=0</mrow>
+        </md>
         then the line of intersection will be the set of all points that
-        satisfy <q>both</q> equations. We can rewrite the two equations as
-        <me>
-            a_1x+b_1y+c_1z=-d_1 \rlap{\text{ and}}\\
-            a_2x+b_2y+c_2z=-d_2
-        </me>
+        satisfy <em>both</em> equations. We can rewrite the two equations as
+        <md>
+            <mrow>a_1x+b_1y+c_1z \amp =-d_1 \text{ and}</mrow>
+            <mrow>a_2x+b_2y+c_2z \amp =-d_2</mrow>
+        </md>
         and use the augmented matrix
         <me>
             \left[
@@ -3535,10 +3512,10 @@
         <p>
         Here is an example to show how this technique works:
         the equations of the planes are
-        <me>
-            x+y+z=-2\\
-            2x+y-z=2
-        </me>
+        <md>
+            <mrow>x+y+z=-2</mrow>
+            <mrow>2x+y-z=2</mrow>
+        </md>
         Here is the picture of the two planes and the line of intersection:
         </p>
 
@@ -3602,10 +3579,10 @@
     
         <p>
         As another example, consider the two planes with equations written as
-        <me>
-            x+y=2\\
-            x+y-z=3
-        </me>
+        <md>
+            <mrow>x+y=2</mrow>
+            <mrow>x+y-z=3</mrow>
+        </md>
         </p>
     
         <figure>
@@ -3795,49 +3772,70 @@
             </ul>
         </p>
 
-        <figure>
+        <figure xml:id="ParallelLineDistance">
         <caption/>
         <image width="75%">
         <asymptote>
-            settings.render=4;
-            import graph3;
-            currentprojection=orthographic(3,3,1);
-            import graph3;
-            //import three;
-            unitsize(3.5cm);
-            currentprojection=orthographic(2,3,1);
-            currentlight=White;
-            defaultpen(linewidth(1.0));
-            defaultpen(fontsize(16pt));
-            // Line 1
-            triple x1=(-1,-1,0), n1=(1,-1/2,0);
-            triple x1=(-1,-1,0), n1=(2,2,1);
-            triple F1(real t){
+          settings.render=4;
+          import graph3;
+          currentprojection=orthographic(3,3,1);
+          import graph3;
+          //import three;
+          unitsize(3.5cm);
+          currentprojection=orthographic(2,3,1);
+          currentlight=White;
+          defaultpen(linewidth(1.0));
+          defaultpen(fontsize(16pt));
+          // Line 1
+          triple x1=(-1,-1,0), n1=(1,-1/2,0);
+          triple x1=(-1,-1,0), n1=(2,2,1);
+          triple F1(real t){
             return x1+t*n1;
             }
-            // Line 2
-            triple x2=(-1,-1,1), n2=(2,2,1);
-            triple F2(real t){
+          // Line 2
+          triple x2=(-1,-1,1), n2=(2,2,1);
+          triple F2(real t){
             return x2+t*n2;
             }
-            real delta=dot(n1,n2)^2-dot(n1,n1)*dot(n2,n2);
-            triple diff=x2-x1;
-            real t1=dot(n1,n2)*dot(diff,n2) - dot(diff,n1)*dot(n2,n2);
-            real t2=dot(n1,n1)*dot(diff,n2) - dot(diff,n1)*dot(n1,n2);
-            dot(x1+t1*n1); dot(x2+t2*n2);
-            //draw(F1(t1-1.5)--F1(t1+1.2),green);
-            draw(F1(t1-2.5)--F1(t1+2.2),green);
-            draw(F2(t2-3)--F2(t2+2),red);
-            draw(F1(t1)--F2(t2));
-            label("$d$",(F1(t1)+F2(t2))/2,E);
-            label("$L_1$",F1(t1+2.2),S);
-            label("$\vec{X_1}+t_1\vec{n_1}$",F1(t1-1/4),2S);
-            label("$L_2$",F2(t2+1.754),N);
-            label("$\vec{X_2}+t_2\vec{n_2}$",F2(t2-1/4),3.5N);
-            axes3("x","y","z",min=(0,0,0),max=(2,2,2));
-            </asymptote>
+          real delta=dot(n1,n2)^2-dot(n1,n1)*dot(n2,n2);
+          triple diff=x2-x1;
+          real t1=dot(n1,n2)*dot(diff,n2) - dot(diff,n1)*dot(n2,n2);
+          real t2=dot(n1,n1)*dot(diff,n2) - dot(diff,n1)*dot(n1,n2);
+          dot(x1+t1*n1); dot(x2+t2*n2);
+          draw(F1(-1.7)--(x2+t2*n2));
+          dot(F1(-1.7));
+          draw(F1(t1-2.5)--F1(t1+2.2),green);
+          draw(F2(t2-3)--F2(t2+2),red);
+          draw(F1(t1)--F2(t2));
+          label("$d$",(F1(t1)+F2(t2))/2,E);
+          label("$L_1$",F1(t1+2.2),S);
+          label("$\mathbf{X}_1+t\mathbf{n}_1$",F1(t1-1/4),2S);
+          label("$\mathbf{X}_1$",F1(-1.7),2S);
+          label("$\theta$",F1(-1.7),3(WNW+NW));
+          label("$L_2$",F2(t2+1.754),N);
+          label("$\vec{X_2}$",F2(t2-1/4),3.5N);
+          axes3("x","y","z",min=(0,0,0),max=(2,2,2));
+        </asymptote>
         </image>
         </figure>  
+        <p> 
+        The distance <m>d</m> between the two lines satisfies
+        <m>d=\|\vec X_2-\vec X_1 \|\sin(\theta)</m>. 
+        Recall from
+        <xref ref="CrossProductLength"/> 
+        that the length of <m>\vec x\times \vec y</m> is 
+        <m>\|\vec x\| \|\vec y\| \sin(\theta)</m>.
+        Hence
+        <me>
+        d
+        <!-- =\|\vec X_2-\vec X_1\|\sin(\theta) -->
+        =\|\vec X_2-\vec X_1\| 
+           \frac {\|(\vec X_2-\vec X_1) \times t\vec n_1\|} {\|\vec X_2-\vec X_1\| \|t \vec n_1\|}
+        = \frac {\|(\vec X_2-\vec X_1) \times t\vec n_1\|} {\|t \vec n_1\|}
+        = \frac {\|(\vec X_2-\vec X_1) \times \vec n_1\|} {\|\vec n_1\|}
+        </me>
+        </p>
+
         </paragraphs>
     
         <paragraphs><title>Skew lines</title>
@@ -3918,12 +3916,12 @@
         We then have, for some <m>t_3</m>,
         </p>
         <p>
-        <me>
-            \vec{X_1}+t_1\vec{n_1} + t_3(\vec{n_1}\times\vec{n_2})
-            =\vec{X_2}+t_2\vec{n_2}\\
-            t_1\vec{n_1} - t_2\vec{n_2} + t_3(\vec{n_1}\times\vec{n_2})
-            =\vec{X_2}-\vec{X_1}\tag{$*$}
-        </me>
+        <md>
+            <mrow>\vec{X_1}+t_1\vec{n_1} + t_3(\vec{n_1}\times\vec{n_2})
+            \amp=\vec{X_2}+t_2\vec{n_2}</mrow>
+            <mrow>t_1\vec{n_1} - t_2\vec{n_2} + t_3(\vec{n_1}\times\vec{n_2})
+            \amp=\vec{X_2}-\vec{X_1}\tag{$*$}</mrow>
+        </md>
         </p>
     
         <p>
@@ -3932,12 +3930,12 @@
         three equations in three unknowns. There is a quicker way: take the dot
         product of both sides of (<m>*</m>) above with <m>\vec{n_1}</m> 
         and then with <m>\vec{n_2}</m>. This gives
-        <me>
-            \|\vec{n_1}\|^2 t_1 -(\vec{n_1}\cdot\vec{n_2})t_2
-            =(\vec{X_2}-\vec{X_1})\cdot \vec{n_1}\\
-            (\vec{n_1}\cdot\vec{n_2}) t_1 -\|\vec{n_2}\|^2t_2
-            =(\vec{X_2}-\vec{X_1})\cdot \vec{n_2}
-        </me>
+        <md>
+            <mrow>\|\vec{n_1}\|^2 t_1 -(\vec{n_1}\cdot\vec{n_2})t_2
+            \amp =(\vec{X_2}-\vec{X_1})\cdot \vec{n_1}</mrow>
+            <mrow>(\vec{n_1}\cdot\vec{n_2}) t_1 -\|\vec{n_2}\|^2t_2
+            \amp =(\vec{X_2}-\vec{X_1})\cdot \vec{n_2}</mrow>
+        </md>
         </p>      
         </paragraphs>
         </subsection>
@@ -4151,10 +4149,7 @@
     	    Also, let <m>\vec{w}=(1,3,1)</m>.
     	    Now the equation
     	        <me>
-    	        r_1\vec{x_1} +
-    	        r_2\vec{x_2} +
-    	        r_3\vec{x_3} +
-    	        r_4\vec{x_4} = \vec{w}.
+    	        r_1\vec{x_1} + r_2\vec{x_2} + r_3\vec{x_3} + r_4\vec{x_4} = \vec{w}.
     	        </me>
     	    becomes
     	        <md>

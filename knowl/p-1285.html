@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:57-06:00       *-->
+<!--*       on 2021-08-29T14:14:55-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,63 +15,7 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<ul class="disc">
-<li>Let \(L_1\) be a rotation around the origin counterclockwise by an angle \(\phi\) and \(L_2\) be a rotation by an angle \(\theta\text{.}\) This means<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-A_{L_1}=
-\begin{bmatrix}
-\cos \phi \amp -\sin\phi\\ \sin\phi \amp \cos\phi
-\end{bmatrix}\\
-A_{L_2}=
-\begin{bmatrix}
-\cos \theta \amp -\sin\theta\\ \sin\theta \amp \cos\theta
-\end{bmatrix} \text{.}
-\end{equation*}
-</div>Then \(L_1\circ L_2\) is a rotation by \(\theta\) followed by a rotation by an angle \(\phi\text{;}\) together it is a rotation through an angle of \(\theta+\phi\text{,}\) and so<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-A_{L_1\circ L_2}=
-\begin{bmatrix}
-\cos(\theta+\phi) \amp -\sin(\theta+\phi)\\ \sin(\theta+\phi) \amp \cos(\theta+\phi)
-\end{bmatrix} \text{.}
-\end{equation*}
-</div>It then follows from <a class="xref" data-knowl="./knowl/CompositionAndMatrixMulitplication.html" title="Theorem 6.4.4: Composition and matrix multiplication">Theorem 6.4.4</a> that<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\begin{bmatrix}
-\cos(\theta+\phi) \amp -\sin(\theta+\phi)\\ \sin(\theta+\phi) \amp \cos(\theta+\phi)
-\end{bmatrix} 
-=
-\begin{bmatrix}
-\cos \phi \amp -\sin\phi\\ \sin\phi \amp \cos\phi
-\end{bmatrix}
-\begin{bmatrix}
-\cos \theta \amp -\sin\theta\\ \sin\theta \amp \cos\theta
-\end{bmatrix} \text{.}
-\end{equation*}
-</div>Computing the matrix product and equating the corresponding entries in the first column gives<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\cos(\theta+\phi) = \cos\theta \cos\phi-\sin\theta\sin\phi\\
-\sin(\theta+\phi) = \cos\theta\sin\phi+\sin\theta\cos\phi\text{.}
-\end{equation*}
-</div>This might be the world's shortest proof of the sum formulas for the sine and cosine functions.</li>
-<li>Let \(L\) be a reflection by the line \(y=x\text{,}\) and consider \(L^2\text{.}\) Then<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-A_{L^2}
-=(A_L)^2
-= \left(\begin{bmatrix} 0\amp1\\1\amp0 \end{bmatrix}\right)^2
-=I\text{,}
-\end{equation*}
-</div>and so \(L^2\) is the identity transformation. This is not surprising: the mirror image of a mirror image is just the original image. This can also be written as \(A=A^{-1}\text{.}\) A matrix satisfying this equation are called an <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">involution</dfn>.</li>
-<li>Let \(L\) be the projection onto the line \(y=x\text{,}\) and consider \(L^2\text{.}\) Then<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-A_{L^2}
-=(A_L)^2
-= \left(\frac12\begin{bmatrix} 1\amp1\\1\amp1 \end{bmatrix}\right)^2
-=\frac14 \begin{bmatrix} 2\amp2\\2\amp2 \end{bmatrix}
-=\frac12 \begin{bmatrix} 1\amp1\\1\amp1 \end{bmatrix}
-=A_L\text{.}
-\end{equation*}
-</div>A matrix \(A\) satisfying \(A^2=A\) is called <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">idempotent</dfn>.</li>
-</ul>
-<span class="incontext"><a href="section-43.html#p-1285">in-context</a></span>
+<p>For our purposes, the <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">real  numbers</dfn> consists of all possible decimals. These include whole numbers, both positive and negative, fractions, simple decimals like \(1.25\text{,}\) repeating decimals like \(1.333\ldots=\frac43\) and irrational numbers like \(\sqrt2\) and \(\pi\text{.}\)</p>
+<span class="incontext"><a href="section-44.html#p-1285">in-context</a></span>
 </body>
 </html>

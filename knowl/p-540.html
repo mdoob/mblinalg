@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:44-06:00       *-->
+<!--*       on 2021-08-29T14:14:39-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,21 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">\(\displaystyle \det\begin{bmatrix}1\amp2\\3\amp4\end{bmatrix}=4-6=-2.\)</p>
-<span class="incontext"><a href="section-19.html#p-540">in-context</a></span>
+<p>There is a nice way of visualizing the pattern of \((-1)^{i+j}.\) Consider the matrix \(P=[p_{i,j}]\) where \(p_{i,j}=(-1)^{i+j}\text{.}\)  The next entry to the right of \(p_{i,j}\) is \(p_{i,j+1}\text{,}\) so that the exponent of \(-1\) is increased by one. Hence if \(p_{i,j}=1\) then \(p_{i,j+1}=-1\) and \(p_{i,j}=-1\) then \(p_{i,j+1}=1\text{.}\) This means that the entries in a row alternate between \(1\) and \(-1\text{.}\) By an analogous argument, the columns also alternate between \(1\) and \(-1\text{.}\) The upper left entry is \(-1^{1+1}=1\text{,}\) and so the whole matrix is determined. It looks like</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation}
+P=
+\begin{bmatrix}
++1\amp-1\amp+1\amp-1\amp+1\cdots \\
+-1\amp+1\amp-1\amp+1\amp-1\cdots \\
++1\amp-1\amp+1\amp-1\amp+1\cdots \\
+-1\amp+1\amp-1\amp+1\amp-1\cdots \\
++1\amp-1\amp+1\amp-1\amp+1\cdots \\
+\amp\amp\vdots
+\end{bmatrix}\tag{3.2.1}
+\end{equation}
+</div>
+<p class="continuation">In other words, the pattern of \(1\) and \(-1\) is like a checkerboard pattern of light squares and dark squares.</p>
+<span class="incontext"><a href="section-20.html#p-540">in-context</a></span>
 </body>
 </html>

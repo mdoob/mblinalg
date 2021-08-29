@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:44-06:00       *-->
+<!--*       on 2021-08-29T14:14:40-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,13 +15,37 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Let \(A=
+<p>Suppose \(A\) is lower triangular (the upper triangular case uses essentially the same argument). We repeatedly expand on the first row.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\det A
+\amp = \det
 \begin{bmatrix}
-1\amp 2\amp 2\amp 3\\
--1\amp 4\amp 5\amp 3\\ 3\amp
-4\amp 8\amp -1\\
-1\amp 2\amp 2\amp 1
-\end{bmatrix}\text{.}\)</p>
-<span class="incontext"><a href="section-21.html#p-583">in-context</a></span>
+a_{1,1} \amp 0 \amp 0 \amp \cdots \amp 0\\
+* \amp a_{2,2} \amp 0 \amp \cdots \amp 0\\
+* \amp * \amp a_{3,3} \amp \cdots \amp 0\\
+\amp \amp \amp \vdots\\
+* \amp * \amp * \amp \cdots \amp a_{n,n}\\
+\end{bmatrix}\\
+\amp = a_{1,1} 
+\det 
+\begin{bmatrix}
+a_{2,2} \amp 0 \amp \cdots \amp 0\\
+* \amp a_{3,3} \amp \cdots \amp 0\\
+\amp \amp \vdots\\
+* \amp * \amp \cdots \amp a_{n,n}\\
+\end{bmatrix}\\
+\amp = a_{1,1} a_{2,2} 
+\det 
+\begin{bmatrix}
+a_{3,3} \amp \cdots \amp 0\\
+\amp \vdots\\
+* \amp \cdots \amp a_{n,n}\\
+\end{bmatrix}\\
+\amp \phantom{x}\vdots\\
+\amp = a_{1,1}a_{2,2}\cdots a_{n,n}
+\end{align*}
+</div>
+<span class="incontext"><a href="section-22.html#p-583">in-context</a></span>
 </body>
 </html>

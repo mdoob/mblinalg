@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:43-06:00       *-->
+<!--*       on 2021-08-29T14:14:39-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,29 +15,33 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Multiply row 4 by 3 (\(R_4\leftarrow 3R_4\))</p>
+<p>Multiply a row by a constant (\(R_i\leftarrow \lambda R_i\))</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 E=
 \begin{bmatrix} 
-1\amp0\amp0\amp0\amp0\\ 
-0\amp1\amp0\amp0\amp0\\
-0\amp0\amp1\amp0\amp0\\ 
-0\amp0\amp0\amp{\color{red}3}\amp0\\
-0\amp0\amp0\amp0\amp1 
+1 \\ 
+\amp\ddots \\
+\amp\amp1 \\ 
+\amp\amp\amp\lambda \\ 
+\amp\amp\amp\amp1 \\
+\amp\amp\amp\amp\amp\ddots \\ 
+\amp\amp\amp\amp\amp\amp1
 \end{bmatrix} 
 \end{equation*}
 </div>
+<p class="continuation">and</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-EA= 
-\begin{bmatrix}
-1\amp2\amp3\amp4\amp5\amp6\\ 
-7\amp8\amp9\amp10\amp11\amp12\\
-13\amp14\amp15\amp16\amp17\amp18\\
-57\amp60\amp63\amp66\amp69\amp72\\
-25\amp26\amp27\amp28\amp29\amp30
-\end{bmatrix} 
+E^{-1}=
+\begin{bmatrix} 1 \\ 
+\amp\ddots \\
+\amp\amp1 \\ 
+\amp\amp\amp\tfrac1\lambda \\ 
+\amp\amp\amp\amp1 \\ 
+\amp\amp\amp\amp\amp\ddots \\ 
+\amp\amp\amp\amp\amp\amp1
+\end{bmatrix}
 \end{equation*}
 </div>
 <span class="incontext"><a href="section-17.html#p-491">in-context</a></span>

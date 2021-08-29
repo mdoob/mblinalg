@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:44-06:00       *-->
+<!--*       on 2021-08-29T14:14:39-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,14 +13,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p xmlns:svg="http://www.w3.org/2000/svg">The logic of the proof is to show that</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">(1) true implies (2) true (which we write as (1) \(\Rightarrow \)(2)),</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">(2) true implies (3) true (which we write as (2) \(\Rightarrow\) (3)),</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">(3) true implies (4) true (which we write as (3) \(\Rightarrow\) (4)),</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">(4) true implies (5) true (which we write as (4) \(\Rightarrow\) (5)),</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">(5) true implies (6) true (which we write as (5) \(\Rightarrow\) (6)), and</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">(6) true implies (1) true (which we write as (6) \(\Rightarrow\) (1))</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">We now proceed to prove the implications one at a time.</p>
+<body><article class="hiddenproof"><p>The logic of the proof is to show that</p>
+<p>(1) true implies (2) true (which we write as (1) \(\Rightarrow \)(2)),</p>
+<p>(2) true implies (3) true (which we write as (2) \(\Rightarrow\) (3)),</p>
+<p>(3) true implies (4) true (which we write as (3) \(\Rightarrow\) (4)),</p>
+<p>(4) true implies (5) true (which we write as (4) \(\Rightarrow\) (5)),</p>
+<p>(5) true implies (6) true (which we write as (5) \(\Rightarrow\) (6)), and</p>
+<p>(6) true implies (1) true (which we write as (6) \(\Rightarrow\) (1))</p>
+<p>We now proceed to prove the implications one at a time.</p>
 <p>(1) \(\Rightarrow\) (2): Assuming (1) means that \(A\) is invertible.  If \(x=\vec0\text{,}\) then \(A\vec x=A\vec0=\vec0\text{.}\)  Now suppose that \(A\vec x=\vec0.\)  Then, since \(A^{-1}\) exists, we may evaluate \(A^{-1}A\vec x\) in two ways:</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
@@ -28,8 +28,8 @@ A^{-1}(A\vec x) = A^{-1}\vec0=\vec0\\ (A^{-1}A)\vec x
 =I\vec x=\vec x 
 \end{equation*}
 </div>
-<p data-braille="continuation">Equating the two evaluations, we get \(\vec x=\vec0.\)</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">(2) \(\Rightarrow\) (3): Consider the augmented matrix for the system of linear equations \(A\vec x=\vec0.\) If the reduced row echelon from of \(A\) is not \(I_n,\) then the form for augmented matrix has a free variable; this may be assigned a nonzero value, resulting in a nonzero solution to \(A\vec x=\vec0.\)</p>
+<p class="continuation">Equating the two evaluations, we get \(\vec x=\vec0.\)</p>
+<p>(2) \(\Rightarrow\) (3): Consider the augmented matrix for the system of linear equations \(A\vec x=\vec0.\) If the reduced row echelon from of \(A\) is not \(I_n,\) then the form for augmented matrix has a free variable; this may be assigned a nonzero value, resulting in a nonzero solution to \(A\vec x=\vec0.\)</p>
 <p>(3) \(\Rightarrow\) (4): Suppose \(A\) is reduced to \(I_n\) by a series of elementary row operations whose corresponding elementary matrices are \(E_1,E_2,\dots,E_k\text{.}\) Then \(E_kE_{k-1}\cdots E_2E_1A=I_n\text{,}\) and</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
@@ -43,14 +43,14 @@ F_{k-1}F_k.
 F_1F_2\cdots F_{k-1}F_k \vec x=\vec b,
 \end{equation*}
 </div>
-<p data-braille="continuation">and</p>
+<p class="continuation">and</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \vec x=F_k^{-1}F_{k-1}^{-1}\cdots
 F_2^{-1}F_1^{-1} \vec b 
 \end{equation*}
 </div>
-<p data-braille="continuation">which then satisfies</p>
+<p class="continuation">which then satisfies</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \begin{split} A\vec x \amp =(F_1F_2\cdots
@@ -59,7 +59,7 @@ b)\\ \amp=(F_1F_2\cdots F_{k-1}F_k)(F_k^{-1}F_{k-1}^{-1}\cdots
 F_2^{-1}F_1^{-1})\vec b \\ \amp=\vec b \end{split} 
 \end{equation*}
 </div>
-<p data-braille="continuation">and so gives a solution to \(A\vec x=\vec b.\) Hence \(A\vec x=\vec b\) is consistent.</p>
+<p class="continuation">and so gives a solution to \(A\vec x=\vec b.\) Hence \(A\vec x=\vec b\) is consistent.</p>
 <p>(5) \(\Rightarrow\) (6): We take the following values for \(\vec b_1,\vec b_2,\dots,\vec b_n\text{:}\)</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
@@ -83,7 +83,7 @@ F_2^{-1}F_1^{-1})\vec b \\ \amp=\vec b \end{split}
 \end{bmatrix} \text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Then \(A\vec x=\vec b_1\) has a solution \(\vec c_1\text{,}\) \(A\vec x=\vec b_2\) has a solution \(\vec c_2\text{,}\) \(A\vec x=\vec b_3\) has a solution \(\vec c_3, \dots,\) \(A\vec x=\vec b_n\) has a solution \(\vec c_n\text{.}\)</p>
+<p class="continuation">Then \(A\vec x=\vec b_1\) has a solution \(\vec c_1\text{,}\) \(A\vec x=\vec b_2\) has a solution \(\vec c_2\text{,}\) \(A\vec x=\vec b_3\) has a solution \(\vec c_3, \dots,\) \(A\vec x=\vec b_n\) has a solution \(\vec c_n\text{.}\)</p>
 <p>Now define the matrix \(C\) as the one with \(\vec c_1,\vec c_2,\dots,\vec c_n\) as columns, that is,</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
@@ -93,11 +93,11 @@ C=
 \end{bmatrix}.  
 \end{equation*}
 </div>
-<p data-braille="continuation">Then \(AC=I\text{,}\) and so \(C=A^{-1}\) and \(CA=I.\) Now if \(A\vec x=\vec b\) is consistent, then \(\vec
+<p class="continuation">Then \(AC=I\text{,}\) and so \(C=A^{-1}\) and \(CA=I.\) Now if \(A\vec x=\vec b\) is consistent, then \(\vec
 x=I\vec x=CA\vec x=C\vec b\) and so \(\vec
 x=C\vec b\) is the one and only solution to \(A\vec
 x=\vec b.\)</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">(6) \(\Rightarrow\) (1): Use the vectors \(\vec b_1,
+<p>(6) \(\Rightarrow\) (1): Use the vectors \(\vec b_1,
 \vec b_2,\dots,\vec b_n\) given just above. In each case there is exactly one vector \(\vec c_k\) which is a solution to the equation \(A\vec x=\vec b_k\text{.}\) Let \(C\) be the matrix with \(\vec c_1,\dots,\vec
 c_n\) as columns. This matrix satisfies \(AC=I\) which makes \(C=A^{-1}\) and so \(A\) is invertible.</p></article></body>
 </html>

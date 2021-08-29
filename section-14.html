@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:24-06:00       *-->
+<!--*       on 2021-08-29T14:14:18-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,36 +14,42 @@
 <title>Inverses and powers: Rules of Matrix Arithmetic</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -56,8 +62,8 @@ MathJax.Hub.Config({
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
 \def\C{{\mathbb C}}
 \def\Q{{\mathbb Q}}
 \def\Z{{\mathbb Z}}
@@ -104,7 +110,7 @@ MathJax.Hub.Config({
 <li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
 <li class="link"><a href="LinearTransformations.html" data-scroll="LinearTransformations"><span class="codenumber">6</span> <span class="title">Linear transformations</span></a></li>
 <li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">7</span> <span class="title">Additional Topics</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-14"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.7</span> <span class="title">Inverses and powers: Rules of Matrix Arithmetic</span>
@@ -112,118 +118,120 @@ MathJax.Hub.Config({
 <section class="subsection" id="subsection-26"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.7.1</span> <span class="title">What about division of matrices?</span>
 </h3>
-<p id="p-386">We have considered addition, subtraction and multiplication of matrices. What about division? When we consider real numbers, we can write \(\tfrac ba\) as \(b\cdot\tfrac 1a.\) In addition, we may think of \(\tfrac 1a\) as the multiplicative inverse of \(a\text{,}\) that is, it is the number which, when multiplied by \(a\) yields \(1.\) In other words, if we set \(a^{-1}=\tfrac1a\text{,}\) then \(a\cdot a^{-1}=a^{-1}\cdot
+<p id="p-374">We have considered addition, subtraction and multiplication of matrices. What about division? When we consider real numbers, we can write \(\tfrac ba\) as \(b\cdot\tfrac 1a.\) In addition, we may think of \(\tfrac 1a\) as the multiplicative inverse of \(a\text{,}\) that is, it is the number which, when multiplied by \(a\) yields \(1.\) In other words, if we set \(a^{-1}=\tfrac1a\text{,}\) then \(a\cdot a^{-1}=a^{-1}\cdot
 a=1.\) Finally, \(1\) is the multiplicative identity, that is, \(r1=1r=r\) for any real number \(r\text{.}\)  While these concepts can not be extended to matrices completely, there are some circumstances when they do  make sense.</p>
-<p id="p-387">First, we can note that \(1\times1\) matrices satisfy \([a] + [b] = [a+b]\) and \([a][b]=[ab]\text{.}\)  This means that both addition and multiplication of these matrices are just like the addition and multiplication of the real numbers. In this sense, matrices may be thought of as a generalization of the real numbers.</p>
-<p id="p-388">Next we remember that if \(A\) is \(m\times n\text{,}\) then \(I_mA=A=AI_n.\) This means that the identity matrix (or, more properly, matrices) acts in the same way as \(1\) does for the real numbers.  This also means that if we want there to be a (single) matrix \(I\) satisfying \(IA=A=AI\text{,}\) then we must have \(m=n\text{.}\) This means we have to restrict ourselves to square matrices.</p>
-<p id="p-389">If \(A\) is an \(n\times n\) matrix, then \(I_nA=A=AI_n,\) and so \(I_n\) acts in the same manner as does \(1\) for the real numbers.  Indeed, that is the reason it is called the identity matrix.</p>
-<p id="p-390">Finally, we want to find (if possible) a matrix \(A^{-1}\) so that \(A^{-1}A=AA^{-1}=I.\) When such a matrix exists, it is called the <dfn class="terminology">inverse</dfn> of \(A\text{,}\) and the matrix \(A\) itself is called <dfn class="terminology">invertible.</dfn></p>
+<p id="p-375">First, we can note that \(1\times1\) matrices satisfy \([a] + [b] = [a+b]\) and \([a][b]=[ab]\text{.}\)  This means that both addition and multiplication of these matrices are just like the addition and multiplication of the real numbers. In this sense, matrices may be thought of as a generalization of the real numbers.</p>
+<p id="p-376">Next we remember that if \(A\) is \(m\times n\text{,}\) then \(I_mA=A=AI_n.\) This means that the identity matrix (or, more properly, matrices) acts in the same way as \(1\) does for the real numbers.  This also means that if we want there to be a (single) matrix \(I\) satisfying \(IA=A=AI\text{,}\) then we must have \(m=n\text{.}\) This means we have to restrict ourselves to square matrices.</p>
+<p id="p-377">If \(A\) is an \(n\times n\) matrix, then \(I_nA=A=AI_n,\) and so \(I_n\) acts in the same manner as does \(1\) for the real numbers.  Indeed, that is the reason it is called the identity matrix.</p>
+<p id="p-378">Finally, we want to find (if possible) a matrix \(A^{-1}\) so that \(A^{-1}A=AA^{-1}=I.\) When such a matrix exists, it is called the <dfn class="terminology">inverse</dfn> of \(A\text{,}\) and the matrix \(A\) itself is called <dfn class="terminology">invertible.</dfn></p>
 <article class="definition definition-like" id="InverseMatrixDefinition"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.7.1</span><span class="period">.</span><span class="space"> </span><span class="title">The inverse of a matrix.</span>
 </h6>
-<p id="p-391">Let \(A\) be a square matrix. If there exists a matrix \(B\) so that</p>
+<p id="p-379">Let \(A\) be a square matrix. If there exists a matrix \(B\) so that</p>
 <div class="displaymath">
 \begin{equation*}
 AB=BA=I
 \end{equation*}
 </div>
-<p data-braille="continuation">then \(B\) is called the <dfn class="terminology">inverse of \(A\)</dfn> and it is written as \(A^{-1}\text{.}\)</p></article><article class="definition definition-like" id="definition-18"><h6 class="heading">
+<p class="continuation">then \(B\) is called the <dfn class="terminology">inverse of \(A\)</dfn> and it is written as \(A^{-1}\text{.}\)</p></article><article class="definition definition-like" id="definition-18"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.7.2</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix invertability.</span>
 </h6>
-<p id="p-392">A matrix \(A\) is <dfn class="terminology">invertible</dfn> if it has an inverse, that is, if the matrix \(A^{-1}\) exists.</p></article></section><section class="subsection" id="subsection-27"><h3 class="heading hide-type">
+<p id="p-380">A matrix \(A\) is <dfn class="terminology">invertible</dfn> if it has an inverse, that is, if the matrix \(A^{-1}\) exists.</p></article></section><section class="subsection" id="subsection-27"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.7.2</span> <span class="title">Properties of the Inverse of a Matrix</span>
 </h3>
-<p id="p-393">We consistently refer to <em class="emphasis">the</em> inverse of \(A\) rather than <em class="emphasis">an</em> inverse of \(A,\) which would seem to imply that a matrix can have only one inverse.  This is indeed true.</p>
+<p id="p-381">We consistently refer to <em class="emphasis">the</em> inverse of \(A\) rather than <em class="emphasis">an</em> inverse of \(A,\) which would seem to imply that a matrix can have only one inverse.  This is indeed true.</p>
 <article class="theorem theorem-like" id="theorem-11"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.7.3</span><span class="period">.</span><span class="space"> </span><span class="title">Uniqueness of Inverse.</span>
 </h6>
-<p id="p-394">A square matrix \(A\) can have no more than one inverse.</p></article><article class="hiddenproof" id="proof-15"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-15"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-15"><article class="hiddenproof"><p id="p-395">Suppose we have matrices \(B\) and \(C\) which both act as inverses, that is, \(AB=BA=I\) and \(AC=CA=I\text{.}\) We evaluate \(BAC\) in two different ways and equate the results:</p>
+<p id="p-382">A square matrix \(A\) can have no more than one inverse.</p></article><article class="hiddenproof" id="proof-15"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-15"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-15"><article class="hiddenproof"><p id="p-383">Suppose we have matrices \(B\) and \(C\) which both act as inverses, that is, \(AB=BA=I\) and \(AC=CA=I\text{.}\) We evaluate \(BAC\) in two different ways and equate the results:</p>
 <div class="displaymath">
-\begin{equation*}
-BAC=(BA)C=IC=C\\ BAC=B(AC)=BI=B,
-\end{equation*}
+\begin{gather*}
+BAC=(BA)C=IC=C\\
+BAC=B(AC)=BI=B\text{,}
+\end{gather*}
 </div>
-<p data-braille="continuation">and so \(B=C\text{.}\)</p></article></div>
-<article class="paragraphs" id="paragraphs-7"><h5 class="heading"><span class="title">Inverse Test.</span></h5>
-<p id="p-396">If \(A\) and \(B\) are square matrices of the same size, then \(B\) is a <dfn class="terminology">left inverse</dfn> of \(A\) if \(BA=I.\) Similarly, it is a <dfn class="terminology">right inverse</dfn> of \(A\) if \(AB=I\text{.}\)</p>
-<p id="p-397">By definition \(B\) is the inverse of \(A\) if \(AB=BA=I,\) that is, \(B\) is both a left inverse and a right inverse. We will show presently that if \(B\) is a right inverse of a square matrix \(A\text{,}\) then it is also a left inverse of \(A\) and hence the inverse of \(A\text{.}\)</p>
-<p id="p-398">We next make an observation about the reduced row echelon form of square matrices:</p></article><article class="lemma theorem-like" id="lemma-1"><h6 class="heading">
+<p class="continuation">and so \(B=C\text{.}\)</p></article></div>
+<section class="paragraphs" id="paragraphs-7"><h5 class="heading"><span class="title">Inverse Test.</span></h5>
+<p id="p-384">If \(A\) and \(B\) are square matrices of the same size, then \(B\) is a <dfn class="terminology">left inverse</dfn> of \(A\) if \(BA=I.\) Similarly, it is a <dfn class="terminology">right inverse</dfn> of \(A\) if \(AB=I\text{.}\)</p>
+<p id="p-385">By definition \(B\) is the inverse of \(A\) if \(AB=BA=I,\) that is, \(B\) is both a left inverse and a right inverse. We will show presently that if \(B\) is a right inverse of a square matrix \(A\text{,}\) then it is also a left inverse of \(A\) and hence the inverse of \(A\text{.}\)</p>
+<p id="p-386">We next make an observation about the reduced row echelon form of square matrices:</p></section><article class="lemma theorem-like" id="lemma-1"><h6 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">2.7.4</span><span class="period">.</span><span class="space"> </span><span class="title">The Reduced Row Echelon Form for Square Matrices.</span>
 </h6>
-<p id="p-399">If \(A\) is an \(n\times n\) matrix then</p>
+<p id="p-387">If \(A\) is an \(n\times n\) matrix then</p>
 <ol class="decimal">
-<li id="li-177"><p id="p-400">The reduced row echelon form of \(A\) is \(I_n,\) or</p></li>
-<li id="li-178"><p id="p-401">The last row of the reduced row echelon form of \(A\) is all zero.</p></li>
-</ol></article><article class="hiddenproof" id="proof-16"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-16"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-16"><article class="hiddenproof"><p id="p-402">If every row in the reduced row echelon form of \(A\) has a leading one, then, since \(A\) has the same number of rows as columns, so does every column.  This means that the leading ones must be on the diagonal, and the every other entry of the matrix is zero. In other words, the reduced row echelon form is \(I_n.\) If, on the other hand, some row does not have a leading one, then it is an all-zero row.  Since these rows are at the bottom of the matrix when it is in reduced row echelon form, the last row, in particular, must be all zero.</p></article></div>
+<li id="li-177"><p id="p-388">The reduced row echelon form of \(A\) is \(I_n,\) or</p></li>
+<li id="li-178"><p id="p-389">The last row of the reduced row echelon form of \(A\) is all zero.</p></li>
+</ol></article><article class="hiddenproof" id="proof-16"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-16"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-16"><article class="hiddenproof"><p id="p-390">If every row in the reduced row echelon form of \(A\) has a leading one, then, since \(A\) has the same number of rows as columns, so does every column.  This means that the leading ones must be on the diagonal, and the every other entry of the matrix is zero. In other words, the reduced row echelon form is \(I_n.\) If, on the other hand, some row does not have a leading one, then it is an all-zero row.  Since these rows are at the bottom of the matrix when it is in reduced row echelon form, the last row, in particular, must be all zero.</p></article></div>
 <article class="definition definition-like" id="SingularMatrixDefinition"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.7.5</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix singularity.</span>
 </h6>
-<p id="p-403">A square matrix is <dfn class="terminology">nonsingular</dfn> if its reduced row echelon form is \(I\text{.}\) Otherwise it is <dfn class="terminology">singular</dfn>.</p></article><p id="p-404">Next we give a criterion for nonsingularity. It is trivial that if \(\vec x=\vec0,\) then \(M\vec x=\vec0.\) If this is the only vector \(\vec x\) for which this is true, then \(M\) is nonsingular.</p>
+<p id="p-391">A square matrix is <dfn class="terminology">nonsingular</dfn> if its reduced row echelon form is \(I\text{.}\) Otherwise it is <dfn class="terminology">singular</dfn>.</p></article><p id="p-392">Next we give a criterion for nonsingularity. It is trivial that if \(\vec x=\vec0,\) then \(M\vec x=\vec0.\) If this is the only vector \(\vec x\) for which this is true, then \(M\) is nonsingular.</p>
 <article class="lemma theorem-like" id="lemma-2"><h6 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">2.7.6</span><span class="period">.</span><span class="space"> </span><span class="title">Condition for Singularity.</span>
 </h6>
-<p id="p-405">\(M\) is nonsingular if and only if \(Mx=\vec0\) implies \(\vec x=\vec0\text{.}\)</p></article><article class="hiddenproof" id="proof-17"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-17"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-17"><article class="hiddenproof"><p id="p-406">First, suppose that \(M\) is nonsingular. The the equation \(M\vec x=\vec0\) has an augmented matrix which, in reduced row echelon form, gives the equation \(I\vec x=\vec0\text{.}\) Hence \(\vec x=\vec0\text{.}\)</p>
-<p id="p-407">Now suppose that \(M\) is singular. The reduced row echelon form is not \(I_n,\)  and so some column does not contain a leading 1, that is, there must exist a free variable. It can be assigned a nonzero value, and thus provide a nonzero solution to \(M\vec x=\vec0.\)</p></article></div>
+<p id="p-393">\(M\) is nonsingular if and only if \(Mx=\vec0\) implies \(\vec x=\vec0\text{.}\)</p></article><article class="hiddenproof" id="proof-17"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-17"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-17"><article class="hiddenproof"><p id="p-394">First, suppose that \(M\) is nonsingular. The the equation \(M\vec x=\vec0\) has an augmented matrix which, in reduced row echelon form, gives the equation \(I\vec x=\vec0\text{.}\) Hence \(\vec x=\vec0\text{.}\)</p>
+<p id="p-395">Now suppose that \(M\) is singular. The reduced row echelon form is not \(I_n,\)  and so some column does not contain a leading 1, that is, there must exist a free variable. It can be assigned a nonzero value, and thus provide a nonzero solution to \(M\vec x=\vec0.\)</p></article></div>
 <article class="lemma theorem-like" id="lemma-3"><h6 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">2.7.7</span><span class="period">.</span><span class="space"> </span><span class="title">AB=I and Nonsingularity.</span>
 </h6>
-<p id="p-408">If \(AB=I\) then \(B\) is nonsingular.</p></article><article class="hiddenproof" id="proof-18"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-18"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-18"><article class="hiddenproof"><p id="p-409">Suppose that \(B\vec x=\vec0.\) Multiply both sides of the equation by \(A\text{:}\)</p>
+<p id="p-396">If \(AB=I\) then \(B\) is nonsingular.</p></article><article class="hiddenproof" id="proof-18"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-18"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-18"><article class="hiddenproof"><p id="p-397">Suppose that \(B\vec x=\vec0.\) Multiply both sides of the equation by \(A\text{:}\)</p>
 <div class="displaymath">
-\begin{equation*}
+\begin{gather*}
 A(B\vec x)=A(\vec0)=\vec0\\
 A(B\vec x)=(AB)\vec x=I\vec x=\vec x 
-\end{equation*}
+\end{gather*}
 </div>
-<p data-braille="continuation">and so \(\vec x=\vec0.\) Hence \(B\vec x=\vec0\) implies \(\vec x=\vec0\) and so \(B\) is nonsingular.</p></article></div>
+<p class="continuation">and so \(\vec x=\vec0.\) Hence \(B\vec x=\vec0\) implies \(\vec x=\vec0\) and so \(B\) is nonsingular.</p></article></div>
 <article class="proposition theorem-like" id="proposition-1"><h6 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">2.7.8</span><span class="period">.</span><span class="space"> </span><span class="title">AB=I implies BA=I.</span>
 </h6>
-<p id="p-410">Suppose the \(A\) and \(B\) are square matrices with \(AB=I.\) Then \(BA=I.\)</p></article><article class="hiddenproof" id="proof-19"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-19"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-19"><article class="hiddenproof"><p id="p-411">From the previous lemma we know that \(B\) is nonsingular. Hence we know how to find  \(C\) which is a solution to the equation \(BX=I\text{,}\) that is, so that \(BC=I.\) We now evaluate \(BABC\) in two different ways and equate the results:</p>
+<p id="p-398">Suppose the \(A\) and \(B\) are square matrices with \(AB=I.\) Then \(BA=I.\)</p></article><article class="hiddenproof" id="proof-19"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-19"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-19"><article class="hiddenproof"><p id="p-399">From the previous lemma we know that \(B\) is nonsingular. Hence we know how to find  \(C\) which is a solution to the equation \(BX=I\text{,}\) that is, so that \(BC=I.\) We now evaluate \(BABC\) in two different ways and equate the results:</p>
 <div class="displaymath">
-\begin{equation*}
-BABC=B(AB)C=BIC=BC=I\\ BABC=(BA)(BC)=BA(I)=BA 
-\end{equation*}
+\begin{gather*}
+BABC=B(AB)C=BIC=BC=I\\
+BABC=(BA)(BC)=BA(I)=BA 
+\end{gather*}
 </div></article></div>
-<p id="p-412">We get an important result from this Proposition.</p>
+<p id="p-400">We get an important result from this Proposition.</p>
 <article class="theorem theorem-like" id="theorem-12"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.7.9</span><span class="period">.</span><span class="space"> </span><span class="title">A Right Inverse is an Inverse.</span>
 </h6>
-<p id="p-413">Suppose \(A\) and \(B\) are square matrices with \(AB=I.\) Then \(B=A^{-1}.\)</p></article><article class="hiddenproof" id="proof-20"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-20"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-20"><article class="hiddenproof"><p id="p-414">By the Proposition above, \(AB=I\) implies \(BA=I.\)  Since the inverse of \(A\) is unique, \(B=A^{-1}.\)</p></article></div>
-<article class="paragraphs" id="paragraphs-8"><h5 class="heading"><span class="title">New Inverse Test.</span></h5>
-<p id="p-415">If \(A\) and \(B\) are square matrices then \(B\) is the inverse of \(A\) if and only if \(AB=I.\)</p></article><p id="p-416">Here is an application of the previous theorem:</p>
+<p id="p-401">Suppose \(A\) and \(B\) are square matrices with \(AB=I.\) Then \(B=A^{-1}.\)</p></article><article class="hiddenproof" id="proof-20"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-20"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-20"><article class="hiddenproof"><p id="p-402">By the Proposition above, \(AB=I\) implies \(BA=I.\)  Since the inverse of \(A\) is unique, \(B=A^{-1}.\)</p></article></div>
+<section class="paragraphs" id="paragraphs-8"><h5 class="heading"><span class="title">New Inverse Test.</span></h5>
+<p id="p-403">If \(A\) and \(B\) are square matrices then \(B\) is the inverse of \(A\) if and only if \(AB=I.\)</p></section><p id="p-404">Here is an application of the previous theorem:</p>
 <article class="theorem theorem-like" id="theorem-13"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.7.10</span><span class="period">.</span><span class="space"> </span><span class="title">Exponents and Transpose.</span>
 </h6>
-<p id="p-417">If \(A\) is a square matrix with inverse \(A^{-1}\) then \((A^T)^{-1}=(A^{-1})^T\)</p></article><article class="hiddenproof" id="proof-21"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-21"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-21"><article class="hiddenproof"><p id="p-418">Let \(B=(A^{-1})^T.\) Then</p>
+<p id="p-405">If \(A\) is a square matrix with inverse \(A^{-1}\) then \((A^T)^{-1}=(A^{-1})^T\)</p></article><article class="hiddenproof" id="proof-21"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-21"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-21"><article class="hiddenproof"><p id="p-406">Let \(B=(A^{-1})^T.\) Then</p>
 <div class="displaymath">
 \begin{equation*}
 A^TB=A^T(A^{-1})^T
 = (A^{-1}A)^T=I^T=I 
 \end{equation*}
 </div>
-<p data-braille="continuation">and so \(B=(A^T)^{-1}\text{.}\)</p></article></div>
-<p id="p-419">Here is another application of the previous theorem:</p>
+<p class="continuation">and so \(B=(A^T)^{-1}\text{.}\)</p></article></div>
+<p id="p-407">Here is another application of the previous theorem:</p>
 <article class="theorem theorem-like" id="theorem-14"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.7.11</span><span class="period">.</span><span class="space"> </span><span class="title">Inverse of Product of Matrices.</span>
 </h6>
-<p id="p-420">If \(A\) and \(B\) are invertible matrices of the same size, then \(AB\) is also invertible and \((AB)^{-1}=B^{-1}A^{-1}\)</p></article><article class="hiddenproof" id="proof-22"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-22"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-22"><article class="hiddenproof"><p id="p-421">Since</p>
+<p id="p-408">If \(A\) and \(B\) are invertible matrices of the same size, then \(AB\) is also invertible and \((AB)^{-1}=B^{-1}A^{-1}\)</p></article><article class="hiddenproof" id="proof-22"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-22"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-22"><article class="hiddenproof"><p id="p-409">Since</p>
 <div class="displaymath">
 \begin{equation*}
 (AB)(B^{-1}A^{-1})=
 A(BB^{-1})A^{-1}=AIA^{-1}=AA^{-1}=I, 
 \end{equation*}
 </div>
-<p data-braille="continuation">it follows that \(B^{-1}A^{-1}\) is the inverse of \(AB\text{.}\)</p></article></div></section><section class="subsection" id="subsection-28"><h3 class="heading hide-type">
+<p class="continuation">it follows that \(B^{-1}A^{-1}\) is the inverse of \(AB\text{.}\)</p></article></div></section><section class="subsection" id="subsection-28"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.7.3</span> <span class="title">The Computation of the Inverse of a Matrix</span>
 </h3>
-<p id="p-422">Suppose we have a square matrix \(A\) and the reduced row echelon form of \(A\) is \(I\) (that is, \(A\) is nonsingular). \(X\) is the inverse of \(A\) if it satisfies the equation \(AX=I.\) We have seen  how to solve such equations.  We conclude that if we start with the matrix \([A|I]\) then the reduced row echelon form will be \([I|A^{-1}]\text{.}\) This not only allows us to compute the inverse of \(A\) but it also shows that nonsingular matrices are invertible and vice-versa.</p>
-<p id="p-423">Example: If we start with</p>
+<p id="p-410">Suppose we have a square matrix \(A\) and the reduced row echelon form of \(A\) is \(I\) (that is, \(A\) is nonsingular). \(X\) is the inverse of \(A\) if it satisfies the equation \(AX=I.\) We have seen  how to solve such equations.  We conclude that if we start with the matrix \([A|I]\) then the reduced row echelon form will be \([I|A^{-1}]\text{.}\) This not only allows us to compute the inverse of \(A\) but it also shows that nonsingular matrices are invertible and vice-versa.</p>
+<p id="p-411">Example: If we start with</p>
 <div class="displaymath">
 \begin{equation*}
 A=\begin{bmatrix}1\amp2\amp1\\2\amp3\amp5\\1\amp2\amp0\end{bmatrix},
 \end{equation*}
 </div>
-<p data-braille="continuation">then</p>
+<p class="continuation">then</p>
 <div class="displaymath">
 \begin{equation*}
 [A\mid I]=
@@ -234,7 +242,7 @@ A=\begin{bmatrix}1\amp2\amp1\\2\amp3\amp5\\1\amp2\amp0\end{bmatrix},
 \end{array}\right] 
 \end{equation*}
 </div>
-<p data-braille="continuation">has, as its reduced row echelon form,</p>
+<p class="continuation">has, as its reduced row echelon form,</p>
 <div class="displaymath">
 \begin{equation*}
 [I\mid A^{-1}]=
@@ -245,7 +253,7 @@ A=\begin{bmatrix}1\amp2\amp1\\2\amp3\amp5\\1\amp2\amp0\end{bmatrix},
 \end{array}\right] 
 \end{equation*}
 </div>
-<p data-braille="continuation">and so we conclude that</p>
+<p class="continuation">and so we conclude that</p>
 <div class="displaymath">
 \begin{equation*}
 A^{-1}=\begin{bmatrix}
@@ -255,46 +263,66 @@ A^{-1}=\begin{bmatrix}
 \end{bmatrix}.  
 \end{equation*}
 </div>
-<article class="example example-like" id="example-19"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.7.12</span><span class="period">.</span><span class="space"> </span><span class="title">The inverse of a \(3\times2\) matrix.</span>
-</h6>
-<p id="p-424">We start with the matrix</p>
+<article class="example example-like" id="example-20"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-20"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.7.12</span><span class="period">.</span><span class="space"> </span><span class="title">The inverse of a \(2\times2\) matrix.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-20"><article class="example example-like"><p id="p-412">We start with the \(2\times2\) matrix</p>
 <div class="displaymath">
 \begin{equation*}
 A=\begin{bmatrix} a\amp b\\c\amp d \end{bmatrix} 
 \end{equation*}
 </div>
-<p data-braille="continuation">Now we carry out row reduction:</p>
+<p class="continuation">Now we carry out row reduction (the specific elementary row operations being in parentheses):</p>
 <div class="displaymath">
-\begin{equation*}
-\left[ \begin{array}{cc|cc}
-a\amp b\amp1\amp0\rlap{\hbox{$\qquad R_1\gets \frac1a R_1$}}\\
-c\amp d\amp0\amp1
-\end{array} \right]  \\ 
-\left[ \begin{array}{cc|cc}
-1\amp\frac ba\amp\frac1a\amp0\\ 
-c\amp d\amp0\amp1 \rlap{\hbox{$\qquad R_2\gets R_2-cR_1$}}
-\end{array} \right]\\ 
-\left[ \begin{array}{cc|cc}
-1\amp\frac ba\amp\frac1a\amp0
-\\ 0\amp d-\frac{bc}a\amp-\frac ca\amp1
-\end{array} \right] \rlap{\hbox{(Rewrite last row)}}   \\
-\left[\begin{array}{cc|cc}
-1\amp\frac ba\amp\frac1a\amp0\\ 
-0\amp\frac{ad-bc}a\amp-\frac ca\amp1 
-\rlap{\hbox{$\qquad R_2\gets \frac a{ad-bc}R_2$}}
-\end{array} \right]\\ 
-\left[ \begin{array}{cc|cc}
-1\amp\frac ba\amp\frac1a\amp0\\ 
-0\amp1\amp-\frac c{ad-cb}\amp \frac a{ad-cb} \rlap{\hbox{$\qquad
-R_1\gets R_1-\frac ba R_2$}}
-\end{array}\right]\\ \left[ \begin{array}{cc|cc}
-1\amp0\amp \frac d{ad-cb}\amp -\frac b{ad-cb}   \\
-0\amp1\amp-\frac c{ad-cb}\amp \frac a{ad-cb}
-\end{array} \right] 
-\end{equation*}
+\begin{gather*}
+\amp \left[
+\begin{array}{cc|cc}
+a \amp b \amp 1 \amp 0 \\
+c \amp d \amp 0 \amp 1
+\end{array}
+\right]
+\amp \amp 
+(R_1 \gets \frac 1a R_1)\\
+\amp \left[
+\begin{array}{cc|cc}
+1 \amp \frac ba \amp \frac 1a \amp 0 \\
+c \amp d \amp 0 \amp 1
+\end{array}
+\right]
+\amp \amp 
+(R_2 \gets R_2 -c R_1)\\
+\amp \left[
+\begin{array}{cc|cc}
+1 \amp \frac ba \amp \frac 1a \amp 0 \\
+0 \amp d-\frac{bc}a \amp -\frac ca \amp 1 
+\end{array}
+\right]
+\amp \amp 
+(\text{Rewrite last row})\\
+\amp \left[
+\begin{array}{cc|cc}
+1 \amp \frac ba \amp \frac 1a \amp 0 \\
+0 \amp \frac{ad-bc}a \amp -\frac ca \amp 1 
+\end{array}
+\right]
+\amp \amp 
+(R_2 \gets \frac a{ad-bc}R_2)\\
+\amp \left[
+\begin{array}{cc|cc}
+1 \amp \frac ba \amp \frac 1a \amp 0 \\
+0 \amp 1 \amp -\frac c{ad-bc} \amp \frac a{ad-bc}
+\end{array}
+\right]
+\amp \amp 
+(R_1 \gets R_1 - \frac ba R_2)\\
+\amp \left[
+\begin{array}{cc|cc}
+1 \amp 0 \amp \frac d{ad-bc} \amp -\frac b{ad-bc} \\
+0 \amp 1 \amp -\frac c{ad-bc} \amp \frac a{ad-bc}
+\end{array}
+\right]
+\end{gather*}
 </div>
-<p data-braille="continuation">On the face of it, this seems to say</p>
+<p class="continuation">On the face of it, this seems to say</p>
 <div class="displaymath">
 \begin{equation*}
 A^{-1} 
@@ -304,10 +332,10 @@ A^{-1}
 -\frac c{ad-cb}\amp \frac a{ad-cb}
 \end{bmatrix} 
 = \frac1{ad-cb}
-\begin{bmatrix} d\amp-b\\ -c\amp a \end{bmatrix}
+\begin{bmatrix} d\amp-b\\ -c\amp a \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">But notice that we have blithely ignored the possibility that \(a=0\) or that \(ad-bc=0\text{.}\) Nonetheless we may compute:</p>
+<p class="continuation">But notice that we have blithely ignored the possibility that \(a=0\) or that \(ad-bc=0\text{.}\) Nonetheless we may compute:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} a\amp b\\c\amp d \end{bmatrix}
@@ -316,7 +344,7 @@ A^{-1}
 =(ad-bc)I 
 \end{equation*}
 </div>
-<p data-braille="continuation">Hence if</p>
+<p class="continuation">Hence if</p>
 <div class="displaymath">
 \begin{equation*}
 A=
@@ -326,48 +354,47 @@ B=
 \frac1{ad-bc}\begin{bmatrix} d\amp-b\\-c\amp a \end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">then</p>
+<p class="continuation">then</p>
 <div class="displaymath">
 \begin{equation*}
 AB=I 
 \end{equation*}
 </div>
-<p data-braille="continuation">and so</p>
+<p class="continuation">and so</p>
 <div class="displaymath">
 \begin{equation*}
 B=A^{-1}
 \end{equation*}
 </div>
-<p data-braille="continuation">we conclude that if</p>
+<p class="continuation">we conclude that if</p>
 <div class="displaymath">
 \begin{equation*}
 A= \begin{bmatrix} a\amp b\\c\amp d \end{bmatrix} 
 \end{equation*}
 </div>
-<p data-braille="continuation">where \(ad-bc\neq 0\) then</p>
+<p class="continuation">where \(ad-bc\neq 0\) then</p>
 <div class="displaymath">
 \begin{equation*}
 A^{-1}=
 \frac1{ad-bc}\begin{bmatrix} d\amp-b\\-c\amp a \end{bmatrix}
 \end{equation*}
-</div></article></section><section class="subsection" id="subsection-29"><h3 class="heading hide-type">
+</div></article></div></section><section class="subsection" id="subsection-29"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.7.4</span> <span class="title">Applying the Inverse of a Matrix to Systems of Linear Equations</span>
 </h3>
 <article class="theorem theorem-like" id="theorem-15"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.7.13</span><span class="period">.</span><span class="space"> </span><span class="title">Solving Equations Using the Matrix Inverse.</span>
 </h6>
-<p id="p-425">If a system of linear equations is given by the equations \(Ax=b\text{,}\) and \(A\) has an inverse, then \(x=A^{-1}b\text{.}\)</p></article><article class="hiddenproof" id="proof-23"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-23"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-23"><article class="hiddenproof"><p id="p-426">We take the equation \(Ax=b\) and multiply both sides by \(A^{-1}:\)</p>
+<p id="p-413">If a system of linear equations is given by the equations \(Ax=b\text{,}\) and \(A\) has an inverse, then \(x=A^{-1}b\text{.}\)</p></article><article class="hiddenproof" id="proof-23"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-23"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-23"><article class="hiddenproof"><p id="p-414">We take the equation \(Ax=b\) and multiply both sides by \(A^{-1}:\)</p>
 <div class="displaymath">
 \begin{equation*}
 A^{-1}(Ax)=A^{-1}b\\
 A^{-1}(Ax)=(A^{-1}A)x=Ix=x 
 \end{equation*}
 </div>
-<p data-braille="continuation">and so \(x=A^{-1}b\text{.}\)</p></article></div>
-<article class="example example-like" id="example-20"><h6 class="heading">
+<p class="continuation">and so \(x=A^{-1}b\text{.}\)</p></article></div>
+<article class="example example-like" id="example-21"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-21"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.7.14</span><span class="period">.</span><span class="space"> </span><span class="title">Solving a system of linear equations using the matrix inverse.</span>
-</h6>
-<p id="p-427">Suppose we want to solve the system of equations</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-21"><article class="example example-like"><p id="p-415">Suppose we want to solve the system of equations</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rrrrrrr}
@@ -380,7 +407,7 @@ x_1+2x_2\phantom{+0x_3}\amp=\amp1
 \end{array} 
 \end{equation*}
 </div>
-<p id="p-428">Then let</p>
+<p id="p-416">Then let</p>
 <div class="displaymath">
 \begin{equation*}
 A=
@@ -396,7 +423,7 @@ b=
 \end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">so that we are solving \(Ax=b.\) We have already done the computation to determine that</p>
+<p class="continuation">so that we are solving \(Ax=b.\) We have already done the computation to determine that</p>
 <div class="displaymath">
 \begin{equation*}
 A^{-1}=
@@ -407,7 +434,7 @@ A^{-1}=
 \end{bmatrix}.  
 \end{equation*}
 </div>
-<p data-braille="continuation">Hence</p>
+<p class="continuation">Hence</p>
 <div class="displaymath">
 \begin{equation*}
 x=
@@ -421,7 +448,7 @@ x=
 \begin{bmatrix}-1\\1\\0\end{bmatrix}, 
 \end{equation*}
 </div>
-<p data-braille="continuation">and the (only) solution is \(x_1=-1, x_2=1, x_3=0.\)</p></article></section></section></div></main>
+<p class="continuation">and the (only) solution is \(x_1=-1, x_2=1, x_3=0.\)</p></article></div></section></section></div></main>
 </div>
 </body>
 </html>

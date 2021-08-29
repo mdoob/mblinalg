@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:56-06:00       *-->
+<!--*       on 2021-08-29T14:14:54-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,55 +15,30 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<ul class="disc">
-<li>
-<p xmlns:svg="http://www.w3.org/2000/svg">The matrix representation of a rotation linear transformation is determined by the values on the standard basis \(\{\vec e_1,\vec e_2\}.\)</p>
-<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><div class="asymptote-box" style="padding-top: 50.2453854747361%"><iframe src="images/image-72.html" class="asymptote"></iframe></div></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.15<span class="period">.</span></span><span class="space"> </span>Rotation of \(\{\vec e_1,\vec e_2\}\) through an angle \(\theta\)</figcaption></figure><p>The matrix representation is then</p>
+<p>For any \(\vec x\) in \(\R^m\text{,}\) we have \(L_3(\vec x)=(L_2\circ L_1)(\vec x)=L_2(L_1(\vec x))\text{,}\) and so we have \(L_3\colon\R^m\to\R^s\text{.}\)</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\begin{bmatrix}
-\cos\theta\amp -\sin\theta\\ \sin\theta \amp \cos\theta
-\end{bmatrix}\text{.}
-\end{equation*}
+\begin{align*}
+L_3(\vec x + \vec y)
+\amp =L_2(L_1(\vec x+ \vec y))\\
+\amp = L_2(L_1(\vec x) + L_1(\vec y)) 
+\amp \gets \text{ since }L_1 \text{ is linear}\\
+\amp = L_2(L_1(\vec x)) + L_2(L_1(\vec y))
+\amp \gets \text{ since }L_2\text{ is linear}\\
+\amp = L_3(\vec x) + L_3(\vec y)\text{.}
+\end{align*}
 </div>
-</li>
-<li>
-<p xmlns:svg="http://www.w3.org/2000/svg">The matrix representation of the reflection by the line \(y=x\) turns out to be particularly easy.</p>
-<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><div class="asymptote-box" style="padding-top: 88.6359291124347%"><iframe src="images/image-73.html" class="asymptote"></iframe></div></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.16<span class="period">.</span></span><span class="space"> </span>Reflection of \(\{\vec e_1,\vec e_2\}\) by the line \(y=x\)</figcaption></figure><p>Since \(L(\vec e_1)=\vec e_2\) and \(L(\vec e_2)=\vec e_1\text{,}\) the matrix representation is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\begin{bmatrix}
-0\amp 1\\ 1\amp0
-\end{bmatrix}\text{.}
-\end{equation*}
+\begin{align*}
+L_3(r\vec x)
+\amp =L_2(L_1(r\vec x))\\
+\amp =L_2(rL_1(\vec x))
+\amp \gets\text{ since }L_1\text{ is linear}\\
+\amp =rL_2(L_1(\vec x)
+\amp \gets\text{ since }L_2\text{ is linear}\\
+\amp =rL_3(\vec x)\text{.}
+\end{align*}
 </div>
-</li>
-<li>
-<p xmlns:svg="http://www.w3.org/2000/svg">The matrix representation of the projection onto the line \(y=x\) is easy to see:</p>
-<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><div class="asymptote-box" style="padding-top: 82.9018680018708%"><iframe src="images/image-74.html" class="asymptote"></iframe></div></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.17<span class="period">.</span></span><span class="space"> </span>Projection of \(\{\vec e_1,\vec e_2\}\) onto the line \(y=x\)</figcaption></figure><p>In this case \(L(\vec e_1)=L(\vec e_2)=\frac12(1,1)\text{,}\) and so the matrix representation is</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\frac12\begin{bmatrix}
-1\amp 1\\ 1\amp1
-\end{bmatrix}\text{.}
-\end{equation*}
-</div>
-</li>
-<li>
-<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><div class="asymptote-box" style="padding-top: 95.8913791762968%"><iframe src="images/image-75.html" class="asymptote"></iframe></div></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.18<span class="period">.</span></span><span class="space"> </span>Dilation of \(\{\vec e_1,\vec e_2\}\) for \(L(\vec x)=sx\)</figcaption></figure><p>The matrix representation of \(L(\vec x)=sx\) is</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\begin{bmatrix}
-s\amp 0\\ 0\amp s
-\end{bmatrix}\text{.}
-\end{equation*}
-</div>
-</li>
-</ul>
-<span class="incontext"><a href="LinearTransformationIntroduction.html#p-1257">in-context</a></span>
+<p class="continuation">Hence \(L_3=L_2\circ L_1\) is linear.</p>
+<span class="incontext"><a href="section-43.html#p-1257">in-context</a></span>
 </body>
 </html>

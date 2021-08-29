@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:51-06:00       *-->
+<!--*       on 2021-08-29T14:14:48-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -22,31 +22,31 @@ X=
 \end{bmatrix}.
 \end{equation*}
 </div>
-<p data-braille="continuation">and let \(X'\) be the reduced row echelon form of \(X\text{.}\) This means there are elementary matrices \(E_1,E_2,\ldots,E_k\) so that \(X'=E_kE_{k-1}\cdots E_2E_1X\text{.}\) Let \(\vec e_n=(0,0,\ldots,0,1)\text{,}\) and</p>
+<p class="continuation">and let \(X'\) be the reduced row echelon form of \(X\text{.}\) This means there are elementary matrices \(E_1,E_2,\ldots,E_k\) so that \(X'=E_kE_{k-1}\cdots E_2E_1X\text{.}\) Let \(\vec e_n=(0,0,\ldots,0,1)\text{,}\) and</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \vec w= E_1^{-1}E_2^{-1}\cdots E_k^{-1} \vec e_n.
 \end{equation*}
 </div>
-<p data-braille="continuation">so that</p>
+<p class="continuation">so that</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 E_kE_{k-1}\cdots E_2E_1\vec w= \vec e_n.
 \end{equation*}
 </div>
-<p data-braille="continuation">Now consider</p>
+<p class="continuation">Now consider</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 r_1\vec x_1+r_2\vec x_2+\cdots+r_n\vec x_m=\vec w.
 \end{equation*}
 </div>
-<p data-braille="continuation">which is the same as</p>
+<p class="continuation">which is the same as</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 X \begin{bmatrix} r_1\\r_2\\ \vdots\\ r_m \end{bmatrix}=\vec w.
 \end{equation*}
 </div>
-<p data-braille="continuation">To solve this we compute the reduced row echelon form of</p>
+<p class="continuation">To solve this we compute the reduced row echelon form of</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \left[\begin{array}{cccc|c}
@@ -54,7 +54,7 @@ X \begin{bmatrix} r_1\\r_2\\ \vdots\\ r_m \end{bmatrix}=\vec w.
 \end{array}\right]
 \end{equation*}
 </div>
-<p data-braille="continuation">We multiply this matrix on the left by \(E_kE_{k-1}\cdots E_2E_1\) to get the matrix</p>
+<p class="continuation">We multiply this matrix on the left by \(E_kE_{k-1}\cdots E_2E_1\) to get the matrix</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \left[\begin{array}{c|c}
@@ -62,6 +62,6 @@ X' \amp \vec e_n
 \end{array}\right]
 \end{equation*}
 </div>
-<p data-braille="continuation">Suppose that the last row of \(X'\) is all-zero row. Then the last row of the reduced row echelon form is \([0 \cdots 0 \mid 1]\text{,}\) which is the criterion for the system of equations having no solution. This can't happen because by assumption \(\{\vec x_1,\vec x_2,\ldots,\vec x_m\}\) is a spanning set.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Since \(X'\) has no all-zero row at the bottom, every row must contain a leading one. This means the number of columns of \(X'\) is at least as large as the number of rows, that is to say, \(n\leq m\text{.}\)</p></article></body>
+<p class="continuation">Suppose that the last row of \(X'\) is all-zero row. Then the last row of the reduced row echelon form is \([0 \cdots 0 \mid 1]\text{,}\) which is the criterion for the system of equations having no solution. This can't happen because by assumption \(\{\vec x_1,\vec x_2,\ldots,\vec x_m\}\) is a spanning set.</p>
+<p>Since \(X'\) has no all-zero row at the bottom, every row must contain a leading one. This means the number of columns of \(X'\) is at least as large as the number of rows, that is to say, \(n\leq m\text{.}\)</p></article></body>
 </html>

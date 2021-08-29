@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:41-06:00       *-->
+<!--*       on 2021-08-29T14:14:36-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,16 +15,108 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Using summation notation:</p>
+<ul class="disc">
+<li>
+<p>Let</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\bigl(A(B+C)\bigr)_{i,j} \amp = \sum_{k=1}^n A_{i,k}(B+C)_{k,j} \\
-\amp = \sum_{k=1}^n a_{i,k}(b_{k,j}+c_{k,j}) \\
-\amp = \sum_{k=1}^n (a_{i,k} b_{k,j}+a_{i,k} c_{k,j}) \\
-\amp = \sum_{k=1}^n a_{i,k} b_{k,j}+\sum_{k=1}^na_{i,k} c_{k,j} \\
-\amp = (AB)_{i,j} + (AC)_{i,j}
-\end{align*}
+\begin{equation*}
+A=\begin{bmatrix} 1\amp2\amp3\\4\amp5\amp6\end{bmatrix}
+\textrm{ and }  
+B=\begin{bmatrix} 3\amp1\\4\amp1\end{bmatrix}\text{.}
+\end{equation*}
 </div>
+<p class="continuation">Then \(X\) must be a \(3\times2\) matrix so that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+X=\begin{bmatrix} x_{1,1}\amp x_{1,2}\\
+x_{2,1}\amp x_{2,2}\\
+x_{3,1}\amp x_{3,2}\end{bmatrix}.
+\end{equation*}
+</div>
+<p class="continuation">Solving for the first column means finding the reduced row echelon form of \(\left[\begin{smallmatrix} 1\amp2\amp3\amp3 \\4\amp5\amp6\amp4\end{smallmatrix}\right].\) It is \(\left[\begin{smallmatrix} 1\amp0\amp-1\amp-\tfrac73
+\\0\amp1\amp2\amp\tfrac83\end{smallmatrix}\right]\) and so \(x_{1,1}=-\tfrac73+s \text{,}\) \(x_{2,1}=\tfrac83-2s\text{,}\) and \(x_{3,1}=s.\) Solving for the second column means finding the reduced row echelon form of \(\left[\begin{smallmatrix} 1\amp2\amp3\amp1 \\4\amp5\amp6\amp1\end{smallmatrix}\right]\) which is \(\left[\begin{smallmatrix} 1\amp0\amp-1\amp-1 \\0\amp1\amp2\amp1\end{smallmatrix}\right]\) and so \(x_{1,2}=-1+t \text{,}\) \(x_{2,2}=1-2t\text{,}\) and \(x_{3,2}=t.\) Hence we conclude that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+X=\begin{bmatrix}
+-\tfrac73+s \amp-1+t\\
+\tfrac83-2s \amp 1-2t\\
+s\amp t
+\end{bmatrix}
+\end{equation*}
+</div>
+<p class="continuation">is a solution of the matrix equation \(AX=B\) for any choice of \(s\) and \(t\text{.}\) Notice the similarity of the two matrices to be put into reduced row echelon form. They differ, of course, only in the last column. In fact, this means that exactly the same elementary row operations were used to put both matrices into reduced row echelon form. Since both computations used the same  coefficient matrix, we could have carried out both computations at once by starting with the matrix \(\left[\begin{smallmatrix}
+1\amp2\amp3\amp3\amp1\\ 4\amp5\amp6\amp4\amp1
+\end{smallmatrix}\right]\) and obtaining \(\left[\begin{smallmatrix}
+1\amp0\amp-1\amp-\tfrac73 \amp-1\\0\amp1\amp2\amp\tfrac83\amp1
+\end{smallmatrix}\right]\) for the reduced row echelon form.</p>
+</li>
+<li>
+<p>An even more striking example can be obtained when there are no free variables. Let \(A=\left[\begin{smallmatrix} 1\amp1\amp3\\3\amp2\amp5\\1\amp1\amp1\end{smallmatrix}\right]\) and \(B=\left[\begin{smallmatrix} 1\amp1\amp2\\ 2\amp2\amp3\\ 3\amp3\amp4\end{smallmatrix}\right]\) so that \(X\) is a \(3\times3\) matrix. Then the augmented matrix</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\left[\begin{array}{ccc|rrr}
+1\amp1\amp3\amp1\amp1\amp2\\3\amp2\amp5\amp2\amp2\amp3\\1\amp1\amp1\amp3\amp3\amp4
+\end{array}\right]
+\end{equation*}
+</div>
+<p class="continuation">has reduced row echelon form</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\left[\begin{array}{ccc|rrr}
+1\amp0\amp0\amp-1\amp-1\amp-2\\0\amp1\amp0\amp5\amp5\amp7\\0\amp0\amp1\amp-1\amp-1\amp-1
+\end{array}\right]
+\end{equation*}
+</div>
+<p class="continuation">From the first column of \(B\) we get \(x_{1,1}=-1\text{,}\) \(x_{2,1}=5\) and \(x_{3,1}=-1.\) From the second column of\(B\) we get \(x_{1,2}=-1\text{,}\) \(x_{2,2}=5\) and \(x_{3,2}=-1.\) From the third column of \(B\) we get \(x_{1,3}=-2\text{,}\) \(x_{2,3}=7\) and \(x_{3,3}=1.\) So</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+X= \begin{bmatrix}
+-1\amp-1\amp-2 \\5\amp5\amp7\\-1\amp-1\amp-1
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p class="continuation">Notice that \(X\) is the right half of the reduced row echelon form, and note that it follows directly from the identity matrix in the left half of the same matrix.</p>
+</li>
+<li>
+<p>If \(A\) and \(B\) are both square \(n\times n\) matrices, and the reduced row echelon form of \(A\) is \(I_n\text{,}\) then the reduced row echelon form of \([A| B]\) is \([I_n|X]\) where \(X\) satisfies \(AX=B.\) As an example, let us solve the matrix equation</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+1\amp2\amp-1\\3\amp1\amp0\\2\amp1\amp1
+\end{bmatrix}
+X=\begin{bmatrix}
+-2\amp3\amp3\\2\amp2\amp1\\4\amp2\amp2
+\end{bmatrix}
+\end{equation*}
+</div>
+<p class="continuation">Then \(X\) is a \(3\times 3\) matrix, and the reduced row echelon form of</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+[A| B]=
+\left[\begin{array}{ccr|rrr}
+1\amp2\amp-1\amp-2\amp3\amp3\\ 3\amp1\amp0\amp2\amp2\amp1\\2\amp1\amp1\amp4\amp2\amp2
+\end{array}\right]
+\end{equation*}
+</div>
+<p class="continuation">is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\left[\begin{array}{ccc|rrr}
+1\amp0\amp0\amp-2\amp1\amp3\\ 0\amp1\amp0\amp2\amp2\amp1\\0\amp0\amp1\amp4\amp2\amp2
+\end{array}\right]
+\end{equation*}
+</div>
+<p class="continuation">and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+X=
+\begin{bmatrix}
+-2\amp1\amp3\\ 2\amp2\amp1 \\4\amp2\amp2
+\end{bmatrix}.
+\end{equation*}
+</div>
+</li>
+</ul>
 <span class="incontext"><a href="section-11.html#p-334">in-context</a></span>
 </body>
 </html>

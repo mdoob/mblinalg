@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:38-06:00       *-->
+<!--*       on 2021-08-29T14:14:33-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,8 +15,75 @@
 </head>
 <body>
 <article class="example example-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.5</span><span class="period">.</span><span class="space"> </span><span class="title">A matrix row-reducing itself.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.5</span><span class="period">.</span><span class="space"> </span><span class="title">A system of equations with free variables.</span>
 </h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">The following example is a matrix row reducing itself. Notice how it proceeds left to right in columns, and each column with a leading one has zeros above and below when the algorithm completes.</p></article><span class="incontext"><a href="section-6.html#example-7">in-context</a></span>
+<p>Consider the following system of linear equations:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{rl}
+x_1-x_2+2x_3-x_4 \amp =  -1 \\
+2x_1+x_2-2x_3-2x_4 \amp =  -2 \\
+-x_1+2x_2-4x_3+x_4 \amp =  1 \\
+3x_1-3x_4 \amp =  -3
+\end{array}
+\end{equation*}
+</div>
+<p>The augmented matrix is then put into reduced row echelon form:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\begin{bmatrix}
+1 \amp  -1 \amp  2 \amp  -1 \amp  -1\\
+2 \amp  1 \amp -2 \amp  -2 \amp  -2\\
+-1 \amp  2 \amp  -4 \amp  1 \amp  1\\
+3 \amp  0 \amp  0 \amp  -3 \amp  -3
+\end{bmatrix}
+\amp\amp\amp
+\begin{array}{rl}
+R_2 \amp \gets R_2-2R_1\\
+R_3 \amp \gets R_3+R_1\\
+R_4 \amp \gets R_4-3R_1
+\end{array}\\\\
+\begin{bmatrix}
+1 \amp  -1 \amp  2 \amp  -1 \amp  -1\\
+0 \amp  3 \amp  -6 \amp  0 \amp  0\\
+0 \amp  1 \amp  -2 \amp  0 \amp  0\\
+0 \amp  3 \amp  -6 \amp  0 \amp  0
+\end{bmatrix}
+\amp\amp\amp
+\begin{array}{rl}
+R_2 \amp \gets \tfrac13 R_2\\
+\end{array}\\\\
+\begin{bmatrix}
+1 \amp  -1 \amp  2 \amp  -1 \amp  -1\\
+0 \amp  1 \amp  -2 \amp  0 \amp  0\\
+0 \amp  1 \amp  -2 \amp  0 \amp  0\\
+0 \amp  3 \amp  -6 \amp  0 \amp  0
+\end{bmatrix}
+\amp\amp\amp
+\begin{array}{rl}
+R_1 \amp \gets R_1 + R_2\\
+R_3 \amp \gets R_3- R_2\\
+R_4 \amp \gets R_4- 3R_2
+\end{array}\\\\
+\begin{bmatrix}
+{\color{red} 1} \amp  0 \amp  0 \amp  -1 \amp  -1\\
+0 \amp  {\color{red} 1} \amp  -2 \amp  0 \amp  0\\
+0 \amp  0 \amp  0 \amp  0 \amp  0\\
+0 \amp  0 \amp  0 \amp  0 \amp  0
+\end{bmatrix}
+\end{align*}
+</div>
+<p>Since  \(x_3\) and \(x_4\) are free variables, we assign them parameters: \(x_3=s\) and \(x_4=t\text{.}\)  We can now evaluate the constrained variables: \(x_1=-1+t\) (from the first row) and \(x_2=2s\) (from the second row). In short, \((x_1,x_2,x_3,x_4)=(-1+t,2s,s,t)\) for any choice of \(s\) or \(t\text{.}\)</p>
+<p>Now, as a check, let's put these solutions back into the original equations.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{rlll}
+x_1-x_2+2x_3-x_4 \amp =\amp  (-1+t) - (2s) + 2(s) - (t) \amp= -1\\
+2x_1+x_2-2x_3-2x_4 \amp =\amp  2(-1+t) + 2s -2s-2t \amp= -2\\
+-x_1+2x_2-4x_3+x_4 \amp =\amp  -(-1+t) +2(2s) -4s+t \amp= 1 \\
+3x_1-3x_4 \amp =\amp  3(-1+t) -3t \amp= -3
+\end{array}
+\end{equation*}
+</div></article><span class="incontext"><a href="section-6.html#example-7">in-context</a></span>
 </body>
 </html>

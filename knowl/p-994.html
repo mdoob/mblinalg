@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:51-06:00       *-->
+<!--*       on 2021-08-29T14:14:47-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,18 +15,14 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose we have a line \(L\) with equation \((x_0,y_0,z_0)+t\vec {n_0}\) and a plane with equations \(ax+by+cz=0\text{.}\) Is there a point in both the line and the plane, and, if so, what is it? As usual when discussing planes, let \(\vec n=(a,b,c)\text{.}\) Then a point \(\vec x=(x,y,z)\) is in the plane if and only if \(\vec x\cdot \vec n=0\text{.}\) If \(\vec x\) is also on the line, then \(\vec x=(x_0,y_0,z_0)=t\vec{n_0}\) for some \(t\text{.}\) Then</p>
+<p>In principle the problem is solved. We have three unknowns \(t_1\text{,}\) \(t_2\) and \(t_3\text{,}\) and each of the three coordinates gives an equation, so we have three equations in three unknowns. There is a quicker way: take the dot product of both sides of (\(*\)) above with \(\vec{n_1}\) and then with \(\vec{n_2}\text{.}\) This gives</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-((x_0,y_0,z_0)+t\vec{n_0})\cdot\vec n=0\\
-(x_0,y_0,z_0)\cdot \vec n= -t( \vec{n_0}\cdot\vec n)
-\end{equation*}
-</div>
-<p data-braille="continuation">and, if \(\vec{n_0}\cdot\vec n\not=0\text{,}\)</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-t=-\frac{(x_0,y_0,z_0)\cdot \vec n}{\vec{n_0}\cdot\vec n}
-\end{equation*}
+\begin{align*}
+\|\vec{n_1}\|^2 t_1 -(\vec{n_1}\cdot\vec{n_2})t_2
+\amp =(\vec{X_2}-\vec{X_1})\cdot \vec{n_1}\\
+(\vec{n_1}\cdot\vec{n_2}) t_1 -\|\vec{n_2}\|^2t_2
+\amp =(\vec{X_2}-\vec{X_1})\cdot \vec{n_2}
+\end{align*}
 </div>
 <span class="incontext"><a href="section-32.html#p-994">in-context</a></span>
 </body>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:46-06:00       *-->
+<!--*       on 2021-08-29T14:14:42-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,16 +15,128 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Here are the steps needed to put the permutation \(324165\) into natural order:</p>
-<ol class="decimal">
-<li>324165: interchange 3 and 1</li>
-<li>124365: no interchange (2 is in the correct position)</li>
-<li>124365: interchange 4 and 3</li>
-<li>123465: no interchange (4 is in the correct position)</li>
-<li>123465: interchange 6 and 5</li>
-<li>123465: finished</li>
-</ol>
-<p data-braille="continuation">Since there were three interchanges, the sign of the permutation is \(-1\text{.}\)</p>
+<p>Let \(A\) be a matrix of size \(4\text{.}\) We evaluate the determinant using the first row expansion of \(A\) and all of the subsequent minors.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\det(A) \amp =  \det\left(
+\begin{bmatrix}
+a_{1,1} \amp a_{1,2} \amp a_{1,3} \amp a_{1,4}\\
+a_{2,1} \amp a_{2,2} \amp a_{2,3} \amp a_{2,4}\\
+a_{3,1} \amp a_{3,2} \amp a_{3,3} \amp a_{3,4}\\
+a_{4,1} \amp a_{4,2} \amp a_{4,3} \amp a_{4,4}
+\end{bmatrix}\right)\\
+\amp =
+a_{1,1}\det\left(\begin{bmatrix}
+a_{2,2} \amp a_{2,3} \amp a_{2,4}\\
+a_{3,2} \amp a_{3,3} \amp a_{3,4}\\
+a_{4,2} \amp a_{4,3} \amp a_{4,4}
+\end{bmatrix}\right)
+-a_{1,2}\det\left(\begin{bmatrix}
+a_{2,1} \amp a_{2,3} \amp a_{2,4}\\
+a_{3,1} \amp a_{3,3} \amp a_{3,4}\\
+a_{4,1} \amp a_{4,3} \amp a_{4,4}
+\end{bmatrix}\right)\\
+\amp\qquad+a_{1,3}\det\left(\begin{bmatrix}
+a_{2,1} \amp a_{2,2} \amp a_{2,4}\\
+a_{3,1} \amp a_{3,2} \amp a_{3,4}\\
+a_{4,1} \amp a_{4,2} \amp a_{4,4}
+\end{bmatrix}\right)
+-a_{1,4}\det\left(\begin{bmatrix}
+a_{2,1} \amp a_{2,2} \amp a_{2,3} \\
+a_{3,1} \amp a_{3,2} \amp a_{3,3} \\
+a_{4,1} \amp a_{4,2} \amp a_{4,3} 
+\end{bmatrix}\right)\\
+\amp=
+a_{1,1}\left(
+a_{2,2} \det\left(
+\begin{bmatrix}
+a_{3,3}\amp a_{3,4}\\a_{4,3}\amp a_{4,4}
+\end{bmatrix}
+\right)
+-a_{2,3}\det\left(
+\begin{bmatrix}
+a_{3,2}\amp a_{3,4}\\a_{4,2}\amp a_{4,4}
+\end{bmatrix}
+\right)
++a_{2,4}\det\left(
+\begin{bmatrix}
+a_{3,2}\amp a_{3,3}\\a_{4,2}\amp a_{4,3}
+\end{bmatrix}
+\right)
+\right)\\
+\amp\qquad
+-a_{1,2}\left(
+a_{2,1} \det\left(
+\begin{bmatrix}
+a_{3,3}\amp a_{3,4}\\a_{4,3}\amp a_{4,4}
+\end{bmatrix}
+\right)
+-a_{2,3}\det\left(
+\begin{bmatrix}
+a_{3,1}\amp a_{3,4}\\a_{4,1}\amp a_{4,4}
+\end{bmatrix}
+\right)
++a_{2,4}\det\left(
+\begin{bmatrix}
+a_{3,1}\amp a_{3,3}\\a_{4,1}\amp a_{4,3}
+\end{bmatrix}
+\right)
+\right)\\
+\amp\qquad
++a_{1,3}\left(
+a_{2,1} \det\left(
+\begin{bmatrix}
+a_{3,2}\amp a_{3,4}\\a_{4,2}\amp a_{4,4}
+\end{bmatrix}
+\right)
+-a_{2,2}\det\left(
+\begin{bmatrix}
+a_{3,1}\amp a_{3,4}\\a_{4,1}\amp a_{4,4}
+\end{bmatrix}
+\right)
++a_{2,4}\det\left(
+\begin{bmatrix}
+a_{3,1}\amp a_{3,2}\\a_{4,1}\amp a_{4,2}
+\end{bmatrix}
+\right)
+\right)\\
+\amp\qquad
+-a_{1,4}\left(
+a_{2,1} \det\left(
+\begin{bmatrix}
+a_{3,2}\amp a_{3,3}\\a_{4,2}\amp a_{4,3}
+\end{bmatrix}
+\right)
+-a_{2,2}\det\left(
+\begin{bmatrix}
+a_{3,1}\amp a_{3,3}\\a_{4,1}\amp a_{4,3}
+\end{bmatrix}
+\right)
++a_{2,3}\det\left(
+\begin{bmatrix}
+a_{3,1}\amp a_{3,2}\\a_{4,1}\amp a_{4,2}
+\end{bmatrix}
+\right)
+\right)\\
+\amp =
+a_{1,1}a_{2,2}a_{3,3}a_{4,4} - a_{1,1}a_{2,2}a_{3,4}a_{4,3}
++a_{1,1}a_{2,3}a_{3,2}a_{4,4} - a_{1,1}a_{2,3}a_{3,4}a_{4,2}
++a_{1,1}a_{2,4}a_{3,2}a_{4,3} - a_{1,1}a_{2,4}a_{3,3}a_{4,2}\\
+\amp \qquad
+-a_{1,2}a_{2,1}a_{3,3}a_{4,4} + a_{1,2}a_{2,1}a_{3,4}a_{4,3}
+-a_{1,2}a_{2,3}a_{3,1}a_{4,4} + a_{1,2}a_{2,3}a_{3,4}a_{4,1}
++a_{1,2}a_{2,4}a_{3,1}a_{4,3} + a_{1,2}a_{2,4}a_{3,3}a_{4,1}\\
+\amp \qquad
+a_{1,3}a_{2,1}a_{3,2}a_{4,4} - a_{1,3}a_{2,1}a_{3,4}a_{4,2}
++a_{1,3}a_{2,2}a_{3,1}a_{4,4} - a_{1,3}a_{2,2}a_{3,4}a_{4,1}
++a_{1,3}a_{2,4}a_{3,1}a_{4,2} - a_{1,3}a_{2,4}a_{3,2}a_{4,1}\\
+\amp \qquad
+-a_{1,4}a_{2,1}a_{3,2}a_{4,3} + a_{1,4}a_{2,1}a_{3,3}a_{4,2}
+-a_{1,4}a_{2,2}a_{3,1}a_{4,3} + a_{1,4}a_{2,2}a_{3,3}a_{4,1}
+-a_{1,4}a_{2,3}a_{3,1}a_{4,2} + a_{1,4}a_{2,3}a_{3,2}a_{4,1}
+\end{align*}
+</div>
+<p class="continuation">The final line reveals a pattern: it is a sum of \(24=4!\) terms, each of which is of the form \(\pm a_{1,i}a_{2,j}a_{3,k}a_{4,\ell}\) where \(\begin{pmatrix} 1234\\ijk\ell \end{pmatrix} \) is a permutation. Each of the \(4!\) possible permutations appears exactly once. In addition, the sign in front of the term is equal to the sign of the associated permutation.</p>
 <span class="incontext"><a href="DeterminantDeeperTopics.html#p-690">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:43-06:00       *-->
+<!--*       on 2021-08-29T14:14:39-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,26 +15,33 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Subtract twice row 2 from row 4 (\(R_4\leftarrow R_4-2R_2\))</p>
+<p>Add a multiple of one row to another (\(R_i\leftarrow R_i + \lambda R_j\))</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-E= 
+E=
 \begin{bmatrix} 
-1\amp0\amp0\amp0\amp0\\
-0\amp1\amp0\amp0\amp0\\ 0\amp0\amp1\amp0\amp0\\
-0\amp{\color{red}{-2}}\amp0\amp1\amp0\\ 0\amp0\amp0\amp0\amp1
-\end{bmatrix} 
+1 \\ 
+\amp\ddots \\ 
+\amp\amp1 \\ 
+\amp\amp\amp1\amp\cdots\amp\lambda \\
+\amp\amp\amp\amp1\amp\vdots \\ 
+\amp\amp\amp\amp\amp\ddots \\
+\amp\amp\amp\amp\amp\amp1 
+\end{bmatrix}
 \end{equation*}
 </div>
+<p class="continuation">and</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-EA= 
-\begin{bmatrix} 
-1\amp2\amp3\amp4\amp5\amp6\\
-7\amp8\amp9\amp10\amp11\amp12\\ 
-13\amp14\amp15\amp16\amp17\amp18\\
-5\amp4\amp3\amp2\amp1\amp0\\ 
-25\amp26\amp27\amp28\amp29\amp30
+E^{-1}=
+\begin{bmatrix}
+1 \\ 
+\amp\ddots \\
+\amp\amp1 \\
+\amp\amp\amp1\amp\cdots\amp-\lambda \\ 
+\amp\amp\amp\amp1\amp\vdots \\ 
+\amp\amp\amp\amp\amp\ddots \\ 
+\amp\amp\amp\amp\amp\amp1
 \end{bmatrix}
 \end{equation*}
 </div>

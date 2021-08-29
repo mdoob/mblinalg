@@ -1,9 +1,14 @@
 #!/bin/bash
 
-XSLFILE=mathbook-local.xsl
+PUBLISHERFILE=mblinalg-pub.ptx
+# XSLFILE=mathbook-local.xsl
+XSLFILE=../mathbook/xsl/pretext-html.xsl 
 XMLFILE=mblinalg.xml
 
-xsltproc -xinclude $XSLFILE $XMLFILE
+#xsltproc -xinclude $XSLFILE $XMLFILE
+
+xsltproc -xinclude -stringparam publisher $PUBLISHERFILE $XSLFILE $XMLFILE
+
 # $HOME/mathbook/script/mbx -c asy -f html -d ./images $XMLFILE
 # cd ./images
 # ./p2s

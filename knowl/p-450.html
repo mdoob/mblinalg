@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:42-06:00       *-->
+<!--*       on 2021-08-29T14:14:38-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,15 +15,19 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>We consider the \((i,j)\) entry of \(AB\) by considering row \(i\) of \(A\) and column \(j\) of \(B\text{:}\)</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-(AB)_{i,j} =a_{i,1}b_{1,j}+ a_{i,2}b_{2,j}+\cdots+
-a_{i,n}b_{n,j}.  
-\end{equation*}
-</div>
-<p data-braille="continuation">If \((AB)_{i,j} \not= 0\text{,}\) then there is some \(k\) so that \(a_{i,k}b_{k,j}\not=0\text{.}\) This means that \(a_{i,k}\not=0\text{,}\) and, since \(A\) is upper triangular, we have \(k \geq i \text{.}\)  Similarly \(b_{k,j}\not=0\) implies \(j \geq k \text{.}\) Hence, if  \((AB)_{i,j} \not=
-0\text{,}\) then \(j \geq k \geq i\text{,}\) which makes \(AB\) upper triangular.</p>
-<span class="incontext"><a href="section-15.html#p-450">in-context</a></span>
+<p>Suppose we have a square matrix \(A\text{.}\)  For positive \(m\) and \(n\) we have proven the law of exponents: in <a href="section-13.html#LawOfExponents" class="internal" title="Subsection 2.6.2: The law of exponents">Subsection 2.6.2</a>.</p>
+<ul class="disc">
+<li><p>\(A^n=\underbrace{A\cdots A}_{n \text{ factors}},\) (Note that \(A^1=A\))</p></li>
+<li><p>\(\displaystyle A^m A^n=\underbrace{A\cdots A}_{m \text{ factors}}
+\underbrace{A\cdots A}_{n \text{ factors}}
+=\underbrace{A\cdots A}_{m+n \text{ factors}}=A^{m+n},\)</p></li>
+<li><p>\(\displaystyle (A^m)^n =\underbrace{(\underbrace{A\cdots A}_{m
+\text{ factors}})
+(\underbrace{A\cdots A}_{m \text{ factors}})\cdots
+(\underbrace{A\cdots A}_{m \text{ factors}})}_{n \text{
+times}}=A^{mn}\)</p></li>
+</ul>
+<p class="continuation">Our goal is to extend this law for invertible matrices so that it is valid for any integer exponents.  It turns out that there is only one way to do so, and we will see this in successive steps.</p>
+<span class="incontext"><a href="section-16.html#p-450">in-context</a></span>
 </body>
 </html>

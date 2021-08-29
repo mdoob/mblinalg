@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:54-06:00       *-->
+<!--*       on 2021-08-29T14:14:52-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,40 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Triangular matrices (including diagonal matrices in particular) have eigenvalues that are particularly easy to compute. In fact, they are just the diagonal entries.</p>
+<p>From <a class="xref" data-knowl="./knowl/BasisMatrixNonSingular.html" title="Theorem 4.9.12: Determining if \(\{\vec x_1,\ldots,\vec x_n\}\) is a basis for \(\R^n\)">Theorem 4.9.12</a>, the matrix \(P\) is nonsingular, and so \(P^{-1}\) exists. Now let \(\{\vec y_1, \vec y_2,\ldots,\vec y_n\}\) be the rows of \(P^{-1}\) so that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+P^{-1}=
+\begin{bmatrix} \vec y_1\\ \vec y_2\\ \vdots\\ \vec y_n \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Then \(P^{-1}P=I\) is the same as</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation}
+\vec y_i \cdot \vec x_j=
+\begin{cases}
+1 \amp \text{if } i=j\\
+0 \amp \text{otherwise.}
+\end{cases}\tag{5.5.1}
+\end{equation}
+</div>
+<p class="continuation">Now consider \(P^{-1}AP\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+P^{-1}AP
+=\begin{bmatrix} \vec y_1\\ \vec y_2\\ \vdots\\ \vec y_n \end{bmatrix}A
+\begin{bmatrix} \vec x_1\amp \vec x_2\amp\ldots\amp \vec x_n \end{bmatrix}
+=\begin{bmatrix} \vec y_1\\ \vec y_2\\ \vdots\\ \vec y_n \end{bmatrix}
+\begin{bmatrix} \lambda_1\vec x_1\amp \lambda_2\vec x_2\amp\ldots\amp\lambda_n
+\vec x_n \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Applying <a class="xref" data-knowl="./knowl/IAsDotProduct.html" title="Equation 5.5.1">(5.5.1)</a>,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+P^{-1}AP=\diag(\lambda_1,\lambda_2,\ldots,\lambda_n)\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="section-39.html#p-1165">in-context</a></span>
 </body>
 </html>

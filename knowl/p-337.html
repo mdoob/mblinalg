@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:41-06:00       *-->
+<!--*       on 2021-08-29T14:14:36-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,15 +15,42 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Left hand side: The \(i\)-\(k\) entry of \(B+C\) is \(b_{i,k}+c_{i,k}\text{,}\) and so the  \(i\)-\(j\) entry of \((B+C)A\) is</p>
+<p>If \(A\) and \(B\) are both square \(n\times n\) matrices, and the reduced row echelon form of \(A\) is \(I_n\text{,}\) then the reduced row echelon form of \([A| B]\) is \([I_n|X]\) where \(X\) satisfies \(AX=B.\) As an example, let us solve the matrix equation</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{gather*}
-(b_{i,1}+c_{i,1})a_{1,j} +
-(b_{i,2}+c_{i,2})a_{2,j}+
-\cdots+ (b_{i,n}+c_{i,n})a_{n,j}\\
-= b_{i,1}a_{1,j}+c_{i,1}a_{1,j} +\cdots
-+ b_{i,n}a_{1,n}+c_{i,n}a_{n,j} \text{.}
-\end{gather*}
+\begin{equation*}
+\begin{bmatrix}
+1\amp2\amp-1\\3\amp1\amp0\\2\amp1\amp1
+\end{bmatrix}
+X=\begin{bmatrix}
+-2\amp3\amp3\\2\amp2\amp1\\4\amp2\amp2
+\end{bmatrix}
+\end{equation*}
+</div>
+<p class="continuation">Then \(X\) is a \(3\times 3\) matrix, and the reduced row echelon form of</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+[A| B]=
+\left[\begin{array}{ccr|rrr}
+1\amp2\amp-1\amp-2\amp3\amp3\\ 3\amp1\amp0\amp2\amp2\amp1\\2\amp1\amp1\amp4\amp2\amp2
+\end{array}\right]
+\end{equation*}
+</div>
+<p class="continuation">is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\left[\begin{array}{ccc|rrr}
+1\amp0\amp0\amp-2\amp1\amp3\\ 0\amp1\amp0\amp2\amp2\amp1\\0\amp0\amp1\amp4\amp2\amp2
+\end{array}\right]
+\end{equation*}
+</div>
+<p class="continuation">and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+X=
+\begin{bmatrix}
+-2\amp1\amp3\\ 2\amp2\amp1 \\4\amp2\amp2
+\end{bmatrix}.
+\end{equation*}
 </div>
 <span class="incontext"><a href="section-11.html#p-337">in-context</a></span>
 </body>

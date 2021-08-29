@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:41-06:00       *-->
+<!--*       on 2021-08-29T14:14:37-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,17 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">\(\displaystyle (AB)^T=B^TA^T\)</p>
+<p>Suppose that \(A\) is \(m\times n\text{.}\) Then, since \(AB\) and \(BA\) are defined, the conformability ensures that \(B\) is \(n\times m\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\tr (AB) \amp = \sum_{i=1}^m(AB)_{i,i} \\
+\amp =  \sum_{i=1}^m  \sum_{j=1}^n a_{i,j}b_{j,i}\\
+\amp =  \sum_{i=1}^m  \sum_{j=1}^n b_{j,i}a_{i,j}\\
+\amp =   \sum_{j=1}^n\sum_{i=1}^m  b_{j,i}a_{i,j}\\
+\amp =   \sum_{j=1}^n (BA)_{j,j}\\
+\amp =   \tr (BA)
+\end{align*}
+</div>
 <span class="incontext"><a href="section-12.html#p-365">in-context</a></span>
 </body>
 </html>

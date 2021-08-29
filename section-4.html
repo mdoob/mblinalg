@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:21-06:00       *-->
+<!--*       on 2021-08-29T14:14:15-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,36 +14,42 @@
 <title>Elementary row operations</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -56,8 +62,8 @@ MathJax.Hub.Config({
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
 \def\C{{\mathbb C}}
 \def\Q{{\mathbb Q}}
 \def\Z{{\mathbb Z}}
@@ -104,7 +110,7 @@ MathJax.Hub.Config({
 <li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
 <li class="link"><a href="LinearTransformations.html" data-scroll="LinearTransformations"><span class="codenumber">6</span> <span class="title">Linear transformations</span></a></li>
 <li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">7</span> <span class="title">Additional Topics</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-4"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.4</span> <span class="title">Elementary row operations</span>
@@ -113,10 +119,9 @@ MathJax.Hub.Config({
 <span class="type">Subsection</span> <span class="codenumber">1.4.1</span> <span class="title">First operation: interchanging two rows</span>
 </h3>
 <p id="p-84">Exchanging two rows in the augmented matrix is the same as writing the the equations in a different order. The equations themselves are unchanged, as is the set of all solutions. When we interchange row \(i\) and row \(j\text{,}\) we denote it by \(R_i\leftrightarrow R_j\text{.}\)</p>
-<article class="example example-like" id="example-1"><h6 class="heading">
+<article class="example example-like" id="example-1"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-1"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Augmented matrix change (interchange rows).</span>
-</h6>
-<p id="p-85">The system of equations</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-1"><article class="example example-like"><p id="p-85">The system of equations</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
@@ -126,7 +131,7 @@ MathJax.Hub.Config({
 \end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">corresponds to the augmented matrix</p>
+<p class="continuation">corresponds to the augmented matrix</p>
 <div class="displaymath">
 \begin{equation*}
 \left[\begin{array}{ccc|c}
@@ -136,7 +141,7 @@ MathJax.Hub.Config({
 \end{array}\right]
 \end{equation*}
 </div>
-<p data-braille="continuation">Now we interchange rows 1 and 3 (\(R_1\leftrightarrow R_3\)) to get the matrix</p>
+<p class="continuation">Now we interchange rows 1 and 3 (\(R_1\leftrightarrow R_3\)) to get the matrix</p>
 <div class="displaymath">
 \begin{equation*}
 \left[\begin{array}{ccc|c}
@@ -146,7 +151,7 @@ MathJax.Hub.Config({
 \end{array}\right]
 \end{equation*}
 </div>
-<p data-braille="continuation">which corresponds to the equations</p>
+<p class="continuation">which corresponds to the equations</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
@@ -155,7 +160,7 @@ MathJax.Hub.Config({
 2x+3y-z \amp = 2
 \end{array}
 \end{equation*}
-</div></article></section><section class="subsection" id="subsection-9"><h3 class="heading hide-type">
+</div></article></div></section><section class="subsection" id="subsection-9"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.4.2</span> <span class="title">Second operation: multiplying a row by a nonzero constant</span>
 </h3>
 <p id="p-86">If we have a linear equation and multiply both sides of the equation by a nonzero constant \(\lambda\text{,}\) (The symbol \(\lambda\) is the Greek letter lambda; it is the traditional name for this constant.) then the linear equation</p>
@@ -164,23 +169,22 @@ MathJax.Hub.Config({
 a_1x_1 + a_2x_2 +a_3x_3 + \cdots + a_nx_n =b
 \end{equation*}
 </div>
-<p data-braille="continuation">becomes</p>
+<p class="continuation">becomes</p>
 <div class="displaymath">
 \begin{equation*}
 \lambda(a_1x_1 + a_2x_2 +a_3x_3 + \cdots + a_nx_n) =\lambda b
 \end{equation*}
 </div>
-<p data-braille="continuation">and so</p>
+<p class="continuation">and so</p>
 <div class="displaymath">
 \begin{equation*}
 \lambda a_1x_1 + \lambda a_2x_2 +\lambda a_3x_3 + \cdots +\lambda a_nx_n =\lambda b.
 \end{equation*}
 </div>
-<p data-braille="continuation">This would apply to any equation in a system, of course, and so when we apply this operation to row \(i\) we denote it by \(R_i \gets \lambda R_i\) (The symbol \(\gets\) means <em class="emphasis">is replaced by</em>). <em class="emphasis">As long as \(\lambda\) is nonzero</em>, this operation leaves the set of solutions unchanged.</p>
-<article class="example example-like" id="example-2"><h6 class="heading">
+<p class="continuation">This would apply to any equation in a system, of course, and so when we apply this operation to row \(i\) we denote it by \(R_i \gets \lambda R_i\) (The symbol \(\gets\) means <em class="emphasis">is replaced by</em>). <em class="emphasis">As long as \(\lambda\) is nonzero</em>, this operation leaves the set of solutions unchanged.</p>
+<article class="example example-like" id="example-2"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-2"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">Augmented matrix change (multiply row by \(\lambda\)).</span>
-</h6>
-<p id="p-87">The system of equations</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-2"><article class="example example-like"><p id="p-87">The system of equations</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
@@ -190,7 +194,7 @@ a_1x_1 + a_2x_2 +a_3x_3 + \cdots + a_nx_n =b
 \end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">corresponds to the augmented matrix</p>
+<p class="continuation">corresponds to the augmented matrix</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -200,7 +204,7 @@ a_1x_1 + a_2x_2 +a_3x_3 + \cdots + a_nx_n =b
 \end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">Now we multiply row \(2\) by \(\lambda=-3\) (\(R_2\gets -3R_2\)) to get the matrix</p>
+<p class="continuation">Now we multiply row \(2\) by \(\lambda=-3\) (\(R_2\gets -3R_2\)) to get the matrix</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -210,7 +214,7 @@ a_1x_1 + a_2x_2 +a_3x_3 + \cdots + a_nx_n =b
 \end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">which corresponds to the system of equations</p>
+<p class="continuation">which corresponds to the system of equations</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
@@ -219,14 +223,13 @@ a_1x_1 + a_2x_2 +a_3x_3 + \cdots + a_nx_n =b
 3x-y-z \amp = 3
 \end{array}
 \end{equation*}
-</div></article></section><section class="subsection" id="subsection-10"><h3 class="heading hide-type">
+</div></article></div></section><section class="subsection" id="subsection-10"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.4.3</span> <span class="title">Third operation: adding a multiple of one row to another</span>
 </h3>
 <p id="p-88">Recall that one of our basic techniques for solving a system of equations is to pick a variable, make the coefficients of that variable equal in two equations and then take the difference of the equations to create a new one with that variable eliminated. In terms of the associated augmented matrix, this means we get a new row formed by subtracting the corresponding entries in the rows of the two equations.  In other words, we replace one row by the difference of two rows. We use the notation \(R_i\gets R_i-R_j\) to indicate that row \(i\) is replaced by the difference of row \(i\) and row \(j\text{.}\)  The set of solutions is unchanged. We have already seen that multiplying a row by a nonzero constants leaves the set of solutions unchanged; it is often convenient to combine these two steps as one: \(R_i\gets R_i+\lambda R_j.\) Note that \(\lambda=-1\) is the case of subtracting one row from another.</p>
-<article class="example example-like" id="example-3"><h6 class="heading">
+<article class="example example-like" id="example-3"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-3"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Augmented matrix change (add multiple of one row to another).</span>
-</h6>
-<p id="p-89">Eliminating \(x\) from the second equation:</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-3"><article class="example example-like"><p id="p-89">Eliminating \(x\) from the second equation:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
@@ -236,7 +239,7 @@ a_1x_1 + a_2x_2 +a_3x_3 + \cdots + a_nx_n =b
 \end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">corresponds to the augmented matrix</p>
+<p class="continuation">corresponds to the augmented matrix</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} 
@@ -246,7 +249,7 @@ a_1x_1 + a_2x_2 +a_3x_3 + \cdots + a_nx_n =b
 \end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">Now we replace row 2 by the sum of row 2 and twice row 1 \((R_2\gets R_2+2R_1)\) to get the matrix</p>
+<p class="continuation">Now we replace row 2 by the sum of row 2 and twice row 1 \((R_2\gets R_2+2R_1)\) to get the matrix</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -256,7 +259,7 @@ a_1x_1 + a_2x_2 +a_3x_3 + \cdots + a_nx_n =b
 \end{bmatrix} 
 \end{equation*}
 </div>
-<p data-braille="continuation">which corresponds to the system of linear equations</p>
+<p class="continuation">which corresponds to the system of linear equations</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl} -
@@ -266,26 +269,26 @@ x+y+z
 3x-y-z \amp = 3 
 \end{array} 
 \end{equation*}
-</div></article></section><section class="subsection" id="subsection-11"><h3 class="heading hide-type">
+</div></article></div></section><section class="subsection" id="subsection-11"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.4.4</span> <span class="title">Summary of the three elementary row operations</span>
 </h3>
 <p id="p-90">In summary, here is a table of the three elementary row operations:</p>
 <figure class="table table-like" id="TableOfElemantaryRowOperations"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.4.4<span class="period">.</span></span><span class="space"> </span>Elementary Row Operations</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="c m b1 r1 l1 t1 lines"><em class="emphasis">Elementary Operation</em></td>
-<td class="c m b1 r1 l0 t1 lines" data-braille="last-cell"><em class="emphasis">Notation</em></td>
+<td class="c m b1 r1 l0 t1 lines"><em class="emphasis">Notation</em></td>
 </tr>
 <tr>
 <td class="c m b1 r1 l1 t0 lines">Interchange rows</td>
-<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(R_i\leftrightarrow R_j\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(R_i\leftrightarrow R_j\)</td>
 </tr>
 <tr>
 <td class="c m b1 r1 l1 t0 lines">Multiply row by a nonzero constant</td>
-<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(R_i\gets\lambda R_i\text{,}\) \(\lambda\not=0\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(R_i\gets\lambda R_i\text{,}\) \(\lambda\not=0\)</td>
 </tr>
 <tr>
 <td class="c m b1 r1 l1 t0 lines">Add multiple of one row to another</td>
-<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(R_i\gets R_i+\lambda R_j\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(R_i\gets R_i+\lambda R_j\)</td>
 </tr>
 </table></div></figure><p id="p-91">Each operation changes the matrix and the associated system of linear equations, but it leaves the set of solutions unchanged.</p></section><section class="subsection" id="subsection-12"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.4.5</span> <span class="title">Changing a specific entry of a matrix using elementary row operations</span>
@@ -310,6 +313,7 @@ x+y+z
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
 </h4>
 <div class="exercisegroup" id="exercisegroup-1">
+<h6 class="heading"><span class="title">Exercise Group.</span></h6>
 <div class="introduction" id="introduction-2"><p id="p-101">For these exercises, let \(A=
 \begin{bmatrix}
 1\amp2\amp3\amp4\\  5\amp6\amp7\amp-6\\ -5\amp-4\amp-3\amp-2
@@ -323,56 +327,56 @@ x+y+z
 <li id="li-52"><p id="p-104">changes the \(7\) in the second row to a \(1\)</p></li>
 <li id="li-53"><p id="p-105">changes the \(-4\) in the third row to a \(1\)</p></li>
 </ul>
-<p data-braille="continuation">In each case give the matrix that results from the application of your elementary row operation.</p>
+<p class="continuation">In each case give the matrix that results from the application of your elementary row operation.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-10" id="solution-10"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-10"><div class="solution solution-like"><ul id="p-106" class="disc">
-<li id="li-54">\(\displaystyle R_1\gets \frac12 R_1\colon
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-10" id="solution-10"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-10"><div class="solution solution-like"><ul id="p-106" class="disc">
+<li id="li-54"><p id="p-derived-li-54">\(\displaystyle R_1\gets \frac12 R_1\colon
 \begin{bmatrix}
 \frac12\amp1\amp\frac32\amp\frac12\\  5\amp6\amp7\amp-6\\ -5\amp-4\amp-3\amp-2
-\end{bmatrix}\)</li>
-<li id="li-55">\(\displaystyle R_2\gets \frac17 R_2\colon
+\end{bmatrix}\)</p></li>
+<li id="li-55"><p id="p-derived-li-55">\(\displaystyle R_2\gets \frac17 R_2\colon
 \begin{bmatrix}
 1\amp2\amp3\amp4\\  \frac57\amp\frac67\amp1\amp-\frac67\\ -5\amp-4\amp-3\amp-2
-\end{bmatrix}\)</li>
-<li id="li-56">\(\displaystyle R_3\gets -\frac14 R_3\colon
+\end{bmatrix}\)</p></li>
+<li id="li-56"><p id="p-derived-li-56">\(\displaystyle R_3\gets -\frac14 R_3\colon
 \begin{bmatrix}
 1\amp2\amp3\amp4\\  5\amp6\amp7\amp-6\\ \frac54\amp1\amp\frac34\amp\frac12
-\end{bmatrix}\)</li>
+\end{bmatrix}\)</p></li>
 </ul></div></div>
 </div></article><article class="exercise exercise-like" id="exercise-11"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
 <p id="p-107">Find an elementary row operation that</p>
 <ul class="disc">
-<li id="li-57">changes the \(5\) in the second row to a \(0\)</li>
-<li id="li-58">changes the \(6\) in the second row to a \(0\)</li>
-<li id="li-59">changes the \(-4\) in the third row to a \(0\)</li>
-<li id="li-60">changes the \(7\) in the second row to a \(0\)</li>
+<li id="li-57"><p id="p-derived-li-57">changes the \(5\) in the second row to a \(0\)</p></li>
+<li id="li-58"><p id="p-derived-li-58">changes the \(6\) in the second row to a \(0\)</p></li>
+<li id="li-59"><p id="p-derived-li-59">changes the \(-4\) in the third row to a \(0\)</p></li>
+<li id="li-60"><p id="p-derived-li-60">changes the \(7\) in the second row to a \(0\)</p></li>
 </ul>
-<p data-braille="continuation">In each case give the matrix that results from the application of your elementary row operation.</p>
+<p class="continuation">In each case give the matrix that results from the application of your elementary row operation.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like"><ul id="p-108" class="disc">
-<li id="li-61">\(\displaystyle R_2\gets R_2+R_3\colon
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like"><ul id="p-108" class="disc">
+<li id="li-61"><p id="p-derived-li-61">\(\displaystyle R_2\gets R_2+R_3\colon
 \begin{bmatrix}
 1\amp2\amp3\amp4\\  0\amp2\amp4\amp-8\\ -5\amp-4\amp-3\amp-2
-\end{bmatrix}\)</li>
-<li id="li-62">\(\displaystyle R_2\gets R_2-3R_1\colon
+\end{bmatrix}\)</p></li>
+<li id="li-62"><p id="p-derived-li-62">\(\displaystyle R_2\gets R_2-3R_1\colon
 \begin{bmatrix}
 1\amp2\amp3\amp4\\  2\amp0\amp-2\amp-18\\ -5\amp-4\amp-3\amp-2
-\end{bmatrix}\)</li>
-<li id="li-63">\(\displaystyle R_3\gets R_3+2R_1\colon
+\end{bmatrix}\)</p></li>
+<li id="li-63"><p id="p-derived-li-63">\(\displaystyle R_3\gets R_3+2R_1\colon
 \begin{bmatrix}
 1\amp2\amp3\amp4\\  5\amp6\amp7\amp-6\\ -3\amp0\amp3\amp6
-\end{bmatrix}\)</li>
-<li id="li-64">\(\displaystyle R_2\gets R_2-\frac73 R_1\colon
+\end{bmatrix}\)</p></li>
+<li id="li-64"><p id="p-derived-li-64">\(\displaystyle R_2\gets R_2-\frac73 R_1\colon
 \begin{bmatrix}
 1\amp2\amp3\amp4\\  \frac83\amp\frac43\amp0\amp-\frac{46}3\\ -5\amp-4\amp-3\amp-2
-\end{bmatrix}\)</li>
+\end{bmatrix}\)</p></li>
 </ul></div></div>
 </div></article><article class="exercise exercise-like" id="exercise-12"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
 <p id="p-109">Use two elementary row operations to make the first column of the resulting matrix \(\begin{bmatrix}
 1\\0\\0
 \end{bmatrix}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-12" id="solution-12"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-12"><div class="solution solution-like">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-12" id="solution-12"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-12"><div class="solution solution-like">
 <p id="p-110">\(R_2\gets R_2-5R_1\) and  \(R_3\gets R_3+5R_1\) give</p>
 <div class="displaymath">
 \begin{equation*}

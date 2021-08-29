@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:33-06:00       *-->
+<!--*       on 2021-08-29T14:14:27-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,36 +14,42 @@
 <title>Similarity and diagonalization</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -56,8 +62,8 @@ MathJax.Hub.Config({
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
 \def\C{{\mathbb C}}
 \def\Q{{\mathbb Q}}
 \def\Z{{\mathbb Z}}
@@ -104,38 +110,38 @@ MathJax.Hub.Config({
 <li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
 <li class="link"><a href="LinearTransformations.html" data-scroll="LinearTransformations"><span class="codenumber">6</span> <span class="title">Linear transformations</span></a></li>
 <li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">7</span> <span class="title">Additional Topics</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-39"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.5</span> <span class="title">Similarity and diagonalization</span>
 </h2>
-<section class="introduction" id="introduction-17"><p id="p-1165">Triangular matrices (including diagonal matrices in particular) have eigenvalues that are particularly easy to compute. In fact, they are just the diagonal entries.</p>
+<section class="introduction" id="introduction-17"><p id="p-1149">Triangular matrices (including diagonal matrices in particular) have eigenvalues that are particularly easy to compute. In fact, they are just the diagonal entries.</p>
 <article class="theorem theorem-like" id="EigenvaluesTriangularMatrix"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenvalues of a triangular matrix.</span>
 </h6>
-<p id="p-1166">Let \(A=[a_{i,j}]\) be a triangular matrix of order \(n\text{.}\) Then the eigenvalues of \(A\) are the diagonal entries \(a_{1,1},a_{2,2},\ldots,a_{n,n}\text{.}\)</p></article><article class="hiddenproof" id="proof-96"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-96"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-96"><article class="hiddenproof"><p id="p-1167">The matrix \(A-\lambda I\) is also triangular and, by <a class="xref" data-knowl="./knowl/DeterminantTriangularMatrix.html" title="Theorem 3.4.2: The determinant of a triangular matrix">Theorem 3.4.2</a>, its determinant is just the product of the diagonal elements, that is,</p>
+<p id="p-1150">Let \(A=[a_{i,j}]\) be a triangular matrix of order \(n\text{.}\) Then the eigenvalues of \(A\) are the diagonal entries \(a_{1,1},a_{2,2},\ldots,a_{n,n}\text{.}\)</p></article><article class="hiddenproof" id="proof-96"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-96"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-96"><article class="hiddenproof"><p id="p-1151">The matrix \(A-\lambda I\) is also triangular and, by <a class="xref" data-knowl="./knowl/DeterminantTriangularMatrix.html" title="Theorem 3.4.2: The determinant of a triangular matrix">Theorem 3.4.2</a>, its determinant is just the product of the diagonal elements, that is,</p>
 <div class="displaymath">
 \begin{equation*}
 p(\lambda)=(a_{1,1}-\lambda)(a_{2,2}-\lambda)\cdots(a_{n,n}-\lambda).
 \end{equation*}
 </div>
-<p data-braille="continuation">The roots of this polynomial are the diagonal elements of \(A\text{.}\)</p></article></div>
-<p id="p-1168">Sometimes it is possible to find the eigenvalues of a matrix by showing that it has the same eigenvalues as some diagonal matrix. The key concept used to do this is <dfn class="terminology">similarity</dfn>.</p></section><section class="subsection" id="subsection-88"><h3 class="heading hide-type">
+<p class="continuation">The roots of this polynomial are the diagonal elements of \(A\text{.}\)</p></article></div>
+<p id="p-1152">Sometimes it is possible to find the eigenvalues of a matrix by showing that it has the same eigenvalues as some diagonal matrix. The key concept used to do this is <dfn class="terminology">similarity</dfn>.</p></section><section class="subsection" id="subsection-88"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.5.1</span> <span class="title">Similarity</span>
 </h3>
 <article class="definition definition-like" id="definition-67"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.5.2</span><span class="period">.</span>
 </h6>
-<p id="p-1169">Let \(A\) and \(B\) be two square matrices of order \(n\text{.}\) They are <dfn class="terminology">similar</dfn> if there exists an invertible matrix \(P\) of order \(n\) so that</p>
+<p id="p-1153">Let \(A\) and \(B\) be two square matrices of order \(n\text{.}\) They are <dfn class="terminology">similar</dfn> if there exists an invertible matrix \(P\) of order \(n\) so that</p>
 <div class="displaymath">
 \begin{equation*}
 B=P^{-1}AP\text{.}
 \end{equation*}
-</div></article><p id="p-1170">The first goal is to show that similar matrices have identical eigenvalues.</p>
+</div></article><p id="p-1154">The first goal is to show that similar matrices have identical eigenvalues.</p>
 <article class="theorem theorem-like" id="SimilarMatricesSameEigenvalues"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">Similar matrices have the same eigenvalues.</span>
 </h6>
-<p id="p-1171">If \(A\) and \(B\) are similar, then they have the same eigenvalues.</p></article><article class="hiddenproof" id="proof-97"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-97"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-97"><article class="hiddenproof"><p id="p-1172">Suppose \(A\vec x=\lambda\vec x\) with \(\vec x\not=0\text{.}\) Let \(\vec y=P^{-1}\vec x\text{.}\) Then</p>
+<p id="p-1155">If \(A\) and \(B\) are similar, then they have the same eigenvalues.</p></article><article class="hiddenproof" id="proof-97"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-97"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-97"><article class="hiddenproof"><p id="p-1156">Suppose \(A\vec x=\lambda\vec x\) with \(\vec x\not=0\text{.}\) Let \(\vec y=P^{-1}\vec x\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
 B\vec y = BP^{-1}\vec x
@@ -145,20 +151,19 @@ B\vec y = BP^{-1}\vec x
 = \lambda \vec y\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Note that \(\vec y=\vec0\) implies \(\vec x = PP^{-1}\vec x =P\vec y = P\vec0 = \vec0\) and, since \(\vec x\) is an eigenvector, this can not be the case. Hence \(\vec y\not=\vec0\text{,}\) and \(\lambda\)  is an eigenvalue of \(B\text{.}\)</p></article></div>
-<p id="p-1173">If a matrix \(A\) is similar to a diagonal matrix, then the eigenvalues are known.</p>
+<p class="continuation">Note that \(\vec y=\vec0\) implies \(\vec x = PP^{-1}\vec x =P\vec y = P\vec0 = \vec0\) and, since \(\vec x\) is an eigenvector, this can not be the case. Hence \(\vec y\not=\vec0\text{,}\) and \(\lambda\)  is an eigenvalue of \(B\text{.}\)</p></article></div>
+<p id="p-1157">If a matrix \(A\) is similar to a diagonal matrix, then the eigenvalues are known.</p>
 <article class="theorem theorem-like" id="theorem-81"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.5.4</span><span class="period">.</span>
 </h6>
-<p id="p-1174">If a matrix \(A\) is similar to a diagonal matrix \(D\text{,}\) then the eigenvalues of \(A\) are the diagonal entries of \(D\text{.}\)</p></article><article class="hiddenproof" id="proof-98"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-98"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-98"><article class="hiddenproof"><p id="p-1175"><a class="xref" data-knowl="./knowl/SimilarMatricesSameEigenvalues.html" title="Theorem 5.5.3: Similar matrices have the same eigenvalues">Theorem 5.5.3</a> implies that \(A\) and \(D\) have the same eigenvalues, and <a class="xref" data-knowl="./knowl/EigenvaluesTriangularMatrix.html" title="Theorem 5.5.1: Eigenvalues of a triangular matrix">Theorem 5.5.1</a> implies that the eigenvalues of \(D\) are its diagonal elements.</p></article></div>
-<p id="p-1176">A matrix \(A\) being similar to a diagonal matrix is important: it merits its own definition.</p>
+<p id="p-1158">If a matrix \(A\) is similar to a diagonal matrix \(D\text{,}\) then the eigenvalues of \(A\) are the diagonal entries of \(D\text{.}\)</p></article><article class="hiddenproof" id="proof-98"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-98"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-98"><article class="hiddenproof"><p id="p-1159"><a class="xref" data-knowl="./knowl/SimilarMatricesSameEigenvalues.html" title="Theorem 5.5.3: Similar matrices have the same eigenvalues">Theorem 5.5.3</a> implies that \(A\) and \(D\) have the same eigenvalues, and <a class="xref" data-knowl="./knowl/EigenvaluesTriangularMatrix.html" title="Theorem 5.5.1: Eigenvalues of a triangular matrix">Theorem 5.5.1</a> implies that the eigenvalues of \(D\) are its diagonal elements.</p></article></div>
+<p id="p-1160">A matrix \(A\) being similar to a diagonal matrix is important: it merits its own definition.</p>
 <article class="definition definition-like" id="definition-68"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.5.5</span><span class="period">.</span>
 </h6>
-<p id="p-1177">A matrix \(A\) is <dfn class="terminology">diagonalizable</dfn> if it is similar to a diagonal matrix.</p></article><article class="example example-like" id="DiagonalizationExample"><h6 class="heading">
+<p id="p-1161">A matrix \(A\) is <dfn class="terminology">diagonalizable</dfn> if it is similar to a diagonal matrix.</p></article><article class="example example-like" id="DiagonalizationExample"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-DiagonalizationExample"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">A diagonalizable matrix.</span>
-</h6>
-<p id="p-1178">Let</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-DiagonalizationExample"><article class="example example-like"><p id="p-1162">Let</p>
 <div class="displaymath">
 \begin{align*}
 A \amp =
@@ -180,7 +185,7 @@ A \amp =
 \end{bmatrix}
 \end{align*}
 </div>
-<p data-braille="continuation">Then</p>
+<p class="continuation">Then</p>
 <div class="displaymath">
 \begin{equation*}
 P^{-1}=\frac14
@@ -192,7 +197,7 @@ P^{-1}=\frac14
 \end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">and</p>
+<p class="continuation">and</p>
 <div class="displaymath">
 \begin{equation*}
 P^{-1}AP=
@@ -204,30 +209,31 @@ P^{-1}AP=
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Hence the eigenvalues of \(A\) are \(3\) and \(-1\text{.}\)</p></article><p id="p-1179">In <a class="xref" data-knowl="./knowl/DiagonalizationExample.html" title="Example 5.5.6: A diagonalizable matrix">Example 5.5.6</a> the matrix \(P\) is used to diagonalize a matrix. Where did it come from? Under the right conditions, eigenvectors may be used to construct this matrix.</p>
+<p class="continuation">Hence the eigenvalues of \(A\) are \(3\) and \(-1\text{.}\)</p></article></div>
+<p id="p-1163">In <a class="xref" data-knowl="./knowl/DiagonalizationExample.html" title="Example 5.5.6: A diagonalizable matrix">Example 5.5.6</a> the matrix \(P\) is used to diagonalize a matrix. Where did it come from? Under the right conditions, eigenvectors may be used to construct this matrix.</p>
 <article class="proposition theorem-like" id="ConstructingPWithEigenvectors"><h6 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">5.5.7</span><span class="period">.</span><span class="space"> </span><span class="title">Constructing \(P\) using eigenvectors.</span>
 </h6>
-<p id="p-1180">Suppose \(A\) is a square matrix of order \(n\text{,}\) and \(\{\vec x_1, \vec x_2,\ldots,\vec x_n\}\) is a linearly independent set of eigenvectors; say \(A\vec x_i=\lambda_i \vec x_i\) for \(i=1,2,\ldots,n\text{.}\) Let</p>
+<p id="p-1164">Suppose \(A\) is a square matrix of order \(n\text{,}\) and \(\{\vec x_1, \vec x_2,\ldots,\vec x_n\}\) is a linearly independent set of eigenvectors; say \(A\vec x_i=\lambda_i \vec x_i\) for \(i=1,2,\ldots,n\text{.}\) Let</p>
 <div class="displaymath">
 \begin{equation*}
 P=
 \begin{bmatrix} \vec x_1\amp \vec x_2\amp\ldots\amp \vec x_n \end{bmatrix}\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">that is, the eigenvectors are the columns of \(P\text{.}\) Then</p>
+<p class="continuation">that is, the eigenvectors are the columns of \(P\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
 P^{-1}AP=\diag(\lambda_1,\lambda_2,\ldots,\lambda_n)\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-99"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-99"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-99"><article class="hiddenproof"><p id="p-1181">From <a class="xref" data-knowl="./knowl/BasisMatrixNonSingular.html" title="Theorem 4.9.12: Determining if \(\{\vec x_1,\ldots,\vec x_n\}\) is a basis for \(\R^n\)">Theorem 4.9.12</a>, the matrix \(P\) is nonsingular, and so \(P^{-1}\) exists. Now let \(\{\vec y_1, \vec y_2,\ldots,\vec y_n\}\) be the rows of \(P^{-1}\) so that</p>
+</div></article><article class="hiddenproof" id="proof-99"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-99"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-99"><article class="hiddenproof"><p id="p-1165">From <a class="xref" data-knowl="./knowl/BasisMatrixNonSingular.html" title="Theorem 4.9.12: Determining if \(\{\vec x_1,\ldots,\vec x_n\}\) is a basis for \(\R^n\)">Theorem 4.9.12</a>, the matrix \(P\) is nonsingular, and so \(P^{-1}\) exists. Now let \(\{\vec y_1, \vec y_2,\ldots,\vec y_n\}\) be the rows of \(P^{-1}\) so that</p>
 <div class="displaymath">
 \begin{equation*}
 P^{-1}=
 \begin{bmatrix} \vec y_1\\ \vec y_2\\ \vdots\\ \vec y_n \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Then \(P^{-1}P=I\) is the same as</p>
+<p class="continuation">Then \(P^{-1}P=I\) is the same as</p>
 <div class="displaymath">
 \begin{equation}
 \vec y_i \cdot \vec x_j=
@@ -237,7 +243,7 @@ P^{-1}=
 \end{cases}\label{IAsDotProduct}\tag{5.5.1}
 \end{equation}
 </div>
-<p data-braille="continuation">Now consider \(P^{-1}AP\text{.}\)</p>
+<p class="continuation">Now consider \(P^{-1}AP\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 P^{-1}AP
@@ -248,41 +254,41 @@ P^{-1}AP
 \vec x_n \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Applying <a class="xref" data-knowl="./knowl/IAsDotProduct.html" title="Equation 5.5.1">(5.5.1)</a>,</p>
+<p class="continuation">Applying <a class="xref" data-knowl="./knowl/IAsDotProduct.html" title="Equation 5.5.1">(5.5.1)</a>,</p>
 <div class="displaymath">
 \begin{equation*}
 P^{-1}AP=\diag(\lambda_1,\lambda_2,\ldots,\lambda_n)\text{.}
 \end{equation*}
 </div></article></div>
-<p id="p-1182"><a class="xref" data-knowl="./knowl/ConstructingPWithEigenvectors.html" title="Proposition 5.5.7: Constructing \(P\) using eigenvectors">Proposition 5.5.7</a> motivates the search for linear independent eigenvectors.</p>
+<p id="p-1166"><a class="xref" data-knowl="./knowl/ConstructingPWithEigenvectors.html" title="Proposition 5.5.7: Constructing \(P\) using eigenvectors">Proposition 5.5.7</a> motivates the search for linear independent eigenvectors.</p>
 <article class="lemma theorem-like" id="TwoEigenvectorsLinearlyIndependent"><h6 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">5.5.8</span><span class="period">.</span><span class="space"> </span><span class="title">Two eigenvectors from different eigenvalues are linearly independent.</span>
 </h6>
-<p id="p-1183">Let \(\vec x_1\) and \(\vec x_2\) be two eigenvectors of \(A\) corresponding to different eigenvalues. Then \(\{\vec x_1,\vec x_2\}\) is linearly independent.</p></article><article class="hiddenproof" id="proof-100"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-100"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-100"><article class="hiddenproof"><p id="p-1184">Say \(A\vec x_1=\lambda_1\vec x_1\) and \(A\vec x_2=\lambda_2\vec x_2\text{,}\) and consider the equation \(r_1\vec x_1+r_2\vec x_2=\vec0\text{.}\) Multiplying both sides of the equation by the matrix \(A\) and multiplying both sides by \(\lambda_2\) gives two new equations:</p>
+<p id="p-1167">Let \(\vec x_1\) and \(\vec x_2\) be two eigenvectors of \(A\) corresponding to different eigenvalues. Then \(\{\vec x_1,\vec x_2\}\) is linearly independent.</p></article><article class="hiddenproof" id="proof-100"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-100"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-100"><article class="hiddenproof"><p id="p-1168">Say \(A\vec x_1=\lambda_1\vec x_1\) and \(A\vec x_2=\lambda_2\vec x_2\text{,}\) and consider the equation \(r_1\vec x_1+r_2\vec x_2=\vec0\text{.}\) Multiplying both sides of the equation by the matrix \(A\) and multiplying both sides by \(\lambda_2\) gives two new equations:</p>
 <div class="displaymath">
 \begin{gather*}
 r_1\lambda_1\vec x_1+r_2\lambda_2\vec x_2=\vec0\\
 r_1\lambda_2\vec x_1+r_2\lambda_2\vec x_2=\vec0
 \end{gather*}
 </div>
-<p data-braille="continuation">which implies</p>
+<p class="continuation">which implies</p>
 <div class="displaymath">
 \begin{equation*}
 r_1(\lambda_1-\lambda_2)\vec x_1=\vec0 \text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">and, since \(\lambda_1\not=\lambda_2\) and \(\vec x_1\not=\vec0\text{,}\) we have \(r_1=0\text{.}\) Similarly, \(r_2=0\) and so \(\{\vec x_1,\vec x_2\}\) is linearly independent.</p></article></div>
+<p class="continuation">and, since \(\lambda_1\not=\lambda_2\) and \(\vec x_1\not=\vec0\text{,}\) we have \(r_1=0\text{.}\) Similarly, \(r_2=0\) and so \(\{\vec x_1,\vec x_2\}\) is linearly independent.</p></article></div>
 <article class="proposition theorem-like" id="EigenvectorsLinearlyIndependent"><h6 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">5.5.9</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenvectors with distinct eigenvalues form a linearly independent set.</span>
 </h6>
-<p id="p-1185">Let \(\vec x_1,\vec x_2,\ldots,\vec x_t\) be eigenvectors of \(A\) corresponding to eigenvalues that are distinct. Then the set \(\{\vec x_1,\vec x_2,\ldots,\vec x_t\}\) is linearly independent.</p></article><article class="hiddenproof" id="proof-101"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-101"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-101"><article class="hiddenproof"><p id="p-1186">Consider the sequence of sets \(\{\vec x_1\}, \{\vec x_1,\vec x_2\}, \{\vec x_1,\vec x_2,\vec x_3\},\ldots,
+<p id="p-1169">Let \(\vec x_1,\vec x_2,\ldots,\vec x_t\) be eigenvectors of \(A\) corresponding to eigenvalues that are distinct. Then the set \(\{\vec x_1,\vec x_2,\ldots,\vec x_t\}\) is linearly independent.</p></article><article class="hiddenproof" id="proof-101"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-101"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-101"><article class="hiddenproof"><p id="p-1170">Consider the sequence of sets \(\{\vec x_1\}, \{\vec x_1,\vec x_2\}, \{\vec x_1,\vec x_2,\vec x_3\},\ldots,
 \{\vec x_1,\vec x_2,\vec x_3,\ldots,\vec x_t\}\text{.}\) Suppose that \(\{\vec x_1,\ldots,\vec x_\ell\}\) is linearly independent, and consider \(\{\vec x_1,\ldots,\vec x_{\ell+1}\}\text{.}\) Is the new set linearly independent? To see if it is, start with the equation</p>
 <div class="displaymath">
 \begin{equation*}
 r_1\vec x_1+r_2\vec x_2+\cdots+r_{\ell+1}\vec x_{\ell+1}=\vec0\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Multiply both sides of this equation by \(A\text{,}\) and both sides of the equation by \(\lambda_{\ell+1}\) to get two new equations:</p>
+<p class="continuation">Multiply both sides of this equation by \(A\text{,}\) and both sides of the equation by \(\lambda_{\ell+1}\) to get two new equations:</p>
 <div class="displaymath">
 \begin{gather*}
 r_1\lambda_1\vec x_1 +r_2\lambda_2\vec x_2
@@ -291,7 +297,7 @@ r_1\lambda_{\ell+1}\vec x_1 +r_2\lambda_{\ell+1}\vec x_2
 +\cdots +r_{\ell+1}\lambda_{\ell+1}\vec x_{\ell+1} =\vec0\text{.}
 \end{gather*}
 </div>
-<p data-braille="continuation">This gives</p>
+<p class="continuation">This gives</p>
 <div class="displaymath">
 \begin{equation*}
 r_1(\lambda_1-\lambda_{\ell+1})\vec x_1 
@@ -301,17 +307,17 @@ r_1(\lambda_1-\lambda_{\ell+1})\vec x_1
 =\vec0\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Since \(\lambda_i-\lambda_{\ell+1}\not=0\) for \(i=1,2,\ldots,\ell\text{,}\) the linear independence of \(\{\vec x_1,\ldots,\vec x_\ell\}\) implies that \(r_1=r_2=\cdots=r_\ell=0\text{.}\) Hence \(r_{\ell+1}\vec x_{\ell+1}=\vec0\) and so \(r_{\ell+1}=0\text{.}\) This makes \(\{\vec x_1,\ldots,\vec x_{\ell+1}\}\) linearly independent.</p>
-<p id="p-1187">This means that if any one of the sets in our original sequence is linearly independent, then all of the following ones are also linearly independent. The first is linearly independent since \(\vec x_1\not=\vec0\text{.}\) The second is linearly independent by <a class="xref" data-knowl="./knowl/TwoEigenvectorsLinearlyIndependent.html" title="Lemma 5.5.8: Two eigenvectors from different eigenvalues are linearly independent">Lemma 5.5.8</a>. Hence all the sets in the sequence are linearly independent, and, in particular, so is \(\{\vec x_1,\vec x_2,\ldots,\vec x_t\}\text{.}\)</p></article></div>
+<p class="continuation">Since \(\lambda_i-\lambda_{\ell+1}\not=0\) for \(i=1,2,\ldots,\ell\text{,}\) the linear independence of \(\{\vec x_1,\ldots,\vec x_\ell\}\) implies that \(r_1=r_2=\cdots=r_\ell=0\text{.}\) Hence \(r_{\ell+1}\vec x_{\ell+1}=\vec0\) and so \(r_{\ell+1}=0\text{.}\) This makes \(\{\vec x_1,\ldots,\vec x_{\ell+1}\}\) linearly independent.</p>
+<p id="p-1171">This means that if any one of the sets in our original sequence is linearly independent, then all of the following ones are also linearly independent. The first is linearly independent since \(\vec x_1\not=\vec0\text{.}\) The second is linearly independent by <a class="xref" data-knowl="./knowl/TwoEigenvectorsLinearlyIndependent.html" title="Lemma 5.5.8: Two eigenvectors from different eigenvalues are linearly independent">Lemma 5.5.8</a>. Hence all the sets in the sequence are linearly independent, and, in particular, so is \(\{\vec x_1,\vec x_2,\ldots,\vec x_t\}\text{.}\)</p></article></div>
 <article class="theorem theorem-like" id="NDistinctEigenvaluesDiagonalizable"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.5.10</span><span class="period">.</span><span class="space"> </span><span class="title">A matrix of order \(n\) with \(n\) distinct eigenvalues is diagonalizable.</span>
 </h6>
-<p id="p-1188">Suppose \(A\) is a matrix of order \(n\) with \(n\) distinct eigenvalues. Then \(A\) is diagonalizable.</p></article><article class="hiddenproof" id="proof-102"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-102"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-102"><article class="hiddenproof"><p id="p-1189">Let \(\lambda_1,\ldots,\lambda_n\) be the \(n\) distinct eigenvalues with corresponding eigenvectors \(\vec x_1,\ldots,\vec x_n\text{.}\) From <a class="xref" data-knowl="./knowl/EigenvectorsLinearlyIndependent.html" title="Proposition 5.5.9: Eigenvectors with distinct eigenvalues form a linearly independent set">Proposition 5.5.9</a> the eigenvectors \(\vec x_1,\ldots,\vec x_n\) are linearly independent. Then <a class="xref" data-knowl="./knowl/ConstructingPWithEigenvectors.html" title="Proposition 5.5.7: Constructing \(P\) using eigenvectors">Proposition 5.5.7</a> may be used to construct the matrix \(P\) that diagonalizes \(A\text{.}\)</p></article></div>
-<p id="p-1190">There is an easy but useful relationship between the powers of similar matrices.</p>
+<p id="p-1172">Suppose \(A\) is a matrix of order \(n\) with \(n\) distinct eigenvalues. Then \(A\) is diagonalizable.</p></article><article class="hiddenproof" id="proof-102"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-102"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-102"><article class="hiddenproof"><p id="p-1173">Let \(\lambda_1,\ldots,\lambda_n\) be the \(n\) distinct eigenvalues with corresponding eigenvectors \(\vec x_1,\ldots,\vec x_n\text{.}\) From <a class="xref" data-knowl="./knowl/EigenvectorsLinearlyIndependent.html" title="Proposition 5.5.9: Eigenvectors with distinct eigenvalues form a linearly independent set">Proposition 5.5.9</a> the eigenvectors \(\vec x_1,\ldots,\vec x_n\) are linearly independent. Then <a class="xref" data-knowl="./knowl/ConstructingPWithEigenvectors.html" title="Proposition 5.5.7: Constructing \(P\) using eigenvectors">Proposition 5.5.7</a> may be used to construct the matrix \(P\) that diagonalizes \(A\text{.}\)</p></article></div>
+<p id="p-1174">There is an easy but useful relationship between the powers of similar matrices.</p>
 <article class="theorem theorem-like" id="SimilarMatricesPowers"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.5.11</span><span class="period">.</span><span class="space"> </span><span class="title">Powers of similar matrices.</span>
 </h6>
-<p id="p-1191">If \(B=P^{-1}AP \) then, for all \(r\geq1\text{,}\) \(B^r=P^{-1}A^rP \text{.}\)</p></article><article class="hiddenproof" id="proof-103"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-103"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-103"><article class="hiddenproof"><div class="displaymath" id="p-1192">
+<p id="p-1175">If \(B=P^{-1}AP \) then, for all \(r\geq1\text{,}\) \(B^r=P^{-1}A^rP \text{.}\)</p></article><article class="hiddenproof" id="proof-103"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-103"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-103"><article class="hiddenproof"><div class="displaymath" id="p-1176">
 \begin{align*}
 B^r \amp = (P^{-1}AP)^r \\
 \amp = (P^{-1}AP)(P^{-1}AP)\cdots (P^{-1}AP)(P^{-1}AP) \\
@@ -319,15 +325,14 @@ B^r \amp = (P^{-1}AP)^r \\
 \amp = P^{-1}A^rP 
 \end{align*}
 </div></article></div>
-<p id="p-1193">This theorem has particular application to diagonalizable matrices.</p>
+<p id="p-1177">This theorem has particular application to diagonalizable matrices.</p>
 <article class="corollary theorem-like" id="corollary-8"><h6 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">5.5.12</span><span class="period">.</span><span class="space"> </span><span class="title">Powers of diagonalizable matrices.</span>
 </h6>
-<p id="p-1194">Suppose \(A\) is diagonalizable, that is, is similar to a matrix \(P^{-1}AP=D=\diag(\lambda_1,\lambda_2,\ldots,\lambda_n)\text{.}\) Then \(A^r=P\diag(\lambda_1^r,\lambda_2^r,\ldots,\lambda_n^r)P^{-1}\) where \(\lambda_1,\lambda_2,\ldots,\lambda_n\) are the eigenvalues of \(A\text{.}\)</p></article><article class="hiddenproof" id="proof-104"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-104"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-104"><article class="hiddenproof"><p id="p-1195">Using <a class="xref" data-knowl="./knowl/SimilarMatricesPowers.html" title="Theorem 5.5.11: Powers of similar matrices">Theorem 5.5.11</a>, \(D^r=P^{-1}A^rP\text{,}\) from which follows \(A^r=PD^rP^{-1}=P\diag(\lambda_1^r,\lambda_2^r,\ldots,\lambda_n^r)P^{-1}\text{.}\) From <a class="xref" data-knowl="./knowl/EigenvaluesTriangularMatrix.html" title="Theorem 5.5.1: Eigenvalues of a triangular matrix">Theorem 5.5.1</a> and <a class="xref" data-knowl="./knowl/SimilarMatricesSameEigenvalues.html" title="Theorem 5.5.3: Similar matrices have the same eigenvalues">Theorem 5.5.3</a>, \(\lambda_1,\lambda_2,\ldots,\lambda_n\) are the eigenvalues of \(D\) and hence also of \(A\text{.}\)</p></article></div>
-<article class="example example-like" id="ExampleMatrixPowers"><h6 class="heading">
+<p id="p-1178">Suppose \(A\) is diagonalizable, that is, is similar to a matrix \(P^{-1}AP=D=\diag(\lambda_1,\lambda_2,\ldots,\lambda_n)\text{.}\) Then \(A^r=P\diag(\lambda_1^r,\lambda_2^r,\ldots,\lambda_n^r)P^{-1}\) where \(\lambda_1,\lambda_2,\ldots,\lambda_n\) are the eigenvalues of \(A\text{.}\)</p></article><article class="hiddenproof" id="proof-104"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-104"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-104"><article class="hiddenproof"><p id="p-1179">Using <a class="xref" data-knowl="./knowl/SimilarMatricesPowers.html" title="Theorem 5.5.11: Powers of similar matrices">Theorem 5.5.11</a>, \(D^r=P^{-1}A^rP\text{,}\) from which follows \(A^r=PD^rP^{-1}=P\diag(\lambda_1^r,\lambda_2^r,\ldots,\lambda_n^r)P^{-1}\text{.}\) From <a class="xref" data-knowl="./knowl/EigenvaluesTriangularMatrix.html" title="Theorem 5.5.1: Eigenvalues of a triangular matrix">Theorem 5.5.1</a> and <a class="xref" data-knowl="./knowl/SimilarMatricesSameEigenvalues.html" title="Theorem 5.5.3: Similar matrices have the same eigenvalues">Theorem 5.5.3</a>, \(\lambda_1,\lambda_2,\ldots,\lambda_n\) are the eigenvalues of \(D\) and hence also of \(A\text{.}\)</p></article></div>
+<article class="example example-like" id="ExampleMatrixPowers"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-ExampleMatrixPowers"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.5.13</span><span class="period">.</span><span class="space"> </span><span class="title">Using eigenvalues to compute the powers of a matrix.</span>
-</h6>
-<p id="p-1196">Let \(A=
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ExampleMatrixPowers"><article class="example example-like"><p id="p-1180">Let \(A=
 \begin{bmatrix}1\amp2\\2\amp1\end{bmatrix}
 \text{.}\) Then \(\vec x_1= \begin{bmatrix}1\\1\end{bmatrix}\) and \(\vec x_2 = \begin{bmatrix}1\\-1\end{bmatrix}\) are eigenvectors with corresponding eigenvalues \(\lambda_1=3\) and \(\lambda_2=-1\text{.}\) Using <a class="xref" data-knowl="./knowl/NDistinctEigenvaluesDiagonalizable.html" title="Theorem 5.5.10: A matrix of order \(n\) with \(n\) distinct eigenvalues is diagonalizable">Theorem 5.5.10</a>,</p>
 <div class="displaymath">
@@ -335,7 +340,7 @@ B^r \amp = (P^{-1}AP)^r \\
 P=\begin{bmatrix} 1\amp 1\\ 1\amp -1 \end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">diagonalizes \(A\text{.}\) Indeed,</p>
+<p class="continuation">diagonalizes \(A\text{.}\) Indeed,</p>
 <div class="displaymath">
 \begin{align*}
 P^{-1}= \frac12\begin{bmatrix}1\amp1\\1\amp-1\end{bmatrix}
@@ -343,7 +348,7 @@ P^{-1}= \frac12\begin{bmatrix}1\amp1\\1\amp-1\end{bmatrix}
 \amp \amp D^n=\begin{bmatrix} 3^n\amp 0\\ 0\amp (-1)^n \end{bmatrix}\text{.}
 \end{align*}
 </div>
-<p data-braille="continuation">By an easy computation,</p>
+<p class="continuation">By an easy computation,</p>
 <div class="displaymath">
 \begin{align*}
 P D^n P^{-1} \amp =
@@ -356,7 +361,7 @@ P D^n P^{-1} \amp =
 \end{bmatrix}\text{.}
 \end{align*}
 </div>
-<p data-braille="continuation">and so</p>
+<p class="continuation">and so</p>
 <div class="displaymath">
 \begin{equation*}
 A^n=
@@ -366,39 +371,39 @@ A^n=
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Observe that for small values of \(n\) we may easily compute the entries of \(A^n\text{:}\)</p>
+<p class="continuation">Observe that for small values of \(n\) we may easily compute the entries of \(A^n\text{:}\)</p>
 <figure class="table table-like" id="table-8"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.5.14<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="c m b1 r0 l0 t0 lines">\(n\)</td>
 <td class="c m b1 r0 l0 t0 lines">\(\frac{3^n+(-1)^n}2\)</td>
-<td class="c m b1 r0 l0 t0 lines" data-braille="last-cell">\(\frac{3^n+(-1)^{n+1}}2\)</td>
+<td class="c m b1 r0 l0 t0 lines">\(\frac{3^n+(-1)^{n+1}}2\)</td>
 </tr>
 <tr>
 <td class="c m b0 r0 l0 t0 lines">\(1\)</td>
 <td class="c m b0 r0 l0 t0 lines">\(1\)</td>
-<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(2\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(2\)</td>
 </tr>
 <tr>
 <td class="c m b0 r0 l0 t0 lines">\(2\)</td>
 <td class="c m b0 r0 l0 t0 lines">\(5\)</td>
-<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(4\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(4\)</td>
 </tr>
 <tr>
 <td class="c m b0 r0 l0 t0 lines">\(3\)</td>
 <td class="c m b0 r0 l0 t0 lines">\(13\)</td>
-<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(14\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(14\)</td>
 </tr>
 <tr>
 <td class="c m b0 r0 l0 t0 lines">\(4\)</td>
 <td class="c m b0 r0 l0 t0 lines">\(40\)</td>
-<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(41\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(41\)</td>
 </tr>
 <tr>
 <td class="c m b0 r0 l0 t0 lines">\(5\)</td>
 <td class="c m b0 r0 l0 t0 lines">\(122\)</td>
-<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(121\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(121\)</td>
 </tr>
-</table></div></figure><p id="p-1197">Compare this result with <a class="xref" data-knowl="./knowl/MatrixPowerExample.html" title="Table 2.6.1: Powers of \(A=\bigl[\begin{smallmatrix}1\amp2\\2\amp1\end{smallmatrix}\bigr]\)">these earlier computations</a>.</p></article></section></section></div></main>
+</table></div></figure><p id="p-1181">Compare this result with <a class="xref" data-knowl="./knowl/MatrixPowerExample.html" title="Table 2.6.1: Powers of \(A=\bigl[\begin{smallmatrix}1\amp2\\2\amp1\end{smallmatrix}\bigr]\)">these earlier computations</a>.</p></article></div></section></section></div></main>
 </div>
 </body>
 </html>

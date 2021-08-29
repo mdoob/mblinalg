@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:32-06:00       *-->
+<!--*       on 2021-08-29T14:14:26-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,36 +14,42 @@
 <title>Eigenvalues and eigenvectors: preliminaries</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -56,8 +62,8 @@ MathJax.Hub.Config({
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
 \def\C{{\mathbb C}}
 \def\Q{{\mathbb Q}}
 \def\Z{{\mathbb Z}}
@@ -104,40 +110,39 @@ MathJax.Hub.Config({
 <li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
 <li class="link"><a href="LinearTransformations.html" data-scroll="LinearTransformations"><span class="codenumber">6</span> <span class="title">Linear transformations</span></a></li>
 <li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">7</span> <span class="title">Additional Topics</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-35"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.1</span> <span class="title">Eigenvalues and eigenvectors: preliminaries</span>
 </h2>
-<p id="p-1113">Eigenvalues and eigenvectors are defined for a square matrix \(A.\)</p>
+<p id="p-1097">Eigenvalues and eigenvectors are defined for a square matrix \(A.\)</p>
 <article class="definition definition-like" id="definition-63"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">The eigenvalue of a matrix.</span>
 </h6>
-<p id="p-1114">A number \(\lambda\) is an <dfn class="terminology">eigenvalue</dfn> of a square matrix \(A\) if</p>
+<p id="p-1098">A number \(\lambda\) is an <dfn class="terminology">eigenvalue</dfn> of a square matrix \(A\) if</p>
 <div class="displaymath">
 \begin{equation*}
 A\vec x=\lambda\vec x
 \end{equation*}
 </div>
-<p data-braille="continuation">for some \(\vec x\not=\vec0\text{.}\)</p></article><article class="definition definition-like" id="definition-64"><h6 class="heading">
+<p class="continuation">for some \(\vec x\not=\vec0\text{.}\)</p></article><article class="definition definition-like" id="definition-64"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">The eigenvector of a matrix.</span>
 </h6>
-<p id="p-1115">If</p>
+<p id="p-1099">If</p>
 <div class="displaymath">
 \begin{equation*}
 A\vec x=\lambda\vec x
 \end{equation*}
 </div>
-<p data-braille="continuation">for some \(\vec x\not=\vec0\text{,}\) then \(\vec x\) is called an <dfn class="terminology">eigenvector</dfn> of \(A\) corresponding to the eigenvalue \(\lambda\text{.}\)</p></article><p id="p-1116">Notice that if \(\vec x=\vec 0\text{,}\) then \(A\vec x=\lambda\vec x\) is simply the equation \(\vec0=\vec0\) for any value of \(\lambda\text{.}\) This is not too interesting, and so we always have the restriction \(\vec x\not=\vec0\text{.}\)</p>
-<article class="example example-like" id="EigenvalueExample1"><h6 class="heading">
+<p class="continuation">for some \(\vec x\not=\vec0\text{,}\) then \(\vec x\) is called an <dfn class="terminology">eigenvector</dfn> of \(A\) corresponding to the eigenvalue \(\lambda\text{.}\)</p></article><p id="p-1100">Notice that if \(\vec x=\vec 0\text{,}\) then \(A\vec x=\lambda\vec x\) is simply the equation \(\vec0=\vec0\) for any value of \(\lambda\text{.}\) This is not too interesting, and so we always have the restriction \(\vec x\not=\vec0\text{.}\)</p>
+<article class="example example-like" id="EigenvalueExample1"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-EigenvalueExample1"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenvalues of \(A=
 \begin{bmatrix} 
 5\amp -1\amp -2\\ 
 1\amp 3\amp -2\\ 
 -1\amp -1\amp 4 
 \end{bmatrix} \).</span>
-</h6>
-<div class="displaymath" id="p-1117">
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-EigenvalueExample1"><article class="example example-like"><div class="displaymath" id="p-1101">
 \begin{equation*}
 \begin{bmatrix}
 5\amp -1\amp -2\\ 
@@ -156,8 +161,8 @@ A\vec x=\lambda\vec x
 \end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">which makes \(\vec x=\begin{bmatrix}1\\1\\1\end{bmatrix}\) an eigenvector with eigenvalue \(\lambda=2\text{.}\)</p>
-<div class="displaymath" id="p-1118">
+<p class="continuation">which makes \(\vec x=\begin{bmatrix}1\\1\\1\end{bmatrix}\) an eigenvector with eigenvalue \(\lambda=2\text{.}\)</p>
+<div class="displaymath" id="p-1102">
 \begin{equation*}
 \begin{bmatrix}
 5\amp -1\amp -2\\ 
@@ -175,11 +180,11 @@ A\vec x=\lambda\vec x
 \end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">which makes makes \(\vec 
+<p class="continuation">which makes makes \(\vec 
 x=\begin{bmatrix}
 1\\-1\\1
 \end{bmatrix}\) an eigenvector with eigenvalue \(\lambda=4\text{.}\)</p>
-<div class="displaymath" id="p-1119">
+<div class="displaymath" id="p-1103">
 \begin{equation*}
 \begin{bmatrix}
 5\amp -1\amp -2\\ 
@@ -197,11 +202,11 @@ x=\begin{bmatrix}
 \end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">which makes makes \(\vec x=\begin{bmatrix}-1\\-1\\1\end{bmatrix}\) an eigenvector with eigenvalue \(\lambda=6\text{.}\)</p>
-<p id="p-1120">We have now computed eigenvalues of \(A\text{:}\) \(\lambda=2\text{,}\) \(\lambda=4\) and \(\lambda=6\text{.}\) With a little more theory, we will see that there are no others.</p></article><article class="example example-like" id="EigenvalueExample2"><h6 class="heading">
+<p class="continuation">which makes makes \(\vec x=\begin{bmatrix}-1\\-1\\1\end{bmatrix}\) an eigenvector with eigenvalue \(\lambda=6\text{.}\)</p>
+<p id="p-1104">We have now computed eigenvalues of \(A\text{:}\) \(\lambda=2\text{,}\) \(\lambda=4\) and \(\lambda=6\text{.}\) With a little more theory, we will see that there are no others.</p></article></div>
+<article class="example example-like" id="EigenvalueExample2"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-EigenvalueExample2"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenvalues of \(\begin{bmatrix}2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5 \end{bmatrix}\).</span>
-</h6>
-<p id="p-1121">Let \(A=\begin{bmatrix}2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5 \end{bmatrix}\) Then we have</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-EigenvalueExample2"><article class="example example-like"><p id="p-1105">Let \(A=\begin{bmatrix}2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5 \end{bmatrix}\) Then we have</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} 2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5\end{bmatrix}
@@ -209,7 +214,7 @@ x=\begin{bmatrix}
 =3 \begin{bmatrix}1\\1\\0\end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">which makes \(\vec x=\begin{bmatrix}1\\1\\0\end{bmatrix}\) an eigenvector with eigenvalue \(\lambda=3\text{.}\) Also</p>
+<p class="continuation">which makes \(\vec x=\begin{bmatrix}1\\1\\0\end{bmatrix}\) an eigenvector with eigenvalue \(\lambda=3\text{.}\) Also</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} 2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5\end{bmatrix}
@@ -217,7 +222,7 @@ x=\begin{bmatrix}
 \begin{bmatrix}12\\0\\3\end{bmatrix}=3 \begin{bmatrix}4\\0\\1\end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">which makes \(\vec x=\begin{bmatrix}4\\0\\1\end{bmatrix}\) an eigenvector with eigenvalue \(\lambda=3\) Finally</p>
+<p class="continuation">which makes \(\vec x=\begin{bmatrix}4\\0\\1\end{bmatrix}\) an eigenvector with eigenvalue \(\lambda=3\) Finally</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} 2\amp 1\amp 4\\ 0\amp 3\amp 0\\ 2\amp -2\amp -5\end{bmatrix}
@@ -225,17 +230,17 @@ x=\begin{bmatrix}
 \begin{bmatrix}6\\0\\-12\end{bmatrix}=-6 \begin{bmatrix}-1\\0\\2\end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">which makes \(\vec x=\begin{bmatrix}-1\\0\\2\end{bmatrix}\) an eigenvector with eigenvalue \(\lambda=-6\) Hence the demonstrated eigenvalues are \(\lambda=3\) and \(\lambda=-6\text{.}\) We will soon see that there are no more.</p></article><article class="example example-like" id="example-53"><h6 class="heading">
+<p class="continuation">which makes \(\vec x=\begin{bmatrix}-1\\0\\2\end{bmatrix}\) an eigenvector with eigenvalue \(\lambda=-6\) Hence the demonstrated eigenvalues are \(\lambda=3\) and \(\lambda=-6\text{.}\) We will soon see that there are no more.</p></article></div>
+<article class="example example-like" id="example-54"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-54"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenvalues of \(\begin{bmatrix} 0\amp -1\\ 1\amp 0\end{bmatrix}\).</span>
-</h6>
-<p id="p-1122">Let \(A=\begin{bmatrix} 0\amp -1\\ 1\amp 0\end{bmatrix}\) and consider the equation \(A\vec x=\lambda\vec x\text{.}\) Setting \(\vec x=\begin{bmatrix} x_1\\x_2\end{bmatrix}\text{,}\)</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-54"><article class="example example-like"><p id="p-1106">Let \(A=\begin{bmatrix} 0\amp -1\\ 1\amp 0\end{bmatrix}\) and consider the equation \(A\vec x=\lambda\vec x\text{.}\) Setting \(\vec x=\begin{bmatrix} x_1\\x_2\end{bmatrix}\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} 0\amp -1\\ 1\amp 0\end{bmatrix}\begin{bmatrix} x_1\\x_2\end{bmatrix}
 =\lambda\begin{bmatrix} x_1\\x_2\end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">This is equivalent to the system of equations</p>
+<p class="continuation">This is equivalent to the system of equations</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{rl}
@@ -244,15 +249,15 @@ x=\begin{bmatrix}
 \end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">This implies that \((\lambda^2+1)x_1 = \lambda^2 x_1 + x_1 = -\lambda x_2 +\lambda x_2=0 \) and \((\lambda^2+1)x_2 = \lambda^2 x_2 + x_2 = \lambda x_1 -\lambda x_21=0.\) Since \(\vec x \not=\vec 0\text{,}\) either \(x_1\not=0\) or \(x_2\not=0\text{,}\) and consequently \(\lambda^2=-1\text{.}\) Since no real number satisfies this equation, we conclude that there are no eigenvalues or eigenvectors for \(A\text{.}\) An aside: if we consider complex numbers, then \(i\) and \(-i\) are both eigenvalues of \(A\) with \(\begin{bmatrix} 1\\-i\end{bmatrix}\) and \(\begin{bmatrix} 1\\i\end{bmatrix}\) as corresponding eigenvectors.</p></article><article class="example example-like" id="EigenvalueExample4"><h6 class="heading">
+<p class="continuation">This implies that \((\lambda^2+1)x_1 = \lambda^2 x_1 + x_1 = -\lambda x_2 +\lambda x_2=0 \) and \((\lambda^2+1)x_2 = \lambda^2 x_2 + x_2 = \lambda x_1 -\lambda x_21=0.\) Since \(\vec x \not=\vec 0\text{,}\) either \(x_1\not=0\) or \(x_2\not=0\text{,}\) and consequently \(\lambda^2=-1\text{.}\) Since no real number satisfies this equation, we conclude that there are no eigenvalues or eigenvectors for \(A\text{.}\) An aside: if we consider complex numbers, then \(i\) and \(-i\) are both eigenvalues of \(A\) with \(\begin{bmatrix} 1\\-i\end{bmatrix}\) and \(\begin{bmatrix} 1\\i\end{bmatrix}\) as corresponding eigenvectors.</p></article></div>
+<article class="example example-like" id="EigenvalueExample4"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-EigenvalueExample4"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenvalues of \(\begin{bmatrix}
 1 \amp  1 \amp  1 \amp  1\\
 0 \amp  2 \amp  2 \amp  2\\
 0 \amp  0 \amp  3 \amp  3\\
 0 \amp  0 \amp  0 \amp  4
 \end{bmatrix}\).</span>
-</h6>
-<p id="p-1123">Consider the matrix</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-EigenvalueExample4"><article class="example example-like"><p id="p-1107">Consider the matrix</p>
 <div class="displaymath">
 \begin{equation*}
 A=
@@ -264,7 +269,7 @@ A=
 \end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">Then it's easy to verify that</p>
+<p class="continuation">Then it's easy to verify that</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -323,22 +328,23 @@ A=
 =4\begin{bmatrix} 8\\12\\9\\3\end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">and so we have \(1\text{,}\) \(2\text{,}\) \(3\) and \(4\) as eigenvalues. Notice that in this case the eigenvalues are just the diagonal elements and that the matrix is upper triangular. We shall see in <a class="xref" data-knowl="./knowl/EigenvaluesTriangularMatrix.html" title="Theorem 5.5.1: Eigenvalues of a triangular matrix">Theorem 5.5.1</a> that for every upper (or lower) triangular matrix, the eigenvalues are the diagonal entries.</p></article><article class="definition definition-like" id="EigenspaceDef"><h6 class="heading">
+<p class="continuation">and so we have \(1\text{,}\) \(2\text{,}\) \(3\) and \(4\) as eigenvalues. Notice that in this case the eigenvalues are just the diagonal elements and that the matrix is upper triangular. We shall see in <a class="xref" data-knowl="./knowl/EigenvaluesTriangularMatrix.html" title="Theorem 5.5.1: Eigenvalues of a triangular matrix">Theorem 5.5.1</a> that for every upper (or lower) triangular matrix, the eigenvalues are the diagonal entries.</p></article></div>
+<article class="definition definition-like" id="EigenspaceDef"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Eigenspaces.</span>
 </h6>
-<p id="p-1124">Suppose that \(A\) is a square matrix of order \(n\text{.}\) Then for any real number \(\lambda\text{,}\) we define the <dfn class="terminology">eigenspace</dfn> \(E_\lambda\) by</p>
+<p id="p-1108">Suppose that \(A\) is a square matrix of order \(n\text{.}\) Then for any real number \(\lambda\text{,}\) we define the <dfn class="terminology">eigenspace</dfn> \(E_\lambda\) by</p>
 <div class="displaymath">
 \begin{equation*}
 E_\lambda=\{\vec x\in \R^n\mid A\vec x=\lambda \vec x\}.
 \end{equation*}
-</div></article><p id="p-1125">Clearly \(\vec0\) is in \(E_\lambda\) for any value of \(\lambda\text{,}\) and \(\lambda\) is an eigenvalue if and only if there is some \(\vec x\not=\vec0\) in \(E_\lambda\text{.}\)</p>
+</div></article><p id="p-1109">Clearly \(\vec0\) is in \(E_\lambda\) for any value of \(\lambda\text{,}\) and \(\lambda\) is an eigenvalue if and only if there is some \(\vec x\not=\vec0\) in \(E_\lambda\text{.}\)</p>
 <article class="proposition theorem-like" id="proposition-12"><h6 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">5.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">An eigenspace is a subspace.</span>
 </h6>
-<p id="p-1126">Let \(A\) be an \(n\times n\) matrix and let \(\lambda\) be a real number. Then the set of vectors \(E_\lambda=\{\vec x \mid A\vec x=\lambda \vec x\}\) is a subspace of \(\R^n\text{.}\)</p></article><article class="hiddenproof" id="proof-89"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-89"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-89"><article class="hiddenproof"><p id="p-1127">From <a class="xref" data-knowl="./knowl/SubspaceDefinition.html" title="Definition 4.9.17: Subspace of \(\R^n\)">Definition 4.9.17</a> it is sufficient to show that two properties of closure under addition and of closure under scalar multiplication are satisfied. Suppose \(\vec x\) and \(\vec y\) are in \(E_\lambda\text{.}\)</p>
+<p id="p-1110">Let \(A\) be an \(n\times n\) matrix and let \(\lambda\) be a real number. Then the set of vectors \(E_\lambda=\{\vec x \mid A\vec x=\lambda \vec x\}\) is a subspace of \(\R^n\text{.}\)</p></article><article class="hiddenproof" id="proof-89"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-89"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-89"><article class="hiddenproof"><p id="p-1111">From <a class="xref" data-knowl="./knowl/SubspaceDefinition.html" title="Definition 4.9.17: Subspace of \(\R^n\)">Definition 4.9.17</a> it is sufficient to show that two properties of closure under addition and of closure under scalar multiplication are satisfied. Suppose \(\vec x\) and \(\vec y\) are in \(E_\lambda\text{.}\)</p>
 <ul class="disc">
 <li id="li-369">
-<p id="p-1128">Closure under addition:</p>
+<p id="p-1112">Closure under addition:</p>
 <div class="displaymath">
 \begin{align*}
 A(\vec x+\vec y)\amp=A(\vec x)+A(\vec y)\\
@@ -348,7 +354,7 @@ A(\vec x+\vec y)\amp=A(\vec x)+A(\vec y)\\
 </div>
 </li>
 <li id="li-370">
-<p id="p-1129">Closure under scalar multiplication:</p>
+<p id="p-1113">Closure under scalar multiplication:</p>
 <div class="displaymath">
 \begin{align*}
 A(r\vec x)\amp=rA(\vec x)\\

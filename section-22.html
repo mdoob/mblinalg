@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:27-06:00       *-->
+<!--*       on 2021-08-29T14:14:20-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,36 +14,42 @@
 <title>Properties derived from cofactor expansion</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -56,8 +62,8 @@ MathJax.Hub.Config({
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
 \def\C{{\mathbb C}}
 \def\Q{{\mathbb Q}}
 \def\Z{{\mathbb Z}}
@@ -104,19 +110,19 @@ MathJax.Hub.Config({
 <li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
 <li class="link"><a href="LinearTransformations.html" data-scroll="LinearTransformations"><span class="codenumber">6</span> <span class="title">Linear transformations</span></a></li>
 <li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">7</span> <span class="title">Additional Topics</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-22"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.4</span> <span class="title">Properties derived from cofactor expansion</span>
 </h2>
-<section class="introduction" id="introduction-10"><p id="p-590">The <a class="xref" data-knowl="./knowl/LaplaceExpansion.html" title="Theorem 3.3.8: Laplace expansion theorem">Laplace expansion theorem</a> turns out to be a powerful tool, both for computation and for the derivation of theoretical results. In this section we derive several of these results.</p>
-<p id="p-591">All matrices under discussion in the section will be square of order \(n\text{.}\)</p></section><section class="subsection" id="subsection-40"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-10"><p id="p-578">The <a class="xref" data-knowl="./knowl/LaplaceExpansion.html" title="Theorem 3.3.8: Laplace expansion theorem">Laplace expansion theorem</a> turns out to be a powerful tool, both for computation and for the derivation of theoretical results. In this section we derive several of these results.</p>
+<p id="p-579">All matrices under discussion in the section will be square of order \(n\text{.}\)</p></section><section class="subsection" id="subsection-40"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.1</span> <span class="title">All zero rows</span>
 </h3>
 <article class="theorem theorem-like" id="DeterminantAllZeroRow"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">All zero row or column implies \(\det A=0\).</span>
 </h6>
-<p id="p-592">If \(A\) has an all zero row or all zero column, then \(\det(A)=0\text{.}\)</p></article><article class="hiddenproof" id="proof-36"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-36"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-36"><article class="hiddenproof"><p id="p-593">Suppose row \(R_i\) is all zero. Then the expansion on \(R_i\) is</p>
+<p id="p-580">If \(A\) has an all zero row or all zero column, then \(\det(A)=0\text{.}\)</p></article><article class="hiddenproof" id="proof-36"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-36"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-36"><article class="hiddenproof"><p id="p-581">Suppose row \(R_i\) is all zero. Then the expansion on \(R_i\) is</p>
 <div class="displaymath">
 \begin{equation*}
 \sum_{j=1}^n a_{i,j}C_{i,j} =
@@ -128,7 +134,7 @@ MathJax.Hub.Config({
 <article class="theorem theorem-like" id="DeterminantTriangularMatrix"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">The determinant of a triangular matrix.</span>
 </h6>
-<p id="p-594">If \(A\) is triangular, then \(\det(A)=a_{1,1}a_{2,2}\cdots a_{n,n}\text{.}\)</p></article><article class="hiddenproof" id="proof-37"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-37"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-37"><article class="hiddenproof"><p id="p-595">Suppose \(A\) is lower triangular (the upper triangular case uses essentially the same argument). We repeatedly expand on the first row.</p>
+<p id="p-582">If \(A\) is triangular, then \(\det(A)=a_{1,1}a_{2,2}\cdots a_{n,n}\text{.}\)</p></article><article class="hiddenproof" id="proof-37"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-37"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-37"><article class="hiddenproof"><p id="p-583">Suppose \(A\) is lower triangular (the upper triangular case uses essentially the same argument). We repeatedly expand on the first row.</p>
 <div class="displaymath">
 \begin{align*}
 \det A
@@ -162,30 +168,29 @@ a_{3,3} \amp \cdots \amp 0\\
 <article class="corollary theorem-like" id="corollary-1"><h6 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">3.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">The determinant of a diagonal matrix the product of its diagonal entries.</span>
 </h6>
-<p id="p-596">If \(A\) is a diagonal matrix, then \(\det(A)=a_{1,1}a_{2,2}\cdots a_{n,n}\text{.}\)</p></article><article class="hiddenproof" id="proof-38"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-38"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-38"><article class="hiddenproof"><p id="p-597">A diagonal matrix is certainly triangular.</p></article></div>
-<article class="example example-like" id="example-29"><h6 class="heading">
+<p id="p-584">If \(A\) is a diagonal matrix, then \(\det(A)=a_{1,1}a_{2,2}\cdots a_{n,n}\text{.}\)</p></article><article class="hiddenproof" id="proof-38"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-38"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-38"><article class="hiddenproof"><p id="p-585">A diagonal matrix is certainly triangular.</p></article></div>
+<article class="example example-like" id="example-30"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-30"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">\(\det I=1\).</span>
-</h6>
-<p id="p-598">Since the identity matrix \(I\) is a diagonal matrix,</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-30"><article class="example example-like"><p id="p-586">Since the identity matrix \(I\) is a diagonal matrix,</p>
 <div class="displaymath">
 \begin{equation*}
 \det I=1
 \end{equation*}
-</div></article></section><section class="subsection" id="subsection-42"><h3 class="heading hide-type">
+</div></article></div></section><section class="subsection" id="subsection-42"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.3</span> <span class="title">Interchanging rows</span>
 </h3>
-<p id="p-599">The purpose of this section is to show that if a matrix \(B\) is derived from \(A\) by interchanging two rows, then \(\det B = -\det A\text{.}\) We do this in three steps:</p>
+<p id="p-587">The purpose of this section is to show that if a matrix \(B\) is derived from \(A\) by interchanging two rows, then \(\det B = -\det A\text{.}\) We do this in three steps:</p>
 <article class="lemma theorem-like" id="lemma-5"><h6 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">3.4.5</span><span class="period">.</span><span class="space"> </span><span class="title">Interchanging rows \(R_1\) and \(R_2\) changes the sign of the determinant.</span>
 </h6>
-<p id="p-600">If \(B\) is derived from \(A\) by interchanging the first and second rows (that is, \(R_1\leftrightarrow R_2\)), then \(\det B = -\det A\text{.}\)</p></article><article class="hiddenproof" id="proof-39"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-39"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-39"><article class="hiddenproof"><p id="p-601">We compute the determinant of \(A\) by cofactor expansion along the first row and the determinant of \(B\) by cofactor expansion along the second row. This means that</p>
+<p id="p-588">If \(B\) is derived from \(A\) by interchanging the first and second rows (that is, \(R_1\leftrightarrow R_2\)), then \(\det B = -\det A\text{.}\)</p></article><article class="hiddenproof" id="proof-39"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-39"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-39"><article class="hiddenproof"><p id="p-589">We compute the determinant of \(A\) by cofactor expansion along the first row and the determinant of \(B\) by cofactor expansion along the second row. This means that</p>
 <div class="displaymath">
-\begin{equation*}
+\begin{gather*}
 \det A =\sum_{j=1}^n (-1)^{1+j} a_{1,j}M_{1,j}\\
 \det B =\sum_{j=1}^n (-1)^{2+j} b_{2,j}M'_{2,j}
-\end{equation*}
+\end{gather*}
 </div>
-<p data-braille="continuation">Since the first row of \(A\) is the second row of \(B\text{,}\) we have \(a_{1,j}=b_{2,j}\) for \(j=1,2,\ldots,n\text{.}\) In addition, deleting \(R_1\) and \(C_j\) from \(A\) yields exactly the same matrix as deleting \(R_2\) and \(C_j\) from \(B\text{,}\)  that is to say \(M_{1,j}=M'_{2,j}\text{.}\) Hence we have</p>
+<p class="continuation">Since the first row of \(A\) is the second row of \(B\text{,}\) we have \(a_{1,j}=b_{2,j}\) for \(j=1,2,\ldots,n\text{.}\) In addition, deleting \(R_1\) and \(C_j\) from \(A\) yields exactly the same matrix as deleting \(R_2\) and \(C_j\) from \(B\text{,}\)  that is to say \(M_{1,j}=M'_{2,j}\text{.}\) Hence we have</p>
 <div class="displaymath">
 \begin{align*}
 \det B
@@ -198,14 +203,14 @@ a_{3,3} \amp \cdots \amp 0\\
 <article class="lemma theorem-like" id="lemma-6"><h6 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">3.4.6</span><span class="period">.</span><span class="space"> </span><span class="title">Interchanging rows \(R_i\) and \(R_{i+1}\) changes the sign of the determinant.</span>
 </h6>
-<p id="p-602">If \(B\) is derived from \(A\) by interchanging \(R_i\) and \(R_{i+1}\) (that is, \(R_i\leftrightarrow R_{i+1}\)), then \(\det B = -\det A\text{.}\)</p></article><article class="hiddenproof" id="proof-40"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-40"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-40"><article class="hiddenproof"><p id="p-603">We compute the determinants by cofactor expansion  along the \(i\)-th row of \(A\) and along the the \(i+1\)-st row of \(B\text{.}\)  This means that</p>
+<p id="p-590">If \(B\) is derived from \(A\) by interchanging \(R_i\) and \(R_{i+1}\) (that is, \(R_i\leftrightarrow R_{i+1}\)), then \(\det B = -\det A\text{.}\)</p></article><article class="hiddenproof" id="proof-40"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-40"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-40"><article class="hiddenproof"><p id="p-591">We compute the determinants by cofactor expansion  along the \(i\)-th row of \(A\) and along the the \(i+1\)-st row of \(B\text{.}\)  This means that</p>
 <div class="displaymath">
-\begin{equation*}
+\begin{gather*}
 \det A =\sum_{j=1}^n (-1)^{i+j} a_{i,j}M_{i,j}\\
 \det B =\sum_{j=1}^n (-1)^{i+1+j} b_{i+1,j}M'_{i+1,j}
-\end{equation*}
+\end{gather*}
 </div>
-<p data-braille="continuation">We have \(a_{i,j}=b_{{i+1},j}\) for \(j=1,2,\ldots,n\text{.}\) In addition, deleting \(R_i\) and \(C_j\) from \(A\) yields exactly the same matrix as deleting \(R_{i+1}\) and \(C_j\) from \(B\) and so \(M_{i,j}=M'_{i+1,j}\text{.}\) Hence we have</p>
+<p class="continuation">We have \(a_{i,j}=b_{{i+1},j}\) for \(j=1,2,\ldots,n\text{.}\) In addition, deleting \(R_i\) and \(C_j\) from \(A\) yields exactly the same matrix as deleting \(R_{i+1}\) and \(C_j\) from \(B\) and so \(M_{i,j}=M'_{i+1,j}\text{.}\) Hence we have</p>
 <div class="displaymath">
 \begin{align*}
 \det B
@@ -218,21 +223,21 @@ a_{3,3} \amp \cdots \amp 0\\
 <article class="theorem theorem-like" id="DeterminantRowInterchange"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">Interchanging rows \(R_i\) and \(R_j\) changes the sign of the determinant.</span>
 </h6>
-<p id="p-604">If \(B\) is derived from \(A\) by interchanging the \(i\)-th and \(j\)-th rows (that is, \(R_i\leftrightarrow R_j\)), then \(\det B = -\det A\text{.}\)</p></article><article class="hiddenproof" id="proof-41"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-41"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-41"><article class="hiddenproof"><p id="p-605">With no loss of generality, we assume that \(i\lt j\text{.}\) Interchange \(R_i\) with the one below it so that it has moved one row lower. Repeat the process until it is just below \(R_j\text{.}\) This take \(j-i\) interchanges. Now interchange \(R_j\) with the one above it repeatedly until it is in the \(i\)-th row. This takes \(j-i-1\) interchanges. The net effect is to interchange \(R_i\) and \(R_j\text{.}\) Each interchange multiplies the determinant by \(-1\text{.}\) Since there are \(2(j-i)-1\) (an odd number) interchanges in total, we have</p>
+<p id="p-592">If \(B\) is derived from \(A\) by interchanging the \(i\)-th and \(j\)-th rows (that is, \(R_i\leftrightarrow R_j\)), then \(\det B = -\det A\text{.}\)</p></article><article class="hiddenproof" id="proof-41"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-41"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-41"><article class="hiddenproof"><p id="p-593">With no loss of generality, we assume that \(i\lt j\text{.}\) Interchange \(R_i\) with the one below it so that it has moved one row lower. Repeat the process until it is just below \(R_j\text{.}\) This take \(j-i\) interchanges. Now interchange \(R_j\) with the one above it repeatedly until it is in the \(i\)-th row. This takes \(j-i-1\) interchanges. The net effect is to interchange \(R_i\) and \(R_j\text{.}\) Each interchange multiplies the determinant by \(-1\text{.}\) Since there are \(2(j-i)-1\) (an odd number) interchanges in total, we have</p>
 <div class="displaymath">
 \begin{equation*}
 \det B = (-1)^{2(j-i)-1} \det A = -\det A.
 \end{equation*}
 </div></article></div>
-<p id="p-606">Here is an example to see how the proof actually works. The second row (in red) and sixth row (in green) will be interchanged. The red row is interchanged with the one below it until it is just below the green row. Then the green row is interchanged with the one above it until it is in the position originally occupied by the red row. It takes four interchanges to get the red row below the green row and three interchanges to get the green row in the original position of the red row.</p>
-<figure class="figure figure-like" id="figure-12"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/300px-Matrix_rows.gif" style="width: 100%; height: auto;" alt=""></div>
+<p id="p-594">Here is an example to see how the proof actually works. The second row (in red) and sixth row (in green) will be interchanged. The red row is interchanged with the one below it until it is just below the green row. Then the green row is interchanged with the one above it until it is in the position originally occupied by the red row. It takes four interchanges to get the red row below the green row and three interchanges to get the green row in the original position of the red row.</p>
+<figure class="figure figure-like" id="figure-12"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/300px-Matrix_rows.gif" class="contained" alt=""></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.4.8<span class="period">.</span></span><span class="space"> </span></figcaption></figure></section><section class="subsection" id="subsection-43"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.4</span> <span class="title">Multiplying a row by a constant \(\lambda\)</span>
 </h3>
 <article class="theorem theorem-like" id="DeterminantRowMultiply"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.9</span><span class="period">.</span><span class="space"> </span><span class="title">Multiplying a row by \(\lambda\) multiplies the determinant by \(\lambda\).</span>
 </h6>
-<p id="p-607">If \(B\) is derived from \(A\) by multiplying the \(i\)-th row by \(\lambda\) (that is, \(R_i\gets \lambda R_i\)), then \(\det B=\lambda \det A\text{.}\)</p></article><article class="hiddenproof" id="proof-42"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-42"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-42"><article class="hiddenproof"><p id="p-608">Expanding on the \(i\)-th row:</p>
+<p id="p-595">If \(B\) is derived from \(A\) by multiplying the \(i\)-th row by \(\lambda\) (that is, \(R_i\gets \lambda R_i\)), then \(\det B=\lambda \det A\text{.}\)</p></article><article class="hiddenproof" id="proof-42"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-42"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-42"><article class="hiddenproof"><p id="p-596">Expanding on the \(i\)-th row:</p>
 <div class="displaymath">
 \begin{align*}
 \det B \amp = \sum_{j=1}^n b_{i,j}M_{i,j} \\
@@ -241,24 +246,24 @@ a_{3,3} \amp \cdots \amp 0\\
 \amp = \lambda\det A 
 \end{align*}
 </div></article></div>
-<p id="p-609">We use this theorem to evaluate the determinant of \(\lambda A\text{.}\)</p>
+<p id="p-597">We use this theorem to evaluate the determinant of \(\lambda A\text{.}\)</p>
 <article class="corollary theorem-like" id="corollary-2"><h6 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">3.4.10</span><span class="period">.</span><span class="space"> </span><span class="title">The determinant of \(\lambda A\).</span>
 </h6>
-<p id="p-610">If \(A\) is a square matrix of order \(n\) and \(\lambda\) is any real number, then</p>
+<p id="p-598">If \(A\) is a square matrix of order \(n\) and \(\lambda\) is any real number, then</p>
 <div class="displaymath">
 \begin{equation*}
-\det \lambda A=\lambda^n A.
+\det(\lambda A)=\lambda^n \det A.
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-43"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-43"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-43"><article class="hiddenproof"><p id="p-611">The matrix \(\lambda A\) is derived from \(A\) by applying \(R_i\gets \lambda R_i\) for \(i=1,2,\ldots,n\text{.}\) Each application multiplies the determinant by \(\lambda\text{,}\) and so after the \(n\) applications we have</p>
+</div></article><article class="hiddenproof" id="proof-43"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-43"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-43"><article class="hiddenproof"><p id="p-599">The matrix \(\lambda A\) is derived from \(A\) by applying \(R_i\gets \lambda R_i\) for \(i=1,2,\ldots,n\text{.}\) Each application multiplies the determinant by \(\lambda\text{,}\) and so after the \(n\) applications we have</p>
 <div class="displaymath">
 \begin{equation*}
-\det \lambda A=\lambda^n A.
+\det(\lambda A)=\lambda^n \det A.
 \end{equation*}
 </div></article></div></section><section class="subsection" id="subsection-44"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.5</span> <span class="title">Row additivity</span>
 </h3>
-<p id="p-612">We wish to consider two matrices \(A\) and \(B\) that are identical except for the \(i\)-th row. We may visualize this at</p>
+<p id="p-600">We wish to consider two matrices \(A\) and \(B\) that are identical except for the \(i\)-th row. We may visualize this at</p>
 <div class="displaymath">
 \begin{equation*}
 A=
@@ -272,7 +277,7 @@ R_1\\ R_2\\ \vdots\\ R_i'\\ \vdots\\ R_n
 \end{bmatrix}.
 \end{equation*}
 </div>
-<p data-braille="continuation">We then define the matrix \(C\) by</p>
+<p class="continuation">We then define the matrix \(C\) by</p>
 <div class="displaymath">
 \begin{equation*}
 C=
@@ -284,7 +289,7 @@ R_1\\ R_2\\ \vdots\\ R_i+R_i'\\ \vdots\\ R_n
 <article class="theorem theorem-like" id="RowAdditivityTheorem"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.11</span><span class="period">.</span><span class="space"> </span><span class="title">Row additivity theorem.</span>
 </h6>
-<p id="p-613">If \(A\text{,}\) \(B\) and \(C\) are as above, then \(\det C=\det A + \det B\text{.}\)</p></article><article class="hiddenproof" id="proof-44"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-44"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-44"><article class="hiddenproof"><p id="p-614">We expand by cofactors on the \(i\)-th row.</p>
+<p id="p-601">If \(A\text{,}\) \(B\) and \(C\) are as above, then \(\det C=\det A + \det B\text{.}\)</p></article><article class="hiddenproof" id="proof-44"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-44"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-44"><article class="hiddenproof"><p id="p-602">We expand by cofactors on the \(i\)-th row.</p>
 <div class="displaymath">
 \begin{align*}
 \det C \amp = \sum_{j=1}^n (-1)^{i+j}c_{i,j} M_{i,j} \\
@@ -298,23 +303,23 @@ R_1\\ R_2\\ \vdots\\ R_i+R_i'\\ \vdots\\ R_n
 <article class="theorem theorem-like" id="DeterminantIdenticalRows"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.12</span><span class="period">.</span><span class="space"> </span><span class="title">A matrix \(A\) with two identical rows has \(\det A=0\).</span>
 </h6>
-<p id="p-615">Suppose a matrix \(A\) has two equal rows: \(R_i=R_j\) with \(i\not=j\text{.}\) Then \(\det A=0\text{.}\)</p></article><article class="hiddenproof" id="proof-45"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-45"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-45"><article class="hiddenproof"><p id="p-616">Let \(B\) be the matrix obtained by the elementary row operation \(R_i\leftrightarrow R_j\text{.}\) The equality of the two rows implies \(B=A\text{,}\) and so \(\det B = \det A\text{.}\) On the other hand, <a class="xref" data-knowl="./knowl/DeterminantRowInterchange.html" title="Theorem 3.4.7: Interchanging rows \(R_i\) and \(R_j\) changes the sign of the determinant">Theorem 3.4.7</a> implies \(\det B = -\det A\text{.}\) Hence \(\det A=0\text{.}\)</p></article></div>
+<p id="p-603">Suppose a matrix \(A\) has two equal rows: \(R_i=R_j\) with \(i\not=j\text{.}\) Then \(\det A=0\text{.}\)</p></article><article class="hiddenproof" id="proof-45"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-45"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-45"><article class="hiddenproof"><p id="p-604">Let \(B\) be the matrix obtained by the elementary row operation \(R_i\leftrightarrow R_j\text{.}\) The equality of the two rows implies \(B=A\text{,}\) and so \(\det B = \det A\text{.}\) On the other hand, <a class="xref" data-knowl="./knowl/DeterminantRowInterchange.html" title="Theorem 3.4.7: Interchanging rows \(R_i\) and \(R_j\) changes the sign of the determinant">Theorem 3.4.7</a> implies \(\det B = -\det A\text{.}\) Hence \(\det A=0\text{.}\)</p></article></div>
 <article class="definition definition-like" id="definition-39"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.4.13</span><span class="period">.</span><span class="space"> </span><span class="title">Proportional rows of a matrix.</span>
 </h6>
-<p id="p-617">Two rows, \(R_i\) and \(R_j\) are <dfn class="terminology">proportional</dfn> if \(R_i=\lambda R_j\) for some \(\lambda\not=0\text{.}\)</p></article><article class="theorem theorem-like" id="DeterminantProportionalRows"><h6 class="heading">
+<p id="p-605">Two rows, \(R_i\) and \(R_j\) are <dfn class="terminology">proportional</dfn> if \(R_i=\lambda R_j\) for some \(\lambda\not=0\text{.}\)</p></article><article class="theorem theorem-like" id="DeterminantProportionalRows"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.14</span><span class="period">.</span><span class="space"> </span><span class="title">A matrix \(A\) with two proportional rows has \(\det
 A=0\).</span>
 </h6>
-<p id="p-618">Suppose a matrix \(A\) has two proportional rows: \(R_i=\lambda R_j\) with \(i\not=j\) and \(\lambda\not=0\text{.}\) Then \(\det A=0\text{.}\)</p></article><article class="hiddenproof" id="proof-46"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-46"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-46"><article class="hiddenproof"><p id="p-619">Let \(B\) be the matrix obtained by the elementary row operation \(R_i\gets \lambda R_i\text{.}\) By <a class="xref" data-knowl="./knowl/DeterminantRowMultiply.html" title="Theorem 3.4.9: Multiplying a row by \(\lambda\) multiplies the determinant by \(\lambda\)">Theorem 3.4.9</a>, \(\det B = \lambda \det A\text{.}\) However, \(B\) has two identical rows and so \(\det B=0\text{.}\) Hence \(\lambda\not=0\) implies \(\det A=0\text{.}\)</p></article></div></section><section class="subsection" id="subsection-46"><h3 class="heading hide-type">
+<p id="p-606">Suppose a matrix \(A\) has two proportional rows: \(R_i=\lambda R_j\) with \(i\not=j\) and \(\lambda\not=0\text{.}\) Then \(\det A=0\text{.}\)</p></article><article class="hiddenproof" id="proof-46"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-46"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-46"><article class="hiddenproof"><p id="p-607">Let \(B\) be the matrix obtained by the elementary row operation \(R_i\gets \lambda R_i\text{.}\) By <a class="xref" data-knowl="./knowl/DeterminantRowMultiply.html" title="Theorem 3.4.9: Multiplying a row by \(\lambda\) multiplies the determinant by \(\lambda\)">Theorem 3.4.9</a>, \(\det B = \lambda \det A\text{.}\) However, \(B\) has two identical rows and so \(\det B=0\text{.}\) Hence \(\lambda\not=0\) implies \(\det A=0\text{.}\)</p></article></div></section><section class="subsection" id="subsection-46"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.7</span> <span class="title">Adding a multiple of one row to another</span>
 </h3>
-<p id="p-620">We can now use <a class="xref" data-knowl="./knowl/RowAdditivityTheorem.html" title="Theorem 3.4.11: Row additivity theorem">Theorem 3.4.11</a> and <a class="xref" data-knowl="./knowl/DeterminantProportionalRows.html" title="Theorem 3.4.14: A matrix \(A\) with two proportional rows has \(\det
+<p id="p-608">We can now use <a class="xref" data-knowl="./knowl/RowAdditivityTheorem.html" title="Theorem 3.4.11: Row additivity theorem">Theorem 3.4.11</a> and <a class="xref" data-knowl="./knowl/DeterminantProportionalRows.html" title="Theorem 3.4.14: A matrix \(A\) with two proportional rows has \(\det
 A=0\)">Theorem 3.4.14</a> to find the effect of the third elementary row operation on the determinant of a matrix.</p>
 <article class="theorem theorem-like" id="DeterminantRowAdd"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.15</span><span class="period">.</span><span class="space"> </span><span class="title">Adding a multiple of one row to another leaves the determinant unchanged.</span>
 </h6>
-<p id="p-621">If \(B\) is derived from \(A\) by adding a multiple of one row to another (that is, \(R_i\gets R_i+\lambda R_j\)) then \(\det B=\det A\text{.}\)</p></article><article class="hiddenproof" id="proof-47"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-47"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-47"><article class="hiddenproof"><p id="p-622">The matrices \(A\) and \(B\) are identical except for the \(i\)-th row. In \(A\) the \(i\)-th row is \(R_i\text{,}\) and in \(B\) the \(i\)-th row is \(R_i+\lambda R_j\text{.}\) The row additivity theorem then says</p>
+<p id="p-609">If \(B\) is derived from \(A\) by adding a multiple of one row to another (that is, \(R_i\gets R_i+\lambda R_j\)) then \(\det B=\det A\text{.}\)</p></article><article class="hiddenproof" id="proof-47"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-47"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-47"><article class="hiddenproof"><p id="p-610">The matrices \(A\) and \(B\) are identical except for the \(i\)-th row. In \(A\) the \(i\)-th row is \(R_i\text{,}\) and in \(B\) the \(i\)-th row is \(R_i+\lambda R_j\text{.}\) The row additivity theorem then says</p>
 <div class="displaymath">
 \begin{align*}
 \det B 
@@ -341,49 +346,52 @@ R_1\\ \vdots\\R_{i-1}\\\lambda R_j\\ R_{i+1}\\ \vdots\\ R_n
 </div></article></div></section><section class="subsection" id="DeterminantElementaryMatrices"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.8</span> <span class="title">The determinant of elementary matrices</span>
 </h3>
-<p id="p-623">As seen in <a class="xref" data-knowl="./knowl/ElementaryMatrices.html" title="Definition 2.10.1: Elementary matrices">Definition 2.10.1</a>, there are three types of elementary row operations, and each one has an elementary matrix associated with it. We can now evaluate the determinant of these matrices \(E_1\text{,}\) \(E_2\) and \(E_3\text{.}\)</p>
+<p id="p-611">As seen in <a class="xref" data-knowl="./knowl/ElementaryMatrices.html" title="Definition 2.10.1: Elementary matrices">Definition 2.10.1</a>, there are three types of elementary row operations, and each one has an elementary matrix associated with it. We can now evaluate the determinant of these matrices \(E_1\text{,}\) \(E_2\) and \(E_3\text{.}\)</p>
 <ul class="disc">
-<li id="li-229"><p id="p-624">\(R_i\leftrightarrow R_j\text{:}\) If we interchange \(R_i\) and \(R_j\) of \(E_1\text{,}\) we get the matrix \(I\text{.}\) Hence \(\det E_1=-\det I=-1\text{.}\)</p></li>
-<li id="li-230"><p id="p-625">\(R_i\gets \lambda R_i\) with \(\lambda\not=0\text{:}\) \(\det E_2=\det \mathrm{diag} (1,1,\ldots, 1,\lambda,1,\ldots,1)=\lambda\text{.}\)</p></li>
-<li id="li-231"><p id="p-626">\(R_i\gets R_i+\lambda R_j\text{:}\) \(\det E_3=1\) since \(E_3\) is triangular.</p></li>
+<li id="li-229"><p id="p-612">\(R_i\leftrightarrow R_j\text{:}\) If we interchange \(R_i\) and \(R_j\) of \(E_1\text{,}\) we get the matrix \(I\text{.}\) Hence \(\det E_1=-\det I=-1\text{.}\)</p></li>
+<li id="li-230"><p id="p-613">\(R_i\gets \lambda R_i\) with \(\lambda\not=0\text{:}\) \(\det E_2=\det \mathrm{diag} (1,1,\ldots, 1,\lambda,1,\ldots,1)=\lambda\text{.}\)</p></li>
+<li id="li-231"><p id="p-614">\(R_i\gets R_i+\lambda R_j\text{:}\) \(\det E_3=1\) since \(E_3\) is triangular.</p></li>
 </ul>
-<p data-braille="continuation">We may combine these three results into one wonderful theorem:</p>
+<p class="continuation">We may combine these three results into one wonderful theorem:</p>
 <article class="theorem theorem-like" id="DeterminantsElementaryRowOperations"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.16</span><span class="period">.</span><span class="space"> </span><span class="title">Determinants and elementary row operations.</span>
 </h6>
-<p id="p-627">If \(B\) is derived from \(A\) by one elementary row operation whose elementary matrix is \(E\text{,}\) then</p>
+<p id="p-615">If \(B\) is derived from \(A\) by one elementary row operation whose elementary matrix is \(E\text{,}\) then</p>
 <div class="displaymath">
 \begin{equation*}
 B=EA \textrm{ and }
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
 \det B= \det (EA) = \det E \det A.
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-48"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-48"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-48"><article class="hiddenproof"><p id="p-628">There are three possible elementary row operations, and the equation is valid in each one of them.</p>
+</div></article><article class="hiddenproof" id="proof-48"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-48"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-48"><article class="hiddenproof"><p id="p-616">There are three possible elementary row operations, and the equation is valid in each one of them.</p>
 <figure class="table table-like" id="table-4"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.4.17<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="c m b2 r0 l0 t0 lines">Row operation</td>
 <td class="c m b2 r0 l0 t0 lines">matrix determinant</td>
-<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(\det B\)</td>
+<td class="c m b2 r0 l0 t0 lines">\(\det B\)</td>
 </tr>
 <tr>
 <td class="c m b0 r0 l0 t0 lines">\(R_i\leftrightarrow R_j\)</td>
 <td class="c m b0 r0 l0 t0 lines">\(\det E_1=-1\)</td>
-<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\det B=-\det A\) by <a class="xref" data-knowl="./knowl/DeterminantRowInterchange.html" title="Theorem 3.4.7: Interchanging rows \(R_i\) and \(R_j\) changes the sign of the determinant">Theorem 3.4.7</a>.</td>
+<td class="c m b0 r0 l0 t0 lines">\(\det B=-\det A\) by <a class="xref" data-knowl="./knowl/DeterminantRowInterchange.html" title="Theorem 3.4.7: Interchanging rows \(R_i\) and \(R_j\) changes the sign of the determinant">Theorem 3.4.7</a>.</td>
 </tr>
 <tr>
 <td class="c m b0 r0 l0 t0 lines">\(R_i\gets \lambda R_i\)</td>
 <td class="c m b0 r0 l0 t0 lines">\(\det E_2=\lambda\)</td>
-<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\det B=\lambda\det A\) by <a class="xref" data-knowl="./knowl/DeterminantRowMultiply.html" title="Theorem 3.4.9: Multiplying a row by \(\lambda\) multiplies the determinant by \(\lambda\)">Theorem 3.4.9</a>.</td>
+<td class="c m b0 r0 l0 t0 lines">\(\det B=\lambda\det A\) by <a class="xref" data-knowl="./knowl/DeterminantRowMultiply.html" title="Theorem 3.4.9: Multiplying a row by \(\lambda\) multiplies the determinant by \(\lambda\)">Theorem 3.4.9</a>.</td>
 </tr>
 <tr>
 <td class="c m b0 r0 l0 t0 lines">\(R_i\gets R_i+\lambda R_j\)</td>
 <td class="c m b0 r0 l0 t0 lines">\(\det E_3=1\)</td>
-<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\det B=\det A\) by <a class="xref" data-knowl="./knowl/DeterminantRowAdd.html" title="Theorem 3.4.15: Adding a multiple of one row to another leaves the determinant unchanged">Theorem 3.4.15</a>.</td>
+<td class="c m b0 r0 l0 t0 lines">\(\det B=\det A\) by <a class="xref" data-knowl="./knowl/DeterminantRowAdd.html" title="Theorem 3.4.15: Adding a multiple of one row to another leaves the determinant unchanged">Theorem 3.4.15</a>.</td>
 </tr>
 </table></div></figure></article></div>
-<article class="example example-like" id="example-30"><h6 class="heading">
+<article class="example example-like" id="example-31"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-31"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.4.18</span><span class="period">.</span><span class="space"> </span><span class="title">Using elementary row operations to evaluate a determinant.</span>
-</h6>
-<p id="p-629">We recalculate the determinant from <a class="xref" data-knowl="./knowl/DeterminantSizeFour.html" title="Example 3.3.3: \(A\circ C\) has constant row and column sums">Example 3.3.3</a>. Let</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-31"><article class="example example-like"><p id="p-617">We recalculate the determinant from <a class="xref" data-knowl="./knowl/DeterminantSizeFour.html" title="Example 3.3.3: \(A\circ C\) has constant row and column sums">Example 3.3.3</a>. Let</p>
 <div class="displaymath">
 \begin{equation*}
 A=
@@ -395,7 +403,7 @@ A=
 \end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">We apply the two elementary row operations to \(A\text{:}\) \(R_2\gets R_2-R_1\) and \(R_3 \gets R_3+R_1\) to get</p>
+<p class="continuation">We apply the two elementary row operations to \(A\text{:}\) \(R_2\gets R_2-R_1\) and \(R_3 \gets R_3+R_1\) to get</p>
 <div class="displaymath">
 \begin{equation*}
 B=
@@ -407,7 +415,7 @@ B=
 \end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">From <a class="xref" data-knowl="./knowl/DeterminantRowAdd.html" title="Theorem 3.4.15: Adding a multiple of one row to another leaves the determinant unchanged">Theorem 3.4.15</a> we have \(\det A=\det B\text{.}\) Expanding on the first column gives,</p>
+<p class="continuation">From <a class="xref" data-knowl="./knowl/DeterminantRowAdd.html" title="Theorem 3.4.15: Adding a multiple of one row to another leaves the determinant unchanged">Theorem 3.4.15</a> we have \(\det A=\det B\text{.}\) Expanding on the first column gives,</p>
 <div class="displaymath">
 \begin{equation*}
 \det A=\det B =
@@ -419,7 +427,7 @@ B=
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Now we use \(R_2\gets R_2+R_1\) and \(R_3\gets R_3+R_1\) to get</p>
+<p class="continuation">Now we use \(R_2\gets R_2+R_1\) and \(R_3\gets R_3+R_1\) to get</p>
 <div class="displaymath">
 \begin{equation*}
 \det A=\det B =
@@ -431,7 +439,7 @@ B=
 \end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">Expanding on the first column once again gives</p>
+<p class="continuation">Expanding on the first column once again gives</p>
 <div class="displaymath">
 \begin{equation*}
 \det A=\det B =(-1)
@@ -442,14 +450,14 @@ B=
 \end{bmatrix}
 =-1
 \end{equation*}
-</div></article></section><section class="subsection" id="subsection-48"><h3 class="heading hide-type">
+</div></article></div></section><section class="subsection" id="subsection-48"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.9</span> <span class="title">The determinant of invertible matrices</span>
 </h3>
-<p id="p-630">From <a class="xref" data-knowl="./knowl/InvertibilityEquivalence.html" title="Theorem 2.11.2: Equivalent Forms of Invertibility">Theorem 2.11.2</a> we have a test for matrix invertibility: a matrix \(A\) of order \(n\) is invertible if and only if its reduced row echelon form is \(I\text{,}\) a matrix whose determinant is one. If a matrix is not invertible, then the number of leading ones in the reduced row echelon form is less than \(n\text{,}\) and so the last row is all zero. From <a class="xref" data-knowl="./knowl/DeterminantAllZeroRow.html" title="Theorem 3.4.1: All zero row or column implies \(\det A=0\)">Theorem 3.4.1</a> the determinant of this matrix must be zero.</p>
+<p id="p-618">From <a class="xref" data-knowl="./knowl/InvertibilityEquivalence.html" title="Theorem 2.11.2: Equivalent Forms of Invertibility">Theorem 2.11.2</a> we have a test for matrix invertibility: a matrix \(A\) of order \(n\) is invertible if and only if its reduced row echelon form is \(I\text{,}\) a matrix whose determinant is one. If a matrix is not invertible, then the number of leading ones in the reduced row echelon form is less than \(n\text{,}\) and so the last row is all zero. From <a class="xref" data-knowl="./knowl/DeterminantAllZeroRow.html" title="Theorem 3.4.1: All zero row or column implies \(\det A=0\)">Theorem 3.4.1</a> the determinant of this matrix must be zero.</p>
 <article class="lemma theorem-like" id="lemma-7"><h6 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">3.4.19</span><span class="period">.</span><span class="space"> </span><span class="title">Determinant of the reduced row echelon form.</span>
 </h6>
-<p id="p-631">Let \(B\) be the reduced row echelon form of \(A\text{.}\) Then</p>
+<p id="p-619">Let \(B\) be the reduced row echelon form of \(A\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
 \det B =
@@ -458,13 +466,13 @@ B=
 0 \amp A \textrm{ otherwise}
 \end{cases}
 \end{equation*}
-</div></article><p id="p-632">Next, we relate the determinant of a matrix \(A\) to that of its reduced row echelon form \(B\text{.}\) From <a class="xref" data-knowl="./knowl/ElementaryMatrixRowMultiplication.html" title="Theorem 2.10.2: Carrying out row operations using matrix multiplication">Theorem 2.10.2</a> we write</p>
+</div></article><p id="p-620">Next, we relate the determinant of a matrix \(A\) to that of its reduced row echelon form \(B\text{.}\) From <a class="xref" data-knowl="./knowl/ElementaryMatrixRowMultiplication.html" title="Theorem 2.10.2: Carrying out row operations using matrix multiplication">Theorem 2.10.2</a> we write</p>
 <div class="displaymath">
 \begin{equation*}
 B=E_k E_{k-1}E_{k-2}\cdots E_2 E_1 A
 \end{equation*}
 </div>
-<p data-braille="continuation">and then note from <a class="xref" data-knowl="./knowl/DeterminantsElementaryRowOperations.html" title="Theorem 3.4.16: Determinants and elementary row operations">Theorem 3.4.16</a> that</p>
+<p class="continuation">and then note from <a class="xref" data-knowl="./knowl/DeterminantsElementaryRowOperations.html" title="Theorem 3.4.16: Determinants and elementary row operations">Theorem 3.4.16</a> that</p>
 <div class="displaymath">
 \begin{align*}
 \det B
@@ -475,7 +483,7 @@ B=E_k E_{k-1}E_{k-2}\cdots E_2 E_1 A
 \amp = \det E_k \det E_{k-1}\det E_{k-2}\cdots \det E_2 \det E_1 \det A
 \end{align*}
 </div>
-<p data-braille="continuation">We further note that for any elementary matrix \(E\text{,}\) we have</p>
+<p class="continuation">We further note that for any elementary matrix \(E\text{,}\) we have</p>
 <div class="displaymath">
 \begin{equation*}
 \det E =
@@ -486,45 +494,45 @@ B=E_k E_{k-1}E_{k-2}\cdots E_2 E_1 A
 \end{cases}
 \end{equation*}
 </div>
-<p data-braille="continuation">In particular, this means that for any elementary matrix \(E\) we have \(\det E\not=0\text{,}\) and so we have:</p>
+<p class="continuation">In particular, this means that for any elementary matrix \(E\) we have \(\det E\not=0\text{,}\) and so we have:</p>
 <div class="displaymath">
 \begin{equation*}
 \det B = \underbrace{\det E_k \det E_{k-1} \cdots \det E_2 \det E_1}_{\not=0} \det A
 \end{equation*}
 </div>
-<p data-braille="continuation">and so \(\det B=0\) if and only if \(\det A=0\text{.}\) In summary:</p>
+<p class="continuation">and so \(\det B=0\) if and only if \(\det A=0\text{.}\) In summary:</p>
 <article class="theorem theorem-like" id="DeterminantInvertibleNonzero"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.20</span><span class="period">.</span><span class="space"> </span><span class="title">Invertible matrices have nonzero determinants.</span>
 </h6>
-<p id="p-633">\(A\) is invertible if and only if \(\det A \not= 0\text{.}\)</p></article><p id="p-634">We can now add an extra condition to <a class="xref" data-knowl="./knowl/InvertibilityEquivalence.html" title="Theorem 2.11.2: Equivalent Forms of Invertibility">Theorem 2.11.2</a>.</p>
+<p id="p-621">\(A\) is invertible if and only if \(\det A \not= 0\text{.}\)</p></article><p id="p-622">We can now add an extra condition to <a class="xref" data-knowl="./knowl/InvertibilityEquivalence.html" title="Theorem 2.11.2: Equivalent Forms of Invertibility">Theorem 2.11.2</a>.</p>
 <article class="theorem theorem-like" id="InvertibilityEquivalence2"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.21</span><span class="period">.</span><span class="space"> </span><span class="title">Equivalent forms of invertibility.</span>
 </h6>
-<p id="p-635">Suppose that \(A\) is an \(n\times n\) square matrix. Then the following statements are equivalent:</p>
+<p id="p-623">Suppose that \(A\) is an \(n\times n\) square matrix. Then the following statements are equivalent:</p>
 <ol class="decimal">
-<li id="li-232"><p id="p-636">\(A\) is invertible</p></li>
-<li id="li-233"><p id="p-637">\(A\vec x=0\) if and only if \(\vec x=0\)</p></li>
-<li id="li-234"><p id="p-638">The reduced row echelon form of \(A\) is \(I_n\)</p></li>
-<li id="li-235"><p id="p-639">\(A\) is a product of elementary matrices</p></li>
-<li id="li-236"><p id="p-640">\(A\vec x=\vec b\) is consistent for any \(\vec b\)</p></li>
-<li id="li-237"><p id="p-641">\(A\vec x=\vec b\) has exactly one solution for any \(\vec b\)</p></li>
-<li id="li-238"><p id="p-642">\(\displaystyle \det A\not=0\)</p></li>
+<li id="li-232"><p id="p-624">\(A\) is invertible</p></li>
+<li id="li-233"><p id="p-625">\(A\vec x=0\) if and only if \(\vec x=0\)</p></li>
+<li id="li-234"><p id="p-626">The reduced row echelon form of \(A\) is \(I_n\)</p></li>
+<li id="li-235"><p id="p-627">\(A\) is a product of elementary matrices</p></li>
+<li id="li-236"><p id="p-628">\(A\vec x=\vec b\) is consistent for any \(\vec b\)</p></li>
+<li id="li-237"><p id="p-629">\(A\vec x=\vec b\) has exactly one solution for any \(\vec b\)</p></li>
+<li id="li-238"><p id="p-630">\(\displaystyle \det A\not=0\)</p></li>
 </ol></article></section><section class="subsection" id="subsection-49"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.10</span> <span class="title">The determinant of the product of two matrices</span>
 </h3>
-<p id="p-643">In <a class="xref" data-knowl="./knowl/DeterminantsElementaryRowOperations.html" title="Theorem 3.4.16: Determinants and elementary row operations">Theorem 3.4.16</a> we proved that \(\det E \det A = \det(EA)\) for any elementary matrix \(E\text{.}\) In other words, in this case the determinant of the product is the product of the determinants. We can now show that this is true for any pair of matrices.</p>
+<p id="p-631">In <a class="xref" data-knowl="./knowl/DeterminantsElementaryRowOperations.html" title="Theorem 3.4.16: Determinants and elementary row operations">Theorem 3.4.16</a> we proved that \(\det E \det A = \det(EA)\) for any elementary matrix \(E\text{.}\) In other words, in this case the determinant of the product is the product of the determinants. We can now show that this is true for any pair of matrices.</p>
 <article class="theorem theorem-like" id="theorem-38"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.22</span><span class="period">.</span><span class="space"> </span><span class="title">The determinant of \(AB\).</span>
 </h6>
-<p id="p-644">For any square matrices \(A\) and \(B\) of the same size</p>
+<p id="p-632">For any square matrices \(A\) and \(B\) of the same size</p>
 <div class="displaymath">
 \begin{equation*}
 \det(AB)=\det A\; \det B.
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-49"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-49"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-49"><article class="hiddenproof"><p id="p-645">We proceed by considering three cases:</p>
+</div></article><article class="hiddenproof" id="proof-49"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-49"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-49"><article class="hiddenproof"><p id="p-633">We proceed by considering three cases:</p>
 <ol class="decimal">
 <li id="li-239">
-<p id="p-646">\(\det B=0\text{:}\) In this case \(\det A\;\det B=0\text{.}\) In addition, from <a class="xref" data-knowl="./knowl/InvertibilityEquivalence2.html" title="Theorem 3.4.21: Equivalent forms of invertibility">Theorem 3.4.21</a>, The is an \(\vec x\not=0\) so that \(B\vec x=0\text{.}\) Then \(AB\vec x=0\) and so \(\det(AB)=0\text{.}\) This gives</p>
+<p id="p-634">\(\det B=0\text{:}\) In this case \(\det A\;\det B=0\text{.}\) In addition, from <a class="xref" data-knowl="./knowl/InvertibilityEquivalence2.html" title="Theorem 3.4.21: Equivalent forms of invertibility">Theorem 3.4.21</a>, The is an \(\vec x\not=0\) so that \(B\vec x=0\text{.}\) Then \(AB\vec x=0\) and so \(\det(AB)=0\text{.}\) This gives</p>
 <div class="displaymath">
 \begin{equation*}
 \det(AB)=0=\det A\;\det B.
@@ -532,7 +540,7 @@ B=E_k E_{k-1}E_{k-2}\cdots E_2 E_1 A
 </div>
 </li>
 <li id="li-240">
-<p id="p-647">\(\det B\not=0\) and \(\det A=0\text{:}\) Once again, \(\det A \det B=0\text{.}\) Again, using <a class="xref" data-knowl="./knowl/InvertibilityEquivalence2.html" title="Theorem 3.4.21: Equivalent forms of invertibility">Theorem 3.4.21</a> (twice), there is \(\vec y\not=0\) so that \(A\vec y=0\) and there is an \(\vec x\) so that \(B\vec x=\vec y\text{.}\) Notice that \(\vec x\not=0\text{,}\) for otherwise \(\vec y=B\vec x=0\text{.}\) We then have \(AB\vec x=A\vec y=0\) with \(\vec y\not=0\text{,}\) and so \(\det(AB)=0\text{,}\) which, once again gives</p>
+<p id="p-635">\(\det B\not=0\) and \(\det A=0\text{:}\) Once again, \(\det A \det B=0\text{.}\) Again, using <a class="xref" data-knowl="./knowl/InvertibilityEquivalence2.html" title="Theorem 3.4.21: Equivalent forms of invertibility">Theorem 3.4.21</a> (twice), there is \(\vec y\not=0\) so that \(A\vec y=0\) and there is an \(\vec x\) so that \(B\vec x=\vec y\text{.}\) Notice that \(\vec x\not=0\text{,}\) for otherwise \(\vec y=B\vec x=0\text{.}\) We then have \(AB\vec x=A\vec y=0\) with \(\vec y\not=0\text{,}\) and so \(\det(AB)=0\text{,}\) which, once again gives</p>
 <div class="displaymath">
 \begin{equation*}
 \det(AB)=0=\det A\;\det B.
@@ -540,25 +548,25 @@ B=E_k E_{k-1}E_{k-2}\cdots E_2 E_1 A
 </div>
 </li>
 <li id="li-241">
-<p id="p-648">\(\det B\not=0\) and \(\det A\not=0\text{:}\) Once again, using <a class="xref" data-knowl="./knowl/InvertibilityEquivalence2.html" title="Theorem 3.4.21: Equivalent forms of invertibility">Theorem 3.4.21</a>,</p>
+<p id="p-636">\(\det B\not=0\) and \(\det A\not=0\text{:}\) Once again, using <a class="xref" data-knowl="./knowl/InvertibilityEquivalence2.html" title="Theorem 3.4.21: Equivalent forms of invertibility">Theorem 3.4.21</a>,</p>
 <div class="displaymath">
 \begin{equation*}
 A=F_1 F_2\cdots F_k \textrm{, a product of elementary matrices.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Using <a class="xref" data-knowl="./knowl/DeterminantsElementaryRowOperations.html" title="Theorem 3.4.16: Determinants and elementary row operations">Theorem 3.4.16</a> repeatedly,</p>
+<p class="continuation">Using <a class="xref" data-knowl="./knowl/DeterminantsElementaryRowOperations.html" title="Theorem 3.4.16: Determinants and elementary row operations">Theorem 3.4.16</a> repeatedly,</p>
 <div class="displaymath">
 \begin{equation*}
 \det A= \det F_1\;\det F_2\cdots\det F_k
 \end{equation*}
 </div>
-<p data-braille="continuation">and so</p>
+<p class="continuation">and so</p>
 <div class="displaymath">
 \begin{equation*}
 \det A\; \det B=\det F_1\;\det F_2\cdots\det F_k \det B
 \end{equation*}
 </div>
-<p data-braille="continuation">But also by using <a class="xref" data-knowl="./knowl/DeterminantsElementaryRowOperations.html" title="Theorem 3.4.16: Determinants and elementary row operations">Theorem 3.4.16</a> repeatedly,</p>
+<p class="continuation">But also by using <a class="xref" data-knowl="./knowl/DeterminantsElementaryRowOperations.html" title="Theorem 3.4.16: Determinants and elementary row operations">Theorem 3.4.16</a> repeatedly,</p>
 <div class="displaymath">
 \begin{align*}
 \det(AB)
@@ -572,69 +580,69 @@ A=F_1 F_2\cdots F_k \textrm{, a product of elementary matrices.}
 <article class="corollary theorem-like" id="corollary-3"><h6 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">3.4.23</span><span class="period">.</span><span class="space"> </span><span class="title">The determinant of the inverse of \(A\).</span>
 </h6>
-<p id="p-649">If \(A\) is an invertible matrix, then</p>
+<p id="p-637">If \(A\) is an invertible matrix, then</p>
 <div class="displaymath">
 \begin{equation*}
 \det A^{-1}=\frac 1{\det A}.
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-50"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-50"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-50"><article class="hiddenproof"><p id="p-650">Since \(A A^{-1}=I\text{,}\) we have \(\det A\;\det A^{-1}=\det I=1\text{.}\)</p></article></div>
-<p id="p-651">Notice how this reinforces the idea that an invertible matrix must have a nonzero determinant.</p></section><section class="subsection" id="subsection-50"><h3 class="heading hide-type">
+</div></article><article class="hiddenproof" id="proof-50"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-50"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-50"><article class="hiddenproof"><p id="p-638">Since \(A A^{-1}=I\text{,}\) we have \(\det A\;\det A^{-1}=\det I=1\text{.}\)</p></article></div>
+<p id="p-639">Notice how this reinforces the idea that an invertible matrix must have a nonzero determinant.</p></section><section class="subsection" id="subsection-50"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.11</span> <span class="title">The determinant of the transpose of \(A\)</span>
 </h3>
-<p id="p-652">As discussed in <a href="section-22.html#DeterminantElementaryMatrices" class="internal" title="Subsection 3.4.8: The determinant of elementary matrices">Subsection 3.4.8</a>, the determinants of the three types of elementary matrices can be evaluated easily. In two cases the matrices are symmetric, and in the third case it is triangular. This leads to an easy result:</p>
+<p id="p-640">As discussed in <a href="section-22.html#DeterminantElementaryMatrices" class="internal" title="Subsection 3.4.8: The determinant of elementary matrices">Subsection 3.4.8</a>, the determinants of the three types of elementary matrices can be evaluated easily. In two cases the matrices are symmetric, and in the third case it is triangular. This leads to an easy result:</p>
 <article class="lemma theorem-like" id="DeterminantElelmentaryTronspose"><h6 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">3.4.24</span><span class="period">.</span><span class="space"> </span><span class="title">The determinant of the transpose of an elementary matrix.</span>
 </h6>
-<p id="p-653">For any elementary matrix \(E\text{,}\)</p>
+<p id="p-641">For any elementary matrix \(E\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \det(E^T)=\det E
 \end{equation*}
-</div></article><p id="p-654">We now extend this result to all matrices.</p>
+</div></article><p id="p-642">We now extend this result to all matrices.</p>
 <article class="theorem theorem-like" id="theorem-39"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.25</span><span class="period">.</span><span class="space"> </span><span class="title">The determinant of the transpose of \(A\).</span>
 </h6>
-<div class="displaymath" id="p-655">
+<div class="displaymath" id="p-643">
 \begin{equation*}
 \det A = \det A^T
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-51"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-51"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-51"><article class="hiddenproof"><p id="p-656">If \(B\) is the reduced row echelon form of \(A\text{,}\) then</p>
+</div></article><article class="hiddenproof" id="proof-51"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-51"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-51"><article class="hiddenproof"><p id="p-644">If \(B\) is the reduced row echelon form of \(A\text{,}\) then</p>
 <div class="displaymath">
 \begin{equation*}
 B=E_k E_{k-1}\cdots E_2 E_1 A
 \end{equation*}
 </div>
-<p data-braille="continuation">and</p>
+<p class="continuation">and</p>
 <div class="displaymath">
 \begin{equation*}
 B^T=A^T E_1^T E_2^T\cdots E_{k-1}^T  E_k^T.
 \end{equation*}
 </div>
-<p data-braille="continuation">Hence</p>
+<p class="continuation">Hence</p>
 <div class="displaymath">
 \begin{equation*}
 \det B=\det E_k \det E_{k-1}\cdots \det E_2 \det E_1 \det A
 \end{equation*}
 </div>
-<p data-braille="continuation">and</p>
+<p class="continuation">and</p>
 <div class="displaymath">
 \begin{equation*}
 \det B^T=\det A^T \det E_1^T \det E_2^T\cdots \det E_{k-1}^T \det E_k^T.
 \end{equation*}
 </div>
-<p data-braille="continuation">There are two possibilities for \(B\text{:}\)</p>
+<p class="continuation">There are two possibilities for \(B\text{:}\)</p>
 <ul class="disc">
-<li id="li-242"><p id="p-657">When \(A\) is invertible, \(B=B^T=I\) and so \(\det B= \det B^T=1\text{.}\)</p></li>
-<li id="li-243"><p id="p-658">When \(A\) is singular, \(B\) has an all zero last row and \(B^T\) has an all zero last column. This implies \(\det B=\det B^T=0\)</p></li>
+<li id="li-242"><p id="p-645">When \(A\) is invertible, \(B=B^T=I\) and so \(\det B= \det B^T=1\text{.}\)</p></li>
+<li id="li-243"><p id="p-646">When \(A\) is singular, \(B\) has an all zero last row and \(B^T\) has an all zero last column. This implies \(\det B=\det B^T=0\)</p></li>
 </ul>
-<p data-braille="continuation">In either case we have \(\det B=\det B^T\text{,}\) and so we can equate the values given above to get</p>
+<p class="continuation">In either case we have \(\det B=\det B^T\text{,}\) and so we can equate the values given above to get</p>
 <div class="displaymath">
 \begin{equation*}
 \det E_k \cdots  \det E_1 \det A=
 \det A^T \det E_1^T \cdots \det E_k^T.
 \end{equation*}
 </div>
-<p data-braille="continuation">Using <a class="xref" data-knowl="./knowl/DeterminantElelmentaryTronspose.html" title="Lemma 3.4.24: The determinant of the transpose of an elementary matrix">Lemma 3.4.24</a>, we have \(\det E_j=\det E_j^T\) for \(j=1,2,\ldots,k.\) Hence \(\det A=\det A^T.\)</p></article></div></section></section></div></main>
+<p class="continuation">Using <a class="xref" data-knowl="./knowl/DeterminantElelmentaryTronspose.html" title="Lemma 3.4.24: The determinant of the transpose of an elementary matrix">Lemma 3.4.24</a>, we have \(\det E_j=\det E_j^T\) for \(j=1,2,\ldots,k.\) Hence \(\det A=\det A^T.\)</p></article></div></section></section></div></main>
 </div>
 </body>
 </html>

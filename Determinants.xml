@@ -162,16 +162,17 @@
        We focus on a particular element <m>a_{i,j}</m> of a square matrix <m>A</m>.
    </p>
     
-    <definition xml:id="MatrixMinorDefinition"><title>The <m>i,j</m> minor of a matrix <m>A</m></title>
+    <definition xml:id="MatrixMinorDefinition">
+    <title>The <m>i,j</m> minor of a matrix <m>A</m></title>
     <statement>
     <p>
     <m>M_{i,j}</m>, the
     <term> <m>i,j</m> minor</term> of a matrix <m>A</m> 
     is computed by deleting the row and column 
     containing <m>a_{i,j}</m> and evaluating the determinant of what remains.
-    <me>
-    \qquad\qquad\qquad\downarrow \text{ column } C_j \text{ deleted}\\
-    M_{i,j}=\det
+    <md>
+    <mrow>\downarrow\text{ column }C_j\text{ deleted}\ \quad\qquad\qquad</mrow>
+    <mrow>M_{i,j}=\det
     \left[\begin{array}{c|c|c}
     {}******\amp \amp *****\\
     {}******\amp \amp *****\\
@@ -181,8 +182,8 @@
     {}******\amp \amp *****\\
     {}******\amp \amp *****
     \end{array}\right]
-    \gets \text{ row } R_i \text{ deleted}
-    </me>
+    \gets \text{ row } R_i \text{ deleted}</mrow>
+    </md>
     </p>
     </statement>
     </definition>
@@ -590,25 +591,25 @@
         </mrow>
         </md>
         Finally, we compote the sums of the entries in each row and each column.
-        <me>
-        \begin{matrix}
-            \amp \textrm{Row sums} \\
-            \begin{bmatrix}
-                2 \amp 0 \amp -1 \amp -2 \\
-                -4 \amp 5 \amp -2 \amp 0 \\
-                0 \amp -4 \amp 2 \amp 1 \\
-                1 \amp -2 \amp 0 \amp 0
-            \end{bmatrix}
-            \amp
-            \begin{matrix} 
-                -1\\-1\\-1\\-1
-            \end{matrix}
-            \\
-            \begin{matrix}
-            \llap{\textrm{Column sums: }}-1\amp -1\amp-1\amp-1
-            \end{matrix}
-        \end{matrix}
-        </me>
+        <md>
+        <mrow>
+          \amp \textrm{Row sums} 
+        </mrow>
+        <mrow>
+         \begin{bmatrix}
+             2 \amp 0 \amp -1 \amp -2 \\
+             -4 \amp 5 \amp -2 \amp 0 \\
+             0 \amp -4 \amp 2 \amp 1 \\
+             1 \amp -2 \amp 0 \amp 0
+         \end{bmatrix}
+         \amp \quad
+         \begin{matrix} -1\\-1\\-1\\-1 \end{matrix}
+        </mrow>
+        <mrow>
+          \text{Column sums: }
+          \begin{matrix} -1\amp -1\amp-1\amp-1 \end{matrix}\quad
+        </mrow>
+        </md>
         </p>
         </example>
      
@@ -984,10 +985,10 @@
         We compute the determinant of <m>A</m> by cofactor expansion along the
         first row and the determinant of <m>B</m> by cofactor expansion along
         the second row. This means that 
-        <me>
-            \det A =\sum_{j=1}^n (-1)^{1+j} a_{1,j}M_{1,j}\\
-            \det B =\sum_{j=1}^n (-1)^{2+j} b_{2,j}M'_{2,j}
-        </me>
+        <md>
+            <mrow>\det A =\sum_{j=1}^n (-1)^{1+j} a_{1,j}M_{1,j}</mrow>
+            <mrow>\det B =\sum_{j=1}^n (-1)^{2+j} b_{2,j}M'_{2,j}</mrow>
+        </md>
         Since the first row of <m>A</m> is the second row of <m>B</m>, we have
         <m>a_{1,j}=b_{2,j}</m> for <m>j=1,2,\ldots,n</m>. In addition, deleting
         <m>R_1</m> and <m>C_j</m> from <m>A</m> yields exactly the same matrix
@@ -1016,10 +1017,10 @@
         <p>
         We compute the determinants by cofactor expansion  along the <m>i</m>-th row of <m>A</m> 
         and along the the <m>i+1</m>-st row of <m>B</m>.  This means that 
-        <me>
-            \det A =\sum_{j=1}^n (-1)^{i+j} a_{i,j}M_{i,j}\\
-            \det B =\sum_{j=1}^n (-1)^{i+1+j} b_{i+1,j}M'_{i+1,j}
-        </me>
+        <md>
+            <mrow>\det A =\sum_{j=1}^n (-1)^{i+j} a_{i,j}M_{i,j}</mrow>
+            <mrow>\det B =\sum_{j=1}^n (-1)^{i+1+j} b_{i+1,j}M'_{i+1,j}</mrow>
+        </md>
         We have
         <m>a_{i,j}=b_{{i+1},j}</m> for <m>j=1,2,\ldots,n</m>. In addition, deleting
         <m>R_i</m> and <m>C_j</m> from <m>A</m> yields exactly the same matrix
@@ -1112,7 +1113,7 @@
         If <m>A</m> is a square matrix of order <m>n</m> and <m>\lambda</m> is
         any real number, then
         <me>
-            \det \lambda A=\lambda^n A.
+            \det(\lambda A)=\lambda^n \det A.
         </me>
         </p>
         </statement>
@@ -1123,7 +1124,7 @@
         multiplies the determinant by <m>\lambda</m>, and so after the 
         <m>n</m> applications we have
         <me>
-            \det \lambda A=\lambda^n A.
+            \det(\lambda A)=\lambda^n \det A.
         </me>
         </p>
         </proof>
@@ -1313,6 +1314,8 @@
         whose elementary matrix is <m>E</m>, then
         <me>
             B=EA \textrm{ and }
+        </me>
+        <me>
             \det B= \det (EA) = \det E \det A.
         </me>
         </p>
@@ -1734,23 +1737,28 @@
         \end{bmatrix}.
     </me>
     Then 
-    <me>
-        \det A = -5\\
-        M=
-        \begin{bmatrix}
-        0\amp5\amp 5 \\ 2 \amp 1 \amp 0 \\ 1\amp -2\amp -5
-        \end{bmatrix}
-        \\
-        C=
-        \begin{bmatrix}
-        0\amp-5\amp 5 \\ -2 \amp 1 \amp 0 \\ 1\amp 2\amp -5
-        \end{bmatrix}
-        \\
-        \adj(A)=C^T=
-        \begin{bmatrix}
-        0\amp-2\amp1 \\ -5\amp1\amp 2\\ 5\amp0\amp-5
-        \end{bmatrix}
-    </me>
+    <md alignment="gather">
+        <mrow>
+          \det A = -5
+        </mrow>
+        <mrow>M=
+          \begin{bmatrix}
+            0\amp5\amp 5 \\ 2 \amp 1 \amp 0 \\ 1\amp -2\amp -5
+          \end{bmatrix}
+        </mrow>
+        <mrow>
+          C=
+          \begin{bmatrix}
+            0\amp-5\amp 5 \\ -2 \amp 1 \amp 0 \\ 1\amp 2\amp -5
+          \end{bmatrix}
+        </mrow>
+        <mrow>
+          \adj(A)=C^T=
+          \begin{bmatrix}
+            0\amp-2\amp1 \\ -5\amp1\amp 2\\ 5\amp0\amp-5
+          \end{bmatrix}
+        </mrow>
+    </md>
     and so
     <me>
         A^{-1}=-\frac 15
@@ -1994,52 +2002,51 @@
     <example><title>Application of Cramer's rule</title>
     <p>
     Consider the system of linear equations
-    <me>
-        x_1+x_2+x_3=2\\
-        x_1-x_2+x_3=0\\
-        2x_1-x_2+x_3=2
-    </me>
+    <md>
+        <mrow>x_1+x_2+x_3  \amp =2</mrow>
+        <mrow>x_1-x_2+x_3  \amp =0</mrow>
+        <mrow>2x_1-x_2+x_3 \amp =2</mrow>
+    </md>.
     We have
-    <me>
-        A=
-        \begin{bmatrix}
+    <md>
+        <mrow>
+          A \amp =
+          \begin{bmatrix}
             1 \amp 1\amp 1\\
             1 \amp -1 \amp 1 \\
             2 \amp -1 \amp 1
-        \end{bmatrix}
-        \qquad
-        \det A=2 \\
-        A_1=
-        \begin{bmatrix}
-            2 \amp 1\amp 1\\
-            0 \amp -1 \amp 1 \\
-            2 \amp -1 \amp 1
-        \end{bmatrix}
-        \qquad
-        \det A_1=4 \\
-        A_2=
-        \begin{bmatrix}
-            1 \amp 2\amp 1\\
-            1 \amp 0 \amp 1 \\
-            2 \amp 2 \amp 1
-        \end{bmatrix}
-        \qquad
-        \det A_2=2 \\
-        A_3=
-        \begin{bmatrix}
+          \end{bmatrix}
+           \amp \det A \amp =2\\
+         </mrow> 
+         <mrow>
+           A_1 \amp =
+           \begin{bmatrix}
+             2 \amp 1\amp 1\\
+             0 \amp -1 \amp 1 \\
+             2 \amp -1 \amp 1
+           \end{bmatrix}
+            \amp \det A_1 \amp =4 \\
+          </mrow> 
+          <mrow>A_2 \amp =
+            \begin{bmatrix}
+              1 \amp 2\amp 1\\
+              1 \amp 0 \amp 1 \\
+              2 \amp 2 \amp 1
+            \end{bmatrix} 
+           \amp \det A_2 \amp =2\\
+        </mrow>
+        <mrow>A_3 \amp =
+          \begin{bmatrix}
             1 \amp 1\amp 2\\
             1 \amp -1 \amp 0 \\
             2 \amp -1 \amp 2
-        \end{bmatrix}
-        \qquad
-        \det A_3=-2 
-    </me>
+          \end{bmatrix}
+         \amp \det A_3 \amp =-2 </mrow>
+    </md>
     and so
-    <me>
-        x_1=\frac42=2\\
-        x_2=\frac22=1\\
-        x_3=\frac{-2}2=-1
-    </me>
+      <m>x_1=\frac42  =2</m>,
+      <m>x_2=\frac22  =1</m>, and
+      <m>x_3=\frac{-2}2  =-1</m>.
     </p>
     </example>
 
@@ -2240,7 +2247,7 @@
         </exercise>
         <definition xml:id="PermutationSignDefinition">
             <notation>
-                <usage>\sgn{\sigma}</usage>
+                <usage><m>\sgn{\sigma}</m></usage>
                 <description>sign of a permutation</description>
               </notation>
             <statement>

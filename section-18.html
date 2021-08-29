@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:25-06:00       *-->
+<!--*       on 2021-08-29T14:14:19-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,36 +14,42 @@
 <title>Equivalent forms of Invertibility and Singularity of Matrices</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -56,8 +62,8 @@ MathJax.Hub.Config({
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
 \def\C{{\mathbb C}}
 \def\Q{{\mathbb Q}}
 \def\Z{{\mathbb Z}}
@@ -104,65 +110,65 @@ MathJax.Hub.Config({
 <li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
 <li class="link"><a href="LinearTransformations.html" data-scroll="LinearTransformations"><span class="codenumber">6</span> <span class="title">Linear transformations</span></a></li>
 <li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">7</span> <span class="title">Additional Topics</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-18"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.11</span> <span class="title">Equivalent forms of Invertibility and Singularity of Matrices</span>
 </h2>
-<p id="p-509">We have already defined  singular and nonsingular matrices in <a class="xref" data-knowl="./knowl/SingularMatrixDefinition.html" title="Definition 2.7.5: Matrix singularity">Definition 2.7.5</a> and the inverse of a matrix in <a class="xref" data-knowl="./knowl/InverseMatrixDefinition.html" title="Definition 2.7.1: The inverse of a matrix">Definition 2.7.1</a>. We now have a new goal: to show that a square matrix is invertible if and only if it is nonsingular. In fact we want to give several other conditions that are equivalent to being invertible. By this we mean that if any one of the conditions are true for a matrix \(A\text{,}\) then all them are true for that matrix \(A\text{,}\) and we then call \(A\) <dfn class="terminology">nonsingular</dfn> or <dfn class="terminology">invertible</dfn>.  Equivalently, if any one of the conditions are false for a matrix \(A\text{,}\) then all of them are false for that matrix \(A\text{.}\) In this case the matrix \(A\) is called <dfn class="terminology">singular</dfn>.</p>
-<p id="p-510">The method for showing statements to be equivalent is a little different.  Suppose we have (as will be our case) six statements numbered \((1), (2), \ldots,(6)\) that we wish to show equivalent. We start by showing that if \((1)\) is true, then it follows that \((2)\) is true. We denote this by \((1)\Rightarrow(2) \text{.}\)  We continue with \((2)\Rightarrow(3), (3)\Rightarrow(4), (4)\Rightarrow(5),
+<p id="p-497">We have already defined  singular and nonsingular matrices in <a class="xref" data-knowl="./knowl/SingularMatrixDefinition.html" title="Definition 2.7.5: Matrix singularity">Definition 2.7.5</a> and the inverse of a matrix in <a class="xref" data-knowl="./knowl/InverseMatrixDefinition.html" title="Definition 2.7.1: The inverse of a matrix">Definition 2.7.1</a>. We now have a new goal: to show that a square matrix is invertible if and only if it is nonsingular. In fact we want to give several other conditions that are equivalent to being invertible. By this we mean that if any one of the conditions are true for a matrix \(A\text{,}\) then all them are true for that matrix \(A\text{,}\) and we then call \(A\) <dfn class="terminology">nonsingular</dfn> or <dfn class="terminology">invertible</dfn>.  Equivalently, if any one of the conditions are false for a matrix \(A\text{,}\) then all of them are false for that matrix \(A\text{.}\) In this case the matrix \(A\) is called <dfn class="terminology">singular</dfn>.</p>
+<p id="p-498">The method for showing statements to be equivalent is a little different.  Suppose we have (as will be our case) six statements numbered \((1), (2), \ldots,(6)\) that we wish to show equivalent. We start by showing that if \((1)\) is true, then it follows that \((2)\) is true. We denote this by \((1)\Rightarrow(2) \text{.}\)  We continue with \((2)\Rightarrow(3), (3)\Rightarrow(4), (4)\Rightarrow(5),
 (5)\Rightarrow(6), (6)\Rightarrow(1)\text{.}\)  Once this has been done, we may visualize our result:</p>
 <figure class="figure figure-like" id="figure-11"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><div class="asymptote-box" style="padding-top: 86.0213226655274%"><iframe src="images/image-11.html" class="asymptote"></iframe></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.11.1<span class="period">.</span></span><span class="space"> </span>A cycle of implications</figcaption></figure><p id="p-511">and so once one statement becomes true, all of them are true.	This also means that once one statement is false then all of them are false (think about the logic!).</p>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.11.1<span class="period">.</span></span><span class="space"> </span>A cycle of implications</figcaption></figure><p id="p-499">and so once one statement becomes true, all of them are true.	This also means that once one statement is false then all of them are false (think about the logic!).</p>
 <article class="theorem theorem-like" id="InvertibilityEquivalence"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.11.2</span><span class="period">.</span><span class="space"> </span><span class="title">Equivalent Forms of Invertibility.</span>
 </h6>
-<p id="p-512">Suppose that \(A\) is an \(n\times n\) square matrix.  Then the following statements are equivalent:</p>
+<p id="p-500">Suppose that \(A\) is an \(n\times n\) square matrix.  Then the following statements are equivalent:</p>
 <ol class="decimal">
-<li id="li-218"><p id="p-513">\(A\) is invertible</p></li>
-<li id="li-219"><p id="p-514">\(A\vec x=0\) if and only if \(\vec x=0\)</p></li>
-<li id="li-220"><p id="p-515">The reduced row echelon form of \(A\) is \(I_n\)</p></li>
-<li id="li-221"><p id="p-516">\(A\) is a product of elementary matrices</p></li>
-<li id="li-222"><p id="p-517">\(A\vec x=\vec b\) is consistent for any \(\vec b\)</p></li>
-<li id="li-223"><p id="p-518">\(A\vec x=\vec b\) has exactly one solution for any \(\vec b\)</p></li>
-</ol></article><article class="hiddenproof" id="proof-32"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-32"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-32"><article class="hiddenproof"><p id="p-519">The logic of the proof is to show that</p>
-<p id="p-520">(1) true implies (2) true (which we write as (1) \(\Rightarrow \)(2)),</p>
-<p id="p-521">(2) true implies (3) true (which we write as (2) \(\Rightarrow\) (3)),</p>
-<p id="p-522">(3) true implies (4) true (which we write as (3) \(\Rightarrow\) (4)),</p>
-<p id="p-523">(4) true implies (5) true (which we write as (4) \(\Rightarrow\) (5)),</p>
-<p id="p-524">(5) true implies (6) true (which we write as (5) \(\Rightarrow\) (6)), and</p>
-<p id="p-525">(6) true implies (1) true (which we write as (6) \(\Rightarrow\) (1))</p>
-<p id="p-526">We now proceed to prove the implications one at a time.</p>
-<p id="p-527">(1) \(\Rightarrow\) (2): Assuming (1) means that \(A\) is invertible.  If \(x=\vec0\text{,}\) then \(A\vec x=A\vec0=\vec0\text{.}\)  Now suppose that \(A\vec x=\vec0.\)  Then, since \(A^{-1}\) exists, we may evaluate \(A^{-1}A\vec x\) in two ways:</p>
+<li id="li-218"><p id="p-501">\(A\) is invertible</p></li>
+<li id="li-219"><p id="p-502">\(A\vec x=0\) if and only if \(\vec x=0\)</p></li>
+<li id="li-220"><p id="p-503">The reduced row echelon form of \(A\) is \(I_n\)</p></li>
+<li id="li-221"><p id="p-504">\(A\) is a product of elementary matrices</p></li>
+<li id="li-222"><p id="p-505">\(A\vec x=\vec b\) is consistent for any \(\vec b\)</p></li>
+<li id="li-223"><p id="p-506">\(A\vec x=\vec b\) has exactly one solution for any \(\vec b\)</p></li>
+</ol></article><article class="hiddenproof" id="proof-32"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-32"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-32"><article class="hiddenproof"><p id="p-507">The logic of the proof is to show that</p>
+<p id="p-508">(1) true implies (2) true (which we write as (1) \(\Rightarrow \)(2)),</p>
+<p id="p-509">(2) true implies (3) true (which we write as (2) \(\Rightarrow\) (3)),</p>
+<p id="p-510">(3) true implies (4) true (which we write as (3) \(\Rightarrow\) (4)),</p>
+<p id="p-511">(4) true implies (5) true (which we write as (4) \(\Rightarrow\) (5)),</p>
+<p id="p-512">(5) true implies (6) true (which we write as (5) \(\Rightarrow\) (6)), and</p>
+<p id="p-513">(6) true implies (1) true (which we write as (6) \(\Rightarrow\) (1))</p>
+<p id="p-514">We now proceed to prove the implications one at a time.</p>
+<p id="p-515">(1) \(\Rightarrow\) (2): Assuming (1) means that \(A\) is invertible.  If \(x=\vec0\text{,}\) then \(A\vec x=A\vec0=\vec0\text{.}\)  Now suppose that \(A\vec x=\vec0.\)  Then, since \(A^{-1}\) exists, we may evaluate \(A^{-1}A\vec x\) in two ways:</p>
 <div class="displaymath">
 \begin{equation*}
 A^{-1}(A\vec x) = A^{-1}\vec0=\vec0\\ (A^{-1}A)\vec x
 =I\vec x=\vec x 
 \end{equation*}
 </div>
-<p data-braille="continuation">Equating the two evaluations, we get \(\vec x=\vec0.\)</p>
-<p id="p-528">(2) \(\Rightarrow\) (3): Consider the augmented matrix for the system of linear equations \(A\vec x=\vec0.\) If the reduced row echelon from of \(A\) is not \(I_n,\) then the form for augmented matrix has a free variable; this may be assigned a nonzero value, resulting in a nonzero solution to \(A\vec x=\vec0.\)</p>
-<p id="p-529">(3) \(\Rightarrow\) (4): Suppose \(A\) is reduced to \(I_n\) by a series of elementary row operations whose corresponding elementary matrices are \(E_1,E_2,\dots,E_k\text{.}\) Then \(E_kE_{k-1}\cdots E_2E_1A=I_n\text{,}\) and</p>
+<p class="continuation">Equating the two evaluations, we get \(\vec x=\vec0.\)</p>
+<p id="p-516">(2) \(\Rightarrow\) (3): Consider the augmented matrix for the system of linear equations \(A\vec x=\vec0.\) If the reduced row echelon from of \(A\) is not \(I_n,\) then the form for augmented matrix has a free variable; this may be assigned a nonzero value, resulting in a nonzero solution to \(A\vec x=\vec0.\)</p>
+<p id="p-517">(3) \(\Rightarrow\) (4): Suppose \(A\) is reduced to \(I_n\) by a series of elementary row operations whose corresponding elementary matrices are \(E_1,E_2,\dots,E_k\text{.}\) Then \(E_kE_{k-1}\cdots E_2E_1A=I_n\text{,}\) and</p>
 <div class="displaymath">
 \begin{equation*}
 A=E_1^{-1}E_2^{-1}\cdots E_{k-1}^{-1}E_k^{-1}=F_1F_2\cdots
 F_{k-1}F_k.
 \end{equation*}
 </div>
-<p id="p-530">(4) \(\Rightarrow\) (5): Suppose we want to solve \(A\vec x=\vec b\) where \(\vec b\) is any vector and \(A=F_1F_2\cdots F_{k-1}F_k.\) Then we have</p>
+<p id="p-518">(4) \(\Rightarrow\) (5): Suppose we want to solve \(A\vec x=\vec b\) where \(\vec b\) is any vector and \(A=F_1F_2\cdots F_{k-1}F_k.\) Then we have</p>
 <div class="displaymath">
 \begin{equation*}
 F_1F_2\cdots F_{k-1}F_k \vec x=\vec b,
 \end{equation*}
 </div>
-<p data-braille="continuation">and</p>
+<p class="continuation">and</p>
 <div class="displaymath">
 \begin{equation*}
 \vec x=F_k^{-1}F_{k-1}^{-1}\cdots
 F_2^{-1}F_1^{-1} \vec b 
 \end{equation*}
 </div>
-<p data-braille="continuation">which then satisfies</p>
+<p class="continuation">which then satisfies</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{split} A\vec x \amp =(F_1F_2\cdots
@@ -171,8 +177,8 @@ b)\\ \amp=(F_1F_2\cdots F_{k-1}F_k)(F_k^{-1}F_{k-1}^{-1}\cdots
 F_2^{-1}F_1^{-1})\vec b \\ \amp=\vec b \end{split} 
 \end{equation*}
 </div>
-<p data-braille="continuation">and so gives a solution to \(A\vec x=\vec b.\) Hence \(A\vec x=\vec b\) is consistent.</p>
-<p id="p-531">(5) \(\Rightarrow\) (6): We take the following values for \(\vec b_1,\vec b_2,\dots,\vec b_n\text{:}\)</p>
+<p class="continuation">and so gives a solution to \(A\vec x=\vec b.\) Hence \(A\vec x=\vec b\) is consistent.</p>
+<p id="p-519">(5) \(\Rightarrow\) (6): We take the following values for \(\vec b_1,\vec b_2,\dots,\vec b_n\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \vec b_1=
@@ -195,8 +201,8 @@ F_2^{-1}F_1^{-1})\vec b \\ \amp=\vec b \end{split}
 \end{bmatrix} \text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Then \(A\vec x=\vec b_1\) has a solution \(\vec c_1\text{,}\) \(A\vec x=\vec b_2\) has a solution \(\vec c_2\text{,}\) \(A\vec x=\vec b_3\) has a solution \(\vec c_3, \dots,\) \(A\vec x=\vec b_n\) has a solution \(\vec c_n\text{.}\)</p>
-<p id="p-532">Now define the matrix \(C\) as the one with \(\vec c_1,\vec c_2,\dots,\vec c_n\) as columns, that is,</p>
+<p class="continuation">Then \(A\vec x=\vec b_1\) has a solution \(\vec c_1\text{,}\) \(A\vec x=\vec b_2\) has a solution \(\vec c_2\text{,}\) \(A\vec x=\vec b_3\) has a solution \(\vec c_3, \dots,\) \(A\vec x=\vec b_n\) has a solution \(\vec c_n\text{.}\)</p>
+<p id="p-520">Now define the matrix \(C\) as the one with \(\vec c_1,\vec c_2,\dots,\vec c_n\) as columns, that is,</p>
 <div class="displaymath">
 \begin{equation*}
 C=
@@ -205,11 +211,11 @@ C=
 \end{bmatrix}.  
 \end{equation*}
 </div>
-<p data-braille="continuation">Then \(AC=I\text{,}\) and so \(C=A^{-1}\) and \(CA=I.\) Now if \(A\vec x=\vec b\) is consistent, then \(\vec
+<p class="continuation">Then \(AC=I\text{,}\) and so \(C=A^{-1}\) and \(CA=I.\) Now if \(A\vec x=\vec b\) is consistent, then \(\vec
 x=I\vec x=CA\vec x=C\vec b\) and so \(\vec
 x=C\vec b\) is the one and only solution to \(A\vec
 x=\vec b.\)</p>
-<p id="p-533">(6) \(\Rightarrow\) (1): Use the vectors \(\vec b_1,
+<p id="p-521">(6) \(\Rightarrow\) (1): Use the vectors \(\vec b_1,
 \vec b_2,\dots,\vec b_n\) given just above. In each case there is exactly one vector \(\vec c_k\) which is a solution to the equation \(A\vec x=\vec b_k\text{.}\) Let \(C\) be the matrix with \(\vec c_1,\dots,\vec
 c_n\) as columns. This matrix satisfies \(AC=I\) which makes \(C=A^{-1}\) and so \(A\) is invertible.</p></article></div></section></div></main>
 </div>

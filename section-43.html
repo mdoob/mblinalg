@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:34-06:00       *-->
+<!--*       on 2021-08-29T14:14:29-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,36 +14,42 @@
 <title>Matrix multiplication and linear transformations</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -56,8 +62,8 @@ MathJax.Hub.Config({
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
 \def\C{{\mathbb C}}
 \def\Q{{\mathbb Q}}
 \def\Z{{\mathbb Z}}
@@ -104,27 +110,27 @@ MathJax.Hub.Config({
 <li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
 <li class="link"><a href="LinearTransformations.html" data-scroll="LinearTransformations"><span class="codenumber">6</span> <span class="title">Linear transformations</span></a></li>
 <li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">7</span> <span class="title">Additional Topics</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-43"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">6.4</span> <span class="title">Matrix multiplication and linear transformations</span>
 </h2>
-<section class="introduction" id="introduction-20"><p id="p-1267">If we are given an \(n\times m\) matrix \(A\text{,}\) we may define \(L(\vec x)=A\vec x\) and, as we saw in <a href="LinearTransformationIntroduction.html#LinearTransformationExamples" class="internal" title="Subsection 6.3.1: Examples of linear transformations">Subsection 6.3.1</a>, \(L\colon\R^m\to\R^n\) is then a linear transformation. We denote this transformation by \(L_A\text{.}\)</p>
-<p id="p-1268">Now suppose we have two linear transformations \(L_1\colon\R^m\to\R^n\) and \(L_2\colon\R^n\to\R^s\text{.}\) We then define a new linear transformation called the <dfn class="terminology">composition of \(L_1\) and \(L_2\)</dfn> (and denoted \(L_2\circ L_1\)) in the following way: \(L_2\circ L_1\colon\R^m\to\R^s\) and</p>
+<section class="introduction" id="introduction-20"><p id="p-1251">If we are given an \(n\times m\) matrix \(A\text{,}\) we may define \(L(\vec x)=A\vec x\) and, as we saw in <a href="LinearTransformationIntroduction.html#LinearTransformationExamples" class="internal" title="Subsection 6.3.1: Examples of linear transformations">Subsection 6.3.1</a>, \(L\colon\R^m\to\R^n\) is then a linear transformation. We denote this transformation by \(L_A\text{.}\)</p>
+<p id="p-1252">Now suppose we have two linear transformations \(L_1\colon\R^m\to\R^n\) and \(L_2\colon\R^n\to\R^s\text{.}\) We then define a new linear transformation called the <dfn class="terminology">composition of \(L_1\) and \(L_2\)</dfn> (and denoted \(L_2\circ L_1\)) in the following way: \(L_2\circ L_1\colon\R^m\to\R^s\) and</p>
 <div class="displaymath">
 \begin{equation*}
 (L_2\circ L_1)(\vec x)=L_2(L_1(\vec x))
 \end{equation*}
 </div>
-<p data-braille="continuation">This means that we start with a vector \(\vec x\) in \(\R^m\) and compute \(L_1(\vec x)\text{.}\) This vector is in \(\R^n\text{,}\) which is exactly right if we want to evaluate \(L_2\text{.}\) Hence \(L_2(L_1(\vec x))\) not only makes sense, but upon evaluation we have a vector in \(\R^s\text{.}\)</p>
-<p id="p-1269">We can visualize the composition of two functions as:</p>
+<p class="continuation">This means that we start with a vector \(\vec x\) in \(\R^m\) and compute \(L_1(\vec x)\text{.}\) This vector is in \(\R^n\text{,}\) which is exactly right if we want to evaluate \(L_2\text{.}\) Hence \(L_2(L_1(\vec x))\) not only makes sense, but upon evaluation we have a vector in \(\R^s\text{.}\)</p>
+<p id="p-1253">We can visualize the composition of two functions as:</p>
 <figure class="figure figure-like" id="figure-74"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><div class="asymptote-box" style="padding-top: 63.2616729088639%"><iframe src="images/image-76.html" class="asymptote"></iframe></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.4.1<span class="period">.</span></span><span class="space"> </span>The composition of two linear transformations \(L_1\) and \(L_2\)</figcaption></figure><p id="p-1270">The vector \(\vec x\) is in \(\R^m\text{;}\) following the arrow labelled with \(L_1\) gets us to \(L_1(\vec x)\) in \(\R^m\text{;}\) following the next arrow labelled with \(L_2\) gets us to gets us to \(L_2(L_1(\vec x))\) in \(\R^s\text{.}\) The long arrow corresponds to \(L_2\circ L_1\text{:}\) it goes directly from \(\vec x\) to the same vector in \(\R^s.\)</p>
-<p id="p-1271">Next, we wish to see that this composition is itself linear.</p>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.4.1<span class="period">.</span></span><span class="space"> </span>The composition of two linear transformations \(L_1\) and \(L_2\)</figcaption></figure><p id="p-1254">The vector \(\vec x\) is in \(\R^m\text{;}\) following the arrow labelled with \(L_1\) gets us to \(L_1(\vec x)\) in \(\R^m\text{;}\) following the next arrow labelled with \(L_2\) gets us to gets us to \(L_2(L_1(\vec x))\) in \(\R^s\text{.}\) The long arrow corresponds to \(L_2\circ L_1\text{:}\) it goes directly from \(\vec x\) to the same vector in \(\R^s.\)</p>
+<p id="p-1255">Next, we wish to see that this composition is itself linear.</p>
 <article class="theorem theorem-like" id="theorem-90"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">The composition of two linear transformations is linear.</span>
 </h6>
-<p id="p-1272">Let \(L_1\colon\R^m\to\R^n\) and \(L_2\colon\R^n\to\R^s\) be two linear transformations, and let \(L_3=L_2\circ L_1\text{.}\) Then \(L_3\colon\R^m\to\R^s\) is itself linear.</p></article><article class="hiddenproof" id="proof-111"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-111"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-111"><article class="hiddenproof"><p id="p-1273">For any \(\vec x\) in \(\R^m\text{,}\) we have \(L_3(\vec x)=(L_2\circ L_1)(\vec x)=L_2(L_1(\vec x))\text{,}\) and so we have \(L_3\colon\R^m\to\R^s\text{.}\)</p>
+<p id="p-1256">Let \(L_1\colon\R^m\to\R^n\) and \(L_2\colon\R^n\to\R^s\) be two linear transformations, and let \(L_3=L_2\circ L_1\text{.}\) Then \(L_3\colon\R^m\to\R^s\) is itself linear.</p></article><article class="hiddenproof" id="proof-111"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-111"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-111"><article class="hiddenproof"><p id="p-1257">For any \(\vec x\) in \(\R^m\text{,}\) we have \(L_3(\vec x)=(L_2\circ L_1)(\vec x)=L_2(L_1(\vec x))\text{,}\) and so we have \(L_3\colon\R^m\to\R^s\text{.}\)</p>
 <div class="displaymath">
 \begin{align*}
 L_3(\vec x + \vec y)
@@ -147,25 +153,24 @@ L_3(r\vec x)
 \amp =rL_3(\vec x)\text{.}
 \end{align*}
 </div>
-<p data-braille="continuation">Hence \(L_3=L_2\circ L_1\) is linear.</p></article></div>
-<article class="example example-like" id="LinearTransformationComposition"><h6 class="heading">
+<p class="continuation">Hence \(L_3=L_2\circ L_1\) is linear.</p></article></div>
+<article class="example example-like" id="LinearTransformationComposition"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-LinearTransformationComposition"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.4.3</span><span class="period">.</span>
-</h6>
-<p id="p-1274">Consider the linear transformations \(T_1\colon \R^3\to \R^2\) and \(T_2\colon \R^2\to \R^3\) given by</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-LinearTransformationComposition"><article class="example example-like"><p id="p-1258">Consider the linear transformations \(T_1\colon \R^3\to \R^2\) and \(T_2\colon \R^2\to \R^3\) given by</p>
 <div class="displaymath">
 \begin{equation*}
 T_1((x,y,z))=(x+y,y+z)\\
 T_2((x,y))=(x+y,2x+y,x+2y)\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">First we observe that</p>
+<p class="continuation">First we observe that</p>
 <div class="displaymath">
 \begin{equation*}
 T_1\circ T_2: \R^2\to \R^2\\
 T_2\circ T_1: \R^3\to \R^3\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Then the computation:</p>
+<p class="continuation">Then the computation:</p>
 <div class="displaymath">
 \begin{align*}
 (T_1\circ T_2)(x,y)\amp =T_1(T_2((x,y)))\\
@@ -179,34 +184,34 @@ T_2\circ T_1: \R^3\to \R^3\text{.}
 \amp=T_2((x+y,y+z))\\
 \amp=(x+2y+z, 2x+3y+z, x+3y+2z)\text{.}
 \end{align*}
-</div></article><p id="p-1275">Next we note that composition of linear transformations and matrix multiplication are closely related:</p>
+</div></article></div>
+<p id="p-1259">Next we note that composition of linear transformations and matrix multiplication are closely related:</p>
 <article class="theorem theorem-like" id="CompositionAndMatrixMulitplication"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Composition and matrix multiplication.</span>
 </h6>
-<p id="p-1276">Let \(A\) be an \(n\times m\) matrix and \(B\) an \(s\times n\) matrix. Also let \(L_A\) and \(L_B\) be the linear transformations defined by \(L_A(\vec x)=A\vec x\) and \(L_B(\vec x)=B\vec x\text{.}\) Then</p>
+<p id="p-1260">Let \(A\) be an \(n\times m\) matrix and \(B\) an \(s\times n\) matrix. Also let \(L_A\) and \(L_B\) be the linear transformations defined by \(L_A(\vec x)=A\vec x\) and \(L_B(\vec x)=B\vec x\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
 L_{BA}=L_B\circ L_A
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-112"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-112"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-112"><article class="hiddenproof"><p id="p-1277">First note that \(L_A\colon\R^m\to\R^n\) and \(L_B:\R^n\to\R^s\text{,}\) and so \(L_B\circ L_A\colon\R^m\to\R^s\) is properly defined. In addition, note that \(BA\) is an \(s\times m\) matrix, and so \(L_{BA}\colon\R^m\to\R^s\) also makes sense. Finally note that for any \(\vec x\) in \(\R^m\text{,}\) we have</p>
+</div></article><article class="hiddenproof" id="proof-112"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-112"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-112"><article class="hiddenproof"><p id="p-1261">First note that \(L_A\colon\R^m\to\R^n\) and \(L_B:\R^n\to\R^s\text{,}\) and so \(L_B\circ L_A\colon\R^m\to\R^s\) is properly defined. In addition, note that \(BA\) is an \(s\times m\) matrix, and so \(L_{BA}\colon\R^m\to\R^s\) also makes sense. Finally note that for any \(\vec x\) in \(\R^m\text{,}\) we have</p>
 <div class="displaymath">
 \begin{equation*}
 (L_B\circ L_A)\vec x=L_B(L_A(\vec x))=L_B(A\vec x)
 =BA\vec x=L_{BA}(\vec x)
 \end{equation*}
 </div>
-<p data-braille="continuation">Hence \(L_{BA}=L_B\circ L_A\text{.}\)</p></article></div>
-<article class="example example-like" id="example-72"><h6 class="heading">
+<p class="continuation">Hence \(L_{BA}=L_B\circ L_A\text{.}\)</p></article></div>
+<article class="example example-like" id="example-73"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-73"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.4.5</span><span class="period">.</span>
-</h6>
-<p id="p-1278">We continue with <a class="xref" data-knowl="./knowl/LinearTransformationComposition.html" title="Example 6.4.3">Example 6.4.3</a>:</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-73"><article class="example example-like"><p id="p-1262">We continue with <a class="xref" data-knowl="./knowl/LinearTransformationComposition.html" title="Example 6.4.3">Example 6.4.3</a>:</p>
 <div class="displaymath">
 \begin{equation*}
 T_1((x,y,z))=(x+y,y+z)\\
 T_2((x,y))=(x+y,2x+y,x+2y)\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Then</p>
+<p class="continuation">Then</p>
 <div class="displaymath">
 \begin{equation*}
 A_{T_1}
@@ -216,7 +221,7 @@ A_{T_2} = \begin{bmatrix} T_2(\vec e_1)\amp T_2(\vec e_2)\end{bmatrix}
 = \begin{bmatrix}1\amp1\\ 2\amp1\\ 1\amp2\end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">From <a class="xref" data-knowl="./knowl/CompositionAndMatrixMulitplication.html" title="Theorem 6.4.4: Composition and matrix multiplication">Theorem 6.4.4</a>,</p>
+<p class="continuation">From <a class="xref" data-knowl="./knowl/CompositionAndMatrixMulitplication.html" title="Theorem 6.4.4: Composition and matrix multiplication">Theorem 6.4.4</a>,</p>
 <div class="displaymath">
 \begin{equation*}
 A_{T_1\circ T_2} = A_{T_1}A_{T_2}=
@@ -230,7 +235,7 @@ A_{T_2\circ T_1} = A_{T_2}A_{T_1}
 = \begin{bmatrix} 1\amp2\amp1\\ 2\amp3\amp1\\1\amp3\amp2 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">It then follows that</p>
+<p class="continuation">It then follows that</p>
 <div class="displaymath">
 \begin{equation*}
 (T_1\circ T_2)(x,y)
@@ -245,40 +250,40 @@ A_{T_2\circ T_1} = A_{T_2}A_{T_1}
 = \begin{bmatrix} x+2y+z\\2x+3y+z\\x+3y+2z\end{bmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">and so</p>
+<p class="continuation">and so</p>
 <div class="displaymath">
 \begin{equation*}
 (T_1\circ T_2)(x,y)=( 3x+2y,3x+3y)\\
 (T_2\circ T_1)(x,y)=(x+2y+z,2x+3y+z,x+3y+2z) \text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Compare this result with <a class="xref" data-knowl="./knowl/LinearTransformationComposition.html" title="Example 6.4.3">Example 6.4.3</a>.</p></article><p id="p-1279">This example shows the power and importance of <a class="xref" data-knowl="./knowl/CompositionAndMatrixMulitplication.html" title="Theorem 6.4.4: Composition and matrix multiplication">Theorem 6.4.4</a>. The more difficult problem of computing the composition of two linear transformations is reduced to the much easier one of multiplying their respective matrix representations.</p></section><section class="subsection" id="subsection-95"><h3 class="heading hide-type">
+<p class="continuation">Compare this result with <a class="xref" data-knowl="./knowl/LinearTransformationComposition.html" title="Example 6.4.3">Example 6.4.3</a>.</p></article></div>
+<p id="p-1263">This example shows the power and importance of <a class="xref" data-knowl="./knowl/CompositionAndMatrixMulitplication.html" title="Theorem 6.4.4: Composition and matrix multiplication">Theorem 6.4.4</a>. The more difficult problem of computing the composition of two linear transformations is reduced to the much easier one of multiplying their respective matrix representations.</p></section><section class="subsection" id="subsection-95"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.4.1</span> <span class="title">Linear Operators</span>
 </h3>
-<p id="p-1280">A <em class="emphasis">linear operator</em> is a linear transformation of the form</p>
+<p id="p-1264">A <em class="emphasis">linear operator</em> is a linear transformation of the form</p>
 <div class="displaymath">
 \begin{equation*}
 L\colon \R^n\to\R^n\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">that is, a linear transformation with \(m=n\text{.}\) In this case the matrix \(A\) that represents \(L\) will be square. Notice that the composition of two linear operators is also a linear operator.</p>
-<p id="p-1281">If \(L\) is a linear operator, then the composition \(L\circ L\) is defined, and it is denoted \(L^2\text{.}\) Similarly, \(L^3=L \circ L \circ L\text{,}\) etc.</p>
+<p class="continuation">that is, a linear transformation with \(m=n\text{.}\) In this case the matrix \(A\) that represents \(L\) will be square. Notice that the composition of two linear operators is also a linear operator.</p>
+<p id="p-1265">If \(L\) is a linear operator, then the composition \(L\circ L\) is defined, and it is denoted \(L^2\text{.}\) Similarly, \(L^3=L \circ L \circ L\text{,}\) etc.</p>
 <article class="exercise exercise-like" id="exercise-46"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-46"><h6 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.4.6</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-46"><article class="exercise exercise-like"><p id="p-1282">Let \(L\) be a linear operator with matrix representation \(A\text{.}\) Then</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-46"><article class="exercise exercise-like"><p id="p-1266">Let \(L\) be a linear operator with matrix representation \(A\text{.}\) Then</p>
 <ul class="disc">
-<li id="li-408">The matrix representation of \(L^2\) is \(A^2\text{.}\)</li>
-<li id="li-409">The matrix representation of \(L^n\) is \(A^n\) for \(n=1,2,\ldots\text{.}\)</li>
+<li id="li-408"><p id="p-derived-li-408">The matrix representation of \(L^2\) is \(A^2\text{.}\)</p></li>
+<li id="li-409"><p id="p-derived-li-409">The matrix representation of \(L^n\) is \(A^n\) for \(n=1,2,\ldots\text{.}\)</p></li>
 </ul>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-38" id="solution-38"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-38"><div class="solution solution-like"><p id="p-1283">This is an easy application of <a class="xref" data-knowl="./knowl/CompositionAndMatrixMulitplication.html" title="Theorem 6.4.4: Composition and matrix multiplication">Theorem 6.4.4</a>.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-38" id="solution-38"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-38"><div class="solution solution-like"><p id="p-1267">This is an easy application of <a class="xref" data-knowl="./knowl/CompositionAndMatrixMulitplication.html" title="Theorem 6.4.4: Composition and matrix multiplication">Theorem 6.4.4</a>.</p></div></div>
 </div></article></div>
-<p id="p-1284">All of the examples in <a class="xref" data-knowl="./knowl/LinearTransformationsExamplesList.html" title="List 6.3.1: Examples of linear transformations in \(\R^2\)">List 6.3.1</a> are linear operators. The following examples consider their compositions.</p>
-<article class="example example-like" id="example-73"><h6 class="heading">
+<p id="p-1268">All of the examples in <a class="xref" data-knowl="./knowl/LinearTransformationsExamplesList.html" title="List 6.3.1: Examples of linear transformations in \(\R^2\)">List 6.3.1</a> are linear operators. The following examples consider their compositions.</p>
+<article class="example example-like" id="example-74"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-74"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">Composition of linear operators.</span>
-</h6>
-<ul id="p-1285" class="disc">
-<li id="li-410">Let \(L_1\) be a rotation around the origin counterclockwise by an angle \(\phi\) and \(L_2\) be a rotation by an angle \(\theta\text{.}\) This means<div class="displaymath">
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-74"><article class="example example-like"><ul id="p-1269" class="disc">
+<li id="li-410"><p id="p-derived-li-410">Let \(L_1\) be a rotation around the origin counterclockwise by an angle \(\phi\) and \(L_2\) be a rotation by an angle \(\theta\text{.}\) This means<div class="displaymath">
 \begin{equation*}
 A_{L_1}=
 \begin{bmatrix}
@@ -314,16 +319,16 @@ A_{L_1\circ L_2}=
 \cos(\theta+\phi) = \cos\theta \cos\phi-\sin\theta\sin\phi\\
 \sin(\theta+\phi) = \cos\theta\sin\phi+\sin\theta\cos\phi\text{.}
 \end{equation*}
-</div>This might be the world's shortest proof of the sum formulas for the sine and cosine functions.</li>
-<li id="li-411">Let \(L\) be a reflection by the line \(y=x\text{,}\) and consider \(L^2\text{.}\) Then<div class="displaymath">
+</div>This might be the world's shortest proof of the sum formulas for the sine and cosine functions.</p></li>
+<li id="li-411"><p id="p-derived-li-411">Let \(L\) be a reflection by the line \(y=x\text{,}\) and consider \(L^2\text{.}\) Then<div class="displaymath">
 \begin{equation*}
 A_{L^2}
 =(A_L)^2
 = \left(\begin{bmatrix} 0\amp1\\1\amp0 \end{bmatrix}\right)^2
 =I\text{,}
 \end{equation*}
-</div>and so \(L^2\) is the identity transformation. This is not surprising: the mirror image of a mirror image is just the original image. This can also be written as \(A=A^{-1}\text{.}\) A matrix satisfying this equation are called an <dfn class="terminology">involution</dfn>.</li>
-<li id="li-412">Let \(L\) be the projection onto the line \(y=x\text{,}\) and consider \(L^2\text{.}\) Then<div class="displaymath">
+</div>and so \(L^2\) is the identity transformation. This is not surprising: the mirror image of a mirror image is just the original image. This can also be written as \(A=A^{-1}\text{.}\) A matrix satisfying this equation are called an <dfn class="terminology">involution</dfn>.</p></li>
+<li id="li-412"><p id="p-derived-li-412">Let \(L\) be the projection onto the line \(y=x\text{,}\) and consider \(L^2\text{.}\) Then<div class="displaymath">
 \begin{equation*}
 A_{L^2}
 =(A_L)^2
@@ -332,13 +337,14 @@ A_{L^2}
 =\frac12 \begin{bmatrix} 1\amp1\\1\amp1 \end{bmatrix}
 =A_L\text{.}
 \end{equation*}
-</div>A matrix \(A\) satisfying \(A^2=A\) is called <dfn class="terminology">idempotent</dfn>.</li>
-</ul></article><article class="exercise exercise-like" id="exercise-47"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-47"><h6 class="heading">
+</div>A matrix \(A\) satisfying \(A^2=A\) is called <dfn class="terminology">idempotent</dfn>.</p></li>
+</ul></article></div>
+<article class="exercise exercise-like" id="exercise-47"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-47"><h6 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.4.8</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-47"><article class="exercise exercise-like"><p id="p-1286">Prove that a matrix \(A\) is an involution if and only if \(\frac12(A+I) \) is idempotent.</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-47"><article class="exercise exercise-like"><p id="p-1270">Prove that a matrix \(A\) is an involution if and only if \(\frac12(A+I) \) is idempotent.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-39" id="solution-39"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-39"><div class="solution solution-like">
-<p id="p-1287">Suppose \(\frac12(A+I)\) is idempotent. Then</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-39" id="solution-39"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-39"><div class="solution solution-like">
+<p id="p-1271">Suppose \(\frac12(A+I)\) is idempotent. Then</p>
 <div class="displaymath">
 \begin{equation*}
 \frac12(A+I)=\left(\frac12(A+I)\right)^2=\frac14(A^2+2A+I)\\
@@ -346,8 +352,8 @@ A_{L^2}
 A^2=I
 \end{equation*}
 </div>
-<p data-braille="continuation">and so \(A\) is an involution.</p>
-<p id="p-1288">Suppose \(A\) is an involution. Then</p>
+<p class="continuation">and so \(A\) is an involution.</p>
+<p id="p-1272">Suppose \(A\) is an involution. Then</p>
 <div class="displaymath">
 \begin{equation*}
 \left(\frac12(A+I)\right)^2=\frac14(A^2+2A+I)
@@ -355,17 +361,16 @@ A^2=I
 =\frac12(A+I)
 \end{equation*}
 </div>
-<p data-braille="continuation">and so \(\frac12(A+I)\) is idempotent.</p>
+<p class="continuation">and so \(\frac12(A+I)\) is idempotent.</p>
 </div></div>
 </div></article></div>
-<article class="example example-like" id="example-74"><h6 class="heading">
+<article class="example example-like" id="example-75"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-75"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.4.9</span><span class="period">.</span>
-</h6>
-<p id="p-1289">Now we take another look at <a class="xref" data-knowl="./knowl/EllipseGraph.html" title="Figure 4.10.12">Figure 4.10.12</a> and <a class="xref" data-knowl="./knowl/EllipesRotation1.html" title="Example 4.10.10: An ellipse in the plane">Example 4.10.10</a> in which we wish to see that the graph of \(x^2-xy+y^2=1\) is an ellipse.</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-75"><article class="example example-like"><p id="p-1273">Now we take another look at <a class="xref" data-knowl="./knowl/EllipseGraph.html" title="Figure 4.10.12">Figure 4.10.12</a> and <a class="xref" data-knowl="./knowl/EllipesRotation1.html" title="Example 4.10.10: An ellipse in the plane">Example 4.10.10</a> in which we wish to see that the graph of \(x^2-xy+y^2=1\) is an ellipse.</p>
 <figure class="figure figure-like" id="EllipseGraph2"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><div class="asymptote-box" style="padding-top: 76.1479001873643%"><iframe src="images/image-77.html" class="asymptote"></iframe></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.4.10<span class="period">.</span></span><span class="space"> </span>Graph of \(x^2-xy+y^2=1\)</figcaption></figure><p id="p-1290">The new strategy is to rotate the graph clockwise through an angle of \(\frac\pi4\) and then verify that the new graph satisfies \(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\) for appropriate choice of \(a\) and \(b\text{.}\)</p>
-<p id="p-1291">First we determine \(a\) and \(b\text{.}\) Since \((1,1)\) rotates into \((\sqrt2,0)\text{,}\) we must have \(a^2=2\text{.}\) Similarly, we must have \(b^2=\frac23\text{.}\) This means that \(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\) may be rewritten as \(x^2+3y^2=2\text{.}\)</p>
-<p id="p-1292">Now suppose that \((x,y)\) is on the original graph, that is, \(x^2-xy+y^2=1\text{,}\) and suppose that \((x,y)\) rotates to \((u,v)\text{.}\) The matrix representation of the rotation is \(\frac1{\sqrt2}
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.4.10<span class="period">.</span></span><span class="space"> </span>Graph of \(x^2-xy+y^2=1\)</figcaption></figure><p id="p-1274">The new strategy is to rotate the graph clockwise through an angle of \(\frac\pi4\) and then verify that the new graph satisfies \(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\) for appropriate choice of \(a\) and \(b\text{.}\)</p>
+<p id="p-1275">First we determine \(a\) and \(b\text{.}\) Since \((1,1)\) rotates into \((\sqrt2,0)\text{,}\) we must have \(a^2=2\text{.}\) Similarly, we must have \(b^2=\frac23\text{.}\) This means that \(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\) may be rewritten as \(x^2+3y^2=2\text{.}\)</p>
+<p id="p-1276">Now suppose that \((x,y)\) is on the original graph, that is, \(x^2-xy+y^2=1\text{,}\) and suppose that \((x,y)\) rotates to \((u,v)\text{.}\) The matrix representation of the rotation is \(\frac1{\sqrt2}
 \left[\begin{smallmatrix} 1\amp1\\-1\amp1 \end{smallmatrix}\right]
 \text{,}\) and so</p>
 <div class="displaymath">
@@ -378,7 +383,7 @@ A^2=I
 \frac1{\sqrt2} \begin{bmatrix}x+y\\-x+y\end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">This implies</p>
+<p class="continuation">This implies</p>
 <div class="displaymath">
 \begin{equation*}
 u^2+3v^2
@@ -386,59 +391,59 @@ u^2+3v^2
 =2(x^2-xy+y^2)=2\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">and so \((u,v)\) is on the ellipse with the equation \(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\text{.}\)</p></article><article class="example example-like" id="ReflectionByLine"><h6 class="heading">
+<p class="continuation">and so \((u,v)\) is on the ellipse with the equation \(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\text{.}\)</p></article></div>
+<article class="example example-like" id="ReflectionByLine"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-ReflectionByLine"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.4.11</span><span class="period">.</span>
-</h6>
-<p id="p-1293">In <a class="xref" data-knowl="./knowl/LinearTransformationsExamplesList.html" title="List 6.3.1: Examples of linear transformations in \(\R^2\)">List 6.3.1</a> we saw that a reflection by the line \(y=x\) is a linear transformation. We now extend this to arbitrary lines through the origin with slope \(m\text{,}\) that is, lines with an equation of the form \(y=mx\text{.}\) Note that the point \((1,m)\) is on the line. If we let \(\theta\) be the angle between the line and the positive \(x\text{-axis}\text{,}\) then \(\cos\theta=\frac1{\sqrt{m^2+1}}\) and \(\sin\theta=\frac m{\sqrt{m^2+1}}\text{.}\)</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ReflectionByLine"><article class="example example-like"><p id="p-1277">In <a class="xref" data-knowl="./knowl/LinearTransformationsExamplesList.html" title="List 6.3.1: Examples of linear transformations in \(\R^2\)">List 6.3.1</a> we saw that a reflection by the line \(y=x\) is a linear transformation. We now extend this to arbitrary lines through the origin with slope \(m\text{,}\) that is, lines with an equation of the form \(y=mx\text{.}\) Note that the point \((1,m)\) is on the line. If we let \(\theta\) be the angle between the line and the positive \(x\text{-axis}\text{,}\) then \(\cos\theta=\frac1{\sqrt{m^2+1}}\) and \(\sin\theta=\frac m{\sqrt{m^2+1}}\text{.}\)</p>
 <figure class="figure figure-like" id="ReflectionsAreLinear2"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><div class="asymptote-box" style="padding-top: 59.6457269975993%"><iframe src="images/image-78.html" class="asymptote"></iframe></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.4.12<span class="period">.</span></span><span class="space"> </span>Reflections \(\mathbf u\) to \(\mathbf v\) by the line \(y=mx\)</figcaption></figure><p id="p-1294">By a clever use of composition of linear transformations, not only it can be seen that the reflection is a linear transformation, but also the actual formula can be revealed.</p>
-<p id="p-1295">Consider the following sequence of linear transformations:</p>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.4.12<span class="period">.</span></span><span class="space"> </span>Reflections \(\mathbf u\) to \(\mathbf v\) by the line \(y=mx\)</figcaption></figure><p id="p-1278">By a clever use of composition of linear transformations, not only it can be seen that the reflection is a linear transformation, but also the actual formula can be revealed.</p>
+<p id="p-1279">Consider the following sequence of linear transformations:</p>
 <ul class="disc">
-<li id="li-413">\(L_1\text{:}\) Rotation clockwise by an angle \(\theta\text{,}\)</li>
-<li id="li-414">\(L_2\text{:}\) Reflection by the \(x\)-axis,</li>
-<li id="li-415">\(L_3\text{:}\)  Rotation counterclockwise by an angle \(\theta\text{.}\)</li>
+<li id="li-413"><p id="p-derived-li-413">\(L_1\text{:}\) Rotation clockwise by an angle \(\theta\text{,}\)</p></li>
+<li id="li-414"><p id="p-derived-li-414">\(L_2\text{:}\) Reflection by the \(x\)-axis,</p></li>
+<li id="li-415"><p id="p-derived-li-415">\(L_3\text{:}\)  Rotation counterclockwise by an angle \(\theta\text{.}\)</p></li>
 </ul>
 <figure class="figure figure-like" id="figure-77"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><figure class="figure figure-like" id="figure-78"><div class="asymptote-box" style="padding-top: 62.2120819043271%"><iframe src="images/image-79.html" class="asymptote"></iframe></div>
+<div class="sbspanel top" style="width:47.3684210526316%;"><figure class="figure figure-like" id="figure-78"><div class="asymptote-box" style="padding-top: 62.2120819043271%"><iframe src="images/image-79.html" class="asymptote"></iframe></div>
 <figcaption><span class="codenumber">(a)</span><span class="space"> </span>Initial point and line</figcaption></figure></div>
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><figure class="figure figure-like" id="figure-79"><div class="asymptote-box" style="padding-top: 63.4991400105866%"><iframe src="images/image-80.html" class="asymptote"></iframe></div>
+<div class="sbspanel top" style="width:47.3684210526316%;"><figure class="figure figure-like" id="figure-79"><div class="asymptote-box" style="padding-top: 63.4991400105866%"><iframe src="images/image-80.html" class="asymptote"></iframe></div>
 <figcaption><span class="codenumber">(b)</span><span class="space"> </span>Rotation clockwise by \(\theta\)</figcaption></figure></div>
 </div></div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><figure class="figure figure-like" id="figure-80"><div class="asymptote-box" style="padding-top: 72.5893173135385%"><iframe src="images/image-81.html" class="asymptote"></iframe></div>
+<div class="sbspanel top" style="width:47.3684210526316%;"><figure class="figure figure-like" id="figure-80"><div class="asymptote-box" style="padding-top: 72.5893173135385%"><iframe src="images/image-81.html" class="asymptote"></iframe></div>
 <figcaption><span class="codenumber">(c)</span><span class="space"> </span>Reflection by the \(x\)-axis</figcaption></figure></div>
-<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><figure class="figure figure-like" id="figure-81"><div class="asymptote-box" style="padding-top: 63.4991400105866%"><iframe src="images/image-82.html" class="asymptote"></iframe></div>
+<div class="sbspanel top" style="width:47.3684210526316%;"><figure class="figure figure-like" id="figure-81"><div class="asymptote-box" style="padding-top: 63.4991400105866%"><iframe src="images/image-82.html" class="asymptote"></iframe></div>
 <figcaption><span class="codenumber">(d)</span><span class="space"> </span>Rotation counterclockwise by \(\theta\)</figcaption></figure></div>
 </div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.4.13<span class="period">.</span></span><span class="space"> </span>Reflection by the line \(y=mx\)</figcaption></figure><p id="p-1296">Observe that the composition \(L_3\circ L_2\circ L_1\) has the effect: first \(L_1\text{,}\) the rotation of the plane clockwise by \(\theta\) rotates the line \(y=mx\) to the \(x\)-axis; \(L_2\text{,}\) the reflection by the \(x\)-axis, simply multiplies the second coordinate by \(-1\text{;}\) \(L_3\text{,}\) the rotation of the plane counterclockwise by \(\theta\) moves \(\mathbf u\) back to its original position. The combined effect is the reflection by the line \(y=mx\text{.}\)</p>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.4.13<span class="period">.</span></span><span class="space"> </span>Reflection by the line \(y=mx\)</figcaption></figure><p id="p-1280">Observe that the composition \(L_3\circ L_2\circ L_1\) has the effect: first \(L_1\text{,}\) the rotation of the plane clockwise by \(\theta\) rotates the line \(y=mx\) to the \(x\)-axis; \(L_2\text{,}\) the reflection by the \(x\)-axis, simply multiplies the second coordinate by \(-1\text{;}\) \(L_3\text{,}\) the rotation of the plane counterclockwise by \(\theta\) moves \(\mathbf u\) back to its original position. The combined effect is the reflection by the line \(y=mx\text{.}\)</p>
 <figure class="table table-like" id="table-9"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.4.14<span class="period">.</span></span><span class="space"> </span>Linear transformations and matrix representations</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="c m b2 r0 l0 t3 lines">Transformation</td>
 <td class="c m b2 r0 l0 t3 lines">Description</td>
-<td class="c m b2 r0 l0 t3 lines" data-braille="last-cell">Matrix representation</td>
+<td class="c m b2 r0 l0 t3 lines">Matrix representation</td>
 </tr>
 <tr>
 <td class="c m b0 r0 l0 t0 lines">\(L_1\)</td>
 <td class="c m b0 r0 l0 t0 lines">Rotation clockwise by \(\theta\)</td>
-<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\left[\begin{smallmatrix}
+<td class="c m b0 r0 l0 t0 lines">\(\left[\begin{smallmatrix}
 \cos\theta \amp \sin\theta \\ -\sin\theta \amp \cos\theta
 \end{smallmatrix}\right]\)</td>
 </tr>
 <tr>
 <td class="c m b0 r0 l0 t0 lines">\(L_2\)</td>
 <td class="c m b0 r0 l0 t0 lines">Reflection by \(x\)-axis</td>
-<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\left[\begin{smallmatrix}
+<td class="c m b0 r0 l0 t0 lines">\(\left[\begin{smallmatrix}
 1\amp 0\\ 0\amp -1
 \end{smallmatrix}\right]\)</td>
 </tr>
 <tr>
 <td class="c m b0 r0 l0 t0 lines">\(L_3\)</td>
 <td class="c m b0 r0 l0 t0 lines">Rotation by \(\theta\)</td>
-<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\left[\begin{smallmatrix}
+<td class="c m b0 r0 l0 t0 lines">\(\left[\begin{smallmatrix}
 \cos\theta \amp -\sin\theta \\ \sin\theta \amp \cos\theta
 \end{smallmatrix}\right]\)</td>
 </tr>
-</table></div></figure><p id="p-1297">The matrix representation for \(L_1\) is given in <a class="xref" data-knowl="./knowl/RotationMinusTheta.html" title="Checkpoint 6.3.19">Checkpoint 6.3.19</a>. Reflecting by the \(x\)-axis simply negates the second coordinate, and so the matrix representation for \(L_2\) is straightforward. Finally, <a class="xref" data-knowl="./knowl/CompositionAndMatrixMulitplication.html" title="Theorem 6.4.4: Composition and matrix multiplication">Theorem 6.4.4</a> is used to compute the matrix representation of \(L_3\circ L_2\circ L_1\text{.}\) Recall that \(\cos\theta=\frac1{\sqrt{m^2+1}}\) and \(\sin\theta=\frac m{\sqrt{m^2+1}}\text{.}\)</p>
+</table></div></figure><p id="p-1281">The matrix representation for \(L_1\) is given in <a class="xref" data-knowl="./knowl/RotationMinusTheta.html" title="Checkpoint 6.3.19">Checkpoint 6.3.19</a>. Reflecting by the \(x\)-axis simply negates the second coordinate, and so the matrix representation for \(L_2\) is straightforward. Finally, <a class="xref" data-knowl="./knowl/CompositionAndMatrixMulitplication.html" title="Theorem 6.4.4: Composition and matrix multiplication">Theorem 6.4.4</a> is used to compute the matrix representation of \(L_3\circ L_2\circ L_1\text{.}\) Recall that \(\cos\theta=\frac1{\sqrt{m^2+1}}\) and \(\sin\theta=\frac m{\sqrt{m^2+1}}\text{.}\)</p>
 <div class="displaymath">
 \begin{alignat*}{4}
 \begin{bmatrix}
@@ -460,49 +465,49 @@ u^2+3v^2
 \begin{bmatrix} 1-m^2 \amp 2m \\ 2m \amp m^2-1 \end{bmatrix}\text{.}
 \end{alignat*}
 </div>
-<p data-braille="continuation">It then follows that</p>
+<p class="continuation">It then follows that</p>
 <div class="displaymath">
 \begin{equation*}
 T((x,y))=\frac1{m^2+1} \bigl((1-m^2)x+2my, 2mx-(1-m^2)y\bigr)\text{.}
 \end{equation*}
-</div></article><article class="exercise exercise-like" id="exercise-48"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-48"><h6 class="heading">
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-48"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-48"><h6 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.4.15</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-48"><article class="exercise exercise-like"><p id="p-1298">Verify <a class="xref" data-knowl="./knowl/ReflectionByLine.html" title="Example 6.4.11">Example 6.4.11</a> for \(m=1,0,-1\text{.}\)</p></article></div>
-<article class="example example-like" id="example-76"><h6 class="heading">
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-48"><article class="exercise exercise-like"><p id="p-1282">Verify <a class="xref" data-knowl="./knowl/ReflectionByLine.html" title="Example 6.4.11">Example 6.4.11</a> for \(m=1,0,-1\text{.}\)</p></article></div>
+<article class="example example-like" id="example-77"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-77"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.4.16</span><span class="period">.</span>
-</h6>
-<p id="p-1299">Consider the following sequence of linear operators in \(\R^2\text{:}\)</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-77"><article class="example example-like"><p id="p-1283">Consider the following sequence of linear operators in \(\R^2\text{:}\)</p>
 <ol class="decimal">
-<li id="li-416">\(L_1\text{:}\) reflect by the line \(y=x\text{,}\)</li>
-<li id="li-417">\(L_2\text{:}\) rotate counterclockwise by \(\theta=\frac\pi4\text{,}\)</li>
-<li id="li-418">\(L_3\text{:}\) reflect by the line \(y=-x\text{,}\)</li>
-<li id="li-419">\(L_4\text{:}\) rotate clockwise by \(\theta=\frac\pi4\text{,}\)</li>
-<li id="li-420">\(L_5\text{:}\) reflect by the line \(y=x\text{.}\)</li>
+<li id="li-416"><p id="p-derived-li-416">\(L_1\text{:}\) reflect by the line \(y=x\text{,}\)</p></li>
+<li id="li-417"><p id="p-derived-li-417">\(L_2\text{:}\) rotate counterclockwise by \(\theta=\frac\pi4\text{,}\)</p></li>
+<li id="li-418"><p id="p-derived-li-418">\(L_3\text{:}\) reflect by the line \(y=-x\text{,}\)</p></li>
+<li id="li-419"><p id="p-derived-li-419">\(L_4\text{:}\) rotate clockwise by \(\theta=\frac\pi4\text{,}\)</p></li>
+<li id="li-420"><p id="p-derived-li-420">\(L_5\text{:}\) reflect by the line \(y=x\text{.}\)</p></li>
 </ol>
-<p data-braille="continuation">The application of this sequence of operators results in an operator \(L=L_5\circ L_4\circ L_3\circ L_2\circ L_1\text{.}\) To understand the structure of \(L\text{,}\) look at the matrix representation in each case:</p>
+<p class="continuation">The application of this sequence of operators results in an operator \(L=L_5\circ L_4\circ L_3\circ L_2\circ L_1\text{.}\) To understand the structure of \(L\text{,}\) look at the matrix representation in each case:</p>
 <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines">\(L_1\text{:}\)</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}\)</td>
 </tr>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">\(L_2\text{:}\)</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac1{\sqrt2}\begin{bmatrix}1 \amp -1 \\ 1 \amp 1  \end{bmatrix}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\frac1{\sqrt2}\begin{bmatrix}1 \amp -1 \\ 1 \amp 1  \end{bmatrix}\)</td>
 </tr>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">\(L_3\text{:}\)</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\begin{bmatrix} 0 \amp-1 \\-1 \amp 0 \end{bmatrix}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\begin{bmatrix} 0 \amp-1 \\-1 \amp 0 \end{bmatrix}\)</td>
 </tr>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">\(L_4\text{:}\)</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac1{\sqrt2}\begin{bmatrix}1 \amp 1 \\ -1 \amp 1  \end{bmatrix}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\frac1{\sqrt2}\begin{bmatrix}1 \amp 1 \\ -1 \amp 1  \end{bmatrix}\)</td>
 </tr>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">\(L_5\text{:}\)</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}\)</td>
 </tr>
 </table></div>
-<p id="p-1300">The matrix representation of the composition is then</p>
+<p id="p-1284">The matrix representation of the composition is then</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix} 0 \amp 1 \\ 1 \amp 0 \end{bmatrix}
@@ -514,7 +519,7 @@ T((x,y))=\frac1{m^2+1} \bigl((1-m^2)x+2my, 2mx-(1-m^2)y\bigr)\text{.}
 \begin{bmatrix} 1 \amp 0 \\ 0 \amp -1 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Hence \(L((x,y))=(x,-y)\) and \(L\) is simply a reflection by the \(x\)-axis.</p></article></section></section></div></main>
+<p class="continuation">Hence \(L((x,y))=(x,-y)\) and \(L\) is simply a reflection by the \(x\)-axis.</p></article></div></section></section></div></main>
 </div>
 </body>
 </html>

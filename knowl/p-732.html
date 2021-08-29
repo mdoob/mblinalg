@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:47-06:00       *-->
+<!--*       on 2021-08-29T14:14:43-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,39 +15,7 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>As a starting point, suppose that \(B_1\) is nonempty. That means that the upper left entry is \(a_{k,1}\text{,}\) and it has a sign of \(+1\) in the first row expansion, and so as we expand along the columns in \(B_1\text{:}\)</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\text{For columns } j \text{ in } B_1 \text{, the coefficient of } a_{k,j}=
-\begin{cases}
-(-1)^{k+j}  \amp \text{if } k \text{ is odd}\\  
-(-1)^{k+j-1}\amp \text{if } k \text{ is even.}
-\end{cases}
-\end{equation*}
-</div>
-<p data-braille="continuation">As we move from columns in \(B_1\) to those in \(B_2\text{,}\) an extra \(-1\) is added to the coefficient, that is:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\text{For columns } j \text{ in } B_2 \text{, the coefficient of } a_{k,j}=
-\begin{cases}
-(-1)^{k+j-1}  \amp \text{if } k \text{ is odd}\\  
-(-1)^{k+j}\amp \text{if } k \text{ is even.}
-\end{cases}
-\end{equation*}
-</div>
-<p data-braille="continuation">When we get to \(B_k\text{,}\) something beautiful happens: the result for the even case and the odd case is the same.</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\text{For columns } j \text{ in } B_k \text{, the coefficient of } a_{k,j}=
-(-1)^{k+j}\text{.}
-\end{equation*}
-</div>
-<p data-braille="continuation">A couple of observations when \(j\) corresponds to a column in \(B_k\text{:}\)</p>
-<ul class="disc">
-<li>The coefficient of \(a_{k,j}\) is the same as it would be if we were taking the \(k\)-th row expansion of \(A\text{.}\)</li>
-<li>During this step of the algorithm, the first row and the \(j=i_k\) column will be deleted. If that column is in \(B_k\text{,}\) then the pairs \(i_1i_k\text{,}\) \(i_2i_k,\dots, i_{k-1}i_k\) are all in their natural order, that is, there are no inversions.</li>
-</ul>
-<p data-braille="continuation">Now suppose that \(j\) corresponds to a column in \(B_{k-1}\text{.}\) Moving from \(B_k\) to \(B_{k-1}\) passes over a deleted column. Let \(i_t\) correspond to that deleted column. The deleted column causes the coefficient of \(a_{k,j}\) change sign, that is, the coefficient is \((-1)^{i+j+1}\text{.}\) In addition, the pair \(i_t i_k\) is now an inversion. A useful pattern now emerges: as we move one block to the left, the exponent of the coefficient \((-1)\) increases by one, and passing over the deleted column changes one pair from natural order to an inversion. Thus for any block, the number of extra factors of \((-1)\) is equal to the number of inversions among the pairs \(i_1i_k, i_2,i_k,\ldots,i_{k-1}i_k\text{.}\)</p>
-<span class="incontext"><a href="DeterminantDeeperTopics.html#p-732">in-context</a></span>
+<p>Directed vectors: the vectors may be thought of as arrows from an initial point \(P\) to a terminal point \(Q\text{.}\)</p>
+<span class="incontext"><a href="section-25.html#p-732">in-context</a></span>
 </body>
 </html>

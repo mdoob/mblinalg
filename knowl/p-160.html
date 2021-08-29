@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:38-06:00       *-->
+<!--*       on 2021-08-29T14:14:33-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,64 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Every leading entry is a leading one.</p>
+<p>\(\begin{align}
+\amp \begin{bmatrix}
+1 \amp  2 \amp  3 \\
+4 \amp  5 \amp  6 \\
+7 \amp  8 \amp  9 \\
+10 \amp  12 \amp  15 
+\end{bmatrix} \amp \amp 
+\begin{array}{l}
+R_2\gets R_2-4R_1\\
+R_3\gets R_3-7R_1\\
+R_4\gets R_4-10R_1
+\end{array}\\[6pt]
+\amp \begin{bmatrix}
+1 \amp  2 \amp  3 \\
+0 \amp  -3 \amp  -6 \\
+0 \amp  -6 \amp  -12 \\
+0 \amp  -8 \amp  -15
+\end{bmatrix} \amp \amp 
+\begin{array}{l}
+R_2\gets -\tfrac13 R_2
+\end{array}\\[6pt]
+\amp \begin{bmatrix}
+1 \amp  2 \amp  3 \\
+0 \amp  1 \amp  2 \\
+0 \amp  -6 \amp  -12 \\
+0 \amp  -8 \amp  -15
+\end{bmatrix} \amp \amp 
+\begin{array}{l}
+R_1\gets R_1-2R_2\\
+R_3\gets R_3+6R_2\\
+R_4\gets R_4+8R_2
+\end{array}\\[6pt]
+\amp \begin{bmatrix}
+1 \amp  0 \amp  -1 \\
+0 \amp  1 \amp  2 \\
+0 \amp  0 \amp  0 \\
+0 \amp  0 \amp  1
+\end{bmatrix} \amp \amp 
+\begin{array}{l}
+R_3\leftrightarrow R_4 \\
+\end{array}\\[6pt]
+\amp \begin{bmatrix}
+1 \amp  0 \amp  -1 \\
+0 \amp  1 \amp  2 \\
+0 \amp  0 \amp  1 \\
+0 \amp  0 \amp  0
+\end{bmatrix} \amp \amp 
+\begin{array}{l}
+R_1 \gets R_1+R_3 \\
+R_2\gets R_2-2R_3
+\end{array}\\[6pt]
+\amp \begin{bmatrix}
+1 \amp  0 \amp  0 \\
+0 \amp  1 \amp  0 \\
+0 \amp  0 \amp  1 \\
+0 \amp  0 \amp  0
+\end{bmatrix}
+\end{align} \)</p>
 <span class="incontext"><a href="section-6.html#p-160">in-context</a></span>
 </body>
 </html>

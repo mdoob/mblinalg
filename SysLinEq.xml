@@ -1340,66 +1340,64 @@
         <exercise>
         <statement>
         <p>Which of the following matrices are in row echelon form?
-        <ul>
-       
-        <li><p><m>
+        <ol>
+        <li><m>
         \begin{bmatrix}
         1\amp2\amp3\amp4\\
         0\amp5\amp6\amp7\\
         0\amp0\amp8\amp9\\
         0\amp0\amp0\amp10
         \end{bmatrix}
-        </m></p></li>
+        </m></li>
         
-        <li><p><m>
+        <li><m>
         \begin{bmatrix}
         1\amp2\amp3\amp4\\
         0\amp1\amp2\amp3\\
         0\amp0\amp0\amp0\\
         0\amp0\amp0\amp1
         \end{bmatrix}
-        </m></p></li>
+        </m></li>
         
-        <li><p><m>
+        <li><m>
         \begin{bmatrix}
         1\amp2\amp3\amp4\\
         0\amp1\amp2\amp3\\
         0\amp0\amp0\amp1\\
         0\amp0\amp0\amp0
         \end{bmatrix}
-        </m></p></li>
+        </m></li>
         
-        <li><p><m>
+        <li><m>
         \begin{bmatrix}
         1\amp2\amp3\amp4\\
         0\amp1\amp6\amp7\\
         0\amp0\amp1\amp1\\
         0\amp0\amp1\amp1
         \end{bmatrix}
-        </m></p></li>
+        </m></li>
         
-        <li><p><m>
+        <li><m>
         \begin{bmatrix}
         1\amp0\amp0\amp0\\
         0\amp0\amp0\amp0\\
         0\amp0\amp0\amp0\\
         0\amp0\amp0\amp0
         \end{bmatrix}
-        </m></p></li>
-        
-        
-        </ul></p>
+        </m></li>
+        </ol></p>
+
         </statement>
         <solution>
         <p>
-        <ul>
-        <li><p>Not in row echelon form because not every leading entry is a <m>1</m>. </p></li>
-        <li><p>Not in row echelon form because the zero row is not at the bottom. </p></li>
-        <li><p>It is row echelon form.</p></li>
-        <li><p>Not row echelon form because a leading entry has a 
-        nonzero entry below it.</p></li>
-        <li><p>It is row echelon form.</p></li>
-        </ul></p>
+        <ol>
+        <li>Not in row echelon form because not every leading entry is a <m>1</m>. </li>
+        <li>Not in row echelon form because the zero row is not at the bottom. </li>
+        <li>It is row echelon form.</li>
+        <li>Not row echelon form because a leading entry has a nonzero entry below it.</li>
+        <li>It is row echelon form.</li>
+        </ol>
+        </p>
         </solution>
         </exercise>
 
@@ -1700,51 +1698,56 @@
       </statement>
       <solution>
       <p>We put the augmented matrix into row echelon form:
-        <me>
-        \begin{bmatrix}
+        <md>
+        <mrow>\begin{bmatrix}
         1 \amp 2 \amp -1 \amp 2\\
         1 \amp 1 \amp -1 \amp 0\\
         2 \amp -1 \amp 1 \amp 3\\
         \end{bmatrix}
-        \\
+        \amp\amp\amp
         \begin{array}{l}
         R_2\gets R_2 - R_1\\
         R_3\gets R_3-2R_1
         \end{array}
-        \\
-        \begin{bmatrix}
+        </mrow>
+        <mrow/>
+        <mrow>\begin{bmatrix}
         1 \amp 2 \amp -1 \amp 2\\
         0 \amp -1 \amp 0 \amp -2\\
         0 \amp -5 \amp 3 \amp -1\\
         \end{bmatrix}
-        \\
+        \amp\amp\amp
         \begin{array}{l}
         R_2\gets -R_2\\
         \end{array}
-        \\
-        \begin{bmatrix}
+        </mrow>
+        <mrow/>
+        <mrow>\begin{bmatrix}
         1 \amp 2 \amp -1 \amp 2\\
         0 \amp 1 \amp 0 \amp 2\\
         0 \amp -5 \amp 3 \amp -1\\
         \end{bmatrix}
-        \\
+        \amp\amp\amp
         R_3\gets R_3+5R_2
-        \\
-        \begin{bmatrix}
+        </mrow>
+        <mrow/>
+        <mrow>\begin{bmatrix}
         1 \amp 2 \amp -1 \amp 2\\
         0 \amp 1 \amp 0 \amp 2\\
         0 \amp 0 \amp 3 \amp 9\\
         \end{bmatrix}
-        \\
+        \amp\amp\amp
         R_3\gets \frac13 R_3
-        \\
-        \begin{bmatrix}
+        </mrow>
+        <mrow/>
+        <mrow>\begin{bmatrix}
         1 \amp 2 \amp -1 \amp 2\\
         0 \amp 1 \amp 0 \amp 2\\
         0 \amp 0 \amp 1 \amp 3\\
         \end{bmatrix}
-        </me>
-        The last row gives <m>z=3</m>. The second row gives <m>y=2</m>. The first row gives
+        </mrow>
+        </md>
+        The last row gives <m>z=3</m>, the second row gives <m>y=2</m>. and the first row gives
         <m>x=2-2y+z=2-4+3=1</m>, and so there is a unique solution <m>(x,y,z)=(1,2,3)</m>.
       </p>
       </solution>
@@ -1996,10 +1999,10 @@
      <p>
       In summary, we can say the following:
      <ol>
-     <li><p>
+     <li>
          If the reduced row echelon form has a row of the form <m>[0,0,\dots,0,1]</m>, 
-        then the system of linear equations has no solution.</p></li>
-     <li><p>
+        then the system of linear equations has no solution.</li>
+     <li>
         If the reduced row echelon form has no free variables, then it looks like:
         <me>
         \begin{bmatrix}
@@ -2012,14 +2015,19 @@
         \end{bmatrix}
         </me>
         and there is a unique solution, namely, <m>x_1=c_1, x_2=c_2,\dots x_n=c_n</m>.
-     </p></li>
-     <li><p>
+     </li>
+     <li>
         If the reduced row echelon form has free variables, then there are an infinite 
         number of solutions. Indeed, the parameter assigned to any one free variable can take 
         on an infinite number of values.
-     </p></li>
+     </li>
      </ol> 
-      
+     </p> 
+
+
+    <example> 
+    <title>A system of equations with free variables</title>
+      <p>
       Consider the following system of linear equations:
       <me>
       \begin{array}{rl}
@@ -2029,59 +2037,68 @@
       3x_1-3x_4 \amp =  -3
       \end{array}
       </me>
+      </p>
 
+      <p>
+      The augmented matrix is then put into reduced row echelon form:
+      </p>
 
-    The augmented matrix is then put into reduced row echelon form:
-
-      <me>\begin{bmatrix}
+      <md>
+      <mrow>
+      \begin{bmatrix}
       1 \amp  -1 \amp  2 \amp  -1 \amp  -1\\
       2 \amp  1 \amp -2 \amp  -2 \amp  -2\\
       -1 \amp  2 \amp  -4 \amp  1 \amp  1\\
       3 \amp  0 \amp  0 \amp  -3 \amp  -3
-      \end{bmatrix}</me>
-
-      <me>\begin{array}{rl}
+      \end{bmatrix}
+      \amp\amp\amp
+      \begin{array}{rl}
       R_2 \amp \gets R_2-2R_1\\
       R_3 \amp \gets R_3+R_1\\
       R_4 \amp \gets R_4-3R_1
-      \end{array}</me>
-      </p>
+      \end{array}\\
+      </mrow>
       
-      <p>
-     <me>\begin{bmatrix}
+      <mrow>\begin{bmatrix}
       1 \amp  -1 \amp  2 \amp  -1 \amp  -1\\
       0 \amp  3 \amp  -6 \amp  0 \amp  0\\
       0 \amp  1 \amp  -2 \amp  0 \amp  0\\
       0 \amp  3 \amp  -6 \amp  0 \amp  0
-      \end{bmatrix}</me>
-
-      <me>\begin{array}{rl}
+      \end{bmatrix}
+      \amp\amp\amp
+      \begin{array}{rl}
       R_2 \amp \gets \tfrac13 R_2\\
-      \end{array}</me>
+      \end{array}\\
+      </mrow>
 
-      <me>\begin{bmatrix}
+      <mrow>
+      \begin{bmatrix}
       1 \amp  -1 \amp  2 \amp  -1 \amp  -1\\
       0 \amp  1 \amp  -2 \amp  0 \amp  0\\
       0 \amp  1 \amp  -2 \amp  0 \amp  0\\
       0 \amp  3 \amp  -6 \amp  0 \amp  0
-      \end{bmatrix}</me>
-      
-      <me>\begin{array}{rl}
+      \end{bmatrix}
+      \amp\amp\amp
+      \begin{array}{rl}
       R_1 \amp \gets R_1 + R_2\\
       R_3 \amp \gets R_3- R_2\\
       R_4 \amp \gets R_4- 3R_2
-      \end{array}</me> 
+      \end{array}\\
+      </mrow> 
       
-      <me>\begin{bmatrix}
+      <mrow>
+      \begin{bmatrix}
       {\color{red} 1} \amp  0 \amp  0 \amp  -1 \amp  -1\\
       0 \amp  {\color{red} 1} \amp  -2 \amp  0 \amp  0\\
       0 \amp  0 \amp  0 \amp  0 \amp  0\\
       0 \amp  0 \amp  0 \amp  0 \amp  0
-      \end{bmatrix}</me>
-      </p>
+      \end{bmatrix}
+      </mrow>
+      </md>
+     
       
       <p>
-     Since  <m>x_3</m> and <m>x_4</m> are free variables,
+      Since  <m>x_3</m> and <m>x_4</m> are free variables,
       we assign them parameters: <m>x_3=s</m> and <m>x_4=t</m>.  We can 
       now evaluate the constrained variables:
       <m>x_1=-1+t</m> (from the first row) and <m>x_2=2s</m> (from the second row).
@@ -2091,13 +2108,15 @@
      <p>
        Now, as a check, let's put these solutions back into the original equations.
 
-      <m>\begin{array}{rlll}
+      <me>\begin{array}{rlll}
       x_1-x_2+2x_3-x_4 \amp =\amp  (-1+t) - (2s) + 2(s) - (t) \amp= -1\\
       2x_1+x_2-2x_3-2x_4 \amp =\amp  2(-1+t) + 2s -2s-2t \amp= -2\\
       -x_1+2x_2-4x_3+x_4 \amp =\amp  -(-1+t) +2(2s) -4s+t \amp= 1 \\
       3x_1-3x_4 \amp =\amp  3(-1+t) -3t \amp= -3
-      \end{array}</m> 
+      \end{array}
+      </me> 
      </p>
+    </example> 
 
     <example>
     <title>A matrix row-reducing itself</title>
@@ -2160,33 +2179,39 @@
             3\amp6\amp9\amp10
             \end{bmatrix}
             </me>
-            </p> </statement> <solution> <p> 
-            <me>
+            </p> </statement> 
+            <solution> <p> 
+            <md>
+            <mrow>\amp
             \begin{bmatrix}
             2\amp4\amp6\amp8\\
             3\amp6\amp9\amp10
-            \end{bmatrix}\\
-            \rowmul1{\frac12}\\
+            \end{bmatrix}\amp\amp
+            \rowmul1{\frac12}\\</mrow>
+            <mrow>\amp
             \begin{bmatrix}
             1\amp2\amp3\amp4\\
             3\amp6\amp9\amp10
-            \end{bmatrix}\\
-            \rowsub231\\
+            \end{bmatrix}\amp\amp
+            \rowsub231\\</mrow>
+            <mrow>\amp
             \begin{bmatrix}
             1\amp2\amp3\amp4\\
             0\amp0\amp0\amp-2
-            \end{bmatrix}\\
-            \rowmul 2{-\frac12}\\
+            \end{bmatrix}\amp\amp
+            \rowmul 2{-\frac12}\\</mrow>
+            <mrow>\amp
             \begin{bmatrix}
             1\amp2\amp3\amp4\\
             0\amp0\amp0\amp1
-            \end{bmatrix}\\
-            \rowsub142\\
+            \end{bmatrix}\amp\amp
+            \rowsub142\\</mrow>
+            <mrow>\amp
             \begin{bmatrix}
             1\amp2\amp3\amp0\\
             0\amp0\amp0\amp1
-            \end{bmatrix}
-            </me>
+            \end{bmatrix}</mrow>
+            </md>
             </p></solution> </exercise>
         
             <exercise> <statement> <p>
@@ -2197,32 +2222,41 @@
             1 \amp -1 \amp  0
             \end{bmatrix}
             </me>
-            </p> </statement> <solution> <p> 
-            <me>
+            </p> </statement> 
+            <solution> <p> 
+            <md>
+            <mrow>\amp
             \begin{bmatrix}
             0 \amp  1 \amp -1\\
             1 \amp  0 \amp -1\\
             1 \amp -1 \amp  0
-            \end{bmatrix}\\
+            \end{bmatrix}\amp\amp
             \rowint 12\\
+            </mrow>
+            <mrow>\amp
             \begin{bmatrix}
             1 \amp  0 \amp -1\\
             0 \amp  1 \amp -1\\
             1 \amp -1 \amp  0
-            \end{bmatrix}\\
+            \end{bmatrix}\amp\amp
             \rowsub 3{}1\\
+            </mrow>
+            <mrow>\amp
             \begin{bmatrix}
             1 \amp  0 \amp -1\\
             0 \amp  1 \amp -1\\
             0 \amp -1 \amp  1
-            \end{bmatrix}\\
+            \end{bmatrix}\amp\amp
             \rowadd3{}2\\
+            </mrow>
+            <mrow>\amp
             \begin{bmatrix}
             1 \amp  0 \amp -1\\
             0 \amp  1 \amp -1\\
             0 \amp  0 \amp  0
-            \end{bmatrix}\\
-            </me>
+            \end{bmatrix}
+            </mrow>
+            </md>
             </p></solution> </exercise>
             
             <exercise> <statement> <p>
@@ -2231,37 +2265,47 @@
             4\amp5\amp6\\
             7\amp8\amp9
             \end{bmatrix}</me>
-            </p> </statement> <solution> <p> 
-            <me>\begin{bmatrix}
+            </p> </statement> 
+            <solution> <p> 
+            <md>
+            <mrow>\amp\begin{bmatrix}
             1\amp 2\amp3\\
             4\amp5\amp6\\
             7\amp8\amp9
-            \end{bmatrix}\\
+            \end{bmatrix}\amp\amp
+            \begin{array}{l}
             \rowsub241\\
-            \rowsub371\\
-            \begin{bmatrix}
+            \rowsub371
+            \end{array}\\
+            </mrow>
+            <mrow>\amp\begin{bmatrix}
             1\amp 2\amp3\\
             0\amp-3\amp-6\\
             0\amp-6\amp-12
-            \end{bmatrix}\\
+            \end{bmatrix}\amp\amp
             \rowmul2{-\frac13}\\
-            \begin{bmatrix}
+            </mrow>
+            <mrow>\amp\begin{bmatrix}
             1\amp 2\amp3\\
             0\amp1\amp2\\
             0\amp-6\amp-12
-            \end{bmatrix}\\
+            \end{bmatrix}\amp\amp
             \rowsub 122\\
-            \begin{bmatrix}
+            </mrow>
+            <mrow>\amp\begin{bmatrix}
             1\amp 0\amp-1\\
             0\amp1\amp2\\
             0\amp-6\amp-12
-            \end{bmatrix}\\
+            \end{bmatrix}\amp\amp
             \rowadd 362\\
-            \begin{bmatrix}
+            </mrow>
+            <mrow>\amp\begin{bmatrix}
             1\amp 0\amp-1\\
             0\amp1\amp2\\
             0\amp0\amp0
-            \end{bmatrix}</me>
+            \end{bmatrix}
+            </mrow>
+            </md>
             </p></solution> </exercise>
         
             <exercise> <statement> <p>
@@ -2270,53 +2314,77 @@
             1\amp2\\ 1\amp3 \\1\amp4
             \end{bmatrix}
             </me>
-            </p> </statement> <solution> <p> 
-            <me>
+            </p> </statement> 
+            <solution> <p> 
+            <md>
+            <mrow>\amp
             \begin{bmatrix}
             1\amp2\\ 1\amp3 \\1\amp4
-            \end{bmatrix}\\
+            \end{bmatrix}\amp\amp
+            \begin{array}{l}
             \rowsub 2 {} 1\\
-            \rowsub 3 {} 1\\
+            \rowsub 3 {} 1
+            \end{array}\\
+            </mrow>
+            <mrow>\amp
             \begin{bmatrix}
             1\amp2\\ 0\amp1 \\0\amp2
-            \end{bmatrix}\\
+            \end{bmatrix}\amp\amp
+            \begin{array}{l}
             \rowsub 1 2 2\\
-            \rowsub 3 2 2\\
+            \rowsub 3 2 2
+            \end{array}\\
+            </mrow>
+            <mrow>\amp
             \begin{bmatrix}
             1\amp0\\ 0\amp1 \\0\amp0
-            \end{bmatrix}\\
-            </me>
-            </p></solution> </exercise>
+            \end{bmatrix}
+            </mrow>
+            </md>
+            </p>
+            </solution> 
+            </exercise>
         
-            <exercise> <statement> <p>
+            <exercise> 
+            <statement> <p>
             <me>
             \begin{bmatrix}
             0\amp 1\amp 2\amp 3\amp 4 \\
             4\amp 3\amp 2\amp 1\amp 0 
             \end{bmatrix}
             </me>
-            </p> </statement> <solution> <p> 
-            <me>
+            </p> 
+            </statement> 
+            <solution> <p> 
+            <md>
+            <mrow>\amp
             \begin{bmatrix}
             0\amp 1\amp 2\amp 3\amp 4 \\
             4\amp 3\amp 2\amp 1\amp 0 
-            \end{bmatrix}\\
+            \end{bmatrix}\amp\amp
             \rowint12\\
+            </mrow>
+            <mrow>\amp
             \begin{bmatrix}
             4\amp 3\amp 2\amp 1\amp 0 \\
             0\amp 1\amp 2\amp 3\amp 4 
-            \end{bmatrix}\\
+            \end{bmatrix}\amp\amp
             \rowmul1{\frac14}\\
+            </mrow>
+            <mrow>\amp
             \begin{bmatrix}
             1\amp \frac34\amp \frac12\amp \frac14\amp 0 \\
             0\amp 1\amp 2\amp 3\amp 4 
-            \end{bmatrix}\\
+            \end{bmatrix}\amp\amp
             \rowsub 1{\frac34}2\\
+            </mrow>
+            <mrow>\amp
             \begin{bmatrix}
             1\amp 0\amp -1\amp -2\amp -3 \\
             0\amp 1\amp 2\amp 3\amp 4 
             \end{bmatrix}
-            </me>
+            </mrow>
+            </md>
             </p></solution> </exercise>
             </exercisegroup>
 
@@ -2428,64 +2496,72 @@
       </statement>
       <solution>
       <p>We put the augmented matrix into reduced row echelon form:
-        <m>
+        <md>
+        <mrow>\amp
         \begin{bmatrix}
         1 \amp 2 \amp -1 \amp 2\\
         1 \amp 1 \amp -1 \amp 0\\
         2 \amp -1 \amp 1 \amp 3\\
         \end{bmatrix}
-        \\
+        \amp\amp
         \begin{array}{l}
         R_2\gets R_2 - R_1\\
         R_3\gets R_3-2R_1
-        \end{array}
-        \\
+        \end{array} \\
+        </mrow>
+        <mrow>\amp
         \begin{bmatrix}
         1 \amp 2 \amp -1 \amp 2\\
         0 \amp -1 \amp 0 \amp -2\\
         0 \amp -5 \amp 3 \amp -1\\
         \end{bmatrix}
-        \\
+        \amp\amp
         \begin{array}{l}
         R_2\gets -R_2\\
-        \end{array}
-        \\
+        \end{array}\\
+        </mrow>
+        <mrow>\amp
         \begin{bmatrix}
         1 \amp 2 \amp -1 \amp 2\\
         0 \amp 1 \amp 0 \amp 2\\
         0 \amp -5 \amp 3 \amp -1\\
         \end{bmatrix}
-        \\
-        R_3\gets R_3-5R_2
-        \\
+        \amp\amp
+        R_3\gets R_3-5R_2\\
+        </mrow>
+        <mrow>\amp
         \begin{bmatrix}
         1 \amp 2 \amp -1 \amp 2\\
         0 \amp 1 \amp 0 \amp 2\\
         0 \amp 0 \amp 3 \amp 9\\
         \end{bmatrix}
-        \\
-        R_3\gets \frac13 R_3
-        \\
+        \amp\amp
+        R_3\gets \frac13 R_3\\
+        </mrow>
+        <mrow>\amp
         \begin{bmatrix}
         1 \amp 2 \amp -1 \amp 2\\
         0 \amp 1 \amp 0 \amp 2\\
         0 \amp 0 \amp 1 \amp 3\\
-        \end{bmatrix} \\
-        R_1 \gets R_1-2R_2
-        \\
+        \end{bmatrix} \amp\amp
+        R_1 \gets R_1-2R_2\\
+        </mrow>
+        <mrow>\amp
         \begin{bmatrix}
         1 \amp 0 \amp -1 \amp-2\\
         0 \amp 1 \amp 0 \amp 2\\
         0 \amp 0 \amp 1 \amp 3\\
-        \end{bmatrix} \\
-        R_1 \gets R_1+R_3
-        \\
+        \end{bmatrix} \amp\amp
+        R_1 \gets R_1+R_3\\
+        </mrow>
+        <mrow>\amp
         \begin{bmatrix}
         1 \amp 0 \amp 0 \amp1\\
         0 \amp 1 \amp 0 \amp 2\\
         0 \amp 0 \amp 1 \amp 3\\
-        \end{bmatrix} \\
-        </m>
+        \end{bmatrix} 
+        </mrow>
+        </md>
         The first, second and third rows give us, respectively,
         <me>
         \begin{matrix}
@@ -2504,47 +2580,66 @@
       <mrow>-x+y+z=0</mrow>
       </md>
       </p>
-      </statement> <solution> <p> 
-      <m>
+      </statement> 
+      <solution> <p> 
+      <md>
+      <mrow>\amp
       \begin{bmatrix}
       1 \amp 2 \amp 1 \amp 0\\
       1 \amp 1 \amp 2 \amp 5\\
       -1 \amp 1 \amp 1 \amp 0
-      \end{bmatrix}\\
+      \end{bmatrix}\amp\amp
+      \begin{array}{l}
       \rowsub 211\\
       \rowadd 3{}1\\
+      \end{array}
+      </mrow>
+      <mrow>\amp
       \begin{bmatrix}
       1 \amp 2 \amp 1 \amp 0\\
       0 \amp -1 \amp 1 \amp 5\\
       0 \amp 3 \amp 2 \amp 0
-      \end{bmatrix}\\
+      \end{bmatrix}\amp\amp
       \rowmul 2{-}\\
+      </mrow>
+      <mrow>\amp
       \begin{bmatrix}
       1 \amp 2 \amp 1 \amp 0\\
       0 \amp 1 \amp -1 \amp -5\\
       0 \amp 3 \amp 2 \amp 0
-      \end{bmatrix}\\
+      \end{bmatrix}\amp\amp
+      \begin{array}{l}
       \rowsub122\\
       \rowsub332\\
+      \end{array}
+      </mrow>
+      <mrow>\amp
       \begin{bmatrix}
       1 \amp 0 \amp 3 \amp 10\\
       0 \amp 1 \amp -1 \amp -5\\
       0 \amp 0 \amp 5 \amp 15
-      \end{bmatrix}\\
+      \end{bmatrix}\amp\amp
       \rowmul3{\frac15}\\
+      </mrow>
+      <mrow>\amp
       \begin{bmatrix}
       1 \amp 0 \amp 3 \amp 10\\
       0 \amp 1 \amp -1 \amp -5\\
       0 \amp 0 \amp 1 \amp 3
-      \end{bmatrix}\\
+      \end{bmatrix}\amp\amp
+      \begin{array}{l}
       \rowsub 133\\
       \rowadd 3{}2\\
+      \end{array}
+      </mrow>
+      <mrow>\amp
       \begin{bmatrix}
       1 \amp 0 \amp 0 \amp 1\\
       0 \amp 1 \amp 0 \amp -2\\
       0 \amp 0 \amp 1 \amp 3
-      \end{bmatrix}\\
-      </m>
+      \end{bmatrix}
+      </mrow>
+      </md>
       and so the unique solution is <m>(x,y,z)=(1,-2,3)</m>. 
       </p>
       </solution> 
@@ -2558,40 +2653,55 @@
       <mrow>2x+y-z+w=1</mrow>
       </md>
       </p>
-      </statement> <solution> <p> 
-      <m>
+      </statement> 
+      <solution> <p> 
+      <md>
+      <mrow>\amp
       \begin{bmatrix} 
       1 \amp 1 \amp -1 \amp -1 \amp 2\\
       1 \amp -1 \amp -1 \amp 1 \amp 4\\
       2 \amp 1 \amp -1 \amp 1 \amp 1
-      \end{bmatrix} \\
+      \end{bmatrix} \amp\amp
+      \begin{array}{l}
       \rowsub 2{}1\\
-      \rowsub 321\\
+      \rowsub 321
+      \end{array}\\
+      </mrow>
+      <mrow>\amp
       \begin{bmatrix} 
       1 \amp 1 \amp -1 \amp -1 \amp 2\\
       0 \amp -2 \amp 0 \amp 2 \amp 2\\
       0 \amp -1 \amp 1 \amp 3 \amp -3
-      \end{bmatrix} \\
+      \end{bmatrix} \amp\amp
       \rowmul2{-\frac12}\\
+      </mrow>
+      <mrow>\amp
       \begin{bmatrix} 
       1 \amp 1 \amp -1 \amp -1 \amp 2\\
       0 \amp 1 \amp 0 \amp -1 \amp -1\\
       0 \amp -1 \amp 1 \amp 3 \amp -3
-      \end{bmatrix} \\
+      \end{bmatrix} \amp\amp
+      \begin{array}{l}
       \rowsub1{}2\\
-      \rowadd3{}2\\
+      \rowadd3{}2
+      \end{array}\\
+      </mrow>
+      <mrow>\amp
       \begin{bmatrix} 
       1 \amp 0 \amp -1 \amp 0 \amp 3\\
       0 \amp 1 \amp 0 \amp -1 \amp -1\\
       0 \amp 0 \amp 1 \amp 2 \amp -4
-      \end{bmatrix} \\
+      \end{bmatrix} \amp\amp
       \rowadd1{}3\\
+      </mrow>
+      <mrow>\amp
       \begin{bmatrix} 
       1 \amp 0 \amp 0 \amp 2 \amp -1\\
       0 \amp 1 \amp 0 \amp -1 \amp -1\\
       0 \amp 0 \amp 1 \amp 2 \amp -4
       \end{bmatrix} 
-      </m>
+      </mrow>
+      </md>
       and so <m>w</m> is a free variable that can be set equal to <m>t</m>. This gives
       <m>(x,y,z,w)=(-1-2t, -1+t, -4-2t,t)</m>.
       </p></solution> </exercise>
@@ -2608,31 +2718,39 @@
       to this system. Show that every solution is of this form.
       </p> </statement> <solution> <p> 
       We put the augmented matrix in reduced row echelon form:
-      <m>
+      <md>
+      <mrow>\amp
       \begin{bmatrix}
       1 \amp -1 \amp 0 \amp 0\\
       0 \amp  1 \amp -1 \amp 0\\
       1 \amp  0 \amp -1 \amp 0\\
-      \end{bmatrix}\\
+      \end{bmatrix}\amp\amp
       \rowsub3{}1\\
+      </mrow>
+      <mrow>\amp
       \begin{bmatrix}
       1 \amp -1 \amp 0 \amp 0\\
       0 \amp  1 \amp -1 \amp 0\\
       0 \amp  1\amp -1 \amp 0\\
-      \end{bmatrix}\\
+      \end{bmatrix}\amp\amp
       \rowadd1{}2\\
+      </mrow>
+      <mrow>\amp
       \begin{bmatrix}
       1 \amp 0\amp -1 \amp 0\\
       0 \amp  1 \amp -1 \amp 0\\
       0 \amp  1\amp -1 \amp 0\\
-      \end{bmatrix}\\
+      \end{bmatrix}\amp\amp
       \rowsub3{}2\\
+      </mrow>
+      <mrow>\amp
       \begin{bmatrix}
       1 \amp  0 \amp -1 \amp 0\\
       0 \amp  1 \amp -1 \amp 0\\
       0 \amp  0\amp 0 \amp 0\\
       \end{bmatrix}
-      </m>
+      </mrow>
+      </md>
       We then have that <m>z</m> is a free variable that may be set to <m>t</m>.
       All solutions are then of the form <m>(x,y,z)=(t,t,t)</m>, which
       implies that <m>x=y</m> and <m>y=z</m>.

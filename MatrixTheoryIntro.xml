@@ -7,7 +7,10 @@
 
     <definition><title>Matrix</title>
     <statement>
-    <p>A <term> matrix</term> (the plural is <term>matrices</term>) is a rectangular array of numbers. </p>
+    <p>
+       A <term> matrix</term> 
+       (the plural is <term>matrices</term>) is a rectangular array of numbers. 
+    </p>
     </statement>
     </definition>
 
@@ -601,7 +604,8 @@
         <me>
         A=\begin{bmatrix} \amp\amp\vdots \\
         \color{red}{a_{i,1}} \amp \color{red}{a_{i,2}}\amp\cdots\amp \color{red}{a_{i,n}}
-        \rlap{\hbox{$\quad R_i$}}\\ \amp\amp\vdots\\ 
+           \rlap{\hbox{$\quad R_i$}}\\ 
+        \amp\amp\vdots
         \end{bmatrix}
         \qquad\quad
         \begin{matrix}
@@ -933,14 +937,13 @@
                 <m>A(B+C)</m> is
                 <md>
                 <mrow>
-                \amp a_{i,1}(b_{1,j}+c_{1,j})+
+                a_{i,1}(b_{1,j}+c_{1,j})+
                 a_{i,2}(b_{2,j}+c_{2,j})+
-                \cdots+ a_{i,n}(b_{n,j}+c_{n,j})
-                </mrow>
-                <mrow>  \amp = a_{i,1}b_{1,j}+a_{i,1}c_{1,j} </mrow>
-                <mrow> \amp +a_{i,2}b_{2,j}+a_{i,2}c_{2,j} </mrow>
-                <mrow> \amp \ \vdots </mrow>
-                <mrow> \amp +a_{i,n}b_{n,j}+a_{i,n}c_{n,j} </mrow>
+                \cdots+ a_{i,n}(b_{n,j}+c_{n,j}) 
+                 \amp\amp = \amp  +a_{i,1}b_{1,j}+a_{i,1}c_{1,j} </mrow>
+                <mrow> \amp\amp \amp +a_{i,2}b_{2,j}+a_{i,2}c_{2,j} </mrow>
+                <mrow> \amp\amp \amp \ \vdots </mrow>
+                <mrow> \amp\amp \amp +a_{i,n}b_{n,j}+a_{i,n}c_{n,j} </mrow>
                 </md>
             </p></li>
             <li><p>
@@ -1599,18 +1602,18 @@
     
         <me>
         \begin{matrix}
-        \amp\amp\amp\amp\amp\text{Row sums}\\
-        a_{1,1}b_{1,1}\amp a_{1,2}b_{2,1}\amp a_{1,3}b_{3,1}\amp\cdots\amp
+        \amp\amp\amp\amp\amp\amp\text{Row sums}\\
+        \amp a_{1,1}b_{1,1}\amp a_{1,2}b_{2,1}\amp a_{1,3}b_{3,1}\amp\cdots\amp
         a_{1,n}b_{n,1} \amp\gets (AB)_{1,1}\\
-        a_{2,1}b_{1,2}\amp a_{2,2}b_{2,2}\amp a_{2,3}b_{3,2}\amp\cdots\amp
+        \amp a_{2,1}b_{1,2}\amp a_{2,2}b_{2,2}\amp a_{2,3}b_{3,2}\amp\cdots\amp
         a_{2,n}b_{n,2} \amp\gets(AB)_{2,2}\\
-        \vdots\amp\vdots\amp\vdots\amp\amp\vdots\amp\vdots\\
-        a_{m,1}b_{1,m}\amp a_{m,2}b_{2,m}\amp a_{m,3}b_{3,m}\amp\cdots\amp
+        \amp \vdots\amp\vdots\amp\vdots\amp\amp\vdots\amp\vdots\\
+        \amp a_{m,1}b_{1,m}\amp a_{m,2}b_{2,m}\amp a_{m,3}b_{3,m}\amp\cdots\amp
         a_{m,n}b_{n,m} \amp\gets (AB)_{m,m}\\
         \\
-        \uparrow\amp\uparrow\amp\uparrow\amp\amp\uparrow\\
-        \llap{\text{Column sums:}\quad}
-        (BA)_{1,1}\amp(BA)_{2,2}\amp(BA)_{3,3}\amp\amp(BA)_{n,n}
+        \amp \uparrow\amp\uparrow\amp\uparrow\amp\amp\uparrow\\
+        \text{Column sums: }
+        \amp (BA)_{1,1}\amp(BA)_{2,2}\amp(BA)_{3,3}\amp\amp(BA)_{n,n}
         \end{matrix}
         </me>
         
@@ -1780,7 +1783,7 @@
             \begin{bmatrix}0\amp0\\0\amp0\end{bmatrix}
             </me>
             
-            and so we get the (matrix) equation <m>P(B)=0</m>.
+            and so we get the (matrix) equation <m>P(B)=\vec 0</m>.
             When a matrix <m>B</m> satisfies the equation <m>P(B)=0</m>, we call 
             <m>B</m> a <term>root</term> of <m>p(x)</m>.
             </p>
@@ -1882,8 +1885,12 @@
             Suppose we have matrices <m>B</m> and <m>C</m>
             which both act as inverses, that is, <m>AB=BA=I</m> and
             <m>AC=CA=I</m>. We evaluate <m>BAC</m> in two different ways
-            and equate the results: <me> BAC=(BA)C=IC=C\\ BAC=B(AC)=BI=B,
-            </me> and so <m>B=C</m>.  
+            and equate the results: 
+            <md> 
+              <mrow> BAC=(BA)C=IC=C</mrow>
+              <mrow>BAC=B(AC)=BI=B</mrow>
+            </md>, 
+            and so <m>B=C</m>.  
         </p> 
         </proof> 
         </theorem>
@@ -1991,8 +1998,12 @@
         <proof> 
         <p> 
             Suppose that <m>B\vec x=\vec0.</m> Multiply both sides
-            of the equation by <m>A</m>: <me> A(B\vec x)=A(\vec0)=\vec0\\
-            A(B\vec x)=(AB)\vec x=I\vec x=\vec x </me> and so <m>\vec x=\vec0.</m> Hence
+            of the equation by <m>A</m>: 
+            <md> 
+            <mrow>A(B\vec x)=A(\vec0)=\vec0</mrow>
+            <mrow>A(B\vec x)=(AB)\vec x=I\vec x=\vec x </mrow>
+            </md> 
+            and so <m>\vec x=\vec0.</m> Hence
             <m>B\vec x=\vec0</m> implies <m>\vec x=\vec0</m> and so <m>B</m> is
             nonsingular.  
         </p> 
@@ -2004,12 +2015,16 @@
         <p> 
             Suppose the <m>A</m> and <m>B</m> are square matrices with
             <m>AB=I.</m> Then <m>BA=I.</m> </p> </statement> <proof> <p> From
-            the previous lemma we know that <m>B</m> is nonsingular. Hence
+            the previous lemma we know that <m>B</m> is nonsingular. 
+            Hence
             we know how to find <!-- link goes here --> <m>C</m> which
             is a solution to the equation <m>BX=I</m>, that is, so that
             <m>BC=I.</m> We now evaluate <m>BABC</m> in two different
             ways and equate the results: 
-            <me> BABC=B(AB)C=BIC=BC=I\\ BABC=(BA)(BC)=BA(I)=BA </me> 
+            <md>
+            <mrow>BABC=B(AB)C=BIC=BC=I</mrow>
+            <mrow>BABC=(BA)(BC)=BA(I)=BA </mrow>
+            </md> 
         </p> 
         </proof> 
         </proposition>
@@ -2129,40 +2144,75 @@
         </p>
 
         <example>
-        <title>The inverse of a <m>3\times2</m> matrix</title> 
+        <title>The inverse of a <m>2\times2</m> matrix</title> 
         <p> 
-        We start with the matrix 
+        We start with the <m>2\times2</m> matrix 
         <me> 
             A=\begin{bmatrix} a\amp b\\c\amp d \end{bmatrix} 
         </me> 
-        Now we carry out row reduction: 
-        <me> 
-           \left[ \begin{array}{cc|cc}
-               a\amp b\amp1\amp0\rlap{\hbox{$\qquad R_1\gets \frac1a R_1$}}\\
-               c\amp d\amp0\amp1
-           \end{array} \right]  \\ 
-           \left[ \begin{array}{cc|cc}
-               1\amp\frac ba\amp\frac1a\amp0\\ 
-               c\amp d\amp0\amp1 \rlap{\hbox{$\qquad R_2\gets R_2-cR_1$}}
-           \end{array} \right]\\ 
-           \left[ \begin{array}{cc|cc}
-                1\amp\frac ba\amp\frac1a\amp0
-                \\ 0\amp d-\frac{bc}a\amp-\frac ca\amp1
-            \end{array} \right] \rlap{\hbox{(Rewrite last row)}}   \\
-            \left[\begin{array}{cc|cc}
-                1\amp\frac ba\amp\frac1a\amp0\\ 
-                0\amp\frac{ad-bc}a\amp-\frac ca\amp1 
-                   \rlap{\hbox{$\qquad R_2\gets \frac a{ad-bc}R_2$}}
-            \end{array} \right]\\ 
-            \left[ \begin{array}{cc|cc}
-                1\amp\frac ba\amp\frac1a\amp0\\ 
-                0\amp1\amp-\frac c{ad-cb}\amp \frac a{ad-cb} \rlap{\hbox{$\qquad
-                R_1\gets R_1-\frac ba R_2$}}
-            \end{array}\right]\\ \left[ \begin{array}{cc|cc}
-                1\amp0\amp \frac d{ad-cb}\amp -\frac b{ad-cb}   \\
-                0\amp1\amp-\frac c{ad-cb}\amp \frac a{ad-cb}
-            \end{array} \right] 
-        </me>
+        Now we carry out row reduction (the specific elementary
+        row operations being in parentheses): 
+       <md alignment="gather">
+         <mrow> 
+          \amp \left[
+            \begin{array}{cc|cc}
+            a \amp b \amp 1 \amp 0 \\
+            c \amp d \amp 0 \amp 1
+          \end{array}
+          \right]
+          \amp \amp 
+          (R_1 \gets \frac 1a R_1)
+         </mrow>
+         <mrow> 
+          \amp \left[
+            \begin{array}{cc|cc}
+              1 \amp \frac ba \amp \frac 1a \amp 0 \\
+              c \amp d \amp 0 \amp 1
+          \end{array}
+          \right]
+          \amp \amp 
+          (R_2 \gets R_2 -c R_1)
+         </mrow>
+         <mrow> 
+          \amp \left[
+            \begin{array}{cc|cc}
+              1 \amp \frac ba \amp \frac 1a \amp 0 \\
+              0 \amp d-\frac{bc}a \amp -\frac ca \amp 1 
+          \end{array}
+          \right]
+          \amp \amp 
+          (\text{Rewrite last row})
+         </mrow>
+         <mrow> 
+          \amp \left[
+            \begin{array}{cc|cc}
+              1 \amp \frac ba \amp \frac 1a \amp 0 \\
+              0 \amp \frac{ad-bc}a \amp -\frac ca \amp 1 
+          \end{array}
+          \right]
+          \amp \amp 
+          (R_2 \gets \frac a{ad-bc}R_2)
+         </mrow>
+         <mrow> 
+          \amp \left[
+            \begin{array}{cc|cc}
+              1 \amp \frac ba \amp \frac 1a \amp 0 \\
+              0 \amp 1 \amp -\frac c{ad-bc} \amp \frac a{ad-bc}
+          \end{array}
+          \right]
+          \amp \amp 
+          (R_1 \gets R_1 - \frac ba R_2)
+         </mrow>
+         <mrow> 
+          \amp \left[
+            \begin{array}{cc|cc}
+              1 \amp 0 \amp \frac d{ad-bc} \amp -\frac b{ad-bc} \\
+              0 \amp 1 \amp -\frac c{ad-bc} \amp \frac a{ad-bc}
+          \end{array}
+          \right]
+         </mrow>
+       </md>
+
 
         On the face of it, this seems to say 
         <me> 
@@ -2174,7 +2224,7 @@
             \end{bmatrix} 
             = \frac1{ad-cb}
             \begin{bmatrix} d\amp-b\\ -c\amp a \end{bmatrix}
-        </me>
+        </me>.
 
         But notice that we have blithely ignored the possibility that
         <m>a=0</m> or that <m>ad-bc=0</m>. Nonetheless we may compute:
@@ -2842,17 +2892,27 @@
     <p>
 	<ul>
 	    <li> <m>n=0</m>: For any matrix <m>A</m>,
-	    <me>A^mA^0=A^{m+0}=A^m\\A^0A^m=A^{0+m}=A^m,</me> and so
+	    <md>
+        <mrow>A^mA^0=A^{m+0}=A^m</mrow>
+        <mrow>A^0A^m=A^{0+m}=A^m</mrow>
+        </md>, and so
         it must be that <m>A^0=I</m>.
         </li>
 
-	    <li><m>m=1, n=-1</m>: <me>A^1
-	    A^{-1}=A^{1+(-1)}=A^0=I\\A^{-1} A^1=A^{-1+1}=A^0=I </me> so
+	    <li><m>m=1, n=-1</m>: 
+          <md>
+           <mrow> A^1 A^{-1}=A^{1+(-1)}=A^0=I</mrow>
+            <mrow>A^{-1} A^1=A^{-1+1}=A^0=I </mrow>
+          </md> so
 	    <m>A^{-1}</m> is the inverse of <m>A</m> (and hence the notation).
 	    </li>
 
-	    <li><m>n=-m</m>: <me>A^m A^{-m}=A^{m+(-m)}=A^0=I\\A^{-m}
-	    A^m=A^{-m+m}=A^0=I</me> so <m>A^{-m}</m> is the inverse of
+	    <li><m>n=-m</m>:
+          <md>
+            <mrow>A^m A^{-m}=A^{m+(-m)}=A^0=I</mrow>
+            <mrow>A^{-m} A^m=A^{-m+m}=A^0=I</mrow>
+          </md> 
+        so <m>A^{-m}</m> is the inverse of
 	    <m>A^m.</m> Notationally this says <m>A^{-m}=(A^m)^{-1}</m>.
 	    </li>
 	</ul>
@@ -3367,7 +3427,7 @@
             <ol>
 	        <li><p>
             Interchange rows (<m>R_i\leftrightarrow R_j</m>) 
-            <m>E=
+            <me>E=
 	        \begin{bmatrix}
 	            1 \\
 	            \amp\ddots \\ 
@@ -3380,12 +3440,13 @@
                 \amp\amp\amp\amp\amp\amp\amp\amp1 \\
 	            \amp\amp\amp\amp\amp\amp\amp\amp\amp\ddots 
             \end{bmatrix}
-	        </m> and <m>E^{-1}=E</m>. 
+	        </me> 
+            and <m>E^{-1}=E</m>. 
             </p></li>
 
 	        <li><p>
             Multiply a row by a constant (<m>R_i\leftarrow \lambda R_i</m>) 
-            <m>
+            <me>
             E=
             \begin{bmatrix} 
                 1 \\ 
@@ -3396,9 +3457,9 @@
 	            \amp\amp\amp\amp\amp\ddots \\ 
                 \amp\amp\amp\amp\amp\amp1
 	        \end{bmatrix} 
-            </m> 
-        
-            <m>E^{-1}=
+            </me> 
+            and
+            <me>E^{-1}=
             \begin{bmatrix} 1 \\ 
                 \amp\ddots \\
 	            \amp\amp1 \\ 
@@ -3407,13 +3468,13 @@
                 \amp\amp\amp\amp\amp\ddots \\ 
                 \amp\amp\amp\amp\amp\amp1
 	        \end{bmatrix}
-            </m> 
+            </me> 
             </p></li>
 
             <li><p>
             Add a multiple of one row to another 
             (<m>R_i\leftarrow R_i + \lambda R_j</m>) 
-            <m>E=
+            <me>E=
             \begin{bmatrix} 
                 1 \\ 
                 \amp\ddots \\ 
@@ -3423,9 +3484,9 @@
                 \amp\amp\amp\amp\amp\ddots \\
 	            \amp\amp\amp\amp\amp\amp1 
             \end{bmatrix}
-	        </m> 
-            and so  
-            <m>
+	        </me> 
+            and 
+            <me>
             E^{-1}=
             \begin{bmatrix}
 	            1 \\ 
@@ -3436,7 +3497,7 @@
                 \amp\amp\amp\amp\amp\ddots \\ 
                 \amp\amp\amp\amp\amp\amp1
 	        \end{bmatrix}
-	        </m> 
+	        </me> 
             </p></li>
 	        </ol>
     

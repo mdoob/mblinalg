@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:46-06:00       *-->
+<!--*       on 2021-08-29T14:14:43-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,7 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Let \(A\) be a square matrix of size \(n\text{,}\) and let</p>
+<p>Let</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \sigma=
@@ -25,8 +25,17 @@ i_1\amp i_2\amp i_3\amp \cdots\amp  i_n
 \end{pmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">be any permutation of \(\{1,2,3,\ldots,n\}\text{.}\) Carry out the first row expansion to evaluate the determinant of \(A\) and any subsequent minors that arise as in <a class="xref" data-knowl="./knowl/PermutationDeterminantProof4.html" title="Example 3.6.14: Proof for \(n=4\)">Example 3.6.14</a>.  Then \(a_{1,i_1}a_{2,i_2}a_{3,i_3} \cdots a_{n,i_n} 
-=a_{1,\sigma(1)}a_{2,\sigma(2)}a_{3,\sigma(3)} \cdots a_{n,\sigma(n)}\) appears exactly once in the full expansion.</p>
+<p class="continuation">By <a class="xref" data-knowl="./knowl/PermutationSignDefinition.html" title="Definition 3.6.6">Definition 3.6.6</a> we need to keep track of the number of interchanges needed to put \(\sigma\) into natural order. If \(i_1=1\text{,}\) the first position is in natural order we are finished with the that position. Nothing has changed, including the number of inversions. Otherwise, we need to interchange whatever is in the first position with \(1\text{,}\) and we need to know the effect of that interchange on the parity of the number of inversions. Here is the situation before interchanging \(1\) and \(k\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sigma=
+\begin{pmatrix}
+1\amp       \amp \cdots\amp        \amp j\amp      \amp\cdots\amp      \amp n\\
+k\amp \cdots\amp t     \amp \cdots \amp1 \amp\cdots\amp u    \amp\cdots\amp i_n
+\end{pmatrix}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">If \(u\) is an entry to the right of \(1\text{,}\) then the interchange of \(1\) and \(k\) causes the pairs \(ku\) and \(1u\) to be replaced by \(1u\) and \(ku\) respectively, and so the number of inversions is unchanged as far as \(u\) is concerned.</p>
 <span class="incontext"><a href="DeterminantDeeperTopics.html#p-712">in-context</a></span>
 </body>
 </html>

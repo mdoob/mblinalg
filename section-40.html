@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:33-06:00       *-->
+<!--*       on 2021-08-29T14:14:27-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,36 +14,42 @@
 <title>Transformations from \(\R^n\) to \(\R^n\)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -56,8 +62,8 @@ MathJax.Hub.Config({
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
 \def\C{{\mathbb C}}
 \def\Q{{\mathbb Q}}
 \def\Z{{\mathbb Z}}
@@ -104,27 +110,27 @@ MathJax.Hub.Config({
 <li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
 <li class="link"><a href="LinearTransformations.html" data-scroll="LinearTransformations"><span class="codenumber">6</span> <span class="title">Linear transformations</span></a></li>
 <li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">7</span> <span class="title">Additional Topics</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-40"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">6.1</span> <span class="title">Transformations from \(\R^n\) to \(\R^n\)</span>
 </h2>
-<section class="introduction" id="introduction-18"><p id="p-1198">Remember how functions \(f\colon X\to Y\) work. For each \(x\in X\text{,}\) the value of \(f(x)\in Y\) is defined. Typically this is done with a formula. For example, if \(f(x)=x^2\text{,}\) then for \(x=3\) we compute \(f(x)=f(3)=3^2=9\text{.}\) What is the set  \(X\) in this case? So far, we don't know. It might be the nonnegative integers \(\N\) or the real numbers \(\R\text{,}\) so when defining a function it is important to understand \(X\) and \(Y\) as part of the definition.</p>
-<p id="p-1199">Now consider defining \(g\colon X\to Y\) as \(g(x)=\sqrt x \text{.}\) If we try to use \(X=\R\text{,}\) there is a problem, since negative real numbers don't have (real) square roots, and we must be able to evaluate \(g(x)\) for <em class="emphasis">all</em> \(x\in X\text{.}\) If we use \(X=\N\) we don't have this problem, but we note that \(g(2)=\sqrt2\) is not in \(\N\text{.}\) If we use \(Y=\R\text{,}\) then there are no problems, so we can use \(g\colon\N\to\R\text{.}\) Every function has sets \(X\) and \(Y\) as part of its definition, and it is important to be aware of them, even if only implicitly. The set \(X\) is the <dfn class="terminology">domain</dfn> and the set \(Y\) is the <dfn class="terminology">codomain</dfn>.</p></section><section class="subsection" id="subsection-89"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-18"><p id="p-1182">Remember how functions \(f\colon X\to Y\) work. For each \(x\in X\text{,}\) the value of \(f(x)\in Y\) is defined. Typically this is done with a formula. For example, if \(f(x)=x^2\text{,}\) then for \(x=3\) we compute \(f(x)=f(3)=3^2=9\text{.}\) What is the set  \(X\) in this case? So far, we don't know. It might be the nonnegative integers \(\N\) or the real numbers \(\R\text{,}\) so when defining a function it is important to understand \(X\) and \(Y\) as part of the definition.</p>
+<p id="p-1183">Now consider defining \(g\colon X\to Y\) as \(g(x)=\sqrt x \text{.}\) If we try to use \(X=\R\text{,}\) there is a problem, since negative real numbers don't have (real) square roots, and we must be able to evaluate \(g(x)\) for <em class="emphasis">all</em> \(x\in X\text{.}\) If we use \(X=\N\) we don't have this problem, but we note that \(g(2)=\sqrt2\) is not in \(\N\text{.}\) If we use \(Y=\R\text{,}\) then there are no problems, so we can use \(g\colon\N\to\R\text{.}\) Every function has sets \(X\) and \(Y\) as part of its definition, and it is important to be aware of them, even if only implicitly. The set \(X\) is the <dfn class="terminology">domain</dfn> and the set \(Y\) is the <dfn class="terminology">codomain</dfn>.</p></section><section class="subsection" id="subsection-89"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.1.1</span> <span class="title">Matrix transformations</span>
 </h3>
-<p id="p-1200">Transformations are functions where the domain is \(\R^n\) and codomain is \(\R^m\text{.}\)</p>
-<article class="example example-like" id="Transformations1"><h6 class="heading">
+<p id="p-1184">Transformations are functions where the domain is \(\R^n\) and codomain is \(\R^m\text{.}\)</p>
+<article class="example example-like" id="Transformations1"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-Transformations1"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Transformations between \(\R^2\) and \(\R^3\).</span>
-</h6>
-<ul id="p-1201" class="disc">
-<li id="li-373">\(T_1\colon\R^3\to\R^2\) defined by \(T((x,y,z))=(x+y,y+z).\)</li>
-<li id="li-374">\(T_2\colon\R^2\to\R^3\) defined by \(T((x,y))=(x+y,x-y,xy).\)</li>
-</ul></article><article class="exercise exercise-like" id="exercise-43"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-43"><h6 class="heading">
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-Transformations1"><article class="example example-like"><ul id="p-1185" class="disc">
+<li id="li-373"><p id="p-derived-li-373">\(T_1\colon\R^3\to\R^2\) defined by \(T((x,y,z))=(x+y,y+z).\)</p></li>
+<li id="li-374"><p id="p-derived-li-374">\(T_2\colon\R^2\to\R^3\) defined by \(T((x,y))=(x+y,x-y,xy).\)</p></li>
+</ul></article></div>
+<article class="exercise exercise-like" id="exercise-43"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-43"><h6 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">6.1.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-43"><article class="exercise exercise-like"><p id="p-1202">Using <a class="xref" data-knowl="./knowl/Transformations1.html" title="Example 6.1.1: Transformations between \(\R^2\) and \(\R^3\)">Example 6.1.1</a>, evaluate \(T_1((1,2,3))\) and \(T_2((1,2))\text{.}\)</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-43"><article class="exercise exercise-like"><p id="p-1186">Using <a class="xref" data-knowl="./knowl/Transformations1.html" title="Example 6.1.1: Transformations between \(\R^2\) and \(\R^3\)">Example 6.1.1</a>, evaluate \(T_1((1,2,3))\) and \(T_2((1,2))\text{.}\)</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-35" id="solution-35"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-35"><div class="solution solution-like"><div class="displaymath" id="p-1203">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-35" id="solution-35"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-35"><div class="solution solution-like"><div class="displaymath" id="p-1187">
 \begin{gather*}
 T_1((1,2,3))=(1+2,2+3)=(3,5)\\
 T_2((1,2))=(1+2,1-2,1\cdot2)=(3,-1,2)
@@ -134,21 +140,20 @@ T_2((1,2))=(1+2,1-2,1\cdot2)=(3,-1,2)
 <article class="definition definition-like" id="definition-69"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix transformation.</span>
 </h6>
-<p id="p-1204">Let \(A\) be an \(m\) by \(n\) matrix, and let \(\vec x\) be a vector in \(\R^n\text{.}\) Then the <dfn class="terminology">matrix transformation</dfn> \(T_A\colon \R^n\to \R^m\) is defined by</p>
+<p id="p-1188">Let \(A\) be an \(m\) by \(n\) matrix, and let \(\vec x\) be a vector in \(\R^n\text{.}\) Then the <dfn class="terminology">matrix transformation</dfn> \(T_A\colon \R^n\to \R^m\) is defined by</p>
 <div class="displaymath">
 \begin{equation*}
 T_A(\vec x)=A\vec x\text{.}
 \end{equation*}
-</div></article><article class="example example-like" id="example-66"><h6 class="heading">
+</div></article><article class="example example-like" id="example-67"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-67"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">A matrix transformation from \(\R^3\) to \(\R^2\).</span>
-</h6>
-<p id="p-1205">Let</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-67"><article class="example example-like"><p id="p-1189">Let</p>
 <div class="displaymath">
 \begin{equation*}
 A=\begin{bmatrix}1\amp1\amp0\\ 0\amp1\amp1\end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Then, using \(\vec x=(x,y,z)\text{,}\)</p>
+<p class="continuation">Then, using \(\vec x=(x,y,z)\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
 T_A(\vec x)
@@ -160,29 +165,30 @@ T_A(\vec x)
 \begin{bmatrix}x+y\\y+z\end{bmatrix}\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">and so \(T_A((x,y,z))=(x+y,y+z)\text{.}\)</p>
-<p id="p-1206">As can be seen from this example, when writing transformations in the form \(T(\mathbf x)\) it is customary to write vectors horizontally, while when using matrix multiplication it is customary to write them vertically. This slight abuse of notation normally does not cause confusion. Compare this example with <a class="xref" data-knowl="./knowl/Transformations1.html" title="Example 6.1.1: Transformations between \(\R^2\) and \(\R^3\)">Example 6.1.1</a>.</p></article><article class="theorem theorem-like" id="MatrixTransformationsLinear"><h6 class="heading">
+<p class="continuation">and so \(T_A((x,y,z))=(x+y,y+z)\text{.}\)</p>
+<p id="p-1190">As can be seen from this example, when writing transformations in the form \(T(\mathbf x)\) it is customary to write vectors horizontally, while when using matrix multiplication it is customary to write them vertically. This slight abuse of notation normally does not cause confusion. Compare this example with <a class="xref" data-knowl="./knowl/Transformations1.html" title="Example 6.1.1: Transformations between \(\R^2\) and \(\R^3\)">Example 6.1.1</a>.</p></article></div>
+<article class="theorem theorem-like" id="MatrixTransformationsLinear"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Linearity of matrix transformations.</span>
 </h6>
-<p id="p-1207">Let \(T_A\) be a matrix transformation. Then</p>
+<p id="p-1191">Let \(T_A\) be a matrix transformation. Then</p>
 <ul class="disc">
-<li id="li-375">\(\displaystyle T_A(\vec x+\vec y)=T_A(\vec x)+T_A(\vec y)\)</li>
-<li id="li-376">\(\displaystyle T_A(r\vec x)=rT_A(\vec x)\)</li>
-</ul></article><article class="hiddenproof" id="proof-105"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-105"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-105"><article class="hiddenproof"><p id="p-1208">The two properties may be written as two easily verifiable equations:</p>
+<li id="li-375"><p id="p-derived-li-375">\(\displaystyle T_A(\vec x+\vec y)=T_A(\vec x)+T_A(\vec y)\)</p></li>
+<li id="li-376"><p id="p-derived-li-376">\(\displaystyle T_A(r\vec x)=rT_A(\vec x)\)</p></li>
+</ul></article><article class="hiddenproof" id="proof-105"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-105"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-105"><article class="hiddenproof"><p id="p-1192">The two properties may be written as two easily verifiable equations:</p>
 <ul class="disc">
-<li id="li-377">\(\displaystyle A(\vec x+\vec y)=A\vec x+A\vec y\)</li>
-<li id="li-378">\(\displaystyle A(r\vec x)=rA\vec x\)</li>
+<li id="li-377"><p id="p-derived-li-377">\(\displaystyle A(\vec x+\vec y)=A\vec x+A\vec y\)</p></li>
+<li id="li-378"><p id="p-derived-li-378">\(\displaystyle A(r\vec x)=rA\vec x\)</p></li>
 </ul></article></div>
-<p id="p-1209">Transformations that satisfy the two properties in <a class="xref" data-knowl="./knowl/MatrixTransformationsLinear.html" title="Theorem 6.1.5: Linearity of matrix transformations">Theorem 6.1.5</a> are especially important.</p>
+<p id="p-1193">Transformations that satisfy the two properties in <a class="xref" data-knowl="./knowl/MatrixTransformationsLinear.html" title="Theorem 6.1.5: Linearity of matrix transformations">Theorem 6.1.5</a> are especially important.</p>
 <article class="definition definition-like" id="DefLinearTransformation"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Linear transformations.</span>
 </h6>
-<p id="p-1210">A transformation \(T\colon \R^n\to\R^m\) is a <dfn class="terminology">linear transformation</dfn> if it satisfies</p>
+<p id="p-1194">A transformation \(T\colon \R^n\to\R^m\) is a <dfn class="terminology">linear transformation</dfn> if it satisfies</p>
 <ul class="disc">
-<li id="li-379">\(\displaystyle T(\vec x+\vec y)=T(\vec x)+T(\vec y)\)</li>
-<li id="li-380">\(\displaystyle T(r\vec x)=rT(\vec x)\)</li>
+<li id="li-379"><p id="p-derived-li-379">\(\displaystyle T(\vec x+\vec y)=T(\vec x)+T(\vec y)\)</p></li>
+<li id="li-380"><p id="p-derived-li-380">\(\displaystyle T(r\vec x)=rT(\vec x)\)</p></li>
 </ul>
-<p data-braille="continuation">for any vectors \(\vec x\) and \(\vec y\) in \(\R^n\) and any scalar \(r\text{.}\)</p></article></section></section></div></main>
+<p class="continuation">for any vectors \(\vec x\) and \(\vec y\) in \(\R^n\) and any scalar \(r\text{.}\)</p></article></section></section></div></main>
 </div>
 </body>
 </html>

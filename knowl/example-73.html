@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:57-06:00       *-->
+<!--*       on 2021-08-29T14:14:54-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,64 +15,61 @@
 </head>
 <body>
 <article class="example example-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">Composition of linear operators.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.4.5</span><span class="period">.</span>
 </h6>
-<ul class="disc">
-<li>Let \(L_1\) be a rotation around the origin counterclockwise by an angle \(\phi\) and \(L_2\) be a rotation by an angle \(\theta\text{.}\) This means<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<p>We continue with <a class="xref" data-knowl="./knowl/LinearTransformationComposition.html" title="Example 6.4.3">Example 6.4.3</a>:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-A_{L_1}=
-\begin{bmatrix}
-\cos \phi \amp -\sin\phi\\ \sin\phi \amp \cos\phi
-\end{bmatrix}\\
-A_{L_2}=
-\begin{bmatrix}
-\cos \theta \amp -\sin\theta\\ \sin\theta \amp \cos\theta
-\end{bmatrix} \text{.}
+T_1((x,y,z))=(x+y,y+z)\\
+T_2((x,y))=(x+y,2x+y,x+2y)\text{.}
 \end{equation*}
-</div>Then \(L_1\circ L_2\) is a rotation by \(\theta\) followed by a rotation by an angle \(\phi\text{;}\) together it is a rotation through an angle of \(\theta+\phi\text{,}\) and so<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+</div>
+<p class="continuation">Then</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-A_{L_1\circ L_2}=
-\begin{bmatrix}
-\cos(\theta+\phi) \amp -\sin(\theta+\phi)\\ \sin(\theta+\phi) \amp \cos(\theta+\phi)
-\end{bmatrix} \text{.}
+A_{T_1}
+= \begin{bmatrix}T_1(\vec e_1)\amp T_1(\vec e_2)\amp T_1(\vec e_3)\end{bmatrix}
+= \begin{bmatrix}1\amp1\amp0\\0\amp1\amp1\end{bmatrix}\\
+A_{T_2} = \begin{bmatrix} T_2(\vec e_1)\amp T_2(\vec e_2)\end{bmatrix}
+= \begin{bmatrix}1\amp1\\ 2\amp1\\ 1\amp2\end{bmatrix}\text{.}
 \end{equation*}
-</div>It then follows from <a class="xref" data-knowl="./knowl/CompositionAndMatrixMulitplication.html" title="Theorem 6.4.4: Composition and matrix multiplication">Theorem 6.4.4</a> that<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+</div>
+<p class="continuation">From <a class="xref" data-knowl="./knowl/CompositionAndMatrixMulitplication.html" title="Theorem 6.4.4: Composition and matrix multiplication">Theorem 6.4.4</a>,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\begin{bmatrix}
-\cos(\theta+\phi) \amp -\sin(\theta+\phi)\\ \sin(\theta+\phi) \amp \cos(\theta+\phi)
-\end{bmatrix} 
-=
-\begin{bmatrix}
-\cos \phi \amp -\sin\phi\\ \sin\phi \amp \cos\phi
-\end{bmatrix}
-\begin{bmatrix}
-\cos \theta \amp -\sin\theta\\ \sin\theta \amp \cos\theta
-\end{bmatrix} \text{.}
+A_{T_1\circ T_2} = A_{T_1}A_{T_2}=
+\begin{bmatrix}1\amp1\amp0\\0\amp1\amp1\end{bmatrix}
+\begin{bmatrix}1\amp1\\ 2\amp1\\ 1\amp2\end{bmatrix} 
+= \begin{bmatrix} 3\amp2\\ 3\amp3 \end{bmatrix}
+\\
+A_{T_2\circ T_1} = A_{T_2}A_{T_1}
+= \begin{bmatrix}1\amp1\\ 2\amp1\\ 1\amp2\end{bmatrix}
+\begin{bmatrix}1\amp1\amp0\\0\amp1\amp1\end{bmatrix}
+= \begin{bmatrix} 1\amp2\amp1\\ 2\amp3\amp1\\1\amp3\amp2 \end{bmatrix}\text{.}
 \end{equation*}
-</div>Computing the matrix product and equating the corresponding entries in the first column gives<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+</div>
+<p class="continuation">It then follows that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\cos(\theta+\phi) = \cos\theta \cos\phi-\sin\theta\sin\phi\\
-\sin(\theta+\phi) = \cos\theta\sin\phi+\sin\theta\cos\phi\text{.}
+(T_1\circ T_2)(x,y)
+= A_{T_1}A_{T_2} \begin{bmatrix} x\\y \end{bmatrix}
+=\begin{bmatrix} 3\amp2\\ 3\amp3 \end{bmatrix}
+\begin{bmatrix} x\\y \end{bmatrix}
+= \begin{bmatrix} 3x+2y\\3x+3y \end{bmatrix}\\
+(T_2\circ T_1)(x,y,z) 
+= A_{T_2}A_{T_1} \begin{bmatrix} x\\y\\z \end{bmatrix}
+= \begin{bmatrix} 1\amp2\amp1\\ 2\amp3\amp1\\1\amp3\amp2 \end{bmatrix}
+\begin{bmatrix} x\\y\\z \end{bmatrix}
+= \begin{bmatrix} x+2y+z\\2x+3y+z\\x+3y+2z\end{bmatrix}
 \end{equation*}
-</div>This might be the world's shortest proof of the sum formulas for the sine and cosine functions.</li>
-<li>Let \(L\) be a reflection by the line \(y=x\text{,}\) and consider \(L^2\text{.}\) Then<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+</div>
+<p class="continuation">and so</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-A_{L^2}
-=(A_L)^2
-= \left(\begin{bmatrix} 0\amp1\\1\amp0 \end{bmatrix}\right)^2
-=I\text{,}
+(T_1\circ T_2)(x,y)=( 3x+2y,3x+3y)\\
+(T_2\circ T_1)(x,y)=(x+2y+z,2x+3y+z,x+3y+2z) \text{.}
 \end{equation*}
-</div>and so \(L^2\) is the identity transformation. This is not surprising: the mirror image of a mirror image is just the original image. This can also be written as \(A=A^{-1}\text{.}\) A matrix satisfying this equation are called an <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">involution</dfn>.</li>
-<li>Let \(L\) be the projection onto the line \(y=x\text{,}\) and consider \(L^2\text{.}\) Then<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-A_{L^2}
-=(A_L)^2
-= \left(\frac12\begin{bmatrix} 1\amp1\\1\amp1 \end{bmatrix}\right)^2
-=\frac14 \begin{bmatrix} 2\amp2\\2\amp2 \end{bmatrix}
-=\frac12 \begin{bmatrix} 1\amp1\\1\amp1 \end{bmatrix}
-=A_L\text{.}
-\end{equation*}
-</div>A matrix \(A\) satisfying \(A^2=A\) is called <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">idempotent</dfn>.</li>
-</ul></article><span class="incontext"><a href="section-43.html#example-73">in-context</a></span>
+</div>
+<p class="continuation">Compare this result with <a class="xref" data-knowl="./knowl/LinearTransformationComposition.html" title="Example 6.4.3">Example 6.4.3</a>.</p></article><span class="incontext"><a href="section-43.html#example-73">in-context</a></span>
 </body>
 </html>

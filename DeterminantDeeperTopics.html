@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-22T13:32:27-06:00       *-->
+<!--*       on 2021-08-29T14:14:21-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,36 +14,42 @@
 <title>A deeper investigation of the properties of determinants</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -56,8 +62,8 @@ MathJax.Hub.Config({
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\def\R{{\mathbb R}}
 \def\C{{\mathbb C}}
 \def\Q{{\mathbb Q}}
 \def\Z{{\mathbb Z}}
@@ -104,23 +110,23 @@ MathJax.Hub.Config({
 <li class="link"><a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Eigenvalues and eigenvectors</span></a></li>
 <li class="link"><a href="LinearTransformations.html" data-scroll="LinearTransformations"><span class="codenumber">6</span> <span class="title">Linear transformations</span></a></li>
 <li class="link"><a href="ExtraTopics.html" data-scroll="ExtraTopics"><span class="codenumber">7</span> <span class="title">Additional Topics</span></a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="DeterminantDeeperTopics"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.6</span> <span class="title">A deeper investigation of the properties of determinants</span>
 </h2>
-<section class="introduction" id="introduction-11"><p id="p-675">In this section we consider further properties of the determinant. One of the main goals is to have the tools to complete the proof of <a class="xref" data-knowl="./knowl/LaplaceExpansion.html" title="Theorem 3.3.8: Laplace expansion theorem">Theorem 3.3.8</a>.</p>
-<p id="p-676">Up to this point, the examples of the evaluation of the determinant, as in <a class="xref" data-knowl="./knowl/CofactorExpansionExample.html" title="Example 3.3.10: An example of cofactor expansion with \(n=4\)">Example 3.3.10</a>, involve the reduction of the evaluation of one matrix of order \(n\) to the evaluation of the \(n\) determinants of matrices of order \(n-1\text{.}\) In this section we will see how, at least in principle, to evaluate the determinant of a large matrix directly.</p></section><section class="subsection" id="subsection-51"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-11"><p id="p-663">In this section we consider further properties of the determinant. One of the main goals is to have the tools to complete the proof of <a class="xref" data-knowl="./knowl/LaplaceExpansion.html" title="Theorem 3.3.8: Laplace expansion theorem">Theorem 3.3.8</a>.</p>
+<p id="p-664">Up to this point, the examples of the evaluation of the determinant, as in <a class="xref" data-knowl="./knowl/CofactorExpansionExample.html" title="Example 3.3.10: An example of cofactor expansion with \(n=4\)">Example 3.3.10</a>, involve the reduction of the evaluation of one matrix of order \(n\) to the evaluation of the \(n\) determinants of matrices of order \(n-1\text{.}\) In this section we will see how, at least in principle, to evaluate the determinant of a large matrix directly.</p></section><section class="subsection" id="subsection-51"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.6.1</span> <span class="title">Permutations</span>
 </h3>
-<p id="p-677">The permutations of a set consists of all possible ways of ordering its elements. If, for example, the set is \(\{a,b,c\}\text{,}\) then the possible permutations are</p>
+<p id="p-665">The permutations of a set consists of all possible ways of ordering its elements. If, for example, the set is \(\{a,b,c\}\text{,}\) then the possible permutations are</p>
 <div class="displaymath">
 \begin{align*}
 abc\amp\amp acb\amp\amp bac\amp\amp bca\amp\amp cab\amp\amp cba \text{,}
 \end{align*}
 </div>
-<p data-braille="continuation">and so there are six of them.</p>
-<p id="p-678">Now consider the set \(\{a,b,c,d\}\text{.}\) Here is how we can list all the permutations: each permutation that starts with \(a\) can be completed with a permutation of \(\{b,c,d\}\text{,}\) there being six such permutations. Similarly, each permutation starting with \(b\text{,}\) \(c\text{,}\) or \(d\) can be completed using the six permutation of the remaining elements:</p>
+<p class="continuation">and so there are six of them.</p>
+<p id="p-666">Now consider the set \(\{a,b,c,d\}\text{.}\) Here is how we can list all the permutations: each permutation that starts with \(a\) can be completed with a permutation of \(\{b,c,d\}\text{,}\) there being six such permutations. Similarly, each permutation starting with \(b\text{,}\) \(c\text{,}\) or \(d\) can be completed using the six permutation of the remaining elements:</p>
 <div class="displaymath">
 \begin{gather*}
 \text{first element }a\colon \quad
@@ -133,17 +139,17 @@ cabd\quad cadb\quad cbad\quad cbda\quad cdab\quad cdba \\
 dabc\quad dacb\quad dbac\quad dbca\quad dcab\quad dcba \text{,}
 \end{gather*}
 </div>
-<p data-braille="continuation">and so there are 24 permutations altogether.</p>
+<p class="continuation">and so there are 24 permutations altogether.</p>
 <article class="exercise exercise-like" id="exercise-36"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-36"><h6 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.6.1</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-36"><article class="exercise exercise-like"><p id="p-679">How many permutations are there for a set of size 1 and a set of size 2?</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-36"><article class="exercise exercise-like"><p id="p-667">How many permutations are there for a set of size 1 and a set of size 2?</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2" id="answer-2"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2"><div class="answer solution-like"><p id="p-680">There is one permutation for a set of size 1 and two permutations for a set of size 2.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2" id="answer-2"><span class="type">Answer.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-answer-2"><div class="answer solution-like"><p id="p-668">There is one permutation for a set of size 1 and two permutations for a set of size 2.</p></div></div>
 </div></article></div>
 <article class="definition definition-like" id="definition-41"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.6.2</span><span class="period">.</span><span class="space"> </span><span class="title">\(n\) factorial.</span>
 </h6>
-<p id="p-681">\(n\) factorial, denoted \(n!\text{,}\) is defined by</p>
+<p id="p-669">\(n\) factorial, denoted \(n!\text{,}\) is defined by</p>
 <div class="displaymath">
 \begin{equation*}
 n!=1\cdot2\cdot3\cdot \dots \cdot (n-1)\cdot n\text{.}
@@ -151,48 +157,48 @@ n!=1\cdot2\cdot3\cdot \dots \cdot (n-1)\cdot n\text{.}
 </div></article><article class="theorem theorem-like" id="theorem-42"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.6.3</span><span class="period">.</span>
 </h6>
-<p id="p-682">The number of permutations of \(n\) elements is \(n!\text{.}\)</p></article><article class="hiddenproof" id="proof-55"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-55"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-55"><article class="hiddenproof"><p id="p-683">We construct all possible permutations with each one being listed from left to right. We may choose any of the \(n\) elements for the leftmost position. For each of these \(n\) choices, there are \(n-1\) possible choices for the next position to the right make a total of \(n(n-1)\) possibilities for filling out the two leftmost positions. For each of these, there are \(n-2\) remaining elements for the next position to the right, and so there \(n(n-1)(n-2)\) choices for listing the three leftmost positions. Continuing in this manner, the number of ways of filling all \(n\) positions is \(n(n-1)(n-2)\cdots(1)=n!\text{.}\)</p></article></div>
-<article class="hiddenproof" id="proof-56"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-56"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-56"><article class="hiddenproof"><p id="p-684">For those who know induction.</p>
-<p id="p-685">The statement to prove is</p>
+<p id="p-670">The number of permutations of \(n\) elements is \(n!\text{.}\)</p></article><article class="hiddenproof" id="proof-55"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-55"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-55"><article class="hiddenproof"><p id="p-671">We construct all possible permutations with each one being listed from left to right. We may choose any of the \(n\) elements for the leftmost position. For each of these \(n\) choices, there are \(n-1\) possible choices for the next position to the right make a total of \(n(n-1)\) possibilities for filling out the two leftmost positions. For each of these, there are \(n-2\) remaining elements for the next position to the right, and so there \(n(n-1)(n-2)\) choices for listing the three leftmost positions. Continuing in this manner, the number of ways of filling all \(n\) positions is \(n(n-1)(n-2)\cdots(1)=n!\text{.}\)</p></article></div>
+<article class="hiddenproof" id="proof-56"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-56"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-56"><article class="hiddenproof"><p id="p-672">For those who know induction.</p>
+<p id="p-673">The statement to prove is</p>
 <div class="displaymath">
 \begin{equation*}
 P_k\colon \text{The number of permutations of } k \text{ objects is } k!\,.
 \end{equation*}
 </div>
-<p id="p-686">Initial step: \(P_1\colon\) The number of permutations of one object is \(1=1!\text{.}\)</p>
-<p id="p-687">Inductive step: Assume \(P_{k-1}\) is true. We want to count the permutations of \(k\) elements. There are \(k\) choices for the first element. For each of these choices, the rest of the permutation is a permutation of the remaining \(k-1\) elements. By \(P_{k-1}\text{,}\) there are \((k-1)!\) of them, and hence the total number of permutations of all \(k\) objects is \(k(k-1)!=k!\,\text{.}\) Hence if \(P_{k-1}\) is valid then \(P_k\) is also valid. This completes the proof by induction.</p></article></div></section><section class="subsection" id="subsection-52"><h3 class="heading hide-type">
+<p id="p-674">Initial step: \(P_1\colon\) The number of permutations of one object is \(1=1!\text{.}\)</p>
+<p id="p-675">Inductive step: Assume \(P_{k-1}\) is true. We want to count the permutations of \(k\) elements. There are \(k\) choices for the first element. For each of these choices, the rest of the permutation is a permutation of the remaining \(k-1\) elements. By \(P_{k-1}\text{,}\) there are \((k-1)!\) of them, and hence the total number of permutations of all \(k\) objects is \(k(k-1)!=k!\,\text{.}\) Hence if \(P_{k-1}\) is valid then \(P_k\) is also valid. This completes the proof by induction.</p></article></div></section><section class="subsection" id="subsection-52"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.6.2</span> <span class="title">The sign of a permutation</span>
 </h3>
-<p id="p-688">When finding the permutations from a set of size \(n\text{,}\) the particular symbols used for the \(n\) elements are not important: the sets \(\{a,b,c\}\) and \(\{1,2,3\}\) both have six permutations; their properties are not dependent on the names of the individual elements. With this in mind we will now use the first \(n\) positive integers as our set when permuting \(n\) elements.</p>
-<p id="p-689">Each permutation has a <dfn class="terminology">sign</dfn> which is either \(+1\) or \(-1\text{.}\) It is determined using the following algorithm: consider the leftmost entry of the permutation. If is is 1, do nothing. If it is not 1, interchange what is there with 1. In either case, 1 is now in the leftmost position. Now consider the secondmost entry from the left. If it is 2, do nothing; otherwise interchange what is there with 2. Continue interchanging terms in this matter until the permutation is in its <dfn class="terminology">natural order</dfn>, that is, \(123\ldots n\text{.}\) If the number of interchanges required is even, the sign is \(+1\text{.}\) Otherwise the sign is \(-1\text{.}\)</p>
-<article class="example example-like" id="PermutationSignExample"><h6 class="heading">
+<p id="p-676">When finding the permutations from a set of size \(n\text{,}\) the particular symbols used for the \(n\) elements are not important: the sets \(\{a,b,c\}\) and \(\{1,2,3\}\) both have six permutations; their properties are not dependent on the names of the individual elements. With this in mind we will now use the first \(n\) positive integers as our set when permuting \(n\) elements.</p>
+<p id="p-677">Each permutation has a <dfn class="terminology">sign</dfn> which is either \(+1\) or \(-1\text{.}\) It is determined using the following algorithm: consider the leftmost entry of the permutation. If is is 1, do nothing. If it is not 1, interchange what is there with 1. In either case, 1 is now in the leftmost position. Now consider the secondmost entry from the left. If it is 2, do nothing; otherwise interchange what is there with 2. Continue interchanging terms in this matter until the permutation is in its <dfn class="terminology">natural order</dfn>, that is, \(123\ldots n\text{.}\) If the number of interchanges required is even, the sign is \(+1\text{.}\) Otherwise the sign is \(-1\text{.}\)</p>
+<article class="example example-like" id="PermutationSignExample"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-PermutationSignExample"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.6.4</span><span class="period">.</span><span class="space"> </span><span class="title">The sign of the permutation 324165.</span>
-</h6>
-<p id="p-690">Here are the steps needed to put the permutation \(324165\) into natural order:</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-PermutationSignExample"><article class="example example-like"><p id="p-678">Here are the steps needed to put the permutation \(324165\) into natural order:</p>
 <ol class="decimal">
-<li id="li-246">324165: interchange 3 and 1</li>
-<li id="li-247">124365: no interchange (2 is in the correct position)</li>
-<li id="li-248">124365: interchange 4 and 3</li>
-<li id="li-249">123465: no interchange (4 is in the correct position)</li>
-<li id="li-250">123465: interchange 6 and 5</li>
-<li id="li-251">123465: finished</li>
+<li id="li-246"><p id="p-derived-li-246">324165: interchange 3 and 1</p></li>
+<li id="li-247"><p id="p-derived-li-247">124365: no interchange (2 is in the correct position)</p></li>
+<li id="li-248"><p id="p-derived-li-248">124365: interchange 4 and 3</p></li>
+<li id="li-249"><p id="p-derived-li-249">123465: no interchange (4 is in the correct position)</p></li>
+<li id="li-250"><p id="p-derived-li-250">123465: interchange 6 and 5</p></li>
+<li id="li-251"><p id="p-derived-li-251">123465: finished</p></li>
 </ol>
-<p data-braille="continuation">Since there were three interchanges, the sign of the permutation is \(-1\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-37"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-37"><h6 class="heading">
+<p class="continuation">Since there were three interchanges, the sign of the permutation is \(-1\text{.}\)</p></article></div>
+<article class="exercise exercise-like" id="exercise-37"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-37"><h6 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.6.5</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-37"><article class="exercise exercise-like"><ol id="p-691" class="decimal">
-<li id="li-252">Show that any permutation of the set \(\{1,\ldots,n\}\) can be put into natural order with at most \(n-1\) interchanges.</li>
-<li id="li-253">Give a permutation of the set \(\{1,\ldots,n\}\) that requires \(n-1\) interchanges to be put into natural order.</li>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-37"><article class="exercise exercise-like"><ol id="p-679" class="decimal">
+<li id="li-252"><p id="p-derived-li-252">Show that any permutation of the set \(\{1,\ldots,n\}\) can be put into natural order with at most \(n-1\) interchanges.</p></li>
+<li id="li-253"><p id="p-derived-li-253">Give a permutation of the set \(\{1,\ldots,n\}\) that requires \(n-1\) interchanges to be put into natural order.</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-3" id="answer-3"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-3"><div class="answer solution-like"><ol id="p-692" class="decimal">
-<li id="li-254">After \(n-1\) interchanges, the elements \(1,2,\ldots,n-1\) are all in their natural position. The only place left for the element \(n\) is in the last position, and so all elements are in their natural position.</li>
-<li id="li-255">Use the permutation \(n123\dots n-1\text{.}\) Each interchange moves \(n\) one position to the right, and so it takes \(n-1\) interchanges to get it in the final position.</li>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-3" id="answer-3"><span class="type">Answer.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-answer-3"><div class="answer solution-like"><ol id="p-680" class="decimal">
+<li id="li-254"><p id="p-derived-li-254">After \(n-1\) interchanges, the elements \(1,2,\ldots,n-1\) are all in their natural position. The only place left for the element \(n\) is in the last position, and so all elements are in their natural position.</p></li>
+<li id="li-255"><p id="p-derived-li-255">Use the permutation \(n123\dots n-1\text{.}\) Each interchange moves \(n\) one position to the right, and so it takes \(n-1\) interchanges to get it in the final position.</p></li>
 </ol></div></div>
 </div></article></div>
 <article class="definition definition-like" id="PermutationSignDefinition"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.6.6</span><span class="period">.</span>
 </h6>
-<p id="p-693">The sign of a permutation. Suppose a permutation \(\sigma\) can be put into natural order with \(t\) interchanges. Then \(\sgn(\sigma)=(-1)^t\text{,}\) that is,</p>
+<p id="p-681">The sign of a permutation. Suppose a permutation \(\sigma\) can be put into natural order with \(t\) interchanges. Then \(\sgn(\sigma)=(-1)^t\text{,}\) that is,</p>
 <div class="displaymath">
 \begin{equation*}
 \sgn(\sigma)= 
@@ -212,7 +218,7 @@ P_k\colon \text{The number of permutations of } k \text{ objects is } k!\,.
 <td class="c m b2 r0 l0 t0 lines">\(\)</td>
 <td class="c m b2 r0 l0 t0 lines">\(\sigma\)</td>
 <td class="c m b2 r0 l0 t0 lines">\(t\)</td>
-<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(\sgn(\sigma)\)</td>
+<td class="c m b2 r0 l0 t0 lines">\(\sgn(\sigma)\)</td>
 </tr>
 <tr>
 <td class="c m b0 r0 l0 t0 lines">1234</td>
@@ -226,7 +232,7 @@ P_k\colon \text{The number of permutations of } k \text{ objects is } k!\,.
 <td class="c m b0 r0 l0 t0 lines">1324</td>
 <td class="c m b0 r0 l0 t0 lines">1</td>
 <td class="c m b0 r0 l0 t0 lines">-1</td>
-<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\ \)</td>
+<td class="c m b0 r0 l0 t0 lines">\(\ \)</td>
 </tr>
 <tr>
 <td class="c m b0 r0 l0 t0 lines">1342</td>
@@ -239,9 +245,9 @@ P_k\colon \text{The number of permutations of } k \text{ objects is } k!\,.
 <td class="c m b0 r0 l0 t0 lines">\(\ \)</td>
 <td class="c m b0 r0 l0 t0 lines">1432</td>
 <td class="c m b0 r0 l0 t0 lines">1</td>
-<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">-1</td>
+<td class="c m b0 r0 l0 t0 lines">-1</td>
 </tr>
-<tr><td class="c m b0 r0 l0 t0 lines" data-braille="last-cell"></td></tr>
+<tr><td class="c m b0 r0 l0 t0 lines"></td></tr>
 <tr>
 <td class="c m b0 r0 l0 t0 lines">2134</td>
 <td class="c m b0 r0 l0 t0 lines">1</td>
@@ -253,7 +259,7 @@ P_k\colon \text{The number of permutations of } k \text{ objects is } k!\,.
 <td class="c m b0 r0 l0 t0 lines">\(\ \)</td>
 <td class="c m b0 r0 l0 t0 lines">2314</td>
 <td class="c m b0 r0 l0 t0 lines">2</td>
-<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">+1</td>
+<td class="c m b0 r0 l0 t0 lines">+1</td>
 </tr>
 <tr>
 <td class="c m b0 r0 l0 t0 lines">2341</td>
@@ -266,9 +272,9 @@ P_k\colon \text{The number of permutations of } k \text{ objects is } k!\,.
 <td class="c m b0 r0 l0 t0 lines">\(\ \)</td>
 <td class="c m b0 r0 l0 t0 lines">2431</td>
 <td class="c m b0 r0 l0 t0 lines">2</td>
-<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">+1</td>
+<td class="c m b0 r0 l0 t0 lines">+1</td>
 </tr>
-<tr><td class="c m b0 r0 l0 t0 lines" data-braille="last-cell"></td></tr>
+<tr><td class="c m b0 r0 l0 t0 lines"></td></tr>
 <tr>
 <td class="c m b0 r0 l0 t0 lines">3124</td>
 <td class="c m b0 r0 l0 t0 lines">2</td>
@@ -280,7 +286,7 @@ P_k\colon \text{The number of permutations of } k \text{ objects is } k!\,.
 <td class="c m b0 r0 l0 t0 lines">\(\ \)</td>
 <td class="c m b0 r0 l0 t0 lines">3214</td>
 <td class="c m b0 r0 l0 t0 lines">1</td>
-<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">-1</td>
+<td class="c m b0 r0 l0 t0 lines">-1</td>
 </tr>
 <tr>
 <td class="c m b0 r0 l0 t0 lines">3241</td>
@@ -293,9 +299,9 @@ P_k\colon \text{The number of permutations of } k \text{ objects is } k!\,.
 <td class="c m b0 r0 l0 t0 lines">\(\ \)</td>
 <td class="c m b0 r0 l0 t0 lines">3421</td>
 <td class="c m b0 r0 l0 t0 lines">3</td>
-<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">-1</td>
+<td class="c m b0 r0 l0 t0 lines">-1</td>
 </tr>
-<tr><td class="c m b0 r0 l0 t0 lines" data-braille="last-cell"></td></tr>
+<tr><td class="c m b0 r0 l0 t0 lines"></td></tr>
 <tr>
 <td class="c m b0 r0 l0 t0 lines">4123</td>
 <td class="c m b0 r0 l0 t0 lines">3</td>
@@ -307,7 +313,7 @@ P_k\colon \text{The number of permutations of } k \text{ objects is } k!\,.
 <td class="c m b0 r0 l0 t0 lines">\(\ \)</td>
 <td class="c m b0 r0 l0 t0 lines">4213</td>
 <td class="c m b0 r0 l0 t0 lines">2</td>
-<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">+1</td>
+<td class="c m b0 r0 l0 t0 lines">+1</td>
 </tr>
 <tr>
 <td class="c m b0 r0 l0 t0 lines">4231</td>
@@ -320,12 +326,12 @@ P_k\colon \text{The number of permutations of } k \text{ objects is } k!\,.
 <td class="c m b0 r0 l0 t0 lines">\(\ \)</td>
 <td class="c m b0 r0 l0 t0 lines">4321</td>
 <td class="c m b0 r0 l0 t0 lines">2</td>
-<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">+1</td>
+<td class="c m b0 r0 l0 t0 lines">+1</td>
 </tr>
 </table></div></figure></section><section class="subsection" id="subsection-53"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.6.3</span> <span class="title">An alternative notation for the permutations of \(\{1,2,\dots,n\}\)</span>
 </h3>
-<p id="p-694">In <a class="xref" data-knowl="./knowl/PermutationSignExample.html" title="Example 3.6.4: The sign of the permutation 324165">Example 3.6.4</a> the properties of the permutation \(324165\) were examined. In our alternative notation we write this permutation as</p>
+<p id="p-682">In <a class="xref" data-knowl="./knowl/PermutationSignExample.html" title="Example 3.6.4: The sign of the permutation 324165">Example 3.6.4</a> the properties of the permutation \(324165\) were examined. In our alternative notation we write this permutation as</p>
 <div class="displaymath">
 \begin{equation*}
 \sigma=
@@ -334,11 +340,10 @@ P_k\colon \text{The number of permutations of } k \text{ objects is } k!\,.
 \end{pmatrix}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">In general, for permutations of \(\{1,2,\dots,n\}\text{,}\) the top row is simply \(12\dots n\) in natural order and the bottom row is the permutation written as the reordered elements. In addition, we let \(\sigma(1)\) denote the number below 1, \(\sigma(2)\) denote the number below 2, etc. At first blush, this just seems like a lot of extra baggage, but, as with all good notation, it eventually allows other interesting properties to emerge.</p>
-<article class="example example-like" id="AllPermutationsSize3"><h6 class="heading">
+<p class="continuation">In general, for permutations of \(\{1,2,\dots,n\}\text{,}\) the top row is simply \(12\dots n\) in natural order and the bottom row is the permutation written as the reordered elements. In addition, we let \(\sigma(1)\) denote the number below 1, \(\sigma(2)\) denote the number below 2, etc. At first blush, this just seems like a lot of extra baggage, but, as with all good notation, it eventually allows other interesting properties to emerge.</p>
+<article class="example example-like" id="AllPermutationsSize3"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-AllPermutationsSize3"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.6.8</span><span class="period">.</span><span class="space"> </span><span class="title">Permutations of \(\{1,2,3\}\).</span>
-</h6>
-<p id="p-695">The permutations of \(\{1,2,3\}\) in this new notation are</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-AllPermutationsSize3"><article class="example example-like"><p id="p-683">The permutations of \(\{1,2,3\}\) in this new notation are</p>
 <div class="displaymath">
 \begin{gather*}
 \sigma_1=\begin{pmatrix}123\\123\end{pmatrix}\quad
@@ -349,11 +354,11 @@ P_k\colon \text{The number of permutations of } k \text{ objects is } k!\,.
 \sigma_6=\begin{pmatrix}123\\321\end{pmatrix}\text{.}
 \end{gather*}
 </div>
-<p data-braille="continuation">Note that  \(\sgn(\sigma_1)=\sgn(\sigma_4)=\sgn(\sigma_5)=1\) while \(\sgn(\sigma_2)=\sgn(\sigma_3)=\sgn(\sigma_6)=-1\text{.}\) In addition, for the permutation \(\sigma_6\text{,}\) we have \(\sigma_6(1)=3\text{,}\) \(\sigma_6(2)=2\) and \(\sigma_6(3)=1\text{,}\) and similarly for the other permutations.</p></article></section><section class="subsection" id="subsection-54"><h3 class="heading hide-type">
+<p class="continuation">Note that  \(\sgn(\sigma_1)=\sgn(\sigma_4)=\sgn(\sigma_5)=1\) while \(\sgn(\sigma_2)=\sgn(\sigma_3)=\sgn(\sigma_6)=-1\text{.}\) In addition, for the permutation \(\sigma_6\text{,}\) we have \(\sigma_6(1)=3\text{,}\) \(\sigma_6(2)=2\) and \(\sigma_6(3)=1\text{,}\) and similarly for the other permutations.</p></article></div></section><section class="subsection" id="subsection-54"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.6.4</span> <span class="title">Permutations and determinants: the small cases</span>
 </h3>
-<p id="p-696">The evaluation of the determinant of small matrices has been given in <a class="xref" data-knowl="./knowl/DeterminantofSmallMatrices.html" title="Definition 3.1.1: Determinants of small matrices">Definition 3.1.1</a>. By looking at these examples in more detail, the role of permutations is revealed.</p>
-<p id="p-697">If \(A\) is a square matrix of order 3, the determinant is a sum of six terms:</p>
+<p id="p-684">The evaluation of the determinant of small matrices has been given in <a class="xref" data-knowl="./knowl/DeterminantofSmallMatrices.html" title="Definition 3.1.1: Determinants of small matrices">Definition 3.1.1</a>. By looking at these examples in more detail, the role of permutations is revealed.</p>
+<p id="p-685">If \(A\) is a square matrix of order 3, the determinant is a sum of six terms:</p>
 <div class="displaymath">
 \begin{align*}
 \det(A) =\ \amp a_{1,1}a_{2,2}a_{3,3}+a_{1,2}a_{2,3}a_{3,1}
@@ -362,58 +367,58 @@ P_k\colon \text{The number of permutations of } k \text{ objects is } k!\,.
 -a_{1,2}a_{2,1}a_{3,3} -a_{1,3}a_{2,2}a_{3,1}\text{.}
 \end{align*}
 </div>
-<p data-braille="continuation">For each term, we construct a permutation \(\sigma\) of \(\{1,2,3\}\) in the following way: if \(a_{ij}\) is one of the factors, the \(j\) is written under \(i\) in the permutation. In other words, \(\sigma(i)=j\text{.}\)</p>
+<p class="continuation">For each term, we construct a permutation \(\sigma\) of \(\{1,2,3\}\) in the following way: if \(a_{ij}\) is one of the factors, the \(j\) is written under \(i\) in the permutation. In other words, \(\sigma(i)=j\text{.}\)</p>
 <figure class="table table-like" id="table-6"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.6.9<span class="period">.</span></span><span class="space"> </span>Permutations when \(n=3\)</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="c m b2 r0 l0 t0 lines">Term</td>
 <td class="c m b2 r0 l0 t0 lines">Permutation from term</td>
-<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">Sign of permutation</td>
+<td class="c m b2 r0 l0 t0 lines">Sign of permutation</td>
 </tr>
 <tr>
 <td class="c m b0 r0 l0 t0 lines">\(a_{1,1}a_{2,2}a_{3,3}\)</td>
 <td class="c m b0 r0 l0 t0 lines">\(\sigma_1=\begin{pmatrix}123\\123\end{pmatrix}\)</td>
-<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\sgn(\sigma_1)=1\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(\sgn(\sigma_1)=1\)</td>
 </tr>
 <tr>
 <td class="c m b0 r0 l0 t0 lines">\(a_{1,2}a_{2,3}a_{3,1}\)</td>
 <td class="c m b0 r0 l0 t0 lines">\(\sigma_4=\begin{pmatrix}123\\231\end{pmatrix}\)</td>
-<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\sgn(\sigma_4)=1\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(\sgn(\sigma_4)=1\)</td>
 </tr>
 <tr>
 <td class="c m b0 r0 l0 t0 lines">\(a_{1,3}a_{2,1}a_{3,2}\)</td>
 <td class="c m b0 r0 l0 t0 lines">\(\sigma_5=\begin{pmatrix}123\\312\end{pmatrix}\)</td>
-<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\sgn(\sigma_5)=1\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(\sgn(\sigma_5)=1\)</td>
 </tr>
 <tr>
 <td class="c m b0 r0 l0 t0 lines">\(a_{1,1}a_{2,3}a_{3,2}\)</td>
 <td class="c m b0 r0 l0 t0 lines">\(\sigma_2=\begin{pmatrix}123\\132\end{pmatrix}\)</td>
-<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\sgn(\sigma_2)=-1\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(\sgn(\sigma_2)=-1\)</td>
 </tr>
 <tr>
 <td class="c m b0 r0 l0 t0 lines">\(a_{1,2}a_{2,1}a_{3,3}\)</td>
 <td class="c m b0 r0 l0 t0 lines">\(\sigma_3=\begin{pmatrix}123\\213\end{pmatrix}\)</td>
-<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\sgn(\sigma_3)=-1\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(\sgn(\sigma_3)=-1\)</td>
 </tr>
 <tr>
 <td class="c m b0 r0 l0 t0 lines">\(a_{1,3}a_{2,2}a_{3,1}\)</td>
 <td class="c m b0 r0 l0 t0 lines">\(\sigma_6=\begin{pmatrix}123\\321\end{pmatrix}\)</td>
-<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\sgn(\sigma_6)=-1\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(\sgn(\sigma_6)=-1\)</td>
 </tr>
-</table></div></figure><p id="p-698">Look at <a class="xref" data-knowl="./knowl/AllPermutationsSize3.html" title="Example 3.6.8: Permutations of \(\{1,2,3\}\)">Example 3.6.8</a>.  We see that something beautiful has happened:</p>
+</table></div></figure><p id="p-686">Look at <a class="xref" data-knowl="./knowl/AllPermutationsSize3.html" title="Example 3.6.8: Permutations of \(\{1,2,3\}\)">Example 3.6.8</a>.  We see that something beautiful has happened:</p>
 <article class="proposition theorem-like" id="PermutationDeterminantSize3"><h6 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.6.10</span><span class="period">.</span>
 </h6>
-<p id="p-699">Let \(A\) be a square matrix of size \(3\text{.}\) Then</p>
+<p id="p-687">Let \(A\) be a square matrix of size \(3\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
 \det(A)=\sum_{k=1}^6 \sgn(\sigma_k)a_{1,\sigma_k(1)}a_{2,\sigma_k(2)}a_{3,\sigma_k(3)}\text{.}
 \end{equation*}
 </div></article><article class="exercise exercise-like" id="exercise-38"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-38"><h6 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.6.11</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-38"><article class="exercise exercise-like"><p id="p-700">Find an analogous expression \(\det(A)\) when \(A\) is of size 2.</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-38"><article class="exercise exercise-like"><p id="p-688">Find an analogous expression \(\det(A)\) when \(A\) is of size 2.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-4" id="answer-4"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-4"><div class="answer solution-like">
-<p id="p-701">Let \(\sigma_1=\begin{pmatrix}12\\12\end{pmatrix}\) and \(\sigma_2=\begin{pmatrix}12\\21\end{pmatrix}\text{.}\) Then</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-4" id="answer-4"><span class="type">Answer.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-answer-4"><div class="answer solution-like">
+<p id="p-689">Let \(\sigma_1=\begin{pmatrix}12\\12\end{pmatrix}\) and \(\sigma_2=\begin{pmatrix}12\\21\end{pmatrix}\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
 \det(A)=\sum_{k=1}^2 \sgn(\sigma_k)a_{1,\sigma(1)}a_{2,\sigma(2)}
@@ -421,10 +426,9 @@ P_k\colon \text{The number of permutations of } k \text{ objects is } k!\,.
 </div>
 </div></div>
 </div></article></div>
-<article class="example example-like" id="PermutationDeterminantSize4"><h6 class="heading">
+<article class="example example-like" id="PermutationDeterminantSize4"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-PermutationDeterminantSize4"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.6.12</span><span class="period">.</span><span class="space"> </span><span class="title">A formula for the determinant of a matrix of size \(4\).</span>
-</h6>
-<p id="p-702">Let \(A\) be a matrix of size \(4\text{.}\) We evaluate the determinant using the first row expansion of \(A\) and all of the subsequent minors.</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-PermutationDeterminantSize4"><article class="example example-like"><p id="p-690">Let \(A\) be a matrix of size \(4\text{.}\) We evaluate the determinant using the first row expansion of \(A\) and all of the subsequent minors.</p>
 <div class="displaymath">
 \begin{align*}
 \det(A) \amp =  \det\left(
@@ -545,49 +549,48 @@ a_{1,3}a_{2,1}a_{3,2}a_{4,4} - a_{1,3}a_{2,1}a_{3,4}a_{4,2}
 -a_{1,4}a_{2,3}a_{3,1}a_{4,2} + a_{1,4}a_{2,3}a_{3,2}a_{4,1}
 \end{align*}
 </div>
-<p data-braille="continuation">The final line reveals a pattern: it is a sum of \(24=4!\) terms, each of which is of the form \(\pm a_{1,i}a_{2,j}a_{3,k}a_{4,\ell}\) where \(\begin{pmatrix} 1234\\ijk\ell \end{pmatrix} \) is a permutation. Each of the \(4!\) possible permutations appears exactly once. In addition, the sign in front of the term is equal to the sign of the associated permutation.</p></article></section><section class="subsection" id="subsection-55"><h3 class="heading hide-type">
+<p class="continuation">The final line reveals a pattern: it is a sum of \(24=4!\) terms, each of which is of the form \(\pm a_{1,i}a_{2,j}a_{3,k}a_{4,\ell}\) where \(\begin{pmatrix} 1234\\ijk\ell \end{pmatrix} \) is a permutation. Each of the \(4!\) possible permutations appears exactly once. In addition, the sign in front of the term is equal to the sign of the associated permutation.</p></article></div></section><section class="subsection" id="subsection-55"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.6.5</span> <span class="title">Permutations and determinants</span>
 </h3>
-<p id="p-703">The pattern exhibited  in <a class="xref" data-knowl="./knowl/PermutationDeterminantSize3.html" title="Proposition 3.6.10">Proposition 3.6.10</a> and in <a class="xref" data-knowl="./knowl/PermutationDeterminantSize4.html" title="Example 3.6.12: A formula for the determinant of a matrix of size \(4\)">Example 3.6.12</a> cries for generalization. Our  goal is to do so with the proof of the following important theorem:</p>
+<p id="p-691">The pattern exhibited  in <a class="xref" data-knowl="./knowl/PermutationDeterminantSize3.html" title="Proposition 3.6.10">Proposition 3.6.10</a> and in <a class="xref" data-knowl="./knowl/PermutationDeterminantSize4.html" title="Example 3.6.12: A formula for the determinant of a matrix of size \(4\)">Example 3.6.12</a> cries for generalization. Our  goal is to do so with the proof of the following important theorem:</p>
 <article class="theorem theorem-like" id="PermutationDeterminantTheorem"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.6.13</span><span class="period">.</span>
 </h6>
-<p id="p-704">Let \(A\) be a square matrix of size \(n\text{.}\) Then</p>
+<p id="p-692">Let \(A\) be a square matrix of size \(n\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
 \det(A)=\sum_\sigma \sgn(\sigma)a_{1,\sigma(1)}a_{2,\sigma(2)}\cdots a_{n,\sigma(n)}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">The summation is taken over all \(n!\) permutations.</p></article><p id="p-705">The determinant of a matrix \(A\text{,}\) as given in <a class="xref" data-knowl="./knowl/DeterminantDefinition.html" title="Definition 3.3.9: The determinant of a matrix">Definition 3.3.9</a>, is simply the first row expansion of \(A\text{.}\) The proof of <a class="xref" data-knowl="./knowl/PermutationDeterminantTheorem.html" title="Theorem 3.6.13">Theorem 3.6.13</a> may be completed by showing that</p>
+<p class="continuation">The summation is taken over all \(n!\) permutations.</p></article><p id="p-693">The determinant of a matrix \(A\text{,}\) as given in <a class="xref" data-knowl="./knowl/DeterminantDefinition.html" title="Definition 3.3.9: The determinant of a matrix">Definition 3.3.9</a>, is simply the first row expansion of \(A\text{.}\) The proof of <a class="xref" data-knowl="./knowl/PermutationDeterminantTheorem.html" title="Theorem 3.6.13">Theorem 3.6.13</a> may be completed by showing that</p>
 <div class="displaymath">
 \begin{equation}
 \sum_\sigma \sgn(\sigma)a_{1,\sigma(1)}a_{2,\sigma(2)}\cdots a_{n,\sigma(n)}\label{PermutationDeterminantExpression}\tag{3.6.1}
 \end{equation}
 </div>
-<p data-braille="continuation">and the first row expansion of \(A\) are identical.</p>
-<p id="p-706">So here is the plan: we examine first row expansion of \(A\) carefully and compare it to the expression <a class="xref" data-knowl="./knowl/PermutationDeterminantExpression.html" title="Equation 3.6.1">(3.6.1)</a> in two steps:</p>
+<p class="continuation">and the first row expansion of \(A\) are identical.</p>
+<p id="p-694">So here is the plan: we examine first row expansion of \(A\) carefully and compare it to the expression <a class="xref" data-knowl="./knowl/PermutationDeterminantExpression.html" title="Equation 3.6.1">(3.6.1)</a> in two steps:</p>
 <ol class="decimal">
-<li id="EveryPermutationOnce">Show that every permutation \(\sigma\) from <a class="xref" data-knowl="./knowl/PermutationDeterminantExpression.html" title="Equation 3.6.1">(3.6.1)</a> shows up exactly once as a summand in the first row expansion.</li>
-<li id="SignatureCorrect">Show that \(\sgn(\sigma)\) is correct for every permutation \(\sigma\) in expression <a class="xref" data-knowl="./knowl/PermutationDeterminantExpression.html" title="Equation 3.6.1">(3.6.1)</a>.</li>
+<li id="EveryPermutationOnce"><p id="p-derived-EveryPermutationOnce">Show that every permutation \(\sigma\) from <a class="xref" data-knowl="./knowl/PermutationDeterminantExpression.html" title="Equation 3.6.1">(3.6.1)</a> shows up exactly once as a summand in the first row expansion.</p></li>
+<li id="SignatureCorrect"><p id="p-derived-SignatureCorrect">Show that \(\sgn(\sigma)\) is correct for every permutation \(\sigma\) in expression <a class="xref" data-knowl="./knowl/PermutationDeterminantExpression.html" title="Equation 3.6.1">(3.6.1)</a>.</p></li>
 </ol>
-<p id="p-707">Examining the case for a matrix \(A\) of size \(n=4\) will clarify the ideas necessary for the general proof.</p>
-<article class="example example-like" id="PermutationDeterminantProof4"><h6 class="heading">
+<p id="p-695">Examining the case for a matrix \(A\) of size \(n=4\) will clarify the ideas necessary for the general proof.</p>
+<article class="example example-like" id="PermutationDeterminantProof4"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-PermutationDeterminantProof4"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.6.14</span><span class="period">.</span><span class="space"> </span><span class="title">Proof for \(n=4\).</span>
-</h6>
-<p id="p-708">Let \(A\) be a matrix of size \(4\text{,}\) and consider the permutation</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-PermutationDeterminantProof4"><article class="example example-like"><p id="p-696">Let \(A\) be a matrix of size \(4\text{,}\) and consider the permutation</p>
 <div class="displaymath">
 \begin{equation*}
 \sigma=\begin{pmatrix}1234\\3142\end{pmatrix}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Then \(\sigma(1)=3\text{,}\) \(\sigma(2)=1\text{,}\) \(\sigma(3)=4\text{,}\) and \(\sigma(4)=2\text{,}\) and we are searching for a term within the expansion of \(\det(A)\) containing \(a_{1,3} a_{2,1} a_{3,4} a_{4,2}\text{.}\) The first row expansion of \(A\) is</p>
+<p class="continuation">Then \(\sigma(1)=3\text{,}\) \(\sigma(2)=1\text{,}\) \(\sigma(3)=4\text{,}\) and \(\sigma(4)=2\text{,}\) and we are searching for a term within the expansion of \(\det(A)\) containing \(a_{1,3} a_{2,1} a_{3,4} a_{4,2}\text{.}\) The first row expansion of \(A\) is</p>
 <div class="displaymath">
 \begin{equation*}
 \det(A)= a_{1,1}M_{1,1} -a_{1,2}M_{1,2} 
 +a_{1,3}M_{1,3} -a_{1,4}M_{1,4} \text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">and so the only hope of finding \(a_{1,3} a_{2,1} a_{3,4} a_{4,2}\) is by examining the only term that includes \(a_{1,3}\text{,}\) namely, \(a_{1,3}M_{1,3}\text{.}\) Now</p>
+<p class="continuation">and so the only hope of finding \(a_{1,3} a_{2,1} a_{3,4} a_{4,2}\) is by examining the only term that includes \(a_{1,3}\text{,}\) namely, \(a_{1,3}M_{1,3}\text{.}\) Now</p>
 <div class="displaymath">
 \begin{align*}
 a_{1,3}M_{1,3}
@@ -607,7 +610,7 @@ a_{2,1}\det\begin{bmatrix} a_{3,2}\amp a_{3,4}\\a_{4,2}\amp a_{4,4}\end{bmatrix}
 \right)\text{.}
 \end{align*}
 </div>
-<p data-braille="continuation">Since we are searching for a term that contains \(a_{2,1}\text{,}\) we must focus our attention on the first summand since it is the only one that includes it. Expanding on the first row:</p>
+<p class="continuation">Since we are searching for a term that contains \(a_{2,1}\text{,}\) we must focus our attention on the first summand since it is the only one that includes it. Expanding on the first row:</p>
 <div class="displaymath">
 \begin{equation*}
 a_{1,3}a_{2,1}\det
@@ -617,20 +620,21 @@ a_{3,2}\amp a_{3,4}\\a_{4,2}\amp a_{4,4}
 = a_{1,3}a_{2,1}(a_{3,2}\det[a_{4,4}] -a_{3,4}\det[a_{4,2}])\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Since we are searching for a term that contains \(a_{3,4}\text{,}\) we must take the second summand, which leaves us with</p>
+<p class="continuation">Since we are searching for a term that contains \(a_{3,4}\text{,}\) we must take the second summand, which leaves us with</p>
 <div class="displaymath">
 \begin{equation*}
 -a_{1,3} a_{2,1} a_{3,4} \det[a_{4,2}]
 = -a_{1,3} a_{2,1} a_{3,4} a_{4,2}\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">exactly what we were looking for. Note also the \(\sgn(\sigma)=-1\text{.}\)</p>
-<p id="p-709">There was nothing special about our choice of permutation \(\sigma\text{.}\) For any  choice of permutation the same thing happens: the permutation forces a single choice of summand within each of the successive first-row expansions.</p>
-<p id="p-710">Notice also that the process we have described is an algorithm that determines the exact position of \(a_{1,3} a_{2,1} a_{3,4} a_{4,2}\) after the full expansion of the determinant. This implies that for every permutation \(\sigma\text{,}\) the term \(a_{1,\sigma(1)} a_{2,\sigma(2)} a_{3,\sigma(3)} a_{4,\sigma(4)}\) appears exactly once.</p></article><p id="p-711">Now we consider <a class="xref" data-knowl="./knowl/EveryPermutationOnce.html" title="Item 1">Item 1</a> more generally.</p>
+<p class="continuation">exactly what we were looking for. Note also the \(\sgn(\sigma)=-1\text{.}\)</p>
+<p id="p-697">There was nothing special about our choice of permutation \(\sigma\text{.}\) For any  choice of permutation the same thing happens: the permutation forces a single choice of summand within each of the successive first-row expansions.</p>
+<p id="p-698">Notice also that the process we have described is an algorithm that determines the exact position of \(a_{1,3} a_{2,1} a_{3,4} a_{4,2}\) after the full expansion of the determinant. This implies that for every permutation \(\sigma\text{,}\) the term \(a_{1,\sigma(1)} a_{2,\sigma(2)} a_{3,\sigma(3)} a_{4,\sigma(4)}\) appears exactly once.</p></article></div>
+<p id="p-699">Now we consider <a class="xref" data-knowl="./knowl/EveryPermutationOnce.html" title="Item 1">Item 1</a> more generally.</p>
 <article class="algorithm theorem-like" id="SigmaSearchAlgorithm"><h6 class="heading">
 <span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">3.6.15</span><span class="period">.</span><span class="space"> </span><span class="title">\(\sigma\) search.</span>
 </h6>
-<p id="p-712">Let \(A\) be a square matrix of size \(n\text{,}\) and let</p>
+<p id="p-700">Let \(A\) be a square matrix of size \(n\text{,}\) and let</p>
 <div class="displaymath">
 \begin{equation*}
 \sigma=
@@ -640,20 +644,20 @@ i_1\amp i_2\amp i_3\amp \cdots\amp  i_n
 \end{pmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">be any permutation of \(\{1,2,3,\ldots,n\}\text{.}\) Carry out the first row expansion to evaluate the determinant of \(A\) and any subsequent minors that arise as in <a class="xref" data-knowl="./knowl/PermutationDeterminantProof4.html" title="Example 3.6.14: Proof for \(n=4\)">Example 3.6.14</a>.  Then \(a_{1,i_1}a_{2,i_2}a_{3,i_3} \cdots a_{n,i_n} 
-=a_{1,\sigma(1)}a_{2,\sigma(2)}a_{3,\sigma(3)} \cdots a_{n,\sigma(n)}\) appears exactly once in the full expansion.</p></article><article class="hiddenproof" id="proof-57"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-57"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-57"><article class="hiddenproof"><p id="p-713">The proof follows the pattern of <a class="xref" data-knowl="./knowl/PermutationDeterminantProof4.html" title="Example 3.6.14: Proof for \(n=4\)">Example 3.6.14</a>.</p>
-<p id="p-714">Consider the first row expansion of \(A\text{:}\)</p>
+<p class="continuation">be any permutation of \(\{1,2,3,\ldots,n\}\text{.}\) Carry out the first row expansion to evaluate the determinant of \(A\) and any subsequent minors that arise as in <a class="xref" data-knowl="./knowl/PermutationDeterminantProof4.html" title="Example 3.6.14: Proof for \(n=4\)">Example 3.6.14</a>.  Then \(a_{1,i_1}a_{2,i_2}a_{3,i_3} \cdots a_{n,i_n} 
+=a_{1,\sigma(1)}a_{2,\sigma(2)}a_{3,\sigma(3)} \cdots a_{n,\sigma(n)}\) appears exactly once in the full expansion.</p></article><article class="hiddenproof" id="proof-57"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-57"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-57"><article class="hiddenproof"><p id="p-701">The proof follows the pattern of <a class="xref" data-knowl="./knowl/PermutationDeterminantProof4.html" title="Example 3.6.14: Proof for \(n=4\)">Example 3.6.14</a>.</p>
+<p id="p-702">Consider the first row expansion of \(A\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 a_{1,1}M_{1,1}-a_{1,2}M_{1,2}+a_{1,3}M_{1,3}- \cdots
 + (-1)^{1+n}a_{1,n}M_{1,n}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">The given permutation \(\sigma\) has \(\sigma(1)=i_1\text{,}\) and so the only hope of finding the permutation \(\sigma\) in the final expansion is to look for it in the only term where \(a_{1,i_1}\) appears: \(a_{1,i_1}M_{1,i_1}\text{.}\) The first row of \(M_{1,i_1}\) consists of \(a_{2,j}\text{,}\) with \(j\in\{1,2,\ldots,n\}\text{,}\) \(j\not=i_1\text{.}\) Since \(\sigma(2)=i_2\text{,}\) we must continue the expansion using the term of the form \(a_{2,\sigma(i_2)}M\text{.}\) This algorithm may proceed until \(a_{1,\sigma(1)}a_{2,\sigma(2)}\cdots a_{n,\sigma(n)}\) is found. Note that the entries of \(\{i_1,\ldots,i_n\}\) must be different to complete the argument.</p></article></div>
+<p class="continuation">The given permutation \(\sigma\) has \(\sigma(1)=i_1\text{,}\) and so the only hope of finding the permutation \(\sigma\) in the final expansion is to look for it in the only term where \(a_{1,i_1}\) appears: \(a_{1,i_1}M_{1,i_1}\text{.}\) The first row of \(M_{1,i_1}\) consists of \(a_{2,j}\text{,}\) with \(j\in\{1,2,\ldots,n\}\text{,}\) \(j\not=i_1\text{.}\) Since \(\sigma(2)=i_2\text{,}\) we must continue the expansion using the term of the form \(a_{2,\sigma(i_2)}M\text{.}\) This algorithm may proceed until \(a_{1,\sigma(1)}a_{2,\sigma(2)}\cdots a_{n,\sigma(n)}\) is found. Note that the entries of \(\{i_1,\ldots,i_n\}\) must be different to complete the argument.</p></article></div>
 <article class="theorem theorem-like" id="theorem-44"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.6.16</span><span class="period">.</span><span class="space"> </span><span class="title">\(\sigma\) encoding of determinant expansion.</span>
 </h6>
-<p id="p-715">Let \(A\) be a square matrix of size \(n\text{,}\) and let</p>
+<p id="p-703">Let \(A\) be a square matrix of size \(n\text{,}\) and let</p>
 <div class="displaymath">
 \begin{equation*}
 \sigma=
@@ -663,19 +667,19 @@ i_1\amp i_2\amp i_3\amp \cdots\amp  i_n
 \end{pmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">be any permutation of \(\{1,2,3,\ldots,n\}\text{.}\) Then, when evaluating <a class="xref" data-knowl="./knowl/SigmaSearchAlgorithm.html" title="Algorithm 3.6.15: \(\sigma\) search">Algorithm 3.6.15</a>, the first row is a list in order of the rows deleted from \(A\) and the second row is the list in order of the columns deleted from \(A\text{.}\)</p></article><article class="hiddenproof" id="proof-58"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-58"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-58"><article class="hiddenproof"><p id="p-716">Since first-row expansions are used, the order of deletion of rows from \(A\) is clearly \(1,2,\ldots,n\text{,}\) which is just the first row in the notation for \(\sigma\text{.}\) The first column deleted must be the \(i_1\) column, since that is the only way \(a_{1,i_1}\) can appear in the expansion. More generally, the only way for \(a_{j,i_j}\) to appear is if the \(i_j\) column of \(A\) is deleted when the \(j\)-th row of \(A\) is deleted. This means that the order of deletion of columns of \(A\) must be \(i_1,i_2,\ldots,i_n\text{.}\)</p></article></div>
+<p class="continuation">be any permutation of \(\{1,2,3,\ldots,n\}\text{.}\) Then, when evaluating <a class="xref" data-knowl="./knowl/SigmaSearchAlgorithm.html" title="Algorithm 3.6.15: \(\sigma\) search">Algorithm 3.6.15</a>, the first row is a list in order of the rows deleted from \(A\) and the second row is the list in order of the columns deleted from \(A\text{.}\)</p></article><article class="hiddenproof" id="proof-58"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-58"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-58"><article class="hiddenproof"><p id="p-704">Since first-row expansions are used, the order of deletion of rows from \(A\) is clearly \(1,2,\ldots,n\text{,}\) which is just the first row in the notation for \(\sigma\text{.}\) The first column deleted must be the \(i_1\) column, since that is the only way \(a_{1,i_1}\) can appear in the expansion. More generally, the only way for \(a_{j,i_j}\) to appear is if the \(i_j\) column of \(A\) is deleted when the \(j\)-th row of \(A\) is deleted. This means that the order of deletion of columns of \(A\) must be \(i_1,i_2,\ldots,i_n\text{.}\)</p></article></div>
 <article class="exercise exercise-like" id="exercise-39"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-39"><h6 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.6.17</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-39"><article class="exercise exercise-like"><p id="p-717">Suppose we define the determinant of a matrix \(A\) as the value of the second row expansion. Modify <a class="xref" data-knowl="./knowl/SigmaSearchAlgorithm.html" title="Algorithm 3.6.15: \(\sigma\) search">Algorithm 3.6.15</a> to show that it is still true that \(a_{1,\sigma(1)}a_{2,\sigma(2)}a_{3,\sigma(3)} \cdots a_{n,\sigma(n)}\) appears exactly once in the full expansion.</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-39"><article class="exercise exercise-like"><p id="p-705">Suppose we define the determinant of a matrix \(A\) as the value of the second row expansion. Modify <a class="xref" data-knowl="./knowl/SigmaSearchAlgorithm.html" title="Algorithm 3.6.15: \(\sigma\) search">Algorithm 3.6.15</a> to show that it is still true that \(a_{1,\sigma(1)}a_{2,\sigma(2)}a_{3,\sigma(3)} \cdots a_{n,\sigma(n)}\) appears exactly once in the full expansion.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-5" id="answer-5"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-5"><div class="answer solution-like"><p id="p-718">The order of deletion of rows is \(2,3,\ldots,n,1\text{,}\) and so the order of deletion of columns must be \(i_2,i_3,\ldots,i_n,i_1\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-5" id="answer-5"><span class="type">Answer.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-answer-5"><div class="answer solution-like"><p id="p-706">The order of deletion of rows is \(2,3,\ldots,n,1\text{,}\) and so the order of deletion of columns must be \(i_2,i_3,\ldots,i_n,i_1\text{.}\)</p></div></div>
 </div></article></div>
 <article class="exercise exercise-like" id="exercise-40"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-40"><h6 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.6.18</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-40"><article class="exercise exercise-like"><p id="p-719">Suppose we define the determinant of a matrix \(A\) as the value of the first column expansion. Modify <a class="xref" data-knowl="./knowl/SigmaSearchAlgorithm.html" title="Algorithm 3.6.15: \(\sigma\) search">Algorithm 3.6.15</a> to show that it is still true that \(a_{1,\sigma(1)}a_{2,\sigma(2)}a_{3,\sigma(3)} \cdots a_{n,\sigma(n)}\) appears exactly once in the full expansion.</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-40"><article class="exercise exercise-like"><p id="p-707">Suppose we define the determinant of a matrix \(A\) as the value of the first column expansion. Modify <a class="xref" data-knowl="./knowl/SigmaSearchAlgorithm.html" title="Algorithm 3.6.15: \(\sigma\) search">Algorithm 3.6.15</a> to show that it is still true that \(a_{1,\sigma(1)}a_{2,\sigma(2)}a_{3,\sigma(3)} \cdots a_{n,\sigma(n)}\) appears exactly once in the full expansion.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-6" id="answer-6"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-6"><div class="answer solution-like">
-<p id="p-720">This takes a little trick. Start with the permutation</p>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-6" id="answer-6"><span class="type">Answer.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-answer-6"><div class="answer solution-like">
+<p id="p-708">This takes a little trick. Start with the permutation</p>
 <div class="displaymath">
 \begin{equation*}
 \sigma=
@@ -685,17 +689,17 @@ i_1\amp i_2\amp i_3\amp \cdots\amp  i_n
 \end{pmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">and rearrange the columns so that the bottom row is \(123\cdots n\text{.}\) For example, if \(\sigma= \begin{pmatrix} 123456\\324165\end{pmatrix}\text{,}\) rearranging the columns gives the permutation \(\begin{pmatrix} 421365\\123456\end{pmatrix}\text{.}\)</p>
-<p id="p-721">Since we are using a first-column expansion, the order of deletion of columns from \(A\) is \(1,2,\ldots,n\text{,}\) which is exactly the second row in our new notation. The first row of our new notation then gives the order of deletion of rows from \(A\text{.}\) Note that \(a_{1,\sigma(1)}a_{2,\sigma(2)}\cdots a_{n,\sigma(n)}\) is the resulting expression, but the order of the terms has been changed so that the second subscripts are in natural order.</p>
+<p class="continuation">and rearrange the columns so that the bottom row is \(123\cdots n\text{.}\) For example, if \(\sigma= \begin{pmatrix} 123456\\324165\end{pmatrix}\text{,}\) rearranging the columns gives the permutation \(\begin{pmatrix} 421365\\123456\end{pmatrix}\text{.}\)</p>
+<p id="p-709">Since we are using a first-column expansion, the order of deletion of columns from \(A\) is \(1,2,\ldots,n\text{,}\) which is exactly the second row in our new notation. The first row of our new notation then gives the order of deletion of rows from \(A\text{.}\) Note that \(a_{1,\sigma(1)}a_{2,\sigma(2)}\cdots a_{n,\sigma(n)}\) is the resulting expression, but the order of the terms has been changed so that the second subscripts are in natural order.</p>
 </div></div>
 </div></article></div>
-<p id="p-722">Next, we consider  <a class="xref" data-knowl="./knowl/SignatureCorrect.html" title="Item 2">Item 2</a>. We need an additional property of permutations. We use <a class="xref" data-knowl="./knowl/PermutationSignExample.html" title="Example 3.6.4: The sign of the permutation 324165">Example 3.6.4</a> for in initial illustration:</p>
+<p id="p-710">Next, we consider  <a class="xref" data-knowl="./knowl/SignatureCorrect.html" title="Item 2">Item 2</a>. We need an additional property of permutations. We use <a class="xref" data-knowl="./knowl/PermutationSignExample.html" title="Example 3.6.4: The sign of the permutation 324165">Example 3.6.4</a> for in initial illustration:</p>
 <div class="displaymath">
 \begin{equation*}
 \sigma= \begin{pmatrix} 123456\\324165 \end{pmatrix}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Consider the \(15\) possible ordered pairs of entries taken from the second row.  They are</p>
+<p class="continuation">Consider the \(15\) possible ordered pairs of entries taken from the second row.  They are</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{ccccc}
@@ -707,17 +711,17 @@ i_1\amp i_2\amp i_3\amp \cdots\amp  i_n
 \end{array}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Each pair either appears in its natural order, or not. A pair <em class="emphasis">not</em> in natural order is called an <dfn class="terminology">inversion</dfn>. The inversions are shown in red. In this case, the number of interchanges needed to put \(\sigma\) into its natural order is 3 and the number of inversions is 5, both of which are odd numbers. Our next result shows that this is true for any permutation: the sign of a permutation is determined by the parity<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-1" id="fn-1"><sup> 1 </sup></a> of the number of inversions.</p>
+<p class="continuation">Each pair either appears in its natural order, or not. A pair <em class="emphasis">not</em> in natural order is called an <dfn class="terminology">inversion</dfn>. The inversions are shown in red. In this case, the number of interchanges needed to put \(\sigma\) into its natural order is 3 and the number of inversions is 5, both of which are odd numbers. Our next result shows that this is true for any permutation: the sign of a permutation is determined by the parity<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-1" id="fn-1"><sup> 1 </sup></a> of the number of inversions.</p>
 <div class="hidden-content tex2jax_ignore" id="hk-fn-1"><div class="fn">The <dfn class="terminology">parity</dfn> of a number is even if it is divisible by 2 and odd otherwise.</div></div>
 <article class="theorem theorem-like" id="SignAndIversions"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.6.19</span><span class="period">.</span><span class="space"> </span><span class="title">The sign and number of inversions of a permutation.</span>
 </h6>
-<p id="p-723">Let \(\sigma\) be a permutation of \(\{1,2,\ldots,n\}\text{,}\) and let \(t\) be the number of inversions of \(\sigma\text{.}\) Then</p>
+<p id="p-711">Let \(\sigma\) be a permutation of \(\{1,2,\ldots,n\}\text{,}\) and let \(t\) be the number of inversions of \(\sigma\text{.}\) Then</p>
 <div class="displaymath">
 \begin{equation*}
 \sgn(\sigma)=(-1)^t\text{.}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-59"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-59"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-59"><article class="hiddenproof"><p id="p-724">Let</p>
+</div></article><article class="hiddenproof" id="proof-59"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-59"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-59"><article class="hiddenproof"><p id="p-712">Let</p>
 <div class="displaymath">
 \begin{equation*}
 \sigma=
@@ -727,7 +731,7 @@ i_1\amp i_2\amp i_3\amp \cdots\amp  i_n
 \end{pmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">By <a class="xref" data-knowl="./knowl/PermutationSignDefinition.html" title="Definition 3.6.6">Definition 3.6.6</a> we need to keep track of the number of interchanges needed to put \(\sigma\) into natural order. If \(i_1=1\text{,}\) the first position is in natural order we are finished with the that position. Nothing has changed, including the number of inversions. Otherwise, we need to interchange whatever is in the first position with \(1\text{,}\) and we need to know the effect of that interchange on the parity of the number of inversions. Here is the situation before interchanging \(1\) and \(k\text{.}\)</p>
+<p class="continuation">By <a class="xref" data-knowl="./knowl/PermutationSignDefinition.html" title="Definition 3.6.6">Definition 3.6.6</a> we need to keep track of the number of interchanges needed to put \(\sigma\) into natural order. If \(i_1=1\text{,}\) the first position is in natural order we are finished with the that position. Nothing has changed, including the number of inversions. Otherwise, we need to interchange whatever is in the first position with \(1\text{,}\) and we need to know the effect of that interchange on the parity of the number of inversions. Here is the situation before interchanging \(1\) and \(k\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \sigma=
@@ -737,10 +741,10 @@ k\amp \cdots\amp t     \amp \cdots \amp1 \amp\cdots\amp u    \amp\cdots\amp i_n
 \end{pmatrix}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">If \(u\) is an entry to the right of \(1\text{,}\) then the interchange of \(1\) and \(k\) causes the pairs \(ku\) and \(1u\) to be replaced by \(1u\) and \(ku\) respectively, and so the number of inversions is unchanged as far as \(u\) is concerned.</p>
-<p id="p-725">If \(t\) is to the left of \(1\text{,}\) then \(kt\) is replaced by \(1t\) and \(t1\) is replace by \(tk\text{.}\) Clearly \(t1\) is an inversion and \(1t\) is not, and so there is a net loss of one inversion. Also \(tk\) is an inversion if and only if \(kt\) is not, and so the number of inversions involving \(t\) either stays the same or is decreased by \(2\text{.}\) Finally the interchange itself of \(k1\) to \(1k\) reduces the number of inversions by one, so the total number of inversions is reduced by one or three. In either case, the parity of the number of inversions changes as the interchange moves the permutation one step closer to being in natural order.</p>
-<p id="p-726">Each step (interchange) that moves the permutation closer to natural order changes the parity of both the number of inversions and the number of steps needed for completion, so the parities of the two numbers start the same and remain the same, or they start opposite and remain opposite. When the permutation is finally in natural order, the number of steps necessary to put it into natural order is zero, as is the number of inversions, so the parities are the same and hence must have been identical to start with. This in turn implies the desired conclusion of the theorem.</p></article></div>
-<p id="p-727">To complete the verification of <a class="xref" data-knowl="./knowl/SignatureCorrect.html" title="Item 2">Item 2</a>, we follow <a class="xref" data-knowl="./knowl/SigmaSearchAlgorithm.html" title="Algorithm 3.6.15: \(\sigma\) search">Algorithm 3.6.15</a> keeping track of the signs of the terms that arise. As in that algorithm, we start with</p>
+<p class="continuation">If \(u\) is an entry to the right of \(1\text{,}\) then the interchange of \(1\) and \(k\) causes the pairs \(ku\) and \(1u\) to be replaced by \(1u\) and \(ku\) respectively, and so the number of inversions is unchanged as far as \(u\) is concerned.</p>
+<p id="p-713">If \(t\) is to the left of \(1\text{,}\) then \(kt\) is replaced by \(1t\) and \(t1\) is replace by \(tk\text{.}\) Clearly \(t1\) is an inversion and \(1t\) is not, and so there is a net loss of one inversion. Also \(tk\) is an inversion if and only if \(kt\) is not, and so the number of inversions involving \(t\) either stays the same or is decreased by \(2\text{.}\) Finally the interchange itself of \(k1\) to \(1k\) reduces the number of inversions by one, so the total number of inversions is reduced by one or three. In either case, the parity of the number of inversions changes as the interchange moves the permutation one step closer to being in natural order.</p>
+<p id="p-714">Each step (interchange) that moves the permutation closer to natural order changes the parity of both the number of inversions and the number of steps needed for completion, so the parities of the two numbers start the same and remain the same, or they start opposite and remain opposite. When the permutation is finally in natural order, the number of steps necessary to put it into natural order is zero, as is the number of inversions, so the parities are the same and hence must have been identical to start with. This in turn implies the desired conclusion of the theorem.</p></article></div>
+<p id="p-715">To complete the verification of <a class="xref" data-knowl="./knowl/SignatureCorrect.html" title="Item 2">Item 2</a>, we follow <a class="xref" data-knowl="./knowl/SigmaSearchAlgorithm.html" title="Algorithm 3.6.15: \(\sigma\) search">Algorithm 3.6.15</a> keeping track of the signs of the terms that arise. As in that algorithm, we start with</p>
 <div class="displaymath">
 \begin{equation*}
 \sigma=
@@ -750,16 +754,16 @@ i_1\amp i_2\amp i_3\amp \cdots\amp  i_n
 \end{pmatrix}
 \end{equation*}
 </div>
-<p data-braille="continuation">and keep track of the number of times a \(+1\) or \(-1\) appears as we construct \(a_{1,i_1}a_{2,i_2}a_{3,i_3} \cdots a_{n,i_n} 
+<p class="continuation">and keep track of the number of times a \(+1\) or \(-1\) appears as we construct \(a_{1,i_1}a_{2,i_2}a_{3,i_3} \cdots a_{n,i_n} 
 =a_{1,\sigma(1)}a_{2,\sigma(2)}a_{3,\sigma(3)} \cdots a_{n,\sigma(n)}\text{.}\)</p>
-<p id="p-728">Expanding on the first row of \(A\) gives us</p>
+<p id="p-716">Expanding on the first row of \(A\) gives us</p>
 <div class="displaymath">
 \begin{equation*}
 \det(A)=a_{1,1}M_{1,1}-a_{1,2}M_{1,2}+a_{1,3}M_{1,3}- \cdots
 + (-1)^{1+n}a_{1,n}M_{1,n}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Since \(\sigma(1)=i_1\text{,}\) we must select the summand \((-1)^{1+i_1}a_{1,i_1}M_{1,i_1}\) expand it further. The first row expansion of \(M_{1,i_1}\) is</p>
+<p class="continuation">Since \(\sigma(1)=i_1\text{,}\) we must select the summand \((-1)^{1+i_1}a_{1,i_1}M_{1,i_1}\) expand it further. The first row expansion of \(M_{1,i_1}\) is</p>
 <div class="displaymath">
 \begin{equation*}
 a_{2,1} - a_{2,2} + a_{2,3} + \cdots 
@@ -767,7 +771,7 @@ a_{2,1} - a_{2,2} + a_{2,3} + \cdots
 + \cdots +(-1)^{n-1} a_{2,n-1}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">The crux of the argument is shown by the two terms in red. Since the \(i_1\)-column has been deleted, as we pass from the first to the second, the second subscript goes up by two but the exponent  of \(-1\) increases by only one. This implies that the exponent of \(-1\) in the coefficient of \(a_{2,k}\) and \(k\) have the opposite parity if \(k \lt i_1\) and the same parity if \(k \gt i_1\text{.}\) In other words, we have \(i=2\) and</p>
+<p class="continuation">The crux of the argument is shown by the two terms in red. Since the \(i_1\)-column has been deleted, as we pass from the first to the second, the second subscript goes up by two but the exponent  of \(-1\) increases by only one. This implies that the exponent of \(-1\) in the coefficient of \(a_{2,k}\) and \(k\) have the opposite parity if \(k \lt i_1\) and the same parity if \(k \gt i_1\text{.}\) In other words, we have \(i=2\) and</p>
 <div class="displaymath">
 \begin{equation*}
 \text{The coefficient of } a_{i,j}=
@@ -777,8 +781,8 @@ a_{2,1} - a_{2,2} + a_{2,3} + \cdots
 \end{cases}
 \end{equation*}
 </div>
-<p data-braille="continuation">Note that \(i_2 \lt i_1\) is the exact condition for \(i_1 i_2\) to be an inversion, and so  \(i_2 \lt i_1\) being an inversion adds one extra \(-1\) to our count.</p>
-<p id="p-729">We carry out the algorithm for one more step to see the emerging pattern. We have now deleted row one, row two, column \(i_1\) and column \(i_2\) from \(A\text{.}\) We call this matrix \(N\) for simplicity. The first row of \(N\) consists of \(\{a_{3,1} \cdots a_{3,n}\}\) with \(a_{3,i_0}\) and \(a_{3,i_1}\) deleted. We now have \(i=3\) and</p>
+<p class="continuation">Note that \(i_2 \lt i_1\) is the exact condition for \(i_1 i_2\) to be an inversion, and so  \(i_2 \lt i_1\) being an inversion adds one extra \(-1\) to our count.</p>
+<p id="p-717">We carry out the algorithm for one more step to see the emerging pattern. We have now deleted row one, row two, column \(i_1\) and column \(i_2\) from \(A\text{.}\) We call this matrix \(N\) for simplicity. The first row of \(N\) consists of \(\{a_{3,1} \cdots a_{3,n}\}\) with \(a_{3,i_0}\) and \(a_{3,i_1}\) deleted. We now have \(i=3\) and</p>
 <div class="displaymath">
 \begin{equation*}
 \text{The coefficient of } a_{i,j}=
@@ -789,7 +793,7 @@ a_{2,1} - a_{2,2} + a_{2,3} + \cdots
 \end{cases}
 \end{equation*}
 </div>
-<p data-braille="continuation">Notice that after setting \(j=i_3\text{,}\) this is the same as</p>
+<p class="continuation">Notice that after setting \(j=i_3\text{,}\) this is the same as</p>
 <div class="displaymath">
 \begin{equation*}
 \text{The coefficient of } a_{i,j}=
@@ -803,12 +807,12 @@ a_{2,1} - a_{2,2} + a_{2,3} + \cdots
 \end{cases}
 \end{equation*}
 </div>
-<p id="p-730"><a class="xref" data-knowl="./knowl/SigmaSearchAlgorithm.html" title="Algorithm 3.6.15: \(\sigma\) search">Algorithm 3.6.15</a> proceeds step by step: at each step the matrix under consideration has its top row and one column deleted. At step \(k\) we have a matrix \(N\) derived from \(A\) by deleting the first \(k-1\) row and columns \(\{i_1,i_2,\ldots,i_{k-1}\}\text{,}\) and so the remaining entries in the first row of \(N\) are \(\{a_{k,1},\ldots,a_{k,n}\} 
+<p id="p-718"><a class="xref" data-knowl="./knowl/SigmaSearchAlgorithm.html" title="Algorithm 3.6.15: \(\sigma\) search">Algorithm 3.6.15</a> proceeds step by step: at each step the matrix under consideration has its top row and one column deleted. At step \(k\) we have a matrix \(N\) derived from \(A\) by deleting the first \(k-1\) row and columns \(\{i_1,i_2,\ldots,i_{k-1}\}\text{,}\) and so the remaining entries in the first row of \(N\) are \(\{a_{k,1},\ldots,a_{k,n}\} 
 \setminus \{a_{k,i_1},\ldots,a_{k,i_{k-1}}\}
 \text{.}\) This can be visualized in the following figure:</p>
 <figure class="figure figure-like" id="figure-13"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><div class="asymptote-box" style="padding-top: 45.7170718622092%"><iframe src="images/image-13.html" class="asymptote"></iframe></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.6.20<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-731">\(B_1,\ldots,B_k\) are the blocks of remaining columns between the deleted ones. The column corresponding to \(i_k\) is in one of these blocks. The particular one will determine the sign that is used in the first row expansion of \(N\text{.}\)</p>
-<p id="p-732">As a starting point, suppose that \(B_1\) is nonempty. That means that the upper left entry is \(a_{k,1}\text{,}\) and it has a sign of \(+1\) in the first row expansion, and so as we expand along the columns in \(B_1\text{:}\)</p>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.6.20<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-719">\(B_1,\ldots,B_k\) are the blocks of remaining columns between the deleted ones. The column corresponding to \(i_k\) is in one of these blocks. The particular one will determine the sign that is used in the first row expansion of \(N\text{.}\)</p>
+<p id="p-720">As a starting point, suppose that \(B_1\) is nonempty. That means that the upper left entry is \(a_{k,1}\text{,}\) and it has a sign of \(+1\) in the first row expansion, and so as we expand along the columns in \(B_1\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \text{For columns } j \text{ in } B_1 \text{, the coefficient of } a_{k,j}=
@@ -818,7 +822,7 @@ a_{2,1} - a_{2,2} + a_{2,3} + \cdots
 \end{cases}
 \end{equation*}
 </div>
-<p data-braille="continuation">As we move from columns in \(B_1\) to those in \(B_2\text{,}\) an extra \(-1\) is added to the coefficient, that is:</p>
+<p class="continuation">As we move from columns in \(B_1\) to those in \(B_2\text{,}\) an extra \(-1\) is added to the coefficient, that is:</p>
 <div class="displaymath">
 \begin{equation*}
 \text{For columns } j \text{ in } B_2 \text{, the coefficient of } a_{k,j}=
@@ -828,20 +832,20 @@ a_{2,1} - a_{2,2} + a_{2,3} + \cdots
 \end{cases}
 \end{equation*}
 </div>
-<p data-braille="continuation">When we get to \(B_k\text{,}\) something beautiful happens: the result for the even case and the odd case is the same.</p>
+<p class="continuation">When we get to \(B_k\text{,}\) something beautiful happens: the result for the even case and the odd case is the same.</p>
 <div class="displaymath">
 \begin{equation*}
 \text{For columns } j \text{ in } B_k \text{, the coefficient of } a_{k,j}=
 (-1)^{k+j}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">A couple of observations when \(j\) corresponds to a column in \(B_k\text{:}\)</p>
+<p class="continuation">A couple of observations when \(j\) corresponds to a column in \(B_k\text{:}\)</p>
 <ul class="disc">
-<li id="li-258">The coefficient of \(a_{k,j}\) is the same as it would be if we were taking the \(k\)-th row expansion of \(A\text{.}\)</li>
-<li id="li-259">During this step of the algorithm, the first row and the \(j=i_k\) column will be deleted. If that column is in \(B_k\text{,}\) then the pairs \(i_1i_k\text{,}\) \(i_2i_k,\dots, i_{k-1}i_k\) are all in their natural order, that is, there are no inversions.</li>
+<li id="li-258"><p id="p-derived-li-258">The coefficient of \(a_{k,j}\) is the same as it would be if we were taking the \(k\)-th row expansion of \(A\text{.}\)</p></li>
+<li id="li-259"><p id="p-derived-li-259">During this step of the algorithm, the first row and the \(j=i_k\) column will be deleted. If that column is in \(B_k\text{,}\) then the pairs \(i_1i_k\text{,}\) \(i_2i_k,\dots, i_{k-1}i_k\) are all in their natural order, that is, there are no inversions.</p></li>
 </ul>
-<p data-braille="continuation">Now suppose that \(j\) corresponds to a column in \(B_{k-1}\text{.}\) Moving from \(B_k\) to \(B_{k-1}\) passes over a deleted column. Let \(i_t\) correspond to that deleted column. The deleted column causes the coefficient of \(a_{k,j}\) change sign, that is, the coefficient is \((-1)^{i+j+1}\text{.}\) In addition, the pair \(i_t i_k\) is now an inversion. A useful pattern now emerges: as we move one block to the left, the exponent of the coefficient \((-1)\) increases by one, and passing over the deleted column changes one pair from natural order to an inversion. Thus for any block, the number of extra factors of \((-1)\) is equal to the number of inversions among the pairs \(i_1i_k, i_2,i_k,\ldots,i_{k-1}i_k\text{.}\)</p>
-<p id="p-733">Now consider what happens as <a class="xref" data-knowl="./knowl/SigmaSearchAlgorithm.html" title="Algorithm 3.6.15: \(\sigma\) search">Algorithm 3.6.15</a> proceeds step by step. For any two \(i_r\) and \(i_s\text{,}\) say with \(r\lt s\text{,}\) the expansion on row \(s\) will add an extra factor of \((-1)\) if and only if the pair \(i_r i_s\) is an inversion. Thus as the algorithm runs, every possible inversion shows up exactly once and contributes one factor of \((-1)\text{.}\) The validity of <a class="xref" data-knowl="./knowl/SignatureCorrect.html" title="Item 2">Item 2</a> then follows from <a class="xref" data-knowl="./knowl/SignAndIversions.html" title="Theorem 3.6.19: The sign and number of inversions of a permutation">Theorem 3.6.19</a>. This completes the proof of <a class="xref" data-knowl="./knowl/PermutationDeterminantTheorem.html" title="Theorem 3.6.13">Theorem 3.6.13</a>.</p></section></section></div></main>
+<p class="continuation">Now suppose that \(j\) corresponds to a column in \(B_{k-1}\text{.}\) Moving from \(B_k\) to \(B_{k-1}\) passes over a deleted column. Let \(i_t\) correspond to that deleted column. The deleted column causes the coefficient of \(a_{k,j}\) change sign, that is, the coefficient is \((-1)^{i+j+1}\text{.}\) In addition, the pair \(i_t i_k\) is now an inversion. A useful pattern now emerges: as we move one block to the left, the exponent of the coefficient \((-1)\) increases by one, and passing over the deleted column changes one pair from natural order to an inversion. Thus for any block, the number of extra factors of \((-1)\) is equal to the number of inversions among the pairs \(i_1i_k, i_2,i_k,\ldots,i_{k-1}i_k\text{.}\)</p>
+<p id="p-721">Now consider what happens as <a class="xref" data-knowl="./knowl/SigmaSearchAlgorithm.html" title="Algorithm 3.6.15: \(\sigma\) search">Algorithm 3.6.15</a> proceeds step by step. For any two \(i_r\) and \(i_s\text{,}\) say with \(r\lt s\text{,}\) the expansion on row \(s\) will add an extra factor of \((-1)\) if and only if the pair \(i_r i_s\) is an inversion. Thus as the algorithm runs, every possible inversion shows up exactly once and contributes one factor of \((-1)\text{.}\) The validity of <a class="xref" data-knowl="./knowl/SignatureCorrect.html" title="Item 2">Item 2</a> then follows from <a class="xref" data-knowl="./knowl/SignAndIversions.html" title="Theorem 3.6.19: The sign and number of inversions of a permutation">Theorem 3.6.19</a>. This completes the proof of <a class="xref" data-knowl="./knowl/PermutationDeterminantTheorem.html" title="Theorem 3.6.13">Theorem 3.6.13</a>.</p></section></section></div></main>
 </div>
 </body>
 </html>
