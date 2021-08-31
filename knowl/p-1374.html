@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-08-28T18:10:58-05:00       *-->
+<!--*       on 2021-08-31T09:34:21-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,16 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose a triangle has sides of lengths \(a\text{,}\) \(b\) and \(c\text{,}\) and \(\alpha\text{,}\) \(\beta\text{,}\) and \(\gamma\) are the angles opposite \(a\text{,}\) \(b\) and \(c\) respectively. Then \[ \frac{\sin(\alpha)}{a} =\frac{\sin(\beta)}{b} =\frac{\sin(\gamma)}{c} \]</p>
+<p>Then we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\sin(\alpha) \amp = \sin(\alpha_1+\alpha_2)\\
+\amp =\sin(\alpha_1)\cos(\alpha_2)+\cos(\alpha_1)\sin(\alpha_2)\\\
+\amp =\frac{a_1}c \frac hb + \frac hc \frac {a_2}b\\\
+\amp =\frac{ha}{bc}
+\end{align*}
+</div>
+<p class="continuation">and so \[ \frac{\sin(\alpha)}a = \frac h{bc} \] Using \(\sin(\beta)=\frac hc\) and \(\sin(\gamma)=\frac hb\text{,}\) it follows that \[ \frac{\sin(\beta)}b = \frac h{bc} \textrm{ and } \frac{\sin(\gamma)}c = \frac h{bc} \] and so \[ \frac h{bc}=\frac{\sin(\alpha)}a =\frac{\sin(\beta)}b =\frac{\sin(\gamma)}c \]</p>
 <span class="incontext"><a href="section-46.html#p-1374">in-context</a></span>
 </body>
 </html>
